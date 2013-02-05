@@ -37,7 +37,9 @@ www.aicc.org
 
 Caveats...
 
-2012 AICC All rights reserved
+2012 AICC
+All rights reserved
+
 
 The information contained in this document has been assembled by the AICC as an informational resource.  Neither the AICC nor any of its members assumes nor shall any of them have any responsibility for any use by anyone for any purpose of this document or of the data which it contains.
 
@@ -55,180 +57,192 @@ CBT, CMI, e-learning, LMS
 
 **Introduction:**
 The CMI-5 standard incorporates advances in architecture proposed from multiple organizations into one coherent standard. 
+
 The goal of the new standard is to:
-•	simplify and update CMI standards to reflect changes in technology and content distribution practice 
-•	provide a user-definable set of data elements 
-•	provide the option to manage content sequencing by the administrative system.
+
+* simplify and update CMI standards to reflect changes in technology and content distribution practice 
+
+* provide a user-definable set of data elements 
+
+* provide the option to manage content sequencing by the administrative system.
 
 
 **Discussion Forum:**
 The CMI-5 working group is currently discussed in a private working area located on the AICC website. Once the spec has been written it will be posted in a public area for comments.  You can find the AICC Forum online.[4]
 
 **Contributors**
-William A. McDonald –Boeing Training & Flight Services - AICC CMI Subcommittee Chair
-Edward Cohen – AICC Infrastructure Subcommittee Chair
-Thomas Creighton - ADL
-Nikolaus.Hruska – ADL
-Jonathan Poltrack – ADL
-Mark Schupp – Integrity Learning
-Ray Lowery – Pratt & Whitney
-Christopher Reynolds – Pelesys 
-Mingrui Zheng – Pelesys 
-Andrew Johnson – ADL
-John Kleeman – QuestionMark
-Kris Rockwell – Hybrid Learning Systems
+
+* William A. McDonald –Boeing Training & Flight Services-AICC CMI Subcommittee Chair
+* Edward Cohen – AICC Infrastructure Subcommittee Chair
+* Thomas Creighton - ADL
+* Nikolaus.Hruska – ADL
+* Jonathan Poltrack – ADL
+* Mark Schupp – Integrity Learning
+* Ray Lowery – Pratt & Whitney
+* Christopher Reynolds – Pelesys 
+* Mingrui Zheng – Pelesys 
+* Andrew Johnson – ADL
+* John Kleeman – QuestionMark
+* Kris Rockwell – Hybrid Learning Systems
 
 
 ## Revision History
 
 REV 008	Edited for grammar, format and consistency
+
 REV 007	-Made additions and edits to section 7.2 pertaining to error codes, updated WSDL based on latest version, updated XSD based on latest version, added reference to appendix 1 in document, edited certain sections to indicate case sensitivity, added sub sections for section 7.2, modified 7.2 AttemptHistory naming convention, changed URI to URL throughout document, added reference to Best Practices document
+
 REV 006	-Reformatted section 7; formatted should, shall, may, not to lower case; added additional language to Set description in section 7
+
 REV 005	-Edited section 6 to reflect further revisions, updated language and descriptions in section 7
+
 REV 004	-Added CMI-5 description; edited section 6 to increase clarity and explicitness; modified appendices based on updates to WSDL and XML Binding examples; updated section 7 descriptions
+
 REV 003	-Added and formatted appendices; updated terms (e.g. AU to learning activity); added additional definitions; updated Data Model section; consolidated forum feedback
+
 REV 002	-Edited document; added XSD
+
 REV NEW
 
 
 
 ## Contents
 
-1 Overview	1
-1.1 Scope	1
-Inside of Scope	1
-Outside of Scope	1
-1.2 Purpose	1
-2 References	1
-3 Definitions	3
-3.1 Abbreviations and acronyms	3
-4 Conformance	4
-4.1 Learning Activities	4
-4.2 Learning Management Systems (LMS)	4
-4.3 External Launching Systems	5
-5 Conceptual Model: Informative	5
-5.1 LMS Data Management Concepts	7
-5.2 Description of use case	9
-6 Data Model	10
-6.1 Core Data	10
-LaunchParameters	10
-ContentState	10
-Completion	11
-Mastery	12
-Score	13
-Time	13
-6.2 Entitlement Data	14
-Learner Identifier	14
-Entitlement Identifier	14
-6.3 Content Defined Data	15
-Data Elements - Label	15
-Data Elements –Value	15
-Data Elements –Content Type	16
-Data Elements - Namespace	16
-Data Elements – Scope	17
-Printable	17
-Public	18
-7 Actions	19
-Set	19
-Get	20
-GetHistory	21
-Exit	22
-7.1 Action Parameter Structures	24
-CMISessionID	24
-AttemptData	24
-AttemptData.SequenceNumber	24
-AttemptData.Core	24
-AttemptData.Core.LaunchParameters	24
-AttemptData.Core.ContentState	25
-AttemptData.Core.Completion	25
-AttemptData.Core.Mastery	25
-AttemptData.Core.Score	25
-AttemptData.Core.Time	26
-AttemptData.ContentDefined	26
-AttemptData.ContentDefined.Item	26
-AttemptData.ContentDefined.Item.Label	26
-AttemptData.ContentDefined.Item.Value	27
-AttemptData.ContentDefined.Item.ContentType	27
-AttemptData.ContentDefined.Item.NameSpace	27
-AttemptData.ContentDefined.Item.NameSpace.Scope	27
-AttemptData.ContentDefined.Item.NameSpace.Name	28
-AttemptData.ContentDefined.Item.Printable	28
-AttemptData.ContentDefined.Item.Public	28
-AttemptDataFilter	28
-AttemptDataFilter.NumberOfAttempts	29
-AttemptDataFilter.Entitlement	29
-AttemptDataFilter.Entitlement.LearnerIdentifier	29
-AttemptDataFilter.Entitlement.EntitlementIdentifier	29
-AttemptDataFilter.Core	30
-AttemptDataFilter.Core.All	30
-AttemptDataFilter.Core.LaunchParameters	30
-AttemptDataFilter.Core.ContentState	30
-AttemptDataFilter.Core.Completion	31
-AttemptDataFilter.Core.Mastery	31
-AttemptDataFilter.Core.Score	31
-AttemptDataFilter.Core.Time	31
-AttemptDataFilter.ContentDefined	32
-AttemptDataFilter.ContentDefined.Item	32
-AttemptDataFilter.ContentDefined.Item.Label	32
-AttemptDataFilter.ContentDefined.Item.NameSpace	32
-AttemptDataFilter.ContentDefined.Item.NameSpace.Scope	33
-AttemptDataFilter.ContentDefined.Item.NameSpace.Name	33
-7.2 Action Return Value Structures	33
-SetResponse	33
-SetResponse.Errors	33
-SetResponse.Errors.Error	34
-SetResponse.Errors.Error.Message	34
-SetResponse.Errors.Error.Code	34
-SetResponse.Errors.Error.Details	34
-SetResponse.Errors.Error.DataElement	35
-AttemptHistory	35
-AttemptHistory.Entitlement	35
-AttemptHistory.Entitlement.LearnerIdentifier	35
-AttemptHistory.Entitlement.EntitlementIdentifier	36
-AttemptHistory.Attempts	36
-AttemptHistory.Attempts.Attempt	36
-AttemptHistory.Attempts.Attempt.SequenceNumber	36
-AttemptHistory. Attempts.Attempt.Core	37
-AttemptHistory. Attempts.Attempt.Core.LaunchParameters	37
-AttemptHistory. Attempts.Attempt.Core.ContentState	37
-AttemptHistory. Attempts.Attempt.Core.Completion	37
-AttemptHistory. Attempts.Attempt.Core.Mastery	38
-AttemptHistory. Attempts.Attempt.Core.Score	38
-AttemptHistory.Attempts.Attempt.Core.Time	38
-AttemptHistory.Attempts.Attempt.ContentDefined	38
-AttemptHistory.Attempts.Attempt.ContentDefined.Item 39
-AttemptHistory.Attempts.Attempt.ContentDefined.Item.Label 39
-AttemptHistory.Attempts.Attempt.ContentDefined.Item.Value	39
-AttemptHistory.Attempts.Attempt.ContentDefined.Item.ContentType	39
-AttemptHistory.Attempts.Attempt.ContentDefined.Item.NameSpace	39
-AttemptHistory.Attempts.Attempt.ContentDefined.Item.NameSpace.Scope	40
-AttemptHistory.Attempts.Attempt.ContentDefined.Item.NameSpace.Name	40
-AttemptHistory.Attempts.Attempt.ContentDefined.Item.Printable	40
-AttemptHistory.Attempts.Attempt.ContentDefined.Item.Public	40
-AttemptHistory.Errors	40
-ExitResponse	40
-ExitResponse.ExitURI	41
-ExitResponse.Errors	41
-8 Content Launch Mechanisms	42
-8.1 Web (Browser) Environment	42
-cmi-session	42
-cmi-endpoint	42
-8.2 Other Launch Environments	44
-cmi-session	44
-cmi-endpoint	44
-9 Web Service Definition	45
-9.1 Data Model Bindings	45
-XML Binding	45
-9.2 Transport Bindings	46
-SOAP 1.2 on HTTP	46
-10 Bibliography	48
-Appendices	49
-1 Error Codes	49
-2 Data Model XSD	49
-3 Service Definition WSDL	56
-4 XML Binding Examples	60
-5 Action Request and Response Examples	93
-License Agreement	112
+* 1 Overview	1
+* 1.1 Scope	1
+* Inside of Scope	1
+* Outside of Scope	1
+* 1.2 Purpose	1
+* 2 References	1
+* 3 Definitions	3
+* 3.1 Abbreviations and acronyms	3
+* 4 Conformance	4
+* 4.1 Learning Activities	4
+* 4.2 Learning Management Systems (LMS)	4
+* 4.3 External Launching Systems	5
+* 5 Conceptual Model: Informative	5
+* 5.1 LMS Data Management Concepts	7
+* 5.2 Description of use case	9
+* 6 Data Model	10
+* 6.1 Core Data	10
+* LaunchParameters	10
+* ContentState	10
+* Completion	11
+* Mastery	12
+* Score	13
+* Time	13
+* 6.2 Entitlement Data	14
+* Learner Identifier	14
+* Entitlement Identifier	14
+* 6.3 Content Defined Data	15
+* Data Elements - Label	15
+* Data Elements –Value	15
+* Data Elements –Content Type	16
+* Data Elements - Namespace	16
+* Data Elements – Scope	17
+* Printable	17
+* Public	18
+* 7 Actions	19
+* Set	19
+* Get	20
+* GetHistory	21
+* Exit	22
+* 7.1 Action Parameter Structures	24
+* CMISessionID	24
+* AttemptData	24
+* AttemptData.SequenceNumber	24
+* AttemptData.Core	24
+* AttemptData.Core.LaunchParameters	24
+* AttemptData.Core.ContentState	25
+* AttemptData.Core.Completion	25
+* AttemptData.Core.Mastery	25
+* AttemptData.Core.Score	25
+* AttemptData.Core.Time	26
+* AttemptData.ContentDefined	26
+* AttemptData.ContentDefined.Item	26
+* AttemptData.ContentDefined.Item.Label	26
+* AttemptData.ContentDefined.Item.Value	27
+* AttemptData.ContentDefined.Item.ContentType	27
+* AttemptData.ContentDefined.Item.NameSpace	27
+* AttemptData.ContentDefined.Item.NameSpace.Scope	27
+* AttemptData.ContentDefined.Item.NameSpace.Name	28
+* AttemptData.ContentDefined.Item.Printable	28
+* AttemptData.ContentDefined.Item.Public	28
+* AttemptDataFilter	28
+* AttemptDataFilter.NumberOfAttempts	29
+* AttemptDataFilter.Entitlement	29
+* AttemptDataFilter.Entitlement.LearnerIdentifier	29
+* AttemptDataFilter.Entitlement.EntitlementIdentifier	29
+* AttemptDataFilter.Core	30
+* AttemptDataFilter.Core.All	30
+* AttemptDataFilter.Core.LaunchParameters	30
+* AttemptDataFilter.Core.ContentState	30
+* AttemptDataFilter.Core.Completion	31
+* AttemptDataFilter.Core.Mastery	31
+* AttemptDataFilter.Core.Score	31
+* AttemptDataFilter.Core.Time	31
+* AttemptDataFilter.ContentDefined	32
+* AttemptDataFilter.ContentDefined.Item	32
+* AttemptDataFilter.ContentDefined.Item.Label	32
+* AttemptDataFilter.ContentDefined.Item.NameSpace	32
+* AttemptDataFilter.ContentDefined.Item.NameSpace.Scope	33
+* AttemptDataFilter.ContentDefined.Item.NameSpace.Name	33
+* 7.2 Action Return Value Structures	33
+* SetResponse	33
+* SetResponse.Errors	33
+* SetResponse.Errors.Error	34
+* SetResponse.Errors.Error.Message	34
+* SetResponse.Errors.Error.Code	34
+* SetResponse.Errors.Error.Details	34
+* SetResponse.Errors.Error.DataElement	35
+* AttemptHistory	35
+* AttemptHistory.Entitlement	35
+* AttemptHistory.Entitlement.LearnerIdentifier	35
+* AttemptHistory.Entitlement.EntitlementIdentifier	36
+* AttemptHistory.Attempts	36
+* AttemptHistory.Attempts.Attempt	36
+* AttemptHistory.Attempts.Attempt.SequenceNumber	36
+* AttemptHistory. Attempts.Attempt.Core	37
+* AttemptHistory. Attempts.Attempt.Core.LaunchParameters	37
+* AttemptHistory. Attempts.Attempt.Core.ContentState	37
+* AttemptHistory. Attempts.Attempt.Core.Completion	37
+* AttemptHistory. Attempts.Attempt.Core.Mastery	38
+* AttemptHistory. Attempts.Attempt.Core.Score	38
+* AttemptHistory.Attempts.Attempt.Core.Time	38
+* AttemptHistory.Attempts.Attempt.ContentDefined	38
+* AttemptHistory.Attempts.Attempt.ContentDefined.Item 39
+* AttemptHistory.Attempts.Attempt.ContentDefined.Item.Label 39
+* AttemptHistory.Attempts.Attempt.ContentDefined.Item.Value	39
+* AttemptHistory.Attempts.Attempt.ContentDefined.Item.ContentType	39
+* AttemptHistory.Attempts.Attempt.ContentDefined.Item.NameSpace	39
+* AttemptHistory.Attempts.Attempt.ContentDefined.Item.NameSpace.Scope	40
+* AttemptHistory.Attempts.Attempt.ContentDefined.Item.NameSpace.Name	40
+* AttemptHistory.Attempts.Attempt.ContentDefined.Item.Printable	40
+* AttemptHistory.Attempts.Attempt.ContentDefined.Item.Public	40
+* AttemptHistory.Errors	40
+* ExitResponse	40
+* ExitResponse.ExitURI	41
+* ExitResponse.Errors	41
+* 8 Content Launch Mechanisms	42
+* 8.1 Web (Browser) Environment	42
+* cmi-session	42
+* cmi-endpoint	42
+* 8.2 Other Launch Environments	44
+* cmi-session	44
+* cmi-endpoint	44
+* 9 Web Service Definition	45
+* 9.1 Data Model Bindings	45
+* XML Binding	45
+* 9.2 Transport Bindings	46
+* SOAP 1.2 on HTTP	46
+* 10 Bibliography	48
+* Appendices	49
+* 1 Error Codes	49
+* 2 Data Model XSD	49
+* 3 Service Definition WSDL	56
+* 4 XML Binding Examples	60
+* 5 Action Request and Response Examples	93
+* License Agreement	112
 
 
 ## CMI5 Runtime
@@ -239,12 +253,12 @@ The scope and purpose of this specification are discussed in sections 1.1 and 1.
 
 #### 1.1	Scope
 
-**Inside of Scope**
+**Inside of Scope**:
 Content Launch Environment
 Runtime Data Communication (between content and LMS)
 LMS Reporting Obligations
 
-**Outside of Scope**
+**Outside of Scope**:
 End User Authentication
 User Interface Design
 LMS Course Sequencing
@@ -268,32 +282,45 @@ RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
 ### 3	 Definitions 
 For purposes of this specification, the following terms and definitiosns apply: 
 
-Administrator: The administrative user that manages the LMS and related systems. Such a user performs tasks such as learner enrollment, course structure definition, and report management.
+**Administrator:** The administrative user that manages the LMS and related systems. Such a user performs tasks such as learner enrollment, course structure definition, and report management.
 
-Learning Activity:  A learning content activity launched from an LMS. The learning activity is the unit of tracking and management. The learning activity collects data on the learner and sends it to the LMS system.
+**Learning Activity:**  A learning content activity launched from an LMS. The learning activity is the unit of tracking and management. The learning activity collects data on the learner and sends it to the LMS system.
 
-Course: A collection of learning activities, in a logical grouping, of content. A course is typically an internal data structure. Courses are often assigned to learners and tracked by the LMS.
+**Course:** A collection of learning activities, in a logical grouping, of content. A course is typically an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
-Course Structure: A list of learning activities and launch parameters, with an implied sequence, representing a course.
-Learner: The end user viewing/using the learning content (learning activities).
+**Course Structure:** A list of learning activities and launch parameters, with an implied sequence, representing a course.
 
-Learning Management System (LMS): A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the CMI5 specification.
+**Learner:** The end user viewing/using the learning content (learning activities).
 
-External Launching System: A computer system has the ability to launch learning activities but not track them. An external launching system must be associated with an LMS to provide the required data services for learning activity tracking and launch parameter retrieval.
+**Learning Management System (LMS):** A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the CMI5 specification.
+
+**External Launching System:** A computer system has the ability to launch learning activities but not track them. An external launching system must be associated with an LMS to provide the required data services for learning activity tracking and launch parameter retrieval.
 
 #### 3.1	Abbreviations and acronyms
 AICC: Aviation Industry Computer-Based Training Committee
+
 CMI: Computer Managed Instruction
+
 JSON: JavaScript Object Notation
+
 JSON-RPC: JavaScript Object Notation Remote Procedure Call
+
 LMS: Learning Management System
+
 PII: Personally Identifiable Information
+
 SOAP: Simple Object Access Protocol
+
 URI: Uniform Resource Identifier
+
 URL: Uniform Resource Locator
+
 URN: Uniform Resource Name
+
 XML: Extensible Markup Language
+
 XSD: Extensible Markup Language Schema Definition
+
 WSDL: Web Service Definition Language
 
 ### 4	 Conformance
@@ -343,45 +370,67 @@ A conforming external launching system shall associate with a conforming LMS in 
 
 ### 5	Conceptual Model: Informative
 **Synopsis of the CMI5 model:**
-	•	An LMS imports a course structure.
-	•	An LMS administrative user assigns a course or learning activity to a learner.
-	•	A learner authenticates with an LMS or related system.
-	•	A learner launches a learning activity (learning content) from the LMS or associated launching system, user an interface.
-	•	The learning activity sends a message to the LMS requesting launch parameters and previous state information.
-	•	Learner views the learning activity content and performs the learning. During this time the learning activity may request and store data.
-	•	The learner exits the learning activity.
-	•	The learning activity reports final tracking data to the LMS and issues an exit message.
-	•	Administrative users create and view reports of tracking data recorded by learning activities for individual learners.
+
+* An LMS imports a course structure.
+
+* An LMS administrative user assigns a course or learning activity to a learner.
+ 
+* A learner authenticates with an LMS or related system.
+ 
+* A learner launches a learning activity (learning content) from the LMS or associated launching system, user an interface.
+ 
+* The learning activity sends a message to the LMS requesting launch parameters and previous state information.
+ 
+* Learner views the learning activity content and performs the learning. During this time the learning activity may request and store data.
+ 
+* The learner exits the learning activity.
+ 
+* The learning activity reports final tracking data to the LMS and issues an exit message.
+ 	
+* Administrative users create and view reports of tracking data recorded by learning activities for individual learners.
 
 **Responsibilities of the learning activity:**
-	•	Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
-	•	Acting as “client”, send and receive messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
-	•	Format all data per defined data types and vocabularies defined in this specification.
-	•	Send an “exit” message prior to terminating the learning activity’s execution.
-	Responsibilities of the LMS:
-	•	Launch the specified learning activity, in the defined environment(s).
-	•	Acting as “server”, respond to all request messages from the launched learning activity using the defined transport mechanism (SOAP) and associate commands as prescribed in this specification.
-	•	Format all data per defined data types and vocabularies defined in this specification.
-	•	Record all data sent by the launched learning activity sessions.
-	•	Make viewable and printable all data recorded from launched learning activity sessions.
-	•	Maintain data for both current learning activity sessions and previous learning activity sessions and make both available to learning activities (IS THIS CORRECT???) upon request.
+
+* Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
+
+* Acting as “client”, send and receive messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
+ 
+* Format all data per defined data types and vocabularies defined in this specification.
+ 
+* Send an “exit” message prior to terminating the learning activity’s execution.
+	
+**Responsibilities of the LMS:**
+
+* Launch the specified learning activity, in the defined environment(s).
+
+* Acting as “server”, respond to all request messages from the launched learning activity using the defined transport mechanism (SOAP) and associate commands as prescribed in this specification.
+ 
+* Format all data per defined data types and vocabularies defined in this specification.
+ 
+* Record all data sent by the launched learning activity sessions.
+ 
+* Make viewable and printable all data recorded from launched learning activity sessions.
+ 
+* Maintain data for both current learning activity sessions and previous learning activity sessions and make both available to learning activities (IS THIS CORRECT???) upon request.
 
 
 #### 5.1	LMS Data Management Concepts
 The LMS is responsible for maintaining the following data structures:
 
-	•	**Course** – A collection of given learning activities. The location (URL) and launch parameters of the learning activities shall be defined in the LMS “course”, and not the learning activity media itself. 
+**Course** – A collection of given learning activities. The location (URL) and launch parameters of the learning activities shall be defined in the LMS “course”, and not the learning activity media itself. 
 	
-	•	**Enrollment** – A term defining an instance of an individual learner who has been assigned to a course.
+**Enrollment** – A term defining an instance of an individual learner who has been assigned to a course.
 	
-	•	**Class** – A group of learners enrolled in the same course.
+**Class** – A group of learners enrolled in the same course.
 	
-	•	**Learner Session** – The data tracking session for a given learning activity in a given Course for given individual learner. When the content terminates a session, no more data can be added to that session record. There are multiple instances of learner sessions (per learner, per learning activity, per course). The LMS has to be able to provide learner session data (to the learning activity) from the current session and previous sessions. 
+**Learner Session** – The data tracking session for a given learning activity in a given Course for given individual learner. When the content terminates a session, no more data can be added to that session record. There are multiple instances of learner sessions (per learner, per learning activity, per course). The LMS has to be able to provide learner session data (to the learning activity) from the current session and previous sessions. 
 	
-	•	**NameSpace** – A group of data elements for a given learner or group of learners, which is assigned to a given course. There is only a single instance of this data per namespace.
+**NameSpace** – A group of data elements for a given learner or group of learners, which is assigned to a given course. There is only a single instance of this data per namespace.
 
                    
-                   Figure 1— Conceptual model, Content System-to-Target System communication
+
+
+Figure 1— Conceptual model, Content System-to-Target System communication
 
 
 #### 5.2	Description of use case
@@ -418,56 +467,74 @@ The following data elements are considered basic elements for the core CMI5 data
 **LaunchParameters**
 
 	Required: Yes
+	
 	Data type: String
+	
 	Default Value: NULL
+	
 	Value Set By: LMS
-	Description: Launch data specific to the learning activity being launched. This value shall be set by the LMS (via 				Course Structure and/or Administrative LMS user).
+	
+	Description: Launch data specific to the learning activity being launched. This value shall be set by the LMS (via Course Structure and/or Administrative LMS user).
 
 	Value space: Values defined by learning activity designer
+	
 	Sample element value: Debug=off, Units=Metric, Chrome=on
 
 
 **ContentState**
 
 	Required: No
+	
 	Data Type: String
+	
 	Default Value: NULL
+	
 	Value Set By: Learning Activity
-	Description: State data specific to the learning activity.  The learning activity may use this value to store 				information about its state.
-				At the end of a learning session, the learning activity may provide updated content state information 				to the LMS.
-				The LMS shall store this value as provided by the learning activity at the end of a learner session, 				unless the value provided is NULL; the LMS shall ignore NULL values as provided by the learning 				activity and any previously set value shall not be overwritten. 
+	
+	Description: State data specific to the learning activity. The learning activity may use this value to store information about its state.
+				
+	At the end of a learning session, the learning activity may provide updated content state information to the LMS.
+				
+	The LMS shall store this value as provided by the learning activity at the end of a learner session, unless the value provided is NULL; the LMS shall ignore NULL values as provided by the learning activity and any previously set value shall not be overwritten. 
+	
 	Value space: Values are defined by learning activity designer.
+	
 	Sample element value: XYZ123-00011010101-OFF-test=1
 
 
 **Completion**
 
 	Required: Yes
+	
 	Data Type: Boolean
+	
 	Default Value: NULL
+	
 	Value Set By: Learning Activity
-	Description: This value indicates if a learner has viewed and/or completed all of the material presented in the 				learning activity. 
+	
+	Description: This value indicates if a learner has viewed and/or completed all of the material presented in the learning activity. 
 
-				The LMS shall store this value as provided by the learning activity. The LMS shall set the current 				completion status of a learning activity as the most recently received value from the learning 				activity, unless the value provided is NULL; the LMS shall ignore NULL values as provided by the 				learning activity and any previously set value shall not be overwritten.
+	The LMS shall store this value as provided by the learning activity. The LMS shall set the current completion status of a learning activity as the most recently received value from the learning activity, unless the value provided is NULL; the LMS shall ignore NULL values as provided by the 	learning activity and any previously set value shall not be overwritten.
 
-				*Note that this is independent of the “Mastery” data element. *
+	*Note that this is independent of the “Mastery” data element. *
 
-				The possible values are as follows:
-				**NULL Not Determined.** The learning activity is not designed to evaluate the learner or the 				learner did not engage in the learning activity in a manner which allowed for 				assessment. 
+	The possible values are as follows:
+	
+	**NULL Not Determined.** The learning activity is not designed to evaluate the learner or the learner did not engage in the learning activity in a manner which allowed for assessment. 
 
-				**False Incomplete.** The learner has not completed all of the material in the learning 				activity.
+	**False Incomplete.** The learner has not completed all of the material in the learning 				activity.
 
-				**True Completed.** The learner has completed all of the material in the learning activity.
+	**True Completed.** The learner has completed all of the material in the learning activity.
 
-				Value space: Boolean values defined by specification. 
+	Value space: Boolean values defined by specification. 
 				
-				Vocabulary: 
-					NULL
-					False
-					True
+	Vocabulary: 
+		NULL
+		False
+		True
 
-				Sample element value: 
-					False
+	Sample element value: 
+		False
 
 
 **Mastery**
