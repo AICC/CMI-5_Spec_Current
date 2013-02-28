@@ -1,7 +1,7 @@
 <img src="http://aicc.org/joomla/dev/images/aicc-logo.png"> CMI-5 Current Working Draft
 ---
 
-*Contact cmi5@aicc.org if you have quesstions about this specification*<br>
+*Contact cmi5@aicc.org if you have questions about this specification*<br>
 *By using this repository you are agree to the terms of the license agreement defined in license.txt*<br>
 *Note that this is a working draft and is NOT intended for implementation.*<br>
 
