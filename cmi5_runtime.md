@@ -336,13 +336,13 @@ The AU shall retrieve the value of session\_id at launch time as specified in Se
 
 Usage in an XAPI Statement:
 
-```
+```javascript
 "extensions": {
        “session_id”: <session_id value>
      }
 ```
 Example:
-```
+```javascript
 "extensions": {
        “session_id”: ”xyz123”
      }
@@ -360,7 +360,7 @@ If used, the above statement shall be the first Statement API call made by the A
 The verb “Started” shall only be used in this manner by the AU. 
 Example Statement:
 
-```
+```javascript
      {
      }
 ```
@@ -375,7 +375,7 @@ This shall be the last Statement API call made by the AU prior to it exiting the
 
 Example Statement:
 
-```
+```javascript
      {
      }
 ```
