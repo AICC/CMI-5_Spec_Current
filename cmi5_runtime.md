@@ -63,7 +63,7 @@
 
 ------
 
-<a name="revhistory"/>  
+<a id="revhistory"/>  
 ## Revision History
 __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__  
 
@@ -71,7 +71,7 @@ Converted existing working draft to markdown format from Microsoft Word.
 All previous work from 2012 discared
 
 
-<a name="contributors"/> 
+<a id="contributors"/> 
 ##Contributors
 
 <table>
@@ -101,13 +101,13 @@ All previous work from 2012 discared
 
 -------
 
-<a name="overview"/> 
+<a id="overview"/> 
 #1.0 Overview
 
 
 This specification describes interoperable runtime communication between Learning Management Systems (LMS) and Learning Activities.
 
-<a name="scope"/> 
+<a id="scope"/> 
 ##1.1 Scope
 
 The scope of this specification is limited to following:
@@ -120,7 +120,7 @@ This specification references how to use the XAPI specification within this scop
 Uses of Learning Activities and LMS systems not explicitly defined in this specification are outside of the scope of this specification.
 
 
-<a name="references"/> 
+<a id="references"/> 
 #2.0  References
 
 The following referenced documents are indispensable for the application of this specification. 
@@ -134,7 +134,7 @@ CMI5-xxx  – LMS Course Structure, Version 1.0, AICC,  Sept 2013
 
 
 
-<a name="definitions"/>  
+<a id="definitions"/>  
 #3.0 Definitions  
 
 
@@ -158,7 +158,7 @@ Experience API (XAPI): XAPI is a runtime data communication specification for le
 <BR>
 
 
-<a name="acronyms"/>  
+<a id="acronyms"/>  
 ##3.1 Abbreviations and Acronyms
 <BR>
 __ADL__: Advanced Distributed Learning  
@@ -175,7 +175,7 @@ __XAPI__: Experience API
 <BR>
 
 
-<a name="conformance"/>
+<a id="conformance"/>
 #4.0  Conformance
 
 Conformance to this specification is defined in section. 
@@ -185,21 +185,21 @@ In this specification, “shall” is to be interpreted as a requirement on an i
 “May” is to be interpreted as a course of action that is permissible within the limits of the specification; “need not” indicates a course of action that is not required.
 Uses of XAPI specification outside the scope this specification do not affect conformance with this specification.
 
-<a name="au_conformance"/>
+<a id="au_conformance"/>
 ##4.1 Assignable Unit (AU)
 
 An Assignable Unit shall conform to all requirements listed in Section 7 – AU Requirements  
 An Assignable Unit shall conform to all requirements as specified in the XAPI specification (see References)  
 An Assignable Unit shall not implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
-<a name="lms_conformance"/>
+<a id="lms_conformance"/>
 ##4.2 Learning Management Systems (LMS)
 
 LMS systems shall conform to all requirements listed in Section 6 – LMS Requirements.  
 A LMS shall conform to all LRS requirements as specified in the XAPI specification (see References)  
 The LMS shall not implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
-<a name="concept"/>
+<a id="concept"/>
 #5.0 Conceptual Model: Informative  
 
 Synopsis of the CMI-5 model:
@@ -223,7 +223,7 @@ Responsibilities of the LMS:
 * Format all data per defined data types and vocabularies defined in this specification.
 * Launch the specified learning activity contained in courses, in the defined environment(s).
 
-<a name="lms_requirements"/>
+<a id="lms_requirements"/>
 #6.0 LMS Requirements
 
 LMS systems shall meet the following requirements to conform to this specification:  
@@ -239,7 +239,7 @@ LMS systems shall meet the following requirements to conform to this specificati
 9. The LMS shall implement additional XAPI “Activity Profile API” requirements as defined in section __________ .  
 
 
-<a name="course_structures"/>
+<a id="course_structures"/>
 ##6.1 Course structures
 The LMS shall implement a means to create and maintain course structures.  
 The LMS shall implement the creation and editing of course structures by one of the following methods:
@@ -258,7 +258,7 @@ o “Existing Window” – The LMS shall re-direct the existing browser window 
 Course Structures shall contain at least 1 AU.
 LMS shall have the ability to create and maintain course structures containing more than 1000 AU’s.
 
-<a name="lms_state_api_requirements"/>
+<a id="lms_state_api_requirements"/>
 ##6.2 LMS State API Requirements
 The LMS shall initialize the records in its LRS with the state documents as described in this section when a learner is enrolled in a course (before the learner initially accesses the course).  The state documents are specific to the learner and course registration.  
 
@@ -287,7 +287,7 @@ __State API PUT Properties__:
 <BR>
 <BR>
 
-<a name="lms_statement_api_requirements"/>
+<a id="lms_statement_api_requirements"/>
 ##6.3 LMS Statement API Requirements
 
 Prior to launching a learning activity, the LMS shall create a Statement API record in its LRS to …..
@@ -299,7 +299,7 @@ Set Collateral Credit
 
 
 
-<a name="au_requirements"/>
+<a id="au_requirements"/>
 #7.0 AU Requirements
 
 AU’s shall meet the following requirements to conform to this specification:
@@ -311,7 +311,7 @@ AU’s shall meet the following requirements to conform to this specification:
 5. The AU shall implement additional XAPI “Agent Profile API” requirements as defined in section __________ .
 6. The AU shall implement additional XAPI “Activity Profile API” requirements as defined in section __________ .
 
-<a name="au_state_api_requirements"/>
+<a id="au_state_api_requirements"/>
 ##7.1 AU State API Requirements
 
 The AU should retrieve the following the State API documents from the LRS recorded by the LMS at assignment time.  (See Section 6.1).  
@@ -326,10 +326,10 @@ AU issues State API GET Command with the following parameters:
 
 
 
-<a name="au_statement_api_requirements"/>
+<a id="au_statement_api_requirements"/>
 ##7.2 AU Statement API Requirements
 
-<a name="placement"/>
+<a id="placement"/>
 ###7.2.1 Placement of session_id in Statements
 
 The AU shall retrieve the value of session\_id at launch time as specified in Section 8 Content Launch Mechanisms.  The AU shall place the value of the session_id in the context extensions for all XAPI statements it records.  
@@ -348,7 +348,7 @@ Example:
      }
 ```
 
-<a name="first_statement_au"/>
+<a id="first_statement_au"/>
 ###7.2.2 First Statement API Call
 
 The AU should issue a statement to the LRS after being launched, initialized, and ready for learner interaction.  If used, the statement shall contain the following:
@@ -364,7 +364,7 @@ Example Statement:
      {
      }
 ```
-<a name="last_statement_au"/>
+<a id="last_statement_au"/>
 ###7.1.2 Last Statement Call
 
 The AU shall issue a statement to the LRS after being launched, initialized, and ready for learner interaction that contains the following:
@@ -379,10 +379,10 @@ Example Statement:
      {
      }
 ```
-<a name="content_launch"/>
+<a id="content_launch"/>
 #8.0 Content Launch Mechanisms
 
-<a name="browser_environment"/>
+<a id="browser_environment"/>
 ##8.1 Web (Browser) Environment
 
 ###8.1.1 Launch Method
@@ -434,7 +434,7 @@ The values for the URL launch parameters are described below:
 
 <table border="1" cellspacing="0" cellpadding="0" width="100%">
   <tr >
-    <td width="100%" valign="top"><h3><a name="_Toc349195673" id="_Toc349195673">endpoint</a></h3></td>
+    <td width="100%" valign="top"><h3><a id="_Toc349195673" id="_Toc349195673">endpoint</a></h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>A    URL to the LMS listener location for XAPI messages to be sent to.  <strong></strong><br />
@@ -445,7 +445,7 @@ The values for the URL launch parameters are described below:
       <strong>Sample value: </strong>https://aicc.org/MyCMI5_listener.pl<strong></strong></p></td>
   </tr>
   <tr>
-    <td width="100%" valign="top"><h3><a name="_Toc349195674" id="_Toc349195674">auth</a></h3></td>
+    <td width="100%" valign="top"><h3><a id="_Toc349195674" id="_Toc349195674">auth</a></h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>An    authentication token created &amp; managed by the LMS.  Used when OAuth authentication is not    practical or desired.  The    authentication token is used by the learning activity being launched.<strong></strong><br />
@@ -456,7 +456,7 @@ The values for the URL launch parameters are described below:
       <strong>Sample value:</strong> OjFjMGY4NTYxNzUwOGI4YWY0NjFkNzU5MWUxMzE1ZGQ1<strong></strong></p></td>
   </tr>
   <tr>
-    <td width="100%" valign="top"><h3><a name="_Toc349195675" id="_Toc349195675">actor</a></h3></td>
+    <td width="100%" valign="top"><h3><a id="_Toc349195675" id="_Toc349195675">actor</a></h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>A    JSON object called “actor” (as defined in the XAPI specification) that    identifies the learner launching the learning activity so the learning    activity will be able to include it in XAPI messages.<strong></strong><br />
@@ -467,7 +467,7 @@ The values for the URL launch parameters are described below:
       <strong>Sample value: </strong>{    &quot;name&quot; : [&quot;Skip Winger&quot;], &quot;mbox&quot; :    [&quot;mailto:skipper@skyhiair.com&quot;] }<strong></strong></p></td>
   </tr>
   <tr>
-    <td width="100%" valign="top"><h3><a name="_Toc349195676" id="_Toc349195676">registration</a></h3></td>
+    <td width="100%" valign="top"><h3><a id="_Toc349195676" id="_Toc349195676">registration</a></h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>A    Registration ID corresponding to the learner’s enrollment for the AU being    launched.<strong></strong><br />
@@ -480,7 +480,7 @@ The values for the URL launch parameters are described below:
       <strong>Sample value:</strong></p></td>
   </tr>
   <tr>
-    <td width="100%" valign="top"><h3><a name="_Toc349195677" id="_Toc349195677">activity_id</a></h3></td>
+    <td width="100%" valign="top"><h3><a id="_Toc349195677" id="_Toc349195677">activity_id</a></h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>The    Activity ID of the AU being launched.<strong></strong><br />
@@ -493,7 +493,7 @@ The values for the URL launch parameters are described below:
       <strong>Sample value:</strong></p></td>
   </tr>
   <tr>
-    <td width="100%" valign="top"><h3><a name="_Toc349195678" id="_Toc349195678">session_id</a></h3></td>
+    <td width="100%" valign="top"><h3><a id="_Toc349195678" id="_Toc349195678">session_id</a></h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>The    session ID of the AU being launched.<strong></strong><br />
@@ -509,7 +509,7 @@ The values for the URL launch parameters are described below:
 <BR>
 <BR>
 
-<a name="other_environment"/>
+<a id="other_environment"/>
 ##8.3 Other Launch Environments
 
 Other launch environments are not currently implemented in this specification. The following launch environments are being considered for future releases:  
@@ -523,7 +523,7 @@ Other launch environments are not currently implemented in this specification. T
 CMI-5 implementations for LMS’s and AU’s in these other environments will use the same REST communication interface as specified in XAPI specification.  The XAPI specification does not specify launch mechanisms.
 
 
-<a name="verbs"/> 
+<a id="verbs"/> 
 #9.0 Verbs
 
 The following are XAPI verbs that are specific to this specification.  
@@ -551,7 +551,7 @@ __Exited__
 <BR>
 
 
-<a name="bibliography"/> 
+<a id="bibliography"/> 
 #10.0 Bibliography
 
 [1]  AICC CMI001, CMI Guidelines For Interoperability, Version 4.0. 
@@ -562,7 +562,7 @@ __Exited__
 
 -------
 
-<a name="license_agreement"/> 
+<a id="license_agreement"/> 
 #License Agreement
 
 THE WORK (AS DEFINED HEREIN) ACCOMPANYING THIS LICENSE AGREEMENT ("AGREEMENT") IS PROVIDED BY THE AICC, A NON-PROFIT CORPORATION ORGANIZED UNDER THE LAWS OF Idaho (“LICENSOR”), TO YOU (“YOU” OR “LICENSEE”) ONLY UNDER THE TERMS AND CONDITIONS OF THIS AGREEMENT. ANY USE, REPRODUCTION, DISTRIBUTION OR MODIFICATION OF THE WORK BY YOU CONSTITUTES YOUR ACCEPTANCE OF THIS AGREEMENT. BY OBTAINING, USING, DISTRIBUTING, REPRODUCING AND/OR MODIFYING THE WORK, YOU AGREE THAT YOU HAVE READ, UNDERSTOOD, AND WILL COMPLY WITH THE FOLLOWING TERMS AND CONDITIONS.
