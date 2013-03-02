@@ -127,7 +127,7 @@ The following referenced documents are indispensable for the application of this
 
 RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
 “Experience API”, Version 0.95, ADL, 19 Oct 2012  
-(http://www.adlnet.gov/wp-content/uploads/2012/11/Experience-API-Release-v0.95.pdf)
+<http://www.adlnet.gov/wp-content/uploads/2012/11/Experience-API-Release-v0.95.pdf>
 
 CMI5-xxx  – LMS Course Structure, Version 1.0, AICC,  Sept 2013
 
@@ -556,9 +556,9 @@ __Exited__
 
 [1]  AICC CMI001, CMI Guidelines For Interoperability, Version 4.0. 
 
-[2]  SCORM – http://www.adlnet.gov/capabilities/scorm 
+[2]  SCORM – <http://www.adlnet.gov/capabilities/scorm>
 
-[3]  MIME Types – http://www.iana.org/assignments/media-types/index.html  
+[3]  MIME Types – <http://www.iana.org/assignments/media-types/index.html>
 
 -------
 
@@ -605,9 +605,9 @@ b. Licensee hereby grants to Licensor and all Other Licensees a non-exclusive, w
 
 c. To the extent that a Licensee reproduces or distributes copies of the Work, portions thereof or any Derivative Work in any medium, with or without modifications, such Licensee shall give a copy of this Agreement to any recipients of the Work. 
 
-d. Licensee hereunder expressly agrees to include the following notice on ALL copies of the Work, portions thereof or Derivative Works: "Copyright © The AICC. All Rights Reserved.  http://www.aicc.org” 
+d. Licensee hereunder expressly agrees to include the following notice on ALL copies of the Work, portions thereof or Derivative Works: "Copyright © The AICC. All Rights Reserved.  <http://www.aicc.org>” 
 
-e. Licensee agrees to include the following notice in all Derivative Works: “This product implements and complies with the Version CMI-5 [or other version as applicable] AICC Specifications as published by the AICC at http://www.AICC.org”. 
+e. Licensee agrees to include the following notice in all Derivative Works: “This product implements and complies with the Version CMI-5 [or other version as applicable] AICC Specifications as published by the AICC at <http://www.aicc.org>”. 
 
 f. Licensee may not facilitate or assist any Learning Technology Standards Organization other than Licensor in co-opting, copying, distributing, publishing or using the Work without prior written approval of Licensor. Licensee may not create any Derivative Work for ownership by, presentation by, distributing by, publishing by or attribution to any Standards Organization or similar entity other than Licensor, unless specifically approved in writing by Licensor. 
 
