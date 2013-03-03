@@ -1,0 +1,13 @@
+# .gitignore #
+
+# temp files #
+##############
+*.bak
+.*.bak
+*.tmp
+tmp/*
+
+# OS generated files #
+######################
+.DS_Store
+Thumbs.db
