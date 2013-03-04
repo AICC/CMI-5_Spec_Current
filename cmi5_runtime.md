@@ -56,11 +56,11 @@
 [__8 Content Launch Mechanisms__](#content_launch)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
-[__9.0 XAPI Extensions__](#xapi_extensions) 
+[__9.0 XAPI Extensions__](#xapi_extensions)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)
-&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)
-&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents)
+&nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents)  
 [__10.0 Bibliography__](#bibliography)  
 
 [__License Agreement__](#license_agreement)  
@@ -555,11 +555,20 @@ __Exited__
 * The AU shall use this verb as defined in section _____
 <BR/>
 <BR/>
+
 <a name="activity_types"/> 
 ##9.2 Activity Types
 
 <a name="extensions"/> 
 ##9.3 Extensions
+__Progress__
+http://someurlorother/extensions/result/progress
+* An extension to the statement result.
+* The score of the agent in the activity in relation to the completion of the activity.
+For example: page progress, completion of a task.
+* This is an optional extension.
+* Contains a score object. See <a href="https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md#4151-score">
+section 4.1.5.1 of the XAPI specification document</a>.
 
 <a name="documents"/> 
 ##9.4 Documents
