@@ -56,7 +56,11 @@
 [__8 Content Launch Mechanisms__](#content_launch)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
-[__9.0 Verbs__](#verbs)  
+[__9.0 XAPI Extensions__](#xapi_extensions)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents)  
 [__10.0 Bibliography__](#bibliography)  
 
 [__License Agreement__](#license_agreement)  
@@ -97,6 +101,7 @@ All previous work from 2012 discared
 	<tr><td>Chris Sawwa</td><td>Meridian Knowledge Systems</td></tr>
 	<tr><td>Michael Roberts</td><td>VTraining Room</td></tr>
 	<tr><td>Thomas Person</td><td>(Formerly of Adobe)</td></tr>
+	<tr><td>Andrew Downes</td><td>Epic</td></tr>
 </table> 
 
 -------
@@ -521,10 +526,11 @@ Other launch environments are not currently implemented in this specification. T
 * iOS  
 
 CMI-5 implementations for LMS’s and AU’s in these other environments will use the same REST communication interface as specified in XAPI specification.  The XAPI specification does not specify launch mechanisms.
-
-
+ 
+<a name="xapi_extensions"/> 
+#9.0 XAPI Extensions
 <a name="verbs"/> 
-#9.0 Verbs
+##9.1 Verbs
 
 The following are XAPI verbs that are specific to this specification.  
 AU’s shall use the below verbs indicated as mandatory in other sections of this specification.  
@@ -547,9 +553,25 @@ __Exited__
 * The verb “Exited” indicates that the AU was exited by the Learner and that the AU will not be recording any more statements for the launch session.
 * This is a mandatory verb.  
 * The AU shall use this verb as defined in section _____
-<BR>
-<BR>
+<BR/>
+<BR/>
 
+<a name="activity_types"/> 
+##9.2 Activity Types
+
+<a name="extensions"/> 
+##9.3 Extensions
+__Progress__
+http://someurlorother/extensions/result/progress
+* An extension to the statement result.
+* The score of the agent in the activity in relation to the completion of the activity.
+For example: page progress, completion of a task.
+* This is an optional extension.
+* Contains a score object. See <a href="https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md#4151-score">
+section 4.1.5.1 of the XAPI specification document</a>.
+
+<a name="documents"/> 
+##9.4 Documents
 
 <a name="bibliography"/> 
 #10.0 Bibliography
