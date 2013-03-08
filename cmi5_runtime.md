@@ -211,20 +211,27 @@ Synopsis of the CMI-5 model:
 * An LMS imports a course structure.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or related system.
-* A learner launches an Assignable Unit (learning content) from the LMS or associated launching system, user an interface.
-* The learning activity sends a message to the LMS requesting launch parameters and previous state information.
-* Learner views the learning activity content and performs the learning. During this time the learning activity may request and store data.
-* The learner exits the learning activity.
-* The learning activity reports final tracking data to the LMS and issues an exit message.
-* Administrative users create and view reports of tracking data recorded by learning activities for individual learners.
-Responsibilities of the Assignable Unit:
-* Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
-* Acting as “client”, send and receive messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
+* A learner launches an Assignable Unit (AU) from the LMS or associated launching system, user 
+and interface.
+* The AU sends a message to the LMS requesting launch parameters and previous state information.
+* Learner views the AU content and performs the learning. During this time the AU 
+may request and store data.
+* The learner exits the AU.
+* The AU reports final tracking data to the LMS and issues an exit message.
+* Administrative users create and view reports of tracking data recorded by AUs for individual learners.  
+
+Responsibilities of the Assignable Unit (AU):
+* Parse the parameters from the launching environment to determine where the LMS location is and initiate communication 
+with the LMS.
+* Acting as “client”, send and receive messages using the defined transport mechanism(s) and associate commands as 
+prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
-* Send an “exit” message prior to terminating the learning activity’s execution.
+* Send an “exit” message prior to terminating the AU’s execution.  
+
 Responsibilities of the LMS:
 * Create and maintain course structures
-* Acting as a “server”, receive and reply to messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
+* Acting as a “server”, receive and reply to messages using the defined transport mechanism(s) and associate commands 
+as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Launch the specified learning activity contained in courses, in the defined environment(s).
 
