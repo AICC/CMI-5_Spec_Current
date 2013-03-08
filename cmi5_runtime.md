@@ -251,10 +251,11 @@ LMS systems shall meet the following requirements to conform to this specificati
 3. The LMS shall implement additional “State API” requirements to initialize LA state as defined in section 6.2 LMS State API Requirements.  
 4. The LMS shall implement the runtime launch interface as defined in section 8 Content Launch Mechanisms.  
 5. The LMS may implement collateral credit features (to preemptively set status) per section ______.  
-6. The LMS shall implement the XAPI “Verb” vocabulary as defined in section __________ .  
-7. The LMS shall implement additional XAPI “Statement API” requirements as defined in section __________ .  
-8. The LMS shall implement additional XAPI “Agent Profile API” requirements as defined in section __________ .  
-9. The LMS shall implement additional XAPI “Activity Profile API” requirements as defined in section __________ .  
+6. The LMS shall implement the XAPI “Verb” vocabulary as defined in section 9.1 Verbs. 
+7. The LMS shall implement the XAPI “Activity Type” vocabulary as defined in section 9.2 Activity Types.  
+8. The LMS shall implement additional XAPI “Statement API” requirements as defined in section __________ .  
+9. The LMS shall implement additional XAPI “Agent Profile API” requirements as defined in section __________ .  
+10. The LMS shall implement additional XAPI “Activity Profile API” requirements as defined in section __________ .  
 
 
 <a name="course_structures"/>
