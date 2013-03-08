@@ -203,11 +203,13 @@ Synopsis of the CMI-5 model:
 * The learner exits the learning activity.
 * The learning activity reports final tracking data to the LMS and issues an exit message.
 * Administrative users create and view reports of tracking data recorded by learning activities for individual learners.
+
 Responsibilities of the Assignable Unit:
 * Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
 * Acting as “client”, send and receive messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Send an “exit” message prior to terminating the learning activity’s execution.
+
 Responsibilities of the LMS:
 * Create and maintain course structures
 * Acting as a “server”, receive and reply to messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
