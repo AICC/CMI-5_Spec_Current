@@ -128,13 +128,14 @@ Uses of Learning Activities and LMS systems not explicitly defined in this speci
 <a name="references"/> 
 #2.0  References
 
-The following referenced documents are indispensable for the application of this specification. 
+The following referenced documents are indispensable for the application of this specification.  
 
-RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
+RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.  
+
 “Experience API”, Version 0.95, ADL, 19 Oct 2012  
-(http://www.adlnet.gov/wp-content/uploads/2012/11/Experience-API-Release-v0.95.pdf)
+(http://www.adlnet.gov/wp-content/uploads/2012/11/Experience-API-Release-v0.95.pdf)  
 
-CMI5-xxx  – LMS Course Structure, Version 1.0, AICC,  Sept 2013
+CMI5-xxx  – LMS Course Structure, Version 1.0, AICC,  Sept 2013  
 
 
 
@@ -156,7 +157,7 @@ and receive data to an LRS.  The XAPI specification is referenced by this docume
 transport and the data model. 
 
 * __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically 
-an internal data structure. Courses are often assigned to learners and tracked by the LMS. A course is a type
+an internal data structure. Courses are often assigned to learners and tracked by the LMS. A Course is a type
 of Learning Activity Provider (AP) as defined in the XAPI. 
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a 
