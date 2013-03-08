@@ -567,7 +567,8 @@ http://www.aicc.org/cmi5/extensions/result/progress
 * The score of the agent in the activity in relation to the completion of the activity as a percentage.
 For example: page progress, completion of a task.
 * This is an optional extension.
-* Contains an integer between 0 and 100.
+* Contains a score object. See <a href="https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md#4151-score">
+section 4.1.5.1 of the XAPI specification document</a>.
 
 <a name="documents"/> 
 ##9.4 Documents
