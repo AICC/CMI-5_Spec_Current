@@ -145,20 +145,31 @@ CMI5-xxx  – LMS Course Structure, Version 1.0, AICC,  Sept 2013
 
 For purposes of this specification, the following terms and definitions apply: 
 
-* __Administrator__: The administrative user that manages the LMS and related systems. Such a user performs tasks such as learner enrollment, course structure definition, and report management.
+* __Administrator__: The administrative user that manages the LMS and related systems. Such a user performs 
+tasks such as learner enrollment, course structure definition, and report management.
 
-* __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically an internal data structure. Courses are often assigned to learners and tracked by the LMS.
+* __Assignable Unit (AU)__:  A learning content activity/presentation launched from an LMS. The AU is the unit of 
+tracking and management. The AU collects data on the learner and sends it to the LMS system.
 
-* __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a course.  
-Experience API (XAPI): XAPI is a runtime data communication specification for learning content (AU) to send and receive data to an LRS.  The XAPI specification is referenced by this document is used to define the data transport and the data model. 
+* __Experience API (XAPI)__: XAPI is a runtime data communication specification for learning content (AU) to send 
+and receive data to an LRS.  The XAPI specification is referenced by this document is used to define the data 
+transport and the data model. 
+
+* __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically 
+an internal data structure. Courses are often assigned to learners and tracked by the LMS.
+
+* __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a 
+course.
 
 * __Learner__: The end user viewing/using the learning content (Learning Activity).
 
-* __Assignable Unit (AU)__:  A learning content activity/presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS system.
+* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, 
+launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, 
+reporting, and tracking roles are the focus of the CMI5 specification.  The LMS shall have an LRS as part of its 
+implementation.
 
-* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the CMI5 specification.  The LMS shall have an LRS as part of its implementation.
-
-* __Learning Records Store (LRS)__: As defined in the XAPI specification.  In this specification, the LMS shall implement an LRS with additional requirements as specified in this document.
+* __Learning Records Store (LRS)__: As defined in the XAPI specification.  In this specification, the LMS shall 
+implement an LRS with additional requirements as specified in this document.
 <BR>
 <BR>
 
