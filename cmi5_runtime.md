@@ -149,14 +149,15 @@ For purposes of this specification, the following terms and definitions apply:
 tasks such as learner enrollment, course structure definition, and report management.
 
 * __Assignable Unit (AU)__:  A learning content activity/presentation launched from an LMS. The AU is the unit of 
-tracking and management. The AU collects data on the learner and sends it to the LMS system.
+tracking and management. The AU collects data on the learner and sends it to the LMS system. 
 
 * __Experience API (XAPI)__: XAPI is a runtime data communication specification for learning content (AU) to send 
 and receive data to an LRS.  The XAPI specification is referenced by this document is used to define the data 
 transport and the data model. 
 
 * __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically 
-an internal data structure. Courses are often assigned to learners and tracked by the LMS.
+an internal data structure. Courses are often assigned to learners and tracked by the LMS. A course is a type
+of Learning Activity Provider (AP) as defined in the XAPI. 
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a 
 course.
