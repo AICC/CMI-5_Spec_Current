@@ -56,7 +56,7 @@
 [__8 Content Launch Mechanisms__](#content_launch)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
-[__9.0 XAPI Extensions__](#xapi_extensions)  
+[__9.0 XAPI Data Model__](#xapi_data_model)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)  
@@ -527,8 +527,8 @@ Other launch environments are not currently implemented in this specification. T
 
 CMI-5 implementations for LMS’s and AU’s in these other environments will use the same REST communication interface as specified in XAPI specification.  The XAPI specification does not specify launch mechanisms.
  
-<a name="xapi_extensions"/> 
-#9.0 XAPI Extensions
+<a name="xapi_data_model"/> 
+#9.0 XAPI Data Model
 <a name="verbs"/> 
 ##9.1 Verbs
 
@@ -562,13 +562,12 @@ __Exited__
 <a name="extensions"/> 
 ##9.3 Extensions
 __Progress__
-http://someurlorother/extensions/result/progress
+http://www.aicc.org/cmi5/extensions/result/progress
 * An extension to the statement result.
-* The score of the agent in the activity in relation to the completion of the activity.
+* The score of the agent in the activity in relation to the completion of the activity as a percentage.
 For example: page progress, completion of a task.
 * This is an optional extension.
-* Contains a score object. See <a href="https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md#4151-score">
-section 4.1.5.1 of the XAPI specification document</a>.
+* Contains an integer between 0 and 100.
 
 <a name="documents"/> 
 ##9.4 Documents
