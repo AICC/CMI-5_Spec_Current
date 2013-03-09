@@ -157,18 +157,21 @@ and receive data to an LRS.  The XAPI specification is referenced by this docume
 transport and the data model. 
 
 * __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically 
-an internal data structure. Courses are often assigned to learners and tracked by the LMS. A Course is a type
-of Learning Activity Provider (AP) as defined in the XAPI. 
+an internal data structure. Courses are often assigned to learners and tracked by the LMS. A course may include
+assignable units taken from any number of Learning Activity Providers (AP). 
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a 
 course.
 
-* __Learner__: The end user viewing/using the learning content (Learning Activity).
+* __Learner__: The end user viewing/using the learning content (Learning Activity).  
+
+* __Learning Activity Provider (AP)__: As defined in the XAPI specification. An AP contains either a single or multiple
+assignable units. 
 
 * __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, 
 launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, 
 reporting, and tracking roles are the focus of the CMI5 specification.  The LMS shall have an LRS as part of its 
-implementation.
+implementation.  
 
 * __Learning Records Store (LRS)__: As defined in the XAPI specification.  In this specification, the LMS shall 
 implement an LRS with additional requirements as specified in this document.
