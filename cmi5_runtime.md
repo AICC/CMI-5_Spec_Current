@@ -661,6 +661,23 @@ not be recording any more statements for the launch session.
 * This is a mandatory verb.  
 * The AU shall use this verb as defined in section _____  
 
+__Passed__
+
+* Used to affirm the success a learner experienced within the learning content in relation
+to a threshold.  If the user performed at a minimum to the level of this threshold, the 
+content is “passed”.  The opposite of “failed”.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Passed__
+
+* Used to affirm the success a learner experienced within the learning content in relation
+to a threshold.  If the user performed at a minimum to the level of this threshold, the 
+content is “passed”.  The opposite of “failed”.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+
 
 <a id="bibliography"/> 
 #10.0 Bibliography
