@@ -669,15 +669,38 @@ content is “passed”.  The opposite of “failed”.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
-__Passed__
+__Failed__
 
-* Used to affirm the success a learner experienced within the learning content in relation
-to a threshold.  If the user performed at a minimum to the level of this threshold, the 
-content is “passed”.  The opposite of “failed”.
+* Used to affirm the lack of success a learner experienced within the learning content in 
+relation to a threshold.  If the user performed below the minimum to the level of this 
+threshold, the content is “failed”.  The opposite of “passed”.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
+__Completed__
 
+* Used to affirm the completion of content.  This can be simply experiencing all the content,
+be tied to objectives or interactions, or determined in any other way.  Any content that has 
+been started, but not yet completed, should be considered incomplete.  There is no verb to 
+“incomplete” an activity, one would void the statement which completes the activity.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Mastered__
+
+* Used to describe a level of competence achieved in the activity.  The level should be within
+the range of a defined scale.  This is not to be confused with “progressed”, which shows how 
+much content was experienced, whereas mastery has to do with level of expertise.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Mastered__
+
+* Used to describe a level of competence achieved in the activity.  The level should be within
+the range of a defined scale.  This is not to be confused with “progressed”, which shows how 
+much content was experienced, whereas mastery has to do with level of expertise.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
 
 <a id="bibliography"/> 
 #10.0 Bibliography
