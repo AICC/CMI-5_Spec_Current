@@ -726,6 +726,46 @@ Beginning the suspended activity will always result in a resumed activity.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
+__Asked__
+
+* Used to ask a question, typically the system would be the primary actor, with the learner being 
+the recipient of the question.    The question could also be asked into a vacuum, with the eventual 
+response (statement with verb responded) providing the actual context of the recipient.  For example
+“System asked Math quiz question 1 with result “What is 2+2”” followed by “Learner responded to quiz 
+question 1 with result “response=”4”” would alleviate the need to identify the second actor.  
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Responded__
+
+* Used to respond to a question.  Must follow a statement with asked or another statement with a 
+responded (the top statement with responded) must follow the “asking” statement.  The response to 
+the question can be the actual text (usually) response or the correctness of that response.  For 
+example, “Learner responded to quiz question 1 with result “response=4”” and “Learner responded to 
+quiz question 1 with result success=true””.  Typically both types of responded statements would 
+follow a single question/interacton. 
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____
+
+__Preferred__
+
+* The user’s preference, typically presented to the content or system in the form of a response to 
+a question.  For example, the system could ask a question if the learner preferred a voice over text 
+option.  The resulting statement could be “Andy preferred on Civil War History with result 
+response = “no voiceover””.  This distinction is made between statements with responded as the 
+content/system is expected to change as a results of the learner response.  Results of such statements
+would likely end up in the StateAPI.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Scored__
+
+* A value, typically between either 0 and 1 or 0 and 100, which corresponds to a learner’s performance
+on an activity.  It is expected the context property provides guidance to the allowed values of the 
+result field. 
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
 <a id="bibliography"/> 
 #10.0 Bibliography
 
