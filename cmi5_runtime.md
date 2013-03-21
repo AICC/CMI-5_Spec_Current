@@ -26,7 +26,8 @@ license agreement contained within it.
 # Table of Contents
 
 [__Revision History__](#revhistory)  
-[__Contributors__](#contributors)  
+
+[__Contributors__](#contributors)   
 
 
 [__1.0 Overview__](#overview)  
@@ -51,14 +52,19 @@ license agreement contained within it.
 [__8 Content Launch Mechanisms__](#content_launch)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
-[__9.0 Verbs__](#verbs)  
+[__9.0 XAPI Data Model__](#xapi_data_model)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)
+&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents) 
+
 [__10.0 Bibliography__](#bibliography)  
 
 [__License Agreement__](#license_agreement)  
 
 ------
 
-<a id="revhistory"/>  
+<a id="revhistory"/>	
 ## Revision History
 __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__  
 
@@ -97,14 +103,14 @@ All previous work from 2012 discarded.
 
 -------
 
-<a id="overview"/> 
+<a id="overview"/>  
 #1.0 Overview
 
 
 This specification describes interoperable runtime communication between Learning
 Management Systems (LMS) and Learning Activities.
 
-<a id="scope"/> 
+<a id="scope"/>  
 ##1.1 Scope
 
 The scope of this specification is limited to following:
@@ -123,7 +129,7 @@ Uses of Learning Activities and LMS systems not explicitly defined in this speci
 are outside of the scope of this specification.
 
 
-<a id="references"/> 
+<a id="references"/>  
 #2.0  References
 
 The following referenced documents are indispensable for the application of this
@@ -138,7 +144,7 @@ CMI5-xxx  – LMS Course Structure, Version 1.0, AICC,  Sept 2013
 
 
 
-<a id="definitions"/>  
+<a id="definitions"/>   
 #3.0 Definitions  
 
 
@@ -192,7 +198,7 @@ __XAPI__: Experience API
 <BR>
 
 
-<a id="conformance"/>
+<a id="conformance"/>  
 #4.0  Conformance
 
 Conformance to this specification is defined in section. 
@@ -209,7 +215,7 @@ the specification; “need not” indicates a course of action that is not requi
 Uses of XAPI specification outside the scope this specification do not affect conformance
 with this specification.
 
-<a id="au_conformance"/>
+<a id="au_conformance"/>  
 ##4.1 Assignable Unit (AU)
 
 An Assignable Unit shall conform to all requirements listed in Section 7 – AU Requirements
@@ -220,7 +226,7 @@ specification (see References)
 An Assignable Unit shall not implement any features or functionality (optional or
 mandatory) described in this specification in a non-conforming manner.
 
-<a id="lms_conformance"/>
+<a id="lms_conformance"/>  
 ##4.2 Learning Management Systems (LMS)
 
 LMS systems shall conform to all requirements listed in Section 6 – LMS Requirements.
@@ -232,7 +238,7 @@ The LMS shall not implement any features or functionality (optional or mandatory
 described in this specification in a non-conforming manner.
 
 
-<a id="concept"/>
+<a id="concept"/>  
 #5.0 Conceptual Model: Informative  
 
 Synopsis of the CMI-5 model:
@@ -268,7 +274,7 @@ mechanism(s) and associate commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Launch the specified learning activity contained in courses, in the defined environment(s).
 
-<a id="lms_requirements"/>
+<a id="lms_requirements"/>  
 #6.0 LMS Requirements
 
 LMS systems shall meet the following requirements to conform to this specification:  
@@ -291,7 +297,7 @@ section __________ .
 in section __________ .  
 
 
-<a id="course_structures"/>
+<a id="course_structures"/>  
 ##6.1 Course structures
 The LMS shall implement a means to create and maintain course structures.
 
@@ -325,7 +331,7 @@ Course Structures shall contain at least 1 AU.
 LMS shall have the ability to create and maintain course structures containing more than
 1000 AU’s.
 
-<a id="lms_state_api_requirements"/>
+<a id="lms_state_api_requirements"/>  
 ##6.2 LMS State API Requirements
 The LMS shall initialize the records in its LRS with the state documents as described in
 this section when a learner is enrolled in a course (before the learner initially accesses
@@ -372,7 +378,7 @@ Shall match Registration ID used by the LMS at AU launch time.
 <BR>
 <BR>
 
-<a id="lms_statement_api_requirements"/>
+<a id="lms_statement_api_requirements"/>  
 ##6.3 LMS Statement API Requirements
 
 Prior to launching a learning activity, the LMS shall create a Statement API record in its
@@ -381,7 +387,7 @@ LRS to …..
 Set Collateral Credit  
 
 
-<a id="au_requirements"/>
+<a id="au_requirements"/>  
 #7.0 AU Requirements
 
 AU’s shall meet the following requirements to conform to this specification:
@@ -397,7 +403,7 @@ section __________ .
 6. The AU shall implement additional XAPI “Activity Profile API” requirements as defined
 in section __________ .
 
-<a id="au_state_api_requirements"/>
+<a id="au_state_api_requirements"/>  
 ##7.1 AU State API Requirements
 
 The AU should retrieve the following the State API documents from the LRS recorded by the
@@ -416,10 +422,10 @@ Shall match Registration ID used by the LMS at AU launch time.
 
 
 
-<a id="au_statement_api_requirements"/>
+<a id="au_statement_api_requirements"/>  
 ##7.2 AU Statement API Requirements
 
-<a id="placement"/>
+<a id="placement"/>  
 ###7.2.1 Placement of session_id in Statements
 
 The AU shall retrieve the value of session\_id at launch time as specified in Section 8
@@ -440,7 +446,7 @@ Example:
      }
 ```
 
-<a id="first_statement_au"/>
+<a id="first_statement_au"/>  
 ###7.2.2 First Statement API Call
 
 The AU should issue a statement to the LRS after being launched, initialized, and ready
@@ -457,7 +463,7 @@ Example Statement:
      {
      }
 ```
-<a id="last_statement_au"/>
+<a id="last_statement_au"/>  
 ###7.1.2 Last Statement Call
 
 The AU shall issue a statement to the LRS after being launched, initialized, and ready for
@@ -474,10 +480,10 @@ Example Statement:
      {
      }
 ```
-<a id="content_launch"/>
+<a id="content_launch"/>  
 #8.0 Content Launch Mechanisms
 
-<a id="browser_environment"/>
+<a id="browser_environment"/>  
 ##8.1 Web (Browser) Environment
 
 ###8.1.1 Launch Method
@@ -608,7 +614,7 @@ The values for the URL launch parameters are described below:
 <BR>
 <BR>
 
-<a id="other_environment"/>
+<a id="other_environment"/>  
 ##8.3 Other Launch Environments
 
 Other launch environments are not currently implemented in this specification. The
@@ -625,9 +631,11 @@ CMI-5 implementations for LMS’s and AU’s in these other environments will us
 REST communication interface as specified in XAPI specification.  The XAPI specification
 does not specify launch mechanisms.
 
+<a name="xapi_data_model"/>  
+#9.0 XAPI Data Model  
 
-<a id="verbs"/> 
-#9.0 Verbs
+<a id="verbs"/>  
+##9.1 Verbs  
 
 The following are XAPI verbs that are specific to this specification.
 
@@ -638,7 +646,6 @@ AU’s may use additional verbs not listed in this specification.
 
 LMS system shall record and provide reporting for all statements regardless of which verbs
 AU’s use in statement.  
-
 
 __Launched__
 
@@ -661,8 +668,27 @@ not be recording any more statements for the launch session.
 * This is a mandatory verb.  
 * The AU shall use this verb as defined in section _____  
 
+<BR/>
+<BR/>
+<a name="activity_types"/> 
+##9.2 Activity Types
 
-<a id="bibliography"/> 
+<a name="extensions"/> 
+##9.3 Extensions
+
+ __Progress__ 
+http://www.aicc.org/cmi5/extensions/result/progress
+ * An extension to the statement result.
+ * The completion of the AU as a percentage.
+ * This is an optional extension.
+ * Contains an integer between 0 and 100. 
+
+ 
+<a name="documents"/> 
+##9.4 Documents 
+
+
+<a id="bibliography"/>   
 #10.0 Bibliography
 
 [1]  AICC CMI001, CMI Guidelines For Interoperability, Version 4.0. 
@@ -673,7 +699,7 @@ not be recording any more statements for the launch session.
 
 -------
 
-<a id="license_agreement"/> 
+<a id="license_agreement"/>   
 #License Agreement
 
 THE WORK (AS DEFINED HEREIN) ACCOMPANYING THIS LICENSE AGREEMENT ("AGREEMENT") IS PROVIDED
