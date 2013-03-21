@@ -25,7 +25,7 @@ license agreement contained within it.
 
 # Table of Contents
 
-[__Revision History__](#revhistory)  
+[__Revision History__](#revhistory)	
 [__Contributors__](#contributors)  
 
 
@@ -58,7 +58,7 @@ license agreement contained within it.
 
 ------
 
-<a id="revhistory"/>    
+<a id="revhistory"/>	
 ## Revision History
 __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__  
 
