@@ -52,7 +52,12 @@ license agreement contained within it.
 [__8 Content Launch Mechanisms__](#content_launch)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
-[__9.0 Verbs__](#verbs)  
+[__9.0 XAPI Data Model__](#xapi_data_model)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)
+&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents) 
+
 [__10.0 Bibliography__](#bibliography)  
 
 [__License Agreement__](#license_agreement)  
@@ -626,9 +631,11 @@ CMI-5 implementations for LMS’s and AU’s in these other environments will us
 REST communication interface as specified in XAPI specification.  The XAPI specification
 does not specify launch mechanisms.
 
+<a name="xapi_data_model"/>  
+#9.0 XAPI Data Model  
 
 <a id="verbs"/>  
-#9.0 Verbs
+##9.1 Verbs  
 
 The following are XAPI verbs that are specific to this specification.
 
@@ -639,7 +646,6 @@ AU’s may use additional verbs not listed in this specification.
 
 LMS system shall record and provide reporting for all statements regardless of which verbs
 AU’s use in statement.  
-
 
 __Launched__
 
@@ -661,6 +667,25 @@ __Exited__
 not be recording any more statements for the launch session.
 * This is a mandatory verb.  
 * The AU shall use this verb as defined in section _____  
+
+<BR/>
+<BR/>
+<a name="activity_types"/> 
+##9.2 Activity Types
+
+<a name="extensions"/> 
+##9.3 Extensions
+
+ __Progress__ 
+http://www.aicc.org/cmi5/extensions/result/progress
+ * An extension to the statement result.
+ * The completion of the AU as a percentage.
+ * This is an optional extension.
+ * Contains an integer between 0 and 100. 
+
+ 
+<a name="documents"/> 
+##9.4 Documents 
 
 
 <a id="bibliography"/>   
