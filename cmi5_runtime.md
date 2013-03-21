@@ -99,6 +99,7 @@ All previous work from 2012 discarded.
 	<tr><td>Chris Sawwa</td><td>Meridian Knowledge Systems</td></tr>
 	<tr><td>Michael Roberts</td><td>VTraining Room</td></tr>
 	<tr><td>Thomas Person</td><td>(Formerly of Adobe)</td></tr>
+	<tr><td>Andrew Downes</td><td>Epic Learning</td></tr>
 </table> 
 
 -------
