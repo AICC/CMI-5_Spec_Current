@@ -55,7 +55,7 @@ license agreement contained within it.
 [__9.0 XAPI Data Model__](#xapi_data_model)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)
 &nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents) 
 
 [__10.0 Bibliography__](#bibliography) 
