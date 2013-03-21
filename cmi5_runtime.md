@@ -152,11 +152,14 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Administrator__: The administrative user that manages the LMS and related systems.
 Such a user performs tasks such as learner enrollment, course structure definition, and
-report management.
+report management. 
 
-* __Course__: A collection of assignable units, in a logical grouping, of learning
-content. A course is typically an internal data structure. Courses are often assigned to
-learners and tracked by the LMS.
+* __Assignable Unit (AU)__:  A learning presentation launched from an
+LMS. The AU is the unit of tracking and management. The AU collects data on the learner
+and sends it to the LMS system. An Learning Activity Provider maps to a single AU.  
+
+* __Course__: A collection of assignable units, in a logical grouping. A course is typically 
+an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied
 sequence, representing a course. Experience API (XAPI): XAPI is a runtime data
@@ -166,9 +169,8 @@ and the data model.
 
 * __Learner__: The end user viewing/using the learning content (Learning Activity).
 
-* __Assignable Unit (AU)__:  A learning content activity/presentation launched from an
-LMS. The AU is the unit of tracking and management. The AU collects data on the learner
-and sends it to the LMS system.
+* __Learning Activity Provider (AP)__:  Learning Activity Provider (AP) as defined in the
+XAPI specification.
 
 * __Learning Management System (LMS)__: A computer system that may include the
 capabilities to register learners, launch learning presentations, analyze and report
