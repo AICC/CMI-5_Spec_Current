@@ -49,18 +49,18 @@ license agreement contained within it.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.2.1 Placement of session_id in Statements](#placement)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.2.2 First Statement API Call](#first_statement_au)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1.2 Last Statement Call](#last_statement_au)  
-[__8 Content Launch Mechanisms__](#content_launch)  
+[__8.0 Content Launch Mechanisms__](#content_launch)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
 [__9.0 XAPI Data Model__](#xapi_data_model)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#91-verbs)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)
-&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents) 
+&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents)  
 
 [__10.0 Bibliography__](#bibliography) 
 
-[__License Agreement__](#license_agreement) 
+[__License Agreement__](#license_agreement0 
 
 ------
 
@@ -634,7 +634,7 @@ does not specify launch mechanisms.
 <a name="xapi_data_model"/>  
 #9.0 XAPI Data Model  
 
-<a id="verbs"/>  
+<a id="verbs" /> 
 ##9.1 Verbs  
 
 The following are XAPI verbs that are specific to this specification.
