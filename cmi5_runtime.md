@@ -58,9 +58,9 @@ license agreement contained within it.
 &nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents) 
 
-[__10.0 Bibliography__](#bibliography)  
+[__10.0 Bibliography__](#bibliography) 
 
-[__License Agreement__](#license_agreement)  
+[__License Agreement__](#license_agreement) 
 
 ------
 
