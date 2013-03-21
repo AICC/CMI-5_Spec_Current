@@ -60,7 +60,7 @@ license agreement contained within it.
 
 [__10.0 Bibliography__](#bibliography) 
 
-[__License Agreement__](#license_agreement0 
+[__License Agreement__](#license_agreement)
 
 ------
 
@@ -137,11 +137,12 @@ The following referenced documents are indispensable for the application of this
 specification. 
 
 RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
-“Experience API”, Version 0.95, ADL, 19 Oct 2012  
-<http://www.adlnet.gov/wp-content/uploads/2012/11/Experience-API-Release-v0.95.pdf>
 
-CMI5-xxx  – LMS Course Structure, Version 1.0, AICC,  Sept 2013
+“Experience API”, curent working draft, ADL, 2012-2013  
+<https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md>
 
+CMI5-002  – LMS Course Structure, curent working draft, AICC, 2013  
+<https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md>
 
 
 
