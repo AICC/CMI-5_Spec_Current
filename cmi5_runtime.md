@@ -49,18 +49,18 @@ license agreement contained within it.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.2.1 Placement of session_id in Statements](#placement)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.2.2 First Statement API Call](#first_statement_au)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1.2 Last Statement Call](#last_statement_au)  
-[__8 Content Launch Mechanisms__](#content_launch)  
+[__8.0 Content Launch Mechanisms__](#content_launch)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
 [__9.0 XAPI Data Model__](#xapi_data_model)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#91-verbs)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents) 
+&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents)  
 
-[__10.0 Bibliography__](#bibliography)  
+[__10.0 Bibliography__](#bibliography) 
 
-[__License Agreement__](#license_agreement)  
+[__License Agreement__](#license_agreement0 
 
 ------
 
@@ -152,11 +152,14 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Administrator__: The administrative user that manages the LMS and related systems.
 Such a user performs tasks such as learner enrollment, course structure definition, and
-report management.
+report management. 
 
-* __Course__: A collection of assignable units, in a logical grouping, of learning
-content. A course is typically an internal data structure. Courses are often assigned to
-learners and tracked by the LMS.
+* __Assignable Unit (AU)__:  A learning presentation launched from an
+LMS. The AU is the unit of tracking and management. The AU collects data on the learner
+and sends it to the LMS system. An Learning Activity Provider maps to a single AU.  
+
+* __Course__: A collection of assignable units, in a logical grouping. A course is typically 
+an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied
 sequence, representing a course. Experience API (XAPI): XAPI is a runtime data
@@ -166,9 +169,8 @@ and the data model.
 
 * __Learner__: The end user viewing/using the learning content (Learning Activity).
 
-* __Assignable Unit (AU)__:  A learning content activity/presentation launched from an
-LMS. The AU is the unit of tracking and management. The AU collects data on the learner
-and sends it to the LMS system.
+* __Learning Activity Provider (AP)__:  Learning Activity Provider (AP) as defined in the
+XAPI specification.
 
 * __Learning Management System (LMS)__: A computer system that may include the
 capabilities to register learners, launch learning presentations, analyze and report
@@ -634,7 +636,7 @@ does not specify launch mechanisms.
 <a name="xapi_data_model"/>  
 #9.0 XAPI Data Model  
 
-<a id="verbs"/>  
+<a id="verbs" /> 
 ##9.1 Verbs  
 
 The following are XAPI verbs that are specific to this specification.
