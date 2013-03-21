@@ -653,12 +653,14 @@ LMS system shall record and provide reporting for all statements regardless of w
 AU’s use in statement.  
 
 __Launched__
+http://www.aicc.org/cmi5/verbs/launched
 
 * This is a mandatory verb.  
 * The verb “Launched” indicates that the AU was launched by the LMS.
 * The LMS shall use this verb as defined in section _____
 
 __Started__
+http://www.aicc.org/cmi5/verbs/started
 
 * This is an optional verb.  
 * The verb “Started” indicates AU has started.
@@ -667,6 +669,7 @@ initialized and ready for learner interaction. If used, the AU shall include thi
 the first XAPI Statements it records after being launched.
 
 __Exited__
+http://www.aicc.org/cmi5/verbs/exited
 
 * The verb “Exited” indicates that the AU was exited by the Learner and that the AU will
 not be recording any more statements for the launch session.
