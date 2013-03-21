@@ -25,8 +25,9 @@ license agreement contained within it.
 
 # Table of Contents
 
-[__Revision History__](#revhistory)	
-[__Contributors__](#contributors)  
+[__Revision History__](#revhistory)  
+
+[__Contributors__](#contributors)   
 
 
 [__1.0 Overview__](#overview)  
