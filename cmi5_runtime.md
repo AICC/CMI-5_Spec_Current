@@ -705,7 +705,7 @@ a user gained is not guaranteed by progress.
 __Commented__
 
 * Can be used with the learner as the actor or a system as an actor.  Comments can be sent from 
-either party with the idea that the other will read and react to the contnet.
+either party with the idea that the other will read and react to the content.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
