@@ -663,17 +663,17 @@ not be recording any more statements for the launch session.
 
 __Passed__
 
-* Used to affirm the success a learner experienced within the learning content in relation
+* Used to report the success a learner experienced within the AU in relation
 to a threshold.  If the user performed at a minimum to the level of this threshold, the 
-content is “passed”.  The opposite of “failed”.
+verb in the statement shall be “passed”.  The opposite of “failed”.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
 __Failed__
 
-* Used to affirm the lack of success a learner experienced within the learning content in 
-relation to a threshold.  If the user performed below the minimum to the level of this 
-threshold, the content is “failed”.  The opposite of “passed”.
+* Used to report the lack of success a learner experienced within the AU in 
+relation to a threshold.  If the user performed below the minimum passing
+threshold, the verb in the statement shall be “failed”.  The opposite of “passed”.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
