@@ -679,10 +679,12 @@ threshold, the verb in the statement shall be “failed”.  The opposite of “
 
 __Completed__
 
-* Used to affirm the completion of content.  This can be simply experiencing all the content,
-be tied to objectives or interactions, or determined in any other way.  Any content that has 
-been started, but not yet completed, should be considered incomplete.  There is no verb to 
-“incomplete” an activity, one would void the statement which completes the activity.
+* Used to report the completion of content.  This can be simply experiencing all the content,
+be tied to objectives or interactions, or determined in any other way.  If the content has been
+experienced to the level of satisfaction of the developer, the reporting statement's verb shall
+be "complted" Any content that has been started, but not yet completed, should be considered 
+incomplete.  There is no verb to “incomplete” an activity.  To achieve such behavior in statement
+reporting, one would void the statement which completes the activity.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
