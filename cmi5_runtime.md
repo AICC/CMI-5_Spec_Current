@@ -690,41 +690,47 @@ reporting, one would void the statement which completes the activity.
 
 __Mastered__
 
-* Used to describe a level of competence achieved in the activity.  The level should be within
-the range of a defined scale.  This is not to be confused with “progressed”, which shows how 
-much content was experienced, whereas mastery has to do with level of expertise.
+* Used to report a level of competence achieved in the activity.  The level should be within
+the range of a defined scale, which should be referenced in the statement.  This is not to be 
+confused with “progressed”, which reports how much content was experienced, whereas mastery 
+has to do with level of expertise.  Any statement reporting mastery must use the verb "mastered".
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
 __Progressed__
 
-* A value, typically within a scale of progression, to how much of an activity has been 
-accomplished.  This is not to be confused with “mastered”, as the level of success or competency 
-a user gained is not guaranteed by progress.
+* Used to report a level of progress, typically within a scale of progression, to how much of 
+an activity has been accomplished.  This is not to be confused with “mastered”, as the level 
+of success or competency a user gained is not guaranteed by progress.  Any statement reporting
+progression must use the verb "progressed".
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
 __Commented__
 
-* Can be used with the learner as the actor or a system as an actor.  Comments can be sent from 
-either party with the idea that the other will read and react to the content.
+* The commented verb may be used with the learner as the actor or a system as an actor.  
+* Comments can be sent from either party with the idea that the other will read and react to 
+* the comment. Any statement that may be seen as a comment should use the "commented" verb.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
 __Resumed__
 
-* Used to resume suspended attempts on an activity.  Should immediately follow a statement with 
-initialized if the attempt is indeed to be resumed. The absence of a resumed statement implies 
-a fresh attempt on the activity.  Can only be used on an activity that used a suspended statement.
+* Used to report the resuming of suspended AU.  If used, a statement with the verb "resumed" 
+* immediately follow a statement with the verb "initialized" if the attempt is indeed to be resumed. 
+ The State API contains the data to determine whether a new attempt is being made or if a previous
+ attempt is being resumed.  The absence of a "resumed" statement implies a fresh attempt on the 
+ AU.  Shall only be used on an activity that used a "suspended" statement.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
 __Suspended__
 
-* Used to suspend an activity with the intention of returning to it later, but not losing progress.
-Should appear immediately before a statement with the exited verb.  A statement with EITHER exited OR 
-suspended should be used before one with exited.  Lack of the two implies the same as exited.
-Beginning the suspended activity will always result in a resumed activity.
+* Used to report the intent of leaving an AU in a suspended state and thus not lose progress.  
+The State API contains the data to determine whether a new attempt is being made or if a previous 
+attempt shall be resumed.  If used, should appear immediately before a statement with the "exited" verb.  
+Lack of a statement with the verb "suspended" implies the attempt will not be resumed.
+Launching the suspended activity shall result in a resumed activity.
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
