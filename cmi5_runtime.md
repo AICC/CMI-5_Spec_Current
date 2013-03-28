@@ -744,7 +744,7 @@ question 1 with result “response=”4”” would alleviate the need to identi
 * This is an optional verb.  
 * The AU shall use this verb as defined in section _____  
 
-__Responded__
+__Answered__
 
 * Used to respond to a question.  Must follow a statement with asked or another statement with a 
 responded (the top statement with responded) must follow the “asking” statement.  The response to 
