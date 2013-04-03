@@ -100,6 +100,7 @@ All previous work from 2012 discarded.
 	<tr><td>Michael Roberts</td><td>VTraining Room</td></tr>
 	<tr><td>Thomas Person</td><td>(Formerly of Adobe)</td></tr>
 	<tr><td>Andrew Downes</td><td>Epic Learning</td></tr>
+	<tr><td>Henry Ryng</td><td>inXsol</td></tr>
 </table> 
 
 -------
@@ -251,9 +252,9 @@ Synopsis of the CMI-5 model:
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or related system.
 * A learner launches an Assignable Unit (learning content) from the LMS or associated
-launching system, user an interface.
-* The learning activity sends a message to the LMS requesting launch parameters and
-previous state information.
+launching system.
+* The learning activity sends a message to the LMS requesting launch parameters and recovers
+previous state information from the LRS.
 * Learner views the learning activity content and performs the learning. During this time
 the learning activity may request and store data.
 * The learner exits the learning activity.
@@ -286,7 +287,7 @@ LMS systems shall meet the following requirements to conform to this specificati
 1. The LMS shall implement a LRS as defined in the XAPI Specification.  
 2. The LMS shall implement a means to create and edit course structures as defined in
 section 6.1 Course structures.  
-3. The LMS shall implement additional “State API” requirements to initialize LA state as
+3. The LMS shall implement additional “State API” requirements to initialize AU state as
 defined in section 6.2 LMS State API Requirements.  
 4. The LMS shall implement the runtime launch interface as defined in section 8.0 Content
 Launch Mechanisms.  
