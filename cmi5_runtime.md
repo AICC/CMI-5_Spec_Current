@@ -164,7 +164,8 @@ and sends it to the LMS system. An Learning Activity Provider maps to a single A
 an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied
-sequence, representing a course. Experience API (XAPI): XAPI is a runtime data
+sequence, representing a course. 
+* __Experience API (XAPI)__: XAPI is a runtime data
 communication specification for learning content (AU) to send and receive data to an LRS.
 The XAPI specification is referenced by this document is used to define the data transport
 and the data model. 
@@ -251,11 +252,11 @@ Synopsis of the CMI-5 model:
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or related system.
 * A learner launches an Assignable Unit (learning content) from the LMS or associated
-launching system, user an interface.
-* The learning activity sends a message to the LMS requesting launch parameters and
+launching system, using an interface.
+* The learning activity (AU) sends a message to the LMS requesting launch parameters and
 previous state information.
-* Learner views the learning activity content and performs the learning. During this time
-the learning activity may request and store data.
+* The learner views the learning activity content and performs the learning. During this time
+the learning activity may request data from and store data to the LMS.
 * The learner exits the learning activity.
 * The learning activity reports final tracking data to the LMS and issues an exit message.
 * Administrative users create and view reports of tracking data recorded by learning
@@ -266,15 +267,15 @@ Responsibilities of the Assignable Unit:
 * Parse the parameters from the launching environment to determine where the LMS location
 is and initiate communication with the LMS.
 * Acting as “client”, send and receive messages using the defined transport mechanism(s)
-and associate commands as prescribed in this specification.
+and associated commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Send an “exit” message prior to terminating the learning activity’s execution.
 
 Responsibilities of the LMS:
 
-* Create and maintain course structures
+* Create and maintain course structures.
 * Acting as a “server”, receive and reply to messages using the defined transport
-mechanism(s) and associate commands as prescribed in this specification.
+mechanism(s) and associated commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Launch the specified learning activity contained in courses, in the defined environment(s).
 
@@ -309,7 +310,7 @@ The LMS shall implement a means to create and maintain course structures.
 The LMS shall implement the creation and editing of course structures by one of the
 following methods:
 
-1. Implementing the import of CMI-5 course structure data defined in CMI5-xxx
+1. Implementing the import of CMI-5 course structure data defined in CMI5-xxx.
 2. Provide a user interface to LMS administrative users to create and edit course
 structures.
 
