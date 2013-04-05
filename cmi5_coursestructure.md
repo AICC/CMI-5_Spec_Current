@@ -137,7 +137,7 @@ For purposes of this specification, the following terms and definitions apply:
 * __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a course.  
-Experience API (XAPI): XAPI is a runtime data communication specification for learning content (AU) to send and receive data to an LRS.  The XAPI specification is referenced by this document is used to define the data transport and the data model. 
+* __Experience API (XAPI)__: XAPI is a runtime data communication specification for learning content (AU) to send and receive data to an LRS.  The XAPI specification is referenced by this document is used to define the data transport and the data model. 
 
 * __Learner__: The end user viewing/using the learning content (Learning Activity).
 
@@ -197,22 +197,22 @@ Synopsis of the CMI-5 model:
 * An LMS imports a course structure.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or related system.
-* A learner launches an Assignable Unit (learning content) from the LMS or associated launching system, user an interface.
-* The learning activity sends a message to the LMS requesting launch parameters and previous state information.
-* Learner views the learning activity content and performs the learning. During this time the learning activity may request and store data.
+* A learner launches an Assignable Unit (learning content) from the LMS or associated launching system, using an interface.
+* The learning activity (AU) sends a message to the LMS requesting launch parameters and previous state information.
+* The learner views the learning activity content and performs the learning. During this time the learning activity may request data from and store data to the LMS.
 * The learner exits the learning activity.
 * The learning activity reports final tracking data to the LMS and issues an exit message.
 * Administrative users create and view reports of tracking data recorded by learning activities for individual learners.
 
 Responsibilities of the Assignable Unit:
-* Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
-* Acting as “client”, send and receive messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
+* Parse the parameters from the launching environment to determine the LMS location and initiate communication with the LMS.
+* Acting as “client”, send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Send an “exit” message prior to terminating the learning activity’s execution.
 
 Responsibilities of the LMS:
 * Create and maintain course structures
-* Acting as a “server”, receive and reply to messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
+* Acting as a “server”, receive and reply to messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Launch the specified learning activity contained in courses, in the defined environment(s).
 
@@ -226,11 +226,12 @@ LMS systems shall meet the following requirements to conform to this specificati
 
 <a name="course_structures"/>
 ##6.1 Course structure requirements
-The LMS shall implement a means to create and maintain course structures.  
-The LMS shall implement the import of the course data structure defined in section 7.
-The LMS shall implement the export of the course data structure defined in section 7.
-The LMS should provide a user interface to LMS administrative users to create and edit course structures internally
-The LMS shall have the ability to create, maintain,import, and export course structures containing more than 1000 AU’s.
+The LMS shall implement a means to create and maintain course structures.
+
+1. The LMS shall implement the import of the course data structure defined in section 7.
+2. The LMS shall implement the export of the course data structure defined in section 7.
+3. The LMS should provide a user interface to LMS administrative users to create and edit course structures internally.
+4. The LMS shall have the ability to create, maintain,import, and export course structures containing more than 1000 AU’s.
 
 <BR>
 <BR>
@@ -502,11 +503,11 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 					<xs:sequence>
 						<xs:element name="Title" minOccurs="1" max-Occurs="1"/>
 						<xs:element name="Description" minOccurs="1" maxOccurs="1"/>
-						<xs:element name="CourseIdentifier" minOc-curs="1" maxOccurs="1"/>
+						<xs:element name="CourseIdentifier" minOccurs="1" maxOccurs="1"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="Block" type="BlockType" minOccurs="1" max-Occurs="1"/>
+			<xs:element name="Block" type="BlockType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BlockType">
@@ -543,15 +544,15 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 			<xs:element name="ActivityID" minOccurs="1" maxOccurs="1"/>			
 			<xs:element name="Title" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="URL" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="LaunchParameters" minOccurs="1" max-Occurs="1"/>
-			<xs:element name="LaunchMethod" minOccurs="1" max-Occurs="1"/>
-			<xs:element name="AuthenticationMethod" minOccurs="1" max-Occurs="1"/>
-			<xs:element name="EntitlementKey" minOccurs="1" max-Occurs="1"/>
+			<xs:element name="LaunchParameters" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LaunchMethod" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="AuthenticationMethod" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="EntitlementKey" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Description" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="Objectives" minOccurs="0" max-Occurs="unbounded">
+			<xs:element name="Objectives" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Objective" max-Occurs="unbounded">
+						<xs:element name="Objective" maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="ObjectiveID"/>
