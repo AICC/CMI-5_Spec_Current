@@ -500,13 +500,13 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 			<xs:element name="Course" minOccurs="1" maxOccurs="1">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Title" minOccurs="1" max-Occurs="1"/>
+						<xs:element name="Title" minOccurs="1" maxOccurs="1"/>
 						<xs:element name="Description" minOccurs="1" maxOccurs="1"/>
 						<xs:element name="CourseIdentifier" minOc-curs="1" maxOccurs="1"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="Block" type="BlockType" minOccurs="1" max-Occurs="1"/>
+			<xs:element name="Block" type="BlockType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BlockType">
@@ -543,15 +543,15 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 			<xs:element name="ActivityID" minOccurs="1" maxOccurs="1"/>			
 			<xs:element name="Title" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="URL" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="LaunchParameters" minOccurs="1" max-Occurs="1"/>
-			<xs:element name="LaunchMethod" minOccurs="1" max-Occurs="1"/>
-			<xs:element name="AuthenticationMethod" minOccurs="1" max-Occurs="1"/>
-			<xs:element name="EntitlementKey" minOccurs="1" max-Occurs="1"/>
+			<xs:element name="LaunchParameters" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LaunchMethod" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="AuthenticationMethod" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="EntitlementKey" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Description" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="Objectives" minOccurs="0" max-Occurs="unbounded">
+			<xs:element name="Objectives" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Objective" max-Occurs="unbounded">
+						<xs:element name="Objective" maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="ObjectiveID"/>
@@ -567,7 +567,7 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 	</xs:complexType>
 	<xs:complexType name="ObjectivesType">
 		<xs:sequence>
-			<xs:element name="Objective" minOccurs="1" max-Occurs="unbounded">
+			<xs:element name="Objective" minOccurs="1" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="ObjectiveID" minOccurs="1" maxOccurs="1"/>
