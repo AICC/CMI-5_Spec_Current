@@ -137,11 +137,12 @@ For purposes of this specification, the following terms and definitions apply:
 * __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a course.  
-Experience API (XAPI): XAPI is a runtime data communication specification for learning content (AU) to send and receive data to an LRS.  The XAPI specification is referenced by this document is used to define the data transport and the data model. 
+
+* __Experience API (XAPI)__: XAPI is a runtime data communication specification for learning content (AU) to send and receive data to an LRS.  The XAPI specification is referenced by this document is used to define the data transport and the data model. 
 
 * __Learner__: The end user viewing/using the learning content (Learning Activity).
 
-* __Assignable Unit (AU)__:  A learning content activity/presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS system.
+* __Assignable Unit (AU)__:  A learning content presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS system.
 
 * __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the CMI5 specification.  The LMS shall have an LRS as part of its implementation.
 
@@ -197,22 +198,22 @@ Synopsis of the CMI-5 model:
 * An LMS imports a course structure.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or related system.
-* A learner launches an Assignable Unit (learning content) from the LMS or associated launching system, user an interface.
-* The learning activity sends a message to the LMS requesting launch parameters and previous state information.
-* Learner views the learning activity content and performs the learning. During this time the learning activity may request and store data.
+* A learner launches an Assignable Unit (learning content) from the LMS or associated launching system, using an interface.
+* The learning activity (AU) sends a message to the LMS requesting launch parameters and previous state information.
+* Learner views the learning activity content and performs the learning. During this time the learning activity may request data from and store data to the LMS.
 * The learner exits the learning activity.
 * The learning activity reports final tracking data to the LMS and issues an exit message.
 * Administrative users create and view reports of tracking data recorded by learning activities for individual learners.
 
 Responsibilities of the Assignable Unit:
 * Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
-* Acting as “client”, send and receive messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
+* Acting as “client”, send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Send an “exit” message prior to terminating the learning activity’s execution.
 
 Responsibilities of the LMS:
-* Create and maintain course structures
-* Acting as a “server”, receive and reply to messages using the defined transport mechanism(s) and associate commands as prescribed in this specification.
+* Create and maintain course structures.
+* Acting as a “server”, receive and reply to messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Launch the specified learning activity contained in courses, in the defined environment(s).
 
