@@ -466,7 +466,16 @@ verb “Started” shall only be used in this manner by the AU.
 Example Statement:
 
 ```javascript
-     {
+     {"id": "12345678-1234-5678-1234-567812345678",
+      "actor":{
+	 "mbox":"mailto:userinlms@aicc.org"
+	},
+	"verb":{
+	 "id":"http:www.aicc.org/cmi5/started"
+        }
+        "object":{
+         "id":"http://example.aic.org/activity"
+	}
      }
 ```
 <a id="last_statement_au"/>  
