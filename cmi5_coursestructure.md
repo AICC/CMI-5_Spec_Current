@@ -572,7 +572,7 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="ObjectiveID" minOccurs="1" maxOccurs="1"/>
-						<xs:element name="ObjectiveTitle" minOc-curs="1" maxOccurs="1"/>
+						<xs:element name="ObjectiveTitle" minOccurs="1" maxOccurs="1"/>
 						<xs:element name="ObjectiveDescription" minOccurs="1" maxOccurs="1"/>
 					</xs:sequence>
 				</xs:complexType>
