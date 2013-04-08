@@ -471,7 +471,7 @@ Example Statement:
 	 "mbox":"mailto:userinlms@aicc.org"
 	},
 	"verb":{
-	 "id":"http:www.aicc.org/cmi5/started"
+	 "id":"http:www.aicc.org/cmi5/verbs/started"
         }
         "object":{
          "id":"http://example.aic.org/activity"
