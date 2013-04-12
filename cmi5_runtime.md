@@ -351,8 +351,33 @@ activityid, agent, registration, and stated.
 
 __State Document Format__: Application/JSON  
 
-__State Document Content__: Launch parameter data specific to the AU from the course
-structure.  
+__State Document Content__: The properties for the LMS.LaunchData document are described
+below.
+
+<table>
+  <tr>
+    <td width="100%" valign="top"><h3><a id="_Toc349195678" id="_Toc349195678">context</a></h3></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="top"><p><strong>Description: </strong>Context template for the
+    AU being launched.<strong></strong><br />
+      <strong>LMS Required: </strong>Yes<br />
+      <strong>AU: Required:</strong> Yes<br />
+      <strong>LMS Usage:  </strong>LMS shall include a context template and place the value
+for <strong><em>session_id</em></strong> in the extension "http://www.aicc.org/cmi-5/extensions/session"
+in the context object's extension collection, based on the definition of the AU in the course
+structure.<br />
+      <strong>AU Usage: </strong>AU shall get the <strong><em>context</em></strong> value 
+      from the LMS.LaunchData state document. AU shall use the <strong><em>context</em></strong>
+      object as a template context object in all statements it records to the LMS,
+      and may include additional values in the context objects of such statements,
+      but shall not overwrite any values provided in the context template. NOTE:
+      this will include the session_id specified by the LMS.<br />
+      <strong>Data type: </strong>JSON context object as defined in xApi 1.0<br />
+      <strong>Value space:</strong> LMS implementation specific<br />
+      <strong>Sample value:</strong></p></td>
+  </tr>
+</table>
 
 __State API PUT Properties__:
 
@@ -534,7 +559,6 @@ The format of the launching URL is as follows:
 &actor=<Actor Object>
 &registration=<Registration ID>
 &activity_id=<AU activity ID>
-&session_id=<LMS defined Session ID>
 ```
 
 Example:
@@ -546,7 +570,6 @@ http://la.cmi5.aicc.org/LA1/Start.html
 &actor={ "name" : ["Skip Winger"], "mbox" : ["mailto:skipper@skyhiair.com"] }
 &registration=760e3480-ba55-4991-94b0-01820dbd23a2
 &activity_id=http://example.AU-content.com/example/001/statement
-&session_id=wxyz123
 ```
 
 The values for the URL launch parameters are described below: 
@@ -610,19 +633,6 @@ The values for the URL launch parameters are described below:
       <strong>AU Usage: </strong>AU    shall get the <strong><em>activity_id</em></strong> value from the query string. AU shall use the <strong><em>activity_id</em></strong> value in API calls that require an “activity id” when sending XAPI messages.<strong></strong><br />
       <strong>Data type: </strong>String    (URL-encoded)<br />
       <strong>Value space:</strong> UUID (as defined in the XAPI specification)<br />
-      <strong>Sample value:</strong></p></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><h3><a id="_Toc349195678" id="_Toc349195678">session_id</a></h3></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><p><strong>Description: </strong>The    session ID of the AU being launched.<strong></strong><br />
-      <strong>LMS Required: </strong>Yes<br />
-      <strong>AU: Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS shall place the value for <strong><em>session_id</em></strong> in the query string based on the definition of the AU in the course    structure.<strong>  </strong><br />
-      <strong>AU Usage: </strong>AU    shall get the <strong><em>session _id</em></strong> value from the query string. AU shall place the <strong><em>session    _id</em></strong> value in Statement API calls.     The<strong><em> session _id </em></strong>value shall be placed in the content extensions    of a statement.<strong></strong><br />
-      <strong>Data type: </strong>String    (URL-encoded)<br />
-      <strong>Value space:</strong> LMS implementation specific<br />
       <strong>Sample value:</strong></p></td>
   </tr>
 </table>
