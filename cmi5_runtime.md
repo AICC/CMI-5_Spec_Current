@@ -23,7 +23,7 @@ license agreement contained within it.
 ----
 
 
-# Table of Contents
+## Table of Contents
 
 [__Revision History__](#revhistory)  
 
@@ -53,7 +53,7 @@ license agreement contained within it.
 &nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
 [__9.0 XAPI Data Model__](#xapi_data_model)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#91-verbs)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents)  
@@ -64,8 +64,10 @@ license agreement contained within it.
 
 ------
 
-<a id="revhistory"/>	
+
+<a name="revhistory"></a>	
 ## Revision History
+
 __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__  
 
 Converted existing working draft to markdown format from Microsoft Word.
@@ -73,7 +75,7 @@ Converted existing working draft to markdown format from Microsoft Word.
 All previous work from 2012 discarded.
 
 
-<a id="contributors"/> 
+<a id="contributors"></a> 
 ##Contributors
 
 <table>
@@ -105,14 +107,14 @@ All previous work from 2012 discarded.
 
 -------
 
-<a id="overview"/>  
+<a id="overview"></a>  
 #1.0 Overview
 
 
 This specification describes interoperable runtime communication between Learning
 Management Systems (LMS) and Learning Activities.
 
-<a id="scope"/>  
+<a id="scope"></a>  
 ##1.1 Scope
 
 The scope of this specification is limited to following:
@@ -131,7 +133,7 @@ Uses of Learning Activities and LMS systems not explicitly defined in this speci
 are outside of the scope of this specification.
 
 
-<a id="references"/>  
+<a id="references"></a> 
 #2.0  References
 
 The following referenced documents are indispensable for the application of this
@@ -147,7 +149,7 @@ CMI5-002  – LMS Course Structure, curent working draft, AICC, 2013
 
 
 
-<a id="definitions"/>   
+<a id="definitions"></a>   
 #3.0 Definitions  
 
 
@@ -186,7 +188,7 @@ specification, the LMS shall implement an LRS with additional requirements as sp
 this document.
 
 
-<a id="acronyms"/>  
+<a id="acronyms"></a> 
 ##3.1 Abbreviations and Acronyms
 <BR>
 __ADL__: Advanced Distributed Learning  
@@ -203,7 +205,7 @@ __XAPI__: Experience API
 <BR>
 
 
-<a id="conformance"/>  
+<a id="conformance"></a>  
 #4.0  Conformance
 
 Conformance to this specification is defined in section. 
@@ -220,7 +222,7 @@ the specification; “need not” indicates a course of action that is not requi
 Uses of XAPI specification outside the scope this specification do not affect conformance
 with this specification.
 
-<a id="au_conformance"/>  
+<a id="au_conformance"></a> 
 ##4.1 Assignable Unit (AU)
 
 An Assignable Unit shall conform to all requirements listed in Section 7 – AU Requirements
@@ -231,7 +233,7 @@ specification (see References)
 An Assignable Unit shall not implement any features or functionality (optional or
 mandatory) described in this specification in a non-conforming manner.
 
-<a id="lms_conformance"/>  
+<a id="lms_conformance"></a> 
 ##4.2 Learning Management Systems (LMS)
 
 LMS systems shall conform to all requirements listed in Section 6 – LMS Requirements.
@@ -243,7 +245,7 @@ The LMS shall not implement any features or functionality (optional or mandatory
 described in this specification in a non-conforming manner.
 
 
-<a id="concept"/>  
+<a id="concept"></a> 
 #5.0 Conceptual Model: Informative  
 
 Synopsis of the CMI-5 model:
@@ -279,7 +281,7 @@ mechanism(s) and associate commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Launch the specified learning activity contained in courses, in the defined environment(s).
 
-<a id="lms_requirements"/>  
+<a id="lms_requirements"></a>  
 #6.0 LMS Requirements
 
 LMS systems shall meet the following requirements to conform to this specification:  
@@ -303,7 +305,7 @@ section __________ .
 in section __________ .  
 
 
-<a id="course_structures"/>  
+<a id="course_structures"></a>  
 ##6.1 Course structures
 The LMS shall implement a means to create and maintain course structures.
 
@@ -337,7 +339,7 @@ Course Structures shall contain at least 1 AU.
 LMS shall have the ability to create and maintain course structures containing more than
 1000 AU’s.
 
-<a id="lms_state_api_requirements"/>  
+<a id="lms_state_api_requirements"></a>  
 ##6.2 LMS State API Requirements
 The LMS shall initialize the records in its LRS with the state documents as described in
 this section when a learner is enrolled in a course (before the learner initially accesses
@@ -356,10 +358,10 @@ below.
 
 <table>
   <tr>
-    <td width="100%" valign="top"><h3><a id="_Toc349195678" id="_Toc349195678">context</a></h3></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><p><strong>Description: </strong>Context template for the
+    <th align="left">context</th>
+  </tr> 
+<tr>
+    <td><p><strong>Description: </strong>Context template for the
     AU being launched.<strong></strong><br />
       <strong>LMS Required: </strong>Yes<br />
       <strong>AU: Required:</strong> Yes<br />
@@ -409,7 +411,7 @@ Shall match Registration ID used by the LMS at AU launch time.
 <BR>
 <BR>
 
-<a id="lms_statement_api_requirements"/>  
+<a id="lms_statement_api_requirements"></a>  
 ##6.3 LMS Statement API Requirements
 
 Prior to launching a learning activity, the LMS shall create a Statement API record in its
@@ -418,7 +420,7 @@ LRS to …..
 Set Collateral Credit  
 
 
-<a id="au_requirements"/>  
+<a id="au_requirements"></a>  
 #7.0 AU Requirements
 
 AU’s shall meet the following requirements to conform to this specification:
@@ -434,7 +436,7 @@ section __________ .
 6. The AU shall implement additional XAPI “Activity Profile API” requirements as defined
 in section __________ .
 
-<a id="au_state_api_requirements"/>  
+<a id="au_state_api_requirements"></a> 
 ##7.1 AU State API Requirements
 
 The AU should retrieve the following the State API documents from the LRS recorded by the
@@ -453,10 +455,10 @@ Shall match Registration ID used by the LMS at AU launch time.
 
 
 
-<a id="au_statement_api_requirements"/>  
+<a id="au_statement_api_requirements"></a>  
 ##7.2 AU Statement API Requirements
 
-<a id="placement"/>  
+<a id="placement"></a> 
 ###7.2.1 Placement of session_id in Statements
 
 The AU shall retrieve the value of session\_id at launch time as specified in Section 8
@@ -477,7 +479,7 @@ Example:
      }
 ```
 
-<a id="first_statement_au"/>  
+<a id="first_statement_au"></a> 
 ###7.2.2 First Statement API Call
 
 The AU should issue a statement to the LRS after being launched, initialized, and ready
@@ -504,7 +506,7 @@ Example Statement:
 	    }
     }
 ```
-<a id="last_statement_au"/>  
+<a id="last_statement_au"></a>  
 ###7.1.2 Last Statement Call
 
 The AU shall issue a statement to the LRS after being launched, initialized, and ready for
@@ -521,10 +523,10 @@ Example Statement:
      {
      }
 ```
-<a id="content_launch"/>  
+<a id="content_launch"></a>  
 #8.0 Content Launch Mechanisms
 
-<a id="browser_environment"/>  
+<a id="browser_environment"></a>  
 ##8.1 Web (Browser) Environment
 
 ###8.1.1 Launch Method
@@ -578,7 +580,7 @@ The values for the URL launch parameters are described below:
 
 <table border="1" cellspacing="0" cellpadding="0" width="100%">
   <tr >
-    <td width="100%" valign="top"><h3><a id="_Toc349195673" id="_Toc349195673">endpoint</a></h3></td>
+    <td width="100%" valign="top"><h3>endpoint</h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>A    URL to the LMS listener location for XAPI messages to be sent to.  <strong></strong><br />
@@ -589,7 +591,7 @@ The values for the URL launch parameters are described below:
       <strong>Sample value: </strong>https://aicc.org/MyCMI5_listener.pl<strong></strong></p></td>
   </tr>
   <tr>
-    <td width="100%" valign="top"><h3><a id="_Toc349195674" id="_Toc349195674">auth</a></h3></td>
+    <td width="100%" valign="top"><h3>auth</h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>An    authentication token created &amp; managed by the LMS.  Used when OAuth authentication is not    practical or desired.  The    authentication token is used by the learning activity being launched.<strong></strong><br />
@@ -600,7 +602,7 @@ The values for the URL launch parameters are described below:
       <strong>Sample value:</strong> OjFjMGY4NTYxNzUwOGI4YWY0NjFkNzU5MWUxMzE1ZGQ1<strong></strong></p></td>
   </tr>
   <tr>
-    <td width="100%" valign="top"><h3><a id="_Toc349195675" id="_Toc349195675">actor</a></h3></td>
+    <td width="100%" valign="top"><h3>actor</h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>A    JSON object called “actor” (as defined in the XAPI specification) that    identifies the learner launching the learning activity so the learning    activity will be able to include it in XAPI messages.<strong></strong><br />
@@ -611,7 +613,7 @@ The values for the URL launch parameters are described below:
       <strong>Sample value: </strong>{    &quot;name&quot; : [&quot;Skip Winger&quot;], &quot;mbox&quot; :    [&quot;mailto:skipper@skyhiair.com&quot;] }<strong></strong></p></td>
   </tr>
   <tr>
-    <td width="100%" valign="top"><h3><a id="_Toc349195676" id="_Toc349195676">registration</a></h3></td>
+    <td width="100%" valign="top"><h3>registration</h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>A    Registration ID corresponding to the learner’s enrollment for the AU being    launched.<strong></strong><br />
@@ -624,7 +626,7 @@ The values for the URL launch parameters are described below:
       <strong>Sample value:</strong></p></td>
   </tr>
   <tr>
-    <td width="100%" valign="top"><h3><a id="_Toc349195677" id="_Toc349195677">activity_id</a></h3></td>
+    <td width="100%" valign="top"><h3>activity_id</h3></td>
   </tr>
   <tr>
     <td width="100%" valign="top"><p><strong>Description: </strong>The    Activity ID of the AU being launched.<strong></strong><br />
@@ -640,7 +642,7 @@ The values for the URL launch parameters are described below:
 <BR>
 <BR>
 
-<a id="other_environment"/>  
+<a id="other_environment"></a>  
 ##8.3 Other Launch Environments
 
 Other launch environments are not currently implemented in this specification. The
@@ -660,7 +662,7 @@ does not specify launch mechanisms.
 <a name="xapi_data_model"/>  
 #9.0 XAPI Data Model  
 
-<a id="verbs" /> 
+<a id="verbs" ></a> 
 ##9.1 Verbs  
 
 The following are XAPI verbs that are specific to this specification.
@@ -673,36 +675,143 @@ AU’s may use additional verbs not listed in this specification.
 LMS system shall record and provide reporting for all statements regardless of which verbs
 AU’s use in statement.  
 
-__Launched__
-http://www.aicc.org/cmi5/verbs/launched
+###9.1.1 Launched
+<table>
+<tr><th align="left">Verb</th><td>Launched</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/launched</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Launched" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Launched" }</td></tr>
+<tr><th align="left">Description</th><td>The verb “Launched” indicates that the AU was launched by the LMS.</td>
+</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use this verb in a statement recorded in the LRS before launching an AU.  See Statement API _____ </td></tr>
+</tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate the that the LMS has launched and should be used to determine if the AU is successfully launched if a "Started" statement is recorded by the launched AU within a reasonable period of time.  </td></tr>
+</table>
 
-* This is a mandatory verb.  
-* The verb “Launched” indicates that the AU was launched by the LMS.
-* The LMS shall use this verb as defined in section _____
+###9.1.2 Started
+<table>
+<tr><th align="left">Verb</th><td>Started</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/started</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Started" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Started" }</td></tr>
+<tr><th align="left">Description</th><td>The verb “Started” indicates that the AU was launched by the LMS.</td>
+</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU must use "Started" in the first statement in the AU session.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>Verify that this verb is recorded by AU immediately after launch</td></tr>
+</tr><tr><th align="left">Usage</th><td>A Launched statement is use to indicate the that the LMS has launched and should be used to determine if the AU is successfully launched if a "Started" statement is recorded by the launched AU within a reasonable period of time after "Launched" is recorded by the LMS.  </td></tr>
+</table>
 
-__Started__
-http://www.aicc.org/cmi5/verbs/started
+###9.1.3 Suspended
+<table>
+<tr><th align="left">Verb</th><td>Failed</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/suspended</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Suspended" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Suspended" }</td></tr>
+<tr><th align="left">Description</th><td>The learner exited an AU session (uncompleted) with the intention of returning to the AU.</td>
+</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Suspended" verb when the learner exits an AU without experiencing all relevant material in the AU.  The AU shall not issue a "Suspended" statement if the AU previously issued a statement with "Completed". The AU shall not issue any other statements following "Suspend" except for "Exit".</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
+</tr><tr><th align="left">Usage</th><td>The criterion for "Suspended" is determined by the AU design.</td></tr>
+</table>
 
-* This is an optional verb.  
-* The verb “Started” indicates AU has started.
-* The AU should use this verb to indicate  that the AU has been launched and is fully
-initialized and ready for learner interaction. If used, the AU shall include this verb in
-the first XAPI Statements it records after being launched.
+###9.1.4 Resumed 
+<table>
+<tr><th align="left">Verb</th><td>Resumed</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/resumed</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Resumed" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Resumed" }</td></tr>
+<tr><th align="left">Description</th><td>The learner resumed an AU that was intentionally left uncompleted.</td>
+</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Resumed" verb when the learner returns to an AU that had recorded a "Suspend" statement in the previous session.  The AU shall record "Resumed" immediately following a the "Started" statement. The AU shall not issue a "Resumed" statement under any other circumstances.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
+</tr><tr><th align="left">Usage</th><td>See Obligations.</td></tr>
+</table>
 
-__Exited__
-http://www.aicc.org/cmi5/verbs/exited
 
-* The verb “Exited” indicates that the AU was exited by the Learner and that the AU will
-not be recording any more statements for the launch session.
-* This is a mandatory verb.  
-* The AU shall use this verb as defined in section _____  
+###9.1.5 Completed
+<table>
+<tr><th align="left">Verb</th><td>Completed</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/completed</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Completed" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Completed" }</td></tr>
+<tr><th align="left">Description</th><td>The verb “Completed” indicates the learner viewed or did all of the relevant activities in an AU presentation.</td>
+</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Completed" verb when the learner has experienced all relevant material in an the AU.  The AU shall not issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
+</tr><tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the AU design.</td></tr>
+</table>
+
+###9.1.6 Passed
+<table>
+<tr><th align="left">Verb</th><td>Passed</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/passed</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Passed" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
+<tr><th align="left">Description</th><td>The learner attempted and succeed in a judged activity in the AU. </td>
+</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Passed" verb when the learner has attempted and  AU.  The AU shall not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must equal to or greater than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS shall record "Mastery_Score" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  See section _____.  
+<BR>
+<BR>
+The LMS shall use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  See Section_____. </td></tr>
+</tr><tr><th align="left">Usage</th><td>If the judged activity in the AU is not scored, then the AU design will determine the criterion for "Passed".  If the activity is scored, the mastery_score will be used by the AU to determine "Passed", see Obligations.  The AU shall only have one collective judgment for "Passed" (there are no notions of using "Passed"for subsidiary components of an AU). </td></tr>
+</table>
+
+
+###9.1.7 Failed
+<table>
+<tr><th align="left">Verb</th><td>Failed</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/failed</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Failed" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
+<tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU. </td>
+</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Failed" verb when the learner has attempted and  AU.  If the "Failed" statement contains a score, the score must be less than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS shall record "Mastery_Score" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  See section _____.<BR>
+<BR>
+The LMS shall use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  See Section_____.</td></tr>
+</tr><tr><th align="left">Usage</th><td>If the judged activity in the AU is not scored, then the AU design will determine the criterion for "Failed".  If the activity is scored, the mastery_score will be used by the AU to determine "Failed", see Obligations.  The AU shall only have one collective judgment for "Failed" (there are no notions of using "Failed"for subsidiary components of an AU).</td></tr>
+</table>
+
+
+
+
+###9.1.8 Abandoned
+<table>
+<tr><th align="left">Verb</th><td>Abandoned</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/abandoned</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Abandoned" }</td></tr>
+<tr><th align="left">Description</th><td>The verb “Abandoned” indicates that the AU session was abnormally exited by Learner action (or due to a system failure).</td>
+</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>None.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use the the "Exit" statement to determine that the AU session has ended.  In the absence of an "Exit" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______. </td></tr>
+</tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
+</table>
+
+
+###9.1.9 Exited
+<table>
+<tr><th align="left">Verb</th><td>Exited</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/exited</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Exited" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Exited" }</td></tr>
+<tr><th align="left">Description</th><td>The verb “Exited” indicates that the AU was exited by the Learner and that the AU will
+not be recording any more statements for the launch session.</td>
+</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Exit" verb. This statement shall be the last statement recorded by the AU in a session.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use the the "Exit" statement to determine that the AU session has ended.  In the absence of an "Exit" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______.</td></tr>
+</tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
+</table>
+
+
 
 <BR/>
 <BR/>
-<a name="activity_types"/> 
+<a name="activity_types"></a>
 ##9.2 Activity Types
 
-<a name="extensions"/> 
+<a name="extensions"></a> 
 ##9.3 Extensions
 
  __Progress__ 
@@ -713,11 +822,11 @@ http://www.aicc.org/cmi5/extensions/result/progress
  * Contains an integer between 0 and 100. 
 
  
-<a name="documents"/> 
+<a name="documents"></a>
 ##9.4 Documents 
 
 
-<a id="bibliography"/>   
+<a id="bibliography"></a>   
 #10.0 Bibliography
 
 [1]  AICC CMI001, CMI Guidelines For Interoperability, Version 4.0. 
@@ -728,7 +837,7 @@ http://www.aicc.org/cmi5/extensions/result/progress
 
 -------
 
-<a id="license_agreement"/>   
+<a id="license_agreement"></a> 
 #License Agreement
 
 THE WORK (AS DEFINED HEREIN) ACCOMPANYING THIS LICENSE AGREEMENT ("AGREEMENT") IS PROVIDED
