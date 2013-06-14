@@ -682,10 +682,9 @@ AU’s use in statement.
 <tr><th align="left">Name</th><td>{ "en-US" : "Launched" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Launched" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Launched” indicates that the AU was launched by the LMS.</td>
-</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use this verb in a statement recorded in the LRS before launching an AU.  See Statement API _____ </td></tr>
-</tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate the that the LMS has launched and should be used to determine if the AU is successfully launched if a "Started" statement is recorded by the launched AU within a reasonable period of time.  </td></tr>
+</tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate the that the LMS has launched the AU. It should be used in combination with the "Started" statment sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
 </table>
 
 ###9.1.2 Started
@@ -695,20 +694,18 @@ AU’s use in statement.
 <tr><th align="left">Name</th><td>{ "en-US" : "Started" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Started" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Started” indicates that the AU was launched by the LMS.</td>
-</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
 </tr><tr><th align="left">AU Obligations</th><td>The AU must use "Started" in the first statement in the AU session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>Verify that this verb is recorded by AU immediately after launch</td></tr>
-</tr><tr><th align="left">Usage</th><td>A Launched statement is use to indicate the that the LMS has launched and should be used to determine if the AU is successfully launched if a "Started" statement is recorded by the launched AU within a reasonable period of time after "Launched" is recorded by the LMS.  </td></tr>
+</tr><tr><th align="left">Usage</th><td>A "Started" statement is used by the AU to indicate that it has been successfully started and should follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
 </table>
 
 ###9.1.3 Suspended
 <table>
-<tr><th align="left">Verb</th><td>Failed</td></tr>
+<tr><th align="left">Verb</th><td>Suspended</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/suspended</td></tr>
 <tr><th align="left">Name</th><td>{ "en-US" : "Suspended" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Suspended" }</td></tr>
 <tr><th align="left">Description</th><td>The learner exited an AU session (uncompleted) with the intention of returning to the AU.</td>
-</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Suspended" verb when the learner exits an AU without experiencing all relevant material in the AU.  The AU shall not issue a "Suspended" statement if the AU previously issued a statement with "Completed". The AU shall not issue any other statements following "Suspend" except for "Exit".</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
 </tr><tr><th align="left">Usage</th><td>The criterion for "Suspended" is determined by the AU design.</td></tr>
@@ -721,7 +718,6 @@ AU’s use in statement.
 <tr><th align="left">Name</th><td>{ "en-US" : "Resumed" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Resumed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner resumed an AU that was intentionally left uncompleted.</td>
-</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Resumed" verb when the learner returns to an AU that had recorded a "Suspend" statement in the previous session.  The AU shall record "Resumed" immediately following a the "Started" statement. The AU shall not issue a "Resumed" statement under any other circumstances.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See Obligations.</td></tr>
@@ -735,7 +731,6 @@ AU’s use in statement.
 <tr><th align="left">Name</th><td>{ "en-US" : "Completed" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Completed" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Completed” indicates the learner viewed or did all of the relevant activities in an AU presentation.</td>
-</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Completed" verb when the learner has experienced all relevant material in an the AU.  The AU shall not issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
 </tr><tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the AU design.</td></tr>
@@ -748,13 +743,12 @@ AU’s use in statement.
 <tr><th align="left">Name</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeed in a judged activity in the AU. </td>
-</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Passed" verb when the learner has attempted and  AU.  The AU shall not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must equal to or greater than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall record "Mastery_Score" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  See section _____.  
 <BR>
 <BR>
 The LMS shall use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  See Section_____. </td></tr>
-</tr><tr><th align="left">Usage</th><td>If the judged activity in the AU is not scored, then the AU design will determine the criterion for "Passed".  If the activity is scored, the mastery_score will be used by the AU to determine "Passed", see Obligations.  The AU shall only have one collective judgment for "Passed" (there are no notions of using "Passed"for subsidiary components of an AU). </td></tr>
+</tr><tr><th align="left">Usage</th><td>The AU shall record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity. The AU shall not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must equal to or greater than the "Mastery_Score" indicated in the course structure. See section _____. </td></tr>
 </table>
 
 
@@ -765,12 +759,11 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <tr><th align="left">Name</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU. </td>
-</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Failed" verb when the learner has attempted and  AU.  If the "Failed" statement contains a score, the score must be less than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall record "Mastery_Score" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  See section _____.<BR>
 <BR>
 The LMS shall use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  See Section_____.</td></tr>
-</tr><tr><th align="left">Usage</th><td>If the judged activity in the AU is not scored, then the AU design will determine the criterion for "Failed".  If the activity is scored, the mastery_score will be used by the AU to determine "Failed", see Obligations.  The AU shall only have one collective judgment for "Failed" (there are no notions of using "Failed"for subsidiary components of an AU).</td></tr>
+</tr><tr><th align="left">Usage</th><td>The AU shall record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.. If the "Failed" statement contains a score, the score must be less than the "Mastery_Score" indicated in the course structure. See section _____. </td></tr>
 </table>
 
 
@@ -783,7 +776,6 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Abandoned” indicates that the AU session was abnormally exited by Learner action (or due to a system failure).</td>
-</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
 </tr><tr><th align="left">AU Obligations</th><td>None.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use the the "Exit" statement to determine that the AU session has ended.  In the absence of an "Exit" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______. </td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
@@ -798,7 +790,6 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <tr><th align="left">Display</th><td>{ "en-US" : "Exited" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Exited” indicates that the AU was exited by the Learner and that the AU will
 not be recording any more statements for the launch session.</td>
-</tr><tr><th align="left">Mandatory</th><td>Yes</td></tr>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Exit" verb. This statement shall be the last statement recorded by the AU in a session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use the the "Exit" statement to determine that the AU session has ended.  In the absence of an "Exit" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
