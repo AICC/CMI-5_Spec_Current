@@ -816,6 +816,118 @@ http://www.aicc.org/cmi5/extensions/result/progress
 <a name="documents"></a>
 ##9.4 Documents 
 
+__Passed__
+
+* Used to report the success a learner experienced within the AU in relation
+to a threshold.  If the user performed at a minimum to the level of this threshold, the 
+verb in the statement shall be “passed”.  The opposite of “failed”.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Failed__
+
+* Used to report the lack of success a learner experienced within the AU in 
+relation to a threshold.  If the user performed below the minimum passing
+threshold, the verb in the statement shall be “failed”.  The opposite of “passed”.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Completed__
+
+* Used to report the completion of content.  This can be simply experiencing all the content,
+be tied to objectives or interactions, or determined in any other way.  If the content has been
+experienced to the level of satisfaction of the developer, the reporting statement's verb shall
+be "complted" Any content that has been started, but not yet completed, should be considered 
+incomplete.  There is no verb to “incomplete” an activity.  To achieve such behavior in statement
+reporting, one would void the statement which completes the activity.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Mastered__
+
+* Used to report a level of competence achieved in the activity.  The level should be within
+the range of a defined scale, which should be referenced in the statement.  This is not to be 
+confused with “progressed”, which reports how much content was experienced, whereas mastery 
+has to do with level of expertise.  Any statement reporting mastery must use the verb "mastered".
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Progressed__
+
+* Used to report a level of progress, typically within a scale of progression, to how much of 
+an activity has been accomplished.  This is not to be confused with “mastered”, as the level 
+of success or competency a user gained is not guaranteed by progress.  Any statement reporting
+progression must use the verb "progressed".
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Commented__
+
+* The commented verb may be used with the learner as the actor or a system as an actor.  
+* Comments can be sent from either party with the idea that the other will read and react to 
+* the comment. Any statement that may be seen as a comment should use the "commented" verb.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Resumed__
+
+* Used to report the resuming of suspended AU.  If used, a statement with the verb "resumed" 
+* immediately follow a statement with the verb "initialized" if the attempt is indeed to be resumed. 
+ The State API contains the data to determine whether a new attempt is being made or if a previous
+ attempt is being resumed.  The absence of a "resumed" statement implies a fresh attempt on the 
+ AU.  Shall only be used on an activity that used a "suspended" statement.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Suspended__
+
+* Used to report the intent of leaving an AU in a suspended state and thus not lose progress.  
+The State API contains the data to determine whether a new attempt is being made or if a previous 
+attempt shall be resumed.  If used, should appear immediately before a statement with the "exited" verb.  
+Lack of a statement with the verb "suspended" implies the attempt will not be resumed.
+Launching the suspended activity shall result in a resumed activity.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Asked__
+
+* Used to ask a question, typically the system would be the primary actor, with the learner being 
+the recipient of the question.    The question could also be asked into a vacuum, with the eventual 
+response (statement with verb responded) providing the actual context of the recipient.  For example
+“System asked Math quiz question 1 with result “What is 2+2”” followed by “Learner responded to quiz 
+question 1 with result “response=”4”” would alleviate the need to identify the second actor.  
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Answered__
+
+* Used to respond to a question.  Must follow a statement with asked or another statement with a 
+responded (the top statement with responded) must follow the “asking” statement.  The response to 
+the question can be the actual text (usually) response or the correctness of that response.  For 
+example, “Learner responded to quiz question 1 with result “response=4”” and “Learner responded to 
+quiz question 1 with result success=true””.  Typically both types of responded statements would 
+follow a single question/interacton. 
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____
+
+__Preferred__
+
+* The user’s preference, typically presented to the content or system in the form of a response to 
+a question.  For example, the system could ask a question if the learner preferred a voice over text 
+option.  The resulting statement could be “Andy preferred on Civil War History with result 
+response = “no voiceover””.  This distinction is made between statements with responded as the 
+content/system is expected to change as a results of the learner response.  Results of such statements
+would likely end up in the StateAPI.
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
+
+__Scored__
+
+* A value, typically between either 0 and 1 or 0 and 100, which corresponds to a learner’s performance
+on an activity.  It is expected the context property provides guidance to the allowed values of the 
+result field. 
+* This is an optional verb.  
+* The AU shall use this verb as defined in section _____  
 
 <a id="bibliography"></a>   
 #10.0 Bibliography
