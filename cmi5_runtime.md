@@ -167,7 +167,8 @@ and sends it to the LMS system. An Learning Activity Provider maps to a single A
 an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied
-sequence, representing a course. Experience API (XAPI): XAPI is a runtime data
+sequence, representing a course. 
+* __Experience API (XAPI)__: XAPI is a runtime data
 communication specification for learning content (AU) to send and receive data to an LRS.
 The XAPI specification is referenced by this document is used to define the data transport
 and the data model. 
@@ -266,10 +267,10 @@ activities for individual learners.
 
 Responsibilities of the Assignable Unit:
 
-* Parse the parameters from the launching environment to determine where the LMS location
-is and initiate communication with the LMS.
+* Parse the parameters from the launching environment to determine the LMS location
+and initiate communication with the LMS.
 * Acting as “client”, send and receive messages using the defined transport mechanism(s)
-and associate commands as prescribed in this specification.
+and associated commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Send an “exit” message prior to terminating the learning activity’s execution.
 
@@ -277,7 +278,7 @@ Responsibilities of the LMS:
 
 * Create and maintain course structures
 * Acting as a “server”, receive and reply to messages using the defined transport
-mechanism(s) and associate commands as prescribed in this specification.
+mechanism(s) and associated commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
 * Launch the specified learning activity contained in courses, in the defined environment(s).
 
@@ -801,6 +802,15 @@ not be recording any more statements for the launch session.</td>
 <BR/>
 <a name="activity_types"></a>
 ##9.2 Activity Types
+The AU, in sending statements to the LRS where the statement object is an Activity, shall include the Object activity "definition" property as defined in section 4.1.4.1
+of the XAPI specification, and that definition shall include the activity "type" property.  The type property shall have one of the following values:
+
+* Assessment
+* CMI_Interaction
+* Course
+* Question
+* Simulation
+* ???
 
 <a name="extensions"></a> 
 ##9.3 Extensions
