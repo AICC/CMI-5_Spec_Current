@@ -446,14 +446,86 @@ AU’s may also contain objectives.
   <tr>
     <td valign="top"><p><strong>Required:</strong> Yes<br />
         <strong>Data type:</strong> string </p></td>
-    <td valign="top"><p><strong>Description:</strong><br />
-      Static launch    parameters defined by the AU designer.     The LMS is required to store this data and provide to the AU if    requested by the AU during runtime.<br />
-      </p>
-      <p><strong>Value space:</strong> &quot;NewWindow&quot; or &quot;ExistingWindow&quot;<br />
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS when launching the AU (in a web-browser environment) to determine whether to redirect the existing web-browser window ot the AU's URL or to spawn a new browser window for the AU.</p>
+      <p><strong>Usage: </strong></p>
+      <ul>
+        <li>A value of &quot;NewWindow&quot; will require the LMS to launch the AU in a new browser window</li>
+        <li>A value of &quot;ExistingWindow&quot; will require the LMS to redirect the existing web browser window to the AU's URL location.</li>
+      </ul>
+      <p><strong>Value space: </strong>&quot;NewWindow&quot;, &quot;ExistingWindow&quot;<br />
         <br />
-        <strong>Sample value: </strong> &quot;NewWindow&quot; </p>
+      <strong>Sample value: </strong> &quot;NewWindow&quot; </p>
     <p>&nbsp;</p></td>
   </tr>
+    <tr>
+    <td colspan="2" valign="top"><h3>MasteryScore</h3></td>
+  </tr>
+  <tr>
+    <td valign="top"><p><strong>Required:</strong> Yes<br />
+        <strong>Data type:</strong> string </p></td>
+    <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
+      <p><strong>Usage: </strong></p>
+      <ul>
+        <li>The MasteryScore is passed to the AU at runtime by the LMS (as defined in the CMI5 Runtime Specification)</li>
+        <li>If the AU has scoring, it will use the MasteryScore to detemine pass/fail (as defined in the CMI5 Runtime Specification)</li>
+        <li>If value of MasteryScore is an empty string (&quot;&quot;), then a MasteryScore is not defined for the AU</li>
+      </ul>
+      <p><strong>Value space: </strong>Integer Number or empty string<br />
+        <br />
+      <strong>Sample value: </strong> &quot;100&quot; </p>
+    <p>&nbsp;</p></td>
+  </tr>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top"><h3>MoveOn</h3></td>
+  </tr>
+  <tr>
+    <td valign="top"><p><strong>Required:</strong> Yes<br />
+        <strong>Data type:</strong> string </p></td>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if a AU has been sufficiently completed for the purposes determining overall course completion or determining if prequisites were met for other activites.. </p>
+      <p><strong>Usage: </strong></p>
+      <ul>
+        <li>If the LMS recieves the specified combination of &quot;Passed&quot; and &quot;Completed&quot; verbs in statements (as defined in the CMI-5 runtime specification) in MoveOn, then the LMS will consider the AU &quot;complete&quot;</li>
+        <li>MoveOn Value = &quot;Passed&quot; : If the LMS recieves a statement with the verb &quot;Passed&quot;,  then the LMS will consider the AU &quot;complete&quot; for course and prequisite completion requirememts.</li>
+        <li>MoveOn Value = &quot;Completed&quot; : If the LMS recieves a statement with the verb &quot;Completed&quot;,  then the LMS will consider the AU &quot;complete&quot; for course and prequisite completion requirememts.<br />
+          </li>
+        <li>MoveOn Value = &quot;CompletedAndPassed&quot; : If the LMS recieves a statements with the verbs &quot;Completed&quot; and &quot;Passed&quot;,  then the LMS will consider the AU &quot;complete&quot; for course and prequisite completion requirememts.</li>
+        <li>MoveOn Value = &quot;CompletedOrPassed&quot; : If the LMS recieves a statements with either of the verbs &quot;Completed&quot;or &quot;Passed&quot;,  then the LMS will consider the AU &quot;complete&quot; for course and prequisite completion requirememts</li>
+      </ul>
+      <p><strong>Value space:</strong></p>
+      <blockquote>
+        <p>&quot;Passed&quot;<br />
+          &quot;Completed&quot;<br />
+          &quot;CompletedAndPassed&quot;<br />
+          &quot;CompletedOrPassed&quot;      </p>
+      </blockquote>
+      <p><strong>Sample value: </strong> &quot;Passed&quot; </p>
+    <p>&nbsp;</p></td>
+  </tr>
+       <tr>
+    <td colspan="2" valign="top"><h3>AuthenticationMethod</h3></td>
+  </tr>
+  <tr>
+    <td valign="top"><p><strong>Required:</strong> Yes<br />
+        <strong>Data type:</strong> string </p></td>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which Authentication method the AU shall used to access the LMS's Learning Record Store. </p>
+      <p><strong>Usage: </strong></p>
+      <ul>
+        <li>Based on the value of AuthenticationMethod, the LMS will place an  parameter in the AU launch interface to indicate to the AU which authentication method to use (as per the CMI-5 Runtime specification)</li>
+        <li>AuthenticationMethod Value = &quot;Basic&quot; : If the LMS will indicate to the AU launch interface to use basic HTTP authentication and will pass and HTTP authentication token to the AU using the launch interface.</li>
+        <li>AuthenticationMethod Value = &quot;OAuth&quot; : If the LMS will indicate to the AU launch interface to use  OAuth authentication..</li>
+      </ul>
+      <p><strong>Value space:</strong></p>
+      <blockquote>
+        <p>&quot;Basic&quot;<br />
+        &quot;OAuth&quot;<br />
+      </p>
+      </blockquote>
+      <p><strong>Sample value: </strong>&quot;Basic&quot;</p>
+    <p>&nbsp;</p></td>
+  </tr>
+
+  
   <tr>
     <td colspan="2" valign="top"><h3>EntitlementKey</h3></td>
   </tr>
@@ -546,6 +618,8 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 			<xs:element name="URL" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="LaunchParameters" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="LaunchMethod" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="MasteryScore" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="MoveOn" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="AuthenticationMethod" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="EntitlementKey" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Description" minOccurs="1" maxOccurs="1"/>
