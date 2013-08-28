@@ -103,6 +103,7 @@ All previous work from 2012 discarded.
 	<tr><td>Thomas Person</td><td>(Formerly of Adobe)</td></tr>
 	<tr><td>Andrew Downes</td><td>Epic Learning</td></tr>
 	<tr><td>Henry Ryng</td><td>inXsol</td></tr>
+	<tr><td>Art Werkenthin</td><td>RISC, Inc.</td></tr>
 </table> 
 
 -------
@@ -782,7 +783,22 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 </table>
 
 
-###9.1.9 Exited
+
+###9.1.9 Waived
+<table>
+<tr><th align="left">Verb</th><td>Waived</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/waived</td></tr>
+<tr><th align="left">Name</th><td>{ "en-US" : "Waived" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Waived" }</td></tr>
+<tr><th align="left">Description</th><td>The verb “Waived” indicates that the LMS has determined that the AU was met by means other than completing the AU.</td>
+</tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use this verb in a statement recorded in the LRS when it determines that the AU may be waived.  A statement containing a Waived verb shall include a "reason" in the extension property of the statement Result.  (see section 9.3.2) </td></tr>
+</tr><tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU may be skipped by the Learner.</td></tr>
+</table>
+
+
+
+###9.1.10 Exited
 <table>
 <tr><th align="left">Verb</th><td>Exited</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/exited</td></tr>
@@ -794,9 +810,6 @@ not be recording any more statements for the launch session.</td>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use the the "Exit" statement to determine that the AU session has ended.  In the absence of an "Exit" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
-
-
-
 <BR/>
 <BR/>
 <a name="activity_types"></a>
@@ -805,13 +818,26 @@ not be recording any more statements for the launch session.</td>
 <a name="extensions"></a> 
 ##9.3 Extensions
 
- __Progress__ 
-http://www.aicc.org/cmi5/extensions/result/progress
+###9.3.1 Progress
+__ID__ http://www.aicc.org/cmi5/extensions/result/progress
  * An extension to the statement result.
  * The completion of the AU as a percentage.
  * This is an optional extension.
  * Contains an integer between 0 and 100. 
-
+  
+ 
+###9.3.2 Reason
+__ID__ http://www.aicc.org/cmi5/extensions/result/reason
+ * An extension to the statement result for statements that contain the Waived verb.
+ * This extension indicates the reason that the AU was waived.
+ * This is a required extension for statements that include the Waived verb.
+ * The value of reason should be one of the following - 
+    * “Tested Out” – An Assessment was completed by the student to waive the AU.
+    * "Equivalent AU" - The student successfully completed an equivalent AU (in the same course) to waive the AU.
+    * “Equivalent Outside Activity” – The student successfully completed an equivalent activity outside of the course to waive the AU.
+    * "Administrative" – The LMS administrative user marked the AU complete.
+	    
+ 
  
 <a name="documents"></a>
 ##9.4 Documents 
