@@ -50,8 +50,9 @@ license agreement contained within it.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.2.2 First Statement API Call](#first_statement_au)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1.2 Last Statement Call](#last_statement_au)  
 [__8.0 Content Launch Mechanisms__](#content_launch)  
-&nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
-&nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
+&nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)
+&nbsp;&nbsp;&nbsp;&nbsp;[8.2 Android Environment](#android_environment)
+&nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)
 [__9.0 XAPI Data Model__](#xapi_data_model)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
 &nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
@@ -642,7 +643,80 @@ The values for the URL launch parameters are described below:
 </table>
 <BR>
 <BR>
+<a id="android_environment"></a>
+##8.2 Android Environment
 
+###8.2.1 Launch Method
+When launching an AU in the android enviornment the AU must be an android application or (apk).
+The AU shall be launched by the LMS by providing a link that specifies which android application to launch.
+Launching an android application requires that the application is installed on the device.
+There are two ways to deliver the application to a device
+<ol>
+    <li>
+        Provide a link to your application www.example.com/myLearningApp.apk
+        Note: The user downloading the app will have to allow applications to be installed from unknown sorces
+    </li>
+    <li>
+        Privide a link to the android market of an application you hve released http://market.android.com/details?id=com.namespace.appname
+        Note: You will need to publish your application to the Android Market Place
+    </li>
+</ol>
+
+In order to launch the application from an android browser you will need to set up the activity correctly in your android manifest file.
+In you manifrest file in the intent-filter for the activity you wish to lauch from a browser place
+
+
+     <intent-filter>
+        <!-- the name of the activity that you are going launch -->
+        <data android:scheme="adl" />
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT"></category>
+        <!-- your intent must be browsable in order for your app to be "launchable" -->
+        <category android:name="android.intent.category.BROWSABLE"></category>
+     </intent-filter>
+
+
+Confinguring the intent as described above will allow you place a tag <blockquote>
+\<a href="adl://learn?endpoint=<URL to LMS Listener>"\>Launch AU\</a\> ==> <a href="adl://learn?endpoint=<URL to LMS Listener>">Launch AU</a>
+</blockquote>
+Notice that the href has a protocal of adl not http. The protocal needs to match the android:scheme defined in your intent.
+
+Another method could be when the user navigates to a domain designated by your LMS as handled by an android.
+
+     <intent-filter>
+         <!-- the host name that will launch your application -->
+         <data android:host="www.androidLMS.com" android:scheme="http" />
+         <action android:name="android.intent.action.VIEW" />
+         <category android:name="android.intent.category.DEFAULT"></category>
+         <!-- your intent must be browsable in order for your app to be "launchable" -->
+         <category android:name="android.intent.category.BROWSABLE"></category>
+      </intent-filter>
+
+Any time that the android browser is directed to a page in the domain www.androidLMS.com the application will launch.
+This changes our link to <blockquote>
+\<a href="http://www.androidLMS.com?endpoint=<URL to LMS Listener>"\>Launch AU\</a\> ==> <a href="http://www.androidLMS.com?endpoint=<URL to LMS Listener>">Launch AU</a>
+</blockquote>
+
+Once the application has launched we still need to report back to the LMS please refer to 8.1 for all the parameters that
+can be passed into the link launching the android app.
+
+Once the application has loaded we can get our query parameters
+
+     protected void onCreate(Bundle savedInstanceState) {
+            Uri data = getIntent().getData();
+            String lmsEndPoint = data.getQueryParameter("endpoint");
+            setContentView(R.layout.activity_main);
+       }
+
+
+Since we will be communicationg to an LMS plese remember that you application will need access to the internet.
+Add the apropreate user permissions.
+<blockquote><uses-permission android:name="android.permission.INTERNET"></uses-permission></blockquote>
+
+
+
+<BR>
+<BR>
 <a id="other_environment"></a>  
 ##8.3 Other Launch Environments
 
