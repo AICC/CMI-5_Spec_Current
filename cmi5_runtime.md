@@ -789,7 +789,7 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <tr><th align="left">Verb</th><td>Waived</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/waived</td></tr>
 <tr><th align="left">Name</th><td>{ "en-US" : "Waived" }</td></tr>
-<tr><th align="left">Display</th><td>{ "en-US" : "Waived" }</td></tr>
+<tr><th align="left">Display</th><td>{ "en-US" : "Received Waiver" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Waived” indicates that the LMS has determined that the AU was met by means other than completing the AU.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use this verb in a statement recorded in the LRS when it determines that the AU may be waived.  A statement containing a Waived verb shall include a "reason" in the extension property of the statement Result.  (see section 9.3.2) </td></tr>
