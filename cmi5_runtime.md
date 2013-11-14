@@ -814,6 +814,17 @@ not be recording any more statements for the launch session.</td>
 <BR/>
 <a name="activity_types"></a>
 ##9.2 Activity Types
+An Activity Type, as defined in section 4.1.4.1 of the xAPI specification, shall be included in the "Started" statement sent from the AU to the LRS.  This Activity Type
+describes the general category of the AU and shall be one of the following:
+
+ * http://www.aicc.org/cmi5/activitytypes/assessment
+ * http://www.aicc.org/cmi5/activitytypes/tutorial
+ * http://www.aicc.org/cmi5/activitytypes/simulation
+ * http://www.aicc.org/cmi5/activitytypes/reference
+ * http://www.aicc.org/cmi5/activitytypes/jobaid
+ * http://www.aicc.org/cmi5/activitytypes/video
+
+The AU may send additional Activity Types to the LRS as desired in statements that do not include the Started verb.
 
 <a name="extensions"></a> 
 ##9.3 Extensions
