@@ -824,7 +824,32 @@ describes the general category of the AU and shall be one of the following:
  * http://www.aicc.org/cmi5/activitytypes/jobaid
  * http://www.aicc.org/cmi5/activitytypes/video
 
-The AU may send additional Activity Types to the LRS as desired in statements that do not include the Started verb.
+Example of usage in a statement:
+```javascript
+{
+  "id": "d1eec41f-1e93-4ed6-acbf-5c4bd0c24269",
+  "actor": {...}, 
+  "verb": {
+               "id": "http://www.aicc.org/cmi5/verbs/started",
+               "display": {
+                   "en-US": "Started"
+               }
+    },
+    "object": {
+      "id":"<AU identifier>"
+      "definition": {          
+             "type": "http://www.aicc.org/cmi5/activitytpes/<activity type>",
+             "name": {
+                     "en-US": "<activity type name>"          
+             }
+        },
+       "objectType": "Activity"       
+    },
+    "result": {...},
+    "context": {...},
+    "attachments": {...}
+}
+```
 
 <a name="extensions"></a> 
 ##9.3 Extensions
