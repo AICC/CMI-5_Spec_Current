@@ -832,7 +832,7 @@ Example of usage in a statement:
   "verb": {
                "id": "http://www.aicc.org/cmi5/verbs/launched",
                "display": {
-                   "en-US": "Started"
+                   "en-US": "Launched"
                }
     },
     "object": {
