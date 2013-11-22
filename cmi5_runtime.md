@@ -814,8 +814,8 @@ not be recording any more statements for the launch session.</td>
 <BR/>
 <a name="activity_types"></a>
 ##9.2 Activity Types
-An Activity Type, as defined in section 4.1.4.1 of the xAPI specification, shall be included in the "Started" statement sent from the AU to the LRS.  This Activity Type
-describes the general category of the AU and shall be one of the following:
+The Activity Type contained in the course structure, as defined in section 4.1.4.1 of the xAPI specification, shall be included in the "Launched" statement sent from the LMS to the LRS.  This Activity Type
+describes the general category of the AU and should be one of the following:
 
  * http://www.aicc.org/cmi5/activitytypes/assessment
  * http://www.aicc.org/cmi5/activitytypes/tutorial
@@ -830,7 +830,7 @@ Example of usage in a statement:
   "id": "d1eec41f-1e93-4ed6-acbf-5c4bd0c24269",
   "actor": {...}, 
   "verb": {
-               "id": "http://www.aicc.org/cmi5/verbs/started",
+               "id": "http://www.aicc.org/cmi5/verbs/launched",
                "display": {
                    "en-US": "Started"
                }
