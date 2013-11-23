@@ -814,6 +814,42 @@ not be recording any more statements for the launch session.</td>
 <BR/>
 <a name="activity_types"></a>
 ##9.2 Activity Types
+The Activity Type contained in the course structure, as defined in section 4.1.4.1 of the xAPI specification, shall be included in the "Launched" statement sent from the LMS to the LRS.  This Activity Type
+describes the general category of the AU and should be one of the following:
+
+ * http://www.aicc.org/cmi5/activitytypes/assessment
+ * http://www.aicc.org/cmi5/activitytypes/tutorial
+ * http://www.aicc.org/cmi5/activitytypes/simulation
+ * http://www.aicc.org/cmi5/activitytypes/reference
+ * http://www.aicc.org/cmi5/activitytypes/jobaid
+ * http://www.aicc.org/cmi5/activitytypes/video
+
+Example of usage in a statement:
+```javascript
+{
+  "id": "d1eec41f-1e93-4ed6-acbf-5c4bd0c24269",
+  "actor": {...}, 
+  "verb": {
+               "id": "http://www.aicc.org/cmi5/verbs/launched",
+               "display": {
+                   "en-US": "Launched"
+               }
+    },
+    "object": {
+      "id":"<AU identifier>"
+      "definition": {          
+             "type": "http://www.aicc.org/cmi5/activitytpes/<activity type>",
+             "name": {
+                     "en-US": "<activity type name>"          
+             }
+        },
+       "objectType": "Activity"       
+    },
+    "result": {...},
+    "context": {...},
+    "attachments": {...}
+}
+```
 
 <a name="extensions"></a> 
 ##9.3 Extensions
