@@ -680,7 +680,6 @@ AU’s use in statement.
 <table>
 <tr><th align="left">Verb</th><td>Launched</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/launched</td></tr>
-<tr><th align="left">Name</th><td>{ "en-US" : "Launched" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Launched" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Launched” indicates that the AU was launched by the LMS.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
@@ -692,7 +691,6 @@ AU’s use in statement.
 <table>
 <tr><th align="left">Verb</th><td>Started</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/started</td></tr>
-<tr><th align="left">Name</th><td>{ "en-US" : "Started" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Started" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Started” indicates that the AU was launched by the LMS.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU must use "Started" in the first statement in the AU session.</td></tr>
@@ -704,7 +702,6 @@ AU’s use in statement.
 <table>
 <tr><th align="left">Verb</th><td>Suspended</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/suspended</td></tr>
-<tr><th align="left">Name</th><td>{ "en-US" : "Suspended" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Suspended" }</td></tr>
 <tr><th align="left">Description</th><td>The learner exited an AU session (uncompleted) with the intention of returning to the AU.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Suspended" verb when the learner exits an AU without experiencing all relevant material in the AU.  The AU shall not issue a "Suspended" statement if the AU previously issued a statement with "Completed". The AU shall not issue any other statements following "Suspend" except for "Exit".</td></tr>
@@ -716,7 +713,6 @@ AU’s use in statement.
 <table>
 <tr><th align="left">Verb</th><td>Resumed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/resumed</td></tr>
-<tr><th align="left">Name</th><td>{ "en-US" : "Resumed" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Resumed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner resumed an AU that was intentionally left uncompleted.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Resumed" verb when the learner returns to an AU that had recorded a "Suspend" statement in the previous session.  The AU shall record "Resumed" immediately following a the "Started" statement. The AU shall not issue a "Resumed" statement under any other circumstances.</td></tr>
@@ -729,7 +725,6 @@ AU’s use in statement.
 <table>
 <tr><th align="left">Verb</th><td>Completed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/completed</td></tr>
-<tr><th align="left">Name</th><td>{ "en-US" : "Completed" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Completed" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Completed” indicates the learner viewed or did all of the relevant activities in an AU presentation.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Completed" verb when the learner has experienced all relevant material in an the AU.  The AU shall not issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
@@ -741,7 +736,6 @@ AU’s use in statement.
 <table>
 <tr><th align="left">Verb</th><td>Passed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/passed</td></tr>
-<tr><th align="left">Name</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeed in a judged activity in the AU. </td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Passed" verb when the learner has attempted and  AU.  The AU shall not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must equal to or greater than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
@@ -757,7 +751,6 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <table>
 <tr><th align="left">Verb</th><td>Failed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/failed</td></tr>
-<tr><th align="left">Name</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU. </td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Failed" verb when the learner has attempted and  AU.  If the "Failed" statement contains a score, the score must be less than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
@@ -775,7 +768,6 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <tr><th align="left">Verb</th><td>Abandoned</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/abandoned</td></tr>
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
-<tr><th align="left">Display</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Abandoned” indicates that the AU session was abnormally exited by Learner action (or due to a system failure).</td>
 </tr><tr><th align="left">AU Obligations</th><td>None.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use the the "Exit" statement to determine that the AU session has ended.  In the absence of an "Exit" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______. </td></tr>
@@ -788,7 +780,6 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <table>
 <tr><th align="left">Verb</th><td>Waived</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/waived</td></tr>
-<tr><th align="left">Name</th><td>{ "en-US" : "Waived" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Received Waiver" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Waived” indicates that the LMS has determined that the AU was met by means other than completing the AU.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
@@ -802,7 +793,6 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <table>
 <tr><th align="left">Verb</th><td>Exited</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/exited</td></tr>
-<tr><th align="left">Name</th><td>{ "en-US" : "Exited" }</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Exited" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Exited” indicates that the AU was exited by the Learner and that the AU will
 not be recording any more statements for the launch session.</td>
