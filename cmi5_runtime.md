@@ -52,11 +52,22 @@ license agreement contained within it.
 [__8.0 Content Launch Mechanisms__](#content_launch)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.1 Web (Browser) Environment](#browser_environment)  
 &nbsp;&nbsp;&nbsp;&nbsp;[8.3 Other Launch Environments](#other_environment)  
-[__9.0 XAPI Data Model__](#xapi_data_model)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Verbs](#verbs)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.2 Activity Types](#activity_types)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Extensions](#extensions)  
-&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Documents](#documents)  
+[__9.0 XAPI Statement Data Model__](#xapi_data_model)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.1 Statement ID](#ID)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.2 Actor](#Actor)  
+&nbsp;&nbsp;&nbsp;&nbsp;[9.3 Verbs](#verbs)   
+&nbsp;&nbsp;&nbsp;&nbsp;[9.4 Object](#Object)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.4.1 objectType](#objectType)   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.4.2 Object ID](#Object_ID)   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.4.3 Definition](#Definition)   
+&nbsp;&nbsp;&nbsp;&nbsp;[9.5 Result](#Result)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.5.1 Score](#Score)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.5.2 Success](#Success)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.5.3 Completion](#Completion)   
+&nbsp;&nbsp;&nbsp;&nbsp;[9.6 Context](#Context)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.6.2 Registration](#Registration)      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.6.2 Extensions](#extensions)    
+   
 
 [__10.0 Bibliography__](#bibliography) 
 
@@ -661,10 +672,36 @@ REST communication interface as specified in XAPI specification.  The XAPI speci
 does not specify launch mechanisms.
 
 <a name="xapi_data_model"/>  
-#9.0 XAPI Data Model  
+#9.0 XAPI Statement Data Model  
+
+<a name="ID" ></a>
+##9.1 Statement ID
+The AU will not provide a statement ID for CMI-5 defined statements.  (The LRS will assign statement IDs)  
+  
+<a name="Actor" ></a>
+##9.2 Actor
+The Actor object will be defined by the LMS.  The Actor object for all statements with CMI-5 defined verbs must be of type "Agent" and must contain an account object.
+
+Example of usage in a statement:
+
+```javascript
+{
+  "actor": {
+    "objectType": "Agent",
+    "account": {
+        "homePage": "http://www.example.com",
+        "name": "1625378"
+   }, 
+  "verb": {...},
+  "object": {...},
+  "result": {...},
+  "context": {...},
+  "attachments": {...}
+}
+```
 
 <a name="verbs" ></a> 
-##9.1 Verbs  
+##9.3 Verbs  
 
 The following are XAPI verbs that are specific to this specification.
 
@@ -676,7 +713,7 @@ AU’s may use additional verbs not listed in this specification.
 LMS system shall record and provide reporting for all statements regardless of which verbs
 AU’s use in statement.  
 
-###9.1.1 Launched
+###9.3.1 Launched
 <table>
 <tr><th align="left">Verb</th><td>Launched</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/launched</td></tr>
@@ -687,7 +724,7 @@ AU’s use in statement.
 </tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate the that the LMS has launched the AU. It should be used in combination with the "Started" statment sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
 </table>
 
-###9.1.2 Started
+###9.3.2 Started
 <table>
 <tr><th align="left">Verb</th><td>Started</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/started</td></tr>
@@ -695,10 +732,10 @@ AU’s use in statement.
 <tr><th align="left">Description</th><td>The verb “Started” indicates that the AU was launched by the LMS.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU must use "Started" in the first statement in the AU session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>Verify that this verb is recorded by AU immediately after launch</td></tr>
-</tr><tr><th align="left">Usage</th><td>A "Started" statement is used by the AU to indicate that it has been successfully started and should follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
+</tr><tr><th align="left">Usage</th><td>A "Started" statement is used by the AU to indicate that it has been  fully started and should follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
 </table>
 
-###9.1.3 Suspended
+###9.3.3 Suspended
 <table>
 <tr><th align="left">Verb</th><td>Suspended</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/suspended</td></tr>
@@ -709,7 +746,7 @@ AU’s use in statement.
 </tr><tr><th align="left">Usage</th><td>The criterion for "Suspended" is determined by the AU design.</td></tr>
 </table>
 
-###9.1.4 Resumed 
+###9.3.4 Resumed 
 <table>
 <tr><th align="left">Verb</th><td>Resumed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/resumed</td></tr>
@@ -721,7 +758,7 @@ AU’s use in statement.
 </table>
 
 
-###9.1.5 Completed
+###9.3.5 Completed
 <table>
 <tr><th align="left">Verb</th><td>Completed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/completed</td></tr>
@@ -732,7 +769,7 @@ AU’s use in statement.
 </tr><tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the AU design.</td></tr>
 </table>
 
-###9.1.6 Passed
+###9.3.6 Passed
 <table>
 <tr><th align="left">Verb</th><td>Passed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/passed</td></tr>
@@ -747,7 +784,7 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 </table>
 
 
-###9.1.7 Failed
+###9.3.7 Failed
 <table>
 <tr><th align="left">Verb</th><td>Failed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/failed</td></tr>
@@ -763,7 +800,7 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 
 
 
-###9.1.8 Abandoned
+###9.3.8 Abandoned
 <table>
 <tr><th align="left">Verb</th><td>Abandoned</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/abandoned</td></tr>
@@ -776,7 +813,7 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 
 
 
-###9.1.9 Waived
+###9.3.9 Waived
 <table>
 <tr><th align="left">Verb</th><td>Waived</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/waived</td></tr>
@@ -789,7 +826,7 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 
 
 
-###9.1.10 Exited
+###9.3.10 Exited
 <table>
 <tr><th align="left">Verb</th><td>Exited</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/exited</td></tr>
@@ -802,9 +839,23 @@ not be recording any more statements for the launch session.</td>
 </table>
 <BR/>
 <BR/>
-<a name="activity_types"></a>
-##9.2 Activity Types
-The Activity Type contained in the course structure, as defined in section 4.1.4.1 of the xAPI specification, shall be included in the "Launched" statement sent from the LMS to the LRS.  This Activity Type
+
+<a name="Object"></a> 
+##9.4 Object 
+The Object in a CMI-5 defined statement represents the AU.  An Object must be present as specified in this section in all statements with CMI-5 defined verbs.
+
+<a name="objectType"></a> 
+###9.4.1 objectType
+The objectType property of an Object in statements with a CMI-5 verb must be set to "activity".
+
+<a name="Object_ID"></a> 
+###9.4.2 Object ID 
+The value of the Object's ID property for a given AU must match the AU ID defined in the URL launch line and the course structure.
+
+<a name="Definition"></a>
+###9.4.3 Definition
+
+The object's definition will have the Activity Type contained in the course structure, as defined in section 4.1.4.1 of the XAPI specification, shall be included in the "Launched" statement sent from the LMS to the LRS.  This Activity Type
 describes the general category of the AU and should be one of the following:
 
  * http://www.aicc.org/cmi5/activitytypes/assessment
@@ -815,13 +866,13 @@ describes the general category of the AU and should be one of the following:
  * http://www.aicc.org/cmi5/activitytypes/video
 
 Example of usage in a statement:
+
 ```javascript
 {
-  "id": "d1eec41f-1e93-4ed6-acbf-5c4bd0c24269",
-  "actor": {...}, 
+  "actor": {}, 
   "verb": {
-               "id": "http://www.aicc.org/cmi5/verbs/launched",
-               "display": {
+               "id": "http://www.aicc.org/cmi5/verbs/launched",   
+               "display": {  
                    "en-US": "Launched"
                }
     },
@@ -841,32 +892,138 @@ Example of usage in a statement:
 }
 ```
 
-<a name="extensions"></a> 
-##9.3 Extensions
+<table>
+<tr><th align="right"> </th><th align="left">Assessment</th></tr>
+<tr><th align="right">Description: </th><td>An activity  where the learner is evaluated or judged.</td></tr>
+<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/assessment</td></tr>
+<tr><th align="right">(definition) name:</th><td>{ "en-US" : "assessment" }</td></tr>
+</table>
 
-###9.3.1 Progress
-__ID__ http://www.aicc.org/cmi5/extensions/result/progress
- * An extension to the statement result.
- * The completion of the AU as a percentage.
- * This is an optional extension.
- * Contains an integer between 0 and 100. 
-  
+<table>
+<tr><th align="right"></th><th align="left">Tutorial</th></tr>
+<tr><th align="right">Description: </th><td>An activity the learner is presented material for instruction in a defined sequence</td></tr>
+<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/tutorial</td></tr>
+<tr><th align="right">(definition) name:</th><td>{ "en-US" : "tutorial" }</td></tr>
+</table>
+
+<table>
+<tr><th align="right"></th><th align="left">Simulation</th></tr>
+<tr><th align="right">Description: </th><td>An activity the learner interacts primarily with a computer-based simulation of system or a physical device</td></tr>
+<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/simulation</td></tr>
+<tr><th align="right">(definition) name:</th><td>{ "en-US" : "simulation" }</td></tr>
+</table>
+
+<table>
+<tr><th align="right"></th><th align="left">Reference</th></tr>
+<tr><th align="right">Description: </th><td>An activity where the learner can search for and locate information. The presentation of what information to display is learner directed.</td></tr>
+<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/reference</td></tr>
+<tr><th align="right">(definition) name:</th><td>{ "en-US" : "reference" }</td></tr>
+</table>
+
+<table>
+<tr><th align="right"></th><th align="left">Job Aid</th></tr>
+<tr><th align="right">Description: </th><td>An activity where the learner is using a tool or system that help the learner perform a work related task.</td></tr>
+<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/jobaid</td></tr>
+<tr><th align="right">(definition) name:</th><td>{ "en-US" : "jobaid" }</td></tr>
+</table>
+
+<table>
+<tr><th align="right"></th><th align="left">Video</th></tr>
+<tr><th align="right">Description: </th><td>An activity where the learner is presented with a video clip as the primary (or only) media presentation.</td></tr>
+<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/video</td></tr>
+<tr><th align="right">(definition) name:</th><td>{ "en-US" : "video" }</td></tr>
+</table>
+
+<a name="Result"></a> 
+##9.5 Result
+Result may be present in a statement depending on the CMI-5 verb used.  Result may be omitted from statements having the following CMI-5 defined verbs:
+
+- Launched
+- Started
+- Resumed
+- Exited
+
+Result should be included in statements containing the following CMI-5 defined verbs:
+
+- Launched
+- Started
+- Resumed
+- Exited
+
+<a name="Score"></a> 
+###9.5.1 Score
+
+A score is not required to be reported.  If a score is reported by an AU, the verb must be consistent with Mastery_Score (if defined for the AU in the course structure).
+
+<a name="Success"></a>
+###9.5.2 Success 
+
+The success property of result must be set to true for statements having the following CMI-5 defined verbs:
+
+- Completed
+- Passed
+- Waived
+
+The success property of result must be set to false for statements having the following CMI-5 defined verbs:
+
+- Failed
+- Abandoned
+
+<a name="Completion"></a>
+###9.5.3 Completion
+The completion property of result must be set to true for statements having the following CMI-5 defined verbs:
+
+- Completed
+- Passed
+
+The completion property of result must be set to false for statements having the following CMI-5defined verbs:
+
+- Failed
+- Abandoned
+
+
+<a name="Context"></a> 
+##9.6 Context
+All statements with CMI-5 defined verbs must contain a context as defined in this section. 
+
+<a name="Registration"></a> 
+###9.6.1 Registration
+The value for the registration property used in the context object must be the value provided by the LMS.  The LMS must generate this value and pass it to the AU via the launch line.  
+
+<a name="extensions"></a> 
+###9.6.2 Extensions
+The following are extensions specified for CMI-5.  Other extensions are permitted provided they do not conflict or duplicate the ones specified here.  
+
+####9.6.2.1 Session ID
+
+__ID__ http://www.aicc.org/cmi-5/extensions/session
  
-###9.3.2 Reason
+ * The value for Session ID is generated by the LMS. 
+ * It represents a launch session for an AU.
+ * Each Session ID Must be unique for each learner/AU/Registration launch.   
+ * This is an required extension for all statements with CMI-5 defined verbs 
+ 
+####9.6.2.1 Progress
+__ID__ http://www.aicc.org/cmi5/extensions/result/progress  
+
+ * An extension to the statement result.  
+ * The completion of the AU as a percentage.  
+ * This is an optional extension.  
+ * Contains an integer between 0 and 100.   
+ 
+ 
+####9.6.2.2 Reason
 __ID__ http://www.aicc.org/cmi5/extensions/result/reason
- * An extension to the statement result for statements that contain the Waived verb.
- * This extension indicates the reason that the AU was waived.
- * This is a required extension for statements that include the Waived verb.
- * The value of reason should be one of the following - 
-    * “Tested Out” – An Assessment was completed by the student to waive the AU.
-    * "Equivalent AU" - The student successfully completed an equivalent AU (in the same course) to waive the AU.
-    * “Equivalent Outside Activity” – The student successfully completed an equivalent activity outside of the course to waive the AU.
-    * "Administrative" – The LMS administrative user marked the AU complete.
+
+* An extension to the statement result for statements that contain the Waived verb.  
+* This extension indicates the reason that the AU was waived.  
+* This is a required extension for statements that include the Waived verb.   
+* The value of reason should be one of the following -  
+** “Tested Out” – An Assessment was completed by the student to waive the AU.  * "Equivalent AU" The student successfully completed an equivalent AU (in the same course) to waive the AU.  
+** “Equivalent Outside Activity” – The student successfully completed an equivalent activity outside of the course to waive the AU.    
+** "Administrative" – The LMS administrative user marked the AU complete.    
 	    
- 
- 
-<a name="documents"></a>
-##9.4 Documents 
+
 
 
 <a name="bibliography"></a>   
