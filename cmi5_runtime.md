@@ -400,8 +400,8 @@ structure.<br />
     AU's URL or spawned a new browser window for the AU.<br />
       <strong>LMS Required:</strong> Yes<br />
       <strong>AU Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS shall include a value based on the LaunchMethod provided in 
-      the course structure.<br />
+      <strong>LMS Usage:  </strong>LMS shall include a value based on the method used to launch the 
+      AU.<br />
       <strong>AU Usage: </strong>AU shall get the <strong><em>LaunchMethod</em></strong> value 
       from the LMS.LaunchData state document. AU shall use the <strong><em>LaunchMethod</em></strong>
       value in determining what action to take when the AU is terminated; either to attempt to close 
