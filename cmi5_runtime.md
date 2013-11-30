@@ -391,6 +391,46 @@ structure.<br />
       <strong>Value space:</strong> LMS implementation specific<br />
       <strong>Sample value:</strong></p></td>
   </tr>
+  <tr>
+    <th align="left">LaunchMethod</th>
+  </tr> 
+<tr>
+    <td><p><strong>Description: </strong>Used by the LMS when launching the AU (in a web-browser
+    environment) to tell the AU whether it has redirected the existing web-browser window to the 
+    AU's URL or spawned a new browser window for the AU.<br />
+      <strong>LMS Required:</strong> Yes<br />
+      <strong>AU Required:</strong> Yes<br />
+      <strong>LMS Usage:  </strong>LMS shall include a value based on the LaunchMethod provided in 
+      the course structure.<br />
+      <strong>AU Usage: </strong>AU shall get the <strong><em>LaunchMethod</em></strong> value 
+      from the LMS.LaunchData state document. AU shall use the <strong><em>LaunchMethod</em></strong>
+      value in determining what action to take when the AU is terminated; either to attempt to close 
+      the window if a value of "NewWindow" is passed, or redirect back to the LMS if "ExistingWindow" 
+      is passed.<br />
+      <strong>Data type: </strong>String<br />
+      <strong>Value space: </strong>"NewWindow", "ExistingWindow"<br />
+      <strong>Sample value: </strong>"NewWindow"</p></td>
+  </tr>
+    <tr>
+    <th align="left">ReturnURL</th>
+  </tr> 
+<tr>
+    <td><p><strong>Description: </strong>Used by the LMS when launching the AU in the current window 
+	(in a web-browser environment) to tell the AU where to redirect the learner when they exit 
+	the AU.<br />
+      <strong>LMS Required:</strong> If the value of <strong><em>LaunchMethod</em></strong> is
+      "ExistingWindow"<br />
+      <strong>AU Required:</strong> If the value of <strong><em>LaunchMethod</em></strong> is
+      "ExistingWindow"<br />
+      <strong>LMS Usage:  </strong>LMS shall include the URL where the learner should be redirected 
+      on exiting the course. <br />
+      <strong>AU Usage: </strong>AU shall get the <strong><em>ReturnURL</em></strong> value 
+      from the LMS.LaunchData state document. AU shall redirect the current window in the learner's 
+      browser to the <strong><em>ReturnURL</em></strong> when the AU is terminated.<br />
+      <strong>Data type: </strong>URL<br />
+      <strong>Value space: </strong>Any URL<br />
+      <strong>Sample value: </strong>http://www.example.com/lms/mod/xapilaunch/view.php?id=12</p></td>
+  </tr>
 </table>
 
 __State API PUT Properties__:
