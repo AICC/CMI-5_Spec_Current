@@ -68,8 +68,13 @@ license agreement contained within it.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.6.2 Registration](#Registration)      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.6.2 Extensions](#extensions)    
    
+[__10.0 XAPI State Data Model__](#xapi_state)
+  
+[__11.0 XAPI Agent Profile Data Model__](#xapi_agent_profile)  
 
-[__10.0 Bibliography__](#bibliography) 
+[__12.0 XAPI Activity Profile Data Model__](#xapi_activity_profile) 
+
+[__Bibliography__](#bibliography) 
 
 [__License Agreement__](#license_agreement)
 
@@ -112,7 +117,7 @@ All previous work from 2012 discarded.
 	<tr><td>Chris Sawwa</td><td>Meridian Knowledge Systems</td></tr>
 	<tr><td>Michael Roberts</td><td>VTraining Room</td></tr>
 	<tr><td>Thomas Person</td><td>(Formerly of Adobe)</td></tr>
-	<tr><td>Andrew Downes</td><td>Epic Learning</td></tr>
+	<tr><td>Andrew Down es</td><td>Epic Learning</td></tr>
 	<tr><td>Henry Ryng</td><td>inXsol</td></tr>
 	<tr><td>Art Werkenthin</td><td>RISC, Inc.</td></tr>
 </table> 
@@ -582,75 +587,65 @@ Example:
 http://la.cmi5.aicc.org/LA1/Start.html
 ?endpoint=http://cmi-5-lms-system.org/lrslistner/
 &auth=OjFjMGY4NTYxNzUwOGI4YWY0NjFkNzU5MWUxMzE1ZGQ1
-&actor={ "name" : ["Skip Winger"], "mbox" : ["mailto:skipper@skyhiair.com"] }
+&actor={"objectType": "Agent","account": 
+{"homePage": "http://www.example.com","name": "1625378"}
 &registration=760e3480-ba55-4991-94b0-01820dbd23a2
 &activity_id=http://example.AU-content.com/example/001/statement
 ```
 
 The values for the URL launch parameters are described below: 
 
-
-<table border="1" cellspacing="0" cellpadding="0" width="100%">
-  <tr >
-    <td width="100%" valign="top"><h3>endpoint</h3></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><p><strong>Description: </strong>A    URL to the LMS listener location for XAPI messages to be sent to.  <strong></strong><br />
-      <strong>LMS Usage:  </strong>LMS shall place the <strong><em>endpoint </em></strong>in the query    string.<strong></strong>The LMS should limit the use of the <strong><em>auth </em></strong>value for the duration    of a specific/user/learning activity/registration   <br />
-      <strong>AU Usage: </strong>AU shall    get the <strong><em>endpoint </em></strong>value from the query string. AU shall use the <strong><em>endpoint </em></strong>value as the URL to send XAPI messages to.<strong></strong><br />
-      <strong>Data type: </strong>String    (URL-encoded)<br />
-      <strong>Value space:</strong> An    URL-encoded URL<br />
-      <strong>Sample value: </strong>https://aicc.org/MyCMI5_listener.pl<strong></strong></p></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><h3>auth</h3></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><p><strong>Description: </strong>An    authentication token created &amp; managed by the LMS.  Used when OAuth authentication is not    practical or desired.  The    authentication token is used by the learning activity being launched.<strong></strong><br />
-      <strong>LMS Usage:  </strong>LMS shall place the <strong><em>auth </em></strong>in the query    string when “standard authentication” is indicated in the course structure    definition. If OAuth is the method of authentication specified, the LMS shall    NOT place the <strong><em>auth </em></strong>name/value pair<strong></strong>in the query string.  The LMS should limit the use of the <strong><em>auth </em></strong>value for the duration of a specific/user/learning activity/registration   <br />
-      <strong>LA Usage: </strong>AU shall    get the <strong><em>auth</em></strong> value from the query string. AU shall place the <em>auth </em>value in the Authorization headers of all HTTP    messages made to the endpoint using the XAPI.<strong> </strong><br />
-      <strong>Data type: </strong>String    (based-64 encoded)<br />
-      <strong>Value space:</strong> <br />
-      <strong>Sample value:</strong> OjFjMGY4NTYxNzUwOGI4YWY0NjFkNzU5MWUxMzE1ZGQ1<strong></strong></p></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><h3>actor</h3></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><p><strong>Description: </strong>A    JSON object called “actor” (as defined in the XAPI specification) that    identifies the learner launching the learning activity so the learning    activity will be able to include it in XAPI messages.<strong></strong><br />
-      <strong>LMS Usage:  </strong>The LMS shall place the value for <strong><em>actor </em></strong>in the query string based on the authenticated learner’s identity. The    LMS should create an actor object specific to the LMS instance that does NOT    include sensitive PII of the learner.<strong></strong><br />
-      <strong>AU Usage: </strong>AU    shall get the <strong><em>actor </em></strong>value from the query string. AU shall use the <strong><em>actor </em></strong>value in API calls that require an “actor” object when sending XAPI    messages<strong></strong><br />
-      <strong>Data type: </strong>String    (URL-encoded)<br />
-      <strong>Value space:</strong> A    JSON Actor object (as defined in the XAPI specification)<br />
-      <strong>Sample value: </strong>{    &quot;name&quot; : [&quot;Skip Winger&quot;], &quot;mbox&quot; :    [&quot;mailto:skipper@skyhiair.com&quot;] }<strong></strong></p></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><h3>registration</h3></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><p><strong>Description: </strong>A    Registration ID corresponding to the learner’s enrollment for the AU being    launched.<strong></strong><br />
-      <strong>LMS Required: </strong>Yes<br />
-      <strong>AU: Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS shall place the value for <strong><em>registration</em></strong> in the query string based on the authenticated learner’s corresponding    enrollment for the Course that the AU being launched is a member of.<strong>  </strong><br />
-      <strong>AU Usage: </strong>AU    shall get the <strong><em>registration</em></strong> value from the query string. AU shall use the <strong><em>registration</em></strong> value in API calls that require an “registration id” when sending XAPI    messages<strong></strong><br />
-      <strong>Data type: </strong>String    (URL-encoded)<br />
-      <strong>Value space:</strong> UUID (as defined in the XAPI specification)<br />
-      <strong>Sample value:</strong></p></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><h3>activity_id</h3></td>
-  </tr>
-  <tr>
-    <td width="100%" valign="top"><p><strong>Description: </strong>The    Activity ID of the AU being launched.<strong></strong><br />
-      <strong>LMS Required: </strong>Yes<br />
-      <strong>AU: Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS shall place the value for <strong><em>activity_id</em></strong> in the query string based on the definition of the AU in the course    structure.<strong>  </strong><br />
-      <strong>AU Usage: </strong>AU    shall get the <strong><em>activity_id</em></strong> value from the query string. AU shall use the <strong><em>activity_id</em></strong> value in API calls that require an “activity id” when sending XAPI messages.<strong></strong><br />
-      <strong>Data type: </strong>String    (URL-encoded)<br />
-      <strong>Value space:</strong> UUID (as defined in the XAPI specification)<br />
-      <strong>Sample value:</strong></p></td>
-  </tr>
+<table>
+  <tr><th colspan=3 align ="left">endpoint</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A    URL to the LMS listener location for XAPI messages to be sent to.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>LMS shall place the <strong><em>endpoint </em></strong>in the query    string.<strong></strong>The LMS should limit the use of the <strong><em>auth</em></strong> value for the duration of a specific/user/learning activity/registration</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>AU shall    get the <strong><em>endpoint </em></strong>value from the query string. AU shall use the <strong><em>endpoint </em></strong>value as the URL to send XAPI messages to.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>An URL-encoded URL</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>https://mylms.aicc.org/MyCMI5_listener.pl</td></tr>
 </table>
+
+<table>
+  <tr><th colspan=3 align ="left">auth</th></tr>
+  <tr><td>&nbsp;</td><th align ="right">Description:</th><td>An    authentication token created &amp; managed by the LMS.  Used when OAuth authentication is not    practical or desired.  The    authentication token is used by the learning activity being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>LMS shall place the <strong><em>auth </em></strong>in the query    string when “standard authentication” is indicated in the course structure    definition. <br /><br />If OAuth is the method of authentication specified, the LMS shall    NOT place the <strong><em>auth </em></strong>name/value pair<strong></strong>in the query string.  <br /><br />The LMS should limit the use of the <strong><em>auth </em></strong>value for the duration of a specific/user/learning activity/registration  </td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU shall    get the <strong><em>auth</em></strong> value from the query string. AU shall place the <em>auth </em>value in the Authorization headers of all HTTP    messages made to the endpoint using the XAPI.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right">Data type:</th><td>String    (based-64 encoded)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td></td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>OjFjMGY4NTYxNzUwOGI4YWY0NjFkNzU5MWUxMzE1ZGQ1</td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">actor</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A JSON object called “actor” (as defined in the XAPI specification) that    identifies the learner launching the learning activity so the learning    activity will be able to include it in XAPI messages.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS shall place the value for <strong><em>actor </em></strong>in the query string based on the authenticated learner’s identity. The    LMS should create an actor object specific to the LMS instance that does NOT    include sensitive PII of the learner.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU shall get the <strong><em>actor </em></strong>value from the query string. AU shall use the <strong><em>actor </em></strong>value in API calls that require an “actor” object when sending XAPI messages</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td> A JSON Actor object (as defined section 9.2)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>{"objectType": "Agent","account": {"homePage": "http://www.example.com","name": "1625378"}</td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">registration</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A Registration ID corresponding to the learner’s enrollment for the AU being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>LMS shall place the value for <strong><em>registration</em></strong> in the query string based on the authenticated learner’s corresponding    enrollment for the Course that the AU being launched is a member of.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU    shall get the <strong><em>registration</em></strong> value from the query string. AU shall use the <strong><em>registration</em></strong> value in API calls that require an “registration id” when sending XAPI messages</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>UUID (as defined in the XAPI specification)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td></td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">activity_id</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>The Activity ID of the AU being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS shall place the value for <strong><em>activity_id</em></strong> in the query string based on the definition of the AU in the course    structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU shall get the <strong><em>activity_id</em></strong> value from the query string. AU shall use the <strong><em>activity_id</em></strong> value in API calls that require an “activity id” when sending XAPI messages.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>UUID (as defined in the XAPI specification)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td></td></tr>
+</table>
+
+
 <BR>
 <BR>
 
@@ -893,45 +888,45 @@ Example of usage in a statement:
 ```
 
 <table>
-<tr><th align="right"> </th><th align="left">Assessment</th></tr>
-<tr><th align="right">Description: </th><td>An activity  where the learner is evaluated or judged.</td></tr>
-<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/assessment</td></tr>
-<tr><th align="right">(definition) name:</th><td>{ "en-US" : "assessment" }</td></tr>
+<tr><th align="right" nowrap> </th><th align="left">Assessment</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity  where the learner is evaluated or judged.</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/assessment</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "assessment" }</td></tr>
 </table>
 
 <table>
-<tr><th align="right"></th><th align="left">Tutorial</th></tr>
-<tr><th align="right">Description: </th><td>An activity the learner is presented material for instruction in a defined sequence</td></tr>
-<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/tutorial</td></tr>
-<tr><th align="right">(definition) name:</th><td>{ "en-US" : "tutorial" }</td></tr>
+<tr><th align="right" nowrap></th><th align="left">Tutorial</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity the learner is presented material for instruction in a defined sequence</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/tutorial</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "tutorial" }</td></tr>
 </table>
 
 <table>
-<tr><th align="right"></th><th align="left">Simulation</th></tr>
-<tr><th align="right">Description: </th><td>An activity the learner interacts primarily with a computer-based simulation of system or a physical device</td></tr>
-<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/simulation</td></tr>
-<tr><th align="right">(definition) name:</th><td>{ "en-US" : "simulation" }</td></tr>
+<tr><th align="right" nowrap></th><th align="left">Simulation</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity the learner interacts primarily with a computer-based simulation of system or a physical device</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/simulation</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "simulation" }</td></tr>
 </table>
 
 <table>
-<tr><th align="right"></th><th align="left">Reference</th></tr>
-<tr><th align="right">Description: </th><td>An activity where the learner can search for and locate information. The presentation of what information to display is learner directed.</td></tr>
-<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/reference</td></tr>
-<tr><th align="right">(definition) name:</th><td>{ "en-US" : "reference" }</td></tr>
+<tr><th align="right" nowrap></th><th align="left">Reference</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity where the learner can search for and locate information. The presentation of what information to display is learner directed.</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/reference</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "reference" }</td></tr>
 </table>
 
 <table>
-<tr><th align="right"></th><th align="left">Job Aid</th></tr>
-<tr><th align="right">Description: </th><td>An activity where the learner is using a tool or system that help the learner perform a work related task.</td></tr>
-<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/jobaid</td></tr>
-<tr><th align="right">(definition) name:</th><td>{ "en-US" : "jobaid" }</td></tr>
+<tr><th align="right" nowrap></th><th align="left">Job Aid</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity where the learner is using a tool or system that help the learner perform a work related task.</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/jobaid</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "jobaid" }</td></tr>
 </table>
 
 <table>
-<tr><th align="right"></th><th align="left">Video</th></tr>
-<tr><th align="right">Description: </th><td>An activity where the learner is presented with a video clip as the primary (or only) media presentation.</td></tr>
-<tr><th align="right">(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/video</td></tr>
-<tr><th align="right">(definition) name:</th><td>{ "en-US" : "video" }</td></tr>
+<tr><th align="right" nowrap></th><th align="left">Video</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity where the learner is presented with a video clip as the primary (or only) media presentation.</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/video</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "video" }</td></tr>
 </table>
 
 <a name="Result"></a> 
@@ -945,10 +940,11 @@ Result may be present in a statement depending on the CMI-5 verb used.  Result m
 
 Result should be included in statements containing the following CMI-5 defined verbs:
 
-- Launched
-- Started
-- Resumed
-- Exited
+- Completed
+- Passed
+- Waived
+- Failed
+- Abandoned
 
 <a name="Score"></a> 
 ###9.5.1 Score
@@ -975,8 +971,9 @@ The completion property of result must be set to true for statements having the 
 
 - Completed
 - Passed
+- Waived
 
-The completion property of result must be set to false for statements having the following CMI-5defined verbs:
+The completion property of result must be set to false for statements having the following CMI-5 defined verbs:
 
 - Failed
 - Abandoned
@@ -1002,14 +999,40 @@ __ID__ http://www.aicc.org/cmi-5/extensions/session
  * It represents a launch session for an AU.
  * Each Session ID Must be unique for each learner/AU/Registration launch.   
  * This is an required extension for all statements with CMI-5 defined verbs 
+
+
+<table>
+  <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi-5/extensions/session</td></tr>
+  <tr><th align ="right" nowrap>Description:</th><td>An unique identifier for an single AU launch session based on actor and course registration </td></tr>
+  <tr><th align ="right" nowrap>LMS Usage:</th><td>The value for Session ID is generated by the LMS. The LMS must also the Session ID prior (per section 6.2) prior to launching an AU. The LMS must also provide the Session ID in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS.</td></tr>
+  <tr><th align ="right" nowrap>AU Usage:</th><td>An AU must include the Session ID provided by the LMS in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS. </td></tr>
+ <tr><th align ="right" nowrap>AU Obligation:</th><td>Required</td></tr>
+ <tr><th align ="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
+  <tr><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
+  <tr><th align ="right" nowrap>Value space:</th><td>string value</td></tr>
+  <tr><th align ="right" nowrap>Sample value:</th><td></td></tr>
+</table>
  
 ####9.6.2.1 Progress
+
 __ID__ http://www.aicc.org/cmi5/extensions/result/progress  
 
  * An extension to the statement result.  
  * The completion of the AU as a percentage.  
  * This is an optional extension.  
  * Contains an integer between 0 and 100.   
+
+<table>
+  <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi5/extensions/result/progress</td></tr>
+  <tr><th align ="right" nowrap>Description:</th><td>The completion of the AU as a percentage.</td></tr>
+  <tr><th align ="right" nowrap>LMS Usage:</th><td>The LMS may use this value in reports or the user interface to indicate what percentage of an AU a learner has completed</td></tr>
+  <tr><th align ="right" nowrap>AU Usage:</th><td>The AU set this value in statements to indicate level of completion between 0 and 100 percent</td></tr>
+ <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
+ <tr><th align ="right" nowrap>LMS Obligation:</th><td>Not Applicable</td></tr>
+  <tr><th align ="right" nowrap>Data type:</th><td>String</td></tr>
+  <tr><th align ="right" nowrap>Value space:</th><td>integer between 0 and 100</td></tr>
+  <tr><th align ="right" nowrap>Sample value:</th><td>75</td></tr>
+</table>
  
  
 ####9.6.2.2 Reason
@@ -1022,18 +1045,67 @@ __ID__ http://www.aicc.org/cmi5/extensions/result/reason
 ** “Tested Out” – An Assessment was completed by the student to waive the AU.  * "Equivalent AU" The student successfully completed an equivalent AU (in the same course) to waive the AU.  
 ** “Equivalent Outside Activity” – The student successfully completed an equivalent activity outside of the course to waive the AU.    
 ** "Administrative" – The LMS administrative user marked the AU complete.    
+
+<table>
+  <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi5/extensions/result/reason</td></tr>
+  <tr><th align ="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means)</td></tr>
+  <tr><th align ="right" nowrap>LMS Usage:</th><td>The LMS may set this value in statements it makes with the "Wavied" verb. The value of reason should be one of the following -
+
+<ul>
+<li><b>Tested Out</b> – An Assessment was completed by the student to waive the AU.</li>  
+<li><b>Equivalent AU</b> The student successfully completed an equivalent AU (in the same course) to waive the AU. </li>  
+<li><b>Equivalent Outside Activity</b> – The student successfully completed an equivalent activity outside of the course to waive the AU. </li>    
+<li><b>Administrative</b> – The LMS administrative user marked the AU complete.</li> 
+</ul>
+
+</td></tr>
+  <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
+ <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
+ <tr><th align ="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the Waived verb</td></tr>
+  <tr><th align ="right" nowrap>Data type:</th><td>String</td></tr>
+  <tr><th align ="right" nowrap>Value space:</th><td><ul>
+<li>"Tested Out"</li>  
+<li>"Equivalent AU"</li>  
+<li>"Equivalent Outside Activity"</li>    
+<li>"Administrative"</li> 
+</ul></td></tr>
+  <tr><th align ="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
+</table>
+ 
+
+
 	    
+<a name="xapi_state"></a>  
+#10.0 XAPI State Data Model
 
+Section Content pending.
 
+<a name="xapi_agent_profile"></a>   
+#11.0 XAPI Agent Profile Data Model  
+
+Section Content pending.
+
+<a name="xapi_activity_profile"></a>  
+#12.0 XAPI Activity Profile Data Model
+
+Section Content pending.
 
 <a name="bibliography"></a>   
-#10.0 Bibliography
+#Bibliography
 
 [1]  AICC CMI001, CMI Guidelines For Interoperability, Version 4.0. 
 
 [2]  SCORM – <http://www.adlnet.gov/capabilities/scorm>
 
 [3]  MIME Types – <http://www.iana.org/assignments/media-types/index.html>
+
+[4]  RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
+
+[5]  Experience API, Version 1.0.1, ADL, 2012-2013 - <https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md>
+
+[6]  CMI5-002 – LMS Course Structure, current working draft, AICC, 2013 -  
+<https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md>
+
 
 -------
 
