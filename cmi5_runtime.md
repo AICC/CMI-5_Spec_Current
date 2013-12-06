@@ -366,7 +366,7 @@ the course).  The state documents are specific to the learner and course registr
 __Description__: Launch parameter data from course structure for the AU  
 
 __Usage__: Static.  The LMS shall only create one State document for this combination of
-activityid, agent, registration, and stated.  
+activityid, agent, registration, and stateid.  
 
 __State Document Format__: Application/JSON  
 
@@ -410,7 +410,7 @@ Shall match Registration ID used by the LMS at AU launch time.
 ####_LMS Entitlement Data_  
 __Description__: Launch parameter data from course structure for the AU  
 __Usage__: Static. The LMS shall only create one State document for this combination of
-activityid, agent, registration, and stated
+activityid, agent, registration, and stateid
 
 __State Document Format__: Application/JSON  
 
@@ -716,7 +716,7 @@ AU’s use in statement.
 <tr><th align="left">Description</th><td>The verb “Launched” indicates that the AU was launched by the LMS.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use this verb in a statement recorded in the LRS before launching an AU.  See Statement API _____ </td></tr>
-</tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate the that the LMS has launched the AU. It should be used in combination with the "Started" statment sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
+</tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate that the LMS has launched the AU. It should be used in combination with the "Started" statment sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
 </table>
 
 ###9.3.2 Started
@@ -770,7 +770,7 @@ AU’s use in statement.
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/passed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeed in a judged activity in the AU. </td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Passed" verb when the learner has attempted and  AU.  The AU shall not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must equal to or greater than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Passed" verb when the learner has attempted and passed AU.  The AU shall not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must be equal to or greater than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall record "Mastery_Score" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  See section _____.  
 <BR>
 <BR>
@@ -785,7 +785,7 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU. </td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Failed" verb when the learner has attempted and  AU.  If the "Failed" statement contains a score, the score must be less than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score must be less than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall record "Mastery_Score" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  See section _____.<BR>
 <BR>
 The LMS shall use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  See Section_____.</td></tr>
@@ -815,7 +815,7 @@ The LMS shall use either "Passed" or "Completed" statements (or both) for determ
 <tr><th align="left">Display</th><td>{ "en-US" : "Received Waiver" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Waived” indicates that the LMS has determined that the AU was met by means other than completing the AU.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use this verb in a statement recorded in the LRS when it determines that the AU may be waived.  A statement containing a Waived verb shall include a "reason" in the extension property of the statement Result.  (see section 9.3.2) </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use this verb in a statement recorded in the LRS when it determines that the AU may be waived.  A statement containing a Waived verb shall include a "reason" in the extension property of the statement Result.  (see section 9.6.2.2) </td></tr>
 </tr><tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU may be skipped by the Learner.</td></tr>
 </table>
 
@@ -844,11 +844,11 @@ The Object in a CMI-5 defined statement represents the AU.  An Object must be pr
 The objectType property of an Object in statements with a CMI-5 verb must be set to "activity".
 
 <a name="Object_ID"></a> 
-###9.4.2 Object ID 
+###9.4.2 id 
 The value of the Object's ID property for a given AU must match the AU ID defined in the URL launch line and the course structure.
 
 <a name="Definition"></a>
-###9.4.3 Definition
+###9.4.3 definition
 
 The object's definition will have the Activity Type contained in the course structure, as defined in section 4.1.4.1 of the XAPI specification, shall be included in the "Launched" statement sent from the LMS to the LRS.  This Activity Type
 describes the general category of the AU and should be one of the following:
@@ -864,7 +864,7 @@ Example of usage in a statement:
 
 ```javascript
 {
-  "actor": {}, 
+  "actor": {...}, 
   "verb": {
                "id": "http://www.aicc.org/cmi5/verbs/launched",   
                "display": {  
@@ -888,7 +888,7 @@ Example of usage in a statement:
 ```
 
 <table>
-<tr><th align="right" nowrap> </th><th align="left">Assessment</th></tr>
+<tr><th align="right" nowrap></th><th align="left">Assessment</th></tr>
 <tr><th align="right" nowrap>Description: </th><td>An activity  where the learner is evaluated or judged.</td></tr>
 <tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/assessment</td></tr>
 <tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "assessment" }</td></tr>
@@ -1004,7 +1004,7 @@ __ID__ http://www.aicc.org/cmi-5/extensions/session
 <table>
   <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi-5/extensions/session</td></tr>
   <tr><th align ="right" nowrap>Description:</th><td>An unique identifier for an single AU launch session based on actor and course registration </td></tr>
-  <tr><th align ="right" nowrap>LMS Usage:</th><td>The value for Session ID is generated by the LMS. The LMS must also the Session ID prior (per section 6.2) prior to launching an AU. The LMS must also provide the Session ID in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS.</td></tr>
+  <tr><th align ="right" nowrap>LMS Usage:</th><td>The value for Session ID is generated by the LMS. The LMS must also record the Session ID  in the State API (per section 6.2) prior to launching an AU. The LMS must also provide the Session ID in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS.</td></tr>
   <tr><th align ="right" nowrap>AU Usage:</th><td>An AU must include the Session ID provided by the LMS in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS. </td></tr>
  <tr><th align ="right" nowrap>AU Obligation:</th><td>Required</td></tr>
  <tr><th align ="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
@@ -1026,7 +1026,7 @@ __ID__ http://www.aicc.org/cmi5/extensions/result/progress
   <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi5/extensions/result/progress</td></tr>
   <tr><th align ="right" nowrap>Description:</th><td>The completion of the AU as a percentage.</td></tr>
   <tr><th align ="right" nowrap>LMS Usage:</th><td>The LMS may use this value in reports or the user interface to indicate what percentage of an AU a learner has completed</td></tr>
-  <tr><th align ="right" nowrap>AU Usage:</th><td>The AU set this value in statements to indicate level of completion between 0 and 100 percent</td></tr>
+  <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may set this value in statements to indicate level of completion between 0 and 100 percent</td></tr>
  <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
  <tr><th align ="right" nowrap>LMS Obligation:</th><td>Not Applicable</td></tr>
   <tr><th align ="right" nowrap>Data type:</th><td>String</td></tr>
@@ -1049,7 +1049,7 @@ __ID__ http://www.aicc.org/cmi5/extensions/result/reason
 <table>
   <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi5/extensions/result/reason</td></tr>
   <tr><th align ="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means)</td></tr>
-  <tr><th align ="right" nowrap>LMS Usage:</th><td>The LMS may set this value in statements it makes with the "Wavied" verb. The value of reason should be one of the following -
+  <tr><th align ="right" nowrap>LMS Usage:</th><td>The LMS must set this value in statements it makes with the "Wavied" verb. The value of reason should be one of the following -
 
 <ul>
 <li><b>Tested Out</b> – An Assessment was completed by the student to waive the AU.</li>  
