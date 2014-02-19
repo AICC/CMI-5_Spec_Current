@@ -12,7 +12,7 @@
 
 >Caveats...
 >
->Copyright &copy; 2012-2013 AICC, All rights reserved
+>Copyright &copy; 2012-2014 AICC, All rights reserved
 >
 >The information contained in this document has been assembled by the AICC as an
 informational resource. Neither the AICC nor any of its members assumes nor shall any of
@@ -1102,7 +1102,47 @@ Section Content pending.
 <a name="xapi_agent_profile"></a>   
 #11.0 XAPI Agent Profile Data Model  
 
-Section Content pending.
+In CMI5, Learner Preferences are scoped to the learner.  Both the LMS and the AU may write changes to Learner Preferences in the xAPI Agent Profile.  The LMS/LRS may choose to ignore or "override" Learner Preference changes requested by the AU by returning a "403 Forbidden" response as defined in the xAPI specification (section 7.6).  The AU must not treat the 403 response as an error condition.  
+
+On startup an AU must retrieve the Learner Preferences document from the Agent Profile.
+
+When reading or writing to the Agent Profile, the document format shall be a JSON structure as shown below:
+
+```javascript
+{
+	"CMI5LearnerPreferences": {
+		"languagePreference": "<values for languages>",
+		"audioPreference": "<on or off>"
+	}
+}
+```
+##11.1  languagePreference
+This shall be a comma-separated list of RFC 5646 Language Tags as indicated in the xAPI specification (section 5.2).  In the list, languages shall be specified in order of user preference.  In the example below, the user's first preference for language is en-US.  The user's second preference for language is fr-FR and the third preference is fr-BE.
+
+```javascript
+{
+	"CMI5LearnerPreferences": {
+		"languagePreference": "en-US,fr-FR,fr-BE",
+		...
+	}
+}
+```
+
+The AU should display in the language preference order of the user if the AU supports multiple languages.  In the example above, if the AU supported "zh-CN", "fr-BE and "fr-FR", it should display in "fr-FR".  If the AU does not support multiple languages, or if no languagePreference is specified in the Agent Profile, it may display in its default language.
+
+##11.2 audioPreference
+The audioPrefence value indicates whether the audio should be "on" or "off".  The AU must turn the audio on or off at startup based on this value.  If no value is provided in the Agent Profile for audioPreference the AU may use its own default value.
+
+Example:
+```javascript
+{
+	"CMI5LearnerPreferences": {
+		"audioPreference": "on",
+		...
+	}
+}
+```
+
 
 <a name="xapi_activity_profile"></a>  
 #12.0 XAPI Activity Profile Data Model
