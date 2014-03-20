@@ -64,6 +64,7 @@ license agreement contained within it.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.5.1 Score](#Score)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.5.2 Success](#Success)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.5.3 Completion](#Completion)   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.5.4 Duration](#Duration)   
 &nbsp;&nbsp;&nbsp;&nbsp;[9.6 Context](#Context)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.6.1 Registration](#Registration)      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[9.6.2 Extensions](#extensions)    
@@ -776,7 +777,7 @@ AU’s use in statement.
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/suspended</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Suspended" }</td></tr>
 <tr><th align="left">Description</th><td>The learner exited an AU session (uncompleted) with the intention of returning to the AU.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Suspended" verb when the learner exits an AU without experiencing all relevant material in the AU.  The AU shall not issue a "Suspended" statement if the AU previously issued a statement with "Completed". The AU shall not issue any other statements following "Suspend" except for "Exit".</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU shall record a statement containing the "Suspended" verb when the learner exits an AU without experiencing all relevant material in the AU.  The AU shall not issue a "Suspended" statement if the AU previously issued a statement with "Completed".  After issuing a "Suspended" statement, the AU must issue an "Exited" statement. The AU shall not issue any other statements following "Suspend" except for "Exited".</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
 </tr><tr><th align="left">Usage</th><td>The criterion for "Suspended" is determined by the AU design.</td></tr>
 </table>
@@ -1018,6 +1019,23 @@ The completion property of result must be set to false for statements having the
 - Failed
 - Abandoned
 
+<a name="Duration"></a>
+###9.5.4 Duration
+The duration property is a time value required in certain statements as defined in this section.
+####9.5.4.1 AU statements that include duration
+##### Exited Statement
+The AU must include the duration property in Exited statements.  The AU should calculate duration for Exited statements as the time difference between Started statement and the Exited statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
+##### Suspended Statement
+The AU should include the duration property in Suspended statements.  The AU should calculate duration for Suspended statements as the time difference between Started statement and the Suspended statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
+##### Completed Statement
+The AU must include the duration property in Completed statements.  The AU should calculate duration as the time spent by the learner to achieve completion status.
+##### Passed Statement
+The AU must include the duration property in Passed statements.  The AU should calculate duration as the time spent by the learner to attempt and succeed in a judged activity of the AU. 
+##### Failed Statement
+The AU must include the duration property in Failed statements. The AU should calculate duration as the time spent by the learner to attempt and fail in a judged activity of the AU.
+####9.5.4.2 LMS statements that include duration
+##### Abandoned Statement
+The duration proprety should be include in Abandoned statements.  The duration property should be set as the total session time, based on the AU launch, as calculated by the LMS.
 
 <a name="Context"></a> 
 ##9.6 Context
