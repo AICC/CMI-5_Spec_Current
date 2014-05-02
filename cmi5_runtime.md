@@ -31,7 +31,7 @@ license agreement contained within it.
 
 * [__1.0 Overview__](#overview)
   * [1.1 Scope](#scope)
-  * [2.0 References](#references)
+* [__2.0 References__](#references)
 * [__3.0 Definitions__](#definitions)
   * [3.1 Abbreviations and acronyms](#acronyms)
 * [__4.0 Conformance__](#conformance)
