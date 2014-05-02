@@ -52,7 +52,7 @@
     * [7.1.3 Objectives Meta Data](#objectives_meta_data)
     * [7.1.4 AU Meta Data](#au_meta_data)
   * [7.2 Course Structure XSD](#course_structure_xsd)
-* [__10.0 Bibliography__](#bibliography)
+* [__8.0 Bibliography__](#bibliography)
 
 [__License Agreement__](#license_agreement)
 
