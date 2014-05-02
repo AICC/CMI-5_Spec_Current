@@ -873,8 +873,9 @@ not be recording any more statements for the launch session.</td>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS shall use the the "Exit" statement to determine that the AU session has ended.  In the absence of an "Exit" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
-<BR/>
-<BR/>
+
+<BR>
+<BR>
 
 <a name="Object"></a> 
 ##9.4 Object 
