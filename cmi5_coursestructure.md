@@ -30,33 +30,31 @@
 
 # Table of Contents
 
-[__Revision History__](#revhistory)  
-[__Contributors__](#contributors)  
+[__Revision History__](#revhistory)
 
+[__Contributors__](#contributors)
 
-[__1.0 Overview__](#overview)  
-&nbsp;&nbsp;&nbsp;&nbsp;[1.1 Scope](#scope)  
-&nbsp;&nbsp;&nbsp;&nbsp;[2.0 References](#references)  
-[__3.0 Definitions__](#definitions)   
-&nbsp;&nbsp;&nbsp;&nbsp;[3.1 Abbreviations and acronyms](#acronyms)  
-[__4.0 Conformance__](#conformance)   
-&nbsp;&nbsp;&nbsp;&nbsp;[4.1 Assignable Unit (AU)](#au_conformance)  
-&nbsp;&nbsp;&nbsp;&nbsp;[4.2 Learning Management Systems (LMS)](#lms_conformance)   
-[__5.0 Conceptual Model: Informative__](#concept)  
-[__6.0 LMS Requirements__](#lms_requirements)  
-&nbsp;&nbsp;&nbsp;&nbsp;[6.1 Course structure requirements](#course_structures)  
-[__7.0 Course Structure Data Requirements__](#course_requirements)  
-&nbsp;&nbsp;&nbsp;&nbsp;[7.1 Course Structure Data Model](#course_structure_data_model)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1.1 Course Level Meta Data](#course_level_meta_data)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1.2 Block Meta Data](#block_meta_data)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1.3 Objectives Meta Data](#objectives_meta_data)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.1.4 AU Meta Data](#au_meta_data)   
-&nbsp;&nbsp;&nbsp;&nbsp;[7.2 Course Structure XSD](#course_structure_xsd)  
+* [__1.0 Overview__](#overview)
+  * [1.1 Scope](#scope)
+  * [2.0 References](#references)
+* [__3.0 Definitions__](#definitions)
+  * [3.1 Abbreviations and acronyms](#acronyms)
+* [__4.0 Conformance__](#conformance)
+  * [4.1 Assignable Unit (AU)](#au_conformance)
+  * [4.2 Learning Management Systems (LMS)](#lms_conformance)
+* [__5.0 Conceptual Model: Informative__](#concept)
+* [__6.0 LMS Requirements__](#lms_requirements)
+  * [6.1 Course structure requirements](#course_structures)
+* [__7.0 Course Structure Data Requirements__](#course_requirements)
+  * [7.1 Course Structure Data Model](#course_structure_data_model)
+    * [7.1.1 Course Level Meta Data](#course_level_meta_data)
+    * [7.1.2 Block Meta Data](#block_meta_data)
+    * [7.1.3 Objectives Meta Data](#objectives_meta_data)
+    * [7.1.4 AU Meta Data](#au_meta_data)
+  * [7.2 Course Structure XSD](#course_structure_xsd)
+* [__8.0 Bibliography__](#bibliography)
 
-
-[__10.0 Bibliography__](#bibliography)  
-
-[__License Agreement__](#license_agreement)  
+[__License Agreement__](#license_agreement)
 
 ------
 
