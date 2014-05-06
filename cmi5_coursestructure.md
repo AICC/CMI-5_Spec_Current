@@ -1,11 +1,12 @@
-<img src="http://aicc.org/joomla/dev/images/aicc-logo.png"> CMI-5 Course Structure 
----
+![AICC Logo](http://aicc.org/joomla/dev/images/aicc-logo.png) CMI-5 Course Structure 
+------------------------------------------------------------------------------------
+
 
 **AICC DOCUMENT NUMBER:** CMI5-002  &nbsp;&nbsp; **Revision:** CURRENT WORKING DRAFT   
 **THIS DOCUMENT IS CONTROLLED BY:** AICC CMI Subcommittee
 
 
-#***WORKING DRAFT - NOT FOR IMPLEMENTATION***
+#*WORKING DRAFT - NOT FOR IMPLEMENTATION*
 
 
 ---
@@ -16,16 +17,7 @@
 >
 >The information contained in this document has been assembled by the AICC as an informational resource. Neither the AICC nor any of its members assumes nor shall any of them have any responsibility for any use by anyone for any purpose of this document or of the data which it contains. All use of this document is subject to the terms of the license agreement contained within it.
 
-
-
-
-
-
-
-----
-
-
-
+---
 
 
 # Table of Contents
@@ -67,43 +59,43 @@ All previous work from 2012 discared
 
 
 <a name="contributors"/> 
-##Contributors
+## Contributors
 
-<table>
-  <tr><th>Name:</th><th>Organization:</th></tr>
-  <tr><td>Ed Cohen</td><td>AICC Infrastructure Subcommittee Chair</td></tr>
-	<tr><td>Aaron Silvers</td><td>ADL</td></tr>
-	<tr><td>Jonathan Poltrack</td><td>ADL</td></tr>
-	<tr><td>Andy Johnson</td><td>ADL</td></tr>
-	<tr><td>Tom Creighton</td><td>ADL</td></tr>
-	<tr><td>Nik Hruska</td><td>ADL</td></tr>
-	<tr><td>Avron Barr</td><td>The LETSI Foundation</td></tr>
-	<tr><td>Mike Rustici</td><td>Rustici Software</td></tr>
-	<tr><td>Ben Clark</td><td>Rustici Software</td></tr>
-	<tr><td>Megan Bowe</td><td>Rustici Software</td></tr>
-	<tr><td>Jacques Talvard</td><td>Airbus</td></tr>
-	<tr><td>William A. McDonald</td><td>Boeing</td></tr>
-	<tr><td>Ray Lowery</td><td>Pratt &amp; Whitney</td></tr>
-	<tr><td>John Kleeman</td><td>Questionmark</td></tr>
-	<tr><td>Kris Rockwell</td><td>Hybrid Learning Systems</td></tr>
-	<tr><td>Paul Roberts</td><td>Questionmark</td></tr>
-	<tr><td>Christopher Reynolds</td><td>Pelesys</td></tr>
-	<tr><td>Mingrui Zheng</td><td>Pelesys</td></tr>
-	<tr><td>Chris Sawwa</td><td>Meridian Knowledge Systems</td></tr>
-	<tr><td>Michael Roberts</td><td>VTraining Room</td></tr>
-	<tr><td>Thomas Person</td><td>(Formerly of Adobe)</td></tr>
-</table> 
+
+| Name:                | Organization:                          |
+|----------------------|----------------------------------------|
+| Ed Cohen             | AICC Infrastructure Subcommittee Chair |
+| Aaron Silvers        | ADL                                    |
+| Jonathan Poltrack    | ADL                                    |
+| Andy Johnson         | ADL                                    |
+| Tom Creighton        | ADL                                    |
+| Nik Hruska           | ADL                                    |
+| Avron Barr           | The LETSI Foundation                   |
+| Mike Rustici         | Rustici Software                       |
+| Ben Clark            | Rustici Software                       |
+| Megan Bowe           | Rustici Software                       |
+| Jacques Talvard      | Airbus                                 |
+| William A. McDonald  | Boeing                                 |
+| Ray Lowery           | Pratt &amp; Whitney                    |
+| John Kleeman         | Questionmark                           |
+| Kris Rockwell        | Hybrid Learning Systems                |
+| Paul Roberts         | Questionmark                           |
+| Christopher Reynolds | Pelesys                                |
+| Mingrui Zheng        | Pelesys                                |
+| Chris Sawwa          | Meridian Knowledge Systems             |
+| Michael Roberts      | VTraining Room                         |
+| Thomas Person        | (Formerly of Adobe)                    |
 
 -------
 
 <a name="overview"/> 
-#1.0 Overview
+# 1.0 Overview
 
 
 This specification describes the course structure interchange format for Learning Management Systems (LMS).  
 
 <a name="scope"/> 
-##1.1 Scope
+## 1.1 Scope
 
 The scope of this specification is limited to following:
 * LMS Course Structure Import/Export
@@ -111,7 +103,7 @@ The scope of this specification is limited to following:
 
 
 <a name="references"/> 
-#2.0  References
+# 2.0  References
 
 The following referenced documents are indispensable for the application of this specification. 
 
@@ -125,7 +117,7 @@ CMI5-001  – CMI-5 Runtime Environment, Version x.x, AICC, TBD
 
 
 <a name="definitions"/>  
-#3.0 Definitions  
+# 3.0 Definitions  
 
 
 For purposes of this specification, the following terms and definitions apply: 
@@ -150,7 +142,7 @@ For purposes of this specification, the following terms and definitions apply:
 
 
 <a name="acronyms"/>  
-##3.1 Abbreviations and Acronyms
+## 3.1 Abbreviations and Acronyms
 <BR>
 __ADL__: Advanced Distributed Learning  
 __AICC__: Aviation Industry Computer-Based Training Committee  
@@ -167,7 +159,7 @@ __XAPI__: Experience API
 
 
 <a name="conformance"/>
-#4.0  Conformance
+# 4.0  Conformance
 
 Conformance to this specification is defined in section. 
 
@@ -177,20 +169,20 @@ In this specification, “shall” is to be interpreted as a requirement on an i
 Uses of XAPI specification outside the scope this specification do not affect conformance with this specification.
 
 <a name="au_conformance"/>
-##4.1 Courses
+## 4.1 Courses
 
 A course shall be bundled with a course structure data  that conform to all requirements listed in Section 7  
 Course structure data shall not implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
 
 <a name="lms_conformance"/>
-##4.2 Learning Management Systems (LMS)
+## 4.2 Learning Management Systems (LMS)
 
 LMS systems shall conform to all requirements listed in Section 6 – LMS Requirements.  
 The LMS shall not implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
 <a name="concept"/>
-#5.0 Conceptual Model: Informative  
+# 5.0 Conceptual Model: Informative  
 
 Synopsis of the CMI-5 model:
 * An LMS imports a course structure.
@@ -216,7 +208,7 @@ Responsibilities of the LMS:
 * Launch the specified learning activity contained in courses, in the defined environment(s).
 
 <a name="lms_requirements"/>
-#6.0 LMS Requirements
+# 6.0 LMS Requirements
 
 LMS systems shall meet the following requirements to conform to this specification:  
 
@@ -224,7 +216,7 @@ LMS systems shall meet the following requirements to conform to this specificati
 2. The LMS shall implement a means to export course structures as defined in section 6.1
 
 <a name="course_structures"/>
-##6.1 Course structure requirements
+## 6.1 Course structure requirements
 The LMS shall implement a means to create and maintain course structures.  
 The LMS shall implement the import of the course data structure defined in section 7.
 The LMS shall implement the export of the course data structure defined in section 7.
@@ -236,13 +228,13 @@ The LMS shall have the ability to create, maintain,import, and export course str
 
 
 <a name="course_requirements"/>
-#7.0 Course Structure Data Requirements  
+# 7.0 Course Structure Data Requirements  
 
 <a name="course_structure_data_model"/>
-##7.1 Course Structure Data Model  
+## 7.1 Course Structure Data Model  
 
 <a name="course_level_meta_data"/>
-###7.1.1 Course Level Meta-data  
+### 7.1.1 Course Level Meta-data  
  
 The following meta data elements are at the course level and  describe the course instance as a whole
 
@@ -296,7 +288,7 @@ The following meta data elements are at the course level and  describe the cours
 
 
 <a name="block_meta_data"/>
-###7.1.2 Block Meta Data
+### 7.1.2 Block Meta Data
 
 The data in this section is used for the block structures with group AU’s.  A Block consists of one or more AU’s. Blocks  can also contain Objectives and other Blocks.
 
@@ -332,7 +324,7 @@ The data in this section is used for the block structures with group AU’s.  A 
 
 
 <a name="objectives_meta_data"/>  
-###7.1.3 Objectives Meta Data   
+### 7.1.3 Objectives Meta Data   
 
 The data in this section is used by Objectives. Objectives can be associated with a Block or with individual AU’s. 
 
@@ -383,7 +375,7 @@ The data in this section is used by Objectives. Objectives can be associated wit
 
 
 <a name="au_meta_data"/>  
-###7.1.4 AU Meta Data  
+### 7.1.4 AU Meta Data  
 
 The data in this section is used by the LMS to locate the AU and provide launch data. 
 AU’s may also contain objectives.
@@ -557,7 +549,7 @@ AU’s may also contain objectives.
 </table>
 
 <a name="course_structure_xsd"/>  
-##7.2 Course Structure XSD 
+## 7.2 Course Structure XSD 
 
 The following is the XML Schema for a course structure.  
 All course structures created for LMS import and creaated by the LMS for export shall conform to this XSD.
@@ -658,7 +650,7 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 
 
 <a name="bibliography"/> 
-#8.0 Bibliography
+# 8.0 Bibliography
 
 [1]  AICC CMI001, CMI Guidelines For Interoperability, Version 4.0. 
 
@@ -669,11 +661,11 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 -------
 
 <a name="license_agreement"/> 
-#License Agreement
+# License Agreement
 
 THE WORK (AS DEFINED HEREIN) ACCOMPANYING THIS LICENSE AGREEMENT ("AGREEMENT") IS PROVIDED BY THE AICC, A NON-PROFIT CORPORATION ORGANIZED UNDER THE LAWS OF Idaho (“LICENSOR”), TO YOU (“YOU” OR “LICENSEE”) ONLY UNDER THE TERMS AND CONDITIONS OF THIS AGREEMENT. ANY USE, REPRODUCTION, DISTRIBUTION OR MODIFICATION OF THE WORK BY YOU CONSTITUTES YOUR ACCEPTANCE OF THIS AGREEMENT. BY OBTAINING, USING, DISTRIBUTING, REPRODUCING AND/OR MODIFYING THE WORK, YOU AGREE THAT YOU HAVE READ, UNDERSTOOD, AND WILL COMPLY WITH THE FOLLOWING TERMS AND CONDITIONS.
 
-####1. DEFINITIONS
+#### 1. DEFINITIONS
 
 “Affiliate” means any entity that directly or indirectly controls, is controlled by, or is under common control with, another entity, so long as such control exists. For purposes of this definition, with respect to a business entity, “control” means a majority vote of voting members.  In the event that such control ceases to exist, any grant of rights or other contractual powers granted to such Affiliate hereunder will be immediately withdrawn, and this Agreement as between Licensor and such Affiliate shall be terminated as set forth in Section 9, below.
 
@@ -703,7 +695,7 @@ THE WORK (AS DEFINED HEREIN) ACCOMPANYING THIS LICENSE AGREEMENT ("AGREEMENT") I
 
 “Work” means any Specification, Technical Note or Compliance Test Suite distributed in accordance with and licensed under this Agreement.
 
-####2. LICENSE GRANT AND RESTRICTIONS
+#### 2. LICENSE GRANT AND RESTRICTIONS
 
 a. Subject to the terms of this Agreement, Licensor hereby grants to Licensee a non-exclusive, worldwide, royalty-free license in any copyrights and/or Necessary Claims in the Work such that Licensee may view, use, reproduce, publicly display, distribute and prepare Derivative Works of the Work. 
 
@@ -718,32 +710,32 @@ e. Licensee agrees to include the following notice in all Derivative Works: “T
 f. Licensee may not facilitate or assist any Learning Technology Standards Organization other than Licensor in co-opting, copying, distributing, publishing or using the Work without prior written approval of Licensor. Licensee may not create any Derivative Work for ownership by, presentation by, distributing by, publishing by or attribution to any Standards Organization or similar entity other than Licensor, unless specifically approved in writing by Licensor. 
 
 
-####3. GRANT OF RIGHTS BY CONTRIBUTORS
+#### 3. GRANT OF RIGHTS BY CONTRIBUTORS
 Subject to the terms of this Agreement, a Contributor hereby grants to Licensor a non-exclusive, worldwide, royalty-free license under all intellectual property rights to make, use, sell, offer to sell, import and otherwise transfer any Contribution of such Contributor. This license shall apply to the combination of the Contribution and the Work.
 
-####4. TRADEMARKS
+#### 4. TRADEMARKS
 This Agreement does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the copyright notice.
 
-####5. WARRANTY
+#### 5. WARRANTY
 THE WORK ACCOMPANYING THIS AGREEMENT IS PROVIDED "AS IS" WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, AND THE HOLDERS OF ANY COPYRIGHT, PATENT OR OTHER INTELLECTUAL PROPERTY RIGHT THEREIN MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with your exercise of permissions under this Agreement.
 
-####6. LIMITATION OF LIABILITY
+#### 6. LIMITATION OF LIABILITY
 IN NO EVENT AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, UNLESS REQUIRED BY APPLICABLE LAW (SUCH AS DELIBERATE AND GROSSLY NEGLIGENT ACTS) OR AGREED TO IN WRITING, SHALL LICENSOR OR ANY CONTRIBUTOR BE LIABLE TO YOU FOR ANY DAMAGES WHATSOEVER, INCLUDING ANY DIRECT, INDIRECT, EXEMPLARY, PUNITIVE, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER ARISING AS A RESULT OF THIS AGREEMENT OR OUT OF THE USE OR INABILITY TO USE THE WORK (INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES), EVEN IF LICENSOR OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
-####7. COMMERCIAL DISTRIBUTION
+#### 7. COMMERCIAL DISTRIBUTION
 If you include the Work or any Derivative Work in a commercial product offering, you hereby agree to defend and indemnify Licensor and every Contributor (the "Indemnitees ") against any losses, damages and costs (collectively "Losses") arising from claims, lawsuits and other legal actions brought by a third party against the Indemnitees, to the extent caused by your acts or omissions in connection with your distribution of the Work in a commercial product offering. Indemnitees shall: a) promptly notify you in writing of such claim, and b) allow you to control, and cooperate with you in, the defense and any related settlement negotiations. Any Indemnitee may participate in any such claim at its own expense.
 
-####8. PROPRIETARY RIGHTS
+#### 8. PROPRIETARY RIGHTS
 Regardless of who owns the media on which the Work resides or is distributed, the Work expressly remains the intellectual property of Licensor and/or the Contributors, and Licensor and/or the Contributors retain all right, title and interest in and to the Work and all copies thereof. Licensor expressly reserves all rights not specifically granted in this Agreement.
 
-####9. TERMINATION
+#### 9. TERMINATION
 Licensor reserves the right to terminate this Agreement at any time if you are in breach of any of its terms and conditions, copyright laws, or any other applicable laws or regulations. In such a case, the rights granted to you under Section 2 of this Agreement shall be automatically terminated, and you shall be obliged to cease using the Work and immediately destroy any copies of the Work and all backup copies.
 Termination is not the sole remedy under this Agreement and, whether or not termination is effected, all other remedies, legal and equitable, will remain available.
 
-####10. UPGRADES
+#### 10. UPGRADES
 Licensor is under no obligation under this Agreement to provide any fixes, revisions, upgrades or future versions of the Work to you or to any other party. Should you ever obtain an upgrade of this Work, the terms and conditions of this Agreement shall also apply to the upgrade. The Work is subject to change without notice.
 
-####11. GENERAL
+#### 11. GENERAL
 
 a. Independent Contractors. The parties and their respective personnel are and shall be independent contractors and neither party by virtue of this Agreement shall have any right, power or authority to act or create any obligation, express or implied, on behalf of the other party. 
 
