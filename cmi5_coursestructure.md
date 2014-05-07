@@ -6,7 +6,7 @@
 **THIS DOCUMENT IS CONTROLLED BY:** AICC CMI Subcommittee
 
 
-#*WORKING DRAFT - NOT FOR IMPLEMENTATION*
+# *WORKING DRAFT - NOT FOR IMPLEMENTATION*
 
 
 ---
@@ -137,13 +137,14 @@ For purposes of this specification, the following terms and definitions apply:
 * __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the CMI5 specification.  The LMS shall have an LRS as part of its implementation.
 
 * __Learning Records Store (LRS)__: As defined in the XAPI specification.  In this specification, the LMS shall implement an LRS with additional requirements as specified in this document.
+
 <BR>
 <BR>
 
 
 <a name="acronyms"/>  
 ## 3.1 Abbreviations and Acronyms
-<BR>
+
 __ADL__: Advanced Distributed Learning  
 __AICC__: Aviation Industry Computer-Based Training Committee  
 __API__: Application Programming Interface  
@@ -155,7 +156,6 @@ __URI__: Uniform Resource Identifier
 __URL__: Uniform Resource Locator  
 __URN__: Uniform Resource Name  
 __XAPI__: Experience API  
-<BR>
 
 
 <a name="conformance"/>
@@ -246,42 +246,48 @@ The following meta data elements are at the course level and  describe the cours
     <td width="168" valign="top"><p><strong>Required</strong>: 
       Yes<br />
       <strong>Data</strong> type: 
-      String</p></td>
-    <td width="422" valign="top"><p><strong>Description:</strong><br />
-      A descriptive    title the identifies the course<br />
+      String</p>
+    </td>
+    <td width="811" valign="top"><p><strong>Description:</strong><br />
+      A descriptive title the identifies the course<br />
       </p>
       <p><strong>Value space:</strong><br />
-        Values defined    by course designer<br />
+        Values defined by course designer<br />
       </p>
       <p><strong>Sample value</strong>: <br />
-      Fundamentals    of Trouble-Shooting </p></td>
+      Fundamentals of Trouble-Shooting </p>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>Description</h3></td>
   </tr>
   <tr>
     <td width="168" valign="top"><p><strong>Required</strong>: Yes<br />
-        <strong>Data</strong> type: String</p></td>
-    <td width="422" valign="top"><p><strong>Description:</strong><br />
+        <strong>Data</strong> type: String</p>
+    </td>
+    <td width="811" valign="top"><p><strong>Description:</strong><br />
       A detailed    description of what the course.</p>
       <p><strong>Value space:</strong><br />
-        Values defined    by course designer</p>
+        Values defined by course designer</p>
       <p><br />
         <strong>Sample element value: </strong><br />
-        Fundamentals    of Trouble-Shooting course. This 8-hour course covers how to isolate faults    in complex systems.  </p></td>
+        Fundamentals of Trouble-Shooting course. This 8-hour course covers how to isolate faults in complex systems.</p>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>CourseIdentifier</h3></td>
   </tr>
   <tr>
     <td width="168" valign="top"><p><strong>Required</strong>: Yes<br />
-        <strong>Data</strong> type: String</p></td>
-    <td width="422" valign="top"><p><strong>Description</strong>:<br />
-      A globally    unique identifier for the course.  Used    to explicitly identify the course instance.</p>
-      <p><strong>Value</strong> space:<br />
+        <strong>Data</strong> type: String</p>
+    </td>
+    <td width="811" valign="top"><p><strong>Description</strong>:<br />
+      A globally unique identifier for the course.  Used to explicitly identify the course instance.</p>
+      <p><strong>Value space: </strong><br />
         TBD –<br />
         <strong>Sample element value: </strong><br />
-        TBD</p></td>
+        TBD</p>
+    </td>
   </tr>
 </table>
 
@@ -298,13 +304,15 @@ The data in this section is used for the block structures with group AU’s.  A 
   </tr>
   <tr>
     <td width="164" valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type:</strong> string</p></td>
+        <strong>Data type:</strong> string</p>
+    </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
-      A descriptive    title for the Block of AU’s<br />
+      A descriptive title for the Block of AU’s<br />
       <strong>Value space:</strong><br />
-      Values defined    by course designer<br />
+      Values defined by course designer<br />
       Sample value: <br />
-      Day 1 –    Overview of Systems</p></td>
+      Day 1 – Overview of Systems</p>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>Description</h3></td>
@@ -312,13 +320,15 @@ The data in this section is used for the block structures with group AU’s.  A 
   <tr>
     <td width="164" valign="top"><p><strong>Required: 
       </strong>Yes<br />
-      <strong>Data type:</strong> string </p></td>
+      <strong>Data type:</strong> string </p>
+    </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
-      A detailed    verbal description of what the Block contains.<br />
+      A detailed verbal description of what the Block contains.<br />
       <strong>Value space</strong>:<br />
-      Values defined    by course designer<br />
+      Values defined by course designer<br />
       <strong>Sample value: </strong><br />
-      Day 1 –    Overview of Systems.  In this part of    the course you will get a complete overview. </p></td>
+      Day 1 – Overview of Systems.  In this part of the course you will get a complete overview.</p>
+    </td>
   </tr>
 </table>
 
@@ -335,41 +345,46 @@ The data in this section is used by Objectives. Objectives can be associated wit
   <tr>
     <td width="183" valign="top"><p><strong>Required:</strong> Yes<br />
         <strong>Data type</strong>:
-      string</p></td>
+      string</p>
+    </td>
     <td width="792" valign="top"><p><strong>Description</strong>:<br />
-      A descriptive    title for the learning objective</p>
+      A descriptive title for the learning objective</p>
       <p><br />
         <strong>Value space:</strong><br />
-        Values defined    by course designer<br />
+        Values defined by course designer<br />
       </p>
-      <p><strong>Sample value: </strong></p></td>
+      <p><strong>Sample value: </strong></p>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>ObjectiveID</h3></td>
   </tr>
   <tr>
     <td width="183" valign="top"><p><strong>Required: </strong>Yes<br />
-        <strong>Data type:</strong> string</p></td>
+        <strong>Data type:</strong> string</p>
+    </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br />
-      A unique    identifier for the learning objective<br />
+      A unique identifier for the learning objective<br />
       </p>
       <p><strong>Value space:</strong></p>
-    <p><strong>Sample value: </strong></p></td>
+    <p><strong>Sample value: </strong></p>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>ObjectiveDescription</h3></td>
   </tr>
   <tr>
     <td width="183" valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type</strong>: string </p></td>
+        <strong>Data type</strong>: string </p>
+    </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br />
-      A detailed    verbal description of the learning objective.<br />
+      A detailed verbal description of the learning objective.<br />
       </p>
       <p><strong>Value space:</strong><br />
-        Values defined    by course designer<br />
+        Values defined by course designer<br />
         </p>
       <p><strong>Sample value: </strong></p>
-    <p>&nbsp;</p></td>
+    </td>
   </tr>
 </table>
 
@@ -386,66 +401,72 @@ AU’s may also contain objectives.
     <td colspan="2" valign="top"><h3>ActivityID</h3></td>
   </tr>
   <tr>
-    <td width="160" valign="top"><p><strong>Required: </strong>      Yes<br />
+    <td width="160" valign="top"><p><strong>Required: </strong> Yes<br />
         <strong>Data type: </strong> string</p></td>
     <td width="1471" valign="top"><p><strong>Description: </strong> UniqueID that AU uses to identify itself to the LMS in XAPI messages to the LMS.</p>
-      <p><strong>Value space: </strong>Values defined    by course designer</p>
-      <p><strong>Sample value: </strong></p></td>
+      <p><strong>Value space: </strong>Values defined by course designer</p>
+      <p><strong>Sample value: </strong></p>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>Title</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><strong>Required: </strong>      Yes<br />
+    <td valign="top"><p><strong>Required: </strong> Yes<br />
         <strong>Data type:</strong> string</p></td>
-    <td valign="top"><p><strong>Description:</strong>       A descriptive    title for the  AU<br />
+    <td valign="top"><p><strong>Description:</strong> A descriptive title for the AU<br />
         </p>
-      <p><strong>Value space: </strong>      Values defined    by course designer<br />
+      <p><strong>Value space: </strong> Values defined by course designer<br />
       </p>
-      <p><strong>Sample value: </strong></p></td>
+      <p><strong>Sample value: </strong></p>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>URL</h3></td>
   </tr>
   <tr>
     <td width="160" valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type: </strong> string</p></td>
+        <strong>Data type: </strong> string</p>
+    </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      A relative or    fully qualified URL that references the launch point of the AU.</p>
-      <p>        <strong>Value space:</strong></p>
-    <p><strong>Sample value:</strong></p></td>
+      A relative or fully qualified URL that references the launch point of the AU.</p>
+      <p><strong>Value space:</strong></p>
+      <p><strong>Sample value:</strong></p>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>LaunchParameters</h3></td>
   </tr>
   <tr>
     <td width="160" valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type: </strong>string </p></td>
+        <strong>Data type: </strong>string </p>
+    </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      Static launch    parameters defined by the AU designer.     The LMS is required to store this data and provide to the AU if    requested by the AU during runtime.<br />
+      Static launch parameters defined by the AU designer.  The LMS is required to store this data and provide to the AU if    requested by the AU during runtime.<br />
       </p>
       <p><strong>Value space:</strong><br />
-        Values defined    by AU designer</p>
+        Values defined by AU designer</p>
       <p><br />
         <strong>Sample value: </strong></p>
-    <p>&nbsp;</p></td>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>LaunchMethod</h3></td>
   </tr>
   <tr>
     <td valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type:</strong> string </p></td>
+        <strong>Data type:</strong> string </p>
+    </td>
     <td valign="top"><p><strong>Description:</strong> Used by the LMS when launching the AU (in a web-browser environment) to determine whether to redirect the existing web-browser window ot the AU's URL or to spawn a new browser window for the AU.</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>A value of &quot;NewWindow&quot; will require the LMS to launch the AU in a new browser window</li>
-        <li>A value of &quot;ExistingWindow&quot; will require the LMS to redirect the existing web browser window to the AU's URL location.</li>
+        <li>A value of "NewWindow" will require the LMS to launch the AU in a new browser window</li>
+        <li>A value of "ExistingWindow" will require the LMS to redirect the existing web browser window to the AU's URL location.</li>
       </ul>
-      <p><strong>Value space: </strong>&quot;NewWindow&quot;, &quot;ExistingWindow&quot;<br />
+      <p><strong>Value space: </strong>"NewWindow", "ExistingWindow"<br />
         <br />
-      <strong>Sample value: </strong> &quot;NewWindow&quot; </p>
-    <p>&nbsp;</p></td>
+      <strong>Sample value: </strong> "NewWindow" </p>
+    </td>
   </tr>
     <tr>
     <td colspan="2" valign="top"><h3>MasteryScore</h3></td>
@@ -458,15 +479,14 @@ AU’s may also contain objectives.
       <ul>
         <li>The MasteryScore is passed to the AU at runtime by the LMS (as defined in the CMI5 Runtime Specification)</li>
         <li>If the AU has scoring, it will use the MasteryScore to detemine pass/fail (as defined in the CMI5 Runtime Specification)</li>
-        <li>If value of MasteryScore is an empty string (&quot;&quot;), then a MasteryScore is not defined for the AU</li>
+        <li>If value of MasteryScore is an empty string (""), then a MasteryScore is not defined for the AU</li>
       </ul>
       <p><strong>Value space: </strong>Integer Number or empty string<br />
         <br />
-      <strong>Sample value: </strong> &quot;100&quot; </p>
-    <p>&nbsp;</p></td>
+      <strong>Sample value: </strong> "100" </p>
+    </td>
   </tr>
-    </tr>
-    <tr>
+  <tr>
     <td colspan="2" valign="top"><h3>MoveOn</h3></td>
   </tr>
   <tr>
@@ -475,47 +495,46 @@ AU’s may also contain objectives.
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if a AU has been sufficiently completed for the purposes determining overall course completion or determining if prequisites were met for other activites.. </p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>If the LMS recieves the specified combination of &quot;Passed&quot; and &quot;Completed&quot; verbs in statements (as defined in the CMI-5 runtime specification) in MoveOn, then the LMS will consider the AU &quot;complete&quot;</li>
-        <li>MoveOn Value = &quot;Passed&quot; : If the LMS recieves a statement with the verb &quot;Passed&quot;,  then the LMS will consider the AU &quot;complete&quot; for course and prequisite completion requirememts.</li>
-        <li>MoveOn Value = &quot;Completed&quot; : If the LMS recieves a statement with the verb &quot;Completed&quot;,  then the LMS will consider the AU &quot;complete&quot; for course and prequisite completion requirememts.<br />
+        <li>If the LMS recieves the specified combination of "Passed" and "Completed" verbs in statements (as defined in the CMI-5 runtime specification) in MoveOn, then the LMS will consider the AU "complete"</li>
+        <li>MoveOn Value = "Passed" : If the LMS recieves a statement with the verb "Passed",  then the LMS will consider the AU "complete" for course and prequisite completion requirememts.</li>
+        <li>MoveOn Value = "Completed" : If the LMS recieves a statement with the verb "Completed",  then the LMS will consider the AU "complete" for course and prequisite completion requirememts.<br />
           </li>
-        <li>MoveOn Value = &quot;CompletedAndPassed&quot; : If the LMS recieves a statements with the verbs &quot;Completed&quot; and &quot;Passed&quot;,  then the LMS will consider the AU &quot;complete&quot; for course and prequisite completion requirememts.</li>
-        <li>MoveOn Value = &quot;CompletedOrPassed&quot; : If the LMS recieves a statements with either of the verbs &quot;Completed&quot;or &quot;Passed&quot;,  then the LMS will consider the AU &quot;complete&quot; for course and prequisite completion requirememts</li>
+        <li>MoveOn Value = "CompletedAndPassed" : If the LMS recieves a statements with the verbs "Completed" and "Passed",  then the LMS will consider the AU "complete" for course and prequisite completion requirememts.</li>
+        <li>MoveOn Value = "CompletedOrPassed" : If the LMS recieves a statements with either of the verbs "Completed"or "Passed",  then the LMS will consider the AU "complete" for course and prequisite completion requirememts</li>
       </ul>
       <p><strong>Value space:</strong></p>
       <blockquote>
-        <p>&quot;Passed&quot;<br />
-          &quot;Completed&quot;<br />
-          &quot;CompletedAndPassed&quot;<br />
-          &quot;CompletedOrPassed&quot;      </p>
+        <p>"Passed"<br />
+          "Completed"<br />
+          "CompletedAndPassed"<br />
+          "CompletedOrPassed"</p>
       </blockquote>
-      <p><strong>Sample value: </strong> &quot;Passed&quot; </p>
-    <p>&nbsp;</p></td>
+      <p><strong>Sample value: </strong> "Passed" </p>
+    </td>
   </tr>
-       <tr>
+  <tr>
     <td colspan="2" valign="top"><h3>AuthenticationMethod</h3></td>
   </tr>
   <tr>
     <td valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type:</strong> string </p></td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which Authentication method the AU shall used to access the LMS's Learning Record Store. </p>
+        <strong>Data type:</strong> string </p>
+    </td>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which Authentication method the AU shall used to access the LMS's Learning Record Store.</p>
       <p><strong>Usage: </strong></p>
       <ul>
         <li>Based on the value of AuthenticationMethod, the LMS will place an  parameter in the AU launch interface to indicate to the AU which authentication method to use (as per the CMI-5 Runtime specification)</li>
-        <li>AuthenticationMethod Value = &quot;Basic&quot; : If the LMS will indicate to the AU launch interface to use basic HTTP authentication and will pass and HTTP authentication token to the AU using the launch interface.</li>
-        <li>AuthenticationMethod Value = &quot;OAuth&quot; : If the LMS will indicate to the AU launch interface to use  OAuth authentication..</li>
+        <li>AuthenticationMethod Value = "Basic" : If the LMS will indicate to the AU launch interface to use basic HTTP authentication and will pass and HTTP authentication token to the AU using the launch interface.</li>
+        <li>AuthenticationMethod Value = "OAuth" : If the LMS will indicate to the AU launch interface to use  OAuth authentication..</li>
       </ul>
       <p><strong>Value space:</strong></p>
       <blockquote>
-        <p>&quot;Basic&quot;<br />
-        &quot;OAuth&quot;<br />
+        <p>"Basic"<br />
+        "OAuth"<br />
       </p>
       </blockquote>
-      <p><strong>Sample value: </strong>&quot;Basic&quot;</p>
-    <p>&nbsp;</p></td>
+      <p><strong>Sample value: </strong>"Basic"</p>
+    </td>
   </tr>
-
-  
   <tr>
     <td colspan="2" valign="top"><h3>EntitlementKey</h3></td>
   </tr>
@@ -525,10 +544,10 @@ AU’s may also contain objectives.
     <td valign="top"><p><strong>Description:</strong><br />
         Data used by the AU to determine if the launching LMS system is entitled to use the AU. The AU should use this data in combination with other data provided from the LMS to determine entitlement.<br />
     </p>
-      <p><strong>Value space: </strong>Values defined    by AU content provider.<br />
+      <p><strong>Value space: </strong>Values defined by AU content provider.<br />
         <br />
-        <strong>Sample value:</strong> &quot;xyz-123-9999&quot;</p>
-<p>&nbsp;</p></td>
+        <strong>Sample value:</strong> "xyz-123-9999"</p>
+    </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>Description</h3></td>
@@ -536,15 +555,16 @@ AU’s may also contain objectives.
   <tr>
     <td width="160" valign="top"><p><strong>Required: 
       </strong>Yes<br />
-      <strong>Data type:</strong> string </p></td>
+      <strong>Data type:</strong> string </p>
+    </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      A    detailed  verbal description  of     the AU</p>
+      A detailed verbal description of the AU</p>
       <p><br />
         <strong>Value space:</strong><br />
-        Values defined    by AU designer<br />
+        Values defined by AU designer<br />
         </p>
       <p><strong>Sample value:</strong></p>
-    <p>&nbsp;</p></td>
+    </td>
   </tr>
 </table>
 
