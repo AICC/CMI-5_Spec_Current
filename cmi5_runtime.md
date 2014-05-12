@@ -40,7 +40,6 @@ license agreement contained within it.
 * [__5.0 Conceptual Model: Informative__](#concept)
 * [__6.0 LMS Requirements__](#lms_requirements)
   * [6.1 Course structures](#course_structures)
-  * [6.2 LMS State API Requirements](#lms_state_api_requirements)
   * [6.3 LMS Statement API Requirements](#lms_statement_api_requirements)
 * [__7.0 AU Requirements__](#au_requirements)
   * [7.1 AU State API Requirements](#au_state_api_requirements)
@@ -355,123 +354,11 @@ LMS shall have the ability to create and maintain course structures containing m
 
 <a name="lms_state_api_requirements"></a>  
 ##6.2 LMS State API Requirements
-The LMS shall initialize the records in its LRS with the state documents as described in
-this section when a learner is enrolled in a course (before the learner initially accesses
-the course).  The state documents are specific to the learner and course registration.  
-
-####_LMS Launch Data_ 
-__Description__: Launch parameter data from course structure for the AU  
-
-__Usage__: Static.  The LMS shall only create one State document for this combination of
-activityid, agent, registration, and stateid.  
-
-__State Document Format__: Application/JSON  
-
-__State Document Content__: The properties for the LMS.LaunchData document are described
-below.
-
-<table>
-  <tr>
-    <th align="left">context</th>
-  </tr> 
-<tr>
-    <td><p><strong>Description: </strong>Context template for the
-    AU being launched.<strong></strong><br />
-      <strong>LMS Required: </strong>Yes<br />
-      <strong>AU: Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS shall include a context template and place the value
-for <strong><em>session_id</em></strong> in the extension "http://www.aicc.org/cmi-5/extensions/session"
-in the context object's extension collection, based on the definition of the AU in the course
-structure.<br />
-      <strong>AU Usage: </strong>AU shall get the <strong><em>context</em></strong> value 
-      from the LMS.LaunchData state document. AU shall use the <strong><em>context</em></strong>
-      object as a template context object in all statements it records to the LMS,
-      and may include additional values in the context objects of such statements,
-      but shall not overwrite any values provided in the context template. NOTE:
-      this will include the session_id specified by the LMS.<br />
-      <strong>Data type: </strong>JSON context object as defined in xApi 1.0<br />
-      <strong>Value space:</strong> LMS implementation specific<br />
-      <strong>Sample value:</strong></p></td>
-  </tr>
-  <tr>
-    <th align="left">LaunchMethod</th>
-  </tr> 
-<tr>
-    <td><p><strong>Description: </strong>Used by the LMS when launching the AU (in a web-browser
-    environment) to tell the AU whether it has redirected the existing web-browser window to the 
-    AU's URL or spawned a new browser window for the AU.<br />
-      <strong>LMS Required:</strong> Yes<br />
-      <strong>AU Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS shall include a value based on the method used to launch the 
-      AU.<br />
-      <strong>AU Usage: </strong>AU shall get the <strong><em>LaunchMethod</em></strong> value 
-      from the LMS.LaunchData state document. AU shall use the <strong><em>LaunchMethod</em></strong>
-      value in determining what action to take when the AU is terminated; either to attempt to close 
-      the window if a value of "NewWindow" is passed, or redirect back to the LMS if "ExistingWindow" 
-      is passed.<br />
-      <strong>Data type: </strong>String<br />
-      <strong>Value space: </strong>"NewWindow", "ExistingWindow"<br />
-      <strong>Sample value: </strong>"NewWindow"</p></td>
-  </tr>
-    <tr>
-    <th align="left">ReturnURL</th>
-  </tr> 
-<tr>
-    <td><p><strong>Description: </strong>Used by the LMS when launching the AU in the current window 
-	(in a web-browser environment) to tell the AU where to redirect the learner when they exit 
-	the AU.<br />
-      <strong>LMS Required:</strong> If the value of <strong><em>LaunchMethod</em></strong> is
-      "ExistingWindow"<br />
-      <strong>AU Required:</strong> If the value of <strong><em>LaunchMethod</em></strong> is
-      "ExistingWindow"<br />
-      <strong>LMS Usage:  </strong>LMS shall include the URL where the learner should be redirected 
-      on exiting the course. <br />
-      <strong>AU Usage: </strong>AU shall get the <strong><em>ReturnURL</em></strong> value 
-      from the LMS.LaunchData state document. AU shall redirect the current window in the learner's 
-      browser to the <strong><em>ReturnURL</em></strong> when the AU is terminated.<br />
-      <strong>Data type: </strong>URL<br />
-      <strong>Value space: </strong>Any URL<br />
-      <strong>Sample value: </strong>http://www.example.com/lms/mod/xapilaunch/view.php?id=12</p></td>
-  </tr>
-</table>
-
-__State API PUT Properties__:
-
-* _activityid_: Activity ID for the AU (from the course structure)  
-* _agent_: agent representing the LMS learner being enrolled.  Shall match actor object
-generated by LMS at AU launch time.  
-* _registration_: Registration ID representing the LMS learner enrollment in the course.
-Shall match Registration ID used by the LMS at AU launch time.  
-* _stateid_: LMS.LaunchData  
-
-####_LMS Entitlement Data_  
-__Description__: Launch parameter data from course structure for the AU  
-__Usage__: Static. The LMS shall only create one State document for this combination of
-activityid, agent, registration, and stateid
-
-__State Document Format__: Application/JSON  
-
-__State Document Content__: Entitlement data specific to the AU from the course structure.  
-
-__State API PUT Properties__:  
-
-* _activityid_: Activity ID for the AU (from the course structure)  
-* _agent_: agent representing the LMS learner being enrolled.  Shall match actor object
-generated by LMS at AU launch time.  
-* _registration_: Registration ID representing the LMS learner enrollment in the course.
-Shall match Registration ID used by the LMS at AU launch time.  
-* _stateid_: LMS.EntitlementData  
-
-<BR>
-<BR>
+The LMS shall implement the State API Requirements as defined in section 10.
 
 <a name="lms_statement_api_requirements"></a>  
 ##6.3 LMS Statement API Requirements
-
-Prior to launching a learning activity, the LMS shall create a Statement API record in its
-LRS to …..
-
-Set Collateral Credit  
+The LMS shall implement the Statement API Requirements as defined in section 9.
 
 
 <a name="au_requirements"></a>  
@@ -682,9 +569,8 @@ The values for the URL launch parameters are described below:
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
-
-<BR>
-<BR>
+<br />
+<br />
 
 <a name="other_environment"></a>  
 ##8.3 Other Launch Environments
@@ -984,6 +870,18 @@ Result should be included in statements containing the following CMI-5 defined v
 - Failed
 - Abandoned
 
+Example JSON:
+```javascript
+  "result": {
+     "score": 80,
+     "success": false,
+     "duration": "PT30M",
+     "extensions": {
+         "http://www.aicc.org/cmi5/extensions/result/progress": 100
+     }
+   }
+ ```
+
 <a name="Score"></a> 
 ###9.5.1 Score
 
@@ -1034,6 +932,11 @@ The AU must include the duration property in Failed statements. The AU should ca
 ##### Abandoned Statement
 The duration proprety should be include in Abandoned statements.  The duration property should be set as the total session time, based on the AU launch, as calculated by the LMS.
 
+###9.5.5 Extensions
+####9.5.5.1 Progress
+An integer value indicating the completion of the AU as a percentage.  The AU may set this value in statements to indicate level of completion between 0 and 100 percent.
+
+
 <a name="Context"></a> 
 ##9.6 Context
 All statements with CMI-5 defined verbs must contain a context as defined in this section. 
@@ -1060,27 +963,10 @@ The following are extensions specified for CMI-5.  Other extensions are permitte
   <tr><th align ="right" nowrap>Value space:</th><td>string value</td></tr>
   <tr><th align ="right" nowrap>Sample value:</th><td></td></tr>
 </table>
- 
-####9.6.2.2 Progress
 
+####9.6.2.2 Reason
 
-<table>
-  <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi5/extensions/result/progress</td></tr>
-  <tr><th align ="right" nowrap>Description:</th><td>The completion of the AU as a percentage.</td></tr>
-  <tr><th align ="right" nowrap>LMS Usage:</th><td>The LMS may use this value in reports or the user interface to indicate what percentage of an AU a learner has completed</td></tr>
-  <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may set this value in statements to indicate level of completion between 0 and 100 percent</td></tr>
- <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
- <tr><th align ="right" nowrap>LMS Obligation:</th><td>Not Applicable</td></tr>
-  <tr><th align ="right" nowrap>Data type:</th><td>Integer</td></tr>
-  <tr><th align ="right" nowrap>Value space:</th><td>integer between 0 and 100</td></tr>
-  <tr><th align ="right" nowrap>Sample value:</th><td>75</td></tr>
-</table>
- 
- 
-####9.6.2.3 Reason
-
-
-<table>
+  <table>
   <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi5/extensions/result/reason</td></tr>
   <tr><th align ="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means)</td></tr>
   <tr><th align ="right" nowrap>LMS Usage:</th><td>The LMS must set this value in statements it makes with the "Wavied" verb. The value of reason should be one of the following -
@@ -1091,7 +977,6 @@ The following are extensions specified for CMI-5.  Other extensions are permitte
 <li><b>Equivalent Outside Activity</b> – The student successfully completed an equivalent activity outside of the course to waive the AU. </li>    
 <li><b>Administrative</b> – The LMS administrative user marked the AU complete.</li> 
 </ul>
-
 </td></tr>
   <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
  <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
@@ -1105,14 +990,127 @@ The following are extensions specified for CMI-5.  Other extensions are permitte
 </ul></td></tr>
   <tr><th align ="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
 </table>
- 
 
-
-	    
 <a name="xapi_state"></a>  
 #10.0 XAPI State Data Model
 
-Section Content pending.
+Prior to launching a learning activity, the LMS shall create a document in the Statement API record in the 
+LRS.  This shall be a JSON document as defined in this section with a document name (state ID) of "LMSLaunchData". The LMS shall only create one State document for the combination of activityid, agent, registration, and stateid.  An example of the JSON document is shown below.
+
+```javascript
+{
+   "Context_Template": {
+         "extensions": {
+            "http://www.aicc.org/cmi-5/extensions/session": <LMS generated Session ID>
+         }
+   },
+   "LaunchMethod": <"NewWindow" or "ExistingWindow">,
+   "ReturnURL": <URL value>,
+   "EntitlementKey": {
+       "CourseStructure": "<Entitlement data or key from Course Structure>",
+       "Alternate": "<alternateEntitlementKey>"
+   }
+ }
+```
+
+The properties for the LMS.LaunchData document are described below.
+
+<table>
+  <tr>
+    <th align="left">Context_Template</th>
+  </tr> 
+<tr>
+    <td><p><strong>Description: </strong>Context template for the AU being launched.<br />
+      <strong>LMS Required: </strong>Yes<br />
+      <strong>AU: Required:</strong> Yes<br />
+      <strong>LMS Usage:  </strong>LMS shall include a context template and place the value for <strong><em>session_id</em></strong> in the extension "http://www.aicc.org/cmi-5/extensions/session"
+in the context object's extension collection, based on the definition of the AU in the course
+structure.<br />
+      <strong>AU Usage: </strong>AU shall get the <strong><em>context</em></strong> value 
+      from the LMS.LaunchData state document. AU shall use the <strong><em>context</em></strong>
+      object as a template context object in all statements it records to the LMS,
+      and may include additional values in the context objects of such statements,
+      but shall not overwrite any values provided in the context template. NOTE:
+      this will include the session_id specified by the LMS.<br />
+      <strong>Data type: </strong>JSON context object as defined in xApi 1.0<br />
+      <strong>Value space:</strong> LMS implementation specific<br />
+      <strong>Sample value:</strong></p></td>
+  </tr>
+  <tr>
+    <th align="left">LaunchMethod</th>
+  </tr> 
+<tr>
+    <td><p><strong>Description: </strong>Used by the LMS when launching the AU (in a web-browser
+    environment) to tell the AU whether it has redirected the existing web-browser window to the 
+    AU's URL or spawned a new browser window for the AU.<br />
+      <strong>LMS Required:</strong> Yes<br />
+      <strong>AU Required:</strong> Yes<br />
+      <strong>LMS Usage:  </strong>LMS shall include a value based on the method used to launch the AU.<br />
+      <strong>AU Usage: </strong>AU shall get the <strong><em>LaunchMethod</em></strong> value 
+      from the LMS.LaunchData state document. AU shall use the <strong><em>LaunchMethod</em></strong>
+      value in determining what action to take when the AU is terminated; either to attempt to close 
+      the window if a value of "NewWindow" is passed, or redirect back to the LMS if "ExistingWindow" 
+      is passed.<br />
+      <strong>Data type: </strong>String<br />
+      <strong>Value space: </strong>"NewWindow", "ExistingWindow"<br />
+      <strong>Sample value: </strong>"NewWindow"</p></td>
+  </tr>
+    <tr>
+    <th align="left">ReturnURL</th>
+  </tr> 
+<tr>
+    <td><p><strong>Description: </strong>Used by the LMS when launching the AU in the current window 
+	(in a web-browser environment) to tell the AU where to redirect the learner when they exit 
+	the AU.<br />
+      <strong>LMS Required:</strong> If the value of <strong><em>LaunchMethod</em></strong> is
+      "ExistingWindow"<br />
+      <strong>AU Required:</strong> If the value of <strong><em>LaunchMethod</em></strong> is
+      "ExistingWindow"<br />
+      <strong>LMS Usage:  </strong>LMS shall include the URL where the learner should be redirected 
+      on exiting the course. <br />
+      <strong>AU Usage: </strong>AU shall get the <strong><em>ReturnURL</em></strong> value 
+      from the LMS.LaunchData state document. AU shall redirect the current window in the learner's 
+      browser to the <strong><em>ReturnURL</em></strong> when the AU is terminated.<br />
+      <strong>Data type: </strong>URL<br />
+      <strong>Value space: </strong>Any URL<br />
+      <strong>Sample value: </strong>http://www.example.com/lms/mod/xapilaunch/view.php?id=12</p></td>
+  </tr>
+  <tr>
+    <th align="left">EntitlementKey</th>
+  </tr> 
+      <td><p><strong>Description: </strong> Entitlement data or key from the course structure or other source.  The <strong>EntitlementKey</strong> is used by the AU to determine if the launching LMS system is entitled to use the AU.<br />
+      <strong>LMS Required: </strong>Yes<br />
+      <strong>AU Required: </strong>No<br />
+      <strong>LMS Usage:  </strong>The LMS shall obtain from the course structure or other source as determined by the AU.<br />
+      <strong>AU Usage: </strong> The AU should use this data in combination with other data provided from the LMS to determine entitlement.<br />
+      <strong>Data type: </strong>string<br />
+      <strong>Value space: </strong>The value is defined by the AU provider<br />
+      <strong>Sample value: </strong>"xyz-123-9999"</p></td>
+  </tr>     
+   <tr>
+    <th align="left">ContentSpecific</th>
+  </tr> 
+      <td><p><strong>Description: </strong>Launch parameters that are content specific.  The LMS shall obtain this value from the course structure.<br />
+      <strong>LMS Required: </strong>Yes<br />
+      <strong>AU Required: </strong>No<br />
+      <strong>LMS Usage:  </strong>Static launch parameters defined by the AU designer shall be obtained by the LMS from the course structure.<br />
+      <strong>AU Usage: </strong>Determined by the AU<br />
+      <strong>Data type: </strong>string<br />
+      <strong>Value space: </strong>Values are defined by the AU provider<br />
+      <strong>Sample value: </strong>"abc-327-999"</p></td>
+  </tr>      
+</table>
+
+__State API PUT Properties__:
+
+* _activityid_: Activity ID for the AU (from the course structure)  
+* _agent_: agent representing the LMS learner being enrolled.  Shall match actor object
+generated by LMS at AU launch time.  
+* _registration_: Registration ID representing the LMS learner enrollment in the course.
+Shall match Registration ID used by the LMS at AU launch time.  
+* _stateid_: LMS.LaunchData  
+
+
 
 <a name="xapi_agent_profile"></a>   
 #11.0 XAPI Agent Profile Data Model  
@@ -1162,7 +1160,7 @@ Example:
 <a name="xapi_activity_profile"></a>  
 #12.0 XAPI Activity Profile Data Model
 
-Section Content pending.
+At this time there are no specifications for the Activity Profile.
 
 <a name="bibliography"></a>   
 #Bibliography
