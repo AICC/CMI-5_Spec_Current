@@ -299,37 +299,21 @@ mechanism(s) and associate commands as prescribed in this specification.
 
 LMS systems shall meet the following requirements to conform to this specification:  
 
-1. The LMS shall implement a LRS as defined in the XAPI Specification.  
-2. The LMS shall implement a means to create and edit course structures as defined in
-section 6.1 Course structures.  
-3. The LMS shall implement additional “State API” requirements to initialize AU state as
-defined in section 6.2 LMS State API Requirements.  
-4. The LMS shall implement the runtime launch interface as defined in section 8.0 Content
-Launch Mechanisms.  
-5. The LMS may implement collateral credit features (to preemptively set status) per
-section ______.  
-6. The LMS shall implement the XAPI “Verb” vocabulary as defined in section 9.1 Verbs.
-7. The LMS shall implement the XAPI “Activity Type” vocabulary as defined in section 9.2 Activity Types.  
-8. The LMS shall implement additional XAPI “Statement API” requirements as defined in
-section __________ .  
-9. The LMS shall implement additional XAPI “Agent Profile API” requirements as defined in
-section __________ .  
-10. The LMS shall implement additional XAPI “Activity Profile API” requirements as defined
-in section __________ .  
-
+1. The LMS shall implement a LRS as defined in the XAPI Specification.
+2. The LMS shall implement a means to create and edit course structures as defined in section 6.1 Course structure.
+3. The LMS shall implement additional “State API” requirements to initialize AU state as defined in section 10.
+4. The LMS shall implement the runtime launch interface as defined in section 8.0 Content Launch Mechanisms.
+5. The LMS shall implement additional XAPI “Statement API” requirements as defined in section 9.
+6. The LMS shall implement additional XAPI “Agent Profile API” requirements as defined in section 11 
 
 <a name="course_structures"></a>  
 ##6.1 Course structures
 The LMS shall implement a means to create and maintain course structures.
 
-The LMS shall implement the creation and editing of course structures by one of the
-following methods:
-
-1. Implementing the import of CMI-5 course structure data defined in CMI5-xxx
-2. Provide a user interface to LMS administrative users to create and edit course
-structures.
-
-The LMS should implement both of the above methods.
+1. The LMS shall implement the import of Course Structures per [CMI5-002] CMI-5 Course Structure
+2. The LMS should implement the export of Course Structures per [CMI5-002] CMI-5 Course Structure
+3. The LMS should implement a user interface to allow LMS administrative users to create and edit course structures.
+4. The LMS shall be able support course structures with one or more AU’s
 
 Course structures shall contain the following data for each AU in a course:
 
@@ -916,7 +900,7 @@ The completion property of result must be set to false for statements having the
 
 <a name="Duration"></a>
 ###9.5.4 Duration
-The duration property is a time value required in certain statements as defined in this section.
+The duration property is a ISO 8601 formatted time value required in certain statements as defined in this section.
 ####9.5.4.1 AU statements that include duration
 ##### Exited Statement
 The AU must include the duration property in Exited statements.  The AU should calculate duration for Exited statements as the time difference between Started statement and the Exited statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
@@ -1004,11 +988,11 @@ LRS.  This shall be a JSON document as defined in this section with a document n
             "http://www.aicc.org/cmi-5/extensions/session": <LMS generated Session ID>
          }
    },
-   "LaunchMethod": <"NewWindow" or "ExistingWindow">,
-   "ReturnURL": <URL value>,
-   "EntitlementKey": {
-       "CourseStructure": "<Entitlement data or key from Course Structure>",
-       "Alternate": "<alternateEntitlementKey>"
+   "launchMethod": <"NewWindow" or "ExistingWindow">,
+   "returnURL": <URL value>,
+   "entitlementKey": {
+       "courseStructure": "<Entitlement data or key from Course Structure>",
+       "alternate": "<alternateEntitlementKey>"
    }
  }
 ```
@@ -1037,7 +1021,7 @@ structure.<br />
       <strong>Sample value:</strong></p></td>
   </tr>
   <tr>
-    <th align="left">LaunchMethod</th>
+    <th align="left">launchMethod</th>
   </tr> 
 <tr>
     <td><p><strong>Description: </strong>Used by the LMS when launching the AU (in a web-browser
@@ -1056,7 +1040,7 @@ structure.<br />
       <strong>Sample value: </strong>"NewWindow"</p></td>
   </tr>
     <tr>
-    <th align="left">ReturnURL</th>
+    <th align="left">returnURL</th>
   </tr> 
 <tr>
     <td><p><strong>Description: </strong>Used by the LMS when launching the AU in the current window 
@@ -1076,12 +1060,24 @@ structure.<br />
       <strong>Sample value: </strong>http://www.example.com/lms/mod/xapilaunch/view.php?id=12</p></td>
   </tr>
   <tr>
-    <th align="left">EntitlementKey</th>
+    <th align="left">entitlementKey: courseStructure</th>
   </tr> 
-      <td><p><strong>Description: </strong> Entitlement data or key from the course structure or other source.  The <strong>EntitlementKey</strong> is used by the AU to determine if the launching LMS system is entitled to use the AU.<br />
+      <td><p><strong>Description: </strong> Entitlement data or key from the course structure.  The       <strong>EntitlementKey</strong> values may be used by the AU to determine if the launching LMS system is entitled to use the AU.<br />
       <strong>LMS Required: </strong>Yes<br />
       <strong>AU Required: </strong>No<br />
-      <strong>LMS Usage:  </strong>The LMS shall obtain from the course structure or other source as determined by the AU.<br />
+      <strong>LMS Usage:  </strong>The LMS shall obtain from the course structure.<br />
+      <strong>AU Usage: </strong> The AU should use this data in combination with other data provided from the LMS to determine entitlement.<br />
+      <strong>Data type: </strong>string<br />
+      <strong>Value space: </strong>The value is defined by the AU provider<br />
+      <strong>Sample value: </strong>"xyz-123-9999"</p></td>
+  </tr>
+  <tr>
+    <th align="left">entitlementKey: alternate</th>
+  </tr> 
+      <td><p><strong>Description: </strong> Entitlement data or key from some other source as agreed upon between the LMS and the AU.  The <strong>EntitlementKey</strong> values may be used by the AU to determine if the launching LMS system is entitled to use the AU.<br />
+      <strong>LMS Required: </strong>No<br />
+      <strong>AU Required: </strong>No<br />
+      <strong>LMS Usage:  </strong>The LMS shall obtain the alternate entitlement key from a source as agreed upon with the AU.<br />
       <strong>AU Usage: </strong> The AU should use this data in combination with other data provided from the LMS to determine entitlement.<br />
       <strong>Data type: </strong>string<br />
       <strong>Value space: </strong>The value is defined by the AU provider<br />
@@ -1119,14 +1115,12 @@ In CMI5, Learner Preferences are scoped to the learner.  Both the LMS and the AU
 
 On startup an AU must retrieve the Learner Preferences document from the Agent Profile.
 
-When reading or writing to the Agent Profile, the document format shall be a JSON structure as shown below:
+When reading or writing to the Agent Profile, the document name shall be CMI5LearnerPreferences and the format shall be a JSON structure as shown below:
 
 ```javascript
 {
-	"CMI5LearnerPreferences": {
-		"languagePreference": "<values for languages>",
-		"audioPreference": "<on or off>"
-	}
+	"languagePreference": "<values for languages>",
+	"audioPreference": "<on or off>"
 }
 ```
 ##11.1  languagePreference
@@ -1134,10 +1128,8 @@ This shall be a comma-separated list of RFC 5646 Language Tags as indicated in t
 
 ```javascript
 {
-	"CMI5LearnerPreferences": {
-		"languagePreference": "en-US,fr-FR,fr-BE",
-		...
-	}
+	"languagePreference": "en-US,fr-FR,fr-BE",
+	...
 }
 ```
 
@@ -1149,10 +1141,8 @@ The audioPrefence value indicates whether the audio should be "on" or "off".  Th
 Example:
 ```javascript
 {
-	"CMI5LearnerPreferences": {
-		"audioPreference": "on",
-		...
-	}
+	"audioPreference": "on",
+	...
 }
 ```
 
