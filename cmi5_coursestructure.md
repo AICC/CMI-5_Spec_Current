@@ -13,7 +13,7 @@
 
 >Caveats...
 >
->Copyright &copy; 2012-2013 AICC, All rights reserved
+>Copyright &copy; 2012-2014 AICC, All rights reserved
 >
 >The information contained in this document has been assembled by the AICC as an informational resource. Neither the AICC nor any of its members assumes nor shall any of them have any responsibility for any use by anyone for any purpose of this document or of the data which it contains. All use of this document is subject to the terms of the license agreement contained within it.
 
@@ -85,6 +85,7 @@ All previous work from 2012 discared
 | Chris Sawwa          | Meridian Knowledge Systems             |
 | Michael Roberts      | VTraining Room                         |
 | Thomas Person        | (Formerly of Adobe)                    |
+| Art Werkenthin       | RISC,Inc                               |
 
 -------
 
@@ -490,24 +491,26 @@ AU’s may also contain objectives.
     <td colspan="2" valign="top"><h3>MoveOn</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type:</strong> string </p></td>
+    <td valign="top"><p><strong>LMS Required:</strong> Yes<br />
+        <strong>Data type:</strong> string <br/>
+        <strong>Default Value:</strong> "Not Applicable" </p></td>
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if a AU has been sufficiently completed for the purposes determining overall course completion or determining if prequisites were met for other activites.. </p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>If the LMS recieves the specified combination of "Passed" and "Completed" verbs in statements (as defined in the CMI-5 runtime specification) in MoveOn, then the LMS will consider the AU "complete"</li>
-        <li>MoveOn Value = "Passed" : If the LMS recieves a statement with the verb "Passed",  then the LMS will consider the AU "complete" for course and prequisite completion requirememts.</li>
-        <li>MoveOn Value = "Completed" : If the LMS recieves a statement with the verb "Completed",  then the LMS will consider the AU "complete" for course and prequisite completion requirememts.<br />
+        <li>MoveOn Value = "Passed" : If the LMS receives a statement with the verb "Passed", then the LMS will consider the AU satisfied.</li>
+        <li>MoveOn Value = "Completed" : If the LMS receives a statement with the verb "Completed", then the LMS will consider the AU satisfied.<br />
           </li>
-        <li>MoveOn Value = "CompletedAndPassed" : If the LMS recieves a statements with the verbs "Completed" and "Passed",  then the LMS will consider the AU "complete" for course and prequisite completion requirememts.</li>
-        <li>MoveOn Value = "CompletedOrPassed" : If the LMS recieves a statements with either of the verbs "Completed"or "Passed",  then the LMS will consider the AU "complete" for course and prequisite completion requirememts</li>
+        <li>MoveOn Value = "CompletedAndPassed" : If the LMS receives statements with the verbs "Completed" and "Passed", then the LMS will consider the AU satisfied.</li>
+        <li>MoveOn Value = "CompletedOrPassed" : : If the LMS receives a statements with either of the verbs "Completed" or "Passed", then the LMS will consider the AU satisfied.</li>
+        <li>MoveOn Value = "Not Applicable": The LMS will consider the AU satisfied.</li>
       </ul>
       <p><strong>Value space:</strong></p>
       <blockquote>
         <p>"Passed"<br />
           "Completed"<br />
           "CompletedAndPassed"<br />
-          "CompletedOrPassed"</p>
+          "CompletedOrPassed"<br />
+          "Not Applicable"</p>
       </blockquote>
       <p><strong>Sample value: </strong> "Passed" </p>
     </td>
