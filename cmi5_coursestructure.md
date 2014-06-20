@@ -218,11 +218,11 @@ LMS systems shall meet the following requirements to conform to this specificati
 
 <a name="course_structures"/>
 ## 6.1 Course structure requirements
-The LMS shall implement a means to create and maintain course structures.  
-The LMS shall implement the import of the course data structure defined in section 7.
-The LMS shall implement the export of the course data structure defined in section 7.
-The LMS should provide a user interface to LMS administrative users to create and edit course structures internally
-The LMS shall have the ability to create, maintain,import, and export course structures containing more than 1000 AU’s.
+The LMS shall implement a means to create and maintain course structures.
+1.	The LMS shall implement the import of the course data structure defined in section 7. 
+2.	The LMS should implement the export of the course data structure defined in section 7. 
+3.	The LMS should provide a user interface to LMS administrative users to create and edit course structures internally.  
+4.	The LMS shall be able support course structures with one or more AU’s.
 
 <BR>
 <BR>
@@ -495,7 +495,7 @@ AU’s may also contain objectives.
         <strong>Data type:</strong> string <br/>
         <strong>Default Value:</strong> "Not Applicable" </p></td>
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if a AU has been sufficiently completed for the purposes determining overall course completion or determining if prequisites were met for other activites.. </p>
-      <p><strong>Usage: </strong></p>
+      <p><strong>MoveOn Values are as follows:</strong></p>
       <ul>
         <li>MoveOn Value = "Passed" : If the LMS receives a statement with the verb "Passed", then the LMS will consider the AU satisfied.</li>
         <li>MoveOn Value = "Completed" : If the LMS receives a statement with the verb "Completed", then the LMS will consider the AU satisfied.<br />
@@ -504,6 +504,8 @@ AU’s may also contain objectives.
         <li>MoveOn Value = "CompletedOrPassed" : : If the LMS receives a statements with either of the verbs "Completed" or "Passed", then the LMS will consider the AU satisfied.</li>
         <li>MoveOn Value = "Not Applicable": The LMS will consider the AU satisfied.</li>
       </ul>
+      <p><strong>Usage:</strong></p>
+      <p>If all member AU's in a block are satisfied, then the block is considered satisfied for prerequisites and sequencing.<br/>If all member AU's and Blocks are satisfied, then the course is considered satisfied for prerequisites or credit in relation to other courses or curricula.</p>
       <p><strong>Value space:</strong></p>
       <blockquote>
         <p>"Passed"<br />
