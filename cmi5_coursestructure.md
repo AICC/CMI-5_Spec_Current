@@ -218,12 +218,11 @@ LMS systems shall meet the following requirements to conform to this specificati
 
 <a name="course_structures"/>
 ## 6.1 Course structure requirements
-The LMS shall implement a means to create and maintain course structures.
-1.	The LMS shall implement the import of the course data structure defined in section 7. 
-2.	The LMS should implement the export of the course data structure defined in section 7. 
-3.	The LMS should provide a user interface to LMS administrative users to create and edit course structures internally.  
+The LMS shall implement a means to create and maintain course structures.<br/>
+1.	The LMS shall implement the import of the course data structure defined in section 7. <BR>
+2.	The LMS should implement the export of the course data structure defined in section 7. <BR>
+3.	The LMS should provide a user interface to LMS administrative users to create and edit course structures internally.<BR>
 4.	The LMS shall be able support course structures with one or more AU’s.
-
 <BR>
 <BR>
 
@@ -247,7 +246,7 @@ The following meta data elements are at the course level and  describe the cours
     <td width="168" valign="top"><p><strong>Required</strong>: 
       Yes<br />
       <strong>Data</strong> type: 
-      String</p>
+      langstring</p>
     </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A descriptive title the identifies the course<br />
@@ -264,7 +263,7 @@ The following meta data elements are at the course level and  describe the cours
   </tr>
   <tr>
     <td width="168" valign="top"><p><strong>Required</strong>: Yes<br />
-        <strong>Data</strong> type: String</p>
+        <strong>Data</strong> type: langstring</p>
     </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A detailed    description of what the course.</p>
@@ -283,11 +282,11 @@ The following meta data elements are at the course level and  describe the cours
         <strong>Data</strong> type: String</p>
     </td>
     <td width="811" valign="top"><p><strong>Description</strong>:<br />
-      A globally unique identifier for the course.  Used to explicitly identify the course instance.</p>
+      A globally unique IRI (Internationalized Resource Identifier per RFC 3987) for the course.  Used to explicitly identify the course instance.</p>
       <p><strong>Value space: </strong><br />
         TBD –<br />
         <strong>Sample element value: </strong><br />
-        TBD</p>
+        http://www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2</p>
     </td>
   </tr>
 </table>
@@ -305,7 +304,7 @@ The data in this section is used for the block structures with group AU’s.  A 
   </tr>
   <tr>
     <td width="164" valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type:</strong> string</p>
+        <strong>Data type:</strong> langstring</p>
     </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A descriptive title for the Block of AU’s<br />
@@ -321,7 +320,7 @@ The data in this section is used for the block structures with group AU’s.  A 
   <tr>
     <td width="164" valign="top"><p><strong>Required: 
       </strong>Yes<br />
-      <strong>Data type:</strong> string </p>
+      <strong>Data type:</strong> langstring </p>
     </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A detailed verbal description of what the Block contains.<br />
@@ -346,7 +345,7 @@ The data in this section is used by Objectives. Objectives can be associated wit
   <tr>
     <td width="183" valign="top"><p><strong>Required:</strong> Yes<br />
         <strong>Data type</strong>:
-      string</p>
+      langstring</p>
     </td>
     <td width="792" valign="top"><p><strong>Description</strong>:<br />
       A descriptive title for the learning objective</p>
@@ -365,10 +364,10 @@ The data in this section is used by Objectives. Objectives can be associated wit
         <strong>Data type:</strong> string</p>
     </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br />
-      A unique identifier for the learning objective<br />
+      A unique IRI for the learning objective<br />
       </p>
-      <p><strong>Value space:</strong></p>
-    <p><strong>Sample value: </strong></p>
+      <p><strong>Value space:</strong>TBD</p>
+    <p><strong>Sample value:</strong> http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2</p>
     </td>
   </tr>
   <tr>
@@ -376,7 +375,7 @@ The data in this section is used by Objectives. Objectives can be associated wit
   </tr>
   <tr>
     <td width="183" valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type</strong>: string </p>
+        <strong>Data type</strong>: langstring </p>
     </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br />
       A detailed verbal description of the learning objective.<br />
@@ -404,9 +403,9 @@ AU’s may also contain objectives.
   <tr>
     <td width="160" valign="top"><p><strong>Required: </strong> Yes<br />
         <strong>Data type: </strong> string</p></td>
-    <td width="1471" valign="top"><p><strong>Description: </strong> UniqueID that AU uses to identify itself to the LMS in XAPI messages to the LMS.</p>
+    <td width="1471" valign="top"><p><strong>Description: </strong>A globally unique IRI that the AU uses to identify itself to the LMS in xAPI messages to the LMS.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
-      <p><strong>Sample value: </strong></p>
+      <p><strong>Sample value:</strong>http://www.yoursite.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2</p>
     </td>
   </tr>
   <tr>
@@ -414,7 +413,7 @@ AU’s may also contain objectives.
   </tr>
   <tr>
     <td valign="top"><p><strong>Required: </strong> Yes<br />
-        <strong>Data type:</strong> string</p></td>
+        <strong>Data type:</strong> langstring</p></td>
     <td valign="top"><p><strong>Description:</strong> A descriptive title for the AU<br />
         </p>
       <p><strong>Value space: </strong> Values defined by course designer<br />
@@ -431,8 +430,8 @@ AU’s may also contain objectives.
     </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
       A relative or fully qualified URL that references the launch point of the AU.</p>
-      <p><strong>Value space:</strong></p>
-      <p><strong>Sample value:</strong></p>
+      <p><strong>Value space:</strong> TBD </p>
+      <p><strong>Sample value:</strong> TBD </p>
     </td>
   </tr>
   <tr>
@@ -448,7 +447,7 @@ AU’s may also contain objectives.
       <p><strong>Value space:</strong><br />
         Values defined by AU designer</p>
       <p><br />
-        <strong>Sample value: </strong></p>
+        <strong>Sample value: </strong> TBD</p>
     </td>
   </tr>
   <tr>
