@@ -116,6 +116,7 @@ All previous work from 2012 discarded.
 	<tr><td>Andrew Down es</td><td>Epic Learning</td></tr>
 	<tr><td>Henry Ryng</td><td>inXsol</td></tr>
 	<tr><td>Art Werkenthin</td><td>RISC, Inc.</td></tr>
+	<tr><td>Chris Handorf</td><td>Pearson</td></tr>
 </table> 
 
 -------
@@ -969,7 +970,7 @@ The following are extensions specified for CMI-5.  Other extensions are permitte
 <a name="xapi_state"></a>  
 #10.0 XAPI State Data Model
 
-Prior to launching a learning activity, the LMS shall create a document in the Statement API record in the 
+Prior to launching a learning activity, the LMS shall create a document in the State API record in the 
 LRS.  This shall be a JSON document as defined in this section with a document name (state ID) of "LMSLaunchData". The LMS shall only create one State document for the combination of activityid, agent, registration, and stateid.  An example of the JSON document is shown below.
 
 ```javascript
