@@ -255,7 +255,14 @@ The following meta data elements are at the course level and  describe the cours
         Values defined by course designer<br />
       </p>
       <p><strong>Sample value</strong>: <br />
-      Fundamentals of Trouble-Shooting </p>
+      
+
+    &lt;Title&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is a course title&lt;/langstring&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Se trata de un título del curso&lt;/langstring&gt;<br/>
+    &lt;/Title&gt;<br/>      
+      
+	</p>
     </td>
   </tr>
   <tr>
@@ -269,9 +276,13 @@ The following meta data elements are at the course level and  describe the cours
       A detailed    description of what the course.</p>
       <p><strong>Value space:</strong><br />
         Values defined by course designer</p>
-      <p><br />
-        <strong>Sample element value: </strong><br />
-        Fundamentals of Trouble-Shooting course. This 8-hour course covers how to isolate faults in complex systems.</p>
+      <p><strong>Sample value: </strong><br />
+    &lt;Description&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is a course description&lt;/langstring&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Esta es una descripción del curso&lt;/langstring&gt;<br/>
+    &lt;/Description&gt;<br/>  
+    
+        </p>
     </td>
   </tr>
   <tr>
@@ -285,7 +296,7 @@ The following meta data elements are at the course level and  describe the cours
       A globally unique IRI (Internationalized Resource Identifier per RFC 3987) for the course.  Used to explicitly identify the course instance.</p>
       <p><strong>Value space: </strong><br />
         TBD –<br />
-        <strong>Sample element value: </strong><br />
+        <strong>Sample value: </strong><br />
         http://www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2</p>
     </td>
   </tr>
@@ -310,7 +321,11 @@ The data in this section is used for the block structures with group AU’s.  A 
       A descriptive title for the Block of AU’s<br />
       <strong>Value space:</strong><br />
       Values defined by course designer<br />
-      Sample value: <br />
+      <strong>Sample value:</strong> <br />
+    &lt;Title&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Este es el título del bloque&lt;/langstring&gt;<br/>
+    &lt;/Title&gt;<br/>            
       Day 1 – Overview of Systems</p>
     </td>
   </tr>
@@ -327,6 +342,10 @@ The data in this section is used for the block structures with group AU’s.  A 
       <strong>Value space</strong>:<br />
       Values defined by course designer<br />
       <strong>Sample value: </strong><br />
+    &lt;Description&gt;<br/>
+    &nbsp;&nbsp; &lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br/>
+    &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Esta es la descripción de los bloques&lt;/langstring&gt;<br/>
+    &lt;/Description&gt;<br/> 
       Day 1 – Overview of Systems.  In this part of the course you will get a complete overview.</p>
     </td>
   </tr>
@@ -344,16 +363,20 @@ The data in this section is used by Objectives. Objectives can be associated wit
   </tr>
   <tr>
     <td width="183" valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type</strong>:
-      langstring</p>
+        <strong>Data type</strong>: langstring</p>
     </td>
     <td width="792" valign="top"><p><strong>Description</strong>:<br />
       A descriptive title for the learning objective</p>
-      <p><br />
-        <strong>Value space:</strong><br />
+      <p><strong>Value space:</strong><br />
         Values defined by course designer<br />
       </p>
-      <p><strong>Sample value: </strong></p>
+      <p><strong>Sample value: </strong><br/>
+    &lt;ObjectiveTitle&gt;<br/>
+    &nbsp;&nbsp; &lt;langstring lang="en-US"&gt;This is the objective title&lt;/langstring&gt;<br/>
+    &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Este es el título del objetivo&lt;/langstring&gt;<br/>
+    &lt;/ObjectiveTitle&gt;<br/> 
+
+      </p>
     </td>
   </tr>
   <tr>
@@ -383,7 +406,12 @@ The data in this section is used by Objectives. Objectives can be associated wit
       <p><strong>Value space:</strong><br />
         Values defined by course designer<br />
         </p>
-      <p><strong>Sample value: </strong></p>
+      <p><strong>Sample value: </strong><br/>
+    &lt;ObjectiveDescription&gt;<br/>
+    &nbsp;&nbsp; &lt;langstring lang="en-US"&gt;This is the objective description&lt;/langstring&gt;<br/>
+    &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Esta es la descripción objetiva&lt;/langstring&gt;<br/>
+    &lt;/ObjectiveDescription&gt;<br/>      
+      </p>
     </td>
   </tr>
 </table>
@@ -418,7 +446,14 @@ AU’s may also contain objectives.
         </p>
       <p><strong>Value space: </strong> Values defined by course designer<br />
       </p>
-      <p><strong>Sample value: </strong></p>
+      <p><strong>Sample value: </strong><br/>
+
+    &lt;Title&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is an activity title.&lt;/langstring&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Este es un título de la actividad.&lt;/langstring&gt;<br/>
+    &lt;/Description&gt;<br/>
+
+      </p>
     </td>
   </tr>
   <tr>
@@ -562,12 +597,17 @@ AU’s may also contain objectives.
       <strong>Data type:</strong> string </p>
     </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      A detailed verbal description of the AU</p>
+      A detailed description of the subject matter and learning activities covered by the AU.</p>
       <p><br />
         <strong>Value space:</strong><br />
         Values defined by AU designer<br />
         </p>
-      <p><strong>Sample value:</strong></p>
+      <p><strong>Sample value:</strong><br/>
+    &lt;Description&gt;<br/>
+    &nbsp;&nbsp; &lt;langstring lang="en-US"&gt;This is the AU description&lt;/langstring&gt;<br/>
+    &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Esta es la descripción de la AU&lt;/langstring&gt;<br/>
+    &lt;/Description&gt;<br/>   
+      </p>
     </td>
   </tr>
 </table>
@@ -587,7 +627,7 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 			<xs:element name="Course" minOccurs="1" maxOccurs="1">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Title" minOccurs="1" maxOccurs="1"/>
+						<xs:element name="Title" minOccurs="1" maxOccurs="1">
 						<xs:element name="Description" minOccurs="1" maxOccurs="1"/>
 						<xs:element name="CourseIdentifier" minOc-curs="1" maxOccurs="1"/>
 					</xs:sequence>
