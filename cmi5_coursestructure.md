@@ -627,9 +627,9 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 			<xs:element name="Course" minOccurs="1" maxOccurs="1">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Title" minOccurs="1" maxOccurs="1">
+						<xs:element name="Title" minOccurs="1" maxOccurs="1"/>
 						<xs:element name="Description" minOccurs="1" maxOccurs="1"/>
-						<xs:element name="CourseIdentifier" minOc-curs="1" maxOccurs="1"/>
+						<xs:element name="CourseIdentifier" minOccurs="1" maxOccurs="1"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
