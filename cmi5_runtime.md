@@ -980,8 +980,9 @@ LRS.  This shall be a JSON document as defined in this section with a document n
             "http://www.aicc.org/cmi-5/extensions/session": <LMS generated Session ID>
          }
    },
-   "launchMethod": <"NewWindow" or "ExistingWindow">,
-   "returnURL": <URL value>,
+   "launchMethod": "<launch method from the Course Structure>",
+   "launchParameters": "<launch parameters from Course Structure>",
+   "returnURL": "<URL value>",
    "entitlementKey": {
        "courseStructure": "<Entitlement data or key from Course Structure>",
        "alternate": "<alternateEntitlementKey>"
@@ -1016,8 +1017,7 @@ structure.<br />
     <th align="left">launchMethod</th>
   </tr> 
 <tr>
-    <td><p><strong>Description: </strong>Used by the LMS when launching the AU (in a web-browser
-    environment) to tell the AU whether it has redirected the existing web-browser window to the 
+    <td><p><strong>Description: </strong>The launch method from the Course Structure. Used by the LMS when launching the AU (in a web-browser environment) to tell the AU whether it has redirected the existing web-browser window to the 
     AU's URL or spawned a new browser window for the AU.<br />
       <strong>LMS Required:</strong> Yes<br />
       <strong>AU Required:</strong> Yes<br />
@@ -1028,10 +1028,23 @@ structure.<br />
       the window if a value of "NewWindow" is passed, or redirect back to the LMS if "ExistingWindow" 
       is passed.<br />
       <strong>Data type: </strong>String<br />
-      <strong>Value space: </strong>"NewWindow", "ExistingWindow"<br />
+      <strong>Value space: </strong>"NewWindow", "ExistingWindow" or other values as defined in CMI-5 Course Structure specification<br />
       <strong>Sample value: </strong>"NewWindow"</p></td>
   </tr>
+    <tr><th align="left">launchParameters</th>
+    </tr>
     <tr>
+    <tr>
+    <td><p><strong>Description: </strong>The launch parameters defined in the CMI-5 Course Structure<br />
+      <strong>LMS Required:</strong>If the <strong><em>launchParameters</em></strong> are defined by the AU developer in the Course Structure, the LMS must include the  <strong><em>launchParameters</em></strong> in the State API document.<br />
+      <strong>AU Required:</strong>No<br />
+      <strong>LMS Usage:  </strong>The LMS shall include the <strong><em>launchParameters</em></strong> in the State API document when defined in the Course Structure.<br />
+      <strong>AU Usage: </strong>AU should get the <strong><em>launchParameters</em></strong> value 
+      from the State API document if launch parameters were defined in the Course Structure.<br />
+      <strong>Data type: </strong>Defined by AU developer<br />
+      <strong>Value space: </strong>Defined by the AU developer<br />
+      <strong>Sample value: </strong>TBD</p></td>
+  </tr>
     <th align="left">returnURL</th>
   </tr> 
 <tr>
