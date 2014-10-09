@@ -475,7 +475,7 @@ The format of the launching URL is as follows:
 ```
 <URL to AU>
 ?endpoint=<URL to LMS Listener>
-&auth=<Authorization Token (optional)– if OAuth is not used>
+&fetch=<Fetch URL for Authorization Token (optional)– if OAuth is not used>
 &actor=<Actor Object>
 &registration=<Registration ID>
 &activity_id=<AU activity ID>
@@ -486,7 +486,7 @@ Example:
 ```
 http://la.cmi5.aicc.org/LA1/Start.html
 ?endpoint=http://cmi-5-lms-system.org/lrslistner/
-&auth=OjFjMGY4NTYxNzUwOGI4YWY0NjFkNzU5MWUxMzE1ZGQ1
+&fetch=http://cmi-5-lms-system.org/tokenGen.htm?k=2390289x0
 &actor={"objectType": "Agent","account": 
 {"homePage": "http://www.example.com","name": "1625378"}
 &registration=760e3480-ba55-4991-94b0-01820dbd23a2
@@ -497,22 +497,22 @@ The values for the URL launch parameters are described below:
 
 <table>
   <tr><th colspan=3 align ="left">endpoint</th></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A    URL to the LMS listener location for XAPI messages to be sent to.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>LMS shall place the <strong><em>endpoint </em></strong>in the query    string.<strong></strong>The LMS should limit the use of the <strong><em>auth</em></strong> value for the duration of a specific/user/learning activity/registration</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>AU shall    get the <strong><em>endpoint </em></strong>value from the query string. AU shall use the <strong><em>endpoint </em></strong>value as the URL to send XAPI messages to.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A URL to the LMS listener location for xAPI messages to be sent to.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>LMS must place the <strong><em>endpoint </em></strong>in the query string.<strong></strong>The LMS should limit the use of the <strong><em>auth</em></strong> value for the duration of a specific/user/learning activity/registration</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>AU must get the <strong><em>endpoint </em></strong>value from the query string. AU must use the <strong><em>endpoint </em></strong>value as the URL to send xAPI messages to.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>An URL-encoded URL</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>https://mylms.aicc.org/MyCMI5_listener.pl</td></tr>
 </table>
 
 <table>
-  <tr><th colspan=3 align ="left">auth</th></tr>
-  <tr><td>&nbsp;</td><th align ="right">Description:</th><td>An    authentication token created &amp; managed by the LMS.  Used when OAuth authentication is not    practical or desired.  The    authentication token is used by the learning activity being launched.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>LMS shall place the <strong><em>auth </em></strong>in the query    string when “standard authentication” is indicated in the course structure    definition. <br /><br />If OAuth is the method of authentication specified, the LMS shall    NOT place the <strong><em>auth </em></strong>name/value pair<strong></strong>in the query string.  <br /><br />The LMS should limit the use of the <strong><em>auth </em></strong>value for the duration of a specific/user/learning activity/registration  </td></tr>
-  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU shall    get the <strong><em>auth</em></strong> value from the query string. AU shall place the <em>auth </em>value in the Authorization headers of all HTTP    messages made to the endpoint using the XAPI.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right">Data type:</th><td>String    (based-64 encoded)</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td></td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>OjFjMGY4NTYxNzUwOGI4YWY0NjFkNzU5MWUxMzE1ZGQ1</td></tr>
+  <tr><th colspan=3 align ="left">fetch</th></tr>
+  <tr><td>&nbsp;</td><th align ="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS.  The <strong><em>fetch</em></strong> URL is only used when OAuth authentication is not practical or desired.  The authentication token is used by the learning activity being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>The LMS shall place the <strong><em>fetch</em></strong> in the query    string when “standard authentication” is indicated in the course structure definition. <br /><br />If OAuth is the method of authentication specified, the LMS shall NOT place the <strong><em>fetch </em></strong>name/value pair<strong></strong> in the query string.  <br /><br />The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses should generate an error as defined in section ___. The authorization token returned by the <strong><em>fetch</em></strong> URL must be limited to the duration of a specific user/learning activity/registration  </td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>When Basic authentication is used, the AU must get the <strong><em>fetch</em></strong> value from the query string. The AU must make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section ___. The AU must then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU should not make one more than 1 post to the <strong><em>fetch</em></strong> URL</td></tr>
+  <tr><td>&nbsp;</td><th align ="right">Data type:</th><td>String (URL-encoded)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>http://cmi-5-lms-system.org/tokenGen.htm?k=2390289x0</td></tr>
 </table>
 
 <table>
