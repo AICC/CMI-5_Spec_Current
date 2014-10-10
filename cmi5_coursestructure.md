@@ -108,9 +108,10 @@ The scope of this specification is limited to following:
 
 The following referenced documents are indispensable for the application of this specification. 
 
-RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
-“Experience API”, Version 0.95, ADL, 19 Oct 2012  
-(http://www.adlnet.gov/wp-content/uploads/2012/11/Experience-API-Release-v0.95.pdf)
+RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.<br/>
+
+“Experience API”, current specification, ADL, 2012-2013<br/>
+https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
 
 CMI5-001  – CMI-5 Runtime Environment, Version x.x, AICC, TBD  
 
@@ -295,7 +296,7 @@ The following meta data elements are at the course level and  describe the cours
     <td width="811" valign="top"><p><strong>Description</strong>:<br />
       A globally unique IRI (Internationalized Resource Identifier per RFC 3987) for the course.  Used to explicitly identify the course instance.</p>
       <p><strong>Value space: </strong><br />
-        TBD –<br />
+        Values defined by course designer<br />
         <strong>Sample value: </strong><br />
         http://www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2</p>
     </td>
@@ -389,7 +390,7 @@ The data in this section is used by Objectives. Objectives can be associated wit
     <td width="792" valign="top"><p><strong>Description:</strong><br />
       A unique IRI for the learning objective<br />
       </p>
-      <p><strong>Value space:</strong>TBD</p>
+      <p><strong>Value space:</strong><br/>Values defined by the course developer</p>
     <p><strong>Sample value:</strong> http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2</p>
     </td>
   </tr>
