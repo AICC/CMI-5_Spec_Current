@@ -49,6 +49,7 @@ license agreement contained within it.
       * [7.1.2 Last Statement Call](#last_statement_au)
 * [__8.0 Content Launch Mechanisms__](#content_launch)
   * [8.1 Web (Browser) Environment](#browser_environment)
+  * [8.2 Authorization Token Fetch URL](#fetch_url)
   * [8.3 Other Launch Environments](#other_environment)
 * [__9.0 XAPI Statement Data Model__](#xapi_data_model)
   * [9.1 Statement ID](#ID)
@@ -378,9 +379,7 @@ AU’s shall meet the following requirements to conform to this specification:
 <a name="placement"></a> 
 ###7.2.1 Placement of session_id in Statements
 
-The AU shall retrieve the value of session\_id at launch time as specified in Section 8
-Content Launch Mechanisms.  The AU shall place the value of the session_id in the context
-extensions for all XAPI statements it records.  
+The AU shall retrieve the value of session\_id at launch time as specified in Section 10 State API.  The AU shall place the value of the session_id in the context extensions for all XAPI statements it records.  
 
 Usage in an XAPI Statement:
 
@@ -402,7 +401,7 @@ Example:
 The AU should issue a statement to the LRS after being launched, initialized, and ready
 for learner interaction.  If used, the statement shall contain the following:
       Verb:  “Started”
-      Actor: <as defined in section 8>
+      Actor: <as defined in section 9>
       Object: __________________
 
 If used, the above statement shall be the first Statement API call made by the AU. The
@@ -429,7 +428,7 @@ Example Statement:
 The AU shall issue a statement to the LRS after being launched, initialized, and ready for
 learner interaction that contains the following:
       Verb:  “Exited”
-      Actor: <as defined in section 8>
+      Actor: <as defined in section 9>
       Object: ___________________
 This shall be the last Statement API call made by the AU prior to it exiting the launch
 session. The AU shall not record any other statements prior to exiting.
@@ -508,8 +507,8 @@ The values for the URL launch parameters are described below:
 <table>
   <tr><th colspan=3 align ="left">fetch</th></tr>
   <tr><td>&nbsp;</td><th align ="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS.  The <strong><em>fetch</em></strong> URL is only used when OAuth authentication is not practical or desired.  The authentication token is used by the learning activity being launched.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>The LMS shall place the <strong><em>fetch</em></strong> in the query    string when “standard authentication” is indicated in the course structure definition. <br /><br />If OAuth is the method of authentication specified, the LMS shall NOT place the <strong><em>fetch </em></strong>name/value pair<strong></strong> in the query string.  <br /><br />The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses should generate an error as defined in section ___. The authorization token returned by the <strong><em>fetch</em></strong> URL must be limited to the duration of a specific user/learning activity/registration  </td></tr>
-  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>When Basic authentication is used, the AU must get the <strong><em>fetch</em></strong> value from the query string. The AU must make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section ___. The AU must then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU should not make one more than 1 post to the <strong><em>fetch</em></strong> URL</td></tr>
+  <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>The LMS must place the <strong><em>fetch</em></strong> in the Launch URL when Basic authentication is indicated in the course structure definition. <br /><br />If OAuth is the method of authentication specified, the LMS shall NOT place the <strong><em>fetch</em></strong>name/value pair<strong></strong> in the query string.  <br /><br />The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses should generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL must be limited to the duration of a specific user session. </td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>When Basic authentication is used, the AU must get the <strong><em>fetch</em></strong> value from the query string. The AU must make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU must then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU should not make one more than 1 post to the <strong><em>fetch</em></strong> URL</td></tr>
   <tr><td>&nbsp;</td><th align ="right">Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>http://cmi-5-lms-system.org/tokenGen.htm?k=2390289x0</td></tr>
@@ -517,8 +516,8 @@ The values for the URL launch parameters are described below:
 
 <table>
   <tr><th colspan=3 align ="left">actor</th></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A JSON object called “actor” (as defined in the XAPI specification) that    identifies the learner launching the learning activity so the learning    activity will be able to include it in XAPI messages.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS shall place the value for <strong><em>actor </em></strong>in the query string based on the authenticated learner’s identity. The    LMS should create an actor object specific to the LMS instance that does NOT    include sensitive PII of the learner.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A JSON object called “actor” (as defined in the XAPI specification) that identifies the learner launching the learning activity so the learning activity will be able to include it in XAPI messages.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS shall place the value for <strong><em>actor </em></strong>in the query string based on the authenticated learner’s identity. The    LMS should create an actor object specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU shall get the <strong><em>actor </em></strong>value from the query string. AU shall use the <strong><em>actor </em></strong>value in API calls that require an “actor” object when sending XAPI messages</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td> A JSON Actor object (as defined section 9.2)</td></tr>
@@ -546,6 +545,53 @@ The values for the URL launch parameters are described below:
 </table>
 
 <br />
+<a name="fetch_url"></a>  
+##8.2 Authorization Token Fetch URL
+###8.2.1 Overview
+When Basic authentication is used, the LMS must include the <strong><em>fetch</em></strong> name/value pair in the launch URL.  The AU must make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve an authorization token.  Please note than an HTTP GET is not allowed in order to prevent caching of the request.
+
+The <strong><em>fetch</em></strong> URL must return a JSON structure using a content-type of "application/json".  An example JSON structure is shown below:
+```javascript
+{
+  "auth-token": "QWxhZGRpbjpvcGVuIHNlc2FtZQ=="
+}
+```
+The AU must place the <strong><em>auth-token</em></strong> in the HTTP header, as defined in <a href='http://tools.ietf.org/html/rfc1945#section-11'>RFC 1945 - 11.1 Basic Authentication Scheme</a>, in all subsequent xAPI communications with the LMS.  The authorization token returned by the <strong><em>fetch</em></strong> URL must be limited to the duration of the session.
+
+The AU should not attempt to retrieve the authorization token more than once.  The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses should generate an error (see Section 8.2.3). 
+
+
+###8.2.2 Definition: auth-token
+<table>
+  <tr><th colspan=3 align ="left">auth-token</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>An authorization token used in all xAPI communications with the LMS when Basic authentication is used.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS shall place the value for <strong><em>auth-token</em></strong> in a JSON structure, as shown in section 8.2.1, in its response to a <strong><em>fetch</em></strong> URL request. The response must have a content-type of "application/json".</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU must get the <strong><em>auth-token</em></strong> value using an HTTP POST to the <strong><em>fetch</em></strong> URL. The AU must then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>QWxhZGRpbjpvcGVuIHNlc2FtZQ==</td></tr>
+</table>
+
+###8.2.3 Errors
+####8.2.3.1 Duplicate call to fetch URL
+The <strong><em>fetch</em></strong> URL is a "one-time use" URL and only the first request should return the <strong><em>auth-token</em></strong>. Subsequent requests made to the <strong><em>fetch</em></strong> during the session should generate an error.  The error should be returned in the form of a JSON structure using content-type "application/json".
+```javascript
+{
+  "error-code": "1",
+  "error-text": "The authorization token has already been returned."
+}
+```
+####8.2.3.2 Error Values
+The following <strong><em>error-code</em></strong> are allowed.
+<table>
+<tr><td><strong>Code</strong></td><td><strong>Meaning</strong></td></tr>
+<tr><td>1</td><td>Already in Use or Expired</td></tr>
+<tr><td>2</td><td>General Security Error</td></tr>
+<tr><td>3</td><td>General Application Error</td></tr>
+</table>
+
+The values for <strong><em>error-text</em></strong> are defined by the LMS.
+
 <br />
 
 <a name="other_environment"></a>  
