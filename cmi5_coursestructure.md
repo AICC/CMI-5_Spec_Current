@@ -132,16 +132,21 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Experience API (XAPI)__: XAPI is a runtime data communication specification for learning content (AU) to send and receive data to an LRS.  The XAPI specification is referenced by this document is used to define the data transport and the data model. 
 
+* __Internationalized Resource Identifier (IRI)__: A unique identifier per RFC 3987.  The IRI may be an IRL. All IRIs should be a full absolute IRIs including a scheme. Relative IRIs should not be used. IRLs should be defined within a domain controlled by the person creating the IRL.
+
+* __Internationalized Resource Locator (IRL)__: Per the xAPI specification, an IRL is an IRI that when translated into a URI (per the IRI to URI rules), is a URL. Some communities of practice simply use URL even if they use IRIs, which isn't as technically correct within xAPI.
+
 * __Learner__: The end user viewing/using the learning content (Learning Activity).
 
 * __Assignable Unit (AU)__:  A learning content presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS system.
 
-* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the CMI5 specification.  The LMS shall have an LRS as part of its implementation.
+* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the CMI5 specification.  The LMS must have an LRS as part of its implementation.
 
-* __Learning Records Store (LRS)__: As defined in the XAPI specification.  In this specification, the LMS shall implement an LRS with additional requirements as specified in this document.
+* __Learning Records Store (LRS)__: As defined in the XAPI specification.  In this specification, the LMS must implement an LRS with additional requirements as specified in this document.
 
-<BR>
-<BR>
+* __Must / Should / May__: Three levels of obligation with regards to conformance to the CMI-5 specification. A system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. Failing to meet a SHOULD requirement is not a violation of conformity, but goes against best practices. MAY indicates an option, to be decided by the developer with no consequences for conformity.
+<BR />
+<BR />
 
 
 <a name="acronyms"/>  
@@ -165,7 +170,7 @@ __XAPI__: Experience API
 
 Conformance to this specification is defined in section. 
 
-In this specification, “shall” is to be interpreted as a requirement on an implementation; “shall not” is to be interpreted as a prohibition.  
+In this specification, “must” is to be interpreted as a requirement on an implementation; “must not” is to be interpreted as a prohibition.  
 “Should” is to be interpreted as a recommendation for implementation; “should not” is to be interpreted as the converse of “should”.  
 “May” is to be interpreted as a course of action that is permissible within the limits of the specification; “need not” indicates a course of action that is not required.
 Uses of XAPI specification outside the scope this specification do not affect conformance with this specification.
@@ -173,15 +178,15 @@ Uses of XAPI specification outside the scope this specification do not affect co
 <a name="au_conformance"/>
 ## 4.1 Courses
 
-A course shall be bundled with a course structure data  that conform to all requirements listed in Section 7  
-Course structure data shall not implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
+A course must be bundled with a course structure data that conform to all requirements listed in Section 7  
+Course structure data must not implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
 
 <a name="lms_conformance"/>
 ## 4.2 Learning Management Systems (LMS)
 
-LMS systems shall conform to all requirements listed in Section 6 – LMS Requirements.  
-The LMS shall not implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
+LMS systems must conform to all requirements listed in Section 6 – LMS Requirements.  
+The LMS must not implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
 <a name="concept"/>
 # 5.0 Conceptual Model: Informative  
@@ -212,18 +217,18 @@ Responsibilities of the LMS:
 <a name="lms_requirements"/>
 # 6.0 LMS Requirements
 
-LMS systems shall meet the following requirements to conform to this specification:  
+LMS systems must meet the following requirements to conform to this specification:  
 
-1. The LMS shall implement a means to import course structures as defined in section 6.1
-2. The LMS shall implement a means to export course structures as defined in section 6.1
+1. The LMS must implement a means to import course structures as defined in section 6.1
+2. The LMS must implement a means to export course structures as defined in section 6.1
 
 <a name="course_structures"/>
 ## 6.1 Course structure requirements
-The LMS shall implement a means to create and maintain course structures.<br/>
-1.	The LMS shall implement the import of the course data structure defined in section 7. <BR>
+The LMS must implement a means to create and maintain course structures.<br/>
+1.	The LMS must implement the import of the course data structure defined in section 7. <BR>
 2.	The LMS should implement the export of the course data structure defined in section 7. <BR>
 3.	The LMS should provide a user interface to LMS administrative users to create and edit course structures internally.<BR>
-4.	The LMS shall be able support course structures with one or more AU’s.
+4.	The LMS must be able support course structures with one or more AU’s.
 <BR>
 <BR>
 
@@ -559,7 +564,7 @@ AU’s may also contain objectives.
     <td valign="top"><p><strong>Required:</strong> Yes<br />
         <strong>Data type:</strong> string </p>
     </td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which Authentication method the AU shall used to access the LMS's Learning Record Store.</p>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which Authentication method the AU must used to access the LMS's Learning Record Store.</p>
       <p><strong>Usage: </strong></p>
       <ul>
         <li>Based on the value of AuthenticationMethod, the LMS will place an  parameter in the AU launch interface to indicate to the AU which authentication method to use (as per the CMI-5 Runtime specification)</li>
@@ -617,7 +622,7 @@ AU’s may also contain objectives.
 ## 7.2 Course Structure XSD 
 
 The following is the XML Schema for a course structure.  
-All course structures created for LMS import and creaated by the LMS for export shall conform to this XSD.
+All course structures created for LMS import and creaated by the LMS for export must conform to this XSD.
 
 ```XML
 <xs:schema xmlns="http://aicc.org/CMI5/CourseStructure.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
