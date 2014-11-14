@@ -66,7 +66,8 @@ license agreement contained within it.
       * [9.5.4 Duration](#Duration)
   * [9.6 Context](#Context)
       * [9.6.1 Registration](#Registration)
-      * [9.6.2 Extensions](#extensions)
+      * [9.6.2 ContextActivities] (#ContextActivities)
+      * [9.6.3 Extensions](#extensions)
 * [__10.0 XAPI State Data Model__](#xapi_state)
 * [__11.0 XAPI Agent Profile Data Model__](#xapi_agent_profile)
 * [__12.0 XAPI Activity Profile Data Model__](#xapi_activity_profile)
@@ -275,7 +276,7 @@ previous state information from the LMS.
 * Learner views the AU content and performs the learning. During this time
 the AU may request from and store data to the LMS.
 * The learner exits the AU.
-* The AU reports final tracking data to the LMS and issues an exit message.
+* The AU reports final tracking data to the LMS and issues a "terminated" message.
 * The LMS makes the next AU(s) available to the learner based on results from the closed AU session and course structure parameters.
 * Administrative users create and view reports of tracking data recorded by AU(s) for individual learners.
 
@@ -286,7 +287,7 @@ is and initiate communication with the LMS.
 * Acting as “client”, send and receive messages using the defined transport mechanism(s)
 and associate commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
-* Send an “exit” message prior to terminating the learning activity’s execution.
+* Send an “terminated” message prior to terminating the learning activity’s execution.
 
 Responsibilities of the LMS:
 
@@ -463,7 +464,7 @@ The AU must be launched by the LMS by one of the following methods:
 2. Re-directing the existing browser window (or section of the existing window) to the URL  
 
 The Launch method used by the LMS must be determined by the “Launch Method” defined in
-the LMS’s course structure for the AU being launched. (See ______) URL Launch Line
+the LMS’s course structure for the AU being launched. (See Course Structure 7.1.4 AU Meta Data, URL)
 
 The AU must be launched by the LMS with a URL having (query string) launch parameters as
 defined in this section.
@@ -670,7 +671,7 @@ AU’s use in statement.
 <tr><th align="left">Display</th><td>{ "en-US" : "Launched" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Launched” indicates that the AU was launched by the LMS.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use this verb in a statement recorded in the LRS before launching an AU.  See Statement API _____ </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API section 10) </td></tr>
 </tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate that the LMS has launched the AU. It should be used in combination with the "Initialized" statment sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
 </table>
 
@@ -725,12 +726,11 @@ AU’s use in statement.
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/passed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeed in a judged activity in the AU. </td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and passed AU.  The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must be equal to or greater than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS must record "Mastery_Score" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  See section _____.  
+</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a (scaled) score, the (scaled) score must be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)  
 <BR>
 <BR>
-The LMS must use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  See Section_____. </td></tr>
-</tr><tr><th align="left">Usage</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must equal to or greater than the "Mastery_Score" indicated in the course structure. See section _____. </td></tr>
+The LMS must record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See section 10) The LMS must use either "Passed" or "Completed" statements (or both) based on the MoveOn criteria for the AU as defined in Course Structure. (See Course Structure Section 7.1.4 MoveOn).</td></tr>
+</tr><tr><th align="left">Usage</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must equal to or greater than the "MasteryScore" indicated in the course structure. (See Course Structure Section 7.1.4 MasteryScore)</td></tr>
 </table>
 
 
@@ -740,14 +740,12 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU. </td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score must be less than the "Mastery_Score" indicated in the course structure.  See section _____. </td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS must record "Mastery_Score" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  See section _____.<BR>
-<BR>
-The LMS must use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  See Section_____.</td></tr>
-</tr><tr><th align="left">Usage</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.. If the "Failed" statement contains a score, the score must be less than the "Mastery_Score" indicated in the course structure. See section _____. </td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score must be less than the "MasteryScore" indicated in the course structure.  (See Course Structure Section 7.1.4 MasteryScore). </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS must record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  (See section 10).<br/>
+<br/>
+The LMS must use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  (See Course Structure Section 7.1.4 MasteryScore).</td></tr>
+</tr><tr><th align="left">Usage</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.. If the "Failed" statement contains a score, the score must be less than the "MasteryScore" indicated in the course structure. (See Course Structure Section 7.1.4 MasteryScore). </td></tr>
 </table>
-
-
 
 
 ###9.3.8 Abandoned
@@ -757,7 +755,7 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Abandoned” indicates that the AU session was abnormally terminated by Learner action (or due to a system failure).</td>
 </tr><tr><th align="left">AU Obligations</th><td>None.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Exit" statement to determine that the AU session has ended.  In the absence of an "Exit" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______. </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination. </td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
 
@@ -783,8 +781,8 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Display</th><td>{ "en-US" : "Terminated" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Terminated” indicates that the AU was terminated by the Learner and that the AU will
 not be recording any more statements for the launch session.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Exit" verb. This statement must be the last statement recorded by the AU in a session.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Exit" statement to determine that the AU session has ended.  In the absence of an "Exit" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______.</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Terminated" verb. This statement must be the last statement recorded by the AU in a session.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
 
@@ -887,25 +885,17 @@ Example of usage in a statement:
 
 <a name="Result"></a> 
 ##9.5 Result
-Result may be present in a statement depending on the CMI-5 verb used.  Result may be omitted from statements having the following CMI-5 defined verbs:
-
-- Launched
-- Initialized
-- Resumed
-- Terminated
-
-Result should be included in statements containing the following CMI-5 defined verbs:
-
-- Completed
-- Passed
-- Waived
-- Failed
-- Abandoned
+Result may be present in a statement depending on the CMI-5 verb used.  
 
 Example JSON:
 ```javascript
   "result": {
-     "score": 80,
+     "score": {
+         "scaled": 0.65,
+         "raw": 65,
+         "min": 0,
+         "max": 100
+     },
      "success": false,
      "duration": "PT30M",
      "extensions": {
@@ -918,6 +908,12 @@ Example JSON:
 ###9.5.1 Score
 
 A score is not required to be reported.  If a score is reported by an AU, the verb must be consistent with Mastery_Score (if defined for the AU in the course structure).
+
+<ul><li><strong>scaled</strong><br/>A decimal value between 0 and 1.</li>
+<li><strong>raw</strong><br/>An integer value between the "min" and "max" properties of the <em><strong>score</strong></em> object.  When the "raw" value is provided, the AU must also provide the "min" and "max" values for <em><strong>score</strong></em>.</li>
+<li><strong>min</strong><br/>An integer value indicating the minimum value for the "raw" score property.</li>
+<li><strong>max</strong><br/>An integer value indicating the maximum value for the "raw" score property.</li>
+</ul>
 
 <a name="Success"></a>
 ###9.5.2 Success 
@@ -968,26 +964,44 @@ The duration proprety should be include in Abandoned statements.  The duration p
 ####9.5.5.1 Progress
 An integer value indicating the completion of the AU as a percentage.  The AU may set this value in statements to indicate level of completion between 0 and 100 percent.
 
-
 <a name="Context"></a> 
 ##9.6 Context
 All statements with CMI-5 defined verbs must contain a context as defined in this section. 
 
+Sample JSON:
+```javascript
+   "context": {
+     "registration": "<registration value provided by LMS>",
+     "contextActivities": {
+        "category": { 
+          "id": "http://aicc.org/CMI5/ResultsSearchTag"
+        }
+     },
+     "extensions" {
+       "sessionID": "<session id provided by the LMS>",
+       "reason": "<reason for 'waived' verb, if statement is 'waived' statement only>",
+      }
+   }
+```
+
 <a name="Registration"></a> 
 ###9.6.1 Registration
-The value for the registration property used in the context object must be the value provided by the LMS.  The LMS must generate this value and pass it to the AU via the launch line.  
+The value for the registration property used in the context object must be the value provided by the LMS.  The LMS must generate this value and pass it to the AU via the launch line. 
+
+<a name="ContextActivities"></a>
+###9.6.2  ContextActivities
+Statements with a results object (section 9.5) that include either "success” or "completion” properties must contain a contextActivities object with the "id" property as shown in the JSON example above. Other statements must not include this property. This purpose of this proprety is to facilitate searches of the LRS by the LMS or other reporting systems.
 
 <a name="extensions"></a> 
-###9.6.2 Extensions
+###9.6.3 Extensions
 The following are extensions specified for CMI-5.  Other extensions are permitted provided they do not conflict or duplicate the ones specified here.  
 
-####9.6.2.1 Session ID
-
+####9.6.3.1 Session ID
 
 <table>
   <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi-5/extensions/session</td></tr>
   <tr><th align ="right" nowrap>Description:</th><td>An unique identifier for an single AU launch session based on actor and course registration </td></tr>
-  <tr><th align ="right" nowrap>LMS Usage:</th><td>The value for Session ID is generated by the LMS. The LMS must also record the Session ID  in the State API (per section 6.2) prior to launching an AU. The LMS must also provide the Session ID in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS.</td></tr>
+  <tr><th align ="right" nowrap>LMS Usage:</th><td>The value for Session ID is generated by the LMS. The LMS must also record the Session ID in the State API (per section 10) prior to launching an AU. The LMS must also provide the Session ID in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS.</td></tr>
   <tr><th align ="right" nowrap>AU Usage:</th><td>An AU must include the Session ID provided by the LMS in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS. </td></tr>
  <tr><th align ="right" nowrap>AU Obligation:</th><td>Required</td></tr>
  <tr><th align ="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
@@ -996,7 +1010,7 @@ The following are extensions specified for CMI-5.  Other extensions are permitte
   <tr><th align ="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
-####9.6.2.2 Reason
+####9.6.3.2 Reason
 
   <table>
   <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi5/extensions/result/reason</td></tr>
@@ -1033,12 +1047,13 @@ LRS.  This must be a JSON document as defined in this section with a document na
 {
    "Context_Template": {
          "extensions": {
-            "http://www.aicc.org/cmi-5/extensions/session": <LMS generated Session ID>
+            "http://www.aicc.org/cmi-5/extensions/session": "<LMS generated Session ID>"
          }
    },
    "launchMethod": "<launch method from the Course Structure>",
    "launchMode": "<launchMode value>",
    "launchParameters": "<launch parameters from Course Structure>",
+   "masteryScore": "<mastery score from the Course Structure>",
    "returnURL": "<URL value>",
    "entitlementKey": {
        "courseStructure": "<Entitlement data or key from Course Structure>",
@@ -1047,7 +1062,7 @@ LRS.  This must be a JSON document as defined in this section with a document na
  }
 ```
 
-The properties for the LMS.LaunchData document are described below.
+The properties for the LMSLaunchData document are described below.
 
 <table>
   <tr>
@@ -1066,7 +1081,7 @@ structure.<br />
       and may include additional values in the context objects of such statements,
       but must not overwrite any values provided in the context template. NOTE:
       this will include the session_id specified by the LMS.<br />
-      <strong>Data type: </strong>JSON context object as defined in xApi 1.0<br />
+      <strong>Data type: </strong>JSON context object as defined in xAPI 1.0<br />
       <strong>Value space:</strong> LMS implementation specific<br />
       <strong>Sample value:</strong></p></td>
   </tr>
@@ -1113,15 +1128,28 @@ structure.<br />
     <tr>
     <tr>
     <td><p><strong>Description: </strong>The launch parameters defined in the CMI-5 Course Structure<br />
-      <strong>LMS Required:</strong>If the <strong><em>launchParameters</em></strong> are defined by the AU developer in the Course Structure, the LMS must include the  <strong><em>launchParameters</em></strong> in the State API document.<br />
-      <strong>AU Required:</strong>No<br />
-      <strong>LMS Usage:  </strong>The LMS must include the <strong><em>launchParameters</em></strong> in the State API document when defined in the Course Structure.<br />
-      <strong>AU Usage: </strong>AU should get the <strong><em>launchParameters</em></strong> value 
+      <strong>LMS Required:</strong> If the <strong><em>launchParameters</em></strong> are defined by the AU developer in the Course Structure, the LMS must include the  <strong><em>launchParameters</em></strong> in the State API document.<br />
+      <strong>AU Required:</strong> No<br />
+      <strong>LMS Usage:</strong> The LMS must include the <strong><em>launchParameters</em></strong> in the State API document when defined in the Course Structure.<br />
+      <strong>AU Usage:</strong> AU should get the <strong><em>launchParameters</em></strong> value 
       from the State API document if launch parameters were defined in the Course Structure.<br />
-      <strong>Data type: </strong>Defined by AU developer<br />
-      <strong>Value space: </strong>Defined by the AU developer<br />
-      <strong>Sample value: </strong>TBD</p></td>
+      <strong>Data type:</strong> Defined by AU developer<br />
+      <strong>Value space:</strong> Defined by the AU developer<br />
+      <strong>Sample value: </strong> TBD</p></td>
   </tr>
+  <tr><th align="left">masteryScore</th>
+    </tr>
+    <tr>
+    <tr>
+    <td><p><strong>Description: </strong>The MasteryScore from the CMI-5 Course Structure.<br />
+      <strong>LMS Required:</strong> Yes<br />
+      <strong>AU Required:</strong> Yes<br />
+      <strong>LMS Usage:  </strong>The LMS must include the MasteryScore value based on the value defined in the course structure for the AU being launched.<br />
+      <strong>AU Usage: </strong>AU must issue Passed or Failed statements based on the MasteryScore provided. (See sections 9.3.6 and 9.3.7)<br />
+      <strong>Data type: </strong>decimal<br />
+      <strong>Value space: </strong>Decimal value between 0 and 1<br />
+      <strong>Sample value: </strong>0.75</p></td>
+  </tr>   
     <th align="left">returnURL</th>
   </tr> 
 <tr>
@@ -1135,7 +1163,7 @@ structure.<br />
       <strong>LMS Usage:  </strong>LMS must include the URL where the learner should be redirected 
       on exiting the course. <br />
       <strong>AU Usage: </strong>AU must get the <strong><em>ReturnURL</em></strong> value 
-      from the LMS.LaunchData state document. AU must redirect the current window in the learner's 
+      from the LMSLaunchData state document. AU must redirect the current window in the learner's 
       browser to the <strong><em>ReturnURL</em></strong> when the AU is terminated.<br />
       <strong>Data type: </strong>URL<br />
       <strong>Value space: </strong>Any URL<br />
