@@ -471,8 +471,8 @@ AU’s may also contain objectives.
     </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
       A relative or fully qualified URL that references the launch point of the AU.</p>
-      <p><strong>Value space:</strong> TBD </p>
-      <p><strong>Sample value:</strong> TBD </p>
+      <p><strong>Value space:</strong>Determined by AU developer</p>
+      <p><strong>Sample value:</strong>http://wwww.mycourses.com/courseX.html</p>
     </td>
   </tr>
   <tr>
@@ -520,11 +520,12 @@ AU’s may also contain objectives.
       <ul>
         <li>The MasteryScore is passed to the AU at runtime by the LMS (as defined in the CMI5 Runtime Specification)</li>
         <li>If the AU has scoring, it will use the MasteryScore to detemine pass/fail (as defined in the CMI5 Runtime Specification)</li>
+        <li>The mastery score is a scaled, decimal value between 0 and 1.</li>
         <li>If value of MasteryScore is an empty string (""), then a MasteryScore is not defined for the AU</li>
       </ul>
-      <p><strong>Value space: </strong>Integer Number or empty string<br />
+      <p><strong>Value space: </strong>Decimal number or empty string<br />
         <br />
-      <strong>Sample value: </strong> "100" </p>
+      <strong>Sample value: </strong> ".85" </p>
     </td>
   </tr>
   <tr>
