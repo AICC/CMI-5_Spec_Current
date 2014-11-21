@@ -353,16 +353,10 @@ The LMS must implement the Statement API Requirements as defined in section 9.
 
 AU’s must meet the following requirements to conform to this specification:
 
-1. The AU must implement the runtime launch interface as defined in Section 8 Content
-Launch Mechanisms.
-2. The AU must implement runtime communication defined in the XAPI Specification
-3. The AU must implement the XAPI “Verb” vocabulary as defined in section __________ .
-4. The AU must implement additional XAPI “Statement API” requirements as defined in
-section __________ .
-5. The AU must implement additional XAPI “Agent Profile API” requirements as defined in
-section __________ .
-6. The AU must implement additional XAPI “Activity Profile API” requirements as defined
-in section __________ .
+1. The AU must implement the runtime launch interface as defined in Section 8 Content Launch Mechanisms.
+2. The AU must implement runtime communication defined in the xAPI Specification.
+3. The AU must implement additional XAPI “Statement API” requirements as defined in section 9.0.
+4. The AU must implement additional XAPI “Agent Profile API” requirements as defined in section 11.0.
 
 <a name="au_state_api_requirements"></a> 
 ##7.1 AU State API Requirements
@@ -398,58 +392,12 @@ Example:
 
 <a name="first_statement_au"></a> 
 ###7.2.2 First Statement API Call
+The AU must issue a statement to the LRS after being launched, initialized, and ready for learner interaction using the Initialized verb per section 9.3.2.
 
-The AU should issue a statement to the LRS after being launched, initialized, and ready
-for learner interaction.  If used, the statement must contain the following:
-      Verb:  “Initialized”
-      Actor: <as defined in section 9>
-      Object: __________________
-
-If used, the above statement must be the first Statement API call made by the AU. The
-verb “Initialized” must only be used in this manner by the AU. 
-Example Statement:
-
-```javascript
-    {
-        "id": "12345678-1234-5678-1234-567812345678",
-        "actor":{
-	        "mbox":"mailto:userinlms@aicc.org"
-	    },
-	    "verb":{
-	        "id":"http://www.aicc.org/cmi5/verbs/initialized"
-        },
-        "object":{
-            "id":"http://example.aic.org/activities/quizzes/quiz7"
-	    }
-    }
-```
 <a name="last_statement_au"></a>  
 ###7.1.2 Last Statement Call
+The AU must issue a statement to the LRS prior to termination using the Terminated verb per section 9.3.10.
 
-The AU must issue a statement to the LRS after being launched, initialized, and ready for
-learner interaction that contains the following:
-      Verb:  “Terminated”
-      Actor: <as defined in section 9>
-      Object: ___________________
-This must be the last Statement API call made by the AU prior to it exiting the launch
-session. The AU must not record any other statements prior to exiting.
-
-Example Statement:
-
-```javascript
-      {
-        "id": "12345678-1234-5678-1234-567812345678",
-        "actor":{
-	        "mbox":"mailto:userinlms@aicc.org"
-	    },
-	    "verb":{
-	        "id":"http://www.aicc.org/cmi5/verbs/terminated"
-        },
-        "object":{
-            "id":"http://example.aic.org/activities/quizzes/quiz7"
-	    }
-    }
-```
 <a name="content_launch"></a>  
 #8.0 Content Launch Mechanisms
 
@@ -705,7 +653,7 @@ AU’s use in statement.
 <tr><th align="left">Description</th><td>The learner resumed an AU that was intentionally left uncompleted.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Resumed" verb when the learner returns to an AU that had recorded a "Suspend" statement in the previous session.  The AU must record "Resumed" immediately following a the "Initialized" statement. The AU must not issue a "Resumed" statement under any other circumstances.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
-</tr><tr><th align="left">Usage</th><td>See Obligations.</td></tr>
+</tr><tr><th align="left">Usage</th><td>See AU Obligations.</td></tr>
 </table>
 
 
@@ -756,7 +704,7 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Description</th><td>The verb “Abandoned” indicates that the AU session was abnormally terminated by Learner action (or due to a system failure).</td>
 </tr><tr><th align="left">AU Obligations</th><td>None.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination. </td></tr>
-</tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
+</tr><tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
 
 
@@ -782,7 +730,7 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Description</th><td>The verb “Terminated” indicates that the AU was terminated by the Learner and that the AU will
 not be recording any more statements for the launch session.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Terminated" verb. This statement must be the last statement recorded by the AU in a session.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section ______.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
 
@@ -1260,7 +1208,7 @@ Example:
 <a name="xapi_activity_profile"></a>  
 #12.0 XAPI Activity Profile Data Model
 
-At this time there are no specifications for the Activity Profile.
+The AU may use the Activity Profile API per the xAPI specification (section 7.5 Activity Profile API).
 
 <a name="bibliography"></a>   
 #Bibliography
