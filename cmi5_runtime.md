@@ -1,4 +1,4 @@
-<img src="http://aicc.org/joomla/dev/images/aicc-logo.png"> CMI-5 Runtime Environment 
+CMI-5 Runtime Environment 
 ---
 
 **AICC DOCUMENT NUMBER:** CMI5-001  &nbsp;&nbsp; **Revision:** CURRENT WORKING DRAFT   
