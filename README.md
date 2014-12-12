@@ -1,4 +1,4 @@
-<img src="http://aicc.org/joomla/dev/images/aicc-logo.png"> CMI-5 Current Working Draft
+CMI-5 Current Working Draft
 ---
 
 *Contact <cmi5@aicc.org> if you have questions about this specification*<br>
