@@ -1,4 +1,4 @@
-![AICC Logo](http://aicc.org/joomla/dev/images/aicc-logo.png) CMI-5 Course Structure 
+CMI-5 Course Structure 
 ------------------------------------------------------------------------------------
 
 
