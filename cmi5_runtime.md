@@ -44,7 +44,7 @@ license agreement contained within it.
 * [__7.0 AU Requirements__](#au_requirements)
   * [7.1 AU State API Requirements](#au_state_api_requirements)
   * [7.2 AU Statement API Requirements](#au_statement_api_requirements)
-      * [7.2.1 Placement of session_id in Statements](#placement)
+      * [7.2.1 Placement of sessionId in Statements](#placement)
       * [7.2.2 First Statement API Call](#first_statement_au)
       * [7.1.2 Last Statement Call](#last_statement_au)
 * [__8.0 Content Launch Mechanisms__](#content_launch)
@@ -372,21 +372,21 @@ AU’s must meet the following requirements to conform to this specification:
 ##7.2 AU Statement API Requirements
 
 <a name="placement"></a> 
-###7.2.1 Placement of session_id in Statements
+###7.2.1 Placement of sessionId in Statements
 
-The AU must retrieve the value of session\_id at launch time as specified in Section 10 State API.  The AU must place the value of the session_id in the context extensions for all XAPI statements it records.  
+The AU must retrieve the value of session\_id at launch time as specified in Section 10 State API.  The AU must place the value of the sessionId in the context extensions for all XAPI statements it records.  
 
 Usage in an XAPI Statement:
 
 ```javascript
 "extensions": {
-       “session_id”: <session_id value>
+       “sessionId”: <sessionId value>
      }
 ```
 Example:
 ```javascript
 "extensions": {
-       “session_id”: ”xyz123”
+       “sessionId”: ”xyz123”
      }
 ```
 
@@ -436,7 +436,7 @@ The format of the launching URL is as follows:
 &fetch=<Fetch URL for Authorization Token (optional)– if OAuth is not used>
 &actor=<Actor Object>
 &registration=<Registration ID>
-&activity_id=<AU activity ID>
+&activityId=<AU activity ID>
 ```
 
 Example:
@@ -448,7 +448,7 @@ http://la.cmi5.aicc.org/LA1/Start.html
 &actor={"objectType": "Agent","account": 
 {"homePage": "http://www.example.com","name": "1625378"}
 &registration=760e3480-ba55-4991-94b0-01820dbd23a2
-&activity_id=http://example.AU-content.com/example/001/statement
+&activityId=http://example.AU-content.com/example/001/statement
 ```
 
 The values for the URL launch parameters are described below: 
@@ -494,10 +494,10 @@ The values for the URL launch parameters are described below:
 </table>
 
 <table>
-  <tr><th colspan=3 align ="left">activity_id</th></tr>
+  <tr><th colspan=3 align ="left">activityId</th></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>The Activity ID of the AU being launched.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS must place the value for <strong><em>activity_id</em></strong> in the query string based on the definition of the AU in the course    structure.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU must get the <strong><em>activity_id</em></strong> value from the query string. AU must use the <strong><em>activity_id</em></strong> value in API calls that require an “activity id” when sending XAPI messages.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS must place the value for <strong><em>activityId</em></strong> in the query string based on the definition of the AU in the course    structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU must get the <strong><em>activityId</em></strong> value from the query string. AU must use the <strong><em>activityId</em></strong> value in API calls that require an “activity id” when sending XAPI messages.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>UUID (as defined in the XAPI specification)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td></td></tr>
@@ -677,7 +677,7 @@ AU’s use in statement.
 </tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a (scaled) score, the (scaled) score must be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)  
 <BR>
 <BR>
-The LMS must record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See section 10) The LMS must use either "Passed" or "Completed" statements (or both) based on the MoveOn criteria for the AU as defined in Course Structure. (See Course Structure Section 7.1.4 MoveOn).</td></tr>
+The LMS must record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See section 10) The LMS must use either "Passed" or "Completed" statements (or both) based on the moveOn criteria for the AU as defined in Course Structure. (See Course Structure Section 7.1.4 MoveOn).</td></tr>
 </tr><tr><th align="left">Usage</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must equal to or greater than the "MasteryScore" indicated in the course structure. (See Course Structure Section 7.1.4 MasteryScore)</td></tr>
 </table>
 
@@ -839,15 +839,15 @@ Example JSON:
 ```javascript
   "result": {
      "score": {
-         "scaled": 0.65,
-         "raw": 65,
-         "min": 0,
-         "max": 100
+         "scaled": "0.65",
+         "raw": "65",
+         "min": "0",
+         "max": "100"
      },
-     "success": false,
+     "success": "false",
      "duration": "PT30M",
      "extensions": {
-         "http://www.aicc.org/cmi5/extensions/result/progress": 100
+         "http://www.aicc.org/cmi5/extensions/result/progress": "100"
      }
    }
  ```
@@ -926,31 +926,31 @@ Sample JSON:
         }
      },
      "extensions" {
-       "sessionID": "<session id provided by the LMS>",
+       "sessionId": "<session id provided by the LMS>",
        "reason": "<reason for 'waived' verb, if statement is 'waived' statement only>",
       }
    }
 ```
 
 <a name="Registration"></a> 
-###9.6.1 Registration
+###9.6.1 registration
 The value for the registration property used in the context object must be the value provided by the LMS.  The LMS must generate this value and pass it to the AU via the launch line. 
 
 <a name="ContextActivities"></a>
-###9.6.2  ContextActivities
+###9.6.2  contextActivities
 Statements with a results object (section 9.5) that include either "success” or "completion” properties must contain a contextActivities object with the "id" property as shown in the JSON example above. Other statements must not include this property. This purpose of this proprety is to facilitate searches of the LRS by the LMS or other reporting systems.
 
 <a name="extensions"></a> 
-###9.6.3 Extensions
+###9.6.3 extensions
 The following are extensions specified for CMI-5.  Other extensions are permitted provided they do not conflict or duplicate the ones specified here.  
 
-####9.6.3.1 Session ID
+####9.6.3.1 sessionId
 
 <table>
   <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi-5/extensions/session</td></tr>
   <tr><th align ="right" nowrap>Description:</th><td>An unique identifier for an single AU launch session based on actor and course registration </td></tr>
   <tr><th align ="right" nowrap>LMS Usage:</th><td>The value for Session ID is generated by the LMS. The LMS must also record the Session ID in the State API (per section 10) prior to launching an AU. The LMS must also provide the Session ID in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS.</td></tr>
-  <tr><th align ="right" nowrap>AU Usage:</th><td>An AU must include the Session ID provided by the LMS in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS. </td></tr>
+  <tr><th align ="right" nowrap>AU Usage:</th><td>An AU must include the sessionId provided by the LMS in the context as an extension for all Statements (with CMI-5 defined verbs) it makes directly in the LRS. </td></tr>
  <tr><th align ="right" nowrap>AU Obligation:</th><td>Required</td></tr>
  <tr><th align ="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
   <tr><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
@@ -958,7 +958,7 @@ The following are extensions specified for CMI-5.  Other extensions are permitte
   <tr><th align ="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
-####9.6.3.2 Reason
+####9.6.3.2 reason
 
   <table>
   <tr><th align ="right" nowrap>ID:</th><td>http://www.aicc.org/cmi5/extensions/result/reason</td></tr>
@@ -993,15 +993,16 @@ LRS.  This must be a JSON document as defined in this section with a document na
 
 ```javascript
 {
-   "Context_Template": {
+   "contextTemplate": {
          "extensions": {
-            "http://www.aicc.org/cmi-5/extensions/session": "<LMS generated Session ID>"
+            "http://www.aicc.org/cmi-5/extensions/session": "<LMS generated sessionId>"
          }
    },
    "launchMethod": "<launch method from the Course Structure>",
    "launchMode": "<launchMode value>",
    "launchParameters": "<launch parameters from Course Structure>",
    "masteryScore": "<mastery score from the Course Structure>",
+   "moveOn": "<moveOn value from the Course Structure>",
    "returnURL": "<URL value>",
    "entitlementKey": {
        "courseStructure": "<Entitlement data or key from Course Structure>",
@@ -1014,21 +1015,15 @@ The properties for the LMSLaunchData document are described below.
 
 <table>
   <tr>
-    <th align="left">Context_Template</th>
+    <th align="left">contextTemplate</th>
   </tr> 
 <tr>
     <td><p><strong>Description: </strong>Context template for the AU being launched.<br />
       <strong>LMS Required: </strong>Yes<br />
       <strong>AU: Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS must include a context template and place the value for <strong><em>session_id</em></strong> in the extension "http://www.aicc.org/cmi-5/extensions/session"
-in the context object's extension collection, based on the definition of the AU in the course
-structure.<br />
-      <strong>AU Usage: </strong>AU must get the <strong><em>context</em></strong> value 
-      from the LMS.LaunchData state document. AU must use the <strong><em>context</em></strong>
-      object as a template context object in all statements it records to the LMS,
-      and may include additional values in the context objects of such statements,
-      but must not overwrite any values provided in the context template. NOTE:
-      this will include the session_id specified by the LMS.<br />
+      <strong>LMS Usage:  </strong>LMS must include a contextTemplate and place the value for <strong><em>sessionId</em></strong> in the "http://www.aicc.org/cmi-5/extensions/session" element
+of the context object's extension collection.<br />
+      <strong>AU Usage: </strong>AU must get the contextTemplate value from the LMSLaunchData state document.  The AU must use the contextTemplate as a template for the context property in all xAPI statements it records to the LMS. While the AU may include additional values in the context object of such statements, it must not overwrite any values provided in the contextTemplate. NOTE: this will include the sessionId specified by the LMS.<br />
       <strong>Data type: </strong>JSON context object as defined in xAPI 1.0<br />
       <strong>Value space:</strong> LMS implementation specific<br />
       <strong>Sample value:</strong></p></td>
@@ -1097,6 +1092,20 @@ structure.<br />
       <strong>Data type: </strong>decimal<br />
       <strong>Value space: </strong>Decimal value between 0 and 1<br />
       <strong>Sample value: </strong>0.75</p></td>
+  </tr>   
+  </tr> 
+  <tr><th align="left">moveOn</th>
+    </tr>
+    <tr>
+    <tr>
+    <td><p><strong>Description: </strong>The moveOn value from the CMI-5 Course Structure.<br />
+      <strong>LMS Required:</strong> Yes<br />
+      <strong>AU Required:</strong> No<br />
+      <strong>LMS Usage:  </strong>The LMS must include the moveOn value defined in the course structure for the AU.<br />
+      <strong>AU Usage: </strong>AU may get the moveOn value from the LMS.LaunchData state document and may use the value to modify its behavior.<br />
+      <strong>Data type: </strong>string<br />
+      <strong>Value space: </strong>moveOn values as defined in CMI-5 Course Structure specification (7.1.4 AU Metadata)<br />
+      <strong>Sample value: </strong>"Passed"</p></td>
   </tr>   
     <th align="left">returnURL</th>
   </tr> 
