@@ -292,7 +292,7 @@ The following meta data elements are at the course level and  describe the cours
     </td>
   </tr>
   <tr>
-    <td colspan="2" valign="top"><h3>courseIdentifier</h3></td>
+    <td colspan="2" valign="top"><h3>courseId</h3></td>
   </tr>
   <tr>
     <td width="168" valign="top"><p><strong>Required</strong>: Yes<br />
@@ -303,9 +303,9 @@ The following meta data elements are at the course level and  describe the cours
       <p><strong>Value space: </strong><br />
         Values defined by course designer<br />
         <strong>Sample value: </strong><br />
-         &lt;courseIdentifier&gt;<br/>
+         &lt;courseId&gt;<br/>
         http://www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2
-        &lt;/courseIdentifier&gt;<br/></p>
+        &lt;/courseId&gt;<br/></p>
     </td>
   </tr>
 </table>
@@ -478,7 +478,12 @@ AU’s may also contain objectives.
         <strong>Data type: </strong> string</p>
     </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      A relative or fully qualified URL that references the launch point of the AU.</p>
+      A relative or fully qualified URL that references the launch point of the AU.<br/>&nbsp;<br/>
+      To accomodate "non-browser" applications, an application specific protocol may be used in the url:<br/>
+      &lt;application&gt;//&lt;:URL to content&gt;
+      
+      When &lt;application&gt; is a value other than HTTP or HTTPS, the remaining portion of the URL must conform to HTTP/S conventions, such as named value pair parameters.<br/>&nbsp;<br/>If the url includes a query string, the values from that query string must be merged with the CMI-5 parameters at launch time (see section 8.1.1 of the CMI-5 Runtime Environment).
+      </p>
       <p><strong>Value space:</strong>Determined by AU developer</p>
       <p><strong>Sample value:</strong><br/>
       &lt;url&gt;<br/>
@@ -667,7 +672,7 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 					<xs:sequence>
 						<xs:element name="title" minOccurs="1" maxOccurs="1"/>
 						<xs:element name="description" minOccurs="1" maxOccurs="1"/>
-						<xs:element name="courseIdentifier" minOccurs="1" maxOccurs="1"/>
+						<xs:element name="courseId" minOccurs="1" maxOccurs="1"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
