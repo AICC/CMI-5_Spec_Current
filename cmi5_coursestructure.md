@@ -480,9 +480,9 @@ AU’s may also contain objectives.
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
       A relative or fully qualified URL that references the launch point of the AU.<br/>&nbsp;<br/>
       To accomodate "non-browser" applications, an application specific protocol may be used in the url:<br/>
-      &lt;application&gt;//&lt;:URL to content&gt;
+      &lt;application&gt;://&lt;URL to content&gt;
       
-      When &lt;application&gt; is a value other than HTTP or HTTPS, the remaining portion of the URL must conform to HTTP/S conventions, such as named value pair parameters.<br/>&nbsp;<br/>If the url includes a query string, the values from that query string must be merged with the CMI-5 parameters at launch time (see section 8.1.1 of the CMI-5 Runtime Environment).
+      Regardless of the value of &lt;application&gt;, the remaining portion of the URL must conform to HTTP/S conventions, such as named value pair parameters.<br/>&nbsp;<br/>If the url includes a query string, the values from that query string must be merged with the CMI-5 parameters at launch time (see section 8.1.1 of the CMI-5 Runtime Environment).
       </p>
       <p><strong>Value space:</strong>Determined by AU developer</p>
       <p><strong>Sample value:</strong><br/>
