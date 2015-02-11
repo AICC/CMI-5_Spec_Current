@@ -12,7 +12,7 @@ CMI-5 Runtime Environment
 
 >Caveats...
 >
->Copyright &copy; 2012-2014 AICC, All rights reserved
+>Copyright &copy; 2012-2015 AICC, All rights reserved
 >
 >The information contained in this document has been assembled by the AICC as an
 informational resource. Neither the AICC nor any of its members assumes nor shall any of
@@ -323,9 +323,8 @@ Course structures must contain the following data for each AU in a course:
 * URL location – A URL to the AU’s location (entry point)
 * Activity ID – the AU’s activity ID as defined in the XAPI specification (determined by the AU designer).
 * Launch Method - 
-    * “New Window” – The LMS must spawn a new window for the AU launched.
-    * “Existing Window” – The LMS must re-direct the existing browser window for the AU
-    launched.
+    * “OwnWindow” – The LMS must either spawn a new window for the AU launched, or redirect the existing window to the AU.
+    * “AnyWindow” – The AU does not care about the window context (all browser windows options are acceptable – FrameSet, New Window, redirect, etc.) The LMS may use whichever method desired..
 * Authentication Method – The authentication method used by the AU to access the LMS’s
 LRS.  (Either HTTP basic or OAuth 1.0)
 * Launch Parameters –A set of static data specific to the AU’s design. Used as parameters
@@ -406,18 +405,17 @@ The AU must issue a statement to the LRS prior to termination using the Terminat
 
 ###8.1.1 Launch Method
 
-The AU must be launched by the LMS by one of the following methods:
+The AU must be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 7.1.4 AU Meta Data, URL):
 
-1. Spawning a new browser window to the URL  
-2. Re-directing the existing browser window (or section of the existing window) to the URL  
+When the launchMethod is "OwnWindow", the LMS must use one of the following:
+<ol><li>Spawning a new browser window for the AU.</li>
+<li>Re-directing the existing browser window to the AU.</li>
+</ol>
 
-The Launch method used by the LMS must be determined by the “Launch Method” defined in
-the LMS’s course structure for the AU being launched. (See Course Structure 7.1.4 AU Meta Data, URL)
+When the launchMethod is "AnyWindow", the LMS may choose the window context of the AU.  All browser window options are acceptable - Framset, New window, browser redirect, etc.
 
-The AU must be launched by the LMS with a URL having (query string) launch parameters as
-defined in this section.
-
-The launch parameters must be name/value pairs in a query string appended to the URL that
+In either case, the AU must be launched by the LMS with a URL having query string launch parameters as
+defined in this section. The launch parameters must be name/value pairs in a query string appended to the URL that
 launches the learning activity.
 
 If the learning activity’s URL requires a query string for other purposes, then the names
@@ -499,7 +497,7 @@ The values for the URL launch parameters are described below:
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS must place the value for <strong><em>activityId</em></strong> in the query string based on the definition of the AU in the course    structure.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU must get the <strong><em>activityId</em></strong> value from the query string. AU must use the <strong><em>activityId</em></strong> value in API calls that require an “activity id” when sending XAPI messages.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>UUID (as defined in the XAPI specification)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>IRI (as defined in the CMI-5 Course Structure section 7.1.4, AU Meta data)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
@@ -628,7 +626,7 @@ AU’s use in statement.
 <tr><th align="left">Verb</th><td>Initialized</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/initialized</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Initialized" }</td></tr>
-<tr><th align="left">Description</th><td>The verb “Initialized” indicates that the AU was launched by the LMS.</td>
+<tr><th align="left">Description</th><td>A "Initialized" statement is used by the AU to indicate that it has been fully initialized and should follow the "Launched" statement created by the LMS within a reasonable period of time.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU must use "Initialized" in the first statement in the AU session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>Verify that this verb is recorded by AU immediately after launch</td></tr>
 </tr><tr><th align="left">Usage</th><td>A "Initialized" statement is used by the AU to indicate that it has been fully initialized and should follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
@@ -998,7 +996,6 @@ LRS.  This must be a JSON document as defined in this section with a document na
             "http://www.aicc.org/cmi-5/extensions/session": "<LMS generated sessionId>"
          }
    },
-   "launchMethod": "<launch method from the Course Structure>",
    "launchMode": "<launchMode value>",
    "launchParameters": "<launch parameters from Course Structure>",
    "masteryScore": "<mastery score from the Course Structure>",
@@ -1027,24 +1024,6 @@ of the context object's extension collection.<br />
       <strong>Data type: </strong>JSON context object as defined in xAPI 1.0<br />
       <strong>Value space:</strong> LMS implementation specific<br />
       <strong>Sample value:</strong></p></td>
-  </tr>
-  <tr>
-    <th align="left">launchMethod</th>
-  </tr> 
-<tr>
-    <td><p><strong>Description: </strong>The launch method from the Course Structure. Used by the LMS when launching the AU (in a web-browser environment) to tell the AU whether it has redirected the existing web-browser window to the 
-    AU's URL or spawned a new browser window for the AU.<br />
-      <strong>LMS Required:</strong> Yes<br />
-      <strong>AU Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS must include a value based on the method used to launch the AU.<br />
-      <strong>AU Usage: </strong>AU must get the <strong><em>LaunchMethod</em></strong> value 
-      from the LMS.LaunchData state document. AU must use the <strong><em>LaunchMethod</em></strong>
-      value in determining what action to take when the AU is terminated; either to attempt to close 
-      the window if a value of "NewWindow" is passed, or redirect back to the LMS if "ExistingWindow" 
-      is passed.<br />
-      <strong>Data type: </strong>String<br />
-      <strong>Value space: </strong>"NewWindow", "ExistingWindow" or other values as defined in CMI-5 Course Structure specification<br />
-      <strong>Sample value: </strong>"NewWindow"</p></td>
   </tr>
   <tr>
     <th align="left">launchMode</th>
@@ -1110,18 +1089,12 @@ of the context object's extension collection.<br />
     <th align="left">returnURL</th>
   </tr> 
 <tr>
-    <td><p><strong>Description: </strong>Used by the LMS when launching the AU in the current window 
-	(in a web-browser environment) to tell the AU where to redirect the learner when they exit 
-	the AU.<br />
-      <strong>LMS Required:</strong> If the value of <strong><em>LaunchMethod</em></strong> is
-      "ExistingWindow"<br />
-      <strong>AU Required:</strong> If the value of <strong><em>LaunchMethod</em></strong> is
-      "ExistingWindow"<br />
-      <strong>LMS Usage:  </strong>LMS must include the URL where the learner should be redirected 
-      on exiting the course. <br />
-      <strong>AU Usage: </strong>AU must get the <strong><em>ReturnURL</em></strong> value 
-      from the LMSLaunchData state document. AU must redirect the current window in the learner's 
-      browser to the <strong><em>ReturnURL</em></strong> when the AU is terminated.<br />
+    <td><p><strong>Description: </strong>Used by the LMS when launching the AU if the LMS requires the AU (in a web-browser environment) to redirect the learner when they exit the AU.<br />
+      <strong>LMS Required:</strong> No<br />
+      <strong>AU Required:</strong> If the <strong><em>returnURL</em></strong> is provided.<br />
+      <strong>LMS Usage: </strong> LMS may include the <strong><em>returnURL</em></strong> when the learner should be redirected to the <strong><em>returnURL</em></strong> on exiting the course.<br />
+      <strong>AU Usage: </strong>AU must get the <strong><em>returnURL</em></strong> value 
+      from the LMSLaunchData state document. If the <strong><em>returnURL</em></strong> is provided, the AU must redirect the current browser window to the <strong><em>returnURL</em></strong> when the AU is terminated.<br />
       <strong>Data type: </strong>URL<br />
       <strong>Value space: </strong>Any URL<br />
       <strong>Sample value: </strong>http://www.example.com/lms/mod/xapilaunch/view.php?id=12</p></td>
