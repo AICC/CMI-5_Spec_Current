@@ -13,7 +13,7 @@ CMI-5 Course Structure
 
 >Caveats...
 >
->Copyright &copy; 2012-2014 AICC, All rights reserved
+>Copyright &copy; 2012-2015 AICC, All rights reserved
 >
 >The information contained in this document has been assembled by the AICC as an informational resource. Neither the AICC nor any of its members assumes nor shall any of them have any responsibility for any use by anyone for any purpose of this document or of the data which it contains. All use of this document is subject to the terms of the license agreement contained within it.
 
@@ -44,7 +44,8 @@ CMI-5 Course Structure
     * [7.1.3 Objectives Meta Data](#objectives_meta_data)
     * [7.1.4 AU Meta Data](#au_meta_data)
   * [7.2 Course Structure XSD](#course_structure_xsd)
-* [__8.0 Bibliography__](#bibliography)
+* [__8.0 Course Package__](#course_package)
+* [__9.0 Bibliography__](#bibliography)
 
 [__License Agreement__](#license_agreement)
 
@@ -225,9 +226,9 @@ LMS systems must meet the following requirements to conform to this specificatio
 <a name="course_structures"/>
 ## 6.1 Course structure requirements
 The LMS must implement a means to create and maintain course structures.<br/>
-1.	The LMS must implement the import of the course data structure defined in section 7. <BR>
-2.	The LMS should implement the export of the course data structure defined in section 7. <BR>
-3.	The LMS should provide a user interface to LMS administrative users to create and edit course structures internally.<BR>
+1.	The LMS must implement the import of the course data structure defined in section 7. <br/>
+2.	The LMS must implement the export of the course data structure defined in section 7. <br/>
+3.	The LMS should provide a user interface to LMS administrative users to create and edit course structures internally.<br/>
 4.	The LMS must be able support course structures with one or more AU’s.
 <BR>
 <BR>
@@ -515,17 +516,17 @@ AU’s may also contain objectives.
     <td valign="top"><p><strong>Required:</strong> Yes<br />
         <strong>Data type:</strong> string </p>
     </td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS when launching the AU (in a web-browser environment) to determine whether to redirect the existing web-browser window ot the AU's URL or to spawn a new browser window for the AU.</p>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS when launching the AU (in a web-browser environment) to determine whether the AU requires its own window, or whether the LMS may choose the window context for the AU.</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>A value of "NewWindow" will require the LMS to launch the AU in a new browser window</li>
-        <li>A value of "ExistingWindow" will require the LMS to redirect the existing web browser window to the AU's URL location.</li>
+        <li>A value of "OwnWindow" will require the LMS to launch the AU either in a new browser window, or the LMS may redirect the current window to the AU.</li>
+        <li>A value of "AnyWindow" indicates that the AU does not care about the window context.  All browser window options are exceptable, such as in a Framset, in a New Window, a browser redirect, etc.</li>
       </ul>
-      <p><strong>Value space: </strong>"NewWindow", "ExistingWindow"<br />
+      <p><strong>Value space: </strong>"OwnWindow", "AnyWindow"<br />
         <br />
       <strong>Sample value: </strong> <br/>
       &lt;launchMethod&gt;<br/>
-        "NewWindow"<br/>
+        "OwnWindow"<br/>
       &lt;/launchMethod&gt;
       </p>
     </td>
@@ -754,10 +755,24 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 
 ```
 
-
+<a name="course_package"/>
+# 8.0 Course Package
+For the course import and export defined in section 6.1, the LMS must support all of the following formats:
+<ul><li>Zip32</li>
+<li>Zip64</li>
+<li>A course structure XML file</li>
+</ul>
+## 8.1 Course Packages in ZIP format
+The two ZIP file formats must follow the specification defined at https://www.pkware.com/support/zip-app-note.  When the ZIP file is used to package the course, it may contain media associated with the course AU's.  
+<ul><li>Any media included in a ZIP course package must use relative URL references in the Course Structure XML.</li>
+<li>Any media not included in a ZIP course package must use fully qualified URL references in the Course Strucutre XML</li>
+<li>A ZIP course package may contain a mix of fully qualified and relavie URL's,provided the rules above are followed.</li>
+</ul>
+## 8.2 Course Structure XML without a ZIP file package
+When a course structure XML file is provided without a ZIP file package, all URL references must be fully qualified.
 
 <a name="bibliography"/> 
-# 8.0 Bibliography
+# 9.0 Bibliography
 
 [1]  AICC CMI001, CMI Guidelines For Interoperability, Version 4.0. 
 
