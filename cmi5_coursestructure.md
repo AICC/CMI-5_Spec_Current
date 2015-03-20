@@ -660,7 +660,7 @@ AU’s may also contain objectives.
 ## 7.2 Course Structure XSD 
 
 The following is the XML Schema for a course structure file.  
-All course structures created for LMS import and creaated by the LMS for export must conform to this XSD and be named courseStructure.xml.
+All course structures created for LMS import and creaated by the LMS for export must conform to this XSD and be named cmi5.xml.
 
 ```XML
 <xs:schema xmlns="http://aicc.org/CMI5/CourseStructure.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
