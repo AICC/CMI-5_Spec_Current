@@ -915,10 +915,10 @@ Sample JSON:
    "context": {
      "registration": "<registration value provided by LMS>",
      "contextActivities": {
-        "category": { 
+        "category": {[
           {"id": "http://adlnet.gov/CMI5/moveon"},
           {"id": "http://adlnet.gov/CMI5/cmi5"}
-        }
+        ]}
      },
      "extensions" {
        "sessionId": "<session id provided by the LMS>",
