@@ -915,9 +915,10 @@ Sample JSON:
    "context": {
      "registration": "<registration value provided by LMS>",
      "contextActivities": {
-        "category": { 
-          "id": "http://aicc.org/CMI5/ResultsSearchTag"
-        }
+        "category": {[
+          {"id": "http://adlnet.gov/CMI5/moveon"},
+          {"id": "http://adlnet.gov/CMI5/cmi5"}
+        ]}
      },
      "extensions" {
        "sessionId": "<session id provided by the LMS>",
@@ -932,7 +933,9 @@ The value for the registration property used in the context object must be the v
 
 <a name="ContextActivities"></a>
 ###9.6.2  contextActivities
-Statements with a results object (section 9.5) that include either "success” or "completion” properties must contain a contextActivities object with the "id" property as shown in the JSON example above. Other statements must not include this property. This purpose of this proprety is to facilitate searches of the LRS by the LMS or other reporting systems.
+Statements with a results object (section 9.5) that include either "success” or "completion” properties must contain a contextActivities object with the "id" property of "moveon". Other statements must not include this property. The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems.
+
+All CMI5 Statements must include an object with the "id" property of "cmi5" in contextActivities. This purpose of this property is to identify CMI5 specific statements during LRS searches.
 
 <a name="extensions"></a> 
 ###9.6.3 extensions
