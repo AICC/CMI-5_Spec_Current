@@ -182,10 +182,11 @@ and sends it to the LMS system. An Learning Activity Provider maps to a single A
 an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied
-sequence, representing a course. Experience API (XAPI): XAPI is a runtime data
-communication specification for learning content (AU) to send and receive data to an LRS.
-The XAPI specification is referenced by this document is used to define the data transport
-and the data model. 
+sequence, representing a course.
+
+* __Experience API (XAPI)__: XAPI is a runtime data communication specification for learning
+content (AU) to send and receive data to an LRS. The XAPI specification is referenced by this
+document is used to define the data transport and the data model.
 
 * __Learner__: The end user viewing/using the learning content (Learning Activity).
 
