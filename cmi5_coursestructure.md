@@ -248,6 +248,21 @@ The following meta data attribute and elements are at the course level and  desc
 
 <table border="1" cellspacing="0" cellpadding="0">
   <tr>
+    <td colspan="2" valign="top"><h3>id</h3></td>
+  </tr>
+  <tr>
+    <td width="168" valign="top"><p><strong>Required</strong>: Yes<br />
+        <strong>Data type</strong>: IRI</p>
+    </td>
+    <td width="811" valign="top"><p><strong>Description</strong>:<br />
+      A globally unique IRI (Internationalized Resource Identifier per RFC 3987) for the course.  Used to explicitly identify the course instance.</p>
+      <p><strong>Value space: </strong><br />
+        Values defined by course designer<br />
+        <strong>Sample value: </strong><br />
+         &lt;course id="<span>http</span>://www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br/></p>
+    </td>
+  </tr>
+  <tr>
     <td colspan="2" valign="top"><h3>title</h3></td>
   </tr>
   <tr>
@@ -257,7 +272,7 @@ The following meta data attribute and elements are at the course level and  desc
       langstring</p>
     </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
-      A descriptive title that identifies the course<br />
+      A descriptive title that identifies the course.<br />
       </p>
       <p><strong>Value space:</strong><br />
         Values defined by course designer<br />
@@ -291,21 +306,6 @@ The following meta data attribute and elements are at the course level and  desc
     &lt;/description&gt;<br/>  
     
         </p>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top"><h3>id</h3></td>
-  </tr>
-  <tr>
-    <td width="168" valign="top"><p><strong>Required</strong>: Yes<br />
-        <strong>Data</strong> type: IRI</p>
-    </td>
-    <td width="811" valign="top"><p><strong>Description</strong>:<br />
-      A globally unique IRI (Internationalized Resource Identifier per RFC 3987) for the course.  Used to explicitly identify the course instance.</p>
-      <p><strong>Value space: </strong><br />
-        Values defined by course designer<br />
-        <strong>Sample value: </strong><br />
-         &lt;course id="http://www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2"&gt;&hellip;&lt;/course&gt;<br/></p>
     </td>
   </tr>
 </table>
@@ -349,10 +349,12 @@ The data in this section is used for the block structures with group AU’s.  A 
       <strong>Value space</strong>:<br />
       Values defined by course designer<br />
       <strong>Sample value: </strong><br />
-    &lt;description&gt;<br/>
-    &nbsp;&nbsp; &lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br/>
-    &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Esta es la descripción de los bloques&lt;/langstring&gt;<br/>
-    &lt;/description&gt;<br/>
+      ```html
+<description>
+    <langstring lang="en-US">This is the block title</langstring><br/>
+    <langstring lang="es-MX">Esta es la descripción de los bloques</langstring><br/>
+</description>
+    ```
     </td>
   </tr>
     <tr>
@@ -369,7 +371,7 @@ The data in this section is used for the block structures with group AU’s.  A 
       Values defined by course designer<br />
       <strong>Sample value: </strong><br />
     &lt;objectives&gt;<br/>
-    &nbsp;&nbsp; &lt;objective idref="http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"/&gt;<br/>
+    &nbsp;&nbsp; &lt;objective idref="<span>http</span>://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"/&gt;<br/>
     &lt;/objectives&gt;<br/> 
     </td>  
   </tr>
@@ -382,6 +384,21 @@ The data in this section is used for the block structures with group AU’s.  A 
 The data in this section is used by Objectives. Objectives can be associated with a Block or with individual AU’s. 
 
 <table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="2" valign="top"><h3>id</h3></td>
+  </tr>
+  <tr>
+    <td width="183" valign="top"><p><strong>Required: </strong>Yes<br />
+        <strong>Data type:</strong> IRI</p>
+    </td>
+    <td width="792" valign="top"><p><strong>Description:</strong><br />
+      A unique IRI for the learning objective<br />
+      </p>
+      <p><strong>Value space:</strong><br/>Values defined by the course developer</p>
+    <p><strong>Sample value:</strong><br />
+    &lt;objective id="<span>http</span>://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"&gt;&hellip;&lt;/objectiveId&gt;</p>
+    </td>
+  </tr>
   <tr>
     <td colspan="2" valign="top"><h3>title</h3></td>
   </tr>
@@ -400,21 +417,6 @@ The data in this section is used by Objectives. Objectives can be associated wit
     &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Este es el título del objetivo&lt;/langstring&gt;<br/>
     &lt;/title&gt;<br/> 
       </p>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top"><h3>id</h3></td>
-  </tr>
-  <tr>
-    <td width="183" valign="top"><p><strong>Required: </strong>Yes<br />
-        <strong>Data type:</strong> IRI</p>
-    </td>
-    <td width="792" valign="top"><p><strong>Description:</strong><br />
-      A unique IRI for the learning objective<br />
-      </p>
-      <p><strong>Value space:</strong><br/>Values defined by the course developer</p>
-    <p><strong>Sample value:</strong><br />
-    &lt;objective id="http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"&gt;&hellip;&lt;/objectiveId&gt;</p>
     </td>
   </tr>
   <tr>
@@ -458,66 +460,8 @@ AU’s may also contain objectives.
     <td width="1471" valign="top"><p><strong>Description: </strong>A globally unique IRI that the AU uses to identify itself to the LMS in xAPI messages to the LMS.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br/>
-      &lt;<au id="http://www.yoursite.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2"&lt; &hellip; &lt;/au&gt;
+      &lt;au id="<span>http</span>://www.yoursite.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2"&lt; &hellip; &lt;/au&gt;
       </p>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top"><h3>title</h3></td>
-  </tr>
-  <tr>
-    <td valign="top"><p><strong>Required: </strong> Yes<br />
-        <strong>Data type:</strong> langstring</p></td>
-    <td valign="top"><p><strong>Description:</strong> A descriptive title for the AU<br />
-        </p>
-      <p><strong>Value space: </strong> Values defined by course designer<br />
-      </p>
-      <p><strong>Sample value: </strong><br/>
-
-    &lt;title&gt;<br/>
-    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is an activity title.&lt;/langstring&gt;<br/>
-    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Este es un título de la actividad.&lt;/langstring&gt;<br/>
-    &lt;/title&gt;<br/>
-
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top"><h3>url</h3></td>
-  </tr>
-  <tr>
-    <td width="160" valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type: </strong> string</p>
-    </td>
-    <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      A relative or fully qualified URL that references the launch point of the AU.<br/>&nbsp;<br/>
-      To accomodate "non-browser" applications, an application specific protocol may be used in the url:<br/>
-      &lt;application&gt;://&lt;URL to content&gt;
-      
-      Regardless of the value of &lt;application&gt;, the remaining portion of the URL must conform to HTTP/S conventions, such as named value pair parameters.<br/>&nbsp;<br/>If the url includes a query string, the values from that query string must be merged with the CMI-5 parameters at launch time (see section 8.1.1 of the CMI-5 Runtime Environment).
-      </p>
-      <p><strong>Value space:</strong>Determined by AU developer</p>
-      <p><strong>Sample value:</strong><br/>
-      &lt;url&gt;<br/>
-      http://wwww.mycourses.com/courseX.html<br/>
-      &lt;/url&gt;
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top"><h3>launchParameters</h3></td>
-  </tr>
-  <tr>
-    <td width="160" valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type: </strong>string </p>
-    </td>
-    <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      Static launch parameters defined by the AU designer.  The LMS is required to store this data and provide to the AU if    requested by the AU during runtime.<br />
-      </p>
-      <p><strong>Value space:</strong><br />
-        Values defined by AU designer</p>
-      <p><br />
-        <strong>Sample value: </strong> TBD</p>
     </td>
   </tr>
   <tr>
@@ -536,7 +480,7 @@ AU’s may also contain objectives.
       <p><strong>Value space: </strong>"OwnWindow", "AnyWindow"<br />
         <br />
       <strong>Sample value: </strong> <br/>
-      &lt;<au id="&hellip;" launchMethod="OwnWindow"&gt; &hellip; &lt;/au&gt;
+      &lt;au id="&hellip;" launchMethod="OwnWindow"&gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -557,7 +501,7 @@ AU’s may also contain objectives.
       <p><strong>Value space: </strong>Decimal number or empty string<br />
         <br />
       <strong>Sample value: </strong><br/>
-      &lt;<au id="&hellip;" masteryScore="0.85"&gt; &hellip; &lt;/au&gt;
+      &lt;au id="&hellip;" masteryScore="0.85"&gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -589,7 +533,7 @@ AU’s may also contain objectives.
           "Not Applicable"</p>
       </blockquote>
       <p><strong>Sample value: </strong><br/>
-      &lt;<au id="&hellip;" moveOn="Passed"&gt; &hellip; &lt;/au&gt;
+      &lt;au id="&hellip;" moveOn="Passed"&gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -614,28 +558,32 @@ AU’s may also contain objectives.
       </p>
       </blockquote>
       <p><strong>Sample value: </strong><br/>
-      &lt;<au id="&hellip;" authenticationMethod="Basic"&gt; &hellip; &lt;/au&gt;
+      &lt;au id="&hellip;" authenticationMethod="Basic"&gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
+
   <tr>
-    <td colspan="2" valign="top"><h3>entitlementKey</h3></td>
+    <td colspan="2" valign="top"><h3>title</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><strong>Required:</strong> Yes<br />
-        <strong>Data type:</strong> string </p></td>
-    <td valign="top"><p><strong>Description:</strong><br />
-        Data used by the AU to determine if the launching LMS system is entitled to use the AU. The AU should use this data in combination with other data provided from the LMS to determine entitlement.<br />
-    </p>
-      <p><strong>Value space: </strong>Values defined by AU content provider.<br />
-        <br />
-        <strong>Sample value:</strong><br/>
-        &lt;entitlementKey&gt;<br/>
-        xyz-123-9999<br/>
-        &lt;/entitlementKey&gt;
+    <td valign="top"><p><strong>Required: </strong> Yes<br />
+        <strong>Data type:</strong> langstring</p></td>
+    <td valign="top"><p><strong>Description:</strong> A descriptive title for the AU<br />
         </p>
+      <p><strong>Value space: </strong> Values defined by course designer<br />
+      </p>
+      <p><strong>Sample value: </strong><br/>
+
+    &lt;title&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is an activity title.&lt;/langstring&gt;<br/>
+    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Este es un título de la actividad.&lt;/langstring&gt;<br/>
+    &lt;/title&gt;<br/>
+
+      </p>
     </td>
   </tr>
+
   <tr>
     <td colspan="2" valign="top"><h3>description</h3></td>
   </tr>
@@ -673,9 +621,65 @@ AU’s may also contain objectives.
       Values defined by course designer<br />
       <strong>Sample value: </strong><br />
     &lt;objectives&gt;<br/>
-    &nbsp;&nbsp; &lt;objective idref="http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"/&gt;<br/>
+    &nbsp;&nbsp; &lt;objective idref="<span>http</span>://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"/&gt;<br/>
     &lt;/objectives&gt;<br/> 
     </td>  
+  </tr>  
+  <tr>
+    <td colspan="2" valign="top"><h3>url</h3></td>
+  </tr>
+  <tr>
+    <td width="160" valign="top"><p><strong>Required:</strong> Yes<br />
+        <strong>Data type: </strong> string</p>
+    </td>
+    <td width="1471" valign="top"><p><strong>Description:</strong><br />
+      A relative or fully qualified URL that references the launch point of the AU.<br/>&nbsp;<br/>
+      To accomodate "non-browser" applications, an application specific protocol may be used in the url:<br/>
+      &lt;application&gt;://&lt;URL to content&gt;
+      
+      Regardless of the value of &lt;application&gt;, the remaining portion of the URL must conform to HTTP/S conventions, such as named value pair parameters.<br/>&nbsp;<br/>If the url includes a query string, the values from that query string must be merged with the CMI-5 parameters at launch time (see section 8.1.1 of the CMI-5 Runtime Environment).
+      </p>
+      <p><strong>Value space:</strong>Determined by AU developer</p>
+      <p><strong>Sample value:</strong><br/>
+      &lt;url&gt;<br/>
+      <span>http</span>://wwww.mycourses.com/courseX.html<br/>
+      &lt;/url&gt;
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><h3>launchParameters</h3></td>
+  </tr>
+  <tr>
+    <td width="160" valign="top"><p><strong>Required:</strong> Yes<br />
+        <strong>Data type: </strong>string </p>
+    </td>
+    <td width="1471" valign="top"><p><strong>Description:</strong><br />
+      Static launch parameters defined by the AU designer.  The LMS is required to store this data and provide to the AU if    requested by the AU during runtime.<br />
+      </p>
+      <p><strong>Value space:</strong><br />
+        Values defined by AU designer</p>
+      <p><br />
+        <strong>Sample value: </strong> TBD</p>
+    </td>
+  </tr>  
+  <tr>
+    <td colspan="2" valign="top"><h3>entitlementKey</h3></td>
+  </tr>
+  <tr>
+    <td valign="top"><p><strong>Required:</strong> Yes<br />
+        <strong>Data type:</strong> string </p></td>
+    <td valign="top"><p><strong>Description:</strong><br />
+        Data used by the AU to determine if the launching LMS system is entitled to use the AU. The AU should use this data in combination with other data provided from the LMS to determine entitlement.<br />
+    </p>
+      <p><strong>Value space: </strong>Values defined by AU content provider.<br />
+        <br />
+        <strong>Sample value:</strong><br/>
+        &lt;entitlementKey&gt;<br/>
+        xyz-123-9999<br/>
+        &lt;/entitlementKey&gt;
+        </p>
+    </td>
   </tr>
 </table>
 
