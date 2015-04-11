@@ -244,7 +244,7 @@ The LMS must implement a means to create and maintain course structures.<br/>
 <a name="course_level_meta_data"/>
 ### 7.1.1 Course Level Meta-data  
  
-The following meta data elements are at the course level and  describe the course instance as a whole
+The following meta data attribute and elements are at the course level and  describe the course instance as a whole
 
 <table border="1" cellspacing="0" cellpadding="0">
   <tr>
@@ -253,7 +253,7 @@ The following meta data elements are at the course level and  describe the cours
   <tr>
     <td width="168" valign="top"><p><strong>Required</strong>: 
       Yes<br />
-      <strong>Data</strong> type: 
+      <strong>Data type</strong>: 
       langstring</p>
     </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
@@ -278,7 +278,7 @@ The following meta data elements are at the course level and  describe the cours
   </tr>
   <tr>
     <td width="168" valign="top"><p><strong>Required</strong>: Yes<br />
-        <strong>Data</strong> type: langstring</p>
+        <strong>Data type</strong>: langstring</p>
     </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A detailed  description of the course.</p>
@@ -294,20 +294,18 @@ The following meta data elements are at the course level and  describe the cours
     </td>
   </tr>
   <tr>
-    <td colspan="2" valign="top"><h3>courseId</h3></td>
+    <td colspan="2" valign="top"><h3>id</h3></td>
   </tr>
   <tr>
     <td width="168" valign="top"><p><strong>Required</strong>: Yes<br />
-        <strong>Data</strong> type: String</p>
+        <strong>Data</strong> type: IRI</p>
     </td>
     <td width="811" valign="top"><p><strong>Description</strong>:<br />
       A globally unique IRI (Internationalized Resource Identifier per RFC 3987) for the course.  Used to explicitly identify the course instance.</p>
       <p><strong>Value space: </strong><br />
         Values defined by course designer<br />
         <strong>Sample value: </strong><br />
-         &lt;courseId&gt;<br/>
-        http://www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2
-        &lt;/courseId&gt;<br/></p>
+         &lt;course id="http://www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2"&gt;&hellip;&lt;/course&gt;<br/></p>
     </td>
   </tr>
 </table>
@@ -317,7 +315,7 @@ The following meta data elements are at the course level and  describe the cours
 <a name="block_meta_data"/>
 ### 7.1.2 Block Meta Data
 
-The data in this section is used for the block structures with group AU’s.  A Block consists of one or more AU’s. Blocks  can also contain Objectives and other Blocks.
+The data in this section is used for the block structures with group AU’s.  A Block consists of one or more AU’s. Blocks can also contain references to objectives and other Blocks.
 
 <table border="1" cellspacing="0" cellpadding="0">
   <tr>
@@ -336,7 +334,6 @@ The data in this section is used for the block structures with group AU’s.  A 
     &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br/>
     &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Este es el título del bloque&lt;/langstring&gt;<br/>
     &lt;/title&gt;<br/>            
-      Day 1 – Overview of Systems</p>
     </td>
   </tr>
   <tr>
@@ -355,9 +352,26 @@ The data in this section is used for the block structures with group AU’s.  A 
     &lt;description&gt;<br/>
     &nbsp;&nbsp; &lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br/>
     &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Esta es la descripción de los bloques&lt;/langstring&gt;<br/>
-    &lt;/description&gt;<br/> 
-      Day 1 – Overview of Systems.  In this part of the course you will get a complete overview.</p>
+    &lt;/description&gt;<br/>
     </td>
+  </tr>
+    <tr>
+    <td colspan="2" valign="top"><h3>objectives</h3></td>
+  </tr>
+  <tr>
+    <td width="164" valign="top"><p><strong>Required: 
+      </strong>No<br />
+      <strong>Data type:</strong> objectiveReference </p>
+    </td>
+    <td width="811" valign="top"><p><strong>Description:</strong><br />
+      A listing of objectives referenced by this block.<br />
+      <strong>Value space</strong>:<br />
+      Values defined by course designer<br />
+      <strong>Sample value: </strong><br />
+    &lt;objectives&gt;<br/>
+    &nbsp;&nbsp; &lt;objective idref="http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"/&gt;<br/>
+    &lt;/objectives&gt;<br/> 
+    </td>  
   </tr>
 </table>
 
@@ -369,7 +383,7 @@ The data in this section is used by Objectives. Objectives can be associated wit
 
 <table border="1" cellspacing="0" cellpadding="0">
   <tr>
-    <td colspan="2" valign="top"><h3>objectiveTitle</h3></td>
+    <td colspan="2" valign="top"><h3>title</h3></td>
   </tr>
   <tr>
     <td width="183" valign="top"><p><strong>Required:</strong> Yes<br />
@@ -381,32 +395,30 @@ The data in this section is used by Objectives. Objectives can be associated wit
         Values defined by course designer<br />
       </p>
       <p><strong>Sample value: </strong><br/>
-    &lt;objectiveTitle&gt;<br/>
+    &lt;title&gt;<br/>
     &nbsp;&nbsp; &lt;langstring lang="en-US"&gt;This is the objective title&lt;/langstring&gt;<br/>
     &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Este es el título del objetivo&lt;/langstring&gt;<br/>
-    &lt;/objectiveTitle&gt;<br/> 
-
+    &lt;/title&gt;<br/> 
       </p>
     </td>
   </tr>
   <tr>
-    <td colspan="2" valign="top"><h3>objectiveId</h3></td>
+    <td colspan="2" valign="top"><h3>id</h3></td>
   </tr>
   <tr>
     <td width="183" valign="top"><p><strong>Required: </strong>Yes<br />
-        <strong>Data type:</strong> string</p>
+        <strong>Data type:</strong> IRI</p>
     </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br />
       A unique IRI for the learning objective<br />
       </p>
       <p><strong>Value space:</strong><br/>Values defined by the course developer</p>
     <p><strong>Sample value:</strong><br />
-    &lt;objectiveId&gt;<br>http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2<br/>
-    &lt;/objectiveId&gt;</p>
+    &lt;objective id="http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"&gt;&hellip;&lt;/objectiveId&gt;</p>
     </td>
   </tr>
   <tr>
-    <td colspan="2" valign="top"><h3>objectiveDescription</h3></td>
+    <td colspan="2" valign="top"><h3>description</h3></td>
   </tr>
   <tr>
     <td width="183" valign="top"><p><strong>Required:</strong> Yes<br />
@@ -419,10 +431,10 @@ The data in this section is used by Objectives. Objectives can be associated wit
         Values defined by course designer<br />
         </p>
       <p><strong>Sample value: </strong><br/>
-    &lt;objectiveDescription&gt;<br/>
+    &lt;description&gt;<br/>
     &nbsp;&nbsp; &lt;langstring lang="en-US"&gt;This is the objective description&lt;/langstring&gt;<br/>
     &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Esta es la descripción objetiva&lt;/langstring&gt;<br/>
-    &lt;/objectiveDescription&gt;<br/>      
+    &lt;/description&gt;<br/>      
       </p>
     </td>
   </tr>
@@ -438,17 +450,15 @@ AU’s may also contain objectives.
 
 <table border="1" cellspacing="0" cellpadding="0">
   <tr>
-    <td colspan="2" valign="top"><h3>activityId</h3></td>
+    <td colspan="2" valign="top"><h3>id</h3></td>
   </tr>
   <tr>
     <td width="160" valign="top"><p><strong>Required: </strong> Yes<br />
-        <strong>Data type: </strong> string</p></td>
+        <strong>Data type: </strong> IRI</p></td>
     <td width="1471" valign="top"><p><strong>Description: </strong>A globally unique IRI that the AU uses to identify itself to the LMS in xAPI messages to the LMS.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br/>
-      &lt;activityId&gt;<br/>
-      http://www.yoursite.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2<br/>
-      &lt;/activityId&gt;
+      &lt;<au id="http://www.yoursite.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2"&lt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -526,9 +536,7 @@ AU’s may also contain objectives.
       <p><strong>Value space: </strong>"OwnWindow", "AnyWindow"<br />
         <br />
       <strong>Sample value: </strong> <br/>
-      &lt;launchMethod&gt;<br/>
-        "OwnWindow"<br/>
-      &lt;/launchMethod&gt;
+      &lt;<au id="&hellip;" launchMethod="OwnWindow"&gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -549,16 +557,15 @@ AU’s may also contain objectives.
       <p><strong>Value space: </strong>Decimal number or empty string<br />
         <br />
       <strong>Sample value: </strong><br/>
-      &lt;masteryScore&gt;<br/>
-        0.85<br/>
-      &lt;/masteryScore&gt;</p>
+      &lt;<au id="&hellip;" masteryScore="0.85"&gt; &hellip; &lt;/au&gt;
+      </p>
     </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>moveOn</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><strong>LMS Required:</strong> Yes<br />
+    <td valign="top"><p><strong>Required:</strong> Yes<br />
         <strong>Data type:</strong> string <br/>
         <strong>Default Value:</strong> "Not Applicable" </p></td>
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if a AU has been sufficiently completed for the purposes determining overall course completion or determining if prequisites were met for other activites.. </p>
@@ -582,9 +589,7 @@ AU’s may also contain objectives.
           "Not Applicable"</p>
       </blockquote>
       <p><strong>Sample value: </strong><br/>
-      &lt;moveOn&gt;<br/>
-        Passed<br/>
-      &lt;/moveOn&gt;
+      &lt;<au id="&hellip;" moveOn="Passed"&gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -609,9 +614,7 @@ AU’s may also contain objectives.
       </p>
       </blockquote>
       <p><strong>Sample value: </strong><br/>
-      &lt;authenticationMethod&gt;<br/>
-      Basic<br/>
-      &lt;/authenticationMethod&gt;
+      &lt;<au id="&hellip;" authenticationMethod="Basic"&gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -654,6 +657,25 @@ AU’s may also contain objectives.
     &lt;/description&gt;<br/>   
       </p>
     </td>
+  </tr>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top"><h3>objectives</h3></td>
+  </tr>
+  <tr>
+    <td width="164" valign="top"><p><strong>Required: 
+      </strong>No<br />
+      <strong>Data type:</strong> objectiveReference </p>
+    </td>
+    <td width="811" valign="top"><p><strong>Description:</strong><br />
+      A listing of objectives referenced by this AU.<br />
+      <strong>Value space</strong>:<br />
+      Values defined by course designer<br />
+      <strong>Sample value: </strong><br />
+    &lt;objectives&gt;<br/>
+    &nbsp;&nbsp; &lt;objective idref="http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"/&gt;<br/>
+    &lt;/objectives&gt;<br/> 
+    </td>  
   </tr>
 </table>
 
