@@ -259,7 +259,7 @@ The following meta data attribute and elements are at the course level and  desc
       <p><strong>Value space: </strong><br />
         Values defined by course designer<br />
         <strong>Sample value: </strong><br />
-         &lt;course id="http://www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br/></p>
+         &lt;course id="http&#58;//www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br/></p>
     </td>
   </tr>
   <tr>
@@ -349,10 +349,10 @@ The data in this section is used for the block structures with group AU’s.  A 
       <strong>Value space</strong>:<br />
       Values defined by course designer<br />
       <strong>Sample value: </strong><br />
-&lt;description&gt;
-    &lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br/>
-    &gt;langstring lang="es-MX"&lt;Esta es la descripción de los bloques&lt;/langstring&gt;br/>
-&lt;/description&gt;
+&lt;description&gt;<br />
+&nbsp;&nbsp;    &lt;langstring lang="en-US"&lt;This is the block description&lt;/langstring&gt;<br/>
+&nbsp;&nbsp;    &lt;langstring lang="es-MX"&lt;Esta es la descripción de los bloques&lt;/langstring&gt;<br/>
+&lt;/description&gt;<br />
     </td>
   </tr>
     <tr>
@@ -369,7 +369,7 @@ The data in this section is used for the block structures with group AU’s.  A 
       Values defined by course designer<br />
       <strong>Sample value: </strong><br />
     &lt;objectives&gt;<br/>
-    &nbsp;&nbsp; &lt;objective idref="http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"/&gt;<br/>
+    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br/>
     &lt;/objectives&gt;<br/> 
     </td>  
   </tr>
@@ -394,7 +394,7 @@ The data in this section is used by Objectives. Objectives can be associated wit
       </p>
       <p><strong>Value space:</strong><br/>Values defined by the course developer</p>
     <p><strong>Sample value:</strong><br />
-    &lt;objective id="http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"&gt;&hellip;&lt;/objectiveId&gt;</p>
+    &lt;objective id="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/objective&gt;</p>
     </td>
   </tr>
   <tr>
@@ -458,7 +458,7 @@ AU’s may also contain objectives.
     <td width="1471" valign="top"><p><strong>Description: </strong>A globally unique IRI that the AU uses to identify itself to the LMS in xAPI messages to the LMS.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br/>
-      &lt;au id="http://www.yoursite.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2"&lt; &hellip; &lt;/au&gt;
+      &lt;au id="http&#58;//www.yoursite.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -619,7 +619,7 @@ AU’s may also contain objectives.
       Values defined by course designer<br />
       <strong>Sample value: </strong><br />
     &lt;objectives&gt;<br/>
-    &nbsp;&nbsp; &lt;objective idref="http://www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2"/&gt;<br/>
+    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br/>
     &lt;/objectives&gt;<br/> 
     </td>  
   </tr>  
