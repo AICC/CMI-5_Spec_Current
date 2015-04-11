@@ -87,6 +87,7 @@ All previous work from 2012 discared
 | Michael Roberts      | VTraining Room                         |
 | Thomas Person        | (Formerly of Adobe)                    |
 | Art Werkenthin       | RISC,Inc                               |
+| Severin Neumann      | die eLearning AG                       |
 
 -------
 
@@ -663,96 +664,130 @@ The following is the XML Schema for a course structure file.
 All course structures created for LMS import and created by the LMS for export must conform to this XSD and be named cmi5.xml.
 
 ```XML
-<xs:schema xmlns="http://aicc.org/CMI5/CourseStructure.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-targetNamespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="qualified" id="CMI5CourseStructure">
-	<xs:element name="CourseStructure" type="CourseType"/>
-	<xs:complexType name="CourseType">
-		<xs:sequence minOccurs="1" maxOccurs="1">
-			<xs:element name="Course" minOccurs="1" maxOccurs="1">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="title" minOccurs="1" maxOccurs="1"/>
-						<xs:element name="description" minOccurs="1" maxOccurs="1"/>
-						<xs:element name="courseId" minOccurs="1" maxOccurs="1"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="Block" type="BlockType" minOccurs="1" maxOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="BlockType">
-		<xs:sequence maxOccurs="unbounded">
-			<xs:element name="title" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="description" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="objectives" type="ObjectivesType" minOccurs="0" maxOccurs="1">
-				<!-- <xs:complexType>
-					<xs:sequence>
-						<xs:element name="Objective" minOccurs="1" maxOccurs="unbounded">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="ObjectiveID" minOccurs="1" maxOccurs="1"/>
-									<xs:element name="ObjectiveTitle" minOccurs="1" maxOccurs="1"/>
-									<xs:element name="ObjectiveDescription" minOccurs="1" maxOccurs="1"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType> -->
-			</xs:element>
-			<xs:element name="AU" type="AUtype" minOccurs="0"/>
-			<xs:element name="Block" minOccurs="0">
-				<xs:complexType>
-					<xs:complexContent>
-						<xs:extension base="BlockType"/>
-					</xs:complexContent>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="AUtype">
-		<xs:sequence>
-			<xs:element name="activityId" minOccurs="1" maxOccurs="1"/>			
-			<xs:element name="title" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="url" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="launchParameters" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="launchMethod" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="masteryScore" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="moveOn" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="authenticationMethod" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="entitlementKey" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="description" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="objectives" minOccurs="0" maxOccurs="unbounded">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="objective" maxOccurs="unbounded">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="objectiveID"/>
-									<xs:element name="objectiveTitle"/>
-									<xs:element name="objectiveDescription"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ObjectivesType">
-		<xs:sequence>
-			<xs:element name="objective" minOccurs="1" maxOccurs="unbounded">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="objectiveID" minOccurs="1" maxOccurs="1"/>
-						<xs:element name="objectiveTitle" minOccurs="1" maxOccurs="1"/>
-						<xs:element name="objectiveDescription" minOccurs="1" maxOccurs="1"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-</xs:schema>
+<xs:schema xmlns="http://aicc.org/CMI5/CourseStructure.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="qualified"
+           id="CMI5CourseStructure">
+    <xs:element name="courseStructure" type="courseType"/>
+    <xs:complexType name="courseType">
+        <xs:all>
+            <xs:element name="course">
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="title" type="textType"/>
+                        <xs:element name="description" type="textType"/>
+                    </xs:all>
+                    <xs:attribute name="id" type="xs:anyURI" use="required"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="block" type="blockType"/>
+            <xs:element name="objectives" type="objectivesType" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="blockType">
+        <xs:sequence>
+            <xs:element name="title" type="textType"/>
+            <xs:element name="description" type="textType"/>
+            <xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="au" type="auType"/>
+                <xs:element name="block" type="blockType"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="auType">
+        <xs:all>
+            <xs:element name="title" type="textType"/>
+            <xs:element name="description" type="textType"/>
+            <xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>
+            <xs:element name="url">
+                <xs:simpleType>
+                    <xs:restriction base="xs:anyURI">
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="launchParameters"/>
+            <xs:element name="entitlementKey"/>
+        </xs:all>
+        <xs:attribute name="id" type="xs:anyURI" use="required"/>
+        <xs:attribute name="moveOn" default="Not Applicable">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Not Applicable"/>
+                    <xs:enumeration value="Passed"/>
+                    <xs:enumeration value="Completed"/>
+                    <xs:enumeration value="Completed And Passed"/>
+                    <xs:enumeration value="Completed Or Passed"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="masteryScore" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="0"/>
+                    <xs:maxInclusive value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="authenticationMethod" default="Basic">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Basic"/>
+                    <xs:enumeration value="OAuth"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="launchMethod" default="AnyWindow">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="AnyWindow"/>
+                    <xs:enumeration value="OwnWindow"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="objectivesType">
+        <xs:sequence>
+            <xs:element name="objective" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="title" type="textType"/>
+                        <xs:element name="description" type="textType"/>
+                    </xs:all>
+                    <xs:attribute name="id" type="xs:anyURI" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
+    <xs:complexType name="referencesObjectivesType">
+        <xs:sequence>
+            <xs:element name="objective" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="idref" type="xs:anyURI"></xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="textType">
+        <xs:complexContent>
+            <xs:extension base="xs:string">
+                <xs:sequence>
+                    <xs:element name="langstring" maxOccurs="unbounded" minOccurs="0">
+                        <xs:complexType>
+                            <xs:complexContent>
+                                <xs:extension base="xs:string">
+                                    <xs:attribute name="lang" type="xs:language"/>
+                                </xs:extension>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>
 ```
 
 <a name="course_package"/>
