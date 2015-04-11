@@ -660,11 +660,11 @@ AU’s may also contain objectives.
 ## 7.2 Course Structure XSD 
 
 The following is the XML Schema for a course structure file.  
-All course structures created for LMS import and creaated by the LMS for export must conform to this XSD and be named cmi5.xml.
+All course structures created for LMS import and created by the LMS for export must conform to this XSD and be named cmi5.xml.
 
 ```XML
 <xs:schema xmlns="http://aicc.org/CMI5/CourseStructure.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="qualified" id="CMI5CourseStructure">
+targetNamespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="qualified" id="CMI5CourseStructure">
 	<xs:element name="CourseStructure" type="CourseType"/>
 	<xs:complexType name="CourseType">
 		<xs:sequence minOccurs="1" maxOccurs="1">
@@ -738,7 +738,7 @@ target-Namespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="objectivesType">
+	<xs:complexType name="ObjectivesType">
 		<xs:sequence>
 			<xs:element name="objective" minOccurs="1" maxOccurs="unbounded">
 				<xs:complexType>
