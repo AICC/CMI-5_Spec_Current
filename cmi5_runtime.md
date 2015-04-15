@@ -395,7 +395,7 @@ The AU must issue a statement to the LRS after being launched, initialized, and 
 
 <a name="last_statement_au"></a>  
 ###7.1.2 Last Statement Call
-The AU must issue a statement to the LRS prior to termination using the Terminated verb per section 9.3.10.
+The AU must issue a statement to the LRS prior to termination using the Terminated verb per section 9.3.8.
 
 <a name="content_launch"></a>  
 #8.0 Content Launch Mechanisms
@@ -632,30 +632,7 @@ AU’s use in statement.
 </tr><tr><th align="left">Usage</th><td>A "Initialized" statement is used by the AU to indicate that it has been fully initialized and should follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
 </table>
 
-###9.3.3 Suspended
-<table>
-<tr><th align="left">Verb</th><td>Suspended</td></tr>
-<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/suspended</td></tr>
-<tr><th align="left">Display</th><td>{ "en-US" : "Suspended" }</td></tr>
-<tr><th align="left">Description</th><td>The learner exited an AU session (uncompleted) with the intention of returning to the AU.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Suspended" verb when the learner exits an AU without experiencing all relevant material in the AU.  The AU must not issue a "Suspended" statement if the AU previously issued a statement with "Completed".  After issuing a "Suspended" statement, the AU must issue an "Terminated" statement. The AU must not issue any other statements following "Suspend" except for "Terminated".</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
-</tr><tr><th align="left">Usage</th><td>The criterion for "Suspended" is determined by the AU design.</td></tr>
-</table>
-
-###9.3.4 Resumed 
-<table>
-<tr><th align="left">Verb</th><td>Resumed</td></tr>
-<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/resumed</td></tr>
-<tr><th align="left">Display</th><td>{ "en-US" : "Resumed" }</td></tr>
-<tr><th align="left">Description</th><td>The learner resumed an AU that was intentionally left uncompleted.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Resumed" verb when the learner returns to an AU that had recorded a "Suspend" statement in the previous session.  The AU must record "Resumed" immediately following a the "Initialized" statement. The AU must not issue a "Resumed" statement under any other circumstances.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
-</tr><tr><th align="left">Usage</th><td>See AU Obligations.</td></tr>
-</table>
-
-
-###9.3.5 Completed
+###9.3.3 Completed
 <table>
 <tr><th align="left">Verb</th><td>Completed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/completed</td></tr>
@@ -666,7 +643,7 @@ AU’s use in statement.
 </tr><tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the AU design.</td></tr>
 </table>
 
-###9.3.6 Passed
+###9.3.4 Passed
 <table>
 <tr><th align="left">Verb</th><td>Passed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/passed</td></tr>
@@ -678,7 +655,7 @@ AU’s use in statement.
 </table>
 
 
-###9.3.7 Failed
+###9.3.5 Failed
 <table>
 <tr><th align="left">Verb</th><td>Failed</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/failed</td></tr>
@@ -692,7 +669,7 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 </table>
 
 
-###9.3.8 Abandoned
+###9.3.6 Abandoned
 <table>
 <tr><th align="left">Verb</th><td>Abandoned</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/abandoned</td></tr>
@@ -705,7 +682,7 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 
 
 
-###9.3.9 Waived
+###9.3.7 Waived
 <table>
 <tr><th align="left">Verb</th><td>Waived</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/waived</td></tr>
@@ -718,7 +695,7 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 
 
 
-###9.3.10 Terminated
+###9.3.8 Terminated
 <table>
 <tr><th align="left">Verb</th><td>Terminated</td></tr>
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/terminated</td></tr>
@@ -890,8 +867,6 @@ The duration property is a ISO 8601 formatted time value required in certain sta
 ####9.5.4.1 AU statements that include duration
 ##### Terminated Statement
 The AU must include the duration property in Terminated statements.  The AU should calculate duration for Terminated statements as the time difference between Initialized statement and the Terminated statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
-##### Suspended Statement
-The AU should include the duration property in Suspended statements.  The AU should calculate duration for Suspended statements as the time difference between Initialized statement and the Suspended statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
 ##### Completed Statement
 The AU must include the duration property in Completed statements.  The AU should calculate duration as the time spent by the learner to achieve completion status.
 ##### Passed Statement
