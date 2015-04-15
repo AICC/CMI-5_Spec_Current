@@ -335,7 +335,6 @@ The data in this section is used for the block structures with group AU’s.  A 
     &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br/>
     &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Este es el título del bloque&lt;/langstring&gt;<br/>
     &lt;/title&gt;<br/>            
-      Day 1 – Overview of Systems</p>
     </td>
   </tr>
   <tr>
@@ -355,7 +354,6 @@ The data in this section is used for the block structures with group AU’s.  A 
     &nbsp;&nbsp; &lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br/>
     &nbsp;&nbsp; &lt;langstring lang="es-MX"&gt;Esta es la descripción de los bloques&lt;/langstring&gt;<br/>
     &lt;/description&gt;<br/> 
-      Day 1 – Overview of Systems.  In this part of the course you will get a complete overview.</p>
     </td>
   </tr>
 </table>
