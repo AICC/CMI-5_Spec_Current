@@ -230,7 +230,9 @@ The LMS must implement a means to create and maintain course structures.<br/>
 1.	The LMS must implement the import of the course data structure defined in section 7. <br/>
 2.	The LMS must implement the export of the course data structure defined in section 7. <br/>
 3.	The LMS should provide a user interface to LMS administrative users to create and edit course structures internally.<br/>
-4.	The LMS must be able support course structures with one or more AU’s.
+4.	LMS must support course structures containing more than 1000 AU’s.
+5.	LMS must support course structures conforming to the XSD schema defined in section 7.2.
+
 <BR>
 <BR>
 
