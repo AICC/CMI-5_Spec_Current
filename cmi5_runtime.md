@@ -304,7 +304,7 @@ mechanism(s) and associate commands as prescribed in this specification.
 LMS systems must meet the following requirements to conform to this specification:  
 
 1. The LMS must implement a LRS as defined in the XAPI Specification.
-2. The LMS must implement a means to create and edit course structures as defined in section 6.1 Course structure.
+2. The LMS must support course structures as defined in [CMI5-002] CMI-5 Course Structure.
 3. The LMS must implement additional “State API” requirements to initialize AU state as defined in section 10.
 4. The LMS must implement the runtime launch interface as defined in section 8.0 Content Launch Mechanisms.
 5. The LMS must implement additional XAPI “Statement API” requirements as defined in section 9.
@@ -312,7 +312,6 @@ LMS systems must meet the following requirements to conform to this specificatio
 
 <a name="course_structures"></a>  
 ##6.1 Course structures
-The LMS must implement a means to create and maintain course structures.
 
 1. The LMS must implement the import of Course Structures per [CMI5-002] CMI-5 Course Structure
 2. The LMS should implement the export of Course Structures per [CMI5-002] CMI-5 Course Structure
@@ -675,7 +674,7 @@ AU’s use in statement.
 <tr><th align="left">Description</th><td>The learner attempted and succeed in a judged activity in the AU. </td></tr>
 <tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a (scaled) score, the (scaled) score must be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
 <tr><th align="left">LMS Obligations</th><td>The LMS must record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See section 10) The LMS must use either "Passed" or "Completed" statements (or both) based on the moveOn criteria for the AU as defined in Course Structure. (See Course Structure Section 7.1.4 MoveOn).</td></tr>
-<tr><th align="left">Usage</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must equal to or greater than the "MasteryScore" indicated in the course structure. (See Course Structure Section 7.1.4 MasteryScore)</td></tr>
+<tr><th align="left">Usage</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must be equal to or greater than the "MasteryScore" indicated in the course structure. (See Course Structure Section 7.1.4 MasteryScore)</td></tr>
 </table>
 
 
@@ -685,11 +684,11 @@ AU’s use in statement.
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU. </td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score must be less than the "MasteryScore" indicated in the course structure.  (See Course Structure Section 7.1.4 MasteryScore). </td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score must be less than the "MasteryScore" indicated in the course structure.  (See Course Structure Section 7.1.4 MasteryScore). A "Failed" statement must not be issued after an "Passed" statement has been issued.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS must record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  (See section 10).<br/>
 <br/>
 The LMS must use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  (See Course Structure Section 7.1.4 MasteryScore).</td></tr>
-</tr><tr><th align="left">Usage</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.. If the "Failed" statement contains a score, the score must be less than the "MasteryScore" indicated in the course structure. (See Course Structure Section 7.1.4 MasteryScore). </td></tr>
+</tr><tr><th align="left">Usage</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity. If the "Failed" statement contains a score, the score must be less than the "MasteryScore" indicated in the course structure. (See Course Structure Section 7.1.4 MasteryScore). </td></tr>
 </table>
 
 
@@ -700,7 +699,7 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Abandoned” indicates that the AU session was abnormally terminated by Learner action (or due to a system failure).</td>
 </tr><tr><th align="left">AU Obligations</th><td>None.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination. </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination. </td></tr>
 </tr><tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
 
