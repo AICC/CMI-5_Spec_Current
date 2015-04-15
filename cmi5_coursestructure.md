@@ -318,6 +318,19 @@ The following meta data attribute and elements are at the course level and  desc
 The data in this section is used for the block structures with group AU’s.  A Block consists of one or more AU’s. Blocks can also contain references to objectives and other Blocks.
 
 <table border="1" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2" valign="top"><h3>id</h3></td>
+  </tr>
+  <tr>
+    <td width="160" valign="top"><p><strong>Required: </strong> Yes<br />
+        <strong>Data type: </strong> IRI</p></td>
+    <td width="1471" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block in xAPI messages made by LMS.</p>
+      <p><strong>Value space: </strong>Values defined by course designer</p>
+      <p><strong>Sample value:</strong><br/>
+      &lt;block id="http&#58;//www.yoursite.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
+      </p>
+    </td>
+  </tr>
   <tr>
     <td colspan="2" valign="top"><h3>title</h3></td>
   </tr>
@@ -718,6 +731,7 @@ All course structures created for LMS import and created by the LMS for export m
                 <xs:element name="block" type="blockType"/>
             </xs:choice>
         </xs:sequence>
+        <xs:attribute name="id" type="xs:anyURI" use="required"/>
     </xs:complexType>
     <xs:complexType name="auType">
         <xs:all>
