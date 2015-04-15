@@ -509,7 +509,7 @@ AU’s may also contain objectives.
   <tr>
     <td valign="top"><p><strong>Required:</strong> Yes<br />
         <strong>Data type:</strong> string <br/>
-        <strong>Default Value:</strong> "Not Applicable" </p></td>
+        <strong>Default Value:</strong> "NotApplicable" </p></td>
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if a AU has been sufficiently completed for the purposes determining overall course completion or determining if prequisites were met for other activites.. </p>
       <p><strong>moveOn Values are as follows:</strong></p>
       <ul>
@@ -517,8 +517,8 @@ AU’s may also contain objectives.
         <li>moveOn Value = "Completed" : If the LMS receives a statement with the verb "Completed", then the LMS will consider the AU satisfied.<br />
           </li>
         <li>moveOn Value = "CompletedAndPassed" : If the LMS receives statements with the verbs "Completed" and "Passed", then the LMS will consider the AU satisfied.</li>
-        <li>moveOn Value = "CompletedOrPassed" : : If the LMS receives a statements with either of the verbs "Completed" or "Passed", then the LMS will consider the AU satisfied.</li>
-        <li>moveOn Value = "Not Applicable": The LMS will consider the AU satisfied.</li>
+        <li>moveOn Value = "CompletedOrPassed" : If the LMS receives a statements with either of the verbs "Completed" or "Passed", then the LMS will consider the AU satisfied.</li>
+        <li>moveOn Value = "NotApplicable": The LMS will consider the AU satisfied.</li>
       </ul>
       <p><strong>Usage:</strong></p>
       <p>If all member AU's in a block are satisfied, then the block is considered satisfied for prerequisites and sequencing.<br/>If all member AU's and Blocks are satisfied, then the course is considered satisfied for prerequisites or credit in relation to other courses or curricula.</p>
@@ -528,7 +528,7 @@ AU’s may also contain objectives.
           "Completed"<br />
           "CompletedAndPassed"<br />
           "CompletedOrPassed"<br />
-          "Not Applicable"</p>
+          "NotApplicable"</p>
       </blockquote>
       <p><strong>Sample value: </strong><br/>
       &lt;au id="&hellip;" moveOn="Passed"&gt; &hellip; &lt;/au&gt;
@@ -735,14 +735,14 @@ All course structures created for LMS import and created by the LMS for export m
             <xs:element name="entitlementKey"/>
         </xs:all>
         <xs:attribute name="id" type="xs:anyURI" use="required"/>
-        <xs:attribute name="moveOn" default="Not Applicable">
+        <xs:attribute name="moveOn" default="NotApplicable">
             <xs:simpleType>
                 <xs:restriction base="xs:string">
-                    <xs:enumeration value="Not Applicable"/>
+                    <xs:enumeration value="NotApplicable"/>
                     <xs:enumeration value="Passed"/>
                     <xs:enumeration value="Completed"/>
-                    <xs:enumeration value="Completed And Passed"/>
-                    <xs:enumeration value="Completed Or Passed"/>
+                    <xs:enumeration value="CompletedAndPassed"/>
+                    <xs:enumeration value="CompletedOrPassed"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -784,7 +784,6 @@ All course structures created for LMS import and created by the LMS for export m
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="referencesObjectivesType">
         <xs:sequence>
             <xs:element name="objective" maxOccurs="unbounded">
