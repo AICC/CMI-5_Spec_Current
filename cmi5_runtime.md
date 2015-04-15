@@ -875,7 +875,7 @@ The AU must include the duration property in Passed statements.  The AU should c
 The AU must include the duration property in Failed statements. The AU should calculate duration as the time spent by the learner to attempt and fail in a judged activity of the AU.
 ####9.5.4.2 LMS statements that include duration
 ##### Abandoned Statement
-The duration proprety should be include in Abandoned statements.  The duration property should be set as the total session time, based on the AU launch, as calculated by the LMS.
+The duration proprety should be include in Abandoned statements.  The duration property should be set as the total session time, calculated as the time between the “Launched” statement and the last statement issued by the AU.
 
 ###9.5.5 Extensions
 ####9.5.5.1 Progress
