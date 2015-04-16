@@ -518,11 +518,30 @@ AU’s may also contain objectives.
       </p>
     </td>
   </tr>
+  </tr>
+    <tr>
+    <td colspan="2" valign="top"><h3>passIsFinal</h3></td>
+  </tr>
+  <tr>
+    <td valign="top"><p><strong>Required:</strong> No<br />
+        <strong>Data type:</strong> boolean <strong>Default Value:</strong> true </p></td>
+    <td valign="top"><p><strong>Description:</strong> If true, the content MUST NOT send any Passed or Failed statements after sending a Passed statement.</p>
+      <p><strong>Usage: </strong></p>
+      <ul>
+        <li>The value of passIsFinal is passed to the AU at runtime by the LMS (as defined in the CMI5 Runtime Specification)</li>
+        <li>The AU will use this value to determine if it MUST NOT send Passed or Failed statements after sending a Passed statement</li>
+      </ul>
+        <br />
+      <strong>Sample value: </strong><br/>
+      &lt;au id="&hellip;" passIsFinal="true"&gt; &hellip; &lt;/au&gt;
+      </p>
+    </td>
+  </tr>
   <tr>
     <td colspan="2" valign="top"><h3>moveOn</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><strong>Required:</strong> Yes<br />
+    <td valign="top"><p><strong>Required:</strong> No<br />
         <strong>Data type:</strong> string <br/>
         <strong>Default Value:</strong> "NotApplicable" </p></td>
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if a AU has been sufficiently completed for the purposes determining overall course completion or determining if prequisites were met for other activites.. </p>
