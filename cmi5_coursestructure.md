@@ -561,13 +561,11 @@ AU’s may also contain objectives.
       <p><strong>Usage: </strong></p>
       <ul>
         <li>Based on the value of authenticationMethod, the LMS will place an  parameter in the AU launch interface to indicate to the AU which authentication method to use (as per the CMI-5 Runtime specification)</li>
-        <li>authenticationMethod Value = "Basic" : If the LMS will indicate to the AU launch interface to use basic HTTP authentication and will pass and HTTP authentication token to the AU using the launch interface.</li>
-        <li>authenticationMethod Value = "OAuth" : If the LMS will indicate to the AU launch interface to use  OAuth authentication..</li>
+        <li>authenticationMethod Value = "Basic" : If the LMS will indicate to the AU launch interface to use basic HTTP authentication and will pass and HTTP authentication token to the AU using the launch interface. This is currently the only option, future versions of this specification may add other authentication options.</li>
       </ul>
       <p><strong>Value space:</strong></p>
       <blockquote>
         <p>"Basic"<br />
-        "OAuth"<br />
       </p>
       </blockquote>
       <p><strong>Sample value: </strong><br/>

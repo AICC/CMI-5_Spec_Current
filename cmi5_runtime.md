@@ -315,28 +315,6 @@ LMS systems must meet the following requirements to conform to this specificatio
 
 1. The LMS must implement the import of Course Structures per [CMI5-002] CMI-5 Course Structure
 2. The LMS should implement the export of Course Structures per [CMI5-002] CMI-5 Course Structure
-3. The LMS should implement a user interface to allow LMS administrative users to create and edit course structures.
-4. The LMS must be able support course structures with one or more AU’s
-
-Course structures must contain the following data for each AU in a course:
-
-* URL location – A URL to the AU’s location (entry point)
-* Activity ID – the AU’s activity ID as defined in the XAPI specification (determined by the AU designer).
-* Launch Method - 
-    * “OwnWindow” – The LMS must either spawn a new window for the AU launched, or redirect the existing window to the AU.
-    * “AnyWindow” – The AU does not care about the window context (all browser windows options are acceptable – FrameSet, New Window, redirect, etc.) The LMS may use whichever method desired..
-* Authentication Method – The authentication method used by the AU to access the LMS’s
-LRS.  (Either HTTP basic or OAuth 1.0)
-* Launch Parameters –A set of static data specific to the AU’s design. Used as parameters
-by the AU to modify its behavior. 
-* Entitlement Key – This is a value provided by the AU content provider and is used by the
-AU to determine whether the LMS instance and/or Learner are entitled to view the content.
-It is provided to the AU via a State API request.
-
-Course Structures must contain at least 1 AU.
-
-LMS must have the ability to create and maintain course structures containing more than
-1000 AU’s.
 
 <a name="lms_state_api_requirements"></a>  
 ##6.2 LMS State API Requirements
@@ -431,7 +409,7 @@ The format of the launching URL is as follows:
 ```
 <URL to AU>
 ?endpoint=<URL to LMS Listener>
-&fetch=<Fetch URL for Authorization Token (optional)– if OAuth is not used>
+&fetch=<Fetch URL for Authorization Token>
 &actor=<Actor Object>
 &registration=<Registration ID>
 &activityId=<AU activity ID>
@@ -463,8 +441,8 @@ The values for the URL launch parameters are described below:
 
 <table>
   <tr><th colspan=3 align ="left">fetch</th></tr>
-  <tr><td>&nbsp;</td><th align ="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS.  The <strong><em>fetch</em></strong> URL is only used when OAuth authentication is not practical or desired.  The authentication token is used by the learning activity being launched.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>The LMS must place the <strong><em>fetch</em></strong> in the Launch URL when Basic authentication is indicated in the course structure definition. <br /><br />If OAuth is the method of authentication specified, the LMS must NOT place the <strong><em>fetch</em></strong>name/value pair<strong></strong> in the query string.  <br /><br />The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses should generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL must be limited to the duration of a specific user session. </td></tr>
+  <tr><td>&nbsp;</td><th align ="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS. The authentication token is used by the learning activity being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>The LMS must place the <strong><em>fetch</em></strong> in the Launch URL. <br /><br />The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses should generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL must be limited to the duration of a specific user session. </td></tr>
   <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>When Basic authentication is used, the AU must get the <strong><em>fetch</em></strong> value from the query string. The AU must make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU must then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU should not make one more than 1 post to the <strong><em>fetch</em></strong> URL</td></tr>
   <tr><td>&nbsp;</td><th align ="right">Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
