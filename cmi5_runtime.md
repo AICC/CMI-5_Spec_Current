@@ -681,8 +681,21 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Description</th><td>The verb “Terminated” indicates that the AU was terminated by the Learner and that the AU will
 not be recording any more statements for the launch session.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Terminated" verb. This statement must be the last statement recorded by the AU in a session.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
+</table>
+
+###9.3.9 Satisfied
+<table>
+<tr><th align="left">Verb</th><td>Satisfied</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/satisfied</td></tr>
+<tr><th align="left">Description</th><td>The verb “Satisfied” indicates that the LMS has determined that the Learner has met the moveOn criteria of an AU block or has met the moveOn criteria for all AU's in the course.</td></tr>
+<tr><th align="left">AU Obligations</th><td>None</td></tr>
+<th align="left">LMS Obligations</th><td>
+<ol><li>The LMS must use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS must use the block id (section 7.1.2 in the CMI5 Course Structure document) as the Object id (section 9.4 Object).</li>
+<li>The LMS must also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS must use the course id (section 7.1.1 in the CMI5 Course Structure document) as the Object id (section 9.4 Object)</li>
+</ol></td></tr>
+<tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
 
 <BR>
@@ -698,7 +711,7 @@ The objectType property of an Object in statements with a CMI-5 verb must be set
 
 <a name="Object_ID"></a> 
 ###9.4.2 id 
-The value of the Object's ID property for a given AU must match the AU ID defined in the URL launch line and the course structure.
+The value of the Object's ID property for a given AU must match the AU ID (activityId) defined in the URL launch line and the course structure.
 
 
 Example of usage in a statement:
