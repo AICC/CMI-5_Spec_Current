@@ -252,10 +252,14 @@ mandatory) described in this specification in a non-conforming manner.
 <a name="lms_conformance"></a> 
 ##4.2 Learning Management Systems (LMS)
 
-LMS systems must conform to all requirements listed in Section 6 – LMS Requirements.
-
 A LMS must conform to all LRS requirements as specified in the XAPI specification
 (see References)
+
+The LMS MUST include the ability to retrieve and show all statements (including attachments and extensions) to a user (with the understanding of scaling permissions/authorization).
+
+The LMS MUST decode the attachment and make it available as a file with the original MIME type.
+
+LMS systems must conform to all requirements listed in Section 6 – LMS Requirements.
 
 The LMS must not implement any features or functionality (optional or mandatory)
 described in this specification in a non-conforming manner.
