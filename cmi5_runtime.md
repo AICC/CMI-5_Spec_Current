@@ -649,9 +649,9 @@ AU’s use in statement.
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/passed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeed in a judged activity in the AU. </td></tr>
-<tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a (scaled) score, the (scaled) score must be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
+<tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner, unless passIsFinal has been set to false. If the "Passed" statement contains a (scaled) score, the (scaled) score must be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
 <tr><th align="left">LMS Obligations</th><td>The LMS must record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See section 10) The LMS must use either "Passed" or "Completed" statements (or both) based on the moveOn criteria for the AU as defined in Course Structure. (See Course Structure Section 7.1.4 MoveOn).</td></tr>
-<tr><th align="left">Usage</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity. The AU must not issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a score, the score must be equal to or greater than the "MasteryScore" indicated in the course structure. (See Course Structure Section 7.1.4 MasteryScore)</td></tr>
+<tr><th align="left">Usage</th><td>The AU must record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
 </table>
 
 
@@ -661,11 +661,11 @@ AU’s use in statement.
 <tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU. </td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score must be less than the "MasteryScore" indicated in the course structure.  (See Course Structure Section 7.1.4 MasteryScore). A "Failed" statement must not be issued after an "Passed" statement has been issued.</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score must be less than the "MasteryScore" indicated in the course structure.  (See Course Structure Section 7.1.4 MasteryScore). A "Failed" statement must not be issued after an "Passed" statement has been issued, unless passIsFinal has been set to false.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS must record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  (See section 10).<br/>
 <br/>
 The LMS must use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  (See Course Structure Section 7.1.4 MasteryScore).</td></tr>
-</tr><tr><th align="left">Usage</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity. If the "Failed" statement contains a score, the score must be less than the "MasteryScore" indicated in the course structure. (See Course Structure Section 7.1.4 MasteryScore). </td></tr>
+</tr><tr><th align="left">Usage</th><td>The AU must record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
 </table>
 
 
@@ -925,6 +925,7 @@ LRS.  This must be a JSON document as defined in this section with a document na
    "launchMode": "<launchMode value>",
    "launchParameters": "<launch parameters from Course Structure>",
    "masteryScore": "<mastery score from the Course Structure>",
+   "passIsFinal" : <passIsFinal from the Course Structure>,
    "moveOn": "<moveOn value from the Course Structure>",
    "returnURL": "<URL value>",
    "entitlementKey": {
@@ -997,6 +998,19 @@ of the context object's extension collection.<br />
       <strong>Data type: </strong>decimal<br />
       <strong>Value space: </strong>Decimal value between 0 and 1<br />
       <strong>Sample value: </strong>0.75</p></td>
+  </tr>   
+  </tr> 
+  <tr><th align="left">passIsFinal</th>
+    </tr>
+    <tr>
+    <tr>
+    <td><p><strong>Description: </strong>passIsFinal from the CMI-5 Course Structure.<br />
+      <strong>LMS Required:</strong> Yes<br />
+      <strong>AU Required:</strong> Yes<br />
+      <strong>LMS Usage:  </strong>The LMS must include the passIsFinal value based on the value defined in the course structure for the AU being launched.<br />
+      <strong>AU Usage: </strong>If true, the AU MUST NOT issue a Passed or Failed statment after issuing a Passed statement. <br />
+      <strong>Data type: </strong>boolean<br />
+      <strong>Sample value: </strong>true</p></td>
   </tr>   
   </tr> 
   <tr><th align="left">moveOn</th>
