@@ -315,6 +315,28 @@ LMS systems must meet the following requirements to conform to this specificatio
 
 1. The LMS must implement the import of Course Structures per [CMI5-002] CMI-5 Course Structure
 2. The LMS should implement the export of Course Structures per [CMI5-002] CMI-5 Course Structure
+3. The LMS should implement a user interface to allow LMS administrative users to create and edit course structures.
+4. The LMS must be able support course structures with one or more AU’s
+
+Course structures must contain the following data for each AU in a course:
+
+* URL location – A URL to the AU’s location (entry point)
+* Activity ID – the AU’s activity ID as defined in the XAPI specification (determined by the AU designer).
+* Launch Method - 
+    * “OwnWindow” – The LMS must either spawn a new window for the AU launched, or redirect the existing window to the AU.
+    * “AnyWindow” – The AU does not care about the window context (all browser windows options are acceptable – FrameSet, New Window, redirect, etc.) The LMS may use whichever method desired..
+* Authentication Method – The authentication method used by the AU to access the LMS’s
+LRS.  (Either HTTP basic or OAuth 1.0)
+* Launch Parameters –A set of static data specific to the AU’s design. Used as parameters
+by the AU to modify its behavior. 
+* Entitlement Key – This is a value provided by the AU content provider and is used by the
+AU to determine whether the LMS instance and/or Learner are entitled to view the content.
+It is provided to the AU via a State API request.
+
+Course Structures must contain at least 1 AU.
+
+LMS must have the ability to create and maintain course structures containing more than
+1000 AU’s.
 
 <a name="lms_state_api_requirements"></a>  
 ##6.2 LMS State API Requirements
@@ -409,7 +431,7 @@ The format of the launching URL is as follows:
 ```
 <URL to AU>
 ?endpoint=<URL to LMS Listener>
-&fetch=<Fetch URL for Authorization Token>
+&fetch=<Fetch URL for Authorization Token (optional)– if OAuth is not used>
 &actor=<Actor Object>
 &registration=<Registration ID>
 &activityId=<AU activity ID>
@@ -441,8 +463,8 @@ The values for the URL launch parameters are described below:
 
 <table>
   <tr><th colspan=3 align ="left">fetch</th></tr>
-  <tr><td>&nbsp;</td><th align ="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS. The authentication token is used by the learning activity being launched.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>The LMS must place the <strong><em>fetch</em></strong> in the Launch URL. <br /><br />The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses should generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL must be limited to the duration of a specific user session. </td></tr>
+  <tr><td>&nbsp;</td><th align ="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS.  The <strong><em>fetch</em></strong> URL is only used when OAuth authentication is not practical or desired.  The authentication token is used by the learning activity being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>The LMS must place the <strong><em>fetch</em></strong> in the Launch URL when Basic authentication is indicated in the course structure definition. <br /><br />If OAuth is the method of authentication specified, the LMS must NOT place the <strong><em>fetch</em></strong>name/value pair<strong></strong> in the query string.  <br /><br />The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses should generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL must be limited to the duration of a specific user session. </td></tr>
   <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>When Basic authentication is used, the AU must get the <strong><em>fetch</em></strong> value from the query string. The AU must make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU must then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU should not make one more than 1 post to the <strong><em>fetch</em></strong> URL</td></tr>
   <tr><td>&nbsp;</td><th align ="right">Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
@@ -681,8 +703,21 @@ The LMS must use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Description</th><td>The verb “Terminated” indicates that the AU was terminated by the Learner and that the AU will
 not be recording any more statements for the launch session.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU must record a statement containing the "Terminated" verb. This statement must be the last statement recorded by the AU in a session.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS must use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS must record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
+</table>
+
+###9.3.9 Satisfied
+<table>
+<tr><th align="left">Verb</th><td>Satisfied</td></tr>
+<tr><th align="left">ID</th><td>http://www.aicc.org/cmi5/verbs/satisfied</td></tr>
+<tr><th align="left">Description</th><td>The verb “Satisfied” indicates that the LMS has determined that the Learner has met the moveOn criteria of all AU's in a block or has met the moveOn criteria for all AU's in the course.</td></tr>
+<tr><th align="left">AU Obligations</th><td>None</td></tr>
+<th align="left">LMS Obligations</th><td>
+<ol><li>The LMS must use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS must use the block id (section 7.1.2 in the CMI5 Course Structure document) as the Object id (section 9.4 Object).</li>
+<li>The LMS must also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS must use the course id (section 7.1.1 in the CMI5 Course Structure document) as the Object id (section 9.4 Object)</li>
+</ol></td></tr>
+<tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
 
 <BR>
@@ -698,8 +733,20 @@ The objectType property of an Object in statements with a CMI-5 verb must be set
 
 <a name="Object_ID"></a> 
 ###9.4.2 id 
-The value of the Object's ID property for a given AU must match the AU ID defined in the URL launch line and the course structure.
+The value of the Object's ID property for a given AU must match the AU ID (activityId) defined in the URL launch line and the course structure.
 
+<a name="Definition"></a>
+###9.4.3 definition
+
+The object's definition will have the Activity Type contained in the course structure, as defined in section 4.1.4.1 of the XAPI specification, must be included in the "Launched" statement sent from the LMS to the LRS.  This Activity Type
+describes the general category of the AU and should be one of the following:
+
+ * http://www.aicc.org/cmi5/activitytypes/assessment
+ * http://www.aicc.org/cmi5/activitytypes/tutorial
+ * http://www.aicc.org/cmi5/activitytypes/simulation
+ * http://www.aicc.org/cmi5/activitytypes/reference
+ * http://www.aicc.org/cmi5/activitytypes/jobaid
+ * http://www.aicc.org/cmi5/activitytypes/video
 
 Example of usage in a statement:
 
@@ -713,8 +760,14 @@ Example of usage in a statement:
                }
     },
     "object": {
-      "id":"<AU identifier>",
-      "objectType": "Activity"       
+      "id":"<AU identifier>"
+      "definition": {          
+             "type": "http://www.aicc.org/cmi5/activitytpes/<activity type>",
+             "name": {
+                     "en-US": "<activity type name>"          
+             }
+        },
+       "objectType": "Activity"       
     },
     "result": {...},
     "context": {...},
@@ -722,6 +775,47 @@ Example of usage in a statement:
 }
 ```
 
+<table>
+<tr><th align="right" nowrap></th><th align="left">Assessment</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity  where the learner is evaluated or judged.</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/assessment</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "assessment" }</td></tr>
+</table>
+
+<table>
+<tr><th align="right" nowrap></th><th align="left">Tutorial</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity the learner is presented material for instruction in a defined sequence</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/tutorial</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "tutorial" }</td></tr>
+</table>
+
+<table>
+<tr><th align="right" nowrap></th><th align="left">Simulation</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity the learner interacts primarily with a computer-based simulation of system or a physical device</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/simulation</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "simulation" }</td></tr>
+</table>
+
+<table>
+<tr><th align="right" nowrap></th><th align="left">Reference</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity where the learner can search for and locate information. The presentation of what information to display is learner directed.</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/reference</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "reference" }</td></tr>
+</table>
+
+<table>
+<tr><th align="right" nowrap></th><th align="left">Job Aid</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity where the learner is using a tool or system that help the learner perform a work related task.</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/jobaid</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "jobaid" }</td></tr>
+</table>
+
+<table>
+<tr><th align="right" nowrap></th><th align="left">Video</th></tr>
+<tr><th align="right" nowrap>Description: </th><td>An activity where the learner is presented with a video clip as the primary (or only) media presentation.</td></tr>
+<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/video</td></tr>
+<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "video" }</td></tr>
+</table>
 
 <a name="Result"></a> 
 ##9.5 Result
