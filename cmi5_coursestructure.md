@@ -523,8 +523,8 @@ AU’s may also contain objectives.
     <td colspan="2" valign="top"><h3>passIsFinal</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><strong>Required:</strong> No<br />
-        <strong>Data type:</strong> boolean <strong>Default Value:</strong> true </p></td>
+    <td valign="top"><p><table><tr><td <strong>Required:</strong> No<br />
+        <strong>Data type:</strong> boolean<br /><strong>Default Value:</strong> true </p></td>
     <td valign="top"><p><strong>Description:</strong> If true, the content MUST NOT send any Passed or Failed statements after sending a Passed statement.</p>
       <p><strong>Usage: </strong></p>
       <ul>
@@ -724,125 +724,126 @@ All course structures created for LMS import and created by the LMS for export m
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="qualified"
            id="CMI5CourseStructure">
-    <xs:element name="courseStructure" type="courseType"/>
-    <xs:complexType name="courseType">
-        <xs:all>
-            <xs:element name="course">
-                <xs:complexType>
-                    <xs:all>
-                        <xs:element name="title" type="textType"/>
-                        <xs:element name="description" type="textType"/>
-                    </xs:all>
-                    <xs:attribute name="id" type="xs:anyURI" use="required"/>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="block" type="blockType"/>
-            <xs:element name="objectives" type="objectivesType" minOccurs="0"/>
-        </xs:all>
-    </xs:complexType>
-    <xs:complexType name="blockType">
-        <xs:sequence>
+  <xs:element name="courseStructure" type="courseType"/>
+  <xs:complexType name="courseType">
+    <xs:all>
+      <xs:element name="course">
+        <xs:complexType>
+          <xs:all>
             <xs:element name="title" type="textType"/>
             <xs:element name="description" type="textType"/>
-            <xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>
-            <xs:choice minOccurs="1" maxOccurs="unbounded">
-                <xs:element name="au" type="auType"/>
-                <xs:element name="block" type="blockType"/>
-            </xs:choice>
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:anyURI" use="required"/>
-    </xs:complexType>
-    <xs:complexType name="auType">
-        <xs:all>
+          </xs:all>
+          <xs:attribute name="id" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="block" type="blockType"/>
+      <xs:element name="objectives" type="objectivesType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="blockType">
+    <xs:sequence>
+      <xs:element name="title" type="textType"/>
+      <xs:element name="description" type="textType"/>
+      <xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>
+      <xs:choice minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="au" type="auType"/>
+        <xs:element name="block" type="blockType"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:anyURI" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="auType">
+    <xs:all>
+      <xs:element name="title" type="textType"/>
+      <xs:element name="description" type="textType"/>
+      <xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>
+      <xs:element name="url">
+        <xs:simpleType>
+          <xs:restriction base="xs:anyURI">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="launchParameters"/>
+      <xs:element name="entitlementKey"/>
+    </xs:all>
+    <xs:attribute name="id" type="xs:anyURI" use="required"/>
+    <xs:attribute name="moveOn" default="NotApplicable">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NotApplicable"/>
+          <xs:enumeration value="Passed"/>
+          <xs:enumeration value="Completed"/>
+          <xs:enumeration value="CompletedAndPassed"/>
+          <xs:enumeration value="CompletedOrPassed"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="masteryScore" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal">
+          <xs:minInclusive value="0"/>
+          <xs:maxInclusive value="1"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="passIsFinal" use="optional" type="xs:boolean" default="true" />
+    <xs:attribute name="authenticationMethod" default="Basic">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic"/>
+          <xs:enumeration value="OAuth"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="launchMethod" default="AnyWindow">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AnyWindow"/>
+          <xs:enumeration value="OwnWindow"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="objectivesType">
+    <xs:sequence>
+      <xs:element name="objective" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
             <xs:element name="title" type="textType"/>
             <xs:element name="description" type="textType"/>
-            <xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>
-            <xs:element name="url">
-                <xs:simpleType>
-                    <xs:restriction base="xs:anyURI">
-                        <xs:minLength value="1"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:element>
-            <xs:element name="launchParameters"/>
-            <xs:element name="entitlementKey"/>
-        </xs:all>
-        <xs:attribute name="id" type="xs:anyURI" use="required"/>
-        <xs:attribute name="moveOn" default="NotApplicable">
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="NotApplicable"/>
-                    <xs:enumeration value="Passed"/>
-                    <xs:enumeration value="Completed"/>
-                    <xs:enumeration value="CompletedAndPassed"/>
-                    <xs:enumeration value="CompletedOrPassed"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="masteryScore" use="optional">
-            <xs:simpleType>
-                <xs:restriction base="xs:decimal">
-                    <xs:minInclusive value="0"/>
-                    <xs:maxInclusive value="1"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="authenticationMethod" default="Basic">
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="Basic"/>
-                    <xs:enumeration value="OAuth"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="launchMethod" default="AnyWindow">
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="AnyWindow"/>
-                    <xs:enumeration value="OwnWindow"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-    </xs:complexType>
-    <xs:complexType name="objectivesType">
+          </xs:all>
+          <xs:attribute name="id" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="referencesObjectivesType">
+    <xs:sequence>
+      <xs:element name="objective" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="idref" type="xs:anyURI"></xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="textType">
+    <xs:complexContent>
+      <xs:extension base="xs:string">
         <xs:sequence>
-            <xs:element name="objective" minOccurs="1" maxOccurs="unbounded">
-                <xs:complexType>
-                    <xs:all>
-                        <xs:element name="title" type="textType"/>
-                        <xs:element name="description" type="textType"/>
-                    </xs:all>
-                    <xs:attribute name="id" type="xs:anyURI" use="required"/>
-                </xs:complexType>
-            </xs:element>
+          <xs:element name="langstring" maxOccurs="unbounded" minOccurs="0">
+            <xs:complexType>
+              <xs:complexContent>
+                <xs:extension base="xs:string">
+                  <xs:attribute name="lang" type="xs:language"/>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
         </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="referencesObjectivesType">
-        <xs:sequence>
-            <xs:element name="objective" maxOccurs="unbounded">
-                <xs:complexType>
-                    <xs:attribute name="idref" type="xs:anyURI"></xs:attribute>
-                </xs:complexType>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="textType">
-        <xs:complexContent>
-            <xs:extension base="xs:string">
-                <xs:sequence>
-                    <xs:element name="langstring" maxOccurs="unbounded" minOccurs="0">
-                        <xs:complexType>
-                            <xs:complexContent>
-                                <xs:extension base="xs:string">
-                                    <xs:attribute name="lang" type="xs:language"/>
-                                </xs:extension>
-                            </xs:complexContent>
-                        </xs:complexType>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 </xs:schema>
 ```
 
