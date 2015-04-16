@@ -735,19 +735,6 @@ The objectType property of an Object in statements with a CMI-5 verb must be set
 ###9.4.2 id 
 The value of the Object's ID property for a given AU must match the AU ID (activityId) defined in the URL launch line and the course structure.
 
-<a name="Definition"></a>
-###9.4.3 definition
-
-The object's definition will have the Activity Type contained in the course structure, as defined in section 4.1.4.1 of the XAPI specification, must be included in the "Launched" statement sent from the LMS to the LRS.  This Activity Type
-describes the general category of the AU and should be one of the following:
-
- * http://www.aicc.org/cmi5/activitytypes/assessment
- * http://www.aicc.org/cmi5/activitytypes/tutorial
- * http://www.aicc.org/cmi5/activitytypes/simulation
- * http://www.aicc.org/cmi5/activitytypes/reference
- * http://www.aicc.org/cmi5/activitytypes/jobaid
- * http://www.aicc.org/cmi5/activitytypes/video
-
 Example of usage in a statement:
 
 ```javascript
@@ -760,13 +747,7 @@ Example of usage in a statement:
                }
     },
     "object": {
-      "id":"<AU identifier>"
-      "definition": {          
-             "type": "http://www.aicc.org/cmi5/activitytpes/<activity type>",
-             "name": {
-                     "en-US": "<activity type name>"          
-             }
-        },
+      "id":"<AU identifier>",
        "objectType": "Activity"       
     },
     "result": {...},
@@ -774,48 +755,6 @@ Example of usage in a statement:
     "attachments": {...}
 }
 ```
-
-<table>
-<tr><th align="right" nowrap></th><th align="left">Assessment</th></tr>
-<tr><th align="right" nowrap>Description: </th><td>An activity  where the learner is evaluated or judged.</td></tr>
-<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/assessment</td></tr>
-<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "assessment" }</td></tr>
-</table>
-
-<table>
-<tr><th align="right" nowrap></th><th align="left">Tutorial</th></tr>
-<tr><th align="right" nowrap>Description: </th><td>An activity the learner is presented material for instruction in a defined sequence</td></tr>
-<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/tutorial</td></tr>
-<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "tutorial" }</td></tr>
-</table>
-
-<table>
-<tr><th align="right" nowrap></th><th align="left">Simulation</th></tr>
-<tr><th align="right" nowrap>Description: </th><td>An activity the learner interacts primarily with a computer-based simulation of system or a physical device</td></tr>
-<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/simulation</td></tr>
-<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "simulation" }</td></tr>
-</table>
-
-<table>
-<tr><th align="right" nowrap></th><th align="left">Reference</th></tr>
-<tr><th align="right" nowrap>Description: </th><td>An activity where the learner can search for and locate information. The presentation of what information to display is learner directed.</td></tr>
-<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/reference</td></tr>
-<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "reference" }</td></tr>
-</table>
-
-<table>
-<tr><th align="right" nowrap></th><th align="left">Job Aid</th></tr>
-<tr><th align="right" nowrap>Description: </th><td>An activity where the learner is using a tool or system that help the learner perform a work related task.</td></tr>
-<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/jobaid</td></tr>
-<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "jobaid" }</td></tr>
-</table>
-
-<table>
-<tr><th align="right" nowrap></th><th align="left">Video</th></tr>
-<tr><th align="right" nowrap>Description: </th><td>An activity where the learner is presented with a video clip as the primary (or only) media presentation.</td></tr>
-<tr><th align="right" nowrap>(definition) type:</th><td>http://www.aicc.org/cmi5/activitytypes/video</td></tr>
-<tr><th align="right" nowrap>(definition) name:</th><td>{ "en-US" : "video" }</td></tr>
-</table>
 
 <a name="Result"></a> 
 ##9.5 Result
