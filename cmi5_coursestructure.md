@@ -591,6 +591,18 @@ AU’s may also contain objectives.
       </p>
     </td>
   </tr>
+  <tr>
+    <td colspan="2" valign="top"><h3>activityType</h3></td>
+  </tr>
+  <tr>
+    <td valign="top"><p><strong>Required:</strong> No<br />
+        <strong>Data type:</strong> IRI<br /><strong>Default Value:</strong> <em>None</em> </p></td>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine the activity type of the AU before a first start to indicate this type to the user.</p>
+      <strong>Sample value: </strong><br/>
+      &lt;au id="&hellip;" activityType="http://adlnet.gov/expapi/activities/media"&gt; &hellip; &lt;/au&gt;
+      </p>
+    </td>
+  </tr>
 
   <tr>
     <td colspan="2" valign="top"><h3>title</h3></td>
@@ -803,6 +815,7 @@ All course structures created for LMS import and created by the LMS for export M
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
+    <xs:attribute name="activityType" use="optional" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="objectivesType">
     <xs:sequence>
