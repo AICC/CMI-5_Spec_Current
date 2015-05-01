@@ -468,7 +468,8 @@ AU’s may also contain objectives.
   </tr>
   <tr>
     <td width="160" valign="top"><p><strong>Required: </strong> Yes<br />
-        <strong>Data type: </strong> IRI</p></td>
+        <strong>Data type: </strong> IRI</p>
+    </td>
     <td width="1471" valign="top"><p><strong>Description: </strong>A globally unique IRI that the AU uses to identify itself to the LMS in xAPI messages to the LMS.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br/>
@@ -517,12 +518,11 @@ AU’s may also contain objectives.
       </p>
     </td>
   </tr>
-  </tr>
     <tr>
     <td colspan="2" valign="top"><h3>passIsFinal</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><table><tr><td <strong>Required:</strong> No<br />
+    <td valign="top"><p><strong>Required:</strong> No<br />
         <strong>Data type:</strong> boolean<br /><strong>Default Value:</strong> true </p></td>
     <td valign="top"><p><strong>Description:</strong> If true, the content MUST NOT send any Passed or Failed statements after sending a Passed statement.</p>
       <p><strong>Usage: </strong></p>
