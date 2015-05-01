@@ -1,7 +1,7 @@
 CMI-5 Current Working Draft
 ---
 
-*If you have questions, suggestions, or concerns about this specification, please post an issue to this GitHub repository*<br>
+*If you have questions, suggestions, or concerns about this specification, please post an issue to [this GitHub repository](https://github.com/AICC/CMI-5_Spec_Current)*<br>
 *By using this repository you are agree to the terms of the license agreement defined in license.txt*<br>
 *Note that this is a working draft and is NOT intended for implementation.*<br>
 
