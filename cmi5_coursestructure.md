@@ -843,11 +843,11 @@ All course structures created for LMS import and created by the LMS for export M
     <xs:sequence>
       <xs:element name="langstring" maxOccurs="unbounded" minOccurs="1">
         <xs:complexType>
-          <xs:complexContent>
+          <xs:simpleContent>
             <xs:extension base="xs:string">
               <xs:attribute name="lang" type="xs:language"/>
             </xs:extension>
-          </xs:complexContent>
+          </xs:simpleContent>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
