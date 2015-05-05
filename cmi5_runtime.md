@@ -676,7 +676,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 ###9.3.6 Abandoned
 <table>
 <tr><th align="left">Verb</th><td>Abandoned</td></tr>
-<tr><th align="left">ID</th><td>http://adlnet.gov/ns/xapi/verbs/abandoned</td></tr>
+<tr><th align="left">ID</th><td>http://purl.org/xapi/verbs/abandoned</td></tr>
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Abandoned” indicates that the AU session was abnormally terminated by Learner action (or due to a system failure).</td>
 </tr><tr><th align="left">AU Obligations</th><td>None.</td></tr>
@@ -689,7 +689,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 ###9.3.7 Waived
 <table>
 <tr><th align="left">Verb</th><td>Waived</td></tr>
-<tr><th align="left">ID</th><td>http://adlnet.gov/ns/xapi/verbs/waived</td></tr>
+<tr><th align="left">ID</th><td>http://purl.org/xapi/verbs/waived</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Received Waiver" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Waived” indicates that the LMS has determined that the AU was met by means other than completing the AU.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
@@ -714,7 +714,7 @@ not be recording any more statements for the launch session.</td>
 ###9.3.9 Satisfied
 <table>
 <tr><th align="left">Verb</th><td>Satisfied</td></tr>
-<tr><th align="left">ID</th><td>http://adlnet.gov/ns/xapi/verbs/satisfied</td></tr>
+<tr><th align="left">ID</th><td>http://purl.org/xapi/verbs/satisfied</td></tr>
 <tr><th align="left">Description</th><td>The verb “Satisfied” indicates that the LMS has determined that the Learner has met the moveOn criteria of all AU's in a block or has met the moveOn criteria for all AU's in the course.</td></tr>
 <tr><th align="left">AU Obligations</th><td>None</td></tr>
 <th align="left">LMS Obligations</th><td>
