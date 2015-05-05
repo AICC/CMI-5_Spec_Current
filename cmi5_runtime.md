@@ -831,8 +831,8 @@ Sample JSON:
      "registration": "<registration value provided by LMS>",
      "contextActivities": {
         "category": {[
-          {"id": "http://adlnet.gov/xapi/cmi5/moveon"},
-          {"id": "http://adlnet.gov/xapi/cmi5/cmi5"}
+          {"id": "http://purl.org/xapi/cmi5/context/category/moveon"},
+          {"id": "http://purl.org/xapi/cmi5/context/category/cmi5"}
         ]}
      },
      "extensions" {
