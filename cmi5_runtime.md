@@ -1,24 +1,7 @@
-CMI-5 Runtime Environment 
----
 
-**AICC DOCUMENT NUMBER:** cmi5-001  &nbsp;&nbsp; **Revision:** CURRENT WORKING DRAFT   
-**THIS DOCUMENT IS CONTROLLED BY:** AICC CMI Subcommittee
-
-
-#***WORKING DRAFT - NOT FOR IMPLEMENTATION***
-
-
----
-
->Caveats...
 >
->Copyright &copy; 2012-2015 AICC, All rights reserved
+>Copyright &copy; 2012-2015 ADL, All rights reserved
 >
->The information contained in this document has been assembled by the AICC as an
-informational resource. Neither the AICC nor any of its members assumes nor shall any of
-them have any responsibility for any use by anyone for any purpose of this document or of
-the data which it contains. All use of this document is subject to the terms of the
-license agreement contained within it.
 
 ----
 
