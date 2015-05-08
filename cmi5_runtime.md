@@ -81,10 +81,9 @@ license agreement contained within it.
 ## Revision History
 
 __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__  
-
-Converted existing working draft to markdown format from Microsoft Word.
-
-All previous work from 2012 discarded.
+* Converted existing working draft to markdown format from Microsoft Word. All previous work from 2012 discarded.
+* 
+__1.0 Intitial Version - For Developer release. Subject to change (May 8, 2015):__
 
 
 <a name="contributors"></a> 
