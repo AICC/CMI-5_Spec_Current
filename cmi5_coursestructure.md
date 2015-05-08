@@ -1,8 +1,8 @@
-CMI-5 Course Structure 
+cmi5 Course Structure 
 ------------------------------------------------------------------------------------
 
 
-**AICC DOCUMENT NUMBER:** CMI5-002  &nbsp;&nbsp; **Revision:** CURRENT WORKING DRAFT   
+**AICC DOCUMENT NUMBER:** cmi5-002  &nbsp;&nbsp; **Revision:** CURRENT WORKING DRAFT   
 **THIS DOCUMENT IS CONTROLLED BY:** AICC CMI Subcommittee
 
 
@@ -110,7 +110,7 @@ The scope of this specification is limited to the following:
 The following referenced documents are indispensable for the application of this specification. 
 * RFC 2396, "Uniform Resource Identifiers (URI): Generic Syntax," August 1998
 * Experience API, current specification, ADL, 2012-2013 - https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
-* CMI5-001  – CMI-5 Runtime Environment, Version x.x, AICC, TBD  
+* cmi5-001  – cmi5 Runtime Environment, Version x.x, AICC, TBD  
 
 
 <a name="definitions"/>  
@@ -135,11 +135,11 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Learner__: The end user viewing/using the learning content (Learning Activity).
 
-* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the CMI5 specification. The LMS MUST have an LRS as part of its implementation.
+* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS MUST have an LRS as part of its implementation.
 
 * __Learning Records Store (LRS)__: Defined in the xAPI specification. In this specification, the LMS MUST implement an LRS with the additional requirements specified in this document.
 
-* __MUST / SHOULD / MAY__: The three levels of obligation with regard to conformance to the CMI-5 specification. A system that fails to implement a MUST (or a MUST NOT) requirement is not in conformance. Failing to meet a SHOULD requirement is not a violation of conformity, but it goes against best practices. MAY indicates an option, which is to be decided by the developer, with no consequences for lack of conformity.
+* __MUST / SHOULD / MAY__: The three levels of obligation with regard to conformance to the cmi5 specification. A system that fails to implement a MUST (or a MUST NOT) requirement is not in conformance. Failing to meet a SHOULD requirement is not a violation of conformity, but it goes against best practices. MAY indicates an option, which is to be decided by the developer, with no consequences for lack of conformity.
 <BR />
 <BR />
 
@@ -188,7 +188,7 @@ The LMS MUST NOT implement any features or functionality (optional or mandatory)
 <a name="concept"/>
 # 5.0 Conceptual Model: Informative  
 
-Synopsis of the CMI-5 model:
+Synopsis of the cmi5 model:
 * An LMS imports a course structure.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or a related system.
@@ -501,8 +501,8 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The masteryScore is passed to the AU at runtime by the LMS (as defined in the CMI5 Runtime Specification).</li>
-        <li>If the AU has scoring, it will use the masteryScore to determine pass/fail (as defined in the CMI5 Runtime Specification)</li>
+        <li>The masteryScore is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
+        <li>If the AU has scoring, it will use the masteryScore to determine pass/fail (as defined in the cmi5 Runtime Specification)</li>
         <li>The masteryScore is a scaled, decimal value between 0 and 1.</li>
         <li>If the value of the masteryScore is an empty string (""), then a masteryScore is not defined for the AU.</li>
       </ul>
@@ -522,7 +522,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> If true, the content MUST NOT send any Passed or Failed statements after sending a Passed statement.</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The value of passIsFinal is passed to the AU at runtime by the LMS (as defined in the CMI5 Runtime Specification).</li>
+        <li>The value of passIsFinal is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
         <li>The AU will use this value to determine if it MUST NOT send Passed or Failed statements after sending a Passed statement.</li>
       </ul>
         <br />
@@ -573,7 +573,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which authentication method the AU MUST be used to access the LMS Learning Record Store.</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>Based on the value of authenticationMethod, the LMS will place an parameter in the AU launch interface to indicate to the AU which authentication method to use (in accordance with the CMI-5 Runtime Specification)</li>
+        <li>Based on the value of authenticationMethod, the LMS will place an parameter in the AU launch interface to indicate to the AU which authentication method to use (in accordance with the cmi5 Runtime Specification)</li>
         <li>authenticationMethod Value = "Basic" : If the LMS indicates to the AU launch interface to use basic HTTP authentication and passes an HTTP authentication token to the AU using the launch interface. This is currently the only option. Future versions of this specification may add other authentication options.</li>
       </ul>
       <p><strong>Value space:</strong></p>
@@ -674,7 +674,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       	<li>To accommodate "non-browser" applications, an application specific protocol may be used in the url:<br/>
       &lt;application&gt;://&lt;URL to content&gt;</li>
       	<li>Regardless of the value of &lt;application&gt;, the remaining portion of the URL MUST conform to HTTP/S conventions, such as named value pair parameters.</li>
-      	<li>If the url includes a query string, the values from that query string MUST be merged with the CMI-5 parameters at launch time (see Section 8.1.1 of the CMI-5 Runtime Environment).</li>
+      	<li>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1.1 of the cmi5 Runtime Environment).</li>
 
       
       <p><strong>Value space:</strong><br/>Values are determined by the course designer.</p>
@@ -928,7 +928,7 @@ c. To the extent that a Licensee reproduces or distributes copies of the Work, p
 
 d. Licensee hereunder expressly agrees to include the following notice on ALL copies of the Work, portions thereof or Derivative Works: "Copyright © The AICC. All Rights Reserved.  http://www.aicc.org” 
 
-e. Licensee agrees to include the following notice in all Derivative Works: “This product implements and complies with the Version CMI-5 [or other version as applicable] AICC Specifications as published by the AICC at http://www.AICC.org”. 
+e. Licensee agrees to include the following notice in all Derivative Works: “This product implements and complies with the Version cmi5 [or other version as applicable] AICC Specifications as published by the AICC at http://www.AICC.org”. 
 
 f. Licensee may not facilitate or assist any Learning Technology Standards Organization other than Licensor in co-opting, copying, distributing, publishing or using the Work without prior written approval of Licensor. Licensee may not create any Derivative Work for ownership by, presentation by, distributing by, publishing by or attribution to any Standards Organization or similar entity other than Licensor, unless specifically approved in writing by Licensor. 
 
