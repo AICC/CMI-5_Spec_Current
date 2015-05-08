@@ -294,6 +294,25 @@ The following meta data attribute and elements are at the course level and  desc
         </p>
     </td>
   </tr>
+  <tr>
+    <td colspan="2" valign="top"><h3>languages</h3></td>
+  </tr>
+  <tr>
+    <td width="168" valign="top"><p><strong>Required</strong>: No<br />
+        <strong>Data type</strong>: RFC 5646 language tags</p>
+    </td>
+    <td width="811" valign="top"><p><strong>Description:</strong><br />
+      Specifies which languages will be supported by the course. All of the languages list MUST be present in a langstring for each title or description element. The LMS will be expected to display the language specific titles and descriptions for course elements based on the learner’s language preference.</p>
+      <p><strong>Value space:</strong><br />
+         Values defined by course designer</p>
+      <p><strong>Sample value: </strong><br />
+    &lt;languages&gt;<br/>
+    &nbsp;&nbsp;en-US<br/>
+    &nbsp;&nbsp;es-MX<br/>
+    &lt;/languages&gt;<br/>
+        </p>
+    </td>
+  </tr>
 </table>
 
 
@@ -728,6 +747,7 @@ All course structures created for LMS import and created by the LMS for export M
           <xs:all>
             <xs:element name="title" type="textType"/>
             <xs:element name="description" type="textType"/>
+            <xs:element name="languages" minOccurs="0" type="languagesType"></xs:element>
           </xs:all>
           <xs:attribute name="id" type="xs:anyURI" use="required"/>
         </xs:complexType>
@@ -837,6 +857,9 @@ All course structures created for LMS import and created by the LMS for export M
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+  <xs:simpleType name="languagesType">
+    <xs:list itemType="xs:language"></xs:list>
+  </xs:simpleType>
 </xs:schema>
 ```
 
