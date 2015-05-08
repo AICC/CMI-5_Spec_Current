@@ -894,144 +894,132 @@ An example of the JSON document is shown below.
 The properties for the LMSLaunchData document are described below.
 
 <table>
-  <tr>
-    <th align="left">contextTemplate</th>
-  </tr>
-<tr>
-    <td><p><strong>Description: </strong>Context template for the AU being launched.<br />
-      <strong>LMS Required: </strong>Yes<br />
-      <strong>AU: Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS MUST include a contextTemplate and place the value for <strong><em>sessionId</em></strong> in the "http://www.aicc.org/cmi-5/extensions/session" element
-of the context object's extension collection.<br />
-      <strong>AU Usage: </strong>AU MUST get the contextTemplate value from the "LMS.LaunchData" state document. The AU MUST use the contextTemplate as a template for the context property in all xAPI statements it records to the LMS. While the AU may include additional values in the context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the sessionId specified by the LMS.<br />
-      <strong>Data type: </strong>JSON context object as defined in xAPI 1.0<br />
-      <strong>Value space:</strong> LMS implementation specific<br />
-      <strong>Sample value:</strong></p></td>
-  </tr>
-  <tr>
-    <th align="left">launchMode</th>
-  </tr> 
-<tr>
-    <td><p><strong>Description: </strong>The launch mode determined by the LMS. There are three possible values:<br />
+  <tr><th colspan=3 align ="left">contextTemplate</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>Context template for the AU being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>LMS MUST include a contextTemplate and place the value for <strong><em>sessionId</em></strong> in the "http://www.aicc.org/cmi-5/extensions/session" element of the context object's extension collection.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>AU MUST get the contextTemplate value from the "LMS.LaunchData" state document. The AU MUST use the contextTemplate as a template for the context property in all xAPI statements it records to the LMS. While the AU may include additional values in the context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the sessionId specified by the LMS.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>JSON context object as defined in xAPI 1.0.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>LMS implementation specific.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td></td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">launchMode</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>The launch mode determined by the LMS. There are three possible values:<br />
       <ul><li>Normal<br/>Indicates to the AU that completion-related data MUST be recorded in the LMS using xAPI statements.</li>
           <li>Browse<br/>Indicates to the AU that completion-related data MUST NOT be recorded in the LMS using xAPI statements. When Browse mode is used, the AU SHOULD provide a user experience that allows the user to "look around" without judgement.</li>
           <li>Review<br/>Indicates to the AU that completion-related data MUST NOT be recorded in the LMS using xAPI statements. When Review mode is used, the AU SHOULD provide a user experience that allows the user to "revisit/review" already completed material.</li>
-      </ul>
-      <strong>LMS Required:</strong> Yes<br />
-      <strong>AU Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>LMS MUST include a value for <strong><em>launchMode</em></strong>.<br />
-      <strong>AU Usage: </strong>The AU MUST conform to the following based on the value of <strong><em>launchMode</em></strong><br />
+      </ul></td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>LMS MUST include a value for <strong><em>launchMode</em></strong>.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU MUST conform to the following based on the value of <strong><em>launchMode</em></strong><br />
       <ul><li>Normal<br/>The AU MUST record Initialized and Terminated verb statements.  The AU MUST record other cmi5 verb statements per the requirements defined in section 9.3 – Verbs.</li>
       <li>Browse<br/>The The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other cmi5 verb statements.</li>
-      <li>Review<br/>The The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other cmi5 verb statements.</li></ul>
-      <strong>Data type: </strong>String<br />
-      <strong>Value space: </strong>"Normal", "Browse" or "Review"<br />
-      <strong>Sample value: </strong>"Normal"</p></td>
-  </tr>
-    <tr><th align="left">launchParameters</th>
-    </tr>
-    <tr>
-    <tr>
-    <td><p><strong>Description: </strong>The launch parameters defined in the cmi5 Course Structure.<br />
-      <strong>LMS Required:</strong> If the <strong><em>launchParameters</em></strong> were defined by the AU developer in the Course Structure, the LMS MUST include the  <strong><em>launchParameters</em></strong> in the State API document.<br />
-      <strong>AU Required:</strong> No<br />
-      <strong>LMS Usage:</strong> The LMS MUST include the <strong><em>launchParameters</em></strong> in the State API document when defined in the Course Structure.<br />
-      <strong>AU Usage:</strong> The AU SHOULD get the <strong><em>launchParameters</em></strong> value 
-      from the State API document if the launch parameters were defined in the Course Structure.<br />
-      <strong>Data type:</strong> Defined by the AU developer.<br />
-      <strong>Value space:</strong> Defined by the AU developer.<br />
-      <strong>Sample value: </strong> TBD.</p></td>
-  </tr>
-  <tr><th align="left">masteryScore</th>
-    </tr>
-    <tr>
-    <tr>
-    <td><p><strong>Description: </strong>The MasteryScore from the cmi5 Course Structure.<br />
-      <strong>LMS Required:</strong> Yes<br />
-      <strong>AU Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>The LMS MUST include the MasteryScore value based on the value defined in the course structure for the AU being launched.<br />
-      <strong>AU Usage: </strong>The AU MUST issue Passed or Failed statements based on the MasteryScore provided. (See Sections 9.3.6 and 9.3.7)<br />
-      <strong>Data type: </strong>decimal<br />
-      <strong>Value space: </strong>Decimal value between 0 and 1.<br />
-      <strong>Sample value: </strong>0.75</p></td>
-  </tr>   
-  </tr> 
-  <tr><th align="left">passIsFinal</th>
-    </tr>
-    <tr>
-    <tr>
-    <td><p><strong>Description: </strong>passIsFinal from the cmi5 Course Structure.<br />
-      <strong>LMS Required:</strong> Yes<br />
-      <strong>AU Required:</strong> Yes<br />
-      <strong>LMS Usage:  </strong>The LMS MUST include the passIsFinal value based on the value defined in the Course Structure for the AU being launched.<br />
-      <strong>AU Usage: </strong>If true, the AU MUST NOT issue a "Passed" or "Failed" statement after issuing a "Passed" statement. <br />
-      <strong>Data type: </strong>boolean<br />
-      <strong>Sample value: </strong>true</p></td>
-  </tr>   
-  </tr> 
-  <tr><th align="left">moveOn</th>
-    </tr>
-    <tr>
-    <tr>
-    <td><p><strong>Description: </strong>The moveOn value from the cmi5 Course Structure.<br />
-      <strong>LMS Required:</strong> Yes<br />
-      <strong>AU Required:</strong> No<br />
-      <strong>LMS Usage:  </strong>The LMS MUST include the moveOn value defined in the course structure for the AU.<br />
-      <strong>AU Usage: </strong>The AU MAY get the moveOn value from the "LMS.LaunchData" state document and may use the value to modify its behavior.<br />
-      <strong>Data type: </strong>string<br />
-      <strong>Value space: </strong>moveOn values as defined in the cmi5 Course Structure Specification (Section 7.1.4 – AU Metadata)<br />
-      <strong>Sample value: </strong>"Passed"</p></td>
-  </tr>   
-    <th align="left">returnURL</th>
-  </tr> 
-<tr>
-    <td><p><strong>Description: </strong>Used by the LMS when launching the AU if the LMS requires the AU (in a web-browser environment) to redirect the learner when he or she exits the AU.<br />
-      <strong>LMS Required:</strong> No<br />
-      <strong>AU Required:</strong> If the <strong><em>returnURL</em></strong> is provided.<br />
-      <strong>LMS Usage: </strong> The LMS may include the <strong><em>returnURL</em></strong> when the learner SHOULD be redirected to the <strong><em>returnURL</em></strong> on exiting the course.<br />
-      <strong>AU Usage: </strong>The AU MUST get the <strong><em>returnURL</em></strong> value 
-      from the LMSLaunchData state document. If the <strong><em>returnURL</em></strong> is provided, the AU MUST redirect the current browser window to the <strong><em>returnURL</em></strong> when the AU is terminated.<br />
-      <strong>Data type: </strong>URL<br />
-      <strong>Value space: </strong>Any URL<br />
-      <strong>Sample value: </strong>http://www.example.com/lms/mod/xapilaunch/view.php?id=12</p></td>
-  </tr>
-  <tr>
-    <th align="left">entitlementKey: courseStructure</th>
-  </tr> 
-      <td><p><strong>Description: </strong> Entitlement data or key from the Course Structure. The       <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS system is entitled to use the AU.<br />
-      <strong>LMS Required: </strong>Yes<br />
-      <strong>AU Required: </strong>No<br />
-      <strong>LMS Usage:  </strong>The LMS MUST obtain this from the Course Structure.<br />
-      <strong>AU Usage: </strong> The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.<br />
-      <strong>Data type: </strong>string<br />
-      <strong>Value space: </strong>The value is defined by the AU provider<br />
-      <strong>Sample value: </strong>"xyz-123-9999"</p></td>
-  </tr>
-  <tr>
-    <th align="left">entitlementKey: alternate</th>
-  </tr> 
-      <td><p><strong>Description: </strong> Entitlement data or key from some other source as agreed upon between the LMS and the AU.  The <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS system is entitled to use the AU.<br />
-      <strong>LMS Required: </strong>No<br />
-      <strong>AU Required: </strong>No<br />
-      <strong>LMS Usage:  </strong>The LMS MUST obtain the alternate entitlement key from a source as agreed upon with the AU.<br />
-      <strong>AU Usage: </strong> The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.<br />
-      <strong>Data type: </strong>string<br />
-      <strong>Value space: </strong>The value is defined by the AU provider.<br />
-      <strong>Sample value: </strong>"xyz-123-9999"</p></td>
-  </tr>     
-   <tr>
-    <th align="left">ContentSpecific</th>
-  </tr> 
-      <td><p><strong>Description: </strong>Launch parameters that are content specific.  The LMS MUST obtain this value from the Course Structure.<br />
-      <strong>LMS Required: </strong>Yes<br />
-      <strong>AU Required: </strong>No<br />
-      <strong>LMS Usage:  </strong>Static launch parameters defined by the course designer MUST be obtained by the LMS from the Course Structure.<br />
-      <strong>AU Usage: </strong>Determined by the AU.<br />
-      <strong>Data type: </strong>string<br />
-      <strong>Value space: </strong>Values are defined by the content provider.<br />
-      <strong>Sample value: </strong>"abc-327-999"</p></td>
-  </tr>      
+      <li>Review<br/>The The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other cmi5 verb statements.</li></ul></td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>String</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>"Normal", "Browse", or "Review"</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>"Normal"</td></tr>
 </table>
+
+<table>
+  <tr><th colspan=3 align ="left">launchParameters</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>The launch parameters defined in the cmi5 Course Structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>If the <strong><em>launchParameters</em></strong> were defined by the AU developer in the Course Structure, the LMS MUST include the  <strong><em>launchParameters</em></strong> in the State API document.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>No</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST include the <strong><em>launchParameters</em></strong> in the State API document when defined in the Course Structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU SHOULD get the <strong><em>launchParameters</em></strong> value from the State API document if the launch parameters were defined in the Course Structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>Defined by the course designer.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>Defined by the course designer.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>TBD.</td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">masteryScore</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>The MasteryScore from the cmi5 Course Structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST include the MasteryScore value based on the value defined in the course structure for the AU being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU MUST issue Passed or Failed statements based on the MasteryScore provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>decimal</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>0.75</td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">passIsFinal</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>passIsFinal from the cmi5 Course Structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST include the passIsFinal value based on the value defined in the Course Structure for the AU being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>If true, the AU MUST NOT issue a "Passed" or "Failed" statement after issuing a "Passed" statement.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>boolean</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td></td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>true</td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">moveOn</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>The moveOn value from the cmi5 Course Structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>No</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST include the moveOn value defined in the course structure for the AU.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU MAY get the moveOn value from the "LMS.LaunchData" state document and may use the value to modify its behavior.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>string</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>moveOn values as defined in the cmi5 Course Structure Specification (Section 7.1.4 – AU Metadata)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>"Passed"</td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">returnURL</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>Used by the LMS when launching the AU if the LMS requires the AU (in a web-browser environment) to redirect the learner when he or she exits the AU.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>No</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>If the <strong><em>returnURL</em></strong> is provided.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS may include the <strong><em>returnURL</em></strong> when the learner SHOULD be redirected to the <strong><em>returnURL</em></strong> on exiting the course.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>returnURL</em></strong> value from the LMSLaunchData state document. If the <strong><em>returnURL</em></strong> is provided, the AU MUST redirect the current browser window to the <strong><em>returnURL</em></strong> when the AU is terminated.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>URL</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>Any URL.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>http://www.example.com/lms/mod/xapilaunch/view.php?id=12</td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">entitlementKey: courseStructure</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>Entitlement data or key from the Course Structure. The       <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS system is entitled to use the AU.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>No</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain this from the Course Structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>string</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>The value is defined by the AU provider.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>"xyz-123-9999"</td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">entitlementKey: alternate</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>Entitlement data or key from some other source as agreed upon between the LMS and the AU. The <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS system is entitled to use the AU.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>No</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>No</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain the alternate entitlement key from a source as agreed upon with the AU.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>string</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>The value is defined by the AU provider.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>"xyz-123-9999"</td></tr>
+</table>
+
+<table>
+  <tr><th colspan=3 align ="left">ContentSpecific</th></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>Launch parameters that are content specific.  The LMS MUST obtain this value from the Course Structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>No</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>Static launch parameters defined by the course designer MUST be obtained by the LMS from the Course Structure.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>Determined by the AU.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>string</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>Values are defined by the AU provider.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>"abc-327-999"</td></tr>
+</table>
+
 
 __State API PUT Properties__:
 
