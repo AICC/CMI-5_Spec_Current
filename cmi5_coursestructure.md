@@ -272,7 +272,7 @@ The following metadata attributes and elements are at the course level and  desc
       A descriptive title that identifies the course.<br />
       </p>
       <p><strong>Value space:</strong><br />
-        Values are defined by the course designer<br />
+        Values are defined by the course designer.<br />
       </p>
       <p><strong>Sample value</strong>: <br />
 
@@ -295,7 +295,7 @@ The following metadata attributes and elements are at the course level and  desc
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A detailed  description of the course.</p>
       <p><strong>Value space:</strong><br />
-        Values are defined by the course designer</p>
+        Values are defined by the course designer.</p>
       <p><strong>Sample value: </strong><br />
     &lt;description&gt;<br/>
     &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is a course description&lt;/langstring&gt;<br/>
@@ -402,7 +402,7 @@ The data in this section are used by the Objectives. Objectives can be associate
     <td width="792" valign="top"><p><strong>Description:</strong><br />
       A unique IRI for the learning objective.<br />
       </p>
-      <p><strong>Value space:</strong><br/>Values are defined by the course developer.</p>
+      <p><strong>Value space:</strong><br/>Values are defined by the course designer.</p>
     <p><strong>Sample value:</strong><br />
     &lt;objective id="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/objective&gt;</p>
     </td>
@@ -693,7 +693,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
         <strong>Data type: </strong>string </p>
     </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      Static launch parameters defined by the AU designer.  The LMS is required to store this data and provide it to the AU if requested by the AU during runtime.<br />
+      Static launch parameters defined by the course designer.  The LMS is required to store this data and provide it to the AU if requested by the AU during runtime.<br />
       </p>
       <p><strong>Value space:</strong><br />
         Values are defined by the course designer.</p>
