@@ -217,11 +217,11 @@ Responsibilities of the LMS:
 LMS systems MUST meet the following requirements to conform to this specification:  
 
 * The LMS MUST implement a means to import course structures as defined in Section 6.1.
-* The LMS MUST implement a means to export course structures as defined in Section 6.1.
+* The LMS SHOULD implement a means to export course structures as defined in Section 6.1.
 
 <a name="course_structures"/>
 ## 6.1 Course Structure Requirements
-* The LMS MUST implement a means to create and maintain course structures.<br/>
+* The LMS SHOULD implement a means to create and maintain course structures.<br/>
 * The LMS MUST implement the import of the course data structure defined in Section 7. <br/>
 * The LMS MUST implement the export of the course data structure defined in Section 7. <br/>
 * The LMS SHOULD provide a user interface to the LMS administrative users to create and edit course structures internally.<br/>
