@@ -825,21 +825,17 @@ All course structures created for LMS import and created by the LMS for export M
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="textType">
-    <xs:complexContent>
-      <xs:extension base="xs:string">
-        <xs:sequence>
-          <xs:element name="langstring" maxOccurs="unbounded" minOccurs="0">
-            <xs:complexType>
-              <xs:complexContent>
-                <xs:extension base="xs:string">
-                  <xs:attribute name="lang" type="xs:language"/>
-                </xs:extension>
-              </xs:complexContent>
-            </xs:complexType>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
+    <xs:sequence>
+      <xs:element name="langstring" maxOccurs="unbounded" minOccurs="1">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="lang" type="xs:language"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>
 ```
