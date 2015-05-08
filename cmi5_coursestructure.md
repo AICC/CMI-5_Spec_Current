@@ -692,7 +692,7 @@ AU’s may also contain objectives.
     <td colspan="2" valign="top"><h3>launchParameters</h3></td>
   </tr>
   <tr>
-    <td width="160" valign="top"><p><strong>Required:</strong> Yes<br />
+    <td width="160" valign="top"><p><strong>Required:</strong> No<br />
         <strong>Data type: </strong>string </p>
     </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
@@ -708,7 +708,7 @@ AU’s may also contain objectives.
     <td colspan="2" valign="top"><h3>entitlementKey</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><strong>Required:</strong> Yes<br />
+    <td valign="top"><p><strong>Required:</strong> No<br />
         <strong>Data type:</strong> string </p></td>
     <td valign="top"><p><strong>Description:</strong><br />
         Data used by the AU to determine if the launching LMS system is entitled to use the AU. The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.<br />
@@ -775,8 +775,8 @@ All course structures created for LMS import and created by the LMS for export M
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="launchParameters"/>
-      <xs:element name="entitlementKey"/>
+      <xs:element name="launchParameters" minOccurs="0"/>
+      <xs:element name="entitlementKey" minOccurs="0"/>
     </xs:all>
     <xs:attribute name="id" type="xs:anyURI" use="required"/>
     <xs:attribute name="moveOn" default="NotApplicable">
