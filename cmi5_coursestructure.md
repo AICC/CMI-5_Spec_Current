@@ -101,7 +101,7 @@ This specification describes the course structure interchange format for the Lea
 
 The scope of this specification is limited to the following:
 * LMS Course Structure Import/Export
-* LMS Course Definition as it pertains to runtime data used by Learning Activities.  
+* LMS Course Definition as it pertains to runtime data used by AUs.  
 
 
 <a name="references"/> 
@@ -133,7 +133,7 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Internationalized Resource Locator (IRL)__: According to the xAPI specification, an IRL is an IRI that, when translated into a URI (according to the IRI to URI rules), is a URL. Some communities of practice simply use "URL," even if they use IRIs, which is not as technically correct within the xAPI.
 
-* __Learner__: The end user viewing/using the learning content (Learning Activity).
+* __Learner__: The end user viewing/using the learning content (AU).
 
 * __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS MUST have an LRS as part of its implementation.
 
@@ -203,13 +203,13 @@ Responsibilities of the Assignable Unit:
 * Parse the parameters from the launching environment to determine the LMS location, and initiate communication with the LMS.
 * Acting as a "client", send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data according to the defined data types and vocabularies that are defined in this specification.
-* Send an “exit” message prior to terminating the learning activity’s execution.
+* Send an “exit” message prior to terminating the AU’s execution.
 
 Responsibilities of the LMS:
 * Create and maintain course structures.
 * Acting as a "server", receive and reply to messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data according to the defined data types and vocabularies that are defined in this specification.
-* Launch the specified learning activity contained in the courses within the defined environment(s).
+* Launch the specified AU contained in the courses within the defined environment(s).
 
 <a name="lms_requirements"/>
 # 6.0 LMS Requirements
