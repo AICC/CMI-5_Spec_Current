@@ -15,13 +15,13 @@ CMI-5 Course Structure
   * [1.1 Scope](#scope)
   * [2.0 References](#references)
 * [__3.0 Definitions__](#definitions)
-  * [3.1 Abbreviations and acronyms](#acronyms)
+  * [3.1 Abbreviations and Acronyms](#acronyms)
 * [__4.0 Conformance__](#conformance)
   * [4.1 Assignable Unit (AU)](#au_conformance)
   * [4.2 Learning Management Systems (LMS)](#lms_conformance)
 * [__5.0 Conceptual Model: Informative__](#concept)
 * [__6.0 LMS Requirements__](#lms_requirements)
-  * [6.1 Course structure requirements](#course_structures)
+  * [6.1 Course Structure Requirements](#course_structures)
 * [__7.0 Course Structure Data Requirements__](#course_requirements)
   * [7.1 Course Structure Data Model](#course_structure_data_model)
     * [7.1.1 Course Level Meta Data](#course_level_meta_data)
@@ -73,7 +73,7 @@ All previous work from 2012 discared
 | Thomas Person        | (Formerly of Adobe)                    |
 | Art Werkenthin       | RISC,Inc                               |
 | Severin Neumann      | die eLearning AG                       |
-
+| David Pesce          | Exputo Inc.                            |
 -------
 
 <a name="overview"/> 
@@ -85,9 +85,9 @@ This specification describes the course structure interchange format for Learnin
 <a name="scope"/> 
 ## 1.1 Scope
 
-The scope of this specification is limited to following:
+The scope of this specification is limited to the following:
 * LMS Course Structure Import/Export
-* LMS course definition as it pertains to runtime data used by Learning Activities.  
+* LMS Course Definition as it pertains to runtime data used by AUs.  
 
 
 <a name="references"/> 
@@ -113,23 +113,25 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Administrator__: The administrative user that manages the LMS and related systems. Such a user performs tasks such as learner enrollment, course structure definition, and report management.
 
+ __Assignable Unit (AU)__:  A learning content presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS.
+
 * __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a course.  
 
-* __Experience API (xAPI)__: xAPI is a runtime data communication specification for learning content (AU) to send and receive data to an LRS.  The xAPI specification is referenced by this document is used to define the data transport and the data model. 
+* __Experience API (xAPI)__: A runtime data communication specification for learning content (AU) to send and receive data to a Learning Record Store (LRS).  The xAPI specification is referenced by this document is used to define the data transport and the data model. 
 
-* __Internationalized Resource Identifier (IRI)__: A unique identifier per RFC 3987.  The IRI may be an IRL. All IRIs SHOULD be a full absolute IRIs including a scheme. Relative IRIs SHOULD NOT be used. IRLs SHOULD be defined within a domain controlled by the person creating the IRL.
+* __Internationalized Resource Identifier (IRI)__: A unique identifier according to RFC 3987.  The IRI may be an IRL. All IRIs SHOULD be a full, absolute IRI that includes a scheme. Relative IRIs SHOULD NOT be used. IRLs SHOULD be defined within a domain controlled by the person creating the IRL.
 
-* __Internationalized Resource Locator (IRL)__: Per the xAPI specification, an IRL is an IRI that when translated into a URI (per the IRI to URI rules), is a URL. Some communities of practice simply use URL even if they use IRIs, which isn't as technically correct within xAPI.
+* __Internationalized Resource Locator (IRL)__: According to the xAPI specification, an IRL is an IRI that, when translated into a URI (according to the IRI to URI rules), is a URL. Some communities of practice simply use "URL" even if they use IRIs, which is not as technically correct within the xAPI.
 
-* __Learner__: The end user viewing/using the learning content (Learning Activity).
+* __Learner__: The end user viewing/using the learning content (in the form of AUs).
 
 * __Assignable Unit (AU)__:  A learning content presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS system.
 
-* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the CMI5 specification.  The LMS MUST have an LRS as part of its implementation.
+* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS MUST have an LRS as part of its implementation.
 
-* __Learning Records Store (LRS)__: As defined in the xAPI specification.  In this specification, the LMS MUST implement an LRS with additional requirements as specified in this document.
+* __Learning Records Store (LRS)__: Defined in the xAPI specification. In this specification, the LMS MUST implement an LRS with the additional requirements specified in this document.
 
 * __Must / SHOULD / May__: Three levels of obligation with regards to conformance to the CMI-5 specification. A system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. Failing to meet a SHOULD requirement is not a violation of conformity, but goes against best practices. MAY indicates an option, to be decided by the developer with no consequences for conformity.
 <BR />
@@ -141,7 +143,7 @@ For purposes of this specification, the following terms and definitions apply:
 
 __ADL__: Advanced Distributed Learning  
 __AICC__: Aviation Industry Computer-Based Training Committee  
-__API__: Application Programming Interface 
+__API__: Application Programming Interface
 __LMS__: Learning Management System  
 __LRS__: Learning Record Store  
 __PII__: Personally Identifiable Information  
@@ -157,14 +159,16 @@ __XAPI__: Experience API
 Conformance to this specification is defined in section. 
 
 In this specification, “MUST” is to be interpreted as a requirement on an implementation; “MUST NOT” is to be interpreted as a prohibition.  
-“SHOULD” is to be interpreted as a recommendation for implementation; “SHOULD NOT” is to be interpreted as the converse of “SHOULD”.  
-“May” is to be interpreted as a course of action that is permissible within the limits of the specification; “need not” indicates a course of action that is not required.
+“SHOULD” is to be interpreted as a recommendation for implementation.
+“SHOULD NOT” is to be interpreted as the converse of “SHOULD”.  
+“MAY” is to be interpreted as a course of action that is permissible within the limits of the specification.
+“NEED NOT” indicates a course of action that is not required.
 Uses of xAPI specification outside the scope this specification do not affect conformance with this specification.
 
 <a name="au_conformance"/>
 ## 4.1 Courses
 
-A course MUST be bundled with a course structure data that conform to all requirements listed in Section 7  
+A course MUST be bundled with course structure data that conform to all requirements listed in Section 7.  
 Course structure data MUST NOT implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
 
@@ -177,45 +181,45 @@ The LMS MUST NOT implement any features or functionality (optional or mandatory)
 <a name="concept"/>
 # 5.0 Conceptual Model: Informative  
 
-Synopsis of the CMI-5 model:
+Synopsis of the cmi5 model:
 * An LMS imports a course structure.
 * An LMS administrative user assigns a course to a learner.
-* A learner authenticates with an LMS or related system.
-* A learner launches an Assignable Unit (learning content) from the LMS or associated launching system, using an interface.
-* The learning activity (AU) sends a message to the LMS requesting launch parameters and previous state information.
-* Learner views the learning activity content and performs the learning. During this time the learning activity may request data from and store data to the LMS.
-* The learner exits the learning activity.
-* The learning activity reports final tracking data to the LMS and issues an exit message.
-* Administrative users create and view reports of tracking data recorded by learning activities for individual learners.
+* A learner authenticates with an LMS or a related system.
+* A learner launches an Assignable Unit (AU) from the LMS or an associated launching system, using an interface.
+* The AU sends a message to the LMS requesting launch parameters and previous state information.
+* The learner views the AU content and performs the learning. During this time, the AU MAY request data from, and store data to, the LMS.
+* The learner exits the AU.
+* The AU reports the final tracking data to the LMS and issues an exit message.
+* Administrative users create and view reports of tracking data recorded by the AUs for individual learners.
 
 Responsibilities of the Assignable Unit:
 * Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
-* Acting as “client”, send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
-* Format all data per defined data types and vocabularies defined in this specification.
+* Acting as a "client", send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
+* Format all data according to the defined data types and vocabularies that are defined in this specification.
 * Send an “exit” message prior to terminating the learning activity’s execution.
 
 Responsibilities of the LMS:
 * Create and maintain course structures.
 * Acting as a “server”, receive and reply to messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
-* Launch the specified learning activity contained in courses, in the defined environment(s).
+* Launch the specified AU contained in the courses within the defined environment(s).
 
 <a name="lms_requirements"/>
 # 6.0 LMS Requirements
 
 LMS systems MUST meet the following requirements to conform to this specification:  
 
-1. The LMS MUST implement a means to import course structures as defined in section 6.1
-2. The LMS MUST implement a means to export course structures as defined in section 6.1
+1. The LMS MUST implement a means to import course structures as defined in section 6.1.
+2. The LMS SHOULD implement a means to export course structures as defined in section 6.1.
 
 <a name="course_structures"/>
 ## 6.1 Course structure requirements
-The LMS MUST implement a means to create and maintain course structures.<br/>
-1.	The LMS MUST implement the import of the course data structure defined in section 7. <br/>
-2.	The LMS MUST implement the export of the course data structure defined in section 7. <br/>
-3.	The LMS SHOULD provide a user interface to LMS administrative users to create and edit course structures internally.<br/>
-4.	LMS MUST support course structures containing more than 1000 AU’s.
-5.	LMS MUST support course structures conforming to the XSD schema defined in section 7.2.
+The LMS SHOULD implement a means to create and maintain course structures.<br/>
+1.	The LMS MUST implement the import of the course data structure defined in Section 7. <br/>
+2.	The LMS SHOULD implement the export of the course data structure defined in Section 7. <br/>
+3.	The LMS SHOULD provide a user interface to the LMS administrative users to create and edit course structures internally.<br/>
+4.	The LMS MUST support course structures containing more than 1000 AU’s.
+5.	The LMS MUST support course structures conforming to the XSD schema defined in Section 7.2.
 
 <BR>
 <BR>
@@ -230,7 +234,7 @@ The LMS MUST implement a means to create and maintain course structures.<br/>
 <a name="course_level_meta_data"/>
 ### 7.1.1 Course Level Meta-data  
  
-The following meta data attribute and elements are at the course level and  describe the course instance as a whole
+The following metadata attributes and elements are at the course level and  describe the course instance as a whole,
 
 <table border="1" cellspacing="0" cellpadding="0">
   <tr>
@@ -241,9 +245,9 @@ The following meta data attribute and elements are at the course level and  desc
         <strong>Data type</strong>: IRI</p>
     </td>
     <td width="811" valign="top"><p><strong>Description</strong>:<br />
-      A globally unique IRI (Internationalized Resource Identifier per RFC 3987) for the course.  Used to explicitly identify the course instance.</p>
+      A globally unique IRI (see RFC 3987) for the course.  Used to explicitly identify the course instance.</p>
       <p><strong>Value space: </strong><br />
-        Values defined by course designer<br />
+        Values are defined by the course designer.<br />
         <strong>Sample value: </strong><br />
          &lt;course id="http&#58;//www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br/></p>
     </td>
@@ -261,7 +265,7 @@ The following meta data attribute and elements are at the course level and  desc
       A descriptive title that identifies the course.<br />
       </p>
       <p><strong>Value space:</strong><br />
-        Values defined by course designer<br />
+        Values are defined by the course designer.<br />
       </p>
       <p><strong>Sample value</strong>: <br />
       
@@ -284,7 +288,7 @@ The following meta data attribute and elements are at the course level and  desc
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A detailed  description of the course.</p>
       <p><strong>Value space:</strong><br />
-        Values defined by course designer</p>
+        Values are defined by the course designer.</p>
       <p><strong>Sample value: </strong><br />
     &lt;description&gt;<br/>
     &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is a course description&lt;/langstring&gt;<br/>
@@ -320,7 +324,7 @@ The following meta data attribute and elements are at the course level and  desc
 <a name="block_meta_data"/>
 ### 7.1.2 Block Meta Data
 
-The data in this section is used for the block structures with group AU’s.  A Block consists of one or more AU’s. Blocks can also contain references to objectives and other Blocks.
+The data in this section are used for the block structures with group AUs.  A Block consists of one or more AUs. Blocks can also contain references to objectives and other Blocks.
 
 <table border="1" cellspacing="0" cellpadding="0">
    <tr>
@@ -329,7 +333,7 @@ The data in this section is used for the block structures with group AU’s.  A 
   <tr>
     <td width="160" valign="top"><p><strong>Required: </strong> Yes<br />
         <strong>Data type: </strong> IRI</p></td>
-    <td width="1471" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block in xAPI messages made by LMS.</p>
+    <td width="1471" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block in xAPI messages made by the LMS.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br/>
       &lt;block id="http&#58;//www.yoursite.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
@@ -344,9 +348,9 @@ The data in this section is used for the block structures with group AU’s.  A 
         <strong>Data type:</strong> langstring</p>
     </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br />
-      A descriptive title for the Block of AU’s<br />
+      A descriptive title for the Block of AUs<br />
       <strong>Value space:</strong><br />
-      Values defined by course designer<br />
+      Values are defined by the course designer.<br />
       <strong>Sample value:</strong> <br />
     &lt;title&gt;<br/>
     &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br/>
@@ -365,7 +369,7 @@ The data in this section is used for the block structures with group AU’s.  A 
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A detailed verbal description of what the Block contains.<br />
       <strong>Value space</strong>:<br />
-      Values defined by course designer<br />
+      Values are defined by the course designer.<br />
       <strong>Sample value: </strong><br />
 &lt;description&gt;<br />
 &nbsp;&nbsp;    &lt;langstring lang="en-US"&lt;This is the block description&lt;/langstring&gt;<br/>
@@ -384,7 +388,7 @@ The data in this section is used for the block structures with group AU’s.  A 
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A listing of objectives referenced by this block.<br />
       <strong>Value space</strong>:<br />
-      Values defined by course designer<br />
+      Values are defined by the course designer.<br />
       <strong>Sample value: </strong><br />
     &lt;objectives&gt;<br/>
     &nbsp;&nbsp; &lt;objective idref="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br/>
@@ -397,7 +401,7 @@ The data in this section is used for the block structures with group AU’s.  A 
 <a name="objectives_meta_data"/>  
 ### 7.1.3 Objectives Meta Data   
 
-The data in this section is used by Objectives. Objectives can be associated with a Block or with individual AU’s. 
+The data in this section are used by the Objectives. Objectives can be associated with a Block or with individual AUs. 
 
 <table border="1" cellspacing="0" cellpadding="0">
   <tr>
@@ -408,9 +412,9 @@ The data in this section is used by Objectives. Objectives can be associated wit
         <strong>Data type:</strong> IRI</p>
     </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br />
-      A unique IRI for the learning objective<br />
+      A unique IRI for the learning objective.<br />
       </p>
-      <p><strong>Value space:</strong><br/>Values defined by the course developer</p>
+      <p><strong>Value space:</strong><br/>Values are defined by the course designer.</p>
     <p><strong>Sample value:</strong><br />
     &lt;objective id="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/objective&gt;</p>
     </td>
@@ -425,7 +429,7 @@ The data in this section is used by Objectives. Objectives can be associated wit
     <td width="792" valign="top"><p><strong>Description</strong>:<br />
       A descriptive title for the learning objective</p>
       <p><strong>Value space:</strong><br />
-        Values defined by course designer<br />
+        Values are defined by the course designer.<br />
       </p>
       <p><strong>Sample value: </strong><br/>
     &lt;title&gt;<br/>
@@ -446,7 +450,7 @@ The data in this section is used by Objectives. Objectives can be associated wit
       A detailed verbal description of the learning objective.<br />
       </p>
       <p><strong>Value space:</strong><br />
-        Values defined by course designer<br />
+        Values are defined by the course designer.<br />
         </p>
       <p><strong>Sample value: </strong><br/>
     &lt;description&gt;<br/>
@@ -462,8 +466,8 @@ The data in this section is used by Objectives. Objectives can be associated wit
 <a name="au_meta_data"/>  
 ### 7.1.4 AU Meta Data  
 
-The data in this section is used by the LMS to locate the AU and provide launch data. 
-AU’s may also contain objectives.
+The data in this section are used by the LMS to locate the AU and provide launch data. 
+AUs may also contain objectives.
 
 
 <table border="1" cellspacing="0" cellpadding="0">
@@ -475,7 +479,7 @@ AU’s may also contain objectives.
         <strong>Data type: </strong> IRI</p>
     </td>
     <td width="1471" valign="top"><p><strong>Description: </strong>A globally unique IRI that the AU uses to identify itself to the LMS in xAPI messages to the LMS.</p>
-      <p><strong>Value space: </strong>Values defined by course designer</p>
+      <p><strong>Value space: </strong>Values are defined by the course designer.</p>
       <p><strong>Sample value:</strong><br/>
       &lt;au id="http&#58;//www.yoursite.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
       </p>
@@ -492,7 +496,7 @@ AU’s may also contain objectives.
       <p><strong>Usage: </strong></p>
       <ul>
         <li>A value of "OwnWindow" will require the LMS to launch the AU either in a new browser window, or the LMS may redirect the current window to the AU.</li>
-        <li>A value of "AnyWindow" indicates that the AU does not care about the window context.  All browser window options are exceptable, such as in a Framset, in a New Window, a browser redirect, etc.</li>
+        <li>A value of "AnyWindow" indicates that the AU does not care about the window context.  All browser window options are acceptable, such as in a Frameset, in a New Window, a browser redirect, etc.</li>
       </ul>
       <p><strong>Value space: </strong>"OwnWindow", "AnyWindow"<br />
         <br />
@@ -510,12 +514,12 @@ AU’s may also contain objectives.
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The MasteryScore is passed to the AU at runtime by the LMS (as defined in the CMI5 Runtime Specification)</li>
-        <li>If the AU has scoring, it will use the MasteryScore to detemine pass/fail (as defined in the CMI5 Runtime Specification)</li>
-        <li>The mastery score is a scaled, decimal value between 0 and 1.</li>
-        <li>If value of MasteryScore is an empty string (""), then a MasteryScore is not defined for the AU</li>
+        <li>The masteryScore is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
+        <li>If the AU has scoring, it will use the Masteryscore to determine pass/fail (as defined in the cmi5 Runtime Specification)</li>
+        <li>The masteryScore is a scaled, decimal value between 0 and 1.</li>
+        <li>If the value of the masteryScore is an empty string (""), then a masteryScore is not defined for the AU.</li>
       </ul>
-      <p><strong>Value space: </strong>Decimal number or empty string<br />
+      <p><strong>Value space: </strong>Decimal number or empty string.<br />
         <br />
       <strong>Sample value: </strong><br/>
       &lt;au id="&hellip;" masteryScore="0.85"&gt; &hellip; &lt;/au&gt;
@@ -527,12 +531,12 @@ AU’s may also contain objectives.
   </tr>
   <tr>
     <td valign="top"><p><strong>Required:</strong> No<br />
-        <strong>Data type:</strong> boolean<br /><strong>Default Value:</strong> true </p></td>
-    <td valign="top"><p><strong>Description:</strong> If true, the content MUST NOT send any Passed or Failed statements after sending a Passed statement.</p>
+        <strong>Data type:</strong> boolean<br /><strong>Default value:</strong> true </p></td>
+    <td valign="top"><p><strong>Description:</strong> If true, the content MUST NOT send any "Passed" or "Failed" statements after sending a "Passed" statement.</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The value of passIsFinal is passed to the AU at runtime by the LMS (as defined in the CMI5 Runtime Specification)</li>
-        <li>The AU will use this value to determine if it MUST NOT send Passed or Failed statements after sending a Passed statement</li>
+        <li>The value of passIsFinal is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
+        <li>The AU will use this value to determine if it MUST NOT send "Passed" or "Failed" statements after sending a "Passed" statement.</li>
       </ul>
         <br />
       <strong>Sample value: </strong><br/>
@@ -547,7 +551,7 @@ AU’s may also contain objectives.
     <td valign="top"><p><strong>Required:</strong> No<br />
         <strong>Data type:</strong> string <br/>
         <strong>Default Value:</strong> "NotApplicable" </p></td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if a AU has been sufficiently completed for the purposes determining overall course completion or determining if prequisites were met for other activites.. </p>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if an AU has been sufficiently completed for the purposes of determining overall course completion or determining if prerequisites were met for other activities.. </p>
       <p><strong>moveOn Values are as follows:</strong></p>
       <ul>
         <li>moveOn Value = "Passed" : If the LMS receives a statement with the verb "Passed", then the LMS will consider the AU satisfied.</li>
@@ -558,7 +562,7 @@ AU’s may also contain objectives.
         <li>moveOn Value = "NotApplicable": The LMS will consider the AU satisfied.</li>
       </ul>
       <p><strong>Usage:</strong></p>
-      <p>If all member AU's in a block are satisfied, then the block is considered satisfied for prerequisites and sequencing.<br/>If all member AU's and Blocks are satisfied, then the course is considered satisfied for prerequisites or credit in relation to other courses or curricula.</p>
+      <p>If all member AUs in a block are satisfied, then the block is considered satisfied for prerequisites and sequencing.<br/>If all member AUs and Blocks are satisfied, then the course is considered satisfied for prerequisites or credit in relation to other courses or curricula.</p>
       <p><strong>Value space:</strong></p>
       <blockquote>
         <p>"Passed"<br />
@@ -579,11 +583,11 @@ AU’s may also contain objectives.
     <td valign="top"><p><strong>Required:</strong> Yes<br />
         <strong>Data type:</strong> string </p>
     </td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which authentication method the AU MUST used to access the LMS's Learning Record Store.</p>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which authentication method the AU MUST be used to access the LMS's Learning Record Store.</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>Based on the value of authenticationMethod, the LMS will place an  parameter in the AU launch interface to indicate to the AU which authentication method to use (as per the CMI-5 Runtime specification)</li>
-        <li>authenticationMethod Value = "Basic" : If the LMS will indicate to the AU launch interface to use basic HTTP authentication and will pass and HTTP authentication token to the AU using the launch interface. This is currently the only option, future versions of this specification may add other authentication options.</li>
+        <li>Based on the value of authenticationMethod, the LMS will place an  parameter in the AU launch interface to indicate to the AU which authentication method to use (in accordance with the cmi5 Runtime Specification)</li>
+        <li>authenticationMethod Value = "Basic" : If the LMS indicates to the AU launch interface to use basic HTTP authentication and passes an HTTP authentication token to the AU using the launch interface. This is currently the only option.  Future versions of this specification may add other authentication options.</li>
       </ul>
       <p><strong>Value space:</strong></p>
       <blockquote>
@@ -600,7 +604,7 @@ AU’s may also contain objectives.
   </tr>
   <tr>
     <td valign="top"><p><strong>Required:</strong> No<br />
-        <strong>Data type:</strong> IRI<br /><strong>Default Value:</strong> <em>None</em> </p></td>
+        <strong>Data type:</strong> IRI<br /><strong>Default value:</strong> <em>None</em> </p></td>
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine the activity type of the AU before a first start to indicate this type to the user.</p>
       <strong>Sample value: </strong><br/>
       &lt;au id="&hellip;" activityType="http://adlnet.gov/expapi/activities/media"&gt; &hellip; &lt;/au&gt;
@@ -614,9 +618,9 @@ AU’s may also contain objectives.
   <tr>
     <td valign="top"><p><strong>Required: </strong> Yes<br />
         <strong>Data type:</strong> langstring</p></td>
-    <td valign="top"><p><strong>Description:</strong> A descriptive title for the AU<br />
+    <td valign="top"><p><strong>Description:</strong> A descriptive title for the AU.<br />
         </p>
-      <p><strong>Value space: </strong> Values defined by course designer<br />
+      <p><strong>Value space: </strong> Values are defined by the course designer.<br />
       </p>
       <p><strong>Sample value: </strong><br/>
 
@@ -641,7 +645,7 @@ AU’s may also contain objectives.
       A detailed description of the subject matter and learning activities covered by the AU.</p>
       <p><br />
         <strong>Value space:</strong><br />
-        Values defined by AU designer<br />
+        Values are defined by the course designer.<br />
         </p>
       <p><strong>Sample value:</strong><br/>
     &lt;description&gt;<br/>
@@ -663,7 +667,7 @@ AU’s may also contain objectives.
     <td width="811" valign="top"><p><strong>Description:</strong><br />
       A listing of objectives referenced by this AU.<br />
       <strong>Value space</strong>:<br />
-      Values defined by course designer<br />
+     Values are defined by the course designer.<br />
       <strong>Sample value: </strong><br />
     &lt;objectives&gt;<br/>
     &nbsp;&nbsp; &lt;objective idref="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br/>
@@ -682,9 +686,10 @@ AU’s may also contain objectives.
       To accomodate "non-browser" applications, an application specific protocol may be used in the url:<br/>
       &lt;application&gt;://&lt;URL to content&gt;
       
-      Regardless of the value of &lt;application&gt;, the remaining portion of the URL MUST conform to HTTP/S conventions, such as named value pair parameters.<br/>&nbsp;<br/>If the url includes a query string, the values from that query string MUST be merged with the CMI-5 parameters at launch time (see section 8.1.1 of the CMI-5 Runtime Environment).
+      Regardless of the value of &lt;application&gt;, the remaining portion of the URL MUST conform to HTTP/S conventions, such as named value pair parameters.
+      <br/>&nbsp;<br/>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1.1 of the cmi5 Runtime Environment).
       </p>
-      <p><strong>Value space:</strong>Determined by AU developer</p>
+      <p><strong>Value space:</strong>Values are determined by the course designer.</p>
       <p><strong>Sample value:</strong><br/>
       &lt;url&gt;<br/>
       http://wwww.mycourses.com/courseX.html<br/>
@@ -700,10 +705,10 @@ AU’s may also contain objectives.
         <strong>Data type: </strong>string </p>
     </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      Static launch parameters defined by the AU designer.  The LMS is required to store this data and provide to the AU if    requested by the AU during runtime.<br />
+      Static launch parameters defined by the course designer.  The LMS is required to store this data and provide it to the AU if    requested by the AU during runtime.<br />
       </p>
       <p><strong>Value space:</strong><br />
-        Values defined by AU designer</p>
+        Values are defined by the course designer.</p>
       <p><br />
         <strong>Sample value: </strong> TBD</p>
     </td>
@@ -717,7 +722,7 @@ AU’s may also contain objectives.
     <td valign="top"><p><strong>Description:</strong><br />
         Data used by the AU to determine if the launching LMS system is entitled to use the AU. The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.<br />
     </p>
-      <p><strong>Value space: </strong>Values defined by AU content provider.<br />
+      <p><strong>Value space: </strong>Values are defined by the AU content provider.<br />
         <br />
         <strong>Sample value:</strong><br/>
         &lt;entitlementKey&gt;<br/>
@@ -731,8 +736,8 @@ AU’s may also contain objectives.
 <a name="course_structure_xsd"/>  
 ## 7.2 Course Structure XSD 
 
-The following is the XML Schema for a course structure file.  
-All course structures created for LMS import and created by the LMS for export MUST conform to this XSD and be named cmi5.xml.
+The following is the XML schema for a course structure file.  
+All course structures created for LMS import functionality and created by the LMS for export MUST conform to this XSD and be named "cmi5.xml".
 
 ```XML
 <xs:schema xmlns="http://aicc.org/CMI5/CourseStructure.xsd"
@@ -865,24 +870,24 @@ All course structures created for LMS import and created by the LMS for export M
 
 <a name="course_package"/>
 # 8.0 Course Package
-For the course import and export defined in section 6.1, the LMS MUST support all of the following formats:
+For the course import and export defined in Section 6.1, the LMS MUST support all of the following formats:
 <ul><li>Zip32</li>
 <li>Zip64</li>
 <li>A course structure XML file</li>
 </ul>
-## 8.1 Course Packages in ZIP format
-The two ZIP file formats MUST follow the specification defined at https://www.pkware.com/support/zip-app-note.  When the ZIP file is used to package the course, it may contain media associated with the course AU's.  
+## 8.1 Course Packages in ZIP Format
+The two ZIP file formats MUST follow the specification defined at https://www.pkware.com/support/zip-app-note.  When the ZIP file is used to package a course, it may contain media associated with the course AUs.  
 <ul><li>Any media included in a ZIP course package MUST use relative URL references in the Course Structure XML.</li>
 <li>Any media not included in a ZIP course package MUST use fully qualified URL references in the Course Strucutre XML</li>
-<li>A ZIP course package may contain a mix of fully qualified and relavie URL's,provided the rules above are followed.</li>
+<li>A ZIP course package may contain a mix of fully qualified and relative URLs,provided the rules above are followed.</li>
 </ul>
-## 8.2 Course Structure XML without a ZIP file package
+## 8.2 Course Structure XML Without a ZIP File Package
 When a course structure XML file is provided without a ZIP file package, all URL references MUST be fully qualified.
 
 <a name="bibliography"/> 
 # 9.0 Bibliography
 
-[1]  AICC CMI001, CMI Guidelines For Interoperability, Version 4.0. 
+[1]  AICC CMI001, CMI Guidelines for Interoperability, Version 4.0. 
 
 [2]  SCORM – http://www.adlnet.gov/capabilities/scorm 
 
