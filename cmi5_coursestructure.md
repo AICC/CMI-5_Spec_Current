@@ -710,7 +710,18 @@ AUs may also contain objectives.
       <p><strong>Value space:</strong><br />
         Values are defined by the course designer.</p>
       <p><br />
-        <strong>Sample value: </strong> TBD</p>
+        <strong>Sample value:</strong><br/>
+        &lt;launchParameters&gt;<br/>
+        &nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;"param1": "Lorem ipsum dolor sit amet",<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;"param2": [1,2,3,4,5],<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;"param3": {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a": 1,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"b": 2<br />
+        &nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;}<br />
+        &lt;/launchParameters&gt;
+        </p>
     </td>
   </tr>  
   <tr>
