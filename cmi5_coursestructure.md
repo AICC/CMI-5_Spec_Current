@@ -712,15 +712,7 @@ AUs may also contain objectives.
       <p><br />
         <strong>Sample value:</strong><br/>
         &lt;launchParameters&gt;<br/>
-        &nbsp;&nbsp;{<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;"param1": "Lorem ipsum dolor sit amet",<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;"param2": [1,2,3,4,5],<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;"param3": {<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a": 1,<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"b": 2<br />
-        &nbsp;&nbsp;}<br />
-        &nbsp;&nbsp;}<br />
-        &lt;/launchParameters&gt;
+        {"param1": "Lorem ipsum dolor sit amet", "param2": [1,2,3,4,5],"param3": {"a": 1,"b": 2}}<br />
         </p>
     </td>
   </tr>  
