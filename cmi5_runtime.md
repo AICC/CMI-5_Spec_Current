@@ -65,12 +65,13 @@ cmi5 Runtime Environment
 
 <a name="revhistory"></a>	
 ## Revision History
+__Sandstone - 1st Edition (May 15, 2015):__
+
+* Developer release
 
 __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__  
 
-Converted existing working draft to markdown format from Microsoft Word.
-
-All previous work from 2012 discarded.
+* Converted existing working draft to markdown format from Microsoft Word. All previous work from 2012 discarded.
 
 
 <a name="contributors"></a> 
