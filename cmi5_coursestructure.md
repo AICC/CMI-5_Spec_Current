@@ -251,9 +251,9 @@ LMS systems MUST meet the following requirements to conform to this specificatio
 ## 7.1 Course Structure Data Model  
 
 <a name="course_level_meta_data"/>
-### 7.1.1 Course Level Meta-data  
+### 7.1.1 Course Level Metadata  
  
-The following metadata attributes and elements are at the course level and  describe the course instance as a whole,
+The following metadata attributes and elements are at the course level and  describe the course instance as a whole.
 
 <table border="1" cellspacing="0" cellpadding="0">
   <tr>
