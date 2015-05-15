@@ -1,4 +1,4 @@
-CMI-5 Runtime Environment 
+cmi5 Runtime Environment 
 ---
 >
 >Copyright &copy; 2012-2015 ADL, All rights reserved
@@ -144,7 +144,7 @@ RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
 <https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md>
 
 cmi5-002  – LMS Course Structure, curent working draft, AICC, 2013  
-<https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md>
+<https://github.com/AICC/_Spec_Current/blob/master/cmi5_coursestructure.md>
 
 
 <a name="definitions"></a>   
@@ -250,7 +250,7 @@ described in this specification in a non-conforming manner.
 <a name="concept"></a> 
 #5.0 Conceptual Model: Informative  
 
-Synopsis of the CMI-5 model:
+Synopsis of the cmi5 model:
 
 * An LMS imports a course structure which may contain one or more Assignable Units.
 * An LMS administrative user assigns a course to a learner.
@@ -290,7 +290,7 @@ mechanism(s) and associate commands as prescribed in this specification.
 LMS systems MUST meet the following requirements to conform to this specification:  
 
 1. The LMS MUST implement an LRS as defined in the xAPI specification.
-2. The LMS MUST support Course Structures as defined in [cmi5-002] CMI-5 Course Structure.
+2. The LMS MUST support Course Structures as defined in [cmi5-002] cmi5 Course Structure.
 3. The LMS MUST implement additional "State API" requirements to initialize AU state as defined in Section 10.
 4. The LMS MUST implement the runtime launch interface as defined in Section 8.0 - Content Launch Mechanisms.
 5. The LMS MUST implement additional xAPI "Statement API" requirements as defined in Section 9.
@@ -299,8 +299,8 @@ LMS systems MUST meet the following requirements to conform to this specificatio
 <a name="course_structures"></a>  
 ##6.1 Course structures
 
-1. The LMS MUST implement the import of Course Structures according to [cmi5-002] CMI-5 Course Structure.
-2. The LMS SHOULD implement the export of Course Structures according to [cmi5-002] CMI-5 Course Structure.
+1. The LMS MUST implement the import of Course Structures according to [cmi5-002] cmi5 Course Structure.
+2. The LMS SHOULD implement the export of Course Structures according to [cmi5-002] cmi5 Course Structure.
 3. The LMS SHOULD implement a user interface to allow the LMS administrative users to create and edit course structures.
 4. The LMS MUST be able support course structures with one or more AUs
 
@@ -427,8 +427,8 @@ Example:
 
 ```
 http://la.cmi5.aicc.org/LA1/Start.html
-?endpoint=http://cmi-5-lms-system.org/lrslistner/
-&fetch=http://cmi-5-lms-system.org/tokenGen.htm?k=2390289x0
+?endpoint=http://cmi5-lms-system.org/lrslistner/
+&fetch=http://cmi5-lms-system.org/tokenGen.htm?k=2390289x0
 &actor={"objectType": "Agent","account": 
 {"homePage": "http://www.example.com","name": "1625378"}
 &registration=760e3480-ba55-4991-94b0-01820dbd23a2
@@ -454,7 +454,7 @@ The values for the URL launch parameters are described below:
   <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>When Basic authentication is used, the AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU MUST then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU SHOULD NOT make one more than 1 post to the <strong><em>fetch</em></strong> URL</td></tr>
   <tr><td>&nbsp;</td><th align ="right">Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>http://cmi-5-lms-system.org/tokenGen.htm?k=2390289x0</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>http://cmi5-lms-system.org/tokenGen.htm?k=2390289x0</td></tr>
 </table>
 
 <table>
@@ -483,7 +483,7 @@ The values for the URL launch parameters are described below:
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>activityId</em></strong> in the query string based on the definition of the AU in the course    structure.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU MUST get the <strong><em>activityId</em></strong> value from the query string. AU MUST use the <strong><em>activityId</em></strong> value in API calls that require an “activity id” when sending xAPI messages.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>IRI (as defined in the CMI-5 Course Structure Section 7.1.4 - AU Metadata)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>IRI (as defined in the cmi5 Course Structure Section 7.1.4 - AU Metadata)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
@@ -550,7 +550,7 @@ following launch environments are being considered for future releases:
 * Android  
 * iOS  
 
-CMI-5 implementations for LMS’s and AU’s in these other environments will use the same
+cmi5 implementations for LMS’s and AU’s in these other environments will use the same
 REST communication interface as specified in xAPI specification.  The xAPI specification
 does not specify launch mechanisms.
 
@@ -559,11 +559,11 @@ does not specify launch mechanisms.
 
 <a name="ID" ></a>
 ##9.1 Statement ID
-The AU will not provide a statement ID for CMI-5 defined statements.  (The LRS will assign statement IDs)  
+The AU will not provide a statement ID for cmi5 defined statements.  (The LRS will assign statement IDs)  
   
 <a name="Actor" ></a>
 ##9.2 Actor
-The Actor object will be defined by the LMS.  The Actor object for all statements with CMI-5 defined verbs MUST be of type "Agent" and MUST contain an account object.
+The Actor object will be defined by the LMS.  The Actor object for all statements with cmi5 defined verbs MUST be of type "Agent" and MUST contain an account object.
 
 An Example of usage in a statement:
 
@@ -712,11 +712,11 @@ not be recording any more statements for the launch session.</td>
 
 <a name="Object"></a> 
 ##9.4 Object 
-The Object in a CMI-5 defined statement represents the AU.  An Object MUST be present, as specified in this section, in all statements with CMI-5 defined verbs.
+The Object in a cmi5 defined statement represents the AU.  An Object MUST be present, as specified in this section, in all statements with cmi5 defined verbs.
 
 <a name="objectType"></a> 
 ###9.4.1 objectType
-The objectType property of an Object in statements with a CMI-5 verb MUST be set to "activity".
+The objectType property of an Object in statements with a cmi5 verb MUST be set to "activity".
 
 <a name="Object_ID"></a> 
 ###9.4.2 id 
@@ -745,7 +745,7 @@ An Example of usage in a statement:
 
 <a name="Result"></a> 
 ##9.5 Result
-Result may be present in a statement depending on the CMI-5 verb used.  
+Result may be present in a statement depending on the cmi5 verb used.  
 
 Example JSON:
 ```javascript
@@ -778,12 +778,12 @@ A score is not required to be reported.  If a score is reported by an AU, the ve
 <a name="Success"></a>
 ###9.5.2 Success 
 
-The success property of the result MUST be set to true for statements having the following CMI-5 defined verbs:
+The success property of the result MUST be set to true for statements having the following cmi5 defined verbs:
 
 - Passed
 - Waived
 
-The success property of the result MUST be set to false for statements having the following CMI-5 defined verbs:
+The success property of the result MUST be set to false for statements having the following cmi5 defined verbs:
 
 - Failed
 - Abandoned
@@ -954,9 +954,9 @@ of the context object's extension collection.<br />
       <strong>AU Required:</strong> Yes<br />
       <strong>LMS Usage:  </strong>LMS MUST include a value for <strong><em>launchMode</em></strong>.<br />
       <strong>AU Usage: </strong>The AU MUST conform to the following based on the value of <strong><em>launchMode</em></strong><br />
-      <ul><li>Normal<br/>The AU MUST record Initialized and Terminated verb statements.  The AU MUST record other CMI-5 verb statements per the requirements defined in section 9.3 - Verbs.</li>
-      <li>Browse<br/>The The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other CMI-5 verb statements.</li>
-      <li>Review<br/>The The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other CMI-5 verb statements.</li></ul>
+      <ul><li>Normal<br/>The AU MUST record Initialized and Terminated verb statements.  The AU MUST record other cmi5 verb statements per the requirements defined in section 9.3 - Verbs.</li>
+      <li>Browse<br/>The The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other cmi5 verb statements.</li>
+      <li>Review<br/>The The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other cmi5 verb statements.</li></ul>
       <strong>Data type: </strong>String<br />
       <strong>Value space: </strong>"Normal", "Browse" or "Review"<br />
       <strong>Sample value: </strong>"Normal"</p></td>
@@ -979,7 +979,7 @@ of the context object's extension collection.<br />
     </tr>
     <tr>
     <tr>
-    <td><p><strong>Description: </strong>The MasteryScore from the CMI-5 Course Structure.<br />
+    <td><p><strong>Description: </strong>The MasteryScore from the cmi5 Course Structure.<br />
       <strong>LMS Required:</strong> Yes<br />
       <strong>AU Required:</strong> Yes<br />
       <strong>LMS Usage:  </strong>The LMS MUST include the MasteryScore value based on the value defined in the course structure for the AU being launched.<br />
@@ -993,7 +993,7 @@ of the context object's extension collection.<br />
     </tr>
     <tr>
     <tr>
-    <td><p><strong>Description: </strong>passIsFinal from the CMI-5 Course Structure.<br />
+    <td><p><strong>Description: </strong>passIsFinal from the cmi5 Course Structure.<br />
       <strong>LMS Required:</strong> Yes<br />
       <strong>AU Required:</strong> Yes<br />
       <strong>LMS Usage:  </strong>The LMS MUST include the passIsFinal value based on the value defined in the Course Structure for the AU being launched.<br />
