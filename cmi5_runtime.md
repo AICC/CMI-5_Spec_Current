@@ -366,8 +366,8 @@ Example:
 The AU MUST issue a statement to the LRS after being launched, initialized, and ready for learner interaction using the Initialized verb as described in Section 9.3.2.
 
 <a name="last_statement_au"></a>  
-###7.1.2 Last Statement Call
-The AU MUST issue a statement to the LRS prior to termination using the Terminated verb per section 9.3.8.
+###7.2.3 Last Statement Call
+The AU MUST issue a statement to the LRS prior to termination using the Terminated verb as described in Section 9.3.8.
 
 <a name="content_launch"></a>  
 #8.0 Content Launch Mechanisms
