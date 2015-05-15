@@ -112,17 +112,17 @@ All previous work from 2012 discarded.
 
 
 This specification describes interoperable runtime communication between Learning Management Systems
-(LMS) and Learning Activities.
+(LMS) and Assignable Units (AU).
 
 <a name="scope"></a>  
 ##1.1 Scope
 
 The scope of this specification is limited to the following:
 
-* Launch by an LMS of Learning Activities.
-* Launch and runtime environment used by LMS and Learning Activities.
-* Runtime communication data and data transport between the LMS and Learning Activities 
-* LMS course definition as it pertains to runtime data used by Learning Activities.  
+* Launch by an LMS of AUs.
+* Launch and runtime environment used by LMS and AUs.
+* Runtime communication data and data transport between the LMS and AUs. 
+* LMS course definition as it pertains to runtime data used by AUs.  
 * Reporting requirements for the LMS.
 
 This specification references how to use the xAPI specification within this scope.
@@ -171,7 +171,7 @@ sequence, representing a course.
 content (AU) to send and receive data to an LRS. The xAPI specification is referenced by this
 document is used to define the data transport and the data model.
 
-* __Learner__: The end user viewing/using the learning content (Learning Activity).
+* __Learner__: The end user viewing/using the learning content (AU).
 
 * __Learning Activity Provider (AP)__:  Learning Activity Provider (AP) as defined in the
 xAPI specification.
@@ -274,7 +274,7 @@ is and initiate communication with the LMS.
 * Acting as “client”, send and receive messages using the defined transport mechanism(s)
 and associate commands as prescribed in this specification.
 * Format all data per defined data types and vocabularies defined in this specification.
-* Send an “terminated” message prior to terminating the learning activity’s execution.
+* Send an “terminated” message prior to terminating the AU’s execution.
 
 Responsibilities of the LMS:
 
@@ -402,9 +402,9 @@ When the launchMethod is "AnyWindow", the LMS may choose the window context of t
 
 In either case, the AU MUST be launched by the LMS with a URL having query string launch parameters as
 defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that
-launches the learning activity.
+launches the AU.
 
-If the learning activity’s URL requires a query string for other purposes, then the names
+If the AU’s URL requires a query string for other purposes, then the names
 MUST NOT collide with named parameters defined below.
 
 The order of the name/value pairs is not significant. AU’s MUST have the ability to
@@ -440,7 +440,7 @@ The values for the URL launch parameters are described below:
 <table>
   <tr><th colspan=3 align ="left">endpoint</th></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A URL to the LMS listener location for xAPI messages to be sent to.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>endpoint </em></strong>in the query string.<strong></strong>The LMS SHOULD limit the use of the <strong><em>auth</em></strong> value for the duration of a specific/user/Learning Activity/registration</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>endpoint </em></strong>in the query string.<strong></strong>The LMS SHOULD limit the use of the <strong><em>auth</em></strong> value for the duration of a specific/user/AU/registration</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>endpoint </em></strong>value from the query string. The AU MUST use the <strong><em>endpoint </em></strong>value as the URL location to send xAPI messages to.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>A URL-encoded URL</td></tr>
@@ -449,7 +449,7 @@ The values for the URL launch parameters are described below:
 
 <table>
   <tr><th colspan=3 align ="left">fetch</th></tr>
-  <tr><td>&nbsp;</td><th align ="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS.  The <strong><em>fetch</em></strong> URL is only used when OAuth authentication is not practical or desired.  The authentication token is used by the Learning Activity being launched.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS.  The <strong><em>fetch</em></strong> URL is only used when OAuth authentication is not practical or desired.  The authentication token is used by the AU being launched.</td></tr>
   <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL when Basic authentication is indicated in the course structure definition. <br /><br />If OAuth is the method of authentication specified, the LMS MUST NOT place the <strong><em>fetch</em></strong>name/value pair<strong></strong> in the query string.  <br /><br />The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
   <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>When Basic authentication is used, the AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU MUST then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU SHOULD NOT make one more than 1 post to the <strong><em>fetch</em></strong> URL</td></tr>
   <tr><td>&nbsp;</td><th align ="right">Data type:</th><td>String (URL-encoded)</td></tr>
@@ -459,7 +459,7 @@ The values for the URL launch parameters are described below:
 
 <table>
   <tr><th colspan=3 align ="left">actor</th></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A JSON object called “actor” (as defined in the xAPI specification) that identifies the learner launching the Learning Activity so the Learning Activity will be able to include it in xAPI messages.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A JSON object called “actor” (as defined in the xAPI specification) that identifies the learner launching the AU so the AU will be able to include it in xAPI messages.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>actor </em></strong>in the query string based on the authenticated learner’s identity. The    LMS SHOULD create an actor object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU MUST get the <strong><em>actor </em></strong>value from the query string. AU MUST use the <strong><em>actor </em></strong>value in API calls that require an “actor” object when sending xAPI messages</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
@@ -899,7 +899,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 <a name="xapi_state"></a>  
 #10.0 xAPI State Data Model
 
-Prior to launching a learning activity, the LMS MUST create a document in the State API record in the 
+Prior to launching an AU, the LMS MUST create a document in the State API record in the 
 LRS.  This MUST be a JSON document as defined in this section with a document name (stateId) of "LMS.LaunchData". The LMS MUST only create one State document for the combination of activityId, agent, registration, and stateId.  
 
 An example of the JSON document is shown below.
