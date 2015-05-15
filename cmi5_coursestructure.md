@@ -222,8 +222,14 @@ Responsibilities of the LMS:
 
 LMS systems MUST meet the following requirements to conform to this specification:  
 
-1. The LMS MUST implement a means to import course structures as defined in section 6.1.
-2. The LMS SHOULD implement a means to export course structures as defined in section 6.1.
+* The LMS MUST implement an LRS as defined in the xAPI specification.
+* The LMS MUST support Course Structures as defined in cmi5 Course Structure.
+* The LMS MUST implement additional "State API" requirements to initialize the AU state as defined in Section 10.
+* The LMS MUST implement the runtime launch interface as defined in Section 8.0 – Content Launch Mechanisms.
+* The LMS MUST implement additional xAPI "Statement API" requirements as defined in Section 9.
+* The LMS MUST implement additional xAPI "Agent Profile API" requirements as defined in Section 11.
+* The LMS MUST implement a means to import course structures as defined in Section 6.1.
+* The LMS SHOULD implement a means to export course structures as defined in Section 6.1.
 
 <a name="course_structures"/>
 ## 6.1 Course structure requirements
