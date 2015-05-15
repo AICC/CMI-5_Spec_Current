@@ -75,6 +75,7 @@ All previous work from 2012 discared
 | Art Werkenthin       | RISC,Inc                               |
 | Severin Neumann      | die eLearning AG                       |
 | David Pesce          | Exputo Inc.                            |
+| Henry Ryng           | inXsol					|
 -------
 
 <a name="overview"/> 
