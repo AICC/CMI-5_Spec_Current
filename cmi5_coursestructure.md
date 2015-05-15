@@ -28,6 +28,7 @@ CMI-5 Course Structure
     * [7.1.2 Block Meta Data](#block_meta_data)
     * [7.1.3 Objectives Meta Data](#objectives_meta_data)
     * [7.1.4 AU Meta Data](#au_meta_data)
+    * [7.1.5 Vendor Specific Meta Data](#vendor_meta_data)
   * [7.2 Course Structure XSD](#course_structure_xsd)
 * [__8.0 Course Package__](#course_package)
 * [__9.0 Bibliography__](#bibliography)
@@ -733,6 +734,13 @@ AUs may also contain objectives.
   </tr>
 </table>
 
+<a name="#vendor_meta_data"/>
+### 7.1.5 Vendor Specific Meta Data
+
+Course Designer MAY place their own namespaced elements into the course structure. For that he MUST provide a XML Schema Definition and SHOULD provide a human readable specification describing these vendor specific extensions. These extensions MUST keep the course structure XML valid. An importing LMS MAY ignore these elements. 
+
+The course designer MAY provide his extensions as potential addition to the course structure specification as an Issue or Pull Request to the [official cmi5 repository](https://github.com/AICC/CMI-5_Spec_Current).
+
 <a name="course_structure_xsd"/>  
 ## 7.2 Course Structure XSD 
 
@@ -746,20 +754,24 @@ All course structures created for LMS import functionality and created by the LM
            id="CMI5CourseStructure">
   <xs:element name="courseStructure" type="courseType"/>
   <xs:complexType name="courseType">
-    <xs:all>
+    <xs:sequence>
       <xs:element name="course">
         <xs:complexType>
-          <xs:all>
+          <xs:sequence>
             <xs:element name="title" type="textType"/>
             <xs:element name="description" type="textType"/>
             <xs:element name="languages" minOccurs="0" type="languagesType"></xs:element>
-          </xs:all>
+            <xs:group ref="anyElement"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="anyAttribute"/>
           <xs:attribute name="id" type="xs:anyURI" use="required"/>
         </xs:complexType>
       </xs:element>
       <xs:element name="block" type="blockType"/>
       <xs:element name="objectives" type="objectivesType" minOccurs="0"/>
-    </xs:all>
+      <xs:group ref="anyElement"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="anyAttribute"/>
   </xs:complexType>
   <xs:complexType name="blockType">
     <xs:sequence>
@@ -770,11 +782,13 @@ All course structures created for LMS import functionality and created by the LM
         <xs:element name="au" type="auType"/>
         <xs:element name="block" type="blockType"/>
       </xs:choice>
+      <xs:group ref="anyElement"/>
     </xs:sequence>
+    <xs:attributeGroup ref="anyAttribute"/>
     <xs:attribute name="id" type="xs:anyURI" use="required"/>
   </xs:complexType>
   <xs:complexType name="auType">
-    <xs:all>
+    <xs:sequence>
       <xs:element name="title" type="textType"/>
       <xs:element name="description" type="textType"/>
       <xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>
@@ -787,7 +801,9 @@ All course structures created for LMS import functionality and created by the LM
       </xs:element>
       <xs:element name="launchParameters" minOccurs="0"/>
       <xs:element name="entitlementKey" minOccurs="0"/>
-    </xs:all>
+      <xs:group ref="anyElement"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="anyAttribute"/>
     <xs:attribute name="id" type="xs:anyURI" use="required"/>
     <xs:attribute name="moveOn" default="NotApplicable">
       <xs:simpleType>
@@ -808,12 +824,11 @@ All course structures created for LMS import functionality and created by the LM
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="passIsFinal" use="optional" type="xs:boolean" default="true" />
+    <xs:attribute name="passIsFinal" use="optional" type="xs:boolean" default="true"/>
     <xs:attribute name="authenticationMethod" default="Basic">
       <xs:simpleType>
         <xs:restriction base="xs:string">
           <xs:enumeration value="Basic"/>
-          <xs:enumeration value="OAuth"/>
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
@@ -825,7 +840,7 @@ All course structures created for LMS import functionality and created by the LM
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="activityType" use="optional" type="xs:string" />
+    <xs:attribute name="activityType" use="optional" type="xs:string"/>
   </xs:complexType>
   <xs:complexType name="objectivesType">
     <xs:sequence>
@@ -838,7 +853,9 @@ All course structures created for LMS import functionality and created by the LM
           <xs:attribute name="id" type="xs:anyURI" use="required"/>
         </xs:complexType>
       </xs:element>
+      <xs:group ref="anyElement"/>
     </xs:sequence>
+    <xs:attributeGroup ref="anyAttribute"/>
   </xs:complexType>
   <xs:complexType name="referencesObjectivesType">
     <xs:sequence>
@@ -847,7 +864,9 @@ All course structures created for LMS import functionality and created by the LM
           <xs:attribute name="idref" type="xs:anyURI"></xs:attribute>
         </xs:complexType>
       </xs:element>
+      <xs:group ref="anyElement"/>
     </xs:sequence>
+    <xs:attributeGroup ref="anyAttribute"/>
   </xs:complexType>
   <xs:complexType name="textType">
     <xs:sequence>
@@ -856,15 +875,34 @@ All course structures created for LMS import functionality and created by the LM
           <xs:simpleContent>
             <xs:extension base="xs:string">
               <xs:attribute name="lang" type="xs:language"/>
+              <xs:attributeGroup ref="anyAttribute"/>
             </xs:extension>
           </xs:simpleContent>
         </xs:complexType>
       </xs:element>
+      <xs:group ref="anyElement"/>
     </xs:sequence>
+    <xs:attributeGroup ref="anyAttribute"/>
   </xs:complexType>
-  <xs:simpleType name="languagesType">
+  <xs:simpleType name="baseLanguagesType">
     <xs:list itemType="xs:language"></xs:list>
   </xs:simpleType>
+  <xs:complexType name="languagesType">
+    <xs:simpleContent>
+      <xs:extension base="baseLanguagesType">
+        <xs:attributeGroup ref="anyAttribute"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:group name="anyElement">
+    <xs:sequence>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:attributeGroup name="anyAttribute">
+    <xs:anyAttribute namespace="##other" processContents="lax"/>
+  </xs:attributeGroup>
 </xs:schema>
 ```
 
