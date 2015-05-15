@@ -567,13 +567,12 @@ An Example of usage in a statement:
 
 The following xAPI verbs are defined in this specification.
 
-AU’s MUST use the below verbs indicated as mandatory in other sections of this
-specification.
+AUs MUST use the below verbs that are indicated as mandatory in other sections of this specification.
 
-AU’s may use additional verbs not listed in this specification.
+AUs may use additional verbs not listed in this specification.
 
-LMS system MUST record and provide reporting for all statements regardless of which verbs
-AU’s use in statement.  
+Regardless of the verbs the AUs use in statements, the LMS MUST record and provide reporting for all statements. 
+ 
 
 ###9.3.1 Launched
 <table>
@@ -582,7 +581,7 @@ AU’s use in statement.
 <tr><th align="left">Display</th><td>{ "en-US" : "Launched" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Launched” indicates that the AU was launched by the LMS.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API Section 10) </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API, Section 10) </td></tr>
 </tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate that the LMS has launched the AU. It SHOULD be used in combination with the "Initialized" statement sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
 </table>
 
@@ -603,9 +602,9 @@ AU’s use in statement.
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/completed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Completed" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Completed” indicates the learner viewed or did all of the relevant activities in an AU presentation.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Completed" verb when the learner has experienced all relevant material in the AU.  The AU MUST NOT issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Completed" verb when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
-</tr><tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the AU design.</td></tr>
+</tr><tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the course designer.</td></tr>
 </table>
 
 ###9.3.4 Passed
@@ -641,7 +640,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Abandoned” indicates that the AU session was abnormally terminated by a learner's action (or due to a system failure).</td>
 </tr><tr><th align="left">AU Obligations</th><td>None.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination. </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement, the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination. </td></tr>
 </tr><tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
 
@@ -652,8 +651,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Verb</th><td>Waived</td></tr>
 <tr><th align="left">ID</th><td>http://purl.org/xapi/adl/verbs/waived</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Received Waiver" }</td></tr>
-<tr><th align="left">Description</th><td>The verb “Waived” indicates that the LMS has determined that the AU 
-requirements were met by means other than completing the AU.</td>
+<tr><th align="left">Description</th><td>The verb “Waived” indicates that the LMS has determined that the AU requirements were met by means other than completing the AU.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU may be waived.  A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result.  (See Section 9.6.2.2) </td></tr>
 </tr><tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU may be skipped by the learner.</td></tr>
@@ -666,8 +664,7 @@ requirements were met by means other than completing the AU.</td>
 <tr><th align="left">Verb</th><td>Terminated</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/terminated</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Terminated" }</td></tr>
-<tr><th align="left">Description</th><td>The verb “Terminated” indicates that the AU was terminated by the Learner and that the AU will
-not be recording any more statements for the launch session.</td>
+<tr><th align="left">Description</th><td>The verb “Terminated” indicates that the AU was terminated by the Learner and that the AU will not be recording any more statements for the launch session.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Terminated" verb. This statement MUST be the last statement recorded by the AU in a session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
