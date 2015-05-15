@@ -28,6 +28,7 @@ CMI-5 Course Structure
     * [7.1.2 Block Meta Data](#block_meta_data)
     * [7.1.3 Objectives Meta Data](#objectives_meta_data)
     * [7.1.4 AU Meta Data](#au_meta_data)
+    * [7.1.5 Vendor Specific Meta Data](#vendor_meta_data)
   * [7.2 Course Structure XSD](#course_structure_xsd)
 * [__8.0 Course Package__](#course_package)
 * [__9.0 Bibliography__](#bibliography)
@@ -732,6 +733,13 @@ AUs may also contain objectives.
     </td>
   </tr>
 </table>
+
+<a name="#vendor_meta_data"/>
+### 7.1.5 Vendor Specific Meta Data
+
+Course Designer MAY place their own namespaced elements into the course structure. For that he MUST provide a XML Schema Definition and SHOULD provide a human readable specification describing these vendor specific extensions. These extensions MUST keep the course structure XML valid. An importing LMS MAY ignore these elements. 
+
+The course designer MAY provide his extensions as potential addition to the course structure specification as an Issue or Pull Request to the [official cmi5 repository](https://github.com/AICC/CMI-5_Spec_Current).
 
 <a name="course_structure_xsd"/>  
 ## 7.2 Course Structure XSD 
