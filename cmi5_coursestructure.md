@@ -146,7 +146,7 @@ For purposes of this specification, the following terms and definitions apply:
 
 __ADL__: Advanced Distributed Learning  
 __AICC__: Aviation Industry Computer-Based Training Committee  
-__API__: Application Programming Interface
+__API__: Application Programming Interface  
 __LMS__: Learning Management System  
 __LRS__: Learning Record Store  
 __PII__: Personally Identifiable Information  
