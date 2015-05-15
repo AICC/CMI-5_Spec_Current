@@ -101,7 +101,8 @@ RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
 “Experience API”, current specification, ADL, 2012-2013<br/>
 https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
 
-cmi5 Runtime Environment, Sandstone 1st Edition  
+cmi5 Runtime Environment, Sandstone 1st Edition
+<https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_runtime.md>
 
 
 
