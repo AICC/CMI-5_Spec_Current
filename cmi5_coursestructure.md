@@ -166,14 +166,17 @@ __XAPI__: Experience API
 <a name="conformance"/>
 # 4.0  Conformance
 
-Conformance to this specification is defined in section. 
+Conformance to this specification is defined in this section. 
 
-In this specification, “MUST” is to be interpreted as a requirement on an implementation; “MUST NOT” is to be interpreted as a prohibition.  
-“SHOULD” is to be interpreted as a recommendation for implementation.
-“SHOULD NOT” is to be interpreted as the converse of “SHOULD”.  
-“MAY” is to be interpreted as a course of action that is permissible within the limits of the specification.
-“NEED NOT” indicates a course of action that is not required.
-Uses of xAPI specification outside the scope this specification do not affect conformance with this specification.
+In this specification:
+* "MUST" is to be interpreted as a requirement on an implementation.
+* "MUST NOT" is to be interpreted as a prohibition.
+* "SHOULD" is to be interpreted as a recommendation for implementation.
+* "SHOULD NOT" is to be interpreted as the converse of "SHOULD".
+* "MAY" is to be interpreted as a course of action that is permissible within the limits of the specification.
+* "NEED NOT" is to be interpreted as a course of action that is not required.
+
+Uses of the xAPI specification outside of the scope of this specification do not affect conformance with this specification.
 
 <a name="au_conformance"/>
 ## 4.1 Courses
