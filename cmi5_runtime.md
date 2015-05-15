@@ -109,6 +109,7 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 	<tr><td>Henry Ryng</td><td>inXsol</td></tr>
 	<tr><td>Art Werkenthin</td><td>RISC, Inc.</td></tr>
 	<tr><td>Chris Handorf</td><td>Pearson</td></tr>
+	<tr><td>David Pesce</td><td>Exputo Inc.</td></tr>
 </table> 
 
 -------
