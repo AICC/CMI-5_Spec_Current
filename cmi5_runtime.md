@@ -144,7 +144,7 @@ RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
 <https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md>
 
 cmi5-002  – LMS Course Structure, curent working draft, AICC, 2013  
-<https://github.com/AICC/_Spec_Current/blob/master/cmi5_coursestructure.md>
+<https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md>
 
 
 <a name="definitions"></a>   
