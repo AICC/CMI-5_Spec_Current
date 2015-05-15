@@ -1,4 +1,4 @@
-CMI-5 Current Working Draft
+cmi5 Current Working Draft
 ---
 
 *If you have questions, suggestions, or concerns about this specification, please post an issue to [this GitHub repository](https://github.com/AICC/CMI-5_Spec_Current).*<br>
@@ -6,7 +6,7 @@ CMI-5 Current Working Draft
 *Note that this is a working draft and is NOT intended for implementation.*<br>
 
 
-# Workflow for Editing the CMI-5 Specification
+# Workflow for Editing the cmi5 Specification
 ----
 
 ## Set Up
@@ -17,10 +17,10 @@ first. GitHub provides excellent help at <https://help.github.com/articles/set-u
 If you do not already have a GitHub account, [sign up](https://github.com/signup/free).
 
 
-### Fork the CMI-5 Repository
-Go to the CMI-5 repository. Fork the repository to your own account using
-the "Fork" button on the top right of CMI-5 repository page. This makes a
-copy of the CMI-5 repository. This fork gives you the ability to edit your
+### Fork the cmi5 Repository
+Go to the cmi5 repository. Fork the repository to your own account using
+the "Fork" button on the top right of cmi5 repository page. This makes a
+copy of the cmi5 repository. This fork gives you the ability to edit your
 version of the document without impacting the master copy.
 
 
@@ -61,7 +61,7 @@ On the home screen of the client app, select your account under "GitHub" and cho
 repository you want to clone. Selecting the repository from the list gives you an option
 to clone it.
 
-### Add CMI-5 repository as upstream remote
+### Add cmi5 repository as upstream remote
 Add a remote repository to git to reference the master repository. This will make
 synchronizing with the master repository a bit easier.
 
@@ -91,7 +91,7 @@ git remote add upstream https://github.com/AICC/CMI-5_Spec_Current
 
 ## Workflow
 
-### Sync Up with the Master CMI-5 Repository
+### Sync Up with the Master cmi5 Repository
 Pull down changes from the master repository. This automatically does a fetch of the
 master repository and a merge into your local repository.
 
@@ -129,8 +129,8 @@ __GitHub Client__
 The GitHub client has a "sync" button at the top of the repository screen. This will
 synchronize your local and remote (origin) repository.
 
-### Submit a Pull Request to the Master CMI-5 Repository (Upstream)
-When you forked from the CMI-5 repository, a link back to the master repository was
+### Submit a Pull Request to the Master cmi5 Repository (Upstream)
+When you forked from the cmi5 repository, a link back to the master repository was
 created. To send your changes back to the the master repository, click the "Pull Request"
 button at the top of your repository page. This will direct you to a page that gives you
 the ability to submit a request to the master repository to merge in the changes you
