@@ -114,9 +114,9 @@ cmi5 Runtime Environment, Sandstone 1st Edition
 
 For purposes of this specification, the following terms and definitions apply: 
 
-* __Administrator__: The administrative user that manages the LMS and related systems. Such a user performs tasks such as learner enrollment, course structure definition, and report management.
+* __Administrator__: The administrative user who manages the LMS and related systems. This user performs tasks such as learner enrollment, course structure definition, and report management.
 
- __Assignable Unit (AU)__:  A learning content presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS.
+* __Assignable Unit (AU)__:  A learning content presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS.
 
 * __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
@@ -128,15 +128,13 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Internationalized Resource Locator (IRL)__: According to the xAPI specification, an IRL is an IRI that, when translated into a URI (according to the IRI to URI rules), is a URL. Some communities of practice simply use "URL" even if they use IRIs, which is not as technically correct within the xAPI.
 
-* __Learner__: The end user viewing/using the learning content (in the form of AUs).
-
-* __Assignable Unit (AU)__:  A learning content presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS system.
+* __Learner__: The end user viewing/using the learning content (AUs).
 
 * __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS MUST have an LRS as part of its implementation.
 
 * __Learning Records Store (LRS)__: Defined in the xAPI specification. In this specification, the LMS MUST implement an LRS with the additional requirements specified in this document.
 
-* __Must / SHOULD / May__: Three levels of obligation with regards to conformance to the cmi5 specification. A system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. Failing to meet a SHOULD requirement is not a violation of conformity, but goes against best practices. MAY indicates an option, to be decided by the developer with no consequences for conformity.
+* __MUST / SHOULD / MAY__: The three levels of obligation with regards to conformance to the cmi5 specification. A system that fails to implement a MUST (or a MUST NOT) requirement is not in conformance. Failing to meet a SHOULD requirement is not a violation of conformity, but it goes against best practices. MAY indicates an option, which is to be decided by the developer, with no consequences for lack of conformity.
 <BR />
 <BR />
 
