@@ -233,12 +233,12 @@ LMS systems MUST meet the following requirements to conform to this specificatio
 
 <a name="course_structures"/>
 ## 6.1 Course structure requirements
-The LMS SHOULD implement a means to create and maintain course structures.<br/>
-1.	The LMS MUST implement the import of the course data structure defined in Section 7. <br/>
-2.	The LMS SHOULD implement the export of the course data structure defined in Section 7. <br/>
-3.	The LMS SHOULD provide a user interface to the LMS administrative users to create and edit course structures internally.<br/>
-4.	The LMS MUST support course structures containing more than 1000 AU’s.
-5.	The LMS MUST support course structures conforming to the XSD schema defined in Section 7.2.
+* The LMS SHOULD implement a means to create and maintain course structures.<br/>
+* The LMS MUST implement the import of the Course Structure defined in Section 7. <br/>
+* The LMS SHOULD implement the export of the course data structure defined in Section 7. <br/>
+* The LMS SHOULD provide a user interface to the LMS administrative users to create and edit course structures internally.<br/>
+* The LMS MUST support course structures containing more than 1000 AUs.
+* The LMS MUST support course structures conforming to the XSD schema defined in Section 7.2.
 
 <BR>
 <BR>
