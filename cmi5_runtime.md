@@ -299,30 +299,24 @@ LMS systems MUST meet the following requirements to conform to this specificatio
 <a name="course_structures"></a>  
 ##6.1 Course structures
 
-1. The LMS MUST implement the import of Course Structures according to [cmi5-002] cmi5 Course Structure.
-2. The LMS SHOULD implement the export of Course Structures according to [cmi5-002] cmi5 Course Structure.
-3. The LMS SHOULD implement a user interface to allow the LMS administrative users to create and edit course structures.
-4. The LMS MUST be able support course structures with one or more AUs
+* The LMS MUST implement the import of Course Structures according to cmi5 Course Structure.
+* The LMS SHOULD implement the export of Course Structures according to cmi5 Course Structure.
+* The LMS SHOULD implement a user interface to allow the LMS administrative users to create and edit course structures.
+* The LMS MUST be able support course structures with one or more AUs.
 
 Course structures MUST contain the following data for each AU in a course:
 
-* URL location – A URL to the AU’s location (entry point)
-* Activity ID – The AU’s activity ID as defined in the xAPI specification (determined by the course designer).
+* URL location – A URL to the AU's location (entry point).
+* Activity ID – The AU's activity ID as defined in the xAPI specification (determined by the course designer).
 * Launch Method - 
-    * “OwnWindow” – The LMS MUST either spawn a new window for the AU launched, or redirect the existing window to the AU.
-    * “AnyWindow” – The AU does not care about the window context (all browser windows options are acceptable – FrameSet, New Window, redirect, etc.) The LMS may use whichever method desired..
-* Authentication Method – The authentication method used by the AU to access the LMS’s
-LRS.  (Either HTTP basic or OAuth 1.0)
-* Launch Parameters –A set of static data specific to the AU’s design. Used as parameters
-by the AU to modify its behavior. 
-* Entitlement Key – This is a value provided by the AU content provider and is used by the
-AU to determine whether the LMS instance and/or Learner are entitled to view the content.
-It is provided to the AU via a State API request.
+    * "OwnWindow" – The LMS MUST either spawn a new window for the AU launched, or redirect the existing window to the AU.
+    * "AnyWindow" – The AU does not care about the window context (all browser windows options are acceptable – FrameSet, New Window, redirect, etc.) The LMS may use whichever method is desired.
+* Authentication Method – The authentication method used by the AU to access the LMS's LRS.  (Either HTTP Basic or OAuth 1.0)
+* Launch Parameters – A set of static data specific to the AU’s design. Used as parameters by the AU to modify its behavior. * Entitlement Key – This is a value provided by the AU content provider and is used by the AU to determine whether the LMS instance and/or learner are entitled to view the content. It is provided to the AU via a State API request.
 
 Course Structures MUST contain at least one AU.
 
-LMS MUST have the ability to create and maintain course structures containing more than
-1000 AU’s.
+LMS MUST have the ability to create and maintain course structures containing more than 1000 AU's.
 
 <a name="lms_state_api_requirements"></a>  
 ##6.2 LMS State API Requirements
