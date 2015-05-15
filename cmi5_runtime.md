@@ -394,18 +394,14 @@ The AU MUST issue a statement to the LRS prior to termination using the Terminat
 The AU MUST be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 7.1.4 AU Meta Data, URL):
 
 When the launchMethod is "OwnWindow", the LMS MUST use one of the following:
-<ol><li>Spawning a new browser window for the AU.</li>
-<li>Re-directing the existing browser window to the AU.</li>
-</ol>
+* Spawning a new browser window for the AU.
+* Re-directing the existing browser window to the AU.
 
 When the launchMethod is "AnyWindow", the LMS may choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
 
-In either case, the AU MUST be launched by the LMS with a URL having query string launch parameters as
-defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that
-launches the AU.
+In either case, the AU MUST be launched by the LMS with a URL having query string launch parameters as defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that launches the AU.
 
-If the AU’s URL requires a query string for other purposes, then the names
-MUST NOT collide with named parameters defined below.
+If the AU's URL requires a query string for other purposes, then the names MUST NOT collide with named parameters defined below.
 
 The order of the name/value pairs is not significant. AU’s MUST have the ability to
 process them in any order.
@@ -451,7 +447,7 @@ The values for the URL launch parameters are described below:
   <tr><th colspan=3 align ="left">fetch</th></tr>
   <tr><td>&nbsp;</td><th align ="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS.  The <strong><em>fetch</em></strong> URL is only used when OAuth authentication is not practical or desired.  The authentication token is used by the AU being launched.</td></tr>
   <tr><td>&nbsp;</td><th align ="right">LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL when Basic authentication is indicated in the course structure definition. <br /><br />If OAuth is the method of authentication specified, the LMS MUST NOT place the <strong><em>fetch</em></strong>name/value pair<strong></strong> in the query string.  <br /><br />The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
-  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>When Basic authentication is used, the AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU MUST then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU SHOULD NOT make one more than 1 post to the <strong><em>fetch</em></strong> URL</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>When Basic authentication is used, the AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU MUST then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL</td></tr>
   <tr><td>&nbsp;</td><th align ="right">Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>http://cmi5-lms-system.org/tokenGen.htm?k=2390289x0</td></tr>
@@ -461,7 +457,7 @@ The values for the URL launch parameters are described below:
   <tr><th colspan=3 align ="left">actor</th></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A JSON object called “actor” (as defined in the xAPI specification) that identifies the learner launching the AU so the AU will be able to include it in xAPI messages.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>actor </em></strong>in the query string based on the authenticated learner’s identity. The    LMS SHOULD create an actor object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU MUST get the <strong><em>actor </em></strong>value from the query string. AU MUST use the <strong><em>actor </em></strong>value in API calls that require an “actor” object when sending xAPI messages</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>The AU MUST get the <strong><em>actor </em></strong>value from the query string. The AU MUST use the <strong><em>actor </em></strong>value in API calls that require an “actor” object when sending xAPI messages</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td> A JSON Actor object (as defined in Section 9.2)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>{"objectType": "Agent","account": {"homePage": "http://www.example.com","name": "1625378"}</td></tr>
@@ -471,7 +467,7 @@ The values for the URL launch parameters are described below:
   <tr><th colspan=3 align ="left">registration</th></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A Registration ID corresponding to the learner’s enrollment for the AU being launched.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>registration</em></strong> in the query string based on the authenticated learner’s corresponding    enrollment for the Course that the AU being launched is a member of.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>The AU MUST get the <strong><em>registration</em></strong> value from the query string. AU MUST use the <strong><em>registration</em></strong> value in API calls that require an “registration id” when sending xAPI messages</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>The AU MUST get the <strong><em>registration</em></strong> value from the query string. The AU MUST use the <strong><em>registration</em></strong> value in API calls that require an “registration id” when sending xAPI messages</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>UUID (as defined in the xAPI specification)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td></td></tr>
@@ -481,7 +477,7 @@ The values for the URL launch parameters are described below:
   <tr><th colspan=3 align ="left">activityId</th></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>The Activity ID of the AU being launched.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>activityId</em></strong> in the query string based on the definition of the AU in the course    structure.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU MUST get the <strong><em>activityId</em></strong> value from the query string. AU MUST use the <strong><em>activityId</em></strong> value in API calls that require an “activity id” when sending xAPI messages.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>The AU MUST get the <strong><em>activityId</em></strong> value from the query string. The AU MUST use the <strong><em>activityId</em></strong> value in API calls that require an “activity id” when sending xAPI messages.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>IRI (as defined in the cmi5 Course Structure Section 7.1.4 - AU Metadata)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td></td></tr>
