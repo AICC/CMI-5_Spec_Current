@@ -307,7 +307,7 @@ LMS systems MUST meet the following requirements to conform to this specificatio
 Course structures MUST contain the following data for each AU in a course:
 
 * URL location – A URL to the AU’s location (entry point)
-* Activity ID – The AU’s activity ID as defined in the xAPI specification (determined by the AU designer).
+* Activity ID – The AU’s activity ID as defined in the xAPI specification (determined by the course designer).
 * Launch Method - 
     * “OwnWindow” – The LMS MUST either spawn a new window for the AU launched, or redirect the existing window to the AU.
     * “AnyWindow” – The AU does not care about the window context (all browser windows options are acceptable – FrameSet, New Window, redirect, etc.) The LMS may use whichever method desired..
@@ -1058,7 +1058,7 @@ of the context object's extension collection.<br />
       <td><p><strong>Description: </strong>Launch parameters that are content specific.  The LMS MUST obtain this value from the Course Structure.<br />
       <strong>LMS Required: </strong>Yes<br />
       <strong>AU Required: </strong>No<br />
-      <strong>LMS Usage:  </strong>Static launch parameters defined by the AU designer MUST be obtained by the LMS from the Course Structure.<br />
+      <strong>LMS Usage:  </strong>Static launch parameters defined by the course designer MUST be obtained by the LMS from the Course Structure.<br />
       <strong>AU Usage: </strong>Determined by the AU.<br />
       <strong>Data type: </strong>string<br />
       <strong>Value space: </strong>Values are defined by the AU provider.<br />
