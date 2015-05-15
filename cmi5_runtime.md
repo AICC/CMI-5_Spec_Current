@@ -9,6 +9,8 @@ cmi5 Runtime Environment
 
 ## Table of Contents
 
+[__Disclaimer__](#disclaimer)
+
 [__Revision History__](#revhistory)
 
 [__Contributors__](#contributors)
@@ -62,6 +64,9 @@ cmi5 Runtime Environment
 
 ------
 
+<a name="dislaimer"/>  
+## Disclaimer
+PLEASE NOTE: This is a developer release and is subject to change.
 
 <a name="revhistory"></a>	
 ## Revision History
