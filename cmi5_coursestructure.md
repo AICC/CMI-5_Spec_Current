@@ -97,12 +97,11 @@ The scope of this specification is limited to the following:
 
 The following referenced documents are indispensable for the application of this specification. 
 
-RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.<br/>
-
-“Experience API”, current specification, ADL, 2012-2013<br/>
+* RFC 2396, "Uniform Resource Identifiers (URI): Generic Syntax," August 1998.<br/>
+https://www.ietf.org/rfc/rfc2396.txt
+* "Experience API", current specification, ADL, 2012-2013<br/>
 https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
-
-cmi5 Runtime Environment, Sandstone 1st Edition
+* cmi5 Runtime Environment, Sandstone 1st Edition<br/>
 <https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_runtime.md>
 
 
