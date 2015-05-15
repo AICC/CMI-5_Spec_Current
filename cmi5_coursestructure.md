@@ -24,11 +24,11 @@ cmi5 Course Structure
   * [6.1 Course Structure Requirements](#course_structures)
 * [__7.0 Course Structure Data Requirements__](#course_requirements)
   * [7.1 Course Structure Data Model](#course_structure_data_model)
-    * [7.1.1 Course Level Meta Data](#course_level_meta_data)
-    * [7.1.2 Block Meta Data](#block_meta_data)
-    * [7.1.3 Objectives Meta Data](#objectives_meta_data)
-    * [7.1.4 AU Meta Data](#au_meta_data)
-    * [7.1.5 Vendor Specific Meta Data](#vendor_meta_data)
+    * [7.1.1 Course Level Metadata](#course_level_meta_data)
+    * [7.1.2 Block Metadata](#block_meta_data)
+    * [7.1.3 Objectives Metadata](#objectives_meta_data)
+    * [7.1.4 AU Metadata](#au_meta_data)
+    * [7.1.5 Vendor Specific Metadata](#vendor_meta_data)
   * [7.2 Course Structure XSD](#course_structure_xsd)
 * [__8.0 Course Package__](#course_package)
 * [__9.0 Bibliography__](#bibliography)
@@ -325,7 +325,7 @@ The following metadata attributes and elements are at the course level and  desc
 
 
 <a name="block_meta_data"/>
-### 7.1.2 Block Meta Data
+### 7.1.2 Block Metadata
 
 The data in this section are used for the block structures with group AUs.  A Block consists of one or more AUs. Blocks can also contain references to objectives and other Blocks.
 
@@ -402,7 +402,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
 
 
 <a name="objectives_meta_data"/>  
-### 7.1.3 Objectives Meta Data   
+### 7.1.3 Objectives Metadata   
 
 The data in this section are used by the Objectives. Objectives can be associated with a Block or with individual AUs. 
 
@@ -467,10 +467,9 @@ The data in this section are used by the Objectives. Objectives can be associate
 
 
 <a name="au_meta_data"/>  
-### 7.1.4 AU Meta Data  
+### 7.1.4 AU Metadata  
 
-The data in this section are used by the LMS to locate the AU and provide launch data. 
-AUs may also contain objectives.
+The data in this section are used by the LMS to locate the AU and provide launch data. AUs may also contain objectives.
 
 
 <table border="1" cellspacing="0" cellpadding="0">
@@ -685,13 +684,13 @@ AUs may also contain objectives.
         <strong>Data type: </strong> string</p>
     </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br />
-      A relative or fully qualified URL that references the launch point of the AU.<br/>&nbsp;<br/>
-      To accomodate "non-browser" applications, an application specific protocol may be used in the url:<br/>
-      &lt;application&gt;://&lt;URL to content&gt;
-      
-      Regardless of the value of &lt;application&gt;, the remaining portion of the URL MUST conform to HTTP/S conventions, such as named value pair parameters.
-      <br/>&nbsp;<br/>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1.1 of the cmi5 Runtime Environment).
-      </p>
+    <ul>
+      	<li>A relative or fully qualified URL that references the launch point of the AU.</li>
+      	<li>To accommodate "non-browser" applications, an application specific protocol may be used in the url:<br/>
+      &lt;application&gt;://&lt;URL to content&gt;</li>
+      	<li>Regardless of the value of &lt;application&gt;, the remaining portion of the URL MUST conform to HTTP/S conventions, such as named value pair parameters.</li>
+      	<li>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1.1 of the cmi5 Runtime Environment).</li>
+     </ul>
       <p><strong>Value space:</strong>Values are determined by the course designer.</p>
       <p><strong>Sample value:</strong><br/>
       &lt;url&gt;<br/>
@@ -741,7 +740,7 @@ AUs may also contain objectives.
 </table>
 
 <a name="#vendor_meta_data"/>
-### 7.1.5 Vendor Specific Meta Data
+### 7.1.5 Vendor Specific Metadata
 
 Course Designer MAY place their own namespaced elements into the course structure. For that he MUST provide a XML Schema Definition and SHOULD provide a human readable specification describing these vendor specific extensions. These extensions MUST keep the course structure XML valid. An importing LMS MAY ignore these elements. 
 
