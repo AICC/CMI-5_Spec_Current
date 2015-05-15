@@ -265,7 +265,7 @@ Responsibilities of the Assignable Unit:
 * Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
 * Acting as a "client", send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data according to the defined data types and vocabularies that are defined in this specification.
-* Send an "terminate" message prior to terminating the AU's execution.
+* Send a "terminate" message prior to terminating the AU's execution.
 
 Responsibilities of the LMS:
 * Create and maintain course structures.
