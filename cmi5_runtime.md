@@ -219,11 +219,9 @@ Uses of the xAPI specification outside of the scope of this specification do not
 
 An Assignable Unit MUST conform to all requirements listed in Section 7 – AU Requirements.
 
-An Assignable Unit MUST conform to all requirements as specified in the xAPI
-specification (see References)
+An Assignable Unit MUST conform to all requirements as specified in the xAPI specification (see References).
 
-An Assignable Unit MUST NOT implement any features or functionality (optional or
-mandatory) described in this specification in a non-conforming manner.
+An Assignable Unit MUST NOT implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.
 
 <a name="lms_conformance"></a> 
 ##4.2 Learning Management Systems (LMS)
