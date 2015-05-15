@@ -135,16 +135,14 @@ Uses of activities not explicitly defined above are outside of the scope of this
 <a name="references"></a> 
 #2.0  References
 
-The following referenced documents are indispensable for the application of this
-specification. 
+The following referenced documents are indispensable for the application of this specification. 
 
-RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
-
-“Experience API”, curent working draft, ADL, 2012-2013  
-<https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md>
-
-cmi5 Course Structure, Sandstone 1st Edition    
-<https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md>
+* RFC 2396, "Uniform Resource Identifiers (URI): Generic Syntax," August 1998.<br/>
+https://www.ietf.org/rfc/rfc2396.txt
+* "Experience API", current specification, ADL, 2012-2013<br/>
+https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
+* cmi5 Course Structure, Sandstone 1st Edition<br/>
+https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md
 
 
 <a name="definitions"></a>   
