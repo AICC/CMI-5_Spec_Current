@@ -752,10 +752,10 @@ The following is the XML schema for a course structure file.
 All course structures created for LMS import functionality and created by the LMS for export MUST conform to this XSD and be named "cmi5.xml".
 
 ```XML
-<xs:schema xmlns="http://aicc.org/CMI5/CourseStructure.xsd"
+<xs:schema xmlns="http://www.adlnet.gov/cmi5/CourseStructure.xsd"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://aicc.org/CMI5/CourseStructure.xsd" elementFormDefault="qualified"
-           id="CMI5CourseStructure">
+           targetNamespace="http://www.adlnet.gov/cmi5/CourseStructure.xsd" elementFormDefault="qualified"
+           id="cmi5CourseStructure">
   <xs:element name="courseStructure" type="courseType"/>
   <xs:complexType name="courseType">
     <xs:sequence>
