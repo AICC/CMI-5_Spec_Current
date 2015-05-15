@@ -612,7 +612,7 @@ AU’s use in statement.
 <tr><th align="left">Verb</th><td>Initialized</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/initialized</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Initialized" }</td></tr>
-<tr><th align="left">Description</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and SHOULD follow the "Launched" statement created by the LMS within a reasonable period of time.</td>
+<tr><th align="left">Description</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and MUST follow the "Launched" statement created by the LMS within a reasonable period of time.</td>
 </tr><tr><th align="left">AU Obligations</th><td>The AU MUST use "Initialized" in the first statement in the AU session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>Verify that this verb is recorded by the AU immediately after launch</td></tr>
 </tr><tr><th align="left">Usage</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and SHOULD follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
