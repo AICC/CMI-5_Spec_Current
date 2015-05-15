@@ -1,4 +1,4 @@
-CMI-5 Course Structure 
+cmi5 Course Structure 
 ------------------------------------------------------------------------------------
 >
 >Copyright &copy; 2012-2015 ADL, All rights reserved
@@ -101,7 +101,7 @@ RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998.
 “Experience API”, current specification, ADL, 2012-2013<br/>
 https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
 
-CMI5-001  – CMI-5 Runtime Environment, Version x.x, AICC, TBD  
+cmi5-001  – cmi5 Runtime Environment, Version x.x, AICC, TBD  
 
 
 
@@ -134,7 +134,7 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Learning Records Store (LRS)__: Defined in the xAPI specification. In this specification, the LMS MUST implement an LRS with the additional requirements specified in this document.
 
-* __Must / SHOULD / May__: Three levels of obligation with regards to conformance to the CMI-5 specification. A system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. Failing to meet a SHOULD requirement is not a violation of conformity, but goes against best practices. MAY indicates an option, to be decided by the developer with no consequences for conformity.
+* __Must / SHOULD / May__: Three levels of obligation with regards to conformance to the cmi5 specification. A system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. Failing to meet a SHOULD requirement is not a violation of conformity, but goes against best practices. MAY indicates an option, to be decided by the developer with no consequences for conformity.
 <BR />
 <BR />
 
