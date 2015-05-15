@@ -509,7 +509,7 @@ The AU SHOULD NOT attempt to retrieve the authorization token more than once.  T
   <tr><th colspan=3 align ="left">auth-token</th></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>An authorization token used in all xAPI communications with the LMS when Basic authentication is used.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>auth-token</em></strong> in a JSON structure, as shown in Section 8.2.1, in its response to a <strong><em>fetch</em></strong> URL request. The response MUST have a content-type of "application/json".</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>AU MUST get the <strong><em>auth-token</em></strong> value using an HTTP POST to the <strong><em>fetch</em></strong> URL. The AU MUST then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>The AU MUST get the <strong><em>auth-token</em></strong> value using an HTTP POST to the <strong><em>fetch</em></strong> URL. The AU MUST then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>QWxhZGRpbjpvcGVuIHNlc2FtZQ==</td></tr>
@@ -540,8 +540,7 @@ The values for <strong><em>error-text</em></strong> are defined by the LMS.
 <a name="other_environment"></a>  
 ##8.3 Other Launch Environments
 
-Other launch environments are not currently implemented in this specification. The
-following launch environments are being considered for future releases:  
+Other launch environments are not currently implemented in this specification. The following launch environments are being considered for future releases:  
 
 * Windows/XP/7/8 Pro  
 * Windows RT  
@@ -550,9 +549,7 @@ following launch environments are being considered for future releases:
 * Android  
 * iOS  
 
-cmi5 implementations for LMS’s and AU’s in these other environments will use the same
-REST communication interface as specified in xAPI specification.  The xAPI specification
-does not specify launch mechanisms.
+cmi5 implementations for LMS’s and AU’s in these other environments will use the same REST communication interface as specified in xAPI specification.  The xAPI specification does not specify launch mechanisms.
 
 <a name="xapi_data_model"/>  
 #9.0 xAPI Statement Data Model  
