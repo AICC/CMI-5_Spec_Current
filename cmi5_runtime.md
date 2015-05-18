@@ -278,7 +278,7 @@ mechanism(s) and associate commands as prescribed in this specification.
 <a name="lms_requirements"></a>  
 #6.0 LMS Requirements
 
-LMS systems MUST meet the following requirements to conform to this specification:  
+The LMS MUST meet the following requirements to conform to this specification:  
 
 * The LMS MUST implement an LRS as defined in the xAPI specification.
 * The LMS MUST support Course Structures as defined in cmi5 Course Structure.
@@ -995,7 +995,7 @@ The properties for the LMSLaunchData document are described below.
 
 <table>
   <tr><th colspan=3 align ="left">entitlementKey: courseStructure</th></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>Entitlement data or key from the Course Structure. The       <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS system is entitled to use the AU.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>Entitlement data or key from the Course Structure. The       <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>No</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain this from the Course Structure.</td></tr>
@@ -1007,7 +1007,7 @@ The properties for the LMSLaunchData document are described below.
 
 <table>
   <tr><th colspan=3 align ="left">entitlementKey: alternate</th></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>Entitlement data or key from some other source as agreed upon between the LMS and the AU. The <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS system is entitled to use the AU.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>Entitlement data or key from some other source as agreed upon between the LMS and the AU. The <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>No</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>No</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain the alternate entitlement key from a source as agreed upon with the AU.</td></tr>
