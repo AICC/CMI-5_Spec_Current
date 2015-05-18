@@ -195,26 +195,27 @@ The LMS MUST NOT implement any features or functionality (optional or mandatory)
 # 5.0 Conceptual Model: Informative  
 
 Synopsis of the cmi5 model:
-* An LMS imports a course structure.
+* An LMS imports a course structure, which may contain one or more AUs.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or a related system.
-* A learner launches an Assignable Unit (AU) from the LMS or an associated launching system, using an interface.
+* A learner launches an AU from the LMS or an associated launching system, using an interface.
+* The LMS writes launch data to the integrated LRS.
 * The AU sends a message to the LMS requesting launch parameters and previous state information.
 * The learner views the AU content and performs the learning. During this time, the AU MAY request data from, and store data to, the LMS.
 * The learner exits the AU.
-* The AU reports the final tracking data to the LMS and issues an exit message.
-* Administrative users create and view reports of tracking data recorded by the AUs for individual learners.
+* The AU reports the final tracking data to the LMS and issues a "terminate" statement.
+* Administrative users create and view reports of the tracking data recorded by the AUs for individual learners.
 
 Responsibilities of the Assignable Unit:
 * Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
 * Acting as a "client", send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data according to the defined data types and vocabularies that are defined in this specification.
-* Send an “exit” message prior to terminating the learning activity’s execution.
+* Send a "terminate" statement prior to terminating the AU's execution.
 
 Responsibilities of the LMS:
 * Create and maintain course structures.
-* Acting as a “server”, receive and reply to messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
-* Format all data per defined data types and vocabularies defined in this specification.
+* Acting as a "server", receive and reply to messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
+* Format all data according to the defined data types and vocabularies that are defined in this specification.
 * Launch the specified AU contained in the courses within the defined environment(s).
 
 <a name="lms_requirements"/>
