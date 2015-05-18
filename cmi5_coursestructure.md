@@ -188,7 +188,7 @@ Course structure data MUST NOT implement any features or functionality (optional
 <a name="lms_conformance"/>
 ## 4.2 Learning Management Systems (LMS)
 
-LMS systems MUST conform to all requirements listed in Section 6 – LMS Requirements.  
+The LMS MUST conform to all requirements listed in Section 6 – LMS Requirements.  
 The LMS MUST NOT implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
 <a name="concept"/>
@@ -221,7 +221,7 @@ Responsibilities of the LMS:
 <a name="lms_requirements"/>
 # 6.0 LMS Requirements
 
-LMS systems MUST meet the following requirements to conform to this specification:  
+The LMS MUST meet the following requirements to conform to this specification:  
 
 * The LMS MUST implement an LRS as defined in the xAPI specification.
 * The LMS MUST support Course Structures as defined in cmi5 Course Structure.
@@ -743,7 +743,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Required:</strong> No<br />
         <strong>Data type:</strong> string </p></td>
     <td valign="top"><p><strong>Description:</strong><br />
-        Data used by the AU to determine if the launching LMS system is entitled to use the AU. The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.<br />
+        Data used by the AU to determine if the launching LMS is entitled to use the AU. The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.<br />
     </p>
       <p><strong>Value space: </strong>Values are defined by the AU content provider.<br />
         <br />
