@@ -195,7 +195,7 @@ The LMS MUST NOT implement any features or functionality (optional or mandatory)
 # 5.0 Conceptual Model: Informative  
 
 Synopsis of the cmi5 model:
-* An LMS imports a course structure, which may contain one or more AUs.
+* An LMS imports a course structure, which MUST contain one or more AUs.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or a related system.
 * A learner launches an AU from the LMS or an associated launching system, using an interface.
