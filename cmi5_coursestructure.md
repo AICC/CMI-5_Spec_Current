@@ -789,8 +789,11 @@ All course structures created for LMS import functionality and created by the LM
           <xs:attribute name="id" type="xs:anyURI" use="required"/>
         </xs:complexType>
       </xs:element>
-      <xs:element name="block" type="blockType"/>
       <xs:element name="objectives" type="objectivesType" minOccurs="0"/>
+      <xs:choice minOccurs="1" maxOccurs="unbounded">
+      	<xs:element name="au" type="auType"/>
+        <xs:element name="block" type="blockType"/>
+      </xs:choice>
       <xs:group ref="anyElement"/>
     </xs:sequence>
     <xs:attributeGroup ref="anyAttribute"/>
