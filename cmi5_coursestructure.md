@@ -392,8 +392,8 @@ The data in this section are used for the block structures with group AUs.  A Bl
       Values are defined by the course designer.<br />
       <strong>Sample value: </strong><br />
 &lt;description&gt;<br />
-&nbsp;&nbsp;    &lt;langstring lang="en-US"&lt;This is the block description&lt;/langstring&gt;<br/>
-&nbsp;&nbsp;    &lt;langstring lang="es-MX"&lt;Esta es la descripción de los bloques&lt;/langstring&gt;<br/>
+&nbsp;&nbsp;    &lt;langstring lang="en-US"&gt;This is the block description&lt;/langstring&gt;<br/>
+&nbsp;&nbsp;    &lt;langstring lang="es-MX"&gt;Esta es la descripción de los bloques&lt;/langstring&gt;<br/>
 &lt;/description&gt;<br />
     </td>
   </tr>
