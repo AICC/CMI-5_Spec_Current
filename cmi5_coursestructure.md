@@ -528,7 +528,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td colspan="2" valign="top"><h3>masteryScore</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><strong>Required:</strong> Yes<br />
+    <td valign="top"><p><strong>Required:</strong> No<br />
         <strong>Data type:</strong> string </p></td>
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
@@ -536,9 +536,8 @@ The data in this section are used by the LMS to locate the AU and provide launch
         <li>The masteryScore is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
         <li>If the AU has scoring, it will use the Masteryscore to determine pass/fail (as defined in the cmi5 Runtime Specification)</li>
         <li>The masteryScore is a scaled, decimal value between 0 and 1.</li>
-        <li>If the value of the masteryScore is an empty string (""), then a masteryScore is not defined for the AU.</li>
       </ul>
-      <p><strong>Value space: </strong>Decimal number or empty string.<br />
+      <p><strong>Value space: </strong>Decimal number.<br />
         <br />
       <strong>Sample value: </strong><br/>
       &lt;au id="&hellip;" masteryScore="0.85"&gt; &hellip; &lt;/au&gt;
