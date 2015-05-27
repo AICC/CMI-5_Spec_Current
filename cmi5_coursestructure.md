@@ -1,4 +1,4 @@
-cmi5 Course Structure 
+﻿cmi5 Course Structure 
 ------------------------------------------------------------------------------------
 >
 >Copyright &copy; 2012-2015 ADL, All rights reserved
@@ -774,7 +774,12 @@ All course structures created for LMS import functionality and created by the LM
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://www.adlnet.gov/cmi5/CourseStructure.xsd" elementFormDefault="qualified"
            id="cmi5CourseStructure">
-  <xs:element name="courseStructure" type="courseType"/>
+  <xs:element name="courseStructure" type="courseType">
+    <xs:unique name="globallyUniqueIRI">
+      <xs:selector xpath=".//*"/>
+      <xs:field xpath="@id"/>
+    </xs:unique>
+  </xs:element>
   <xs:complexType name="courseType">
     <xs:sequence>
       <xs:element name="course">
