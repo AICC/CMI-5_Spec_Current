@@ -94,6 +94,7 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 | Mike Rustici         | Rustici Software                       |
 | Ben Clark            | Rustici Software                       |
 | Megan Bowe           | Rustici Software                       |
+| Andrew Downes        | Rustici Software                        |
 | Jacques Talvard      | Airbus                                 |
 | William A. McDonald  | Boeing                                 |
 | Ray Lowery           | Pratt &amp; Whitney                    |
@@ -109,7 +110,6 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 | Severin Neumann      | die eLearning AG                       |
 | David Pesce          | Exputo Inc.                            |
 | Henry Ryng           | inXsol					|
-| Andrew Downes        | Epic Learning                          |
 | Chris Handorf        | Pearson                                |
 | Jamie Burns          | Virtual College                        |
 
