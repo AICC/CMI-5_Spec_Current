@@ -277,6 +277,7 @@ The LMS MUST meet the following requirements to conform to this specification:
 * The LMS MUST implement additional xAPI "Statement API" requirements as defined in Section 9.
 * The LMS MUST implement additional xAPI "Agent Profile API" requirements as defined in Section 11.
 * The LMS MUST implement a means to import course structures as defined in Section 6.1.
+* The LMS MUST NOT provide permissions/credentials which allow the AU to issue voiding Statements.
 * The LMS SHOULD implement a means to export course structures as defined in Section 6.1.
 
 <a name="course_structures"></a>  
