@@ -58,7 +58,6 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 <a name="contributors"/> 
 ## Contributors
 
-
 | Name:                | Organization:                          |
 |----------------------|----------------------------------------|
 | Ed Cohen             | AICC Infrastructure Subcommittee Chair |
@@ -86,6 +85,9 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 | Severin Neumann      | die eLearning AG                       |
 | David Pesce          | Exputo Inc.                            |
 | Henry Ryng           | inXsol					|
+| Andrew Downes        | Epic Learning                          |
+| Chris Handorf        | Pearson                                |
+| Jamie Burns          | Virtual College                        |
 -------
 
 <a name="overview"/> 

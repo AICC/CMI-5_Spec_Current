@@ -82,37 +82,36 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 <a name="contributors"></a> 
 ##Contributors
 
-<table>
-	<tr><th>Name:</th><th>Organization:</th></tr>
-	<tr><td>Ed Cohen</td><td>AICC Infrastructure Subcommittee Chair</td></tr>
-	<tr><td>Aaron Silvers</td><td>ADL</td></tr>
-	<tr><td>Jonathan Poltrack</td><td>ADL</td></tr>
-	<tr><td>Andy Johnson</td><td>ADL</td></tr>
-	<tr><td>Tom Creighton</td><td>ADL</td></tr>
-	<tr><td>Nik Hruska</td><td>ADL</td></tr>
-	<tr><td>Avron Barr</td><td>The LETSI Foundation</td></tr>
-	<tr><td>Mike Rustici</td><td>Rustici Software</td></tr>
-	<tr><td>Ben Clark</td><td>Rustici Software</td></tr>
-	<tr><td>Megan Bowe</td><td>Rustici Software</td></tr>
-	<tr><td>Jacques Talvard</td><td>Airbus</td></tr>
-	<tr><td>William A. McDonald</td><td>Boeing</td></tr>
-	<tr><td>Ray Lowery</td><td>Pratt &amp; Whitney</td></tr>
-	<tr><td>John Kleeman</td><td>Questionmark</td></tr>
-	<tr><td>Kris Rockwell</td><td>Hybrid Learning Systems</td></tr>
-	<tr><td>Paul Roberts</td><td>Questionmark</td></tr>
-	<tr><td>Christopher Reynolds</td><td>Pelesys</td></tr>
-	<tr><td>Mingrui Zheng</td><td>Pelesys</td></tr>
-	<tr><td>Chris Sawwa</td><td>Meridian Knowledge Systems</td></tr>
-	<tr><td>Michael Roberts</td><td>VTraining Room</td></tr>
-	<tr><td>Thomas Person</td><td>(Formerly of Adobe)</td></tr>
-	<tr><td>Andrew Downes</td><td>Epic Learning</td></tr>
-	<tr><td>Henry Ryng</td><td>inXsol</td></tr>
-	<tr><td>Art Werkenthin</td><td>RISC, Inc.</td></tr>
-	<tr><td>Chris Handorf</td><td>Pearson</td></tr>
-	<tr><td>David Pesce</td><td>Exputo Inc.</td></tr>
-</table> 
-
--------
+| Name:                | Organization:                          |
+|----------------------|----------------------------------------|
+| Ed Cohen             | AICC Infrastructure Subcommittee Chair |
+| Aaron Silvers        | ADL                                    |
+| Jonathan Poltrack    | ADL                                    |
+| Andy Johnson         | ADL                                    |
+| Tom Creighton        | ADL                                    |
+| Nik Hruska           | ADL                                    |
+| Avron Barr           | The LETSI Foundation                   |
+| Mike Rustici         | Rustici Software                       |
+| Ben Clark            | Rustici Software                       |
+| Megan Bowe           | Rustici Software                       |
+| Jacques Talvard      | Airbus                                 |
+| William A. McDonald  | Boeing                                 |
+| Ray Lowery           | Pratt &amp; Whitney                    |
+| John Kleeman         | Questionmark                           |
+| Kris Rockwell        | Hybrid Learning Systems                |
+| Paul Roberts         | Questionmark                           |
+| Christopher Reynolds | Pelesys                                |
+| Mingrui Zheng        | Pelesys                                |
+| Chris Sawwa          | Meridian Knowledge Systems             |
+| Michael Roberts      | VTraining Room                         |
+| Thomas Person        | (Formerly of Adobe)                    |
+| Art Werkenthin       | RISC,Inc                               |
+| Severin Neumann      | die eLearning AG                       |
+| David Pesce          | Exputo Inc.                            |
+| Henry Ryng           | inXsol					|
+| Andrew Downes        | Epic Learning                          |
+| Chris Handorf        | Pearson                                |
+| Jamie Burns          | Virtual College                        |
 
 <a name="overview"></a>  
 #1.0 Overview
