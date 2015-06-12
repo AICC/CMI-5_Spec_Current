@@ -531,7 +531,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
   </tr>
   <tr>
     <td valign="top"><p><strong>Required:</strong> No<br />
-        <strong>Data type:</strong> string </p></td>
+        <strong>Data type:</strong> decimal </p></td>
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
       <ul>
