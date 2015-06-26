@@ -815,9 +815,12 @@ The value for the registration property used in the context object MUST be the v
 
 <a name="ContextActivities"></a>
 ###9.6.2  contextActivities
-Statements with a results object (Section 9.5) that include either "success” or "completion” properties MUST contain a contextActivities object with the "id" property of "moveon". Other statements MUST NOT include this property. The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems.
 
-All cmi5 Statements MUST include an object with the "id" property of "cmi5" in contextActivities. This purpose of this property is to identify cmi5 specific statements during LRS searches.
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. contextActivities contain category objects whose entries can be used as wildcard searches. Each category is tagged with name value pairs of "id" and an IRI.
+
+All cmi5 Statements MUST have a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/cmi5" as the IRI.
+
+Statements with a results object (Section 9.5) that include either "success” or "completion” properties MUST have a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/moveon". Other statements MUST NOT include the this property.
 
 <a name="extensions"></a> 
 ###9.6.3 extensions
