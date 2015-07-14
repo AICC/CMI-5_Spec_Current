@@ -333,8 +333,8 @@ The following metadata attributes and elements are at the course level and  desc
          Values defined by course designer</p>
       <p><strong>Sample value: </strong><br />
     &lt;languages&gt;<br/>
-    &nbsp;&nbsp;en-US<br/>
-    &nbsp;&nbsp;es-MX<br/>
+    &nbsp;&nbsp;	&lt;lang&gt;en-US&lt;/lang&gt;<br/>
+    &nbsp;&nbsp;	&lt;lang&gt;es-MX&lt;/lang&gt;<br/>
     &lt;/languages&gt;<br/>
         </p>
     </td>
@@ -910,17 +910,14 @@ All course structures created for LMS import functionality and created by the LM
     </xs:sequence>
     <xs:attributeGroup ref="anyAttribute"/>
   </xs:complexType>
-  <xs:simpleType name="baseLanguagesType">
-    <xs:list itemType="xs:language"></xs:list>
-  </xs:simpleType>
   <xs:complexType name="languagesType">
-    <xs:simpleContent>
-      <xs:extension base="baseLanguagesType">
-        <xs:attributeGroup ref="anyAttribute"/>
-      </xs:extension>
-    </xs:simpleContent>
+    <xs:sequence>
+      <xs:element name="lang" maxOccurs="unbounded">
+      </xs:element>
+      <xs:group ref="anyElement"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="anyAttribute"/>
   </xs:complexType>
-
   <xs:group name="anyElement">
     <xs:sequence>
       <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
