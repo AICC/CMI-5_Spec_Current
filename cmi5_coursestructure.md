@@ -320,25 +320,7 @@ The following metadata attributes and elements are at the course level and  desc
         </p>
     </td>
   </tr>
-  <tr>
-    <td colspan="2" valign="top"><h3>languages</h3></td>
-  </tr>
-  <tr>
-    <td width="168" valign="top"><p><strong>Required</strong>: No<br />
-        <strong>Data type</strong>: RFC 5646 language tags</p>
-    </td>
-    <td width="811" valign="top"><p><strong>Description:</strong><br />
-      Specifies which languages will be supported by the course. All of the languages list MUST be present in a langstring for each title or description element. The LMS will be expected to display the language specific titles and descriptions for course elements based on the learner’s language preference.</p>
-      <p><strong>Value space:</strong><br />
-         Values defined by course designer</p>
-      <p><strong>Sample value: </strong><br />
-    &lt;languages&gt;<br/>
-    &nbsp;&nbsp;en-US<br/>
-    &nbsp;&nbsp;es-MX<br/>
-    &lt;/languages&gt;<br/>
-        </p>
-    </td>
-  </tr>
+
 </table>
 
 
@@ -757,7 +739,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
   </tr>
 </table>
 
-<a name="#vendor_meta_data"/>
+<a name="vendor_meta_data"/>
 ### 7.1.5 Vendor Specific Metadata
 
 Course Designer MAY place their own namespaced elements into the course structure. For that he MUST provide a XML Schema Definition and SHOULD provide a human readable specification describing these vendor specific extensions. These extensions MUST keep the course structure XML valid. An importing LMS MAY ignore these elements. 
@@ -783,7 +765,6 @@ All course structures created for LMS import functionality and created by the LM
           <xs:sequence>
             <xs:element name="title" type="textType"/>
             <xs:element name="description" type="textType"/>
-            <xs:element name="languages" minOccurs="0" type="languagesType"></xs:element>
             <xs:group ref="anyElement"/>
           </xs:sequence>
           <xs:attributeGroup ref="anyAttribute"/>
