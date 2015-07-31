@@ -32,7 +32,8 @@ cmi5 Runtime Environment
   * [7.2 AU Statement API Requirements](#au_statement_api_requirements)
       * [7.2.1 Placement of the sessionId in Statements](#placement)
       * [7.2.2 First Statement API Call](#first_statement_au)
-      * [7.1.2 Last Statement Call](#last_statement_au)
+      * [7.2.3 Last Statement Call](#last_statement_au)
+      * [7.2.4 Types of Statements](#type_statement_au)
 * [__8.0 Content Launch Mechanisms__](#content_launch)
   * [8.1 Web (Browser) Environment](#browser_environment)
   * [8.2 Authorization Token Fetch URL](#fetch_url)
@@ -360,6 +361,16 @@ The AU MUST issue a statement to the LRS after being launched, initialized, and 
 <a name="last_statement_au"></a>  
 ###7.2.3 Last Statement Call
 The AU MUST issue a statement to the LRS prior to termination using the Terminated verb as described in Section 9.3.8.
+
+<a name="type_statement_au"></a>  
+###7.2.4 Types of Statements
+The statements issued within an AU session could fall within the following categories:
+
+* "cmi5 defined" - Statements using cmi5 defined verbs, category Id's, and cmi5 content templates.
+* "cmi5 allowed" - Statements using any verbs and cmi5 content templates (but NOT including cmi5 category id's)
+* "cmi5 not-allowed" - Any statements not conforming with the cmi5 specification.
+
+The AU MAY issue statements that are defined as "cmi5 allowed" statements per section 9.6.2. If "cmi5 allowed" statements are posted by the AU, they MUST occur between cmi5 statements using the Initialized verb and the Terminated verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and completion rules.
 
 <a name="content_launch"></a>  
 #8.0 Content Launch Mechanisms
@@ -818,7 +829,9 @@ The value for the registration property used in the context object MUST be the v
 
 The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. contextActivities contain category objects whose entries can be used as wildcard searches. Each category is tagged with name value pairs of "id" and an IRI.
 
-All cmi5 Statements MUST have a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/cmi5" as the IRI.
+All "cmi5 defined" statements MUST have a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/cmi5" as the IRI. 
+
+All statements that do NOT include have a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/cmi5" as the IRI are "cmi5 allowed" statements. An AU MAY issue "cmi5 allowed" statements using cmi5 verbs or verbs defined outside the scope of the cmi5 runtime specification.
 
 Statements with a results object (Section 9.5) that include either "success” or "completion” properties MUST have a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/moveon". Other statements MUST NOT include the this property.
 
