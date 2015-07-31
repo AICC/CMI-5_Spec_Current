@@ -392,7 +392,7 @@ The format of the launching URL is as follows:
 <URL to AU>
 ?endpoint=<URL to LMS Listener>
 &fetch=<Fetch URL for Authorization Token (optional)– if OAuth is not used>
-&actor=<Actor Object>
+&actor=<Actor>
 &registration=<Registration ID>
 &activityId=<AU activity ID>
 ```
@@ -433,7 +433,7 @@ The values for the URL launch parameters are described below:
 
 <table>
   <tr><th colspan=3 align ="left">actor</th></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A JSON object called “actor” (as defined in the xAPI specification) that identifies the learner launching the AU so the AU will be able to include it in xAPI messages.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A JSON object of objectType "Agent" (as defined in the xAPI specification) that identifies the learner launching the AU so the AU will be able to include it in xAPI messages.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>actor </em></strong>in the query string based on the authenticated learner’s identity. The    LMS SHOULD create an actor object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>The AU MUST get the <strong><em>actor </em></strong>value from the query string. The AU MUST use the <strong><em>actor </em></strong>value in API calls that require an “actor” object when sending xAPI messages</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
@@ -534,7 +534,7 @@ The AU will not provide a statement ID for cmi5 defined statements.  (The LRS wi
   
 <a name="Actor" ></a>
 ##9.2 Actor
-The Actor object will be defined by the LMS.  The Actor object for all statements with cmi5 defined verbs MUST be of type "Agent" and MUST contain an account object.
+The Actor object will be defined by the LMS.  The Actor object for all statements with cmi5 defined verbs MUST be of objectType "Agent" and MUST contain an "account" object.
 
 An Example of usage in a statement:
 
