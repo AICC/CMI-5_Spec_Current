@@ -343,13 +343,13 @@ Usage in an xAPI Statement:
 
 ```javascript
 "extensions": {
-       “sessionId”: <sessionId value>
+       “http://purl.org/xapi/cmi5/context/extensions/sessionid”: <sessionId value>
      }
 ```
 Example:
 ```javascript
 "extensions": {
-       “sessionId”: ”xyz123”
+       “http://purl.org/xapi/cmi5/context/extensions/sessionid”: ”xyz123”
      }
 ```
 
