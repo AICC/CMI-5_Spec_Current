@@ -426,7 +426,7 @@ The values for the URL launch parameters are described below:
   <tr><th colspan=3 align ="left">endpoint</th></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A URL to the LMS listener location for xAPI messages to be sent to.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>endpoint </em></strong>in the query string.<strong></strong>The LMS SHOULD limit the use of the <strong><em>auth</em></strong> value for the duration of a specific/user/AU/registration</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>endpoint </em></strong>value from the query string. The AU MUST use the <strong><em>endpoint </em></strong>value as the URL location to send xAPI messages to.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>endpoint</em></strong> value from the query string. The AU MUST use the <strong><em>endpoint </em></strong>value as the URL location to send xAPI messages to.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>A URL-encoded URL</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>https://mylms.aicc.org/MyCMI5_listener.pl</td></tr>
@@ -445,10 +445,10 @@ The values for the URL launch parameters are described below:
 <table>
   <tr><th colspan=3 align ="left">actor</th></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>A JSON object of objectType "Agent" (as defined in the xAPI specification) that identifies the learner launching the AU so the AU will be able to include it in xAPI messages.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>actor </em></strong>in the query string based on the authenticated learner’s identity. The    LMS SHOULD create an actor object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>The AU MUST get the <strong><em>actor </em></strong>value from the query string. The AU MUST use the <strong><em>actor </em></strong>value in API calls that require an “actor” object when sending xAPI messages</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST populate the <strong><em>actor</em></strong>  parameter in the query string based on the authenticated learner’s identity. The LMS SHOULD create this parameter with an object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" >AU Usage:</th><td>The AU MUST get the <strong><em>actor</em></strong> value from the query string. The AU MUST use the <strong><em>actor</em></strong> value in API calls that require an “actor” property when sending xAPI messages</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td> A JSON Actor object (as defined in Section 9.2)</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>Value space:</th><td>A JSON object (as defined in Section 9.2)</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>{"objectType": "Agent","account": {"homePage": "http://www.example.com","name": "1625378"}</td></tr>
 </table>
 
@@ -545,7 +545,7 @@ The AU will not provide a statement ID for cmi5 defined statements.  (The LRS wi
   
 <a name="Actor" ></a>
 ##9.2 Actor
-The Actor object will be defined by the LMS.  The Actor object for all statements with cmi5 defined verbs MUST be of objectType "Agent" and MUST contain an "account" object.
+The Actor property will be defined by the LMS. The Actor property for all statements with cmi5 defined verbs MUST be of objectType "Agent" and MUST contain an "account" as defined in the xAPI specification.
 
 An Example of usage in a statement:
 
@@ -799,6 +799,11 @@ The duration property SHOULD be included in "Abandoned" statements. The duration
 ####9.5.5.1 Progress
 An integer value indicating the completion of the AU as a percentage. The AU may set this value in statements to indicate level of completion between 0 and 100 percent.
 
+
+Progress is defined in extensions using the following IRI:
+
+      http://purl.org/xapi/cmi5/result/extensions/progress
+
 <a name="Context"></a> 
 ##9.6 Context
 All statements with cmi5 defined verbs MUST contain a context as defined in this section. 
@@ -1040,7 +1045,7 @@ The properties for the LMSLaunchData document are described below.
 __State API PUT Properties__:
 
 * _activityId_: Activity ID for the AU (from the course structure)  
-* _agent_: agent representing the LMS learner being enrolled.  This MUST match the actor object generated by LMS at AU launch time.  
+* _agent_: agent representing the LMS learner being enrolled.  This MUST match the actor property generated by LMS at AU launch time.  
 * _registration_: Registration ID representing the LMS learner enrollment in the course. This MUST match Registration ID used by the LMS at AU launch time.  
 * _stateId_: LMS.LaunchData  
 
