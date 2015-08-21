@@ -1095,7 +1095,10 @@ Using the domain of geology the following two examples demonstrate how simple an
       <objective
           idref="http://objectives.example.com/identifiers/geology/material-identification"/>
     </objectives>
-    <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/64f6">
+    <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/64f6"
+        activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+        moveOn="CompletedOrPassed" passIsFinal="false" masteryScore="1.0"
+        authenticationMethod="Basic">
       <title>
         <langstring lang="en-US">Rock and rock cycle</langstring>
         <langstring lang="de-DE">Gestein und Kreislauf der Gesteine</langstring>
@@ -1118,7 +1121,9 @@ Using the domain of geology the following two examples demonstrate how simple an
       <launchParameters>{'initialSpeed':3.0,'mode':1}</launchParameters>
       <entitlementKey>833d0c7c-a3f8-4f9b-a51f-cbd8a9dac9fb</entitlementKey>
     </au>
-    <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/3ee0">
+    <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/3ee0"
+        activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+        moveOn="NotApplicable">
       <title>
         <langstring lang="en-US">Unconsolidated material</langstring>
         <langstring lang="de-DE">Lockergestein</langstring>
@@ -1157,7 +1162,9 @@ Using the domain of geology the following two examples demonstrate how simple an
       <objective
           idref="http://objectives.example.com/identifiers/geology/basics"/>
     </objectives>
-    <au id="http://example.com/courses/f59c9fc0/au/6f64">
+    <au id="http://example.com/courses/f59c9fc0/au/6f64"
+        activityType="http://adlnet.gov/expapi/activities/lesson"
+        launchMethod="OwnWindow" moveOn="Passed" passIsFinal="false" masteryScore="0.1">
       <title>
         <langstring lang="en-US">Plate tectonics</langstring>
         <langstring lang="de-DE">Plattentektonik</langstring>
@@ -1177,7 +1184,9 @@ Using the domain of geology the following two examples demonstrate how simple an
       </objectives>
       <url>http://example.com/courses/f59c9fc0/au/6f64/start</url>
     </au>
-    <au id="http://example.com/courses/f59c9fc0/au/6f65">
+    <au id="http://example.com/courses/f59c9fc0/au/6f65"
+        activityType="http://adlnet.gov/expapi/activities/lesson"
+        launchMethod="OwnWindow" moveOn="CompletedOrPassed" passIsFinal="true" masteryScore="0.3">
       <title>
         <langstring lang="en-US">Structure of the earth</langstring>
         <langstring lang="de-DE">Innerer Aufbau der Erde</langstring>
@@ -1223,7 +1232,9 @@ Using the domain of geology the following two examples demonstrate how simple an
       <objective
           idref="http://courses.example.edu/objectives/scientific-thinking-and-acting"/>
     </objectives>
-    <au id="http://example.com/courses/f59c9fc0/au/6f66">
+    <au id="http://example.com/courses/f59c9fc0/au/6f66"
+        activityType="http://adlnet.gov/expapi/activities/lesson"
+        launchMethod="OwnWindow" moveOn="CompletedAndPassed" passIsFinal="false" masteryScore="0.5">
       <title>
         <langstring lang="en-US">History and nomenclature of the time scale</langstring>
         <langstring lang="de-DE">Geschichte und Nomenklatur der Zeitskala</langstring>
@@ -1276,7 +1287,9 @@ Using the domain of geology the following two examples demonstrate how simple an
             Das Phanerozoikum ist das jüngste Äon in der Erdgeschichte und dauert bis heute an.
           </langstring>
         </description>
-        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ec9">
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ec9"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+            moveOn="Completed">
           <title>
             <langstring lang="en-US">Cenozoic</langstring>
             <langstring lang="de-DE">Känozoikum</langstring>
@@ -1295,7 +1308,9 @@ Using the domain of geology the following two examples demonstrate how simple an
             http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ec9/launch
           </url>
         </au>
-        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7eca/">
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7eca/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+            moveOn="Completed">
           <title>
             <langstring lang="en-US">Mesozoic</langstring>
             <langstring lang="de-DE">Mesozoikum</langstring>
@@ -1314,7 +1329,9 @@ Using the domain of geology the following two examples demonstrate how simple an
             http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7eca/launch
           </url>
         </au>
-        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecb/">
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecb/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+            moveOn="Completed">
           <title>
             <langstring lang="en-US">Paleozoic</langstring>
             <langstring lang="de-DE">Paläozoikum</langstring>
@@ -1348,7 +1365,9 @@ Using the domain of geology the following two examples demonstrate how simple an
             2.500 Millionen Jahren bis ca. vor 541 Millionen Jahren.
           </langstring>
         </description>
-        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecc/">
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecc/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+            moveOn="NotApplicable">
           <title>
             <langstring lang="en-US">Neoproterozoic</langstring>
             <langstring lang="de-DE">Neoproterozoikum</langstring>
@@ -1367,7 +1386,8 @@ Using the domain of geology the following two examples demonstrate how simple an
             http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecc/launch
           </url>
         </au>
-        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecd/">
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecd/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow">
           <title>
             <langstring lang="en-US">Mesoproterozoic</langstring>
             <langstring lang="de-DE">Mesoproterozoikum</langstring>
@@ -1384,7 +1404,8 @@ Using the domain of geology the following two examples demonstrate how simple an
             http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecd/launch
           </url>
         </au>
-        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ece/">
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ece/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow">
           <title>
             <langstring lang="en-US">Paleoproterozoic</langstring>
             <langstring lang="de-DE">Paläoproterozoikum</langstring>
@@ -1402,7 +1423,8 @@ Using the domain of geology the following two examples demonstrate how simple an
           </url>
         </au>
       </block>
-      <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecf/">
+      <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecf/"
+          activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow">
         <title>
           <langstring lang="en-US">Archean</langstring>
           <langstring lang="de-DE">Archaikum</langstring>
@@ -1419,7 +1441,9 @@ Using the domain of geology the following two examples demonstrate how simple an
           http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecf/launch
         </url>
       </au>
-      <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ed0/">
+      <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ed0/"
+          activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+          moveOn="Passed" passIsFinal="true" masteryScore="0.5">
         <title>
           <langstring lang="en-US">Hadean</langstring>
           <langstring lang="de-DE">Hadaikum</langstring>
@@ -1439,7 +1463,9 @@ Using the domain of geology the following two examples demonstrate how simple an
       </au>
     </block>
   </block>
-  <au id="http://quiz-server.example.com/1Hu62hL">
+  <au id="http://quiz-server.example.com/1Hu62hL" masteryScore="0.7" passIsFinal="true"
+      launchMethod="OwnWindow" moveOn="Passed" authenticationMethod="Basic"
+      activityType="http://adlnet.gov/expapi/activities/assessment">
     <title>
       <langstring lang="en-US">Quiz</langstring>
       <langstring lang="de-DE">Quiz</langstring>
