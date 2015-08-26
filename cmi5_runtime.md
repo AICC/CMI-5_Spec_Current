@@ -738,6 +738,7 @@ Example JSON:
          "max": "100"
      },
      "success": "false",
+     "completed": "false",
      "duration": "PT30M",
      "extensions": {
          "http://purl.org/xapi/cmi5/result/extensions/progress": "100"
