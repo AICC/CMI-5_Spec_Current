@@ -732,16 +732,16 @@ Example JSON:
 ```javascript
   "result": {
      "score": {
-         "scaled": "0.65",
-         "raw": "65",
-         "min": "0",
-         "max": "100"
+         "scaled": 0.65,
+         "raw": 65,
+         "min": 0,
+         "max": 100
      },
-     "success": "false",
-     "completed": "false",
+     "success": false,
+     "completed": false,
      "duration": "PT30M",
      "extensions": {
-         "http://purl.org/xapi/cmi5/result/extensions/progress": "100"
+         "http://purl.org/xapi/cmi5/result/extensions/progress": 100
      }
    }
  ```
