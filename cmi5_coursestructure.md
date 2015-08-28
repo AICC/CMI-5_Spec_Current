@@ -915,6 +915,277 @@ All course structures created for LMS import functionality and created by the LM
   </xs:attributeGroup>
 </xs:schema>
 ```
+<a name="example_cmi5_xml"/>  
+### 7.2.1 Example cmi5.xml 
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<courseStructure p1:any_Attr="anySimpleType" xmlns:p1="otherNS" xmlns="http://www.adlnet.gov/cmi5/CourseStructure.xsd">
+  <course p1:any_Attr="anySimpleType" id="http://uri1">
+    <title p1:any_Attr="anySimpleType">
+      <langstring p1:any_Attr="anySimpleType" lang="en">langstring1</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="fr">langstring2</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="de">langstring3</langstring>
+    </title>
+    <description p1:any_Attr="anySimpleType">
+      <langstring p1:any_Attr="anySimpleType" lang="da">langstring4</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="el">langstring5</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="it">langstring6</langstring>
+    </description>
+    <languages p1:any_Attr="anySimpleType">en fr de </languages>
+  </course>
+  <objectives p1:any_Attr="anySimpleType">
+    <objective id="http://uri1">
+      <description p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring7</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="en">langstring8</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="fr">langstring9</langstring>
+      </description>
+      <title p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="de">langstring10</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="da">langstring11</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="el">langstring12</langstring>
+      </title>
+    </objective>
+    <objective id="http://uri2">
+      <description p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="it">langstring13</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring14</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="en">langstring15</langstring>
+      </description>
+      <title p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="fr">langstring16</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="de">langstring17</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="da">langstring18</langstring>
+      </title>
+    </objective>
+    <objective id="http://uri3">
+      <description p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="el">langstring19</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="it">langstring20</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring21</langstring>
+      </description>
+      <title p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="en">langstring22</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="fr">langstring23</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="de">langstring24</langstring>
+      </title>
+    </objective>
+  </objectives>
+  <au p1:any_Attr="anySimpleType" id="http://uri1" moveOn="NotApplicable" masteryScore="0" passIsFinal="true" authenticationMethod="Basic" launchMethod="AnyWindow" activityType="activityType1">
+    <title p1:any_Attr="anySimpleType">
+      <langstring p1:any_Attr="anySimpleType" lang="da">langstring25</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="el">langstring26</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="it">langstring27</langstring>
+    </title>
+    <description p1:any_Attr="anySimpleType">
+      <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring28</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="en">langstring29</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="fr">langstring30</langstring>
+    </description>
+    <objectives p1:any_Attr="anySimpleType">
+      <objective idref="http://uri1" />
+      <objective idref="http://uri2" />
+      <objective idref="http://uri3" />
+    </objectives>
+    <url>http://uri1</url>
+    <launchParameters>anyType</launchParameters>
+    <entitlementKey>anyType</entitlementKey>
+  </au>
+  <block p1:any_Attr="anySimpleType" id="http://uri1">
+    <title p1:any_Attr="anySimpleType">
+      <langstring p1:any_Attr="anySimpleType" lang="de">langstring31</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="da">langstring32</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="el">langstring33</langstring>
+    </title>
+    <description p1:any_Attr="anySimpleType">
+      <langstring p1:any_Attr="anySimpleType" lang="it">langstring34</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring35</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="en">langstring36</langstring>
+    </description>
+    <objectives p1:any_Attr="anySimpleType">
+      <objective idref="http://uri4" />
+      <objective idref="http://uri5" />
+      <objective idref="http://uri6" />
+    </objectives>
+    <au p1:any_Attr="anySimpleType" id="http://uri1" moveOn="NotApplicable" masteryScore="0" passIsFinal="true" authenticationMethod="Basic" launchMethod="AnyWindow" activityType="activityType1">
+      <title p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="fr">langstring37</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="de">langstring38</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="da">langstring39</langstring>
+      </title>
+      <description p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="el">langstring40</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="it">langstring41</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring42</langstring>
+      </description>
+      <objectives p1:any_Attr="anySimpleType">
+        <objective idref="http://uri7" />
+        <objective idref="http://uri8" />
+        <objective idref="http://uri9" />
+      </objectives>
+      <url>http://uri1</url>
+      <launchParameters>anyType</launchParameters>
+      <entitlementKey>anyType</entitlementKey>
+    </au>
+    <block p1:any_Attr="anySimpleType" id="http://uri1">
+      <title p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="en">langstring43</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="fr">langstring44</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="de">langstring45</langstring>
+      </title>
+      <description p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="da">langstring46</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="el">langstring47</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="it">langstring48</langstring>
+      </description>
+      <objectives p1:any_Attr="anySimpleType">
+        <objective idref="http://uri10" />
+        <objective idref="http://uri11" />
+        <objective idref="http://uri12" />
+      </objectives>
+      <au p1:any_Attr="anySimpleType" id="http://uri2" moveOn="NotApplicable" masteryScore="1" passIsFinal="true" authenticationMethod="Basic" launchMethod="AnyWindow" activityType="activityType2">
+        <title p1:any_Attr="anySimpleType">
+          <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring49</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="en">langstring50</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="fr">langstring51</langstring>
+        </title>
+        <description p1:any_Attr="anySimpleType">
+          <langstring p1:any_Attr="anySimpleType" lang="de">langstring52</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="da">langstring53</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="el">langstring54</langstring>
+        </description>
+        <objectives p1:any_Attr="anySimpleType">
+          <objective idref="http://uri13" />
+          <objective idref="http://uri14" />
+          <objective idref="http://uri15" />
+        </objectives>
+        <url>http://uri2</url>
+        <launchParameters>anyType</launchParameters>
+        <entitlementKey>anyType</entitlementKey>
+      </au>
+      <block p1:any_Attr="anySimpleType" id="http://uri2">
+        <title p1:any_Attr="anySimpleType">
+          <langstring p1:any_Attr="anySimpleType" lang="it">langstring55</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring56</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="en">langstring57</langstring>
+        </title>
+        <description p1:any_Attr="anySimpleType">
+          <langstring p1:any_Attr="anySimpleType" lang="fr">langstring58</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="de">langstring59</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="da">langstring60</langstring>
+        </description>
+        <objectives p1:any_Attr="anySimpleType">
+          <objective idref="http://uri16" />
+          <objective idref="http://uri17" />
+          <objective idref="http://uri18" />
+        </objectives>
+        <au p1:any_Attr="anySimpleType" id="http://uri3" moveOn="Passed" masteryScore="0.1" passIsFinal="false" authenticationMethod="Basic" launchMethod="OwnWindow" activityType="activityType3">
+          <title p1:any_Attr="anySimpleType">
+            <langstring p1:any_Attr="anySimpleType" lang="el">langstring61</langstring>
+            <langstring p1:any_Attr="anySimpleType" lang="it">langstring62</langstring>
+            <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring63</langstring>
+          </title>
+          <description p1:any_Attr="anySimpleType">
+            <langstring p1:any_Attr="anySimpleType" lang="en">langstring64</langstring>
+            <langstring p1:any_Attr="anySimpleType" lang="fr">langstring65</langstring>
+            <langstring p1:any_Attr="anySimpleType" lang="de">langstring66</langstring>
+          </description>
+          <objectives p1:any_Attr="anySimpleType">
+            <objective idref="http://uri19" />
+            <objective idref="http://uri20" />
+            <objective idref="http://uri21" />
+          </objectives>
+          <url>http://uri3</url>
+          <launchParameters>anyType</launchParameters>
+          <entitlementKey>anyType</entitlementKey>
+        </au>
+        <au p1:any_Attr="anySimpleType" id="http://uri4" moveOn="Completed" masteryScore="0.9" passIsFinal="true" authenticationMethod="Basic" launchMethod="AnyWindow" activityType="activityType4">
+          <title p1:any_Attr="anySimpleType">
+            <langstring p1:any_Attr="anySimpleType" lang="da">langstring67</langstring>
+            <langstring p1:any_Attr="anySimpleType" lang="el">langstring68</langstring>
+            <langstring p1:any_Attr="anySimpleType" lang="it">langstring69</langstring>
+          </title>
+          <description p1:any_Attr="anySimpleType">
+            <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring70</langstring>
+            <langstring p1:any_Attr="anySimpleType" lang="en">langstring71</langstring>
+            <langstring p1:any_Attr="anySimpleType" lang="fr">langstring72</langstring>
+          </description>
+          <objectives p1:any_Attr="anySimpleType">
+            <objective idref="http://uri22" />
+            <objective idref="http://uri23" />
+            <objective idref="http://uri24" />
+          </objectives>
+          <url>http://uri4</url>
+          <launchParameters>anyType</launchParameters>
+          <entitlementKey>anyType</entitlementKey>
+        </au>
+      </block>
+      <au p1:any_Attr="anySimpleType" id="http://uri5" moveOn="CompletedAndPassed" masteryScore="0.2" passIsFinal="false" authenticationMethod="Basic" launchMethod="OwnWindow" activityType="activityType5">
+        <title p1:any_Attr="anySimpleType">
+          <langstring p1:any_Attr="anySimpleType" lang="de">langstring73</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="da">langstring74</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="el">langstring75</langstring>
+        </title>
+        <description p1:any_Attr="anySimpleType">
+          <langstring p1:any_Attr="anySimpleType" lang="it">langstring76</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring77</langstring>
+          <langstring p1:any_Attr="anySimpleType" lang="en">langstring78</langstring>
+        </description>
+        <objectives p1:any_Attr="anySimpleType">
+          <objective idref="http://uri25" />
+          <objective idref="http://uri26" />
+          <objective idref="http://uri27" />
+        </objectives>
+        <url>http://uri5</url>
+        <launchParameters>anyType</launchParameters>
+        <entitlementKey>anyType</entitlementKey>
+      </au>
+    </block>
+    <au p1:any_Attr="anySimpleType" id="http://uri6" moveOn="CompletedOrPassed" masteryScore="0.8" passIsFinal="true" authenticationMethod="Basic" launchMethod="AnyWindow" activityType="activityType6">
+      <title p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="fr">langstring79</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="de">langstring80</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="da">langstring81</langstring>
+      </title>
+      <description p1:any_Attr="anySimpleType">
+        <langstring p1:any_Attr="anySimpleType" lang="el">langstring82</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="it">langstring83</langstring>
+        <langstring p1:any_Attr="anySimpleType" lang="en-US">langstring84</langstring>
+      </description>
+      <objectives p1:any_Attr="anySimpleType">
+        <objective idref="http://uri28" />
+        <objective idref="http://uri29" />
+        <objective idref="http://uri30" />
+      </objectives>
+      <url>http://uri6</url>
+      <launchParameters>anyType</launchParameters>
+      <entitlementKey>anyType</entitlementKey>
+    </au>
+  </block>
+  <au p1:any_Attr="anySimpleType" id="http://uri2" moveOn="NotApplicable" masteryScore="1" passIsFinal="true" authenticationMethod="Basic" launchMethod="AnyWindow" activityType="activityType2">
+    <title p1:any_Attr="anySimpleType">
+      <langstring p1:any_Attr="anySimpleType" lang="en">langstring85</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="fr">langstring86</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="de">langstring87</langstring>
+    </title>
+    <description p1:any_Attr="anySimpleType">
+      <langstring p1:any_Attr="anySimpleType" lang="da">langstring88</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="el">langstring89</langstring>
+      <langstring p1:any_Attr="anySimpleType" lang="it">langstring90</langstring>
+    </description>
+    <objectives p1:any_Attr="anySimpleType">
+      <objective idref="http://uri31" />
+      <objective idref="http://uri32" />
+      <objective idref="http://uri33" />
+    </objectives>
+    <url>http://uri2</url>
+    <launchParameters>anyType</launchParameters>
+    <entitlementKey>anyType</entitlementKey>
+  </au>
+</courseStructure>
+
+```
 
 <a name="course_package"/>
 # 8.0 Course Package
