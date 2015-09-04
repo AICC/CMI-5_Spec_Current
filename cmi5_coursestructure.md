@@ -36,6 +36,7 @@
 * [__9.0 Course Structure Examples__](#course_structure_examples)
   * [9.1 Simple](#course_structure_examples_simple)
   * [9.2 Complex](#course_structure_examples_complex)
+  * [9.3 Extension](#course_structure_examples_extension)
 * [__10.0 Bibliography__](#bibliography)
   
 [__License Agreement__](#license_agreement)
@@ -1484,6 +1485,118 @@ Using the domain of geology the following two examples demonstrate how simple an
   </au>
 </courseStructure>
 ```
+<a name="course_structure_examples_extension"/> 
+# 9.3 Extension
+
+The following modification of the simple course structure example uses vendor specific metadata defined in the preceding XML Schema Definition:
+
+```xml
+<xs:schema xmlns="http://www.adlnet.gov/cmi5/KeywordExtension.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:cmi5="http://www.adlnet.gov/cmi5/CourseStructure.xsd"
+           targetNamespace="http://www.adlnet.gov/cmi5/KeywordExtension.xsd" elementFormDefault="qualified"
+           id="CMI5KeywordsExtension">
+  <xs:import namespace="http://www.adlnet.gov/cmi5/CourseStructure.xsd" schemaLocation="CourseStructure.xsd"/>
+  <xs:element name="keywords" type="keywordsType"/>
+  <xs:complexType name="keywordsType">
+    <xs:sequence>
+      <xs:element name="keyword" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="title" type="cmi5:textType"/>
+            <xs:element name="description" type="cmi5:textType" minOccurs="0"/>
+          </xs:all>
+          <xs:attribute name="id" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <!--<xs:group ref="cmi5:anyElement"/>-->
+    </xs:sequence>
+    <xs:attributeGroup ref="cmi5:anyAttribute"/>
+  </xs:complexType>
+  <xs:element name="keyword">
+    <xs:complexType>
+      <xs:attribute name="idref" type="xs:anyURI"></xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+```
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The following file is a course structure with extension -->
+<courseStructure xmlns="http://www.adlnet.gov/cmi5/CourseStructure.xsd"
+                 xmlns:kw="http://www.adlnet.gov/cmi5/KeywordExtension.xsd">
+  <course id="http://course-repository.example.edu/identifiers/courses/02baafcf">
+    <title>
+      <langstring lang="en-US">Introduction to Geology</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">
+        This course will introduce you into the basics of geology. This includes subjects such as
+        plate tectonics, geological materials and the history of the Earth.
+      </langstring>
+    </description>
+  </course>
+  <au id="http://course-repository.example.edu/identifiers/courses/02baafcf/aus/4c07">
+    <title>
+      <langstring lang="en-US">Introduction to Geology</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">
+        This course will introduce you into the basics of geology. This includes subjects such as
+        plate tectonics, geological materials and the history of the Earth.
+      </langstring>
+    </description>
+    <url>http://course-repository.example.edu/identifiers/courses/02baafcf/aus/4c07/launch.html
+    </url>
+    <kw:keyword idref="http://words.example/earth_science"></kw:keyword>
+    <kw:keyword idref="http://words.example/plate_tectonics"></kw:keyword>
+    <kw:keyword idref="http://words.example/open_course"></kw:keyword>
+    <kw:keyword idref="http://words.example/video_based_learning"></kw:keyword>
+    <kw:keyword idref="http://words.example/secondary_school"></kw:keyword>
+  </au>
+  <kw:keywords>
+    <kw:keyword id="http://words.example/earth_science">
+      <kw:title>
+        <langstring lang="en-US">Earth Science</langstring>
+      </kw:title>
+      <kw:description>
+        <langstring lang="en-US">Earth science or geoscience is an all-embracing term referring to the fields of science dealing with planet Earth.</langstring>
+      </kw:description>
+    </kw:keyword>
+    <kw:keyword id="http://words.example/plate_tectonics">
+      <kw:title>
+        <langstring lang="en-US">Plate Tectonics</langstring>
+      </kw:title>
+      <kw:description>
+        <langstring lang="en-US">Plate tectonics is a scientific theory that describes the motion of Earth's lithosphere.</langstring>
+      </kw:description>
+    </kw:keyword>
+    <kw:keyword id="http://words.example/open_course">
+      <kw:title>
+        <langstring lang="en-US">Open Course</langstring>
+      </kw:title>
+      <kw:description>
+        <langstring lang="en-US">This course is copyrighted with an open license</langstring>
+      </kw:description>
+    </kw:keyword>
+    <kw:keyword id="http://words.example/video_based_learning">
+      <kw:title>
+        <langstring lang="en-US">Video Based Learning</langstring>
+      </kw:title>
+    </kw:keyword>
+    <kw:keyword id="http://words.example/secondary_school">
+      <kw:title>
+        <langstring lang="en-US">Secondary School</langstring>
+      </kw:title>
+      <kw:description>
+        <langstring lang="en-US">The content is prepared for secondary school students</langstring>
+      </kw:description>
+    </kw:keyword>
+  </kw:keywords>
+</courseStructure>
+```
+
 
 <a name="bibliography"/> 
 # 10.0 Bibliography
