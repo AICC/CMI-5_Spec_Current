@@ -1430,11 +1430,11 @@ Using the domain of geology the following two examples demonstrate how simple an
           <langstring lang="de-DE">Archaikum</langstring>
         </title>
         <description>
-          <langstring lang="en-US">Das Archaikum Es erstreckt sich von ca. 4.000 bis ca. 2.500
-            Millionen Jahren vor heute.
-          </langstring>
-          <langstring lang="de-DE">The Archean Eon is a geologic eon before the Proterozoic Eon,
+          <langstring lang="en-US">The Archean Eon is a geologic eon before the Proterozoic Eon,
             before 2.5 Ga (billion years), or 2,500 million years ago.
+          </langstring>
+          <langstring lang="de-DE">Das Archaikum Es erstreckt sich von ca. 4.000 bis ca. 2.500
+            Millionen Jahren vor heute.
           </langstring>
         </description>
         <url>
