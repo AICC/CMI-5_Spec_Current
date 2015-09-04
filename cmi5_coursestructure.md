@@ -30,7 +30,7 @@
     * [7.1.2 Block Metadata](#block_meta_data)
     * [7.1.3 Objectives Metadata](#objectives_meta_data)
     * [7.1.4 AU Metadata](#au_meta_data)
-    * [7.1.5 Vendor Specific Metadata](#vendor_meta_data)
+    * [7.1.5 Vendor Specific Metadata (Extensions)](#vendor_meta_data)
   * [7.2 Course Structure XSD](#course_structure_xsd)
 * [__8.0 Course Package__](#course_package)
 * [__9.0 Course Structure Examples__](#course_structure_examples)
@@ -744,11 +744,11 @@ The data in this section are used by the LMS to locate the AU and provide launch
 </table>
 
 <a name="vendor_meta_data"/>
-### 7.1.5 Vendor Specific Metadata
+### 7.1.5 Vendor Specific Metadata (Extensions)
 
-Course Designer MAY place their own namespaced elements into the course structure. For that he MUST provide a XML Schema Definition and SHOULD provide a human readable specification describing these vendor specific extensions. These extensions MUST keep the course structure XML valid. An importing LMS MAY ignore these elements. 
+Course Designer MAY place their own namespaced elements into the course structure and thus define an extension for the source structure specification. For that he MUST provide a XML Schema Definition and SHOULD provide a human readable specification describing these vendor specific extensions. These extensions MUST keep the course structure XML valid. An importing LMS MAY ignore these elements. Therefore the extension SHOULD be created in such a manner that a course is still useable if the LMS does not support the additional elements.
 
-The course designer MAY provide his extensions as potential addition to the course structure specification as an Issue or Pull Request to the [official cmi5 repository](https://github.com/AICC/CMI-5_Spec_Current).
+To achieve a larger distribution of their extension course designer SHOULD use choose a free or open source license for their specification and make it publicly available.
 
 <a name="course_structure_xsd"/>  
 ## 7.2 Course Structure XSD 
