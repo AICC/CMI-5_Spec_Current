@@ -144,8 +144,8 @@ Uses of activities not explicitly defined above are outside of the scope of this
 
 The following referenced documents are indispensable for the application of this specification. 
 
-* RFC 2396, "Uniform Resource Identifiers (URI): Generic Syntax," August 1998.<br/>
-https://www.ietf.org/rfc/rfc2396.txt
+* Internationalized Resource Identifiers (IRIs): IRI Syntax" January 2005.<br/>
+https://www.ietf.org/rfc/rfc3987.txt
 * "Experience API", current specification, ADL, 2012-2013<br/>
 https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
 * cmi5 Course Structure, Sandstone 1st Edition<br/>
@@ -1107,7 +1107,7 @@ The AU may use the Activity Profile API according to the xAPI specification (Sec
 
 [3]  MIME Types – <http://www.iana.org/assignments/media-types/index.html>
 
-[4]  RFC 2396, “Uniform Resource Identifiers (URI): Generic Syntax,” August 1998
+[4]  RFC 3987, * Internationalized Resource Identifiers (IRIs): IRI Syntax" January 2005. - <https://www.ietf.org/rfc/rfc3987.txt>
 
 [5]  Experience API, Version 1.0.1, ADL, 2012-2013 - <https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md>
 
