@@ -23,6 +23,7 @@ cmi5 Runtime Environment
 * [__4.0 Conformance__](#conformance)
   * [4.1 Assignable Unit (AU)](#au_conformance)
   * [4.2 Learning Management Systems (LMS)](#lms_conformance)
+  * [4.3 Optional JSON Values](#json_conformance)
 * [__5.0 Conceptual Model: Informative__](#concept)
 * [__6.0 LMS Requirements__](#lms_requirements)
   * [6.1 Course Structures](#course_structures)
@@ -236,6 +237,11 @@ The LMS MUST decode the attachment and make it available as a file with the orig
 The LMS MUST conform to all requirements listed in Section 6 – LMS Requirements.
 
 The LMS MUST NOT implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.
+
+<a name="json_conformance"></a> 
+##4.3 Optional JSON Values
+
+If JSON properties are indicated as "optional", you MAY leave such properties out of the JSON structure being described. All JSON properties included with non-null values MUST be recorded in the LRS.
 
 
 <a name="concept"></a> 
