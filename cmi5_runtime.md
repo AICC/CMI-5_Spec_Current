@@ -513,9 +513,9 @@ The <strong><em>fetch</em></strong> URL is a "one-time use" URL and only the fir
 The following <strong><em>error-code</em></strong> values are allowed.
 <table>
 <tr><td><strong>Code</strong></td><td><strong>Meaning</strong></td></tr>
-<tr><td>1</td><td>Already in Use or Expired</td></tr>
-<tr><td>2</td><td>General Security Error</td></tr>
-<tr><td>3</td><td>General Application Error</td></tr>
+<tr><td>1</td><td><strong>Already in Use or Expired</strong> - Token has been used before or the AU session has expired</td></tr>
+<tr><td>2</td><td><strong>General Security Error</strong> - All other security issues including invalid tokens</td></tr>
+<tr><td>3</td><td><strong>General Application Error</strong> - Application or environment failures</td></tr>
 </table>
 
 The values for <strong><em>error-text</em></strong> are defined by the LMS.
