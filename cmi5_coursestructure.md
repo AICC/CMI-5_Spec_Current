@@ -113,8 +113,8 @@ The scope of this specification is limited to the following:
 
 The following referenced documents are indispensable for the application of this specification. 
 
-* RFC 2396, "Uniform Resource Identifiers (URI): Generic Syntax," August 1998.<br/>
-https://www.ietf.org/rfc/rfc2396.txt
+* Internationalized Resource Identifiers (IRIs): IRI Syntax" January 2005.<br/>
+https://www.ietf.org/rfc/rfc3987.txt
 * "Experience API", current specification, ADL, 2012-2013<br/>
 https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
 * cmi5 Runtime Environment, Sandstone 1st Edition<br/>
