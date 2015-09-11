@@ -956,7 +956,7 @@ The properties for the LMSLaunchData document are described below.
 <table>
   <tr><th colspan=3 align ="left">launchParameters</th></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>The launch parameters defined in the cmi5 Course Structure.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>If the <strong><em>launchParameters</em></strong> were defined by the AU developer in the Course Structure, the LMS MUST include the  <strong><em>launchParameters</em></strong> in the State API document.</td></tr>
+  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>If the <strong><em>launchParameters</em></strong> were defined by the course designer in the Course Structure, the LMS MUST include the  <strong><em>launchParameters</em></strong> in the State API document.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>No</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST include the <strong><em>launchParameters</em></strong> in the State API document when defined in the Course Structure.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>The AU SHOULD get the <strong><em>launchParameters</em></strong> value from the State API document if the launch parameters were defined in the Course Structure.</td></tr>
