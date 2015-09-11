@@ -46,7 +46,6 @@ cmi5 Runtime Environment
   * [9.4 Object](#Object)
       * [9.4.1 objectType](#objectType)
       * [9.4.2 Object ID](#Object_ID)
-      * [9.4.3 Definition](#Definition)
   * [9.5 Result](#Result)
       * [9.5.1 Score](#Score)
       * [9.5.2 Success](#Success)
