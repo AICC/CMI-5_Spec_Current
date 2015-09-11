@@ -15,7 +15,7 @@
 
 * [__1.0 Overview__](#overview)
   * [1.1 Scope](#scope)
-  * [2.0 References](#references)
+* [2.0 References](#references)
 * [__3.0 Definitions__](#definitions)
   * [3.1 Abbreviations and Acronyms](#acronyms)
 * [__4.0 Conformance__](#conformance)
