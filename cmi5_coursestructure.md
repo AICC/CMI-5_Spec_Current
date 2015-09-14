@@ -37,7 +37,7 @@
   * [9.1 Simple](#course_structure_examples_simple)
   * [9.2 Complex](#course_structure_examples_complex)
   * [9.3 Extension](#course_structure_examples_extension)
-* [__10.0 Bibliography__](#bibliography)
+
   
 [__License Agreement__](#license_agreement)
 
@@ -119,7 +119,8 @@ https://www.ietf.org/rfc/rfc3987.txt
 https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
 * cmi5 Runtime Environment, Sandstone 1st Edition<br/>
 <https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_runtime.md>
-
+* MIME Types<br/>
+<http://www.iana.org/assignments/media-types/index.html>  
 
 
 
@@ -1597,17 +1598,6 @@ The following modification of the simple course structure example uses vendor sp
   </kw:keywords>
 </courseStructure>
 ```
-
-
-<a name="bibliography"/> 
-# 10.0 Bibliography
-
-[1]  AICC CMI001, CMI Guidelines for Interoperability, Version 4.0. 
-
-[2]  SCORM – http://www.adlnet.gov/capabilities/scorm 
-
-[3]  MIME Types – http://www.iana.org/assignments/media-types/index.html  
-
 
 
 -------
