@@ -55,6 +55,7 @@ cmi5 Runtime Environment
       * [9.6.1 Registration](#Registration)
       * [9.6.2 ContextActivities] (#ContextActivities)
       * [9.6.3 Extensions](#extensions)
+  * [9.7 Timestamp](#Timestamp)
 * [__10.0 xAPI State Data Model__](#xapi_state)
 * [__11.0 xAPI Agent Profile Data Model__](#xapi_agent_profile)
 * [__12.0 xAPI Activity Profile Data Model__](#xapi_activity_profile)
@@ -892,6 +893,12 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 </ul></td></tr>
   <tr><th align ="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
 </table>
+
+<a name="Timestamp"></a> 
+##9.7 Timestamp
+
+To ensure statement ordering requirements are met, all statements MUST include a timestamp property per the xAPI specification. All timestamps MUST be recorded in UTC time.
+
 
 <a name="xapi_state"></a>  
 #10.0 xAPI State Data Model
