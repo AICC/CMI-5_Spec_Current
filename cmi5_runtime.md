@@ -59,7 +59,6 @@ cmi5 Runtime Environment
 * [__11.0 xAPI Agent Profile Data Model__](#xapi_agent_profile)
 * [__12.0 xAPI Activity Profile Data Model__](#xapi_activity_profile)
 
-[__Bibliography__](#bibliography)
 
 [__License Agreement__](#license_agreement)
 
@@ -150,7 +149,8 @@ https://www.ietf.org/rfc/rfc3987.txt
 https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
 * cmi5 Course Structure, Sandstone 1st Edition<br/>
 https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md
-
+* MIME Types<br/>
+http://www.iana.org/assignments/media-types/index.html
 
 <a name="definitions"></a>   
 #3.0 Definitions  
@@ -1103,21 +1103,7 @@ Example:
 
 The AU may use the Activity Profile API according to the xAPI specification (Section 7.5 - Activity Profile API).
 
-<a name="bibliography"></a>   
-#Bibliography
 
-[1]  AICC CMI001, CMI Guidelines For Interoperability, Version 4.0
-
-[2]  SCORM – <http://www.adlnet.gov/capabilities/scorm>
-
-[3]  MIME Types – <http://www.iana.org/assignments/media-types/index.html>
-
-[4]  RFC 3987, * Internationalized Resource Identifiers (IRIs): IRI Syntax" January 2005. - <https://www.ietf.org/rfc/rfc3987.txt>
-
-[5]  Experience API, Version 1.0.1, ADL, 2012-2013 - <https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md>
-
-[6]  cmi5-002 – LMS Course Structure, current working draft, AICC, 2013 -  
-<https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md>
 
 
 -------
