@@ -1,4 +1,10 @@
-cmi5 Specification Profile for xAPI
+
+<p>
+<p align=center><img src="https://cloud.githubusercontent.com/assets/1656316/9965238/bc9deb2c-5de9-11e5-9954-63aa03873f88.png" align=center></p>
+
+#cmi5 Specification Profile for xAPI
+
+
 ---
 >
 >Copyright &copy; 2012-2015 ADL, All rights reserved
