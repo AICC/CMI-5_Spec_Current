@@ -1146,7 +1146,7 @@ The following metadata attributes and elements are at the course level and  desc
         <strong>Data type</strong>: IRI</p>
     </td>
     <td width="811" valign="top"><p><strong>Description</strong>:<br />
-      A globally unique IRI (see RFC 3987) for the course.  Used to explicitly identify the course instance.</p>
+      A globally unique IRI for the course.  Used to explicitly identify the course instance.</p>
       <p><strong>Value space: </strong><br />
         Values are defined by the course designer.<br />
         <strong>Sample value: </strong><br />
