@@ -172,6 +172,8 @@ https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
 https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md
 * MIME Types<br/>
 http://www.iana.org/assignments/media-types/index.html
+* The JSON Data Interchange Format<br/>
+http://json.org/ 
 
 <a name="definitions"></a>   
 #3.0 Definitions  
@@ -211,6 +213,7 @@ __ADL__: Advanced Distributed Learning
 __AICC__: Aviation Industry Computer-Based Training Committee  
 __API__: Application Programming Interface  
 __CMI__: Computer Managed Instruction  
+__JSON__: JavaScript Object Notation<br>
 __LMS__: Learning Management System  
 __LRS__: Learning Record Store  
 __PII__: Personally Identifiable Information  
