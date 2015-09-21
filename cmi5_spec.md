@@ -365,13 +365,13 @@ Usage in an xAPI Statement:
 
 ```javascript
 "extensions": {
-       “http://purl.org/xapi/cmi5/context/extensions/sessionid”: <The session ID value provided by the LMS>
+       "http://purl.org/xapi/cmi5/context/extensions/sessionid": <The session ID value provided by the LMS>
      }
 ```
 Example:
 ```javascript
 "extensions": {
-       “http://purl.org/xapi/cmi5/context/extensions/sessionid”: ”xyz123”
+       "http://purl.org/xapi/cmi5/context/extensions/sessionid": "xyz123"
      }
 ```
 
