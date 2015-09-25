@@ -174,6 +174,8 @@ https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md
 http://www.iana.org/assignments/media-types/index.html
 * Extensible Markup Language (XML)<br>
 http://www.w3.org/XML
+* The JSON Data Interchange Format<br/>
+http://json.org/ 
 
 <a name="definitions"></a>   
 #3.0 Definitions  
@@ -212,15 +214,16 @@ For purposes of this specification, the following terms and definitions apply:
 __ADL__: Advanced Distributed Learning  
 __AICC__: Aviation Industry Computer-Based Training Committee  
 __API__: Application Programming Interface  
-__CMI__: Computer Managed Instruction  
+__CMI__: Computer Managed Instruction	
+__JSON__: JavaScript Object Notation	
 __LMS__: Learning Management System  
 __LRS__: Learning Record Store  
 __PII__: Personally Identifiable Information  
 __URI__: Uniform Resource Identifier  
 __URL__: Uniform Resource Locator  
-__URN__: Uniform Resource Name  
-__XAPI__: Experience API
-__XML__: Extensible Markup Language<br>
+__URN__: Uniform Resource Name	
+__XAPI__: Experience API	
+__XML__: Extensible Markup Language
 __XSD__: XML Schema Definition
 <BR>
 
