@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>The cmi5 Project by AICC</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>The cmi5 Project</h1>
+        <h2>What is cmi5 ? A set of &quot;extra rules&quot; for xAPI</h2>
+        <a href="https://github.com/AICC/CMI-5_Spec_Current" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <hr>
+
+<p>
+</p><p align="center"><img src="https://cloud.githubusercontent.com/assets/1656316/9965238/bc9deb2c-5de9-11e5-9954-63aa03873f88.png" align="center"></p>
+
+<h1>
+<a id="the-cmi5-project" class="anchor" href="#the-cmi5-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>The cmi5 Project</h1>
+
+<hr>
+
+<h2>
+<a id="what-is-cmi5--a-set-of-extra-rules-for-xapi" class="anchor" href="#what-is-cmi5--a-set-of-extra-rules-for-xapi" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is cmi5 ? A set of "extra rules" for xAPI</h2>
+
+<p>cmi5 is a "profile" for using the xAPI specification with traditional learning management (LMS) systems.  </p>
+
+<p>Since the xAPI specification is highly generalized to support many different use cases, a set of "extra rules" (called a "profile") is needed to ensure Interoperability for a given use case. The cmi5 profile ensures plug and play Interoperability between learning content and LMS systems. </p>
+
+<p>The use case that the cmi5 profile is specifically designed for is one where the learner launches the learning content/activity from the LMS user interface.  </p>
+
+<p>cmi5 defines specific interoperability rules for the following areas:</p>
+
+<ul>
+<li>Content Launch Mechanism</li>
+<li>Authentication</li>
+<li>Session Management</li>
+<li>Reporting</li>
+<li>Course Structure</li>
+</ul>
+
+<h2>
+<a id="goals" class="anchor" href="#goals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Goals</h2>
+
+<p>The mission of cmi5 is to provide a better alternative to current AICC/SCORM specifications with something considerably more flexible, robust, and adaptable to today's technologies.  The specific goals of cmi5 are as follows:</p>
+
+<h4>
+<a id="1---a-simplified-tracking-data-model" class="anchor" href="#1---a-simplified-tracking-data-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 - A simplified tracking data model</h4>
+
+<p>SCORM and AICC data models were too complicated and had many optional data elements that were not used.  The goal of simple data model is to only define the bare minimum data elements required that would work across most learning domains. (e.g. Score, status, and time).</p>
+
+<h4>
+<a id="2---the-ability-to-record-and-reportretrieve-content-defined-data" class="anchor" href="#2---the-ability-to-record-and-reportretrieve-content-defined-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>2 - The ability to record and report/retrieve content-defined data</h4>
+
+<p>Restricting data collection to a small set of required data elements was too limiting.  In most cases what was really needed was the just the ability to record the data from the content in the LMS and later retrieve it for analysis. The goal of allowing content defined data recording/retrieval allows content designers to add features and still be interoperable.</p>
+
+<p>Content defined data can either be text or digital data. </p>
+
+<ul>
+<li>Extensible Data Model (defined by the content text data)</li>
+<li>Digital Data attachments </li>
+</ul>
+
+<h4>
+<a id="2---support-for-content-as-a-service-caas-model-of-delivery" class="anchor" href="#2---support-for-content-as-a-service-caas-model-of-delivery" aria-hidden="true"><span class="octicon octicon-link"></span></a>2 - Support for content as a service (CaaS) model of delivery</h4>
+
+<p>Allow content to be stored on other domains (independent of the LMS server domain)</p>
+
+<h4>
+<a id="3---deviceosbrowser-independence" class="anchor" href="#3---deviceosbrowser-independence" aria-hidden="true"><span class="octicon octicon-link"></span></a>3 - Device/OS/browser independence</h4>
+
+<p>Allow for content to be independent of a browser in order to communicate or be launched.</p>
+
+<h4>
+<a id="4---share-data-between-learning-activities" class="anchor" href="#4---share-data-between-learning-activities" aria-hidden="true"><span class="octicon octicon-link"></span></a>4 - Share data between Learning Activities</h4>
+
+<p>Allow data to be shared between learning activities for multiple learners enrolled in the same course.</p>
+
+<h2>
+<a id="history" class="anchor" href="#history" aria-hidden="true"><span class="octicon octicon-link"></span></a>History</h2>
+
+<p>The <strong><em>cmi5</em></strong> project was originally started in the AICC (Aviation Industry Computer-Based Training Committee) in 2010.  <strong><em>cmi5</em></strong> was expected to replace both AICC and SCORM specifications with a more feature-rich and robust solution.  Both AICC and SCORM specifications had technical issues and constraints as well as significant overlap.</p>
+
+<p>The AICC was nearing completion of SOAP-based communication mechanism for cmi5 in 2012 about the same time the Tin Can API research project (now called xAPI) was completed in the ADL. </p>
+
+<p>The AICC and ADL participants soon determined that there was significant overlap between the two specifications.  xAPI had broader application than cmi5, so the ADL and AICC agreed to cooperate on an "xAPI profile" to meet the more specific use case needs of cmi5.  So the cmi5 project was "rebooted" in 2012 and the SOAP architecture was replaced with xAPI. The cmi5 project is still guided by its original goals.</p>
+
+<p>In 2014, the AICC  dissolved and formally transferred the cmi5 project to the ADL.</p>
+
+<h2>
+<a id="versions" class="anchor" href="#versions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Versions</h2>
+
+<p>The versioning of cmi5 is as follows:</p>
+
+<ul>
+<li>Major versions change functionality or interoperability.</li>
+<li>Major versions of cmi5 are named by "rocks" (granite, basalt, etc.). </li>
+<li>Minor versions correct errata (errors) only</li>
+<li>Minor versions of cmi5 are serialized by "edition"  (1st, 2nd 3rd, etc)</li>
+</ul>
+
+<p>For example "Sandstone, 1st edition".</p>
+
+<h3>
+<a id="sandstone-released-may-2015" class="anchor" href="#sandstone-released-may-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sandstone (released May 2015)</h3>
+
+<p>Sandstone is the first release of cmi5.  It is a "developer release" to collect feedback from learning technology developers.  It is not intended for actual implementation.  </p>
+
+<p><a href="https://github.com/AICC/CMI-5_Spec_Current/tree/sandstone-release">- Sandstone, 1st Edition</a></p>
+
+<h3>
+<a id="quartz-currently-in-work" class="anchor" href="#quartz-currently-in-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quartz (currently in work)</h3>
+
+<p>Quartz is currently in work and scheduled for release in Q4 2015.  The Quartz version will include developer feedback collected from Sandstone.  When completed, Quartz will be the first "production release" intended for implementation.</p>
+
+<p><a href="https://github.com/AICC/CMI-5_Spec_Current/tree/quartz">- Quartz, Current Draft </a></p>
+
+<h2>
+<a id="cmi5-articles" class="anchor" href="#cmi5-articles" aria-hidden="true"><span class="octicon octicon-link"></span></a>cmi5 Articles</h2>
+
+<p>The following are articles that discuss cmi5 and explain its potential uses: </p>
+
+<ul>
+<li><a href="http://bit.ly/1Pjad2W">Experience API, cmi5, and Future SCORM</a></li>
+<li><a href="https://www.linkedin.com/pulse/time-plugin-cmi5-bill-mcdonald">Time to Plugin to cmi5?</a></li>
+<li><a href="http://risc-inc.com/blog/the-next-generation-scorm-cmi-5/">cmi5: The next generation SCORM</a></li>
+<li><a href="http://risc-inc.com/blog/cmi-5-overview-process-flow/">cmi5 Process Flow: An overview</a></li>
+<li><a href="http://www.slideshare.net/BillMcDonald3/cmi5xapicamp-50890282">cmi5: xAPI for LMSs</a></li>
+</ul>
+
+<p>(More will be added as they become available)</p>
+
+<h2>
+<a id="connect-with-the-cmi5-community-" class="anchor" href="#connect-with-the-cmi5-community-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect with the cmi5 community !</h2>
+
+<p>Please note that the cmi5 working group is a volunteer community effort and is open to all.  </p>
+
+<p>We very much want to encourage people to share their thoughts about cmi5 and participate.  Please consider connecting with us in one or more of the following ways:</p>
+
+<h3>
+<a id="cmi5-github" class="anchor" href="#cmi5-github" aria-hidden="true"><span class="octicon octicon-link"></span></a>cmi5 GitHub</h3>
+
+<p>All are welcome to make raise issues/comments on this GitHub repository.</p>
+
+<p>Also, <a href="https://github.com/AICC/CMI-5_Spec_Current/wiki">please see our wiki</a> for a comprehensive set of meeting minutes.</p>
+
+<h3>
+<a id="weekly-gotomeeting-conferences" class="anchor" href="#weekly-gotomeeting-conferences" aria-hidden="true"><span class="octicon octicon-link"></span></a>Weekly GotoMeeting Conferences</h3>
+
+<p>The cmi5 working group holds weekly Web Conferences that are open to all.  The meeting are held every Friday at 10:30 am US Eastern Time. See link below to register:</p>
+
+<ul>
+<li><a href="https://attendee.gotowebinar.com/register/9089690481445095682">Register For cmi5 Working Group Conferences</a></li>
+</ul>
+
+<h3>
+<a id="xapi-spec-development-calls" class="anchor" href="#xapi-spec-development-calls" aria-hidden="true"><span class="octicon octicon-link"></span></a>xAPI Spec Development Calls</h3>
+
+<p>The xAPI group meets the first 3 Wednesdays of each month from 2:30 - 3:30 EST.  All are welcome.</p>
+
+<ul>
+<li><a href="https://attendee.gotowebinar.com/register/279276321478091778">Register For xAPI Working Group Meetings</a></li>
+</ul>
+
+<h3>
+<a id="subscribe-to-cmi5-mailing-list" class="anchor" href="#subscribe-to-cmi5-mailing-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Subscribe to cmi5 Mailing list</h3>
+
+<p>This list provides weekly meeting minutes and news about cmi5.</p>
+
+<ul>
+<li>
+<a href="http://eepurl.com/bjlA01">Subscribe to cmi5 Mailing list </a> (Managed by Mail Chimp).<br>
+</li>
+</ul>
+
+<h3>
+<a id="the-cmi5-linkedin-group" class="anchor" href="#the-cmi5-linkedin-group" aria-hidden="true"><span class="octicon octicon-link"></span></a>The cmi5 LinkedIn Group</h3>
+
+<p>The cmi5 LinkedIn group was established to encourage discussion about cmi5 and answer your questions.  Please join at link below:</p>
+
+<ul>
+<li><a href="http://www.linkedin.com/grp/home?gid=3943740">cmi5 LinkedIn Group</a></li>
+</ul>
+
+<h3>
+<a id="follow-cmi5-on-twitter" class="anchor" href="#follow-cmi5-on-twitter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Follow cmi5 on Twitter</h3>
+
+<p>Follow cmi5 on Twitter: #cmi5, @cmi5spec </p>
+
+<hr>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/AICC/CMI-5_Spec_Current/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/AICC/CMI-5_Spec_Current/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/AICC/CMI-5_Spec_Current"></a> is maintained by <a href="https://github.com/AICC">AICC</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
