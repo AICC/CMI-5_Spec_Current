@@ -121,6 +121,12 @@ The cmi5 working group holds weekly Web Conferences that are open to all.  The m
 
 - [Register For CMI-5 Working Group Conferences](https://attendee.gotowebinar.com/register/9089690481445095682)
 
+### xAPI Spec Development Calls
+
+The xAPI group meets the first 3 Wednesdays of each month from 2:30 - 3:30 EST.  All are welcome.
+
+- [Register For xAPI Working Group Meetings ](https://attendee.gotowebinar.com/register/279276321478091778
+
 ### Subscribe to CMI-5 Mailing list
 This list provides weekly meeting minutes and news about cmi5.
 
