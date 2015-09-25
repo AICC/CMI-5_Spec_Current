@@ -205,9 +205,6 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Learning Records Store (LRS)__: Defined in the xAPI specification. In this specification, the LMS MUST implement an LRS with the additional requirements specified in this document.
 
-* __MUST / SHOULD / MAY__: The three levels of obligation with regards to conformance to the cmi5 specification. A system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. Failing to meet a SHOULD requirement is not a violation of conformity, but it goes against best practices. MAY indicates an option, which is to be decided by the developer, with no consequences for lack of conformity.
-
-
 <a name="acronyms"></a> 
 ##3.1 Abbreviations and Acronyms
 <BR>
