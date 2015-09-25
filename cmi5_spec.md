@@ -220,8 +220,8 @@ __URI__: Uniform Resource Identifier
 __URL__: Uniform Resource Locator  
 __URN__: Uniform Resource Name	
 __XAPI__: Experience API	
-__XML__: Extensible Markup Language
-__XSD__: XML Schema Definition
+__XML__: Extensible Markup Language  
+__XSD__: XML Schema Definition  
 <BR>
 
 
