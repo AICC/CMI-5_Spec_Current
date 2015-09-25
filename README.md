@@ -101,8 +101,7 @@ The following are articles that discuss cmi5 and explain its potential uses:
 - [cmi5: xAPI for LMSs](http://www.slideshare.net/BillMcDonald3/cmi5xapicamp-50890282)
 
 
-
- (More will be added as they become available) :
+(More will be added as they become available)
 
 ## Connect with the cmi5 community !
 
