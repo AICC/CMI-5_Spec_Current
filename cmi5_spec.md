@@ -172,6 +172,8 @@ https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
 https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md
 * MIME Types<br/>
 http://www.iana.org/assignments/media-types/index.html
+* Extensible Markup Language (XML)<br>
+http://www.w3.org/XML
 
 <a name="definitions"></a>   
 #3.0 Definitions  
@@ -217,7 +219,9 @@ __PII__: Personally Identifiable Information
 __URI__: Uniform Resource Identifier  
 __URL__: Uniform Resource Locator  
 __URN__: Uniform Resource Name  
-__XAPI__: Experience API  
+__XAPI__: Experience API
+__XML__: Extensible Markup Language<br>
+__XSD__: XML Schema Definition
 <BR>
 
 
