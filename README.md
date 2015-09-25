@@ -119,18 +119,18 @@ Also, [please see our wiki](https://github.com/AICC/CMI-5_Spec_Current/wiki) for
 
 The cmi5 working group holds weekly Web Conferences that are open to all.  The meeting are held every Friday at 10:30 am US Eastern Time. See link below to register:
 
-- [Register For CMI-5 Working Group Conferences](https://attendee.gotowebinar.com/register/9089690481445095682)
+- [Register For cmi5 Working Group Conferences](https://attendee.gotowebinar.com/register/9089690481445095682)
 
 ### xAPI Spec Development Calls
 
 The xAPI group meets the first 3 Wednesdays of each month from 2:30 - 3:30 EST.  All are welcome.
 
-- [Register For xAPI Working Group Meetings ](https://attendee.gotowebinar.com/register/279276321478091778
+- [Register For xAPI Working Group Meetings](https://attendee.gotowebinar.com/register/279276321478091778)
 
-### Subscribe to CMI-5 Mailing list
+### Subscribe to cmi5 Mailing list
 This list provides weekly meeting minutes and news about cmi5.
 
-- [Subscribe to CMI-5 Mailing list ](http://eepurl.com/bjlA01) (Managed by Mail Chimp).  
+- [Subscribe to cmi5 Mailing list ](http://eepurl.com/bjlA01) (Managed by Mail Chimp).  
 
 ### The cmi5 LinkedIn Group
 The cmi5 LinkedIn group was established to encourage discussion about cmi5 and answer your questions.  Please join at link below:
