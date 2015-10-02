@@ -118,6 +118,9 @@ All are welcome to make raise issues/comments on this GitHub repository.
 
 Also, [please see our wiki](https://github.com/AICC/CMI-5_Spec_Current/wiki) for a comprehensive set of meeting minutes.
 
+### cmi5 Email Address
+Please send questions for the working group to: [cmi5wg@adlnet.gov](mailto://cmi5wg@adlnet.gov)
+
 ### Weekly GotoMeeting Conferences
 
 The cmi5 working group holds weekly Web Conferences that are open to all. The meeting are held every Friday at 10:30 am US Eastern Time. See link below to register:
@@ -146,5 +149,8 @@ The cmi5 LinkedIn group was established to encourage discussion about cmi5 and a
 
 Follow cmi5 on Twitter: [#cmi5](https://twitter.com/hashtag/cmi5), [@cmi5spec](https://twitter.com/cmi5spec)
 
+### Join the cmi5 Slack Team
+
+The cmi5 working group is currently testing Slack team communication. To join the slack group, please use the following link: [Add me to the cmi5 Slack Team](mailto://cmi5wg@adlnet.gov?subject=%5Bcmi5+Slack+Registration%5D&body=Please+add+me+to+the+cmi5+slack+working+group.)
 
 ----------
