@@ -128,6 +128,7 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 | Thomas Person        | (Formerly of Adobe)                    |
 | Art Werkenthin       | RISC,Inc                               |
 | Severin Neumann      | die eLearning AG                       |
+| Chris Amyot	       | ICOM Productions, Inc.                 |
 | David Pesce          | Exputo Inc.                            |
 | Henry Ryng           | inXsol					|
 | Chris Handorf        | Pearson                                |
