@@ -596,7 +596,11 @@ An Example of usage in a statement:
 <a name="verbs" ></a> 
 ##9.3 Verbs  
 
-The following xAPI verbs are defined in this specification.
+The following xAPI verb requirements in this section are for “cmi5 defined” statements in this specification.
+
+These verbs MAY also be used for “cmi5 allowed” statements per section 9.6.2.
+
+Note that “cmi5 allowed” statements are NOT subject to the usage rules in this section.
 
 AUs MUST use the below verbs that are indicated as mandatory in other sections of this specification.
 
@@ -612,8 +616,8 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">Display</th><td>{ "en-US" : "Launched" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Launched” indicates that the AU was launched by the LMS.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API, Section 10) The LMS MUST NOT issue multiple statements with "Launched" for the same AU within a given AU session.</td></tr>
-</tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate that the LMS has launched the AU. It SHOULD be used in combination with the "Initialized" statement sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use this verb in a (cmi5 defined) statement recorded in the LRS before launching an AU.  (See Statement API, Section 10) The LMS MUST NOT issue multiple (cmi5 defined) statements with "Launched" for the same AU within a given AU session.</td></tr>
+</tr><tr><th align="left">Usage</th><td>A "Launched" (cmi5 defined) statement is used to indicate that the LMS has launched the AU. It SHOULD be used in combination with the "Initialized" (cmi5 defined) statement sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
 </table>
 
 ###9.3.2 Initialized
@@ -621,10 +625,10 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">Verb</th><td>Initialized</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/initialized</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Initialized" }</td></tr>
-<tr><th align="left">Description</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and MUST follow the "Launched" statement created by the LMS within a reasonable period of time.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU MUST use "Initialized" in the first statement in the AU session.  The AU MUST NOT issue multiple statements with "Initialized" for the same AU within a given AU session.</td></tr>
+<tr><th align="left">Description</th><td>An "Initialized" (cmi5 defined) statement is used by the AU to indicate that it has been fully initialized and MUST follow the "Launched" (cmi5 defined) statement created by the LMS within a reasonable period of time.</td>
+</tr><tr><th align="left">AU Obligations</th><td>The AU MUST use a (cmi5 defined) "Initialized" statement as the first statement (of any kind) in the AU session.  The AU MUST NOT issue multiple (cmi5 defined) statements with "Initialized" for the same AU within a given AU session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>Verify that this verb is recorded by the AU immediately after launch</td></tr>
-</tr><tr><th align="left">Usage</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and SHOULD follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
+</tr><tr><th align="left">Usage</th><td>An "Initialized" (cmi5 defined) statement is used by the AU to indicate that it has been fully initialized and SHOULD follow the "Launched" (cmi5 defined) statement created by the LMS within a reasonable period of time.</td></tr>
 </table>
 
 ###9.3.3 Completed
@@ -633,7 +637,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/completed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Completed" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Completed” indicates the learner viewed or did all of the relevant activities in an AU presentation.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Completed" verb when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a (cmi5 defined) statement containing the "Completed" verb when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple (cmi5 defined) statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>None.</td></tr>
 </tr><tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the course designer.</td></tr>
 </table>
@@ -644,9 +648,9 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeed in a judged activity in the AU. </td></tr>
-<tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU MUST NOT issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner, unless passIsFinal has been set to false. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
-<tr><th align="left">LMS Obligations</th><td>The LMS MUST record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See Section 10) The LMS MUST use either "Passed" or "Completed" statements (or both) based on the moveOn criteria for the AU as defined in the Course Structure. (See Course Structure,  Section 7.1.4 - MoveOn).</td></tr>
-<tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
+<tr><th align="left">AU Obligations</th><td>The AU MUST record a (cmi5 defined) statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU MUST NOT issue multiple (cmi5 defined) statements with "Passed" for the same AU within a given AU session or course registration for a given learner. A "Passed" (cmi5 defined) statement MUST NOT be issued after a "Failed" (cmi5 defined) statement has been issued for the same AU within an AU session. If the "Passed" (cmi5 defined) statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
+<tr><th align="left">LMS Obligations</th><td>The LMS MUST record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See Section 10) The LMS MUST use either "Passed" or "Completed" (cmi5 defined) statements (or both) based on the moveOn criteria for the AU as defined in the Course Structure. (See Course Structure,  Section 7.1.4 - MoveOn).</td></tr>
+<tr><th align="left">Usage</th><td>The AU MUST record a (cmi5 defined) statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
 </table>
 
 
@@ -656,11 +660,11 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU. </td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score MUST be less than the "MasteryScore" indicated in the course structure.  (See Course Structure, Section 7.1.4 - MasteryScore). A "Failed" statement MUST NOT be issued after a "Passed" statement has been issued, unless passIsFinal has been set to false.</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a (cmi5 defined) statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" (cmi5 defined) statement contains a score, the score MUST be less than the "MasteryScore" indicated in the course structure.  (See Course Structure, Section 7.1.4 - MasteryScore). A "Failed" (cmi5 defined) statement MUST NOT be issued after a "Passed" (cmi5 defined) statement has been issued for the same AU within an AU session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  (See Section 10).<br/>
 <br/>
-The LMS MUST use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  (See Course Structure, Section 7.1.4 - MasteryScore).</td></tr>
-</tr><tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
+The LMS MUST use either "Passed" or "Completed" (cmi5 defined) statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  (See Course Structure, Section 7.1.4 - MasteryScore).</td></tr>
+</tr><tr><th align="left">Usage</th><td>The AU MUST record a (cmi5 defined) statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
 </table>
 
 
@@ -671,7 +675,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Abandoned” indicates that the AU session was abnormally terminated by a learner's action (or due to a system failure).</td>
 </tr><tr><th align="left">AU Obligations</th><td>None.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement, the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination.  After recording an "Abandoned" statement, the LMS MUST NOT allow any additional statements to be recorded for that session.
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use the "Terminated" (cmi5 defined) statement to determine that the AU session has ended.  In the absence of an "Terminated" (cmi5 defined) statement, the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record an "Abandoned" (cmi5 defined) statement on behalf of the AU indicating an abnormal session termination.  After recording an "Abandoned" (cmi5 defined) statement, the LMS MUST NOT allow any additional statements (of any kind) to be recorded for that session.
 
 </td></tr>
 </tr><tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
@@ -686,8 +690,8 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Display</th><td>{ "en-US" : "Received Waiver" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Waived” indicates that the LMS has determined that the AU requirements were met by means other than completing the AU.</td>
 </tr><tr><th align="left">AU Obligations</th><td>None</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU may be waived.  A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result.  (See Section 9.6.2.2) The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a given AU session or course registration for a given learner.</td></tr>
-</tr><tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU may be skipped by the learner.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU may be waived.  A (cmi5 defined) statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result.  (See Section 9.6.2.2) The LMS MUST NOT issue multiple (cmi5 defined) statements with "Waived" for the same AU within a given AU session or course registration for a given learner.</td></tr>
+</tr><tr><th align="left">Usage</th><td>A "Waived" (cmi5 defined) statement is used by the LMS to indicate that the AU may be skipped by the learner.</td></tr>
 </table>
 
 
@@ -698,8 +702,8 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/terminated</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Terminated" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Terminated” indicates that the AU was terminated by the Learner and that the AU will not be recording any more statements for the launch session.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Terminated" verb. This statement MUST be the last statement recorded by the AU in a session.</td></tr>
-</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a (cmi5 defined) statement containing the "Terminated" verb. This statement MUST be the last statement recorded by the AU in a session.</td></tr>
+</tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use the "Terminated" (cmi5 defined) statement to determine that the AU session has ended.  In the absence of an "Terminated" (cmi5 defined) statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record a "Abandoned" (cmi5 defined) statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
 
@@ -710,8 +714,8 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Description</th><td>The verb “Satisfied” indicates that the LMS has determined that the Learner has met the moveOn criteria of all AU's in a block or has met the moveOn criteria for all AU's in the course.</td></tr>
 <tr><th align="left">AU Obligations</th><td>None</td></tr>
 <th align="left">LMS Obligations</th><td>
-<ol><li>The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block id (Section 7.1.2 in the cmi5 Course Structure document) as the Object id (Section 9.4 - Object).</li>
-<li>The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the course id (Section 7.1.1 in the cmi5 Course Structure document) as the Object id (Section 9.4 - Object)  The LMS MUST NOT issue multiple statements with "Satisfied" for the same AU within a given AU session or course registration for a given learner.</li>
+<ol><li>The LMS MUST use the "Satisfied" (cmi5 defined) statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block id (Section 7.1.2 in the cmi5 Course Structure document) as the Object id (Section 9.4 - Object).</li>
+<li>The LMS MUST also use the "Satisfied" (cmi5 defined) statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the course id (Section 7.1.1 in the cmi5 Course Structure document) as the Object id (Section 9.4 - Object)  The LMS MUST NOT issue multiple (cmi5 defined) statements with "Satisfied" for the same AU within a given AU session or course registration for a given learner.</li>
 </ol></td></tr>
 <tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
@@ -939,7 +943,6 @@ An example of the JSON document is shown below.
    "launchMode": "<launchMode value>",
    "launchParameters": "<launch parameters from Course Structure>",
    "masteryScore": "<mastery score from the Course Structure>",
-   "passIsFinal" : <passIsFinal from the Course Structure>,
    "moveOn": "<moveOn value from the Course Structure>",
    "returnURL": "<URL value>",
    "entitlementKey": {
@@ -1006,17 +1009,6 @@ The properties for the LMSLaunchData document are described below.
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>0.75</td></tr>
 </table>
 
-<table>
-  <tr><th colspan=3 align ="left">passIsFinal</th></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>passIsFinal from the cmi5 Course Structure.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST include the passIsFinal value based on the value defined in the Course Structure for the AU being launched.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>If true, the AU MUST NOT issue a "Passed" or "Failed" statement after issuing a "Passed" statement.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>boolean</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td></td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>true</td></tr>
-</table>
 
 <table>
   <tr><th colspan=3 align ="left">moveOn</th></tr>
@@ -1414,24 +1406,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       </p>
     </td>
   </tr>
-    <tr>
-    <td colspan="2" valign="top"><h3>passIsFinal</h3></td>
-  </tr>
-  <tr>
-    <td valign="top"><p><strong>Required:</strong> No<br />
-        <strong>Data type:</strong> boolean<br /><strong>Default value:</strong> true </p></td>
-    <td valign="top"><p><strong>Description:</strong> If true, the content MUST NOT send any "Passed" or "Failed" statements after sending a "Passed" statement.</p>
-      <p><strong>Usage: </strong></p>
-      <ul>
-        <li>The value of passIsFinal is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
-        <li>The AU will use this value to determine if it MUST NOT send "Passed" or "Failed" statements after sending a "Passed" statement.</li>
-      </ul>
-        <br />
-      <strong>Sample value: </strong><br/>
-      &lt;au id="&hellip;" passIsFinal="true"&gt; &hellip; &lt;/au&gt;
-      </p>
-    </td>
-  </tr>
+
   <tr>
     <td colspan="2" valign="top"><h3>moveOn</h3></td>
   </tr>
@@ -1717,7 +1692,6 @@ All course structures created for LMS import functionality and created by the LM
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="passIsFinal" use="optional" type="xs:boolean" default="true"/>
     <xs:attribute name="authenticationMethod" default="Basic">
       <xs:simpleType>
         <xs:restriction base="xs:string">
@@ -1981,7 +1955,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </objectives>
     <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/64f6"
         activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
-        moveOn="CompletedOrPassed" passIsFinal="false" masteryScore="1.0"
+        moveOn="CompletedOrPassed" masteryScore="1.0"
         authenticationMethod="Basic">
       <title>
         <langstring lang="en-US">Rock and rock cycle</langstring>
@@ -2048,7 +2022,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </objectives>
     <au id="http://example.com/courses/f59c9fc0/au/6f64"
         activityType="http://adlnet.gov/expapi/activities/lesson"
-        launchMethod="OwnWindow" moveOn="Passed" passIsFinal="false" masteryScore="0.1">
+        launchMethod="OwnWindow" moveOn="Passed"  masteryScore="0.1">
       <title>
         <langstring lang="en-US">Plate tectonics</langstring>
         <langstring lang="de-DE">Plattentektonik</langstring>
@@ -2070,7 +2044,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </au>
     <au id="http://example.com/courses/f59c9fc0/au/6f65"
         activityType="http://adlnet.gov/expapi/activities/lesson"
-        launchMethod="OwnWindow" moveOn="CompletedOrPassed" passIsFinal="true" masteryScore="0.3">
+        launchMethod="OwnWindow" moveOn="CompletedOrPassed"  masteryScore="0.3">
       <title>
         <langstring lang="en-US">Structure of the earth</langstring>
         <langstring lang="de-DE">Innerer Aufbau der Erde</langstring>
@@ -2118,7 +2092,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </objectives>
     <au id="http://example.com/courses/f59c9fc0/au/6f66"
         activityType="http://adlnet.gov/expapi/activities/lesson"
-        launchMethod="OwnWindow" moveOn="CompletedAndPassed" passIsFinal="false" masteryScore="0.5">
+        launchMethod="OwnWindow" moveOn="CompletedAndPassed"  masteryScore="0.5">
       <title>
         <langstring lang="en-US">History and nomenclature of the time scale</langstring>
         <langstring lang="de-DE">Geschichte und Nomenklatur der Zeitskala</langstring>
