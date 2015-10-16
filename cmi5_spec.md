@@ -317,6 +317,8 @@ The LMS MUST meet the following requirements to conform to this specification:
 * The LMS MUST implement a means to import course structures as defined in Section 6.1.
 * The LMS MUST NOT provide permissions/credentials which allow the AU to issue voiding Statements.
 * The LMS SHOULD implement a means to export course structures as defined in Section 6.1.
+* The LMS SHOULD reject statements that conflict with the "Statement API" requirements as defined in Section 9.
+* The LMS MUST void statements that are NOT rejected AND conflict with the "Statement API" requirements as defined in Section 9.
 
 <a name="course_structures"></a>  
 ##6.1 Course Structures
