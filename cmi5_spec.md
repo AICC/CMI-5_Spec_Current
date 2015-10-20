@@ -598,7 +598,18 @@ An Example of usage in a statement:
 
 The following xAPI verbs are defined in this specification.
 
+Note that “cmi5 allowed” statements are NOT subject to the usage rules in this section. 
+
+All statements in this section refer to "cmi5 defined" statements unless otherwise noted.
+
 AUs MUST use the below verbs that are indicated as mandatory in other sections of this specification.
+
+AU Verb Ordering Rules within an AU session are as follows:
+
+* No (cmi5 defined) verbs can be duplicated
+* Only zero or one of the set of {"Passed","Failed"} verbs are allowed (in cmi5 defined statements)
+* The "Initialized" verb MUST used be the first statement (cmi5 allowed or defined)
+* The "Terminated" verb MUST be the Last statement (cmi5 allowed or defined)
 
 AUs may use additional verbs not listed in this specification.
 
@@ -622,7 +633,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/initialized</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Initialized" }</td></tr>
 <tr><th align="left">Description</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and MUST follow the "Launched" statement created by the LMS within a reasonable period of time.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU MUST use "Initialized" in the first statement in the AU session.  The AU MUST NOT issue multiple statements with "Initialized" for the same AU within a given AU session.</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU MUST use "Initialized" in the first statement (of any kind) in the AU session.  The AU MUST NOT issue multiple statements with "Initialized" for the same AU within a given AU session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>Verify that this verb is recorded by the AU immediately after launch</td></tr>
 </tr><tr><th align="left">Usage</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and SHOULD follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
 </table>
@@ -698,7 +709,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/terminated</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Terminated" }</td></tr>
 <tr><th align="left">Description</th><td>The verb “Terminated” indicates that the AU was terminated by the Learner and that the AU will not be recording any more statements for the launch session.</td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Terminated" verb. This statement MUST be the last statement recorded by the AU in a session.</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Terminated" verb. This statement MUST be the last statement (of any kind) recorded by the AU in a session.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
