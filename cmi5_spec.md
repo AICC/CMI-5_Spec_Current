@@ -1948,7 +1948,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </objectives>
     <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/64f6"
         activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
-        moveOn="CompletedOrPassed" passIsFinal="false" masteryScore="1.0"
+        moveOn="CompletedOrPassed" masteryScore="1.0"
         authenticationMethod="Basic">
       <title>
         <langstring lang="en-US">Rock and rock cycle</langstring>
@@ -2015,7 +2015,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </objectives>
     <au id="http://example.com/courses/f59c9fc0/au/6f64"
         activityType="http://adlnet.gov/expapi/activities/lesson"
-        launchMethod="OwnWindow" moveOn="Passed" passIsFinal="false" masteryScore="0.1">
+        launchMethod="OwnWindow" moveOn="Passed" masteryScore="0.1">
       <title>
         <langstring lang="en-US">Plate tectonics</langstring>
         <langstring lang="de-DE">Plattentektonik</langstring>
@@ -2037,7 +2037,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </au>
     <au id="http://example.com/courses/f59c9fc0/au/6f65"
         activityType="http://adlnet.gov/expapi/activities/lesson"
-        launchMethod="OwnWindow" moveOn="CompletedOrPassed" passIsFinal="true" masteryScore="0.3">
+        launchMethod="OwnWindow" moveOn="CompletedOrPassed" masteryScore="0.3">
       <title>
         <langstring lang="en-US">Structure of the earth</langstring>
         <langstring lang="de-DE">Innerer Aufbau der Erde</langstring>
@@ -2085,7 +2085,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </objectives>
     <au id="http://example.com/courses/f59c9fc0/au/6f66"
         activityType="http://adlnet.gov/expapi/activities/lesson"
-        launchMethod="OwnWindow" moveOn="CompletedAndPassed" passIsFinal="false" masteryScore="0.5">
+        launchMethod="OwnWindow" moveOn="CompletedAndPassed" masteryScore="0.5">
       <title>
         <langstring lang="en-US">History and nomenclature of the time scale</langstring>
         <langstring lang="de-DE">Geschichte und Nomenklatur der Zeitskala</langstring>
