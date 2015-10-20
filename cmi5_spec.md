@@ -644,7 +644,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeed in a judged activity in the AU. </td></tr>
-<tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU MUST NOT issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner, unless passIsFinal has been set to false. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
+<tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU MUST NOT issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
 <tr><th align="left">LMS Obligations</th><td>The LMS MUST record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See Section 10) The LMS MUST use either "Passed" or "Completed" statements (or both) based on the moveOn criteria for the AU as defined in the Course Structure. (See Course Structure,  Section 7.1.4 - MoveOn).</td></tr>
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
 </table>
@@ -656,7 +656,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU. </td>
-</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score MUST be less than the "MasteryScore" indicated in the course structure.  (See Course Structure, Section 7.1.4 - MasteryScore). A "Failed" statement MUST NOT be issued after a "Passed" statement has been issued, unless passIsFinal has been set to false.</td></tr>
+</tr><tr><th align="left">AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score MUST be less than the "MasteryScore" indicated in the course structure.  (See Course Structure, Section 7.1.4 - MasteryScore). A "Failed" statement MUST NOT be issued after a "Passed" statement has been issued.</td></tr>
 </tr><tr><th align="left">LMS Obligations</th><td>The LMS MUST record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  (See Section 10).<br/>
 <br/>
 The LMS MUST use either "Passed" or "Completed" statements (or both) for determining for course completion (or course collateral credit) criteria for the AU.  (See Course Structure, Section 7.1.4 - MasteryScore).</td></tr>
@@ -939,7 +939,6 @@ An example of the JSON document is shown below.
    "launchMode": "<launchMode value>",
    "launchParameters": "<launch parameters from Course Structure>",
    "masteryScore": "<mastery score from the Course Structure>",
-   "passIsFinal" : <passIsFinal from the Course Structure>,
    "moveOn": "<moveOn value from the Course Structure>",
    "returnURL": "<URL value>",
    "entitlementKey": {
@@ -1004,18 +1003,6 @@ The properties for the LMSLaunchData document are described below.
   <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>decimal</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1.</td></tr>
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>0.75</td></tr>
-</table>
-
-<table>
-  <tr><th colspan=3 align ="left">passIsFinal</th></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Description:</th><td>passIsFinal from the cmi5 Course Structure.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Required:</th><td>Yes</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST include the passIsFinal value based on the value defined in the Course Structure for the AU being launched.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>AU Usage:</th><td>If true, the AU MUST NOT issue a "Passed" or "Failed" statement after issuing a "Passed" statement.</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Data Type:</th><td>boolean</td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Value Space:</th><td></td></tr>
-  <tr><td>&nbsp;</td><th align ="right" nowrap>Sample Value:</th><td>true</td></tr>
 </table>
 
 <table>
@@ -1413,25 +1400,6 @@ The data in this section are used by the LMS to locate the AU and provide launch
       &lt;au id="&hellip;" masteryScore="0.85"&gt; &hellip; &lt;/au&gt;
       </p>
     </td>
-  </tr>
-    <tr>
-    <td colspan="2" valign="top"><h3>passIsFinal</h3></td>
-  </tr>
-  <tr>
-    <td valign="top"><p><strong>Required:</strong> No<br />
-        <strong>Data type:</strong> boolean<br /><strong>Default value:</strong> true </p></td>
-    <td valign="top"><p><strong>Description:</strong> If true, the content MUST NOT send any "Passed" or "Failed" statements after sending a "Passed" statement.</p>
-      <p><strong>Usage: </strong></p>
-      <ul>
-        <li>The value of passIsFinal is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
-        <li>The AU will use this value to determine if it MUST NOT send "Passed" or "Failed" statements after sending a "Passed" statement.</li>
-      </ul>
-        <br />
-      <strong>Sample value: </strong><br/>
-      &lt;au id="&hellip;" passIsFinal="true"&gt; &hellip; &lt;/au&gt;
-      </p>
-    </td>
-  </tr>
   <tr>
     <td colspan="2" valign="top"><h3>moveOn</h3></td>
   </tr>
@@ -1717,7 +1685,6 @@ All course structures created for LMS import functionality and created by the LM
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="passIsFinal" use="optional" type="xs:boolean" default="true"/>
     <xs:attribute name="authenticationMethod" default="Basic">
       <xs:simpleType>
         <xs:restriction base="xs:string">
@@ -2327,7 +2294,7 @@ Using the domain of geology the following two examples demonstrate how simple an
       </au>
       <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ed0/"
           activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
-          moveOn="Passed" passIsFinal="true" masteryScore="0.5">
+          moveOn="Passed"  masteryScore="0.5">
         <title>
           <langstring lang="en-US">Hadean</langstring>
           <langstring lang="de-DE">Hadaikum</langstring>
@@ -2347,7 +2314,7 @@ Using the domain of geology the following two examples demonstrate how simple an
       </au>
     </block>
   </block>
-  <au id="http://quiz-server.example.com/1Hu62hL" masteryScore="0.7" passIsFinal="true"
+  <au id="http://quiz-server.example.com/1Hu62hL" masteryScore="0.7" 
       launchMethod="OwnWindow" moveOn="Passed" authenticationMethod="Basic"
       activityType="http://adlnet.gov/expapi/activities/assessment">
     <title>
