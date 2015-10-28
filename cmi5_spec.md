@@ -43,7 +43,7 @@
       * [7.2.3 Last Statement Call](#last_statement_au)
       * [7.2.4 Types of Statements](#type_statement_au)
 * [__8.0 Content Launch Mechanisms__](#content_launch)
-  * [8.1 Launch Method](#browser_environment)
+  * [8.1 Launch Method](#launch_method)
   * [8.2 Authorization Token Fetch URL](#fetch_url)
   * [8.3 Other Launch Environments](#other_environment)
 * [__9.0 xAPI Statement Data Model__](#xapi_data_model)
@@ -403,7 +403,7 @@ The AU MAY issue statements that are defined as "cmi5 allowed" statements per se
 <a name="content_launch"></a>  
 #8.0 Content Launch Mechanisms
 
-<a name="browser_environment"></a>  
+<a name="launch_method"></a>  
 ##8.1 Launch Method
 
 The AU MUST be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 7.1.4 AU Meta Data, URL):
