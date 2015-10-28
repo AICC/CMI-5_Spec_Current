@@ -43,7 +43,7 @@
       * [7.2.3 Last Statement Call](#last_statement_au)
       * [7.2.4 Types of Statements](#type_statement_au)
 * [__8.0 Content Launch Mechanisms__](#content_launch)
-  * [8.1 Web (Browser) Environment](#browser_environment)
+  * [8.1 Launch Method](#browser_environment)
   * [8.2 Authorization Token Fetch URL](#fetch_url)
   * [8.3 Other Launch Environments](#other_environment)
 * [__9.0 xAPI Statement Data Model__](#xapi_data_model)
@@ -404,9 +404,7 @@ The AU MAY issue statements that are defined as "cmi5 allowed" statements per se
 #8.0 Content Launch Mechanisms
 
 <a name="browser_environment"></a>  
-##8.1 Web (Browser) Environment
-
-###8.1.1 Launch Method
+##8.1 Launch Method
 
 The AU MUST be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 7.1.4 AU Meta Data, URL):
 
@@ -553,16 +551,7 @@ The values for <strong><em>error-text</em></strong> are defined by the LMS.
 <a name="other_environment"></a>  
 ##8.3 Other Launch Environments
 
-Other launch environments are not currently implemented in this specification. The following launch environments are being considered for future releases:  
-
-* Windows/XP/7/8 Pro  
-* Windows RT  
-* Mac OS X  
-* Linux  
-* Android  
-* iOS  
-
-cmi5 implementations for LMS’s and AU’s in these other environments will use the same REST communication interface as specified in xAPI specification.  The xAPI specification does not specify launch mechanisms.
+Other launch environments are not currently implemented in this specification. cmi5 implementations for LMS’s and AU’s in these other environments will use the same REST communication interface as specified in xAPI specification.  The xAPI specification does not specify launch mechanisms.
 
 <a name="xapi_data_model"/>  
 #9.0 xAPI Statement Data Model  
