@@ -1,4 +1,4 @@
-
+  
 <p>
 <p align=center><img src="https://cloud.githubusercontent.com/assets/1656316/9965238/bc9deb2c-5de9-11e5-9954-63aa03873f88.png" align=center></p>
 
@@ -34,6 +34,7 @@
 * [__5.0 Conceptual Model: Informative__](#concept)
 * [__6.0 LMS Requirements__](#lms_requirements)
   * [6.1 Course Structures](#course_structures)
+  * [6.2 LMS State API Requirements](#lms_state_api_requirements)
   * [6.3 LMS Statement API Requirements](#lms_statement_api_requirements)
 * [__7.0 AU Requirements__](#au_requirements)
   * [7.1 AU State API Requirements](#au_state_api_requirements)
@@ -45,26 +46,48 @@
 * [__8.0 Content Launch Mechanisms__](#content_launch)
   * [8.1 Web (Browser) Environment](#browser_environment)
   * [8.2 Authorization Token Fetch URL](#fetch_url)
+      * [8.2.1 Overview](#fetch_url_overview)
+      * [8.2.2 Definition: auth-token](#definition_auth_token)
+      * [8.2.3 Errors](#fetch_url_errors)
+          * [8.2.3.1 Duplicate call to fetch URL](#duplicate_call_to_fetch_url)
+          * [8.2.3.2 Error Values](#fetch_url_error_values)
   * [8.3 Other Launch Environments](#other_environment)
 * [__9.0 xAPI Statement Data Model__](#xapi_data_model)
-  * [9.1 Statement ID](#ID)
-  * [9.2 Actor](#Actor)
+  * [9.1 Statement ID](#statement_id)
+  * [9.2 Actor](#actor)
   * [9.3 Verbs](#verbs)
-  * [9.4 Object](#Object)
-      * [9.4.1 objectType](#objectType)
-      * [9.4.2 Object ID](#Object_ID)
-  * [9.5 Result](#Result)
-      * [9.5.1 Score](#Score)
-      * [9.5.2 Success](#Success)
-      * [9.5.3 Completion](#Completion)
-      * [9.5.4 Duration](#Duration)
-  * [9.6 Context](#Context)
-      * [9.6.1 Registration](#Registration)
-      * [9.6.2 ContextActivities](#ContextActivities)
+      * [9.3.1 Launched](#verbs_launched)
+      * [9.3.2 Initialized](#verbs_initialized)
+      * [9.3.3 Completed](#verbs_completed)
+      * [9.3.4 Passed](#verbs_passed)
+      * [9.3.5 Failed](#verbs_failed)
+      * [9.3.6 Abandoned](#verbs_abandoned)
+      * [9.3.7 Waived](#verbs_waived)
+      * [9.3.8 Terminated](#verbs_terminated)
+      * [9.3.9 Satisfied](#verbs_satisfied)
+  * [9.4 Object](#object)
+      * [9.4.1 objectType](#object_type)
+      * [9.4.2 id](#object_id)
+  * [9.5 Result](#result)
+      * [9.5.1 Score](#score)
+      * [9.5.2 Success](#success)
+      * [9.5.3 Completion](#completion)
+      * [9.5.4 Duration](#duration)
+          * [9.5.4.1 AU statements that include duration](#au_statements_that_include_duration)
+          * [9.5.4.2 LMS statements that include duration](#lms_statements_that_include_duration)
+      * [9.5.5 Extensions](#result_extensions)
+          * [9.5.5.1 Progress](#result_extensions_progress)
+  * [9.6 Context](#context)
+      * [9.6.1 Registration](#registration)
+      * [9.6.2 ContextActivities](#context_activities)
       * [9.6.3 Extensions](#extensions)
-  * [9.7 Timestamp](#Timestamp)
+          * [9.6.3.1 session ID](#context_extensions_session_id)
+          * [9.6.3.2 reason](#context_extensions_reason)
+  * [9.7 Timestamp](#timestamp)
 * [__10.0 xAPI State Data Model__](#xapi_state)
 * [__11.0 xAPI Agent Profile Data Model__](#xapi_agent_profile)
+  * [11.1 languagePreference](#language_preference)
+  * [11.2 audioPreference](#audio_preference)
 * [__12.0 xAPI Activity Profile Data Model__](#xapi_activity_profile)
 * [__13.0 Course Structure Data Requirements__](#course_requirements)
   * [13.1 Course Structure Data Model](#course_structure_data_model)
@@ -75,6 +98,8 @@
     * [13.1.5 Vendor Specific Metadata (Extensions)](#vendor_meta_data)
   * [13.2 Course Structure XSD](#course_structure_xsd)
 * [__14.0 Course Package__](#course_package)
+  * [14.1 Course Packages in ZIP Format](#course_packages_in_zip_format)
+  * [14.2 Course Structure XML Without a ZIP File Package](#course_structure_xml_without_a_zip_file_package)
 * [__15.0 Course Structure Examples__](#course_structure_examples)
   * [15.1 Simple](#course_structure_examples_simple)
   * [15.2 Complex](#course_structure_examples_complex)
@@ -84,7 +109,7 @@
 
 ------
 
-<a name="dislaimer"/>  
+<a name="disclaimer"/>  
 ## Disclaimer
 PLEASE NOTE: This is a developer release and is subject to change.
 
@@ -503,6 +528,7 @@ The values for the URL launch parameters are described below:
 <br />
 <a name="fetch_url"></a>  
 ##8.2 Authorization Token Fetch URL
+<a name="fetch_url_overview"></a>  
 ###8.2.1 Overview
 The LMS MUST include the <strong><em>fetch</em></strong> name/value pair in the launch URL.  The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve an authorization token.  Please note than an HTTP GET is not allowed in order to prevent caching of the request.
 
@@ -516,7 +542,7 @@ The AU MUST place the <strong><em>auth-token</em></strong> in the HTTP header, a
 
 The AU SHOULD NOT attempt to retrieve the authorization token more than once.  The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error (see Section 8.2.3). 
 
-
+<a name="definition_auth_token"></a>  
 ###8.2.2 Definition: auth-token
 <table>
   <tr><th colspan=3 align ="left">auth-token</th></tr>
@@ -528,7 +554,10 @@ The AU SHOULD NOT attempt to retrieve the authorization token more than once.  T
   <tr><td>&nbsp;</td><th align ="right" nowrap>Sample value:</th><td>QWxhZGRpbjpvcGVuIHNlc2FtZQ==</td></tr>
 </table>
 
+<a name="fetch_url_errors"></a>  
 ###8.2.3 Errors
+
+<a name="duplicate_call_to_fetch_url"></a>  
 ####8.2.3.1 Duplicate call to fetch URL
 The <strong><em>fetch</em></strong> URL is a "one-time use" URL and only the first request SHOULD return the <strong><em>auth-token</em></strong>. Subsequent requests made to the <strong><em>fetch</em></strong> during the session SHOULD generate an error.  The error SHOULD be returned in the form of a JSON structure using content-type "application/json".  An example of JSON structure is shown below:
 ```javascript
@@ -537,6 +566,7 @@ The <strong><em>fetch</em></strong> URL is a "one-time use" URL and only the fir
   "error-text": "The authorization token has already been returned."
 }
 ```
+<a name="fetch_url_error_values"></a>
 ####8.2.3.2 Error Values
 The following <strong><em>error-code</em></strong> values are allowed.
 <table>
@@ -567,11 +597,11 @@ cmi5 implementations for LMS’s and AU’s in these other environments will use
 <a name="xapi_data_model"/>  
 #9.0 xAPI Statement Data Model  
 
-<a name="ID" ></a>
+<a name="statement_id" ></a>
 ##9.1 Statement ID
 The AU will not provide a statement ID for cmi5 defined statements.  (The LRS will assign statement IDs)  
   
-<a name="Actor" ></a>
+<a name="actor" ></a>
 ##9.2 Actor
 The Actor property will be defined by the LMS. The Actor property for all statements with cmi5 defined verbs MUST be of objectType "Agent" and MUST contain an "account" as defined in the xAPI specification.
 
@@ -615,7 +645,7 @@ AUs may use additional verbs not listed in this specification.
 
 Regardless of the verbs the AUs use in statements, the LMS MUST record and provide reporting for all statements. 
  
-
+<a name="verbs_launched"></a>  
 ###9.3.1 Launched
 <table>
 <tr><th align="left">Verb</th><td>Launched</td></tr>
@@ -627,6 +657,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </tr><tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate that the LMS has launched the AU. It SHOULD be used in combination with the "Initialized" statement sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
 </table>
 
+<a name="verbs_initialized"></a>  
 ###9.3.2 Initialized
 <table>
 <tr><th align="left">Verb</th><td>Initialized</td></tr>
@@ -638,6 +669,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </tr><tr><th align="left">Usage</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and SHOULD follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
 </table>
 
+<a name="verbs_completed"></a>  
 ###9.3.3 Completed
 <table>
 <tr><th align="left">Verb</th><td>Completed</td></tr>
@@ -649,6 +681,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </tr><tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the course designer.</td></tr>
 </table>
 
+<a name="verbs_passed"></a>  
 ###9.3.4 Passed
 <table>
 <tr><th align="left">Verb</th><td>Passed</td></tr>
@@ -660,7 +693,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
 </table>
 
-
+<a name="verbs_failed"></a>  
 ###9.3.5 Failed
 <table>
 <tr><th align="left">Verb</th><td>Failed</td></tr>
@@ -674,7 +707,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 </tr><tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
 </table>
 
-
+<a name="verbs_abandoned"></a>  
 ###9.3.6 Abandoned
 <table>
 <tr><th align="left">Verb</th><td>Abandoned</td></tr>
@@ -689,7 +722,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 </table>
 
 
-
+<a name="verbs_waived"></a>  
 ###9.3.7 Waived
 <table>
 <tr><th align="left">Verb</th><td>Waived</td></tr>
@@ -702,7 +735,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 </table>
 
 
-
+<a name="verbs_terminated"></a>  
 ###9.3.8 Terminated
 <table>
 <tr><th align="left">Verb</th><td>Terminated</td></tr>
@@ -714,6 +747,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 </tr><tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
 
+<a name="verbs_satisfied"></a>  
 ###9.3.9 Satisfied
 <table>
 <tr><th align="left">Verb</th><td>Satisfied</td></tr>
@@ -730,15 +764,15 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <BR>
 <BR>
 
-<a name="Object"></a> 
+<a name="object"></a> 
 ##9.4 Object 
 The Object in a cmi5 defined statement represents the AU.  An Object MUST be present, as specified in this section, in all statements with cmi5 defined verbs.
 
-<a name="objectType"></a> 
+<a name="object_type"></a> 
 ###9.4.1 objectType
 The objectType property of an Object in statements with a cmi5 verb MUST be set to "activity".
 
-<a name="Object_ID"></a> 
+<a name="object_id"></a> 
 ###9.4.2 id 
 The value of the Object's ID property for a given AU MUST match the AU ID (activityId) defined in the URL launch line and the Course Structure.
 
@@ -763,7 +797,7 @@ An Example of usage in a statement:
 }
 ```
 
-<a name="Result"></a> 
+<a name="result"></a> 
 ##9.5 Result
 Result may be present in a statement depending on the cmi5 verb used.  
 
@@ -785,7 +819,7 @@ Example JSON:
    }
  ```
 
-<a name="Score"></a> 
+<a name="score"></a> 
 ###9.5.1 Score
 
 A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with masteryScore (if defined for the AU in the Course Structure).
@@ -796,7 +830,7 @@ A score is not required to be reported.  If a score is reported by an AU, the ve
 <li><strong>max</strong><br/>An integer value indicating the maximum value for the "raw" score property.</li>
 </ul>
 
-<a name="Success"></a>
+<a name="success"></a>
 ###9.5.2 Success 
 
 The success property of the result MUST be set to true for statements having the following cmi5 defined verbs:
@@ -809,7 +843,7 @@ The success property of the result MUST be set to false for statements having th
 - Failed
 - Abandoned
 
-<a name="Completion"></a>
+<a name="completion"></a>
 ###9.5.3 Completion
 The completion property of the result MUST be set to true for statements having the following cmi5 defined verbs:
 
@@ -821,9 +855,10 @@ The completion property of the result MUST be set to false for statements having
 - Failed
 - Abandoned
 
-<a name="Duration"></a>
+<a name="duration"></a>
 ###9.5.4 Duration
 The duration property is an ISO 8601 formatted time value required in certain statements as defined in this section.
+<a name="au_statements_that_include_duration"></a>
 ####9.5.4.1 AU statements that include duration
 ##### Terminated Statement
 The AU MUST include the duration property in "Terminated" statements.  The AU SHOULD calculate duration for Terminated statements as the time difference between the "Initialized" statement and the "Terminated" statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
@@ -833,11 +868,15 @@ The AU MUST include the duration property in "Completed" statements.  The AU SHO
 The AU MUST include the duration property in "Passed" statements.  The AU SHOULD calculate duration as the time spent by the learner to attempt and succeed in a judged activity of the AU. 
 ##### Failed Statement
 The AU MUST include the duration property in "Failed" statements. The AU SHOULD calculate duration as the time spent by the learner to attempt and fail in a judged activity of the AU.
+
+<a name="lms_statements_that_include_duration"></a>
 ####9.5.4.2 LMS statements that include duration
 ##### Abandoned Statement
 The duration property SHOULD be included in "Abandoned" statements. The duration property SHOULD be set as the total session time, calculated as the time between the “Launched” statement and the last statement issued by the AU.
 
+<a name="result_extensions"></a>
 ###9.5.5 Extensions
+<a name="result_extensions_progress"></a>
 ####9.5.5.1 Progress
 An integer value indicating the completion of the AU as a percentage. The AU may set this value in statements to indicate level of completion between 0 and 100 percent.
 
@@ -846,7 +885,7 @@ Progress is defined in extensions using the following IRI:
 
       http://purl.org/xapi/cmi5/result/extensions/progress
 
-<a name="Context"></a> 
+<a name="context"></a> 
 ##9.6 Context
 All statements with cmi5 defined verbs MUST contain a context as defined in this section. 
 
@@ -867,12 +906,12 @@ Sample JSON:
    }
 ```
 
-<a name="Registration"></a> 
+<a name="registration"></a> 
 ###9.6.1 registration
 The value for the registration property used in the context object MUST be the value provided by the LMS.  The LMS MUST generate this value and pass it to the AU via the launch line. 
 
-<a name="ContextActivities"></a>
-###9.6.2  contextActivities
+<a name="context_activities"></a>
+###9.6.2 contextActivities
 
 The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. contextActivities contain category objects whose entries can be used as wildcard searches. Each category is tagged with name value pairs of "id" and an IRI.
 
@@ -886,6 +925,7 @@ Statements with a results object (Section 9.5) that include either "success” o
 ###9.6.3 extensions
 The following are extensions specified for cmi5.  Other extensions are permitted provided they do not conflict or duplicate the ones specified here.  
 
+<a name="context_extensions_session_id"></a>
 ####9.6.3.1 session ID
 
 <table>
@@ -900,6 +940,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
   <tr><th align ="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
+<a name="context_extensions_reason"></a>
 ####9.6.3.2 reason
 
   <table>
@@ -927,7 +968,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
   <tr><th align ="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
 </table>
 
-<a name="Timestamp"></a> 
+<a name="timestamp"></a> 
 ##9.7 Timestamp
 
 To ensure statement ordering requirements are met, all statements MUST include a timestamp property per the xAPI specification. All timestamps MUST be recorded in UTC time.
@@ -1101,6 +1142,7 @@ When reading or writing to the Agent Profile, the document name MUST be "CMI5Lea
 	"audioPreference": "<on or off>"
 }
 ```
+<a name="language_preference"></a>
 ##11.1  languagePreference
 The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags as indicated in the xAPI specification (Section 5.2).  In the list, languages MUST be specified in order of user preference.  In the example below, the user's first preference for language is en-US.  The user's second preference for language is fr-FR and the third preference is fr-BE.
 
@@ -1113,6 +1155,7 @@ The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags 
 
 If the AU supports multiple languages, the AU SHOULD display in the language preference order of the user as in the example above. If the AU supported "zh-CN", "fr-BE and "fr-FR", it SHOULD display in "fr-FR".  If the AU does not support multiple languages, or if no languagePreference is specified in the Agent Profile, it may display in its default language.
 
+<a name="audio_preference"></a>
 ##11.2 audioPreference
 The audioPrefence value indicates whether the audio SHOULD be "on" or "off".  The AU MUST turn the audio on or off at startup based on this value.  If no value is provided in the Agent Profile for audioPreference the AU MAY use its own default value.
 
@@ -1784,6 +1827,7 @@ For the course import and export defined in Section 6.1, the LMS MUST support al
 <li>Zip64</li>
 <li>A course structure XML file</li>
 </ul>
+<a name="course_packages_in_zip_format"></a>
 ##14.1 Course Packages in ZIP Format
 The two ZIP file formats MUST follow the specification defined at https://www.pkware.com/support/zip-app-note.  When the ZIP file is used to package a course, it MUST contain the course structure XML file at its root directory and it MAY contain media associated with the course AUs.
 
@@ -1791,6 +1835,8 @@ The two ZIP file formats MUST follow the specification defined at https://www.pk
 <li>Any media not included in a ZIP course package MUST use fully qualified URL references in the Course Structure XML</li>
 <li>A ZIP course package MAY contain a mix of fully qualified and relative URLs, provided the rules above are followed.</li>
 </ul>
+
+<a name="course_structure_xml_without_a_zip_file_package"></a>
 ##14.2 Course Structure XML Without a ZIP File Package
 When a course structure XML file is provided without a ZIP file package, all URL references MUST be fully qualified.
 
