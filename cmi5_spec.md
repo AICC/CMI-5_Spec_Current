@@ -996,7 +996,7 @@ The properties for the "LMS.LaunchData" document are described below.
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD get the <strong><em>launchParameters</em></strong> value from the State API document if the launch parameters were defined in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>Defined by the course designer.</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Defined by the course designer.</td></tr>
-  <tr><th align="right" nowrap>Sample Value:</th><td>TBD.</td></tr>
+  <tr><th align="right" nowrap>Sample Value:</th><td>{"param1": "Lorem ipsum dolor sit amet", "param2": [1,2,3,4,5],"param3": {"a": 1,"b": 2}}</td></tr>
 </table>
 
 <table>
