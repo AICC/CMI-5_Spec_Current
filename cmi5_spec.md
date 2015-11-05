@@ -372,14 +372,14 @@ Usage in an xAPI Statement:
 
 ```javascript
 "extensions": {
-       "http://purl.org/xapi/cmi5/context/extensions/sessionid": <The session ID value provided by the LMS>
-     }
+  "http://purl.org/xapi/cmi5/context/extensions/sessionid": <The session ID value provided by the LMS>
+}
 ```
 Example:
 ```javascript
 "extensions": {
-       "http://purl.org/xapi/cmi5/context/extensions/sessionid": "xyz123"
-     }
+  "http://purl.org/xapi/cmi5/context/extensions/sessionid": "xyz123"
+}
 ```
 
 <a name="first_statement_au"></a> 
@@ -582,9 +582,10 @@ An Example of usage in a statement:
   "actor": {
     "objectType": "Agent",
     "account": {
-        "homePage": "http://www.example.com",
-        "name": "1625378"
-   }, 
+      "homePage": "http://www.example.com",
+      "name": "1625378"
+    }
+  },
   "verb": {...},
   "object": {...},
   "result": {...},
@@ -746,20 +747,20 @@ An Example of usage in a statement:
 
 ```javascript
 {
-  "actor": {...}, 
+  "actor": {...},
   "verb": {
-               "id": "http://adlnet.gov/expapi/verbs/launched",   
-               "display": {  
-                   "en-US": "Launched"
-               }
-    },
-    "object": {
-      "id":"<AU identifier>",
-       "objectType": "Activity"       
-    },
-    "result": {...},
-    "context": {...},
-    "attachments": {...}
+    "id": "http://adlnet.gov/expapi/verbs/launched",
+    "display": {
+      "en-US": "Launched"
+    }
+  },
+  "object": {
+    "id":"<AU identifier>",
+    "objectType": "Activity"
+  },
+  "result": {...},
+  "context": {...},
+  "attachments": {...}
 }
 ```
 
@@ -769,20 +770,20 @@ Result may be present in a statement depending on the cmi5 verb used.
 
 Example JSON:
 ```javascript
-  "result": {
-     "score": {
-         "scaled": 0.65,
-         "raw": 65,
-         "min": 0,
-         "max": 100
-     },
-     "success": false,
-     "completion": false,
-     "duration": "PT30M",
-     "extensions": {
-         "http://purl.org/xapi/cmi5/result/extensions/progress": 100
-     }
-   }
+"result": {
+  "score": {
+    "scaled": 0.65,
+    "raw": 65,
+    "min": 0,
+    "max": 100
+  },
+  "success": false,
+  "completion": false,
+  "duration": "PT30M",
+  "extensions": {
+    "http://purl.org/xapi/cmi5/result/extensions/progress": 100
+  }
+}
  ```
 
 <a name="Score"></a> 
@@ -942,21 +943,21 @@ An example of the JSON document is shown below.
 
 ```javascript
 {
-   "contextTemplate": {
-         "extensions": {
-            "http://purl.org/xapi/cmi5/context/extensions/sessionid": "<The LMS generated session ID value>"
-         }
-   },
-   "launchMode": "<launchMode value>",
-   "launchParameters": "<launch parameters from Course Structure>",
-   "masteryScore": "<mastery score from the Course Structure>",
-   "moveOn": "<moveOn value from the Course Structure>",
-   "returnURL": "<URL value>",
-   "entitlementKey": {
-       "courseStructure": "<Entitlement data or key from Course Structure>",
-       "alternate": "<alternateEntitlementKey>"
-   }
- }
+  "contextTemplate": {
+    "extensions": {
+      "http://purl.org/xapi/cmi5/context/extensions/sessionid": "<The LMS generated session ID value>"
+    }
+  },
+  "launchMode": "<launchMode value>",
+  "launchParameters": "<launch parameters from Course Structure>",
+  "masteryScore": "<mastery score from the Course Structure>",
+  "moveOn": "<moveOn value from the Course Structure>",
+  "returnURL": "<URL value>",
+  "entitlementKey": {
+    "courseStructure": "<Entitlement data or key from Course Structure>",
+    "alternate": "<alternateEntitlementKey>"
+  }
+}
 ```
 
 The properties for the "LMS.LaunchData" document are described below.
