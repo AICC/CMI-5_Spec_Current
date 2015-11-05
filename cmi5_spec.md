@@ -165,7 +165,7 @@ Uses of activities not explicitly defined above are outside of the scope of this
 
 The following referenced documents are indispensable for the application of this specification. 
 
-* Internationalized Resource Identifiers (IRIs): IRI Syntax" January 2005.<br/>
+* Internationalized Resource Identifiers (IRIs): IRI Syntax January 2005<br/>
 https://www.ietf.org/rfc/rfc3987.txt
 * "Experience API", current specification, ADL, 2012-2013<br/>
 https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
@@ -214,13 +214,15 @@ __AICC__: Aviation Industry Computer-Based Training Committee
 __API__: Application Programming Interface  
 __CMI__: Computer Managed Instruction	
 __JSON__: JavaScript Object Notation	
+__IRI__: Internationalized Resource Identifier
+__IRL__: Internationalized Resource Locator
 __LMS__: Learning Management System  
 __LRS__: Learning Record Store  
 __PII__: Personally Identifiable Information  
 __URI__: Uniform Resource Identifier  
 __URL__: Uniform Resource Locator  
 __URN__: Uniform Resource Name	
-__XAPI__: Experience API	
+__xAPI__: Experience API
 __XML__: Extensible Markup Language  
 __XSD__: XML Schema Definition  
 <BR>
