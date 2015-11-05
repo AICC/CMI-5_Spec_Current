@@ -1604,9 +1604,9 @@ The data in this section are used by the LMS to locate the AU and provide launch
 <a name="vendor_meta_data"/>
 ### 13.1.5 Vendor Specific Metadata (Extensions)
 
-Course Designer MAY place their own namespaced elements into the course structure and thus define an extension for the source structure specification. For that he MUST provide a XML Schema Definition and SHOULD provide a human readable specification describing these vendor specific extensions. These extensions MUST keep the course structure XML valid. An importing LMS MAY ignore these elements. Therefore the extension SHOULD be created in such a manner that a course is still useable if the LMS does not support the additional elements.
+Course Designers MAY place their own namespaced elements into the course structure and thus define an extension for the source structure specification. For that they MUST provide a XML Schema Definition and SHOULD provide a human readable specification describing these vendor specific extensions. These extensions MUST keep the course structure XML valid. An importing LMS MAY ignore these elements. Therefore the extension SHOULD be created in such a manner that a course is still useable if the LMS does not support the additional elements.
 
-To achieve a larger distribution of their extension course designer SHOULD use choose a free or open source license for their specification and make it publicly available.
+To achieve a larger distribution of their extension course designers SHOULD choose a free or open source license for their specification and make it publicly available.
 
 <a name="course_structure_xsd"/>  
 ## 13.2 Course Structure XSD 
