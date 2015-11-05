@@ -88,7 +88,7 @@
 ## Disclaimer
 PLEASE NOTE: This is a developer release and is subject to change.
 
-<a name="revhistory"></a>	
+<a name="revhistory"></a>
 ## Revision History
 __Sandstone - 1st Edition (May 15, 2015):__
 
@@ -114,7 +114,7 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 | Mike Rustici         | Rustici Software                       |
 | Ben Clark            | Rustici Software                       |
 | Megan Bowe           | Rustici Software                       |
-| Andrew Downes        | Rustici Software                        |
+| Andrew Downes        | Rustici Software                       |
 | Jacques Talvard      | Airbus                                 |
 | William A. McDonald  | Boeing                                 |
 | Ray Lowery           | Pratt &amp; Whitney                    |
@@ -128,9 +128,9 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 | Thomas Person        | (Formerly of Adobe)                    |
 | Art Werkenthin       | RISC,Inc                               |
 | Severin Neumann      | die eLearning AG                       |
-| Chris Amyot	       | ICOM Productions, Inc.                 |
+| Chris Amyot          | ICOM Productions, Inc.                 |
 | David Pesce          | Exputo Inc.                            |
-| Henry Ryng           | inXsol					|
+| Henry Ryng           | inXsol                                 |
 | Chris Handorf        | Pearson                                |
 | Jamie Burns          | Virtual College                        |
 
@@ -212,8 +212,8 @@ For purposes of this specification, the following terms and definitions apply:
 __ADL__: Advanced Distributed Learning  
 __AICC__: Aviation Industry Computer-Based Training Committee  
 __API__: Application Programming Interface  
-__CMI__: Computer Managed Instruction	
-__JSON__: JavaScript Object Notation	
+__CMI__: Computer Managed Instruction
+__JSON__: JavaScript Object Notation
 __IRI__: Internationalized Resource Identifier
 __IRL__: Internationalized Resource Locator
 __LMS__: Learning Management System  
@@ -221,7 +221,7 @@ __LRS__: Learning Record Store
 __PII__: Personally Identifiable Information  
 __URI__: Uniform Resource Identifier  
 __URL__: Uniform Resource Locator  
-__URN__: Uniform Resource Name	
+__URN__: Uniform Resource Name
 __xAPI__: Experience API
 __XML__: Extensible Markup Language  
 __XSD__: XML Schema Definition  
@@ -1100,8 +1100,8 @@ When reading or writing to the Agent Profile, the document name MUST be "CMI5Lea
 
 ```javascript
 {
-	"languagePreference": "<values for languages>",
-	"audioPreference": "<on or off>"
+  "languagePreference": "<values for languages>",
+  "audioPreference": "<on or off>"
 }
 ```
 ##11.1  languagePreference
@@ -1109,8 +1109,8 @@ The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags 
 
 ```javascript
 {
-	"languagePreference": "en-US,fr-FR,fr-BE",
-	...
+  "languagePreference": "en-US,fr-FR,fr-BE",
+  ...
 }
 ```
 
@@ -1122,8 +1122,8 @@ The audioPrefence value indicates whether the audio SHOULD be "on" or "off".  Th
 Example:
 ```javascript
 {
-	"audioPreference": "on",
-	...
+  "audioPreference": "on",
+  ...
 }
 ```
 
@@ -1180,11 +1180,11 @@ The following metadata attributes and elements are at the course level and  desc
       
 
     &lt;title&gt;<br>
-    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is a course title&lt;/langstring&gt;<br>
-    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Se trata de un título del curso&lt;/langstring&gt;<br>
+    &nbsp;&nbsp;&lt;langstring lang="en-US"&gt;This is a course title&lt;/langstring&gt;<br>
+    &nbsp;&nbsp;&lt;langstring lang="es-MX"&gt;Se trata de un título del curso&lt;/langstring&gt;<br>
     &lt;/title&gt;<br>
       
-	</p>
+    </p>
     </td>
   </tr>
   <tr>
@@ -1200,8 +1200,8 @@ The following metadata attributes and elements are at the course level and  desc
         Values are defined by the course designer.</p>
       <p><strong>Sample value: </strong><br>
     &lt;description&gt;<br>
-    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is a course description&lt;/langstring&gt;<br>
-    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Esta es una descripción del curso&lt;/langstring&gt;<br>
+    &nbsp;&nbsp;&lt;langstring lang="en-US"&gt;This is a course description&lt;/langstring&gt;<br>
+    &nbsp;&nbsp;&lt;langstring lang="es-MX"&gt;Esta es una descripción del curso&lt;/langstring&gt;<br>
     &lt;/description&gt;<br>  
     
         </p>
@@ -1244,8 +1244,8 @@ The data in this section are used for the block structures with group AUs.  A Bl
       Values are defined by the course designer.<br>
       <strong>Sample value:</strong><br>
     &lt;title&gt;<br>
-    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br>
-    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Este es el título del bloque&lt;/langstring&gt;<br>
+    &nbsp;&nbsp;&lt;langstring lang="en-US"&gt;This is the block title&lt;/langstring&gt;<br>
+    &nbsp;&nbsp;&lt;langstring lang="es-MX"&gt;Este es el título del bloque&lt;/langstring&gt;<br>
     &lt;/title&gt;<br>
     </td>
   </tr>
@@ -1495,8 +1495,8 @@ The data in this section are used by the LMS to locate the AU and provide launch
       <p><strong>Sample value: </strong><br>
 
     &lt;title&gt;<br>
-    &nbsp;&nbsp;	&lt;langstring lang="en-US"&gt;This is an activity title.&lt;/langstring&gt;<br>
-    &nbsp;&nbsp;	&lt;langstring lang="es-MX"&gt;Este es un título de la actividad.&lt;/langstring&gt;<br>
+    &nbsp;&nbsp;&lt;langstring lang="en-US"&gt;This is an activity title.&lt;/langstring&gt;<br>
+    &nbsp;&nbsp;&lt;langstring lang="es-MX"&gt;Este es un título de la actividad.&lt;/langstring&gt;<br>
     &lt;/title&gt;<br>
 
       </p>
@@ -1555,11 +1555,11 @@ The data in this section are used by the LMS to locate the AU and provide launch
     </td>
     <td width="1471" valign="top"><p><strong>Description:</strong><br>
     <ul>
-      	<li>A relative or fully qualified URL that references the launch point of the AU.</li>
+          <li>A relative or fully qualified URL that references the launch point of the AU.</li>
           <li>To accommodate "non-browser" applications, an application specific protocol may be used in the url:<br>
-      &lt;application&gt;://&lt;URL to content&gt;</li>
-      	<li>Regardless of the value of &lt;application&gt;, the remaining portion of the URL MUST conform to HTTP/S conventions, such as named value pair parameters.</li>
-      	<li>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1.1 of the cmi5 Runtime Environment).</li>
+              &lt;application&gt;://&lt;URL to content&gt;</li>
+          <li>Regardless of the value of &lt;application&gt;, the remaining portion of the URL MUST conform to HTTP/S conventions, such as named value pair parameters.</li>
+          <li>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1.1 of the cmi5 Runtime Environment).</li>
      </ul>
       <p><strong>Value space:</strong> Values are determined by the course designer.</p>
       <p><strong>Sample value:</strong><br>
@@ -1643,7 +1643,7 @@ All course structures created for LMS import functionality and created by the LM
       </xs:element>
       <xs:element name="objectives" type="objectivesType" minOccurs="0"/>
       <xs:choice minOccurs="1" maxOccurs="unbounded">
-      	<xs:element name="au" type="auType"/>
+        <xs:element name="au" type="auType"/>
         <xs:element name="block" type="blockType"/>
       </xs:choice>
       <xs:group ref="anyElement"/>
