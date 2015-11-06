@@ -1094,19 +1094,6 @@ The properties for the "LMS.LaunchData" document are described below.
   <tr><th align="right" nowrap>Sample Value:</th><td>"xyz-123-9999"</td></tr>
 </table>
 
-<table>
-  <tr><th colspan=2 align="left">ContentSpecific</th></tr>
-  <tr><th align="right" nowrap>Description:</th><td>Launch parameters that are content specific.  The LMS MUST obtain this value from the Course Structure.</td></tr>
-  <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
-  <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>Static launch parameters defined by the course designer MUST be obtained by the LMS from the Course Structure.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>Determined by the AU.</td></tr>
-  <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
-  <tr><th align="right" nowrap>Value Space:</th><td>Values are defined by the AU provider.</td></tr>
-  <tr><th align="right" nowrap>Sample Value:</th><td>"abc-327-999"</td></tr>
-</table>
-
-
 __State API PUT Properties__:
 
 * _activityId_: Activity ID for the AU (from the course structure)  
