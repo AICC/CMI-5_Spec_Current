@@ -140,6 +140,7 @@ __0.1 Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 | Ben Clark            | Rustici Software                       |
 | Megan Bowe           | Rustici Software                       |
 | Andrew Downes        | Rustici Software                       |
+| Brian J. Miller      | Rustici Software                       |
 | Jacques Talvard      | Airbus                                 |
 | William A. McDonald  | Boeing                                 |
 | Ray Lowery           | Pratt &amp; Whitney                    |
