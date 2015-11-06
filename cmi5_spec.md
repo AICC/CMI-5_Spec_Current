@@ -1482,7 +1482,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Required:</strong> Yes<br>
         <strong>Data type:</strong> string </p>
     </td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which authentication method the AU MUST use to access the LMS's LRS.</p>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which authentication method the AU MUST use.</p>
       <p><strong>Usage: </strong></p>
       <ul>
         <li>Based on the value of authenticationMethod, the LMS will place a parameter in the AU launch interface to indicate to the AU which authentication method to use (in accordance with the cmi5 Runtime Specification)</li>
