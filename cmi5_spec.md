@@ -1491,7 +1491,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
   </tr>
   <tr>
     <td valign="top"><p><strong>Required:</strong> No<br>
-        <strong>Data type:</strong> IRI<br><strong>Default value:</strong> <em>None</em> </p></td>
+        <strong>Data type:</strong> IRI</p></td>
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine the activity type of the AU before a first start to indicate this type to the user.</p>
       <strong>Sample value: </strong><br>
       &lt;au id="&hellip;" activityType="http://adlnet.gov/expapi/activities/media"&gt; &hellip; &lt;/au&gt;
