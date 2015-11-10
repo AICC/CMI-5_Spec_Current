@@ -93,7 +93,7 @@
   * [13.1 Course Structure Data Model](#course_structure_data_model)
     * [13.1.1 Course Level Metadata](#course_level_meta_data)
     * [13.1.2 Block Metadata](#block_meta_data)
-    * [13.1.3 Objectives Metadata](#objectives_meta_data)
+    * [13.1.3 Objective Metadata](#objective_meta_data)
     * [13.1.4 AU Metadata](#au_meta_data)
     * [13.1.5 Vendor Specific Metadata (Extensions)](#vendor_meta_data)
   * [13.2 Course Structure XSD](#course_structure_xsd)
@@ -1306,8 +1306,8 @@ The data in this section are used for the block structures with group AUs.  A Bl
 </table>
 
 
-<a name="objectives_meta_data"/>  
-###13.1.3 Objectives Metadata   
+<a name="objective_meta_data"/>
+###13.1.3 Objective Metadata
 
 The data in this section are used by the Objectives. Objectives can be associated with a Block or with individual AUs. 
 
