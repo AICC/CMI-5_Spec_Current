@@ -658,7 +658,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">Display</th><td>{ "en-US" : "Initialized" }</td></tr>
 <tr><th align="left">Description</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and MUST follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST use "Initialized" in the first statement (of any kind) in the AU session.  The AU MUST NOT issue multiple statements with "Initialized" for the same AU within a given AU session.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>Verify that this verb is recorded by the AU immediately after launch.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>None</td></tr>
 <tr><th align="left">Usage</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and SHOULD follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
 </table>
 
@@ -670,7 +670,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">Display</th><td>{ "en-US" : "Completed" }</td></tr>
 <tr><th align="left">Description</th><td>The verb "Completed" indicates the learner viewed or did all of the relevant activities in an AU presentation.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Completed" verb when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>None.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>None</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the course designer.</td></tr>
 </table>
 
@@ -707,7 +707,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">ID</th><td>http://purl.org/xapi/adl/verbs/abandoned</td></tr>
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb "Abandoned" indicates that the AU session was abnormally terminated by a learner's action (or due to a system failure).</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>None.</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of a "Terminated" statement, the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination.  After recording an "Abandoned" statement, the LMS MUST NOT allow any additional statements to be recorded for that session.</td></tr>
 <tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
