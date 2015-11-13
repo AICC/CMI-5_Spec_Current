@@ -422,11 +422,11 @@ The AU MUST issue a statement to the LRS prior to termination using the Terminat
 ###7.2.4 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
-* "cmi5 defined" - Statements using cmi5 defined verbs, category id's, and cmi5 content templates.
-* "cmi5 allowed" - Statements using any verbs and cmi5 content templates (but NOT including cmi5 category id's)
+* "cmi5 defined" - Statements using cmi5 defined verbs, category id, and context template.
+* "cmi5 allowed" - Statements using any verb and cmi5 context template (but NOT including cmi5 category id).
 * "cmi5 not-allowed" - Any statements not conforming with the cmi5 specification.
 
-The AU MAY issue statements that are defined as "cmi5 allowed" statements per section 9.6.2. If "cmi5 allowed" statements are posted by the AU, they MUST occur between cmi5 statements using the Initialized verb and the Terminated verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and completion rules.
+The AU MAY issue statements that are defined as "cmi5 allowed" statements per section 9.6.2. If "cmi5 allowed" statements are posted by the AU, they MUST occur between cmi5 statements using the "Initialized" verb and the "Terminated" verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and completion rules.
 
 <a name="content_launch"></a>  
 #8.0 Content Launch Mechanisms
