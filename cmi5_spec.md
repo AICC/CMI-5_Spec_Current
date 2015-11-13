@@ -681,8 +681,8 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeeded in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU MUST NOT issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "MasteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See Section 10) The LMS MUST use either "Passed" or "Completed" statements (or both) based on the moveOn criteria for the AU as defined in the Course Structure. (See Course Structure,  Section 7.1.4 - MoveOn).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU MUST NOT issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "masteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST record "masteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See Section 10) The LMS MUST use either "Passed" or "Completed" statements (or both) based on the moveOn criteria for the AU as defined in the Course Structure. (See Course Structure,  Section 7.1.4 - MoveOn).</td></tr>
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
 </table>
 
@@ -693,10 +693,10 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score MUST be less than the "MasteryScore" indicated in the course structure.  (See Course Structure, Section 7.1.4 - MasteryScore). A "Failed" statement MUST NOT be issued after a "Passed" statement has been issued.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST record "MasteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  (See Section 10).<br>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score MUST be less than the "masteryScore" indicated in the course structure.  (See Course Structure, Section 7.1.4 - masteryScore). A "Failed" statement MUST NOT be issued after a "Passed" statement has been issued.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST record "masteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  (See Section 10).<br>
 <br>
-The LMS MUST use either "Passed" or "Completed" statements (or both) for determining course completion (or course collateral credit) criteria for the AU.  (See Course Structure, Section 7.1.4 - MasteryScore).</td></tr>
+The LMS MUST use either "Passed" or "Completed" statements (or both) for determining course completion (or course collateral credit) criteria for the AU.  (See Course Structure, Section 7.1.4 - masteryScore).</td></tr>
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
 </table>
 
@@ -812,7 +812,7 @@ Example JSON:
 <a name="score"></a> 
 ###9.5.1 Score
 
-A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with masteryScore (if defined for the AU in the Course Structure).
+A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the Course Structure).
 
 <ul><li><strong>scaled</strong><br>A decimal value between 0 and 1.</li>
 <li><strong>raw</strong><br>An integer value between the "min" and "max" properties of the <em><strong>score</strong></em> object.  When the "raw" value is provided, the AU MUST also provide the "min" and "max" values for <em><strong>score</strong></em>.</li>
@@ -1037,11 +1037,11 @@ The properties for the "LMS.LaunchData" document are described below.
 
 <table>
   <tr><th colspan=2 align="left">masteryScore</th></tr>
-  <tr><th align="right" nowrap>Description:</th><td>The MasteryScore from the cmi5 Course Structure.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The "masteryScore" from the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include the MasteryScore value based on the value defined in the course structure for the AU being launched.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST issue Passed or Failed statements based on the MasteryScore provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include the "masteryScore" value based on the value defined in the course structure for the AU being launched.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST issue Passed or Failed statements based on the "masteryScore" provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1.</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>0.75</td></tr>
@@ -1421,9 +1421,9 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The masteryScore is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
-        <li>If the AU has scoring, it will use the masteryScore to determine pass/fail (as defined in the cmi5 Runtime Specification)</li>
-        <li>The masteryScore is a scaled, decimal value between 0 and 1.</li>
+        <li>The "masteryScore" is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
+        <li>If the AU has scoring, it will use the "masteryScore" to determine pass/fail (as defined in the cmi5 Runtime Specification)</li>
+        <li>The "masteryScore" is a scaled, decimal value between 0 and 1.</li>
       </ul>
       <p><strong>Value space: </strong>Decimal number.<br>
         <br>
