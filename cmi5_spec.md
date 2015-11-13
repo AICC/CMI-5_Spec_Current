@@ -235,22 +235,22 @@ For purposes of this specification, the following terms and definitions apply:
 <a name="acronyms"></a> 
 ##3.1 Abbreviations and Acronyms
 <br>
-__ADL__: Advanced Distributed Learning  
-__AICC__: Aviation Industry Computer-Based Training Committee  
-__API__: Application Programming Interface  
-__CMI__: Computer Managed Instruction
-__JSON__: JavaScript Object Notation
-__IRI__: Internationalized Resource Identifier
-__IRL__: Internationalized Resource Locator
-__LMS__: Learning Management System  
-__LRS__: Learning Record Store  
-__PII__: Personally Identifiable Information  
-__URI__: Uniform Resource Identifier  
-__URL__: Uniform Resource Locator  
-__URN__: Uniform Resource Name
-__xAPI__: Experience API
-__XML__: Extensible Markup Language  
-__XSD__: XML Schema Definition  
+__ADL__: Advanced Distributed Learning<br>
+__AICC__: Aviation Industry Computer-Based Training Committee<br>
+__API__: Application Programming Interface<br>
+__CMI__: Computer Managed Instruction<br>
+__JSON__: JavaScript Object Notation<br>
+__IRI__: Internationalized Resource Identifier<br>
+__IRL__: Internationalized Resource Locator<br>
+__LMS__: Learning Management System<br>
+__LRS__: Learning Record Store<br>
+__PII__: Personally Identifiable Information<br>
+__URI__: Uniform Resource Identifier<br>
+__URL__: Uniform Resource Locator<br>
+__URN__: Uniform Resource Name<br>
+__xAPI__: Experience API<br>
+__XML__: Extensible Markup Language<br>
+__XSD__: XML Schema Definition<br>
 <br>
 
 
@@ -488,7 +488,7 @@ The values for the URL launch parameters are described below:
 
 <table>
   <tr><th colspan=2 align="left">fetch</th></tr>
-  <tr><th align="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created &amp; managed by the LMS. The authentication token is used by the AU being launched.</td></tr>
+  <tr><th align="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created and managed by the LMS. The authentication token is used by the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL.<br>The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU MUST then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
@@ -708,7 +708,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb "Abandoned" indicates that the AU session was abnormally terminated by a learner's action (or due to a system failure).</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of a "Terminated" statement, the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination.  After recording an "Abandoned" statement, the LMS MUST NOT allow any additional statements to be recorded for that session.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of a "Terminated" statement, the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same learner/course registration for a different AU.  The LMS MUST record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination.  After recording an "Abandoned" statement, the LMS MUST NOT allow any additional statements to be recorded for that session.</td></tr>
 <tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
 
@@ -732,7 +732,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Display</th><td>{ "en-US" : "Terminated" }</td></tr>
 <tr><th align="left">Description</th><td>The verb "Terminated" indicates that the AU was terminated by the Learner and that the AU will not be recording any more statements for the launch session.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Terminated" verb. This statement MUST be the last statement (of any kind) recorded by the AU in a session.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same leaner/course registration for a different AU.  The LMS MUST record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same learner/course registration for a different AU.  The LMS MUST record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.</td></tr>
 <tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
 
