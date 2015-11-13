@@ -1526,7 +1526,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
   <tr>
     <td width="160" valign="top"><p><strong>Required:
       </strong>Yes<br>
-      <strong>Data type:</strong> string </p>
+      <strong>Data type:</strong> langstring </p>
     </td>
     <td width="815" valign="top"><p><strong>Description:</strong><br>
       A detailed description of the subject matter and learning activities covered by the AU.</p>
