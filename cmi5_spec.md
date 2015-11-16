@@ -591,7 +591,7 @@ Other launch environments are not currently implemented in this specification. c
 
 <a name="statement_id" ></a>
 ##9.1 Statement ID
-The AU will not provide a statement ID for cmi5 defined statements.  (The LRS will assign statement IDs.)
+The AU MUST assign a statement id property in UUID format (as defined in the xAPI specification) for all statements it issues.
   
 <a name="actor" ></a>
 ##9.2 Actor
