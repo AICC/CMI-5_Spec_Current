@@ -488,7 +488,7 @@ The values for the URL launch parameters are described below:
 
 <table>
   <tr><th colspan=2 align="left">fetch</th></tr>
-  <tr><th align="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authentication token created and managed by the LMS. The authentication token is used by the AU being launched.</td></tr>
+  <tr><th align="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL.<br>The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU MUST then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
