@@ -816,8 +816,8 @@ Example JSON:
 
 A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the Course Structure).
 
-<ul><li><strong>scaled</strong><br>A decimal value between 0 and 1.</li>
-<li><strong>raw</strong><br>An integer value between the "min" and "max" properties of the <em><strong>score</strong></em> object.  When the "raw" value is provided, the AU MUST also provide the "min" and "max" values for <em><strong>score</strong></em>.</li>
+<ul><li><strong>scaled</strong><br>A decimal value between 0 and 1 (inclusive).</li>
+<li><strong>raw</strong><br>An integer value between the "min" and "max" properties (inclusive) of the <em><strong>score</strong></em> object.  When the "raw" value is provided, the AU MUST also provide the "min" and "max" values for <em><strong>score</strong></em>.</li>
 <li><strong>min</strong><br>An integer value indicating the minimum value for the "raw" score property.</li>
 <li><strong>max</strong><br>An integer value indicating the maximum value for the "raw" score property.</li>
 </ul>
