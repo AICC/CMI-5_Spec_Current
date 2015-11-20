@@ -870,7 +870,7 @@ The duration property MUST be included in "Abandoned" statements. The duration p
 ###9.5.5 Extensions
 <a name="result_extensions_progress"></a>
 ####9.5.5.1 Progress
-An integer value indicating the completion of the AU as a percentage. The AU may set this value in statements to indicate level of completion between 0 and 100 percent.
+An integer value indicating the completion of the AU as a percentage. The AU may set this value in statements to indicate level of completion between 0 and 100 percent (inclusive).
 
 
 Progress is defined in extensions using the following IRI:
@@ -1045,7 +1045,7 @@ The properties for the "LMS.LaunchData" document are described below.
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include the "masteryScore" value based on the value defined in the course structure for the AU being launched.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST issue Passed or Failed statements based on the "masteryScore" provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>decimal</td></tr>
-  <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1.</td></tr>
+  <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1 (inclusive).</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>0.75</td></tr>
 </table>
 
@@ -1425,7 +1425,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       <ul>
         <li>The "masteryScore" is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
         <li>If the AU has scoring, it will use the "masteryScore" to determine pass/fail (as defined in the cmi5 Runtime Specification)</li>
-        <li>The "masteryScore" is a scaled, decimal value between 0 and 1.</li>
+        <li>The "masteryScore" is a scaled, decimal value between 0 and 1 (inclusive).</li>
       </ul>
       <p><strong>Value space: </strong>Decimal number.<br>
         <br>
