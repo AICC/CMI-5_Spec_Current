@@ -741,9 +741,9 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Description</th><td>The verb "Satisfied" indicates that the LMS has determined that the Learner has met the moveOn criteria of all AU's in a block or has met the moveOn criteria for all AU's in the course.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
 <th align="left" nowrap>LMS Obligations</th><td>
-The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block id (Section 7.1.2 in the cmi5 Course Structure document) as the Object id (Section 9.4 - Object).<br>
+The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block id (Section 13.1.2) as the Object id (Section 9.4 - Object).<br>
 <br>
-The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the course id (Section 7.1.1 in the cmi5 Course Structure document) as the Object id (Section 9.4 - Object)  The LMS MUST NOT issue multiple statements with "Satisfied" for the same AU within a given AU session or course registration for a given learner.
+The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the course id (Section 13.1.1) as the Object id (Section 9.4 - Object)  The LMS MUST NOT issue multiple statements with "Satisfied" for the same AU within a given AU session or course registration for a given learner.
 </td></tr>
 <tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
