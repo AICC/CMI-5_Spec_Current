@@ -37,12 +37,11 @@
   * [6.2 LMS State API Requirements](#lms_state_api_requirements)
   * [6.3 LMS Statement API Requirements](#lms_statement_api_requirements)
 * [__7.0 AU Requirements__](#au_requirements)
-  * [7.1 AU State API Requirements](#au_state_api_requirements)
-  * [7.2 AU Statement API Requirements](#au_statement_api_requirements)
-      * [7.2.1 Placement of the session ID in Statements](#placement)
-      * [7.2.2 First Statement API Call](#first_statement_au)
-      * [7.2.3 Last Statement Call](#last_statement_au)
-      * [7.2.4 Types of Statements](#type_statement_au)
+  * [7.1 AU Statement API Requirements](#au_statement_api_requirements)
+      * [7.1.1 Placement of the session ID in Statements](#placement)
+      * [7.1.2 First Statement API Call](#first_statement_au)
+      * [7.1.3 Last Statement Call](#last_statement_au)
+      * [7.1.4 Types of Statements](#type_statement_au)
 * [__8.0 Content Launch Mechanisms__](#content_launch)
   * [8.1 Launch Method](#launch_method)
   * [8.2 Authorization Token Fetch URL](#fetch_url)
@@ -371,28 +370,24 @@ The LMS MUST implement the Statement API Requirements as defined in Section 9.
 <a name="au_requirements"></a>  
 #7.0 AU Requirements
 
-AU’s MUST meet the following requirements to conform to this specification:
+AU’s requirements to conform to this specification are as follows:
 
-1. The AU MUST implement the runtime launch interface as defined in Section 8 - Content Launch Mechanisms.
-2. The AU MUST implement runtime communication defined in the xAPI Specification.
-3. The AU MUST implement additional xAPI "Statement API" requirements as defined in Section 9.0.
-4. The AU MUST implement additional xAPI "Agent Profile API" requirements as defined in Section 11.0.
+1.	Implement the runtime launch interface as defined in Section 8 - Content Launch Mechanisms.
 
-<a name="au_state_api_requirements"></a> 
-##7.1 AU State API Requirements
+2.	Implement runtime communication defined in the xAPI Specification.
 
-AU’s MUST meet the following requirements to conform to this specification:
+3.	Implement State API requirements in this specification are defined in Section 10.
 
-* The AU MUST implement additional xAPI "Statement API" requirements as defined in Section 9.0 .
-* The AU MUST implement additional xAPI "State API" requirements as defined in Section 10.
-* The AU MUST implement additional xAPI "Agent Profile API" requirements as defined in Section 11.
+4.	Implement Profile API requirements in this specification are defined in Section 11.
+
+5.	Implement Statement API requirements as defined in the following sub section.
 
 
 <a name="au_statement_api_requirements"></a>  
-##7.2 AU Statement API Requirements
+##7.1 AU Statement API Requirements
 
 <a name="placement"></a> 
-###7.2.1 Placement of session ID in Statements
+###7.1.1 Placement of session ID in Statements
 
 The AU MUST retrieve the value of session ID at launch time as specified in Section 10 State API.  The AU MUST place the value of the session ID in the context extensions for all xAPI statements it records.  
 
@@ -411,15 +406,15 @@ Example:
 ```
 
 <a name="first_statement_au"></a> 
-###7.2.2 First Statement API Call
+###7.1.2 First Statement API Call
 The AU MUST issue a statement to the LRS after being launched, initialized, and ready for learner interaction using the Initialized verb as described in Section 9.3.2.
 
 <a name="last_statement_au"></a>  
-###7.2.3 Last Statement Call
+###7.1.3 Last Statement Call
 The AU MUST issue a statement to the LRS prior to termination using the Terminated verb as described in Section 9.3.8.
 
 <a name="type_statement_au"></a>  
-###7.2.4 Types of Statements
+###7.1.4 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
 * "cmi5 defined" - Statements using cmi5 defined verbs, category id, and context template.
@@ -1577,7 +1572,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
           <li>A relative or fully qualified URL that references the launch point of the AU.</li>
           <li>To accommodate "non-browser" applications, an application specific protocol may be used in the url:<br>
               &lt;application&gt;://&lt;URL to content&gt;</li>
-          <li>Regardless of the value of &lt;application&gt;, the remaining portion of the URL MUST conform to HTTP/S conventions, such as named value pair parameters.</li>
+          <li>Regardless of the value of &lt;scheme&gt;, the remaining portion of the URL MUST conform to RFC1738 - Uniform Resource Locators (URL).</li>
           <li>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1.1 of the cmi5 Runtime Environment).</li>
      </ul>
       <p><strong>Value space:</strong> Values are determined by the course designer.</p>
