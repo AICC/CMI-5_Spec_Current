@@ -192,8 +192,8 @@ The following referenced documents are indispensable for the application of this
 
 * Internationalized Resource Identifiers (IRIs): IRI Syntax January 2005<br>
 https://www.ietf.org/rfc/rfc3987.txt
-* "Experience API", current specification, ADL, 2012-2013<br>
-https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md
+* "Experience API", version 1.0.x (subject to change just prior to release), ADL<br>
+https://github.com/adlnet/xAPI-Spec/blob/xAPI-1.0.2/xAPI.md
 * cmi5 Course Structure, Sandstone 1st Edition<br>
 https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md
 * MIME Types<br>
