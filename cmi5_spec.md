@@ -1461,29 +1461,6 @@ The data in this section are used by the LMS to locate the AU and provide launch
     </td>
   </tr>
   <tr>
-    <td colspan="2" valign="top"><h3>authenticationMethod</h3></td>
-  </tr>
-  <tr>
-    <td valign="top"><p><strong>Required:</strong> Yes<br>
-        <strong>Data type:</strong> string </p>
-    </td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS to specify which authentication method the AU MUST use.</p>
-      <p><strong>Usage: </strong></p>
-      <ul>
-        <li>Based on the value of authenticationMethod, the LMS will place a parameter in the AU launch interface to indicate to the AU which authentication method to use (in accordance with the cmi5 Runtime Specification)</li>
-        <li>authenticationMethod Value = "Basic" : If the LMS indicates to the AU launch interface to use basic HTTP authentication and passes an HTTP authentication token to the AU using the launch interface. This is currently the only option.  Future versions of this specification may add other authentication options.</li>
-      </ul>
-      <p><strong>Value space:</strong></p>
-      <blockquote>
-        <p>"Basic"<br>
-      </p>
-      </blockquote>
-      <p><strong>Sample value: </strong><br>
-      &lt;au id="&hellip;" authenticationMethod="Basic"&gt; &hellip; &lt;/au&gt;
-      </p>
-    </td>
-  </tr>
-  <tr>
     <td colspan="2" valign="top"><h3>activityType</h3></td>
   </tr>
   <tr>
@@ -1712,13 +1689,6 @@ All course structures created for LMS import functionality and created by the LM
         <xs:restriction base="xs:decimal">
           <xs:minInclusive value="0"/>
           <xs:maxInclusive value="1"/>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="authenticationMethod" default="Basic">
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="Basic"/>
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
@@ -1981,8 +1951,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </objectives>
     <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/64f6"
         activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
-        moveOn="CompletedOrPassed" masteryScore="1.0"
-        authenticationMethod="Basic">
+        moveOn="CompletedOrPassed" masteryScore="1.0">
       <title>
         <langstring lang="en-US">Rock and rock cycle</langstring>
         <langstring lang="de-DE">Gestein und Kreislauf der Gesteine</langstring>
@@ -2348,7 +2317,7 @@ Using the domain of geology the following two examples demonstrate how simple an
     </block>
   </block>
   <au id="http://quiz-server.example.com/1Hu62hL" masteryScore="0.7" 
-      launchMethod="OwnWindow" moveOn="Passed" authenticationMethod="Basic"
+      launchMethod="OwnWindow" moveOn="Passed"
       activityType="http://adlnet.gov/expapi/activities/assessment">
     <title>
       <langstring lang="en-US">Quiz</langstring>
