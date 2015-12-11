@@ -703,7 +703,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb "Abandoned" indicates that the AU session was abnormally terminated by a learner's action (or due to a system failure).</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended.  In the absence of a "Terminated" statement, the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same learner/course registration for a different AU.  The LMS MUST record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination.  After recording an "Abandoned" statement, the LMS MUST NOT allow any additional statements to be recorded for that session.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>In the absence of a "Terminated" statement, the LMS MUST make the determination if an AU abnormally terminated a session by monitoring new statement or state API requests made for the same learner/course registration for a different AU.  The LMS MUST record an "Abandoned" statement on behalf of the AU indicating an abnormal session termination.  After recording an "Abandoned" statement, the LMS MUST NOT allow any additional statements to be recorded for that session.</td></tr>
 <tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
 
@@ -728,7 +728,7 @@ The LMS MUST use either "Passed" or "Completed" statements (or both) for determi
 <tr><th align="left">Display</th><td>{ "en-US" : "Terminated" }</td></tr>
 <tr><th align="left">Description</th><td>The verb "Terminated" indicates that the AU was terminated by the Learner and that the AU will not be recording any more statements for the launch session.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Terminated" verb. This statement MUST be the last statement (of any kind) recorded by the AU in a session.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended. Upon receiving an "Terminated" statement, the LMS MUST wait a specified period of time (defined by the LMS implementation) after which it MUST reject statements (of any kind) for the AU session. In the absence of an "Terminated" statement the LMS will make the determination if an AU abnormally terminated a session by monitoring new statement or state API calls made for the same learner/course registration for a different AU. The LMS MUST record a "Abandoned" statement on behalf of the AU indicating an abnormal session termination per section 9.3.8 Abandoned.
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended. Upon receiving a "Terminated" statement, the LMS MUST wait a specified period of time (defined by the LMS implementation) after which it MUST reject statements (of any kind) for the AU session.
 </td></tr>
 <tr><th align="left">Usage</th><td>See obligations.</td></tr>
 </table>
