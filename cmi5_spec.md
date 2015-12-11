@@ -372,16 +372,11 @@ The LMS MUST implement the Statement API Requirements as defined in Section 9.
 
 AU’s requirements to conform to this specification are as follows:
 
-1.	Implement the runtime launch interface as defined in Section 8 - Content Launch Mechanisms.
-
-2.	Implement runtime communication defined in the xAPI Specification.
-
-3.	Implement State API requirements in this specification are defined in Section 10.
-
-4.	Implement Profile API requirements in this specification are defined in Section 11.
-
-5.	Implement Statement API requirements as defined in the following sub section.
-
+* Implement the runtime launch interface as defined in Section 8 - Content Launch Mechanisms.
+* Implement runtime communication as defined in the xAPI Specification.
+* Implement State API requirements in this specification as defined in Section 10.
+* Implement Profile API requirements in this specification as defined in Section 11.
+* Implement Statement API requirements as defined in the following sub section.
 
 <a name="au_statement_api_requirements"></a>  
 ##7.1 AU Statement API Requirements
