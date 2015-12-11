@@ -994,11 +994,9 @@ The properties for the "LMS.LaunchData" document are described below.
   <tr><th align="right" nowrap>Description:</th><td>Context template for the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a contextTemplate and place the value for <strong><em>session ID</em></strong> in the "http://purl.org/xapi/cmi5/results/extensions/session" element of the context object's extension collection.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a "contextTemplate" and place the value for <strong><em>session id</em></strong> in the "http://purl.org/xapi/cmi5/results/extensions/session" element of the context object's extensions. The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>AU MUST get the contextTemplate value from the "LMS.LaunchData" state document. The AU MUST NOT modify or delete the "LMS.LaunchData" state document. The AU MUST use the contextTemplate as a template for the context property in all xAPI statements it records to the LMS. While the AU may include additional values in the context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session ID specified by the LMS.</td></tr>
-  <tr><th align="right" nowrap>Data Type:</th><td>JSON context object as defined in xAPI 1.0.</td></tr>
-  <tr><th align="right" nowrap>Value Space:</th><td>LMS implementation specific.</td></tr>
-  <tr><th align="right" nowrap>Sample Value:</th><td></td></tr>
+  <tr><th align="right" nowrap>Data Type:</th><td>JSON context object as defined in xAPI specification.</td></tr>
 </table>
 
 <table>
