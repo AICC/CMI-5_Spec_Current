@@ -460,13 +460,13 @@ The format of the launching URL is as follows:
 Example:
 
 ```
-http://la.cmi5.aicc.org/LA1/Start.html
-?endpoint=http://cmi5-lms-system.org/lrslistner/
-&fetch=http://cmi5-lms-system.org/tokenGen.htm?k=2390289x0
+http://www.example.com/LA1/Start.html
+?endpoint=http://lrs.example.com/lrslistener/
+&fetch=http://lms.example.com/tokenGen.htm?k=2390289x0
 &actor={"objectType": "Agent","account": 
 {"homePage": "http://www.example.com","name": "1625378"}
 &registration=760e3480-ba55-4991-94b0-01820dbd23a2
-&activityId=http://example.AU-content.com/example/001/statement
+&activityId=http://www.example.com/LA1/001/intro
 ```
 
 The values for the URL launch parameters are described below: 
@@ -488,7 +488,7 @@ The values for the URL launch parameters are described below:
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU MUST then place the authorization token in the Authorization headers of all HTTP messages made to the endpoint using the xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>A URL-encoded URL</td></tr>
-  <tr><th align="right" nowrap>Sample value:</th><td>http://cmi5-lms-system.org/tokenGen.htm?k=2390289x0</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>http://lms.example.com/tokenGen.htm?k=2390289x0</td></tr>
 </table>
 
 <table>
@@ -1172,7 +1172,7 @@ The following metadata attributes and elements are at the course level and  desc
       <p><strong>Value space: </strong><br>
         Values are defined by the course designer.<br>
         <strong>Sample value: </strong><br>
-         &lt;course id="http&#58;//www.yoursite.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br></p>
+         &lt;course id="http&#58;//www.example.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br></p>
     </td>
   </tr>
   <tr>
@@ -1241,7 +1241,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
     <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block in xAPI messages made by the LMS.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br>
-      &lt;block id="http&#58;//www.yoursite.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
+      &lt;block id="http&#58;//www.example.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
       </p>
     </td>
   </tr>
@@ -1296,7 +1296,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
       Values are defined by the course designer.<br>
       <strong>Sample value: </strong><br>
     &lt;objectives&gt;<br>
-    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
+    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
     &lt;/objectives&gt;<br>
     </td>  
   </tr>
@@ -1321,7 +1321,7 @@ The data in this section are used by the Objectives. Objectives can be associate
       </p>
       <p><strong>Value space:</strong><br>Values are defined by the course designer.</p>
     <p><strong>Sample value:</strong><br>
-    &lt;objective id="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/objective&gt;</p>
+    &lt;objective id="http&#58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/objective&gt;</p>
     </td>
   </tr>
   <tr>
@@ -1385,7 +1385,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI that the AU uses to identify itself to the LMS in xAPI messages to the LMS.</p>
       <p><strong>Value space: </strong>Values are defined by the course designer.</p>
       <p><strong>Sample value:</strong><br>
-      &lt;au id="http&#58;//www.yoursite.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
+      &lt;au id="http&#58;//www.example.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -1555,7 +1555,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       <p>
       <strong>Sample value: </strong><br>
     &lt;objectives&gt;<br>
-    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.yoursite.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
+    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
     &lt;/objectives&gt;<br>
         </p>
     </td>  
@@ -1578,7 +1578,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       <p><strong>Value space:</strong> Values are determined by the course designer.</p>
       <p><strong>Sample value:</strong><br>
       &lt;url&gt;<br>
-      http://www.mycourses.com/courseX.html<br>
+      http://www.example.com/courseX.html<br>
       &lt;/url&gt;
       </p>
     </td>
