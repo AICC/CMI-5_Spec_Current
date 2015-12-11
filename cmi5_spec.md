@@ -677,7 +677,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeeded in a judged activity in the AU.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. The AU MUST NOT issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "masteryScore" indicated in the course structure. (See course structure section 7.1.4)</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST record "masteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch. (See Section 10) The LMS MUST use either "Passed" or "Completed" statements (or both) based on the moveOn criteria for the AU as defined in the Course Structure. (See Course Structure,  Section 7.1.4 - MoveOn).</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use either "Passed" or "Completed" statements (or both) based on the "moveOn" criteria for the AU as defined in the Course Structure. (See Course Structure, Section 13.1.4 - MoveOn).</td></tr>
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
 </table>
 
@@ -688,10 +688,8 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score MUST be less than the "masteryScore" indicated in the course structure.  (See Course Structure, Section 7.1.4 - masteryScore). A "Failed" statement MUST NOT be issued after a "Passed" statement has been issued.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST record "masteryScore" data in the state API (if present in the course structure) for the AU prior to initial AU launch.  (See Section 10).<br>
-<br>
-The LMS MUST use either "Passed" or "Completed" statements (or both) for determining course completion (or course collateral credit) criteria for the AU.  (See Course Structure, Section 7.1.4 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score MUST be less than the "masteryScore" indicated in the course structure.  (See Course Structure, Section 13.1.4 - masteryScore). A "Failed" statement MUST NOT be issued after a "Passed" statement has been issued.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>None.</td></tr>
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
 </table>
 
