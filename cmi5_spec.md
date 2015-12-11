@@ -977,7 +977,7 @@ An example of the JSON document is shown below.
   },
   "launchMode": "<launchMode value>",
   "launchParameters": "<launch parameters from Course Structure>",
-  "masteryScore": "<mastery score from the Course Structure>",
+  "masteryScore": "<masteryScore from the Course Structure>",
   "moveOn": "<moveOn value from the Course Structure>",
   "returnURL": "<URL value>",
   "entitlementKey": {
@@ -1035,10 +1035,10 @@ The properties for the "LMS.LaunchData" document are described below.
 <table>
   <tr><th colspan=2 align="left">masteryScore</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>The "masteryScore" from the cmi5 Course Structure.</td></tr>
-  <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
-  <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include the "masteryScore" value based on the value defined in the course structure for the AU being launched.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST issue Passed or Failed statements based on the "masteryScore" provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
+  <tr><th align="right" nowrap>LMS Required:</th><td>If the "masteryScore" was defined by the course designer in the Course Structure, the LMS MUST include the "masteryScore" in the State API document.</td></tr>
+  <tr><th align="right" nowrap>AU Required:</th><td>If the "masteryScore" is provided.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include the "masteryScore" value in the State API document when defined in the Course Structure.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST issue "Passed" or "Failed" statements based on the "masteryScore" provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1.</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>0.75</td></tr>
@@ -1046,13 +1046,13 @@ The properties for the "LMS.LaunchData" document are described below.
 
 <table>
   <tr><th colspan=2 align="left">moveOn</th></tr>
-  <tr><th align="right" nowrap>Description:</th><td>The moveOn value from the cmi5 Course Structure.</td></tr>
-  <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The "moveOn" value from the cmi5 Course Structure.</td></tr>
+  <tr><th align="right" nowrap>LMS Required:</th><td>If the "moveOn" value was defined by the course designer in the Course Structure, the LMS MUST include the "moveOn" value in the State API document.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include the moveOn value defined in the course structure for the AU.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the moveOn value from the "LMS.LaunchData" state document and may use the value to modify its behavior.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include the "moveOn" value in the State API document when defined in the Course Structure.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the "moveOn" value from the "LMS.LaunchData" state document and MAY use the value to modify its behavior.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
-  <tr><th align="right" nowrap>Value Space:</th><td>moveOn values as defined in the cmi5 Course Structure Specification (Section 7.1.4 – AU Metadata)</td></tr>
+  <tr><th align="right" nowrap>Value Space:</th><td>"moveOn" values as defined in the Course Structure (Section 13.1.4 – AU Metadata)</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>"Passed"</td></tr>
 </table>
 
