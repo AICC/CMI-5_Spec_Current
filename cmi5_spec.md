@@ -896,7 +896,7 @@ The value for the registration property used in the context object MUST be the v
 <a name="context_activities"></a>
 ###9.6.2 contextActivities
 
-The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. contextActivities contain category objects whose entries can be used as wildcard searches. Each category is tagged with name value pairs of "id" and an IRI.
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. contextActivities contain category objects whose entries can be used as wildcard searches.
 
 All cmi5 defined statements MUST have a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/cmi5".
 
