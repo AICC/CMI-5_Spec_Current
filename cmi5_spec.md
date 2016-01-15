@@ -782,7 +782,7 @@ An Example of usage in a statement:
 
 <a name="result"></a> 
 ##9.5 Result
-Result may be present in a statement depending on the cmi5 verb used.  
+Result may be present in a statement depending on the cmi5 verb used. A "cmi5 defined" statement MUST NOT use result properties not specified for that particular verb except in the case of result extensions.
 
 Example JSON:
 ```javascript
@@ -794,7 +794,6 @@ Example JSON:
     "max": 100
   },
   "success": false,
-  "completion": false,
   "duration": "PT30M",
   "extensions": {
     "http://purl.org/xapi/cmi5/result/extensions/progress": 100
@@ -824,7 +823,6 @@ The success property of the result MUST be set to true for statements having the
 The success property of the result MUST be set to false for statements having the following cmi5 defined verbs:
 
 - Failed
-- Abandoned
 
 <a name="completion"></a>
 ###9.5.3 Completion
@@ -835,7 +833,6 @@ The completion property of the result MUST be set to true for statements having 
 
 The completion property of the result MUST be set to false for statements having the following cmi5 defined verbs:
 
-- Failed
 - Abandoned
 
 <a name="duration"></a>
