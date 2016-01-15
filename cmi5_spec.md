@@ -476,7 +476,7 @@ The values for the URL launch parameters are described below:
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>endpoint</em></strong> value from the query string. The AU MUST use the <strong><em>endpoint </em></strong>value as the URL location to send xAPI messages to.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>A URL-encoded URL</td></tr>
-  <tr><th align="right" nowrap>Sample value:</th><td>https://mylms.aicc.org/MyCMI5_listener.pl</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>https://example.com/my-cmi5-listener</td></tr>
 </table>
 
 <table>
@@ -1121,7 +1121,7 @@ In cmi5, Learner Preferences are scoped to the learner.  Both the LMS and the AU
 
 On startup, the AU MUST retrieve the Learner Preferences document from the Agent Profile.
 
-When reading or writing to the Agent Profile, the document name MUST be "CMI5LearnerPreferences" and the format MUST be a JSON structure as shown below:
+When reading or writing to the Agent Profile, the document name MUST be "cmi5LearnerPreferences" and the format MUST be a JSON structure as shown below:
 
 ```javascript
 {
@@ -2391,7 +2391,7 @@ The following modification of the simple course structure example uses vendor sp
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:cmi5="http://www.adlnet.gov/cmi5/CourseStructure.xsd"
            targetNamespace="http://www.adlnet.gov/cmi5/KeywordExtension.xsd" elementFormDefault="qualified"
-           id="CMI5KeywordsExtension">
+           id="cmi5KeywordsExtension">
   <xs:import namespace="http://www.adlnet.gov/cmi5/CourseStructure.xsd" schemaLocation="CourseStructure.xsd"/>
   <xs:element name="keywords" type="keywordsType"/>
   <xs:complexType name="keywordsType">
