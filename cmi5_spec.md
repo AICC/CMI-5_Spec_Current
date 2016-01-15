@@ -81,7 +81,8 @@
       * [9.6.2 ContextActivities](#context_activities)
       * [9.6.3 Extensions](#extensions)
           * [9.6.3.1 session ID](#context_extensions_session_id)
-          * [9.6.3.2 reason](#context_extensions_reason)
+          * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
+          * [9.6.3.3 reason](#context_extensions_reason)
   * [9.7 Timestamp](#timestamp)
 * [__10.0 xAPI State Data Model__](#xapi_state)
 * [__11.0 xAPI Agent Profile Data Model__](#xapi_agent_profile)
@@ -927,8 +928,23 @@ The following are extensions specified for cmi5.  Other extensions are permitted
   <tr><th align ="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
+<a name="context_extensions_masteryScore"></a>
+####9.6.3.2 masteryScore
+
+<table>
+  <tr><th align="right" nowrap>ID:</th><td>http://purl.org/xapi/cmi5/context/extensions/masteryscore</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>"masteryScore" as provided in the LMS Launch Data for the session used to determine the pass/fail result based on score</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td></td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the "masteryScore" value provided by the LMS in the context as an extension for "passed"/"failed" Statements it makes based on the "masteryScore".</td></tr>
+  <tr><th align="right" nowrap>AU Obligation:</th><td>Required, when present and evaluated</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td></td></tr>
+  <tr><th align="right" nowrap>Data type:</th><td>decimal</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Decimal value between 0 and 1</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>0.92</td></tr>
+</table>
+
 <a name="context_extensions_reason"></a>
-####9.6.3.2 reason
+####9.6.3.3 reason
 
   <table>
   <tr><th align ="right" nowrap>ID:</th><td>http://purl.org/xapi/cmi5/result/extensions/reason</td></tr>
