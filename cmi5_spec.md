@@ -465,6 +465,8 @@ http://la.cmi5.aicc.org/LA1/Start.html
 &activityId=http://example.AU-content.com/example/001/statement
 ```
 
+(For readability the above example is not URL encoded.)
+
 The values for the URL launch parameters are described below: 
 
 <table>
