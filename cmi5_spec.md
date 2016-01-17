@@ -334,19 +334,14 @@ Responsibilities of the LMS:
 <a name="lms_requirements"></a>  
 #6.0 LMS Requirements
 
-The LMS MUST meet the following requirements to conform to this specification:  
+LMS requirements to conform to this specification are as follows:
 
-* The LMS MUST implement an LRS as defined in the xAPI specification.
-* The LMS MUST support Course Structures as defined in cmi5 Course Structure.
-* The LMS MUST implement additional "State API" requirements to initialize the AU state as defined in Section 10.
-* The LMS MUST implement the runtime launch interface as defined in Section 8.0 – Content Launch Mechanisms.
-* The LMS MUST implement additional xAPI "Statement API" requirements as defined in Section 9.
-* The LMS MUST implement additional xAPI "Agent Profile API" requirements as defined in Section 11.
-* The LMS MUST implement a means to import course structures as defined in Section 6.1.
-* The LMS MUST NOT provide permissions/credentials which allow the AU to issue voiding Statements.
-* The LMS SHOULD implement a means to export course structures as defined in Section 6.1.
-* The LMS SHOULD reject statements that conflict with the "Statement API" requirements as defined in Section 9.
-* The LMS MUST void statements that are NOT rejected AND conflict with the "Statement API" requirements as defined in Section 9.
+* Implement an LRS as defined in the xAPI specification.
+* Implement additional "State API" requirements to initialize the AU state as defined in Section 10.
+* Implement the runtime launch interface as defined in Section 8.0 – Content Launch Mechanisms.
+* Implement additional xAPI "Statement API" requirements as defined in Section 9.
+* Implement additional xAPI "Agent Profile API" requirements as defined in Section 11.
+* Implement course structures as defined in Section 6.1.
 
 <a name="course_structures"></a>  
 ##6.1 Course Structures
@@ -365,8 +360,12 @@ The LMS MUST implement the State API Requirements as defined in Section 10.
 
 <a name="lms_statement_api_requirements"></a>  
 ##6.3 LMS Statement API Requirements
-The LMS MUST implement the Statement API Requirements as defined in Section 9.
 
+The LMS MUST NOT provide permissions/credentials which allow the AU to issue voiding Statements.
+
+The LMS SHOULD reject statements that conflict with the "Statement API" requirements as defined in Section 9.
+
+The LMS MUST Void statements that are NOT rejected AND conflict with the "Statement API" requirements as defined in Section 9.
 
 <a name="au_requirements"></a>  
 #7.0 AU Requirements
