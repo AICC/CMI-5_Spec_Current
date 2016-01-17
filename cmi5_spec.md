@@ -425,7 +425,7 @@ The AU MAY issue statements that are defined as "cmi5 allowed" statements per se
 <a name="launch_method"></a>  
 ##8.1 Launch Method
 
-The AU MUST be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 7.1.4 AU Meta Data, URL):
+The AU MUST be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 13.1.4 AU Meta Data, URL):
 
 When the launchMethod is "OwnWindow", the LMS MUST use one of the following:
 * Spawning a new browser window for the AU.
@@ -515,7 +515,7 @@ The values for the URL launch parameters are described below:
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>activityId</em></strong> in the query string based on the definition of the AU in the course    structure.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>activityId</em></strong> value from the query string. The AU MUST use the <strong><em>activityId</em></strong> value in API calls that require an "activity id" when sending xAPI requests.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
-  <tr><th align="right" nowrap>Value space:</th><td>IRI (as defined in the cmi5 Course Structure Section 7.1.4 - AU Metadata)</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>IRI (as defined in the cmi5 Course Structure Section 13.1.4 - AU Metadata)</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
