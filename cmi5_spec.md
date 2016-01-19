@@ -391,13 +391,13 @@ Usage in an xAPI Statement:
 
 ```javascript
 "extensions": {
-  "http://purl.org/xapi/cmi5/context/extensions/sessionid": <The session ID value provided by the LMS>
+  "https://w3id.org/xapi/cmi5/context/extensions/sessionid": <The session ID value provided by the LMS>
 }
 ```
 Example:
 ```javascript
 "extensions": {
-  "http://purl.org/xapi/cmi5/context/extensions/sessionid": "xyz123"
+  "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "xyz123"
 }
 ```
 
@@ -695,7 +695,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 ###9.3.6 Abandoned
 <table>
 <tr><th align="left">Verb</th><td>Abandoned</td></tr>
-<tr><th align="left">ID</th><td>http://purl.org/xapi/adl/verbs/abandoned</td></tr>
+<tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/abandoned</td></tr>
 <tr><th align="left">Name</th><td>{ "en-US" : "Abandoned" }</td></tr>
 <tr><th align="left">Description</th><td>The verb "Abandoned" indicates that the AU session was abnormally terminated by a learner's action (or due to a system failure).</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
@@ -707,7 +707,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 ###9.3.7 Waived
 <table>
 <tr><th align="left">Verb</th><td>Waived</td></tr>
-<tr><th align="left">ID</th><td>http://purl.org/xapi/adl/verbs/waived</td></tr>
+<tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/waived</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Received Waiver" }</td></tr>
 <tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than completing the AU.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
@@ -733,7 +733,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 ###9.3.9 Satisfied
 <table>
 <tr><th align="left">Verb</th><td>Satisfied</td></tr>
-<tr><th align="left">ID</th><td>http://purl.org/xapi/adl/verbs/satisfied</td></tr>
+<tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/satisfied</td></tr>
 <tr><th align="left">Description</th><td>The verb "Satisfied" indicates that the LMS has determined that the Learner has met the moveOn criteria of all AU's in a block or has met the moveOn criteria for all AU's in the course.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
 <th align="left" nowrap>LMS Obligations</th><td>
@@ -796,7 +796,7 @@ Example JSON:
   "success": false,
   "duration": "PT30M",
   "extensions": {
-    "http://purl.org/xapi/cmi5/result/extensions/progress": 100
+    "https://w3id.org/xapi/cmi5/result/extensions/progress": 100
   }
 }
  ```
@@ -863,7 +863,7 @@ An integer value indicating the completion of the AU as a percentage. The AU may
 
 Progress is defined in extensions using the following IRI:
 
-      http://purl.org/xapi/cmi5/result/extensions/progress
+      https://w3id.org/xapi/cmi5/result/extensions/progress
 
 <a name="context"></a> 
 ##9.6 Context
@@ -875,13 +875,13 @@ Sample JSON:
      "registration": "<registration value provided by LMS>",
      "contextActivities": {
         "category": {[
-          {"id": "http://purl.org/xapi/cmi5/context/categories/moveon"},
-          {"id": "http://purl.org/xapi/cmi5/context/categories/cmi5"}
+          {"id": "https://w3id.org/xapi/cmi5/context/categories/moveon"},
+          {"id": "https://w3id.org/xapi/cmi5/context/categories/cmi5"}
         ]}
      },
      "extensions" {
-       "http://purl.org/xapi/cmi5/context/extensions/sessionid": "<the value of session ID provided by the LMS>",
-       "http://purl.org/xapi/cmi5/context/extensions/reason": "<reason for 'waived' verb, if statement is 'waived' statement only>",
+       "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<the value of session ID provided by the LMS>",
+       "https://w3id.org/xapi/cmi5/context/extensions/reason": "<reason for 'waived' verb, if statement is 'waived' statement only>",
       }
    }
 ```
@@ -895,11 +895,11 @@ The value for the registration property used in the context object MUST be the v
 
 The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. contextActivities contain category objects whose entries can be used as wildcard searches.
 
-All cmi5 defined statements MUST have a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/cmi5".
+All cmi5 defined statements MUST have a category with an "id" of "https://w3id.org/xapi/cmi5/context/categories/cmi5".
 
-All statements that do NOT include a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/cmi5" are "cmi5 allowed" statements. An AU MAY issue "cmi5 allowed" statements using cmi5 verbs or verbs defined outside the scope of the cmi5 specification.
+All statements that do NOT include a category with an "id" of "https://w3id.org/xapi/cmi5/context/categories/cmi5" are "cmi5 allowed" statements. An AU MAY issue "cmi5 allowed" statements using cmi5 verbs or verbs defined outside the scope of the cmi5 specification.
 
-Statements with a Result object (Section 9.5) that include either "success" or "completion" properties MUST have a category with an "id" of "http://purl.org/xapi/cmi5/context/categories/moveon". Other statements MUST NOT include this Activity.
+Statements with a Result object (Section 9.5) that include either "success" or "completion" properties MUST have a category with an "id" of "https://w3id.org/xapi/cmi5/context/categories/moveon". Other statements MUST NOT include this Activity.
 
 <a name="extensions"></a> 
 ###9.6.3 extensions
@@ -909,7 +909,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 ####9.6.3.1 session ID
 
 <table>
-  <tr><th align ="right" nowrap>ID:</th><td>http://purl.org/xapi/cmi5/context/extensions/sessionid</td></tr>
+  <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/sessionid</td></tr>
   <tr><th align ="right" nowrap>Description:</th><td>A unique identifier for a single AU launch session based on actor and course registration </td></tr>
   <tr><th align ="right" nowrap>LMS Usage:</th><td>The value for session ID is generated by the LMS. The LMS MUST also record the session ID in the State API (See Section 10) prior to launching an AU. The LMS MUST also provide the session ID in the context as an extension for all Statements (with cmi5 defined verbs) it makes directly in the LRS.</td></tr>
   <tr><th align ="right" nowrap>AU Usage:</th><td>An AU MUST include the session ID provided by the LMS in the context as an extension for all Statements (with cmi5 defined verbs) it makes directly in the LRS. </td></tr>
@@ -924,7 +924,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 ####9.6.3.2 masteryScore
 
 <table>
-  <tr><th align="right" nowrap>ID:</th><td>http://purl.org/xapi/cmi5/context/extensions/masteryscore</td></tr>
+  <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/masteryscore</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>"masteryScore" as provided in the LMS Launch Data for the session used to determine the pass/fail result based on score</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td></td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the "masteryScore" value provided by the LMS in the context as an extension for "passed"/"failed" Statements it makes based on the "masteryScore".</td></tr>
@@ -939,7 +939,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 ####9.6.3.3 reason
 
   <table>
-  <tr><th align ="right" nowrap>ID:</th><td>http://purl.org/xapi/cmi5/result/extensions/reason</td></tr>
+  <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/reason</td></tr>
   <tr><th align ="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means)</td></tr>
   <tr><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST set this value in statements it makes with the verb "Waived". The value SHOULD be one of the following -
 
@@ -980,7 +980,7 @@ An example of the JSON document is shown below.
 {
   "contextTemplate": {
     "extensions": {
-      "http://purl.org/xapi/cmi5/context/extensions/sessionid": "<The LMS generated session ID value>"
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<The LMS generated session ID value>"
     }
   },
   "launchMode": "<launchMode value>",
@@ -1002,7 +1002,7 @@ The properties for the "LMS.LaunchData" document are described below.
   <tr><th align="right" nowrap>Description:</th><td>Context template for the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a "contextTemplate" and place the value for <strong><em>session id</em></strong> in the "http://purl.org/xapi/cmi5/results/extensions/session" element of the context object's extensions. The LMS MAY place additional values in the "contextTemplate".</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a "contextTemplate" and place the value for <strong><em>session id</em></strong> in the "https://w3id.org/xapi/cmi5/results/extensions/session" element of the context object's extensions. The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>AU MUST get the contextTemplate value from the "LMS.LaunchData" state document. The AU MUST NOT modify or delete the "LMS.LaunchData" state document. The AU MUST use the contextTemplate as a template for the context property in all xAPI statements it records to the LMS. While the AU may include additional values in the context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session ID specified by the LMS.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON context object as defined in xAPI specification.</td></tr>
 </table>
