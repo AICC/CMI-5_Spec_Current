@@ -966,7 +966,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 <a name="timestamp"></a> 
 ##9.7 Timestamp
 
-To ensure statement ordering requirements are met, all statements MUST include a timestamp property per the xAPI specification. All timestamps MUST be recorded in UTC time.
+To ensure statement ordering requirements are met, all statements MUST include a timestamp property per the xAPI specification. All timestamps MUST be recorded in UTC time. Timestamps are not required to be unique in statements within a session. The time recorded SHOULD indicate when the condition actually occurred.
 
 
 <a name="xapi_state"></a>  
