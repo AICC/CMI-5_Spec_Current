@@ -75,14 +75,14 @@
           * [9.5.4.1 AU statements that include duration](#au_statements_that_include_duration)
           * [9.5.4.2 LMS statements that include duration](#lms_statements_that_include_duration)
       * [9.5.5 Extensions](#result_extensions)
-          * [9.5.5.1 Progress](#result_extensions_progress)
+          * [9.5.5.1 progress](#result_extensions_progress)
+          * [9.5.5.2 reason](#result_extensions_reason)
   * [9.6 Context](#context)
       * [9.6.1 Registration](#registration)
       * [9.6.2 ContextActivities](#context_activities)
       * [9.6.3 Extensions](#extensions)
           * [9.6.3.1 session ID](#context_extensions_session_id)
           * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
-          * [9.6.3.3 reason](#context_extensions_reason)
   * [9.7 Timestamp](#timestamp)
 * [__10.0 xAPI State Data Model__](#xapi_state)
 * [__11.0 xAPI Agent Profile Data Model__](#xapi_agent_profile)
@@ -710,7 +710,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">Display</th><td>{ "en-US" : "Received Waiver" }</td></tr>
 <tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than completing the AU.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU may be waived.  A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result.  (See Section 9.6.2.2) The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a given AU session or course registration for a given learner.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU may be waived.  A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result.  (See Section 9.5.5.2) The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a given AU session or course registration for a given learner.</td></tr>
 <tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU may be skipped by the learner.</td></tr>
 </table>
 
@@ -856,13 +856,47 @@ The duration property MUST be included in "Abandoned" statements. The duration p
 <a name="result_extensions"></a>
 ###9.5.5 Extensions
 <a name="result_extensions_progress"></a>
-####9.5.5.1 Progress
-An integer value indicating the completion of the AU as a percentage. The AU may set this value in statements to indicate level of completion between 0 and 100 percent (inclusive).
+####9.5.5.1 progress
 
+<table>
+    <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/progress</td></tr>
+    <tr><th align ="right" nowrap>Description:</th><td>An integer value between 0 and 100 (inclusive) indicating the completion of the AU as a percentage.</td></tr>
+    <tr><th align ="right" nowrap>LMS Usage:</th><td>None</td></tr>
+    <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may set this value in statements to indicate level of completion.</td></tr>
+    <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
+    <tr><th align ="right" nowrap>LMS Obligation:</th><td>None</td></tr>
+    <tr><th align ="right" nowrap>Data type:</th><td>Integer</td></tr>
+    <tr><th align ="right" nowrap>Value space:</th><td>0 to 100 (inclusive)</td></tr>
+</table>
 
-Progress is defined in extensions using the following IRI:
+<a name="result_extensions_reason"></a>
+####9.5.5.2 reason
 
-      https://w3id.org/xapi/cmi5/result/extensions/progress
+<table>
+    <tr><th align="right" nowrap>ID:</th><td>http://purl.org/xapi/cmi5/result/extensions/reason</td></tr>
+    <tr><th align="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means)</td></tr>
+    <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST set this value in statements it makes with the verb "Waived". The value SHOULD be one of the following -
+        <ul>
+            <li><b>Tested Out</b> – An Assessment was completed by the student to waive the AU.</li>
+            <li><b>Equivalent AU</b> - The student successfully completed an equivalent AU (in the same course) to waive the AU. </li>
+            <li><b>Equivalent Outside Activity</b> – The student successfully completed an equivalent activity outside of the course to waive the AU. </li>
+            <li><b>Administrative</b> – The LMS administrative user marked the AU complete.</li>
+        </ul>
+    </td></tr>
+    <tr><th align="right" nowrap>AU Usage:</th><td>The AU may retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
+    <tr><th align="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
+    <tr><th align="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the Waived verb.</td></tr>
+    <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
+    <tr><th align="right" nowrap>Value space:</th><td>
+        <ul>
+            <li>"Tested Out"</li>
+            <li>"Equivalent AU"</li>
+            <li>"Equivalent Outside Activity"</li>
+            <li>"Administrative"</li>
+        </ul>
+    </td></tr>
+    <tr><th align="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
+</table>
 
 <a name="context"></a> 
 ##9.6 Context
@@ -880,7 +914,6 @@ Sample JSON:
      },
      "extensions" {
        "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<the value of session ID provided by the LMS>",
-       "https://w3id.org/xapi/cmi5/context/extensions/reason": "<reason for 'waived' verb, if statement is 'waived' statement only>",
       }
    }
 ```
@@ -932,34 +965,6 @@ The following are extensions specified for cmi5.  Other extensions are permitted
   <tr><th align="right" nowrap>Data type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Decimal value between 0 and 1</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>0.92</td></tr>
-</table>
-
-<a name="context_extensions_reason"></a>
-####9.6.3.3 reason
-
-  <table>
-  <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/reason</td></tr>
-  <tr><th align ="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means)</td></tr>
-  <tr><th align ="right" nowrap>LMS Usage:</th><td>The LMS MUST set this value in statements it makes with the verb "Waived". The value SHOULD be one of the following -
-
-<ul>
-<li><b>Tested Out</b> – An Assessment was completed by the student to waive the AU.</li>  
-<li><b>Equivalent AU</b> - The student successfully completed an equivalent AU (in the same course) to waive the AU. </li>  
-<li><b>Equivalent Outside Activity</b> – The student successfully completed an equivalent activity outside of the course to waive the AU. </li>    
-<li><b>Administrative</b> – The LMS administrative user marked the AU complete.</li> 
-</ul>
-</td></tr>
-  <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
- <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
-  <tr><th align ="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the Waived verb.</td></tr>
-  <tr><th align ="right" nowrap>Data type:</th><td>String</td></tr>
-  <tr><th align ="right" nowrap>Value space:</th><td><ul>
-<li>"Tested Out"</li>  
-<li>"Equivalent AU"</li>  
-<li>"Equivalent Outside Activity"</li>    
-<li>"Administrative"</li> 
-</ul></td></tr>
-  <tr><th align ="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
 </table>
 
 <a name="timestamp"></a> 
