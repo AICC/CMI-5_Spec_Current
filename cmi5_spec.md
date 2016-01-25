@@ -1022,7 +1022,7 @@ The properties for the "LMS.LaunchData" document are described below.
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a value for <strong><em>launchMode</em></strong>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST conform to the following based on the value of <strong><em>launchMode</em></strong><br>
-      <ul><li>Normal<br>The AU MUST record Initialized and Terminated verb statements.  The AU MUST record other cmi5 verb statements per the requirements defined in section 9.3 – Verbs.</li>
+      <ul><li>Normal<br>The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST record other cmi5 verb statements per the requirements defined in section 9.3 – Verbs.</li>
       <li>Browse<br>The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other cmi5 verb statements.</li>
       <li>Review<br>The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other cmi5 verb statements.</li></ul></td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
