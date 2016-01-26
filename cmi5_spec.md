@@ -873,7 +873,7 @@ The duration property MUST be included in "Abandoned" statements. The duration p
 ####9.5.5.2 reason
 
 <table>
-    <tr><th align="right" nowrap>ID:</th><td>http://purl.org/xapi/cmi5/result/extensions/reason</td></tr>
+    <tr><th align="right" nowrap>ID:</th><td>http://w3id.org/xapi/cmi5/result/extensions/reason</td></tr>
     <tr><th align="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means)</td></tr>
     <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST set this value in statements it makes with the verb "Waived". The value SHOULD be one of the following -
         <ul>
