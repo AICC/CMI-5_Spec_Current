@@ -976,7 +976,7 @@ To ensure statement ordering requirements are met, all statements MUST include a
 <a name="xapi_state"></a>  
 #10.0 xAPI State Data Model
 
-Prior to launching an AU, the LMS MUST create a document in the State API record in the LRS.  This MUST be a JSON document, as defined in this section, with a document name (stateId) of "LMS.LaunchData". The LMS MUST only create one State document for the combination of activityId, agent, registration, and stateId.  
+Prior to launching an AU, the LMS MUST create or update a document in the State API record in the LRS.  This MUST be a JSON document, as defined in this section, with a document name (stateId) of "LMS.LaunchData".
 
 An example of the JSON document is shown below.
 
