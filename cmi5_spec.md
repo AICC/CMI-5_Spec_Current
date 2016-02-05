@@ -967,7 +967,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 
  
  <a name="context_extensions_launchMode"></a>
- ####9.6.3.3 launchMode
+####9.6.3.3 launchMode
  
  <table>
    <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchmode</td></tr>
