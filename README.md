@@ -143,7 +143,7 @@ This list provides weekly meeting minutes and news about cmi5.
 
 The cmi5 LinkedIn group was established to encourage discussion about cmi5 and answer your questions.  Please join at link below:
 
-- [cmi5 LinkedIn Group](http://www.linkedni.com/grp/home?gid=3943740)
+- [cmi5 LinkedIn Group](http://www.linkedin.com/grp/home?gid=3943740)
 
 ### Follow cmi5 on Twitter
 
