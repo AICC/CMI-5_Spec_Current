@@ -83,6 +83,7 @@
       * [9.6.3 Extensions](#extensions)
           * [9.6.3.1 session ID](#context_extensions_session_id)
           * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
+          * [9.6.3.3 launchMode](#context_extensions_launchMode)
   * [9.7 Timestamp](#timestamp)
 * [__10.0 xAPI State Data Model__](#xapi_state)
 * [__11.0 xAPI Agent Profile Data Model__](#xapi_agent_profile)
@@ -966,6 +967,21 @@ The following are extensions specified for cmi5.  Other extensions are permitted
   <tr><th align="right" nowrap>Data type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Decimal value between 0 and 1</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>0.92</td></tr>
+</table>
+
+<a name="context_extensions_launchMode"></a>
+####9.6.3.3 launchMode
+
+<table>
+  <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchmode</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>Indicates what launch mode an AU was launched with by the LMS</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td> LMS MUST add launchMode to the context of a “Launched” statement.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
+  <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
+  <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Per launchMode vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>"Normal"</td></tr>
 </table>
 
 <a name="timestamp"></a> 
