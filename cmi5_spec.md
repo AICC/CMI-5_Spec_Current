@@ -830,10 +830,6 @@ The completion property of the result MUST be set to true for statements having 
 - Completed
 - Waived
 
-The completion property of the result MUST be set to false for statements having the following cmi5 defined verbs:
-
-- Abandoned
-
 <a name="duration"></a>
 ###9.5.4 Duration
 The duration property is an ISO 8601 formatted time value required in certain statements as defined in this section.
