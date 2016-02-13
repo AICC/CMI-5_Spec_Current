@@ -961,7 +961,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
   <tr><th align="right" nowrap>AU Obligation:</th><td>Required, when present and evaluated</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td></td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>decimal</td></tr>
-  <tr><th align="right" nowrap>Value space:</th><td>Decimal value between 0 and 1 (inclusive) with 3 decimal places of precision</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>0.92</td></tr>
 </table>
 
@@ -1064,7 +1064,7 @@ The properties for the "LMS.LaunchData" document are described below.
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include the "masteryScore" value in the State API document when defined in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST issue "Passed" or "Failed" statements based on the "masteryScore" provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>decimal</td></tr>
-  <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1 (inclusive) with 3 decimal places of precision.</td></tr>
+  <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>0.75</td></tr>
 </table>
 
@@ -1444,7 +1444,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       <ul>
         <li>The "masteryScore" is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
         <li>If the AU has scoring, it will use the "masteryScore" to determine pass/fail (as defined in the cmi5 Runtime Specification)</li>
-        <li>The "masteryScore" is a scaled, decimal value between 0 and 1 (inclusive) with 3 decimal places of precision.</li>
+        <li>The "masteryScore" is a scaled, decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</li>
       </ul>
       <p><strong>Value space: </strong>Decimal number.<br>
         <br>
