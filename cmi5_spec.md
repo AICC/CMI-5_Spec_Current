@@ -348,7 +348,7 @@ LMS requirements to conform to this specification are as follows:
 <a name="course_structures"></a>  
 ##6.1 Course Structures
 
-* The LMS SHOULD implement a means to create and maintain course structures.<br>
+* The LMS SHOULD implement a means to create, edit, and maintain course structures.<br>
 * The LMS MUST implement the import of the Course Structure defined in Section 13 and Section 14. <br>
 * The LMS SHOULD implement the export of the course data structure defined in Section 13 and Section 14. <br>
 * The LMS SHOULD provide a user interface to the LMS administrative users to create and edit course structures internally.<br>
