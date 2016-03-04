@@ -902,6 +902,7 @@ The duration property MUST be included in "Abandoned" statements. The duration p
 All statements with cmi5 defined verbs MUST contain a context that includes all objects/values as by the context template (section 10) as defined in this section. The AU MAY provide additional objects.
 
 Sample JSON:
+
 ```javascript
    "context": {
      "registration": "<registration value provided by LMS>",
@@ -913,6 +914,8 @@ Sample JSON:
      },
      "extensions" {
        "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<the value of session ID provided by the LMS>",
+       "https://w3id.org/xapi/cmi5/context/extensions/masteryScore": 0.50,
+       "https://w3id.org/xapi/cmi5/context/extensions/launchMode" : "Normal"
       }
    }
 ```
