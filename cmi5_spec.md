@@ -1994,7 +1994,7 @@ Using the domain of geology the following two examples demonstrate how simple an
           making up the geologic time scale. This scale is based on the International Commission on
           Stratigraphy.
         </langstring>
-        <langstring lang="de-US">
+        <langstring lang="de-DE">
           Im Folgenden werden die wichtigsten Ereignisse und die Merkmale der Zeit zusammengefasst,
           aus denen die geologische Zeitskala besteht. Diese Skala basiert auf der Internationalen
           Kommission für Stratigraphie.
