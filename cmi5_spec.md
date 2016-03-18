@@ -1972,7 +1972,7 @@ Using the domain of geology the following two examples demonstrate how simple an
           Stratigraphy (now the International Commission on Stratigraphy) started an effort to
           define global references.
         </langstring>
-        <langstring lang="en-US">
+        <langstring lang="de-DE">
           Die ersten ernsthaften Versuche, eine geologische Zeitskala, die überall auf der Erde
           angewandt konnten, wurden im späten 18. Jahrhundert formuliert. Im Jahr 1977 begann die
           Weltkommission für Stratigraphie (jetzt die Internationale Kommission für Stratigraphie)
