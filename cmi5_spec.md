@@ -84,6 +84,7 @@
           * [9.6.3.1 session ID](#context_extensions_session_id)
           * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
           * [9.6.3.3 launchMode](#context_extensions_launchMode)
+          * [9.6.3.4 publisherId](#context_extensions_publisherid)
   * [9.7 Timestamp](#timestamp)
 * [__10.0 xAPI State Data Model__](#xapi_state)
 * [__11.0 xAPI Agent Profile Data Model__](#xapi_agent_profile)
@@ -513,7 +514,7 @@ The values for the URL launch parameters are described below:
 <table>
   <tr><th colspan=2 align="left">activityId</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>The Activity ID of the AU being launched.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>activityId</em></strong> in the query string based on the definition of the AU in the course    structure.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST generate a unique actvitityId for the AU. The LMS MUST place its value in the query string. The actvitityId generated MUST NOT match the AU’s id (publisher id) from the course structure (See Section 13.1.4 - AU Metadata). The LMS MUST use the same generated actvitityId on all subsequent launches (for the same AU) within the same registration. The LMS SHOULD use the same generated actvitityId (for the same AU) for all registrations.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>activityId</em></strong> value from the query string. The AU MUST use the <strong><em>activityId</em></strong> value in API calls that require an "activity id" when sending xAPI requests.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>IRI (as defined in the cmi5 Course Structure Section 13.1.4 - AU Metadata)</td></tr>
@@ -913,9 +914,10 @@ Sample JSON:
         ]}
      },
      "extensions" {
-       "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<the value of session ID provided by the LMS>",
-       "https://w3id.org/xapi/cmi5/context/extensions/masteryScore": 0.50,
-       "https://w3id.org/xapi/cmi5/context/extensions/launchMode" : "Normal"
+        "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<the value of session ID provided by the LMS>",
+        "https://w3id.org/xapi/cmi5/context/extensions/publisherid":"<the unaltered value of the AU’s id from the course structure>"
+        "https://w3id.org/xapi/cmi5/context/extensions/masteryscore": 0.50,
+        "https://w3id.org/xapi/cmi5/context/extensions/launchMode" : "Normal"
       }
    }
 ```
@@ -985,6 +987,22 @@ The following are extensions specified for cmi5.  Other extensions are permitted
    <tr><th align="right" nowrap>Sample value:</th><td>"Normal"</td></tr>
  </table>
  
+  <a name="context_extensions_publisherid"></a>
+####9.6.3.4 publisherId
+ 
+ <table>
+   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/publisherid</td></tr>
+   <tr><th align="right" nowrap>Description:</th><td>Used to identify the AU using the publisher’s id from the course structure. (See Section 13.1.4 AU Metadata – id).</td></tr>
+   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST record the publisher ID in the State API (See Section 10) prior to launching an AU. The LMS MUST also provide the publisher ID in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.</td></tr>
+   <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the publisher ID provided by the LMS in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.</td></tr>
+   <tr><th align="right" nowrap>AU Obligation:</th><td>Required</td></tr>
+   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
+   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
+   <tr><th align="right" nowrap>Value space:</th><td>IRI</td></tr>
+   <tr><th align="right" nowrap>Sample value:</th><td>http://example.com/content/presentation/xyz123/index.html</td></tr>
+ </table>
+ 
+ 
 <a name="timestamp"></a> 
 ##9.7 Timestamp
 
@@ -1009,7 +1027,8 @@ An example of the JSON document is shown below.
 {
   "contextTemplate": {
     "extensions": {
-      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<The LMS generated session ID value>"
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<The LMS generated session ID value>",
+      "https://w3id.org/xapi/cmi5/context/extensions/publisherid":"<The unaltered value of the AU’s id from the course structure>"
     }
   },
   "launchMode": "<launchMode value>",
@@ -1031,7 +1050,10 @@ The properties for the "LMS.LaunchData" document are described below.
   <tr><th align="right" nowrap>Description:</th><td>Context template for the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a "contextTemplate" and place the value for <strong><em>session id</em></strong> in the "https://w3id.org/xapi/cmi5/results/extensions/session" element of the context object's extensions. The LMS MAY place additional values in the "contextTemplate".</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a "contextTemplate" object and MUST place all of the following values in that object's “extensions”:
+<ul><li>The value for session id placed in the element:<br>&nbsp;"https://w3id.org/xapi/cmi5/results/extensions/session"</li>
+<li>The unaltered value of the AU’s id from the course structure (see 13.1.4 AU Metadata) placed in the element:<br>&nbsp; "https://w3id.org/xapi/cmi5/results/extensions/publisherid</li></ul>
+The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>AU MUST get the contextTemplate value from the "LMS.LaunchData" state document. The AU MUST NOT modify or delete the "LMS.LaunchData" state document. The AU MUST use the contextTemplate as a template for the context property in all xAPI statements it records to the LMS. While the AU may include additional values in the context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session ID specified by the LMS.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON context object as defined in xAPI specification.</td></tr>
 </table>
@@ -1408,7 +1430,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td width="160" valign="top"><p><strong>Required: </strong> Yes<br>
         <strong>Data type: </strong> IRI</p>
     </td>
-    <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI that the AU uses to identify itself to the LMS in xAPI requests to the LRS. The id MUST be unique within a course structure.</p>
+    <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI defined by content creator/publisher that the AU uses to identify itself in xAPI statement contexts. This id MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values are defined by the course designer.</p>
       <p><strong>Sample value:</strong><br>
       &lt;au id="http&#58;//www.example.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
