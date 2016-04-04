@@ -759,7 +759,7 @@ The objectType property of an Object in statements with a cmi5 verb MUST be set 
 
 <a name="object_id"></a> 
 ###9.4.2 id 
-The value of the Object's ID property for a given AU MUST match the AU ID (activityId) defined in the launch URL and the Course Structure.
+The value of the Object's "id" property for a given AU MUST match the AU ID (activityId) defined in the launch URL.
 
 An Example of usage in a statement:
 
