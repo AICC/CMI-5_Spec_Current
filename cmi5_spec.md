@@ -663,7 +663,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">Verb</th><td>Completed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/completed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Completed" }</td></tr>
-<tr><th align="left">Description</th><td>The verb "Completed" indicates the learner viewed or did all of the relevant activities in an AU presentation.</td></tr>
+<tr><th align="left">Description</th><td>The verb "Completed" indicates the learner viewed or did all of the relevant activities in an AU presentation.  The use of the Completed verb indicates progress of 100%.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Completed" verb when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the course designer.</td></tr>
@@ -861,7 +861,7 @@ The duration property MUST be included in "Abandoned" statements. The duration p
     <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/progress</td></tr>
     <tr><th align ="right" nowrap>Description:</th><td>An integer value between 0 and 100 (inclusive) indicating the completion of the AU as a percentage.</td></tr>
     <tr><th align ="right" nowrap>LMS Usage:</th><td>None</td></tr>
-    <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may set this value in statements to indicate level of completion.</td></tr>
+    <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may set this value in statements to indicate level of completion. The AU SHOULD NOT set a progress value in a Completed statement or if it has previously issued a Completed statement for the AU in the current registration.</td></tr>
     <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
     <tr><th align ="right" nowrap>LMS Obligation:</th><td>None</td></tr>
     <tr><th align ="right" nowrap>Data type:</th><td>Integer</td></tr>
