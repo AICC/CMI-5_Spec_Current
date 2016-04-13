@@ -87,14 +87,6 @@
         </langstring>
       </description>
     </objective>
-    <objective id="http://courses.example.edu/identifiers/objectives/">
-      <title>
-        <langstring></langstring>
-      </title>
-      <description>
-        <langstring></langstring>
-      </description>
-    </objective>
   </objectives>
 
   <block id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001">
