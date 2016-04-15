@@ -1,0 +1,28 @@
+<xs:schema xmlns="http://www.adlnet.gov/cmi5/KeywordExtension.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:cmi5="http://www.adlnet.gov/cmi5/CourseStructure.xsd"
+           targetNamespace="http://www.adlnet.gov/cmi5/KeywordExtension.xsd" elementFormDefault="qualified"
+           id="cmi5KeywordsExtension">
+  <xs:import namespace="http://www.adlnet.gov/cmi5/CourseStructure.xsd" schemaLocation="CourseStructure.xsd"/>
+  <xs:element name="keywords" type="keywordsType"/>
+  <xs:complexType name="keywordsType">
+    <xs:sequence>
+      <xs:element name="keyword" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="title" type="cmi5:textType"/>
+            <xs:element name="description" type="cmi5:textType" minOccurs="0"/>
+          </xs:all>
+          <xs:attribute name="id" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <!--<xs:group ref="cmi5:anyElement"/>-->
+    </xs:sequence>
+    <xs:attributeGroup ref="cmi5:anyAttribute"/>
+  </xs:complexType>
+  <xs:element name="keyword">
+    <xs:complexType>
+      <xs:attribute name="idref" type="xs:anyURI"></xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
