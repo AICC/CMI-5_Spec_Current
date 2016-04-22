@@ -1084,9 +1084,8 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include the <strong><em>launchParameters</em></strong> in the State API document when defined in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD get the <strong><em>launchParameters</em></strong> value from the State API document if the launch parameters were defined in the Course Structure.</td></tr>
-  <tr><th align="right" nowrap>Data Type:</th><td>Defined by the course designer.</td></tr>
-  <tr><th align="right" nowrap>Value Space:</th><td>Defined by the course designer.</td></tr>
-  <tr><th align="right" nowrap>Sample Value:</th><td>{"param1": "Lorem ipsum dolor sit amet", "param2": [1,2,3,4,5],"param3": {"a": 1,"b": 2}}</td></tr>
+  <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
+  <tr><th align="right" nowrap>Value Space:</th><td>Any string value</td></tr>
 </table>
 
 <table>
