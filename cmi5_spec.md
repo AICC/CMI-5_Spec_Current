@@ -910,14 +910,16 @@ Sample JSON:
    "context": {
      "registration": "<registration value provided by LMS>",
      "contextActivities": {
-        "category": {[
+        "category": [
           {"id": "https://w3id.org/xapi/cmi5/context/categories/moveon"},
           {"id": "https://w3id.org/xapi/cmi5/context/categories/cmi5"}
-        ]}
+        ],
+        "grouping": [
+          {"id": "<the unaltered value of the AU's id from the course structure>"}
+        ]
      },
      "extensions" {
         "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<the value of session ID provided by the LMS>",
-        "https://w3id.org/xapi/cmi5/context/extensions/publisherid":"<the unaltered value of the AU's id from the course structure>"
         "https://w3id.org/xapi/cmi5/context/extensions/masteryscore": 0.50,
         "https://w3id.org/xapi/cmi5/context/extensions/launchMode" : "Normal"
       }
