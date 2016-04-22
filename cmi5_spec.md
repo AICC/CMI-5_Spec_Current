@@ -417,11 +417,11 @@ The AU MUST issue a statement to the LRS prior to termination using the Terminat
 ###7.1.4 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
-* "cmi5 defined" - Statements using cmi5 defined verbs, category id, and context template.
-* "cmi5 allowed" - Statements using any verb and cmi5 context template (but NOT including cmi5 category id).
+* "cmi5 defined" - Statements using cmi5 defined verbs, category id as defined in section 9.6.2.1, and context template.
+* "cmi5 allowed" - Statements using any verb and cmi5 context template (but NOT including cmi5 category id as defined in section 9.6.2.1).
 * "cmi5 not-allowed" - Any statements not conforming with the cmi5 specification.
 
-The AU MAY issue statements that are defined as "cmi5 allowed" statements per section 9.6.2. If "cmi5 allowed" statements are posted by the AU, they MUST occur between cmi5 statements using the "Initialized" verb and the "Terminated" verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and completion rules.
+If "cmi5 allowed" statements are posted by the AU, they MUST occur between cmi5 statements using the "Initialized" verb and the "Terminated" verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and completion rules.
 
 <a name="content_launch"></a>  
 #8.0 Content Launch Mechanisms
@@ -936,9 +936,7 @@ The purpose of this property is to facilitate searches of the LRS by the LMS or 
 
 <a name="context_activities_category_cmi5"></a>
 ####9.6.2.1 cmi5 Category Activity
-All cmi5 defined statements MUST have an Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/cmi5" in the "category" context activities list.
-
-All statements that do NOT include an Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/cmi5" in the "category" context activities list are "cmi5 allowed" statements. An AU MAY issue "cmi5 allowed" statements using cmi5 verbs or verbs defined outside the scope of the cmi5 specification.
+An Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/cmi5" in the "category" context activities list to be used in cmi5 defined statements as described in section 7.1.4.
 
 <a name="context_activities_category_moveon"></a>
 ####9.6.2.2 moveOn Category Activity
