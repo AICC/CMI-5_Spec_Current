@@ -757,7 +757,7 @@ The Object in a cmi5 defined statement represents the AU.  An Object MUST be pre
 
 <a name="object_type"></a> 
 ###9.4.1 objectType
-The objectType property of an Object in statements with a cmi5 verb MUST be set to "Activity".
+The objectType property of an Object in cmi5 defined statements MUST be set to "Activity".
 
 <a name="object_id"></a> 
 ###9.4.2 id 
