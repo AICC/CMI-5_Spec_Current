@@ -65,8 +65,6 @@
       * [9.3.8 Terminated](#verbs_terminated)
       * [9.3.9 Satisfied](#verbs_satisfied)
   * [9.4 Object](#object)
-      * [9.4.1 objectType](#object_type)
-      * [9.4.2 id](#object_id)
   * [9.5 Result](#result)
       * [9.5.1 Score](#score)
       * [9.5.2 Success](#success)
@@ -753,36 +751,11 @@ The LMS MUST also use the "Satisfied" statement when the learner has met the mov
 
 <a name="object"></a> 
 ##9.4 Object 
-The Object in a cmi5 defined statement represents the AU.  An Object MUST be present, as specified in this section, in all statements with cmi5 defined verbs.
+An Object MUST be present, as specified in this section, in all statements with cmi5 defined verbs.
 
-<a name="object_type"></a> 
-###9.4.1 objectType
-The objectType property of an Object in cmi5 defined statements MUST be set to "Activity".
+Except for Statements with the Satisfied verb, the Object in a cmi5 defined statement represents the AU.  When the Object is the AU, the value of the Object's "id" property for a given AU MUST match the activityId defined in the launch URL.
 
-<a name="object_id"></a> 
-###9.4.2 id 
-The value of the Object's "id" property for a given AU MUST match the AU ID (activityId) defined in the launch URL.
-
-An Example of usage in a statement:
-
-```javascript
-{
-  "actor": {...},
-  "verb": {
-    "id": "http://adlnet.gov/expapi/verbs/launched",
-    "display": {
-      "en-US": "Launched"
-    }
-  },
-  "object": {
-    "id":"<AU identifier>",
-    "objectType": "Activity"
-  },
-  "result": {...},
-  "context": {...},
-  "attachments": {...}
-}
-```
+In Satisfied statements, the Object represents a Block or Course.  (see 9.3.9 - Satisfied)  
 
 <a name="result"></a> 
 ##9.5 Result
