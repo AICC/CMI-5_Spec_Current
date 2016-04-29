@@ -1174,7 +1174,8 @@ The AU may use the Activity Profile API according to the xAPI specification (Sec
 #13.0 Course Structure Data Requirements  
 
 <a name="course_structure_data_model"/>
-##13.1 Course Structure Data Model  
+##13.1 Course Structure Data Model
+All leading/trailing whitespace MUST be removed by the LMS on import of the course structure for all of the data elements defined in this section.
 
 <a name="course_level_meta_data"/>
 ###13.1.1 Course Level Metadata  
