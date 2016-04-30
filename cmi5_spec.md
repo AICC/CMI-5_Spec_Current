@@ -1416,8 +1416,10 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td colspan="2" valign="top"><h3>launchMethod</h3></td>
   </tr>
   <tr>
-    <td valign="top"><p><strong>Required:</strong> Yes<br>
-        <strong>Data type:</strong> string </p>
+    <td valign="top"><p><strong>Required:</strong> No<br>
+        <strong>Data type:</strong> string <br>
+        <strong>Default Value:</strong> "AnyWindow"
+        </p>
     </td>
     <td valign="top"><p><strong>Description:</strong> Used by the LMS when launching the AU (in a web-browser environment) to determine whether the AU requires its own window, or whether the LMS may choose the window context for the AU.</p>
       <p><strong>Usage: </strong></p>
