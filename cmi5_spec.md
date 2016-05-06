@@ -744,7 +744,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <th align="left" nowrap>LMS Obligations</th><td>
 The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block id (Section 13.1.2) as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.<br>
 <br>
-The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the course id (Section 13.1.1) as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.  The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same AU within a given AU session or course registration for a given learner.
+The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the course id (Section 13.1.1) as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.  The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block or Course within a course registration for a given learner.
 </td></tr>
 <tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
