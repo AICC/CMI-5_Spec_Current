@@ -878,7 +878,7 @@ The duration property MUST be included in "Abandoned" statements. The duration p
 <a name="context"></a> 
 ##9.6 Context
 
-All statements with cmi5 defined verbs MUST contain a context that includes all objects/values as by the context template (section 10) as defined in this section. The AU MAY provide additional objects.
+All cmi5 defined statements MUST contain a context that includes all objects/values as defined in this section. Either the LMS or the AU MAY provide additional objects.
 
 Sample JSON:
 
@@ -908,7 +908,7 @@ The value for the registration property used in the context object MUST be the v
 
 <a name="context_activities"></a>
 ###9.6.2 contextActivities
-The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The "contextActivities" property contains list(s) of Activity objects whose ids can be used as a statement list filter.
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The "contextActivities" property contains list(s) of Activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements must include all properties and values defined in the the contextActivites of the context template (see section 10 - xAPI State Data Model).
 
 <a name="context_activities_category_cmi5"></a>
 ####9.6.2.1 cmi5 Category Activity
