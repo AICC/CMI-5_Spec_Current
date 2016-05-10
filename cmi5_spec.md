@@ -85,6 +85,7 @@
           * [9.6.3.1 session ID](#context_extensions_session_id)
           * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
           * [9.6.3.3 launchMode](#context_extensions_launchMode)
+          * [9.6.3.4 launchURL] (#context_extensions_launchURL)
   * [9.7 Timestamp](#timestamp)
 * [__10.0 xAPI State Data Model__](#xapi_state)
 * [__11.0 xAPI Agent Profile Data Model__](#xapi_agent_profile)
@@ -972,6 +973,21 @@ The following are extensions specified for cmi5.  Other extensions are permitted
    <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
    <tr><th align="right" nowrap>Value space:</th><td>Per launchMode vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
    <tr><th align="right" nowrap>Sample value:</th><td>"Normal"</td></tr>
+ </table>
+ 
+  <a name="context_extensions_launchURL"></a>
+####9.6.3.4 launchURL
+ 
+ <table>
+   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchurl</td></tr>
+   <tr><th align="right" nowrap>Description:</th><td>The URL used by the LMS to launch the AU</td></tr>
+   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put the URL used to launch the AU in the context extensions of the "Launched" statement.</td></tr>
+   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
+   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
+   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
+   <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
+   <tr><th align="right" nowrap>Value space:</th><td>URL</td></tr>
+   <tr><th align="right" nowrap>Sample value:</th><td>see section 8.1</td></tr>
  </table>
 
 <a name="timestamp"></a> 
