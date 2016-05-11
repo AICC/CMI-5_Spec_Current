@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- The following file is a course structure with extension -->
-<courseStructure xmlns="http://www.adlnet.gov/cmi5/CourseStructure.xsd"
+<courseStructure xmlns="https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd"
                  xmlns:kw="http://www.adlnet.gov/cmi5/KeywordExtension.xsd">
   <course id="http://course-repository.example.edu/identifiers/courses/02baafcf">
     <title>
