@@ -46,15 +46,14 @@ Content defined data can either be text or digital data.
 - Extensible Data Model (defined by the content text data)
 - Digital Data attachments 
 
-
-#### 2 - Support for content as a service (CaaS) model of delivery
+#### 3 - Support for content as a service (CaaS) model of delivery
 Allow content to be stored on other domains (independent of the LMS server domain)
 
-#### 3 - Device/OS/browser independence
+#### 4 - Device/OS/browser independence
 
 Allow for content to be independent of a browser in order to communicate or be launched.
 
-#### 4 - Share data between learning activities
+#### 5 - Share data between learning activities
 
 Allow data to be shared between learning activities for multiple learners enrolled in the same course.
 
@@ -89,7 +88,7 @@ Sandstone is the first release of cmi5.  It is a "developer release" to collect 
 
 ### Quartz (currently in work)
 
-Quartz is currently in work and scheduled for release in Q4 2015.  The Quartz version will include developer feedback collected from Sandstone.  When completed, Quartz will be the first "production release" intended for implementation.
+Quartz is currently in work and scheduled for release in June 2016.  The Quartz version will include developer feedback collected from Sandstone.  When completed, Quartz will be the first "production release" intended for implementation.
 
 - [Quartz, Current Draft](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md)
 
@@ -114,7 +113,7 @@ We very much want to encourage people to share their thoughts about cmi5 and par
 
 ### cmi5 GitHub
 
-All are welcome to make raise issues/comments on this GitHub repository.
+All are welcome to raise issues/comments on this GitHub repository.
 
 Also, [please see our wiki](https://github.com/AICC/CMI-5_Spec_Current/wiki) for a comprehensive set of meeting minutes.
 
