@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<courseStructure xmlns="http://www.adlnet.gov/cmi5/CourseStructure.xsd">
+<courseStructure xmlns="https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd">
   <course id="http://course-repository.example.edu/identifiers/courses/02baafcf">
     <title>
       <langstring lang="en-US">Introduction to Geology</langstring>
