@@ -476,10 +476,10 @@ The values for the URL launch parameters are described below:
   <tr><th colspan=2 align="left">endpoint</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>A URL to the LMS listener location for xAPI requests to be sent to.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>endpoint</em></strong> in the query string.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>endpoint</em></strong> value from the query string. The AU MUST use the <strong><em>endpoint </em></strong>value as the URL location to send xAPI requests to.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>endpoint</em></strong> value from the query string. The AU MUST use the <strong><em>endpoint </em></strong>value as the Base Endpoint for xAPI requests.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>A URL-encoded URL</td></tr>
-  <tr><th align="right" nowrap>Sample value:</th><td>https://example.com/my-cmi5-listener</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>https://example.com/my-cmi5-listener/</td></tr>
 </table>
 
 <table>
