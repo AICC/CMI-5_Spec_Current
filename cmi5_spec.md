@@ -763,7 +763,7 @@ In Satisfied statements, the Object represents a Block or Course.  (see 9.3.9 - 
 
 <a name="result"></a> 
 ##9.5 Result
-Result may be present in a statement depending on the cmi5 verb used. A "cmi5 defined" statement MUST NOT use result properties not specified for that particular verb except in the case of result extensions.
+Result may be present in a statement depending on the cmi5 verb used. 
 
 Example JSON:
 ```javascript
@@ -787,6 +787,14 @@ Example JSON:
 
 A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the Course Structure).
 
+The score property of the result MAY be set in the following cmi5 defined statements:
+
+- Passed
+- Failed
+- Waived
+
+Other cmi5 defined statements MUST NOT include a score.
+
 <ul><li><strong>scaled</strong><br>A decimal value between 0 and 1 (inclusive).</li>
 <li><strong>raw</strong><br>An integer value between the "min" and "max" properties (inclusive) of the <em><strong>score</strong></em> object.  When the "raw" value is provided, the AU MUST also provide the "min" and "max" values for <em><strong>score</strong></em>.</li>
 <li><strong>min</strong><br>An integer value indicating the minimum value for the "raw" score property.</li>
@@ -796,21 +804,25 @@ A score is not required to be reported.  If a score is reported by an AU, the ve
 <a name="success"></a>
 ###9.5.2 Success 
 
-The success property of the result MUST be set to true for statements having the following cmi5 defined verbs:
+The success property of the result MUST be set to true for the following cmi5 defined statements:
 
 - Passed
 - Waived
 
-The success property of the result MUST be set to false for statements having the following cmi5 defined verbs:
+The success property of the result MUST be set to false for the following cmi5 defined statements:
 
 - Failed
+ 
+Other cmi5 defined statements MUST NOT include the success property.
 
 <a name="completion"></a>
 ###9.5.3 Completion
-The completion property of the result MUST be set to true for statements having the following cmi5 defined verbs:
+The completion property of the result MUST be set to true for the following cmi5 defined statements:
 
 - Completed
 - Waived
+
+Other cmi5 defined statements MUST NOT include the success property.
 
 <a name="duration"></a>
 ###9.5.4 Duration
