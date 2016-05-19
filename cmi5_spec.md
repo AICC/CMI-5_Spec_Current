@@ -683,8 +683,8 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeeded in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "masteryScore" indicated in the Course Structure. (See Course Structure, Section 13.1.4 - masteryScore).</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use either "Passed" or "Completed" statements (or both) based on the "moveOn" criteria for the AU as defined in the Course Structure. (See Course Structure, Section 13.1.4 - MoveOn).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use either "Passed" or "Completed" statements (or both) based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
 </table>
 
@@ -695,7 +695,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score MUST be less than the "masteryScore" indicated in the Course Structure. (See Course Structure, Section 13.1.4 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None.</td></tr>
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
 </table>
@@ -1508,8 +1508,8 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The "masteryScore" is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
-        <li>If the AU has scoring, it will use the "masteryScore" to determine pass/fail (as defined in the cmi5 Runtime Specification)</li>
+        <li>The "masteryScore" is passed to the AU at runtime by the LMS (See xAPI State Data Model, Section 10.0).</li>
+        <li>If the AU has scoring, it will use the "masteryScore" to determine pass/fail.</li>
         <li>The "masteryScore" is a scaled, decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</li>
       </ul>
       <p><strong>Value space: </strong>Decimal number.<br>
