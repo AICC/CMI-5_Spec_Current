@@ -788,7 +788,7 @@ Example JSON:
 <a name="score"></a> 
 ###9.5.1 Score
 
-A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the Course Structure).
+A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
 
 <ul><li><strong>scaled</strong><br>A decimal value between 0 and 1 (inclusive).</li>
 <li><strong>raw</strong><br>An integer value between the "min" and "max" properties (inclusive) of the <em><strong>score</strong></em> object.  When the "raw" value is provided, the AU MUST also provide the "min" and "max" values for <em><strong>score</strong></em>.</li>
