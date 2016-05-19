@@ -80,7 +80,7 @@
       * [9.6.2 ContextActivities](#context_activities)
           * [9.6.2.1 cmi5 Category Activity](#context_activities_category_cmi5)
           * [9.6.2.2 moveOn Category Activity](#context_activities_category_moveon)
-          * [9.6.2.3 Publisher id Grouping Activity](#context_activities_grouping_publisherid)
+          * [9.6.2.3 Publisher ID Grouping Activity](#context_activities_grouping_publisherid)
       * [9.6.3 Extensions](#extensions)
           * [9.6.3.1 session ID](#context_extensions_session_id)
           * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
@@ -920,7 +920,7 @@ An Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categorie
 cmi5 defined statements with a Result object (Section 9.5) that include either "success" or "completion" properties MUST have an Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/moveon" in the "category" context activities list. Other statements MUST NOT include this Activity.
 
 <a name="context_activities_grouping_publisherid"></a>
-####9.6.2.3 Publisher id Grouping Activity
+####9.6.2.3 Publisher ID Grouping Activity
 Used to identify statements from the AU using the publisher's id from the course structure.
 
 The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's id attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. The LMS MUST also include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
