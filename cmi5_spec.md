@@ -983,13 +983,13 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchurl</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The URL used by the LMS to launch the AU</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put the URL used to launch the AU in the context extensions of the "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in section 8.1 in the context extensions of the "Launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>URL</td></tr>
-  <tr><th align="right" nowrap>Sample value:</th><td>see section 8.1</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>http://www.example.com/LA1/Start.html</td></tr>
 </table>
 
 <a name="context_extensions_publisherid"></a>
