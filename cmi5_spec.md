@@ -791,7 +791,6 @@ The score property of the result MAY be set in the following cmi5 defined statem
 
 - Passed
 - Failed
-- Waived
 
 Other cmi5 defined statements MUST NOT include a score.
 
@@ -822,7 +821,7 @@ The completion property of the result MUST be set to true for the following cmi5
 - Completed
 - Waived
 
-Other cmi5 defined statements MUST NOT include the success property.
+Other cmi5 defined statements MUST NOT include the completion property.
 
 <a name="duration"></a>
 ###9.5.4 Duration
