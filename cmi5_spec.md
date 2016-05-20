@@ -787,12 +787,12 @@ Example JSON:
 
 A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the Course Structure).
 
-The score property of the result MAY be set in the following cmi5 defined statements:
+The "score" property of the result MAY be set in the following cmi5 defined statements:
 
 - Passed
 - Failed
 
-Other cmi5 defined statements MUST NOT include a score.
+Other cmi5 defined statements MUST NOT include the "score" property.
 
 <ul><li><strong>scaled</strong><br>A decimal value between 0 and 1 (inclusive).</li>
 <li><strong>raw</strong><br>An integer value between the "min" and "max" properties (inclusive) of the <em><strong>score</strong></em> object.  When the "raw" value is provided, the AU MUST also provide the "min" and "max" values for <em><strong>score</strong></em>.</li>
@@ -803,39 +803,39 @@ Other cmi5 defined statements MUST NOT include a score.
 <a name="success"></a>
 ###9.5.2 Success 
 
-The success property of the result MUST be set to true for the following cmi5 defined statements:
+The "success" property of the result MUST be set to true for the following cmi5 defined statements:
 
 - Passed
 - Waived
 
-The success property of the result MUST be set to false for the following cmi5 defined statements:
+The "success" property of the result MUST be set to false for the following cmi5 defined statements:
 
 - Failed
  
-Other cmi5 defined statements MUST NOT include the success property.
+Other cmi5 defined statements MUST NOT include the "success" property.
 
 <a name="completion"></a>
 ###9.5.3 Completion
-The completion property of the result MUST be set to true for the following cmi5 defined statements:
+The "completion" property of the result MUST be set to true for the following cmi5 defined statements:
 
 - Completed
 - Waived
 
-Other cmi5 defined statements MUST NOT include the completion property.
+Other cmi5 defined statements MUST NOT include the "completion" property.
 
 <a name="duration"></a>
 ###9.5.4 Duration
-The duration property is an ISO 8601 formatted time value required in certain statements as defined in this section.
+The "duration" property is an ISO 8601 formatted time value required in certain statements as defined in this section.
 <a name="au_statements_that_include_duration"></a>
 ####9.5.4.1 AU statements that include duration
 ##### Terminated Statement
-The AU MUST include the duration property in "Terminated" statements.  The AU SHOULD calculate duration for Terminated statements as the time difference between the "Initialized" statement and the "Terminated" statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
+The AU MUST include the "duration" property in "Terminated" statements.  The AU SHOULD calculate duration for Terminated statements as the time difference between the "Initialized" statement and the "Terminated" statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
 ##### Completed Statement
-The AU MUST include the duration property in "Completed" statements.  The AU SHOULD calculate duration as the time spent by the learner to achieve completion status.
+The AU MUST include the "duration" property in "Completed" statements.  The AU SHOULD calculate duration as the time spent by the learner to achieve completion status.
 ##### Passed Statement
-The AU MUST include the duration property in "Passed" statements.  The AU SHOULD calculate duration as the time spent by the learner to attempt and succeed in a judged activity of the AU. 
+The AU MUST include the "duration" property in "Passed" statements.  The AU SHOULD calculate duration as the time spent by the learner to attempt and succeed in a judged activity of the AU. 
 ##### Failed Statement
-The AU MUST include the duration property in "Failed" statements. The AU SHOULD calculate duration as the time spent by the learner to attempt and fail in a judged activity of the AU.
+The AU MUST include the "duration" property in "Failed" statements. The AU SHOULD calculate duration as the time spent by the learner to attempt and fail in a judged activity of the AU.
 
 <a name="lms_statements_that_include_duration"></a>
 ####9.5.4.2 LMS statements that include duration
