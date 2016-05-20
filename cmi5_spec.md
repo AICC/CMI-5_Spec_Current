@@ -7,7 +7,7 @@
 
 ---
 >
->Copyright &copy; 2012-2015 ADL, All rights reserved
+>Copyright &copy; 2012-2016 ADL, All rights reserved
 >
 
 ----
@@ -745,7 +745,11 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <th align="left" nowrap>LMS Obligations</th><td>
 The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block id (Section 13.1.2) as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.<br>
 <br>
-The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the course id (Section 13.1.1) as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.  The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block or Course within a course registration for a given learner.
+The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the course id (Section 13.1.1) as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.<br>
+<br>
+For all "Satisfied" statements triggered as a result of an AU launch session, the LMS MUST use the session id from the AU launch in the statements.<br>
+<br>
+The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block or Course within a course registration for a given learner.
 </td></tr>
 <tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
@@ -905,7 +909,9 @@ Sample JSON:
 
 <a name="registration"></a> 
 ###9.6.1 registration
-The value for the registration property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  At the time of registration, the LMS MUST evaluate MoveOn criteria in the course structure.  For example, Blocks with MoveOn criteria of "Not Applicable" in the course structure would be evaluated and could generate Satisfied statements at this time.
+The value for the registration property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  At the time of registration, the LMS MUST evaluate MoveOn criteria in the course structure.  For example, Blocks with MoveOn criteria of "Not Applicable" in the course structure would be evaluated and could generate Satisfied statements at this time.<br>
+<br>
+For all Satisfied statements triggered outside of an AU launch session, the LMS MUST generate a unique session id and use it for those statements.
 
 <a name="context_activities"></a>
 ###9.6.2 contextActivities
