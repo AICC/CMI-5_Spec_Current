@@ -1629,7 +1629,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
         <strong>Data type: </strong>string </p>
     </td>
     <td width="815" valign="top"><p><strong>Description:</strong><br>
-      Static launch parameters defined by the course designer.  The LMS is required to store this data and provide it to the AU if    requested by the AU during runtime.<br>
+      Static launch parameters defined by the course designer.<br>
       </p>
       <p><strong>Value space:</strong><br>
         Values are defined by the course designer.</p>
