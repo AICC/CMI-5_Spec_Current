@@ -80,6 +80,9 @@
           * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
           * [9.6.3.3 launchMode](#context_extensions_launchMode)
           * [9.6.3.4 launchURL] (#context_extensions_launchURL)
+          * [9.6.3.5 publisherId](#context_extensions_publisherid)
+          * [9.6.3.6 moveOn](#context_extensions_moveOn)
+          * [9.6.3.7 launchParameters](#context_extensions_launchParameters)
   * [9.7 Timestamp](#timestamp)
 * [__10.0 xAPI State Data Model__](#xapi_state)
 * [__11.0 xAPI Agent Profile Data Model__](#xapi_agent_profile)
@@ -674,8 +677,8 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Passed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeeded in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "masteryScore" indicated in the Course Structure. (See Course Structure, Section 13.1.4 - masteryScore).</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use either "Passed" or "Completed" statements (or both) based on the "moveOn" criteria for the AU as defined in the Course Structure. (See Course Structure, Section 13.1.4 - MoveOn).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use either "Passed" or "Completed" statements (or both) based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
 </table>
 
@@ -686,7 +689,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Display</th><td>{ "en-US" : "Failed" }</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a score, the score MUST be less than the "masteryScore" indicated in the Course Structure. (See Course Structure, Section 13.1.4 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None.</td></tr>
 <tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
 </table>
@@ -783,7 +786,7 @@ Example JSON:
 <a name="score"></a> 
 ###9.5.1 Score
 
-A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the Course Structure).
+A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
 
 The "score" property of the result MAY be set in the following cmi5 defined statements:
 
@@ -936,23 +939,23 @@ Used to identify statements from the AU using the publisher's id from the course
 
 The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's id attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. The LMS MUST also include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
 
-<a name="extensions"></a> 
+<a name="extensions"></a>
 ###9.6.3 extensions
-The following are extensions specified for cmi5.  Other extensions are permitted provided they do not conflict or duplicate the ones specified here.  
+The following are extensions specified for cmi5.  Other extensions are permitted provided they do not conflict or duplicate the ones specified here.
 
 <a name="context_extensions_session_id"></a>
 ####9.6.3.1 session ID
 
 <table>
-  <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/sessionid</td></tr>
-  <tr><th align ="right" nowrap>Description:</th><td>A unique identifier for a single AU launch session based on actor and course registration </td></tr>
-  <tr><th align ="right" nowrap>LMS Usage:</th><td>The value for session ID is generated by the LMS. The LMS MUST also record the session ID in the State API (See Section 10) prior to launching an AU. The LMS MUST also provide the session ID in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS. </td></tr>
-  <tr><th align ="right" nowrap>AU Usage:</th><td>An AU MUST include the session ID provided by the LMS in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS. </td></tr>
- <tr><th align ="right" nowrap>AU Obligation:</th><td>Required</td></tr>
- <tr><th align ="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
-  <tr><th align ="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
-  <tr><th align ="right" nowrap>Value space:</th><td>string value</td></tr>
-  <tr><th align ="right" nowrap>Sample value:</th><td></td></tr>
+  <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/sessionid</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>A unique identifier for a single AU launch session based on actor and course registration </td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The value for session ID is generated by the LMS. The LMS MUST also record the session ID in the State API (See Section 10) prior to launching an AU. The LMS MUST also provide the session ID in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS. </td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the session ID provided by the LMS in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS. </td></tr>
+  <tr><th align="right" nowrap>AU Obligation:</th><td>Required</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
+  <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>string value</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
 <a name="context_extensions_masteryScore"></a>
@@ -960,46 +963,89 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/masteryscore</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>"masteryScore" as provided in the LMS Launch Data for the session used to determine the pass/fail result based on score</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td></td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>"masteryScore" as provided in the LMS Launch Data for the AU plus registration used to determine the pass/fail result based on score</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add masteryScore to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the "masteryScore" value provided by the LMS in the context as an extension for "passed"/"failed" Statements it makes based on the "masteryScore".</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>Required, when present and evaluated</td></tr>
-  <tr><th align="right" nowrap>LMS Obligation:</th><td></td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when in launch data</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>0.92</td></tr>
 </table>
 
- 
- <a name="context_extensions_launchMode"></a>
+<a name="context_extensions_launchMode"></a>
 ####9.6.3.3 launchMode
- 
- <table>
-   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchmode</td></tr>
-   <tr><th align="right" nowrap>Description:</th><td>Indicates what launch mode an AU was launched with by the LMS</td></tr>
-   <tr><th align="right" nowrap>LMS Usage:</th><td> LMS MUST add launchMode to the context of a "Launched" statement.</td></tr>
-   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
-   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
-   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
-   <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
-   <tr><th align="right" nowrap>Value space:</th><td>Per launchMode vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
-   <tr><th align="right" nowrap>Sample value:</th><td>"Normal"</td></tr>
- </table>
- 
-  <a name="context_extensions_launchURL"></a>
+
+<table>
+  <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchmode</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>Indicates what launch mode an AU was launched with by the LMS</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add launchMode to the context of a "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
+  <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
+  <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Per launchMode vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>"Normal"</td></tr>
+</table>
+
+<a name="context_extensions_launchURL"></a>
 ####9.6.3.4 launchURL
- 
- <table>
-   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchurl</td></tr>
-   <tr><th align="right" nowrap>Description:</th><td>The URL used by the LMS to launch the AU</td></tr>
-   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put the URL used to launch the AU in the context extensions of the "Launched" statement.</td></tr>
-   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
-   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
-   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
-   <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
-   <tr><th align="right" nowrap>Value space:</th><td>URL</td></tr>
-   <tr><th align="right" nowrap>Sample value:</th><td>see section 8.1</td></tr>
- </table>
+
+<table>
+  <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchurl</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The URL used by the LMS to launch the AU</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in section 8.1 in the context extensions of the "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
+  <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
+  <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>URL</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>http://www.example.com/LA1/Start.html</td></tr>
+</table>
+
+<a name="context_extensions_publisherid"></a>
+####9.6.3.5 publisherId
+
+<table>
+  <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/publisherid</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>Used to identify the AU using the publisher's id from the course structure. (See Section 13.1.4 AU Metadata – id).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST record the publisher ID in the State API (See Section 10) prior to launching an AU. The LMS MUST also provide the publisher ID in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the publisher ID provided by the LMS in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.</td></tr>
+  <tr><th align="right" nowrap>AU Obligation:</th><td>Required</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
+  <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>IRI</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>http://example.com/content/presentation/xyz123/index.html</td></tr>
+</table>
+
+<a name="context_extensions_moveOn"></a>
+####9.6.3.6 moveOn
+
+<table>
+  <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/moveon</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>"moveOn" as provided in the LMS Launch Data for the AU plus registration</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add moveOn to the context of a "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
+  <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
+  <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Per moveOn vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>"Passed"</td></tr>
+</table>
+
+<a name="context_extensions_launchParameters"></a>
+####9.6.3.7 launchParameters
+
+<table>
+  <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchparameters</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>"launchParameters" as provided in the LMS Launch Data for the AU plus registration</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add launchParameters to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
+  <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when in launch data</td></tr>
+  <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Any string value</td></tr>
+</table>
 
 <a name="timestamp"></a> 
 ##9.7 Timestamp
@@ -1087,7 +1133,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>launchParameters</em></strong> defined in the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>If the <strong><em>launchParameters</em></strong> were defined by the course designer in the Course Structure, the LMS MUST include the  <strong><em>launchParameters</em></strong> in the State API document.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <strong><em>launchParameters</em></strong> value in the state API document. The <em>launchParameters</em> value written in the State API Document MAY change (e.g. based on content vendor options that may be used by the LMS admin users).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <strong><em>launchParameters</em></strong> value in the state API document. The <em>launchParameters</em> value written in the State API Document MAY be different than the one in the course structure (e.g. based on content vendor options that may be used by the LMS admin users).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD get the <strong><em>launchParameters</em></strong> value from the State API document if the launch parameters were defined in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Any string value</td></tr>
@@ -1098,8 +1144,8 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>masteryScore</em></strong> from the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>If the <strong><em>masteryScore</em></strong> was defined by the course designer in the Course Structure, the LMS MUST include a "masteryScore" in the State API document.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>If the <strong><em>masteryScore</em></strong> is provided.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>If a <strong><em>masteryScore</em></strong> is present in the course structure the LMS must provide a <strong><em>masteryScore</em></strong> in the State API document. The <strong><em>masteryScore</em></strong> value written in the State API Document may change (e.g. based on administrative rules defined by the LMS).</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>If The AU MUST issue "Passed" or "Failed" statements they MUST be based on the <strong><em>masteryScore</em></strong> provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>If a <strong><em>masteryScore</em></strong> is present in the course structure the LMS must provide a <strong><em>masteryScore</em></strong> in the State API document. The <strong><em>masteryScore</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>If the AU issues "Passed" or "Failed" statements they MUST be based on the <strong><em>masteryScore</em></strong> provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>0.75</td></tr>
@@ -1110,7 +1156,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>moveOn</em></strong> value from the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS must provide a <strong><em>moveOn</em></strong> value in the state API document. The <strong><em>moveOn</em></strong> value written in the State API Document MAY change (e.g. based on administrative rules defined by the LMS).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS must provide a <strong><em>moveOn</em></strong> value in the state API document. The <strong><em>moveOn</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the <strong><em>moveOn</em></strong> value from the "LMS.LaunchData" state document and MAY use the value to modify its behavior.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td><strong><em>moveOn</em></strong> values as defined in the Course Structure (Section 13.1.4 – AU Metadata)</td></tr>
@@ -1473,8 +1519,8 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The "masteryScore" is passed to the AU at runtime by the LMS (as defined in the cmi5 Runtime Specification).</li>
-        <li>If the AU has scoring, it will use the "masteryScore" to determine pass/fail (as defined in the cmi5 Runtime Specification)</li>
+        <li>The "masteryScore" is passed to the AU at runtime by the LMS (See xAPI State Data Model, Section 10.0).</li>
+        <li>If the AU has scoring, it will use the "masteryScore" to determine pass/fail.</li>
         <li>The "masteryScore" is a scaled, decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</li>
       </ul>
       <p><strong>Value space: </strong>Decimal number.<br>
