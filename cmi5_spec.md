@@ -1122,7 +1122,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>launchParameters</em></strong> defined in the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>If the <strong><em>launchParameters</em></strong> were defined by the course designer in the Course Structure, the LMS MUST include the  <strong><em>launchParameters</em></strong> in the State API document.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <strong><em>launchParameters</em></strong> value in the state API document. The <em>launchParameters</em> value written in the State API Document MAY change (e.g. based on content vendor options that may be used by the LMS admin users).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <strong><em>launchParameters</em></strong> value in the state API document. The <em>launchParameters</em> value written in the State API Document MAY be different than the one in the course structure (e.g. based on content vendor options that may be used by the LMS admin users).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD get the <strong><em>launchParameters</em></strong> value from the State API document if the launch parameters were defined in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Any string value</td></tr>
@@ -1133,7 +1133,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>masteryScore</em></strong> from the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>If the <strong><em>masteryScore</em></strong> was defined by the course designer in the Course Structure, the LMS MUST include a "masteryScore" in the State API document.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>If the <strong><em>masteryScore</em></strong> is provided.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>If a <strong><em>masteryScore</em></strong> is present in the course structure the LMS must provide a <strong><em>masteryScore</em></strong> in the State API document. The <strong><em>masteryScore</em></strong> value written in the State API Document may change (e.g. based on administrative rules defined by the LMS).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>If a <strong><em>masteryScore</em></strong> is present in the course structure the LMS must provide a <strong><em>masteryScore</em></strong> in the State API document. The <strong><em>masteryScore</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>If the AU issues "Passed" or "Failed" statements they MUST be based on the <strong><em>masteryScore</em></strong> provided. (See Sections 9.3.6 and 9.3.7)</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</td></tr>
@@ -1145,7 +1145,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>moveOn</em></strong> value from the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS must provide a <strong><em>moveOn</em></strong> value in the state API document. The <strong><em>moveOn</em></strong> value written in the State API Document MAY change (e.g. based on administrative rules defined by the LMS).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS must provide a <strong><em>moveOn</em></strong> value in the state API document. The <strong><em>moveOn</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the <strong><em>moveOn</em></strong> value from the "LMS.LaunchData" state document and MAY use the value to modify its behavior.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td><strong><em>moveOn</em></strong> values as defined in the Course Structure (Section 13.1.4 – AU Metadata)</td></tr>
