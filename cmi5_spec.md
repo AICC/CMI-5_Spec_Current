@@ -952,7 +952,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/masteryscore</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>"masteryScore" as provided in the LMS Launch Data for the registration used to determine the pass/fail result based on score</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>"masteryScore" as provided in the LMS Launch Data for the AU plus registration used to determine the pass/fail result based on score</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add masteryScore to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the "masteryScore" value provided by the LMS in the context as an extension for "passed"/"failed" Statements it makes based on the "masteryScore".</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>Required, when present and evaluated</td></tr>
@@ -1012,11 +1012,11 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/moveon</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>"moveOn" as provided in the LMS Launch Data ...</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add moveOn to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>"moveOn" as provided in the LMS Launch Data for the AU plus registration</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add moveOn to the context of a "Launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
-  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when in launch data</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Per moveOn vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>"Passed"</td></tr>
@@ -1027,7 +1027,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchparameters</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>"launchParameters" as provided in the LMS Launch Data for the registration</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>"launchParameters" as provided in the LMS Launch Data for the AU plus registration</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add launchParameters to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
