@@ -591,7 +591,7 @@ The AU MUST assign a statement id property in UUID format (as defined in the xAP
   
 <a name="actor" ></a>
 ##9.2 Actor
-The Actor property will be defined by the LMS. The Actor property for all statements with cmi5 defined verbs MUST be of objectType "Agent" and MUST contain an "account" as defined in the xAPI specification.
+The Actor property will be defined by the LMS. The Actor property for all "cmi5 defined" statements MUST be of objectType "Agent" and MUST contain an "account" as defined in the xAPI specification.
 
 An Example of usage in a statement:
 
@@ -759,7 +759,7 @@ The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block
 
 <a name="object"></a> 
 ##9.4 Object 
-An Object MUST be present, as specified in this section, in all statements with cmi5 defined verbs.
+An Object MUST be present, as specified in this section, in all "cmi5 defined" statements.
 
 Except for Statements with the Satisfied verb, the Object in a cmi5 defined statement represents the AU.  When the Object is the AU, the value of the Object's "id" property for a given AU MUST match the activityId defined in the launch URL.
 
