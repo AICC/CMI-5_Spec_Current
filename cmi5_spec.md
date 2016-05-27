@@ -571,25 +571,6 @@ The AU MUST assign a statement id property in UUID format (as defined in the xAP
 ##9.2 Actor
 The Actor property will be defined by the LMS. The Actor property for all "cmi5 defined" statements MUST be of objectType "Agent" and MUST contain an "account" as defined in the xAPI specification.
 
-An Example of usage in a statement:
-
-```javascript
-{
-  "actor": {
-    "objectType": "Agent",
-    "account": {
-      "homePage": "http://www.example.com",
-      "name": "1625378"
-    }
-  },
-  "verb": {...},
-  "object": {...},
-  "result": {...},
-  "context": {...},
-  "attachments": {...}
-}
-```
-
 <a name="verbs" ></a> 
 ##9.3 Verbs  
 
@@ -747,23 +728,6 @@ In Satisfied statements, the Object represents a Block or Course.  (see 9.3.9 - 
 ##9.5 Result
 Result may be present in a statement depending on the cmi5 verb used. 
 
-Example JSON:
-```javascript
-"result": {
-  "score": {
-    "scaled": 0.65,
-    "raw": 65,
-    "min": 0,
-    "max": 100
-  },
-  "success": false,
-  "duration": "PT30M",
-  "extensions": {
-    "https://w3id.org/xapi/cmi5/result/extensions/progress": 100
-  }
-}
- ```
-
 <a name="score"></a> 
 ###9.5.1 Score
 
@@ -873,28 +837,6 @@ The duration property MUST be included in "Abandoned" statements. The &duration 
 ##9.6 Context
 
 All cmi5 defined statements MUST contain a context that includes all objects/values as defined in this section. Either the LMS or the AU MAY provide additional objects.
-
-Sample JSON:
-
-```javascript
-   "context": {
-     "registration": "<registration value provided by LMS>",
-     "contextActivities": {
-        "category": [
-          {"id": "https://w3id.org/xapi/cmi5/context/categories/moveon"},
-          {"id": "https://w3id.org/xapi/cmi5/context/categories/cmi5"}
-        ],
-        "grouping": [
-          {"id": "<the unaltered value of the AU's id from the course structure>"}
-        ]
-     },
-     "extensions" {
-        "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<the value of session ID provided by the LMS>",
-        "https://w3id.org/xapi/cmi5/context/extensions/masteryscore": 0.50,
-        "https://w3id.org/xapi/cmi5/context/extensions/launchMode" : "Normal"
-      }
-   }
-```
 
 <a name="registration"></a> 
 ###9.6.1 registration
@@ -1046,34 +988,6 @@ __State API PUT Properties__:
 * _registration_: Registration id representing the LMS learner enrollment in the course. This MUST match Registration ID used by the LMS at AU launch time.
 * _stateId_: LMS.LaunchData
 
-An example of the JSON document is shown below.
-
-```javascript
-{
-  "contextTemplate": {
-    "contextActivities": {
-      "grouping": [
-        {
-          "objectType": "Activity",
-          "id": "<The unaltered value of the AU's id from the course structure>"
-        }
-      ]
-    },
-    "extensions": {
-      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "<The LMS generated session ID value>"
-    }
-  },
-  "launchMode": "<launchMode value>",
-  "launchParameters": "<launch parameters from Course Structure>",
-  "masteryScore": "<masteryScore from the Course Structure>",
-  "moveOn": "<moveOn value from the Course Structure>",
-  "returnURL": "<URL value>",
-  "entitlementKey": {
-    "courseStructure": "<Entitlement data or key from Course Structure>",
-    "alternate": "<alternateEntitlementKey>"
-  }
-}
-```
 
 The properties for the "LMS.LaunchData" document are described below.
 
