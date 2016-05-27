@@ -32,10 +32,9 @@
   * [6.3 LMS Statement API Requirements](#lms_statement_api_requirements)
 * [__7.0 AU Requirements__](#au_requirements)
   * [7.1 AU Statement API Requirements](#au_statement_api_requirements)
-      * [7.1.1 Placement of the session ID in Statements](#placement)
-      * [7.1.2 First Statement API Call](#first_statement_au)
-      * [7.1.3 Last Statement Call](#last_statement_au)
-      * [7.1.4 Types of Statements](#type_statement_au)
+      * [7.1.1 First Statement API Call](#first_statement_au)
+      * [7.1.2 Last Statement Call](#last_statement_au)
+      * [7.1.3 Types of Statements](#type_statement_au)
 * [__8.0 Content Launch Mechanisms__](#content_launch)
   * [8.1 Launch Method](#launch_method)
   * [8.2 Authorization Token Fetch URL](#fetch_url)
@@ -383,35 +382,16 @@ AU's requirements to conform to this specification are as follows:
 <a name="au_statement_api_requirements"></a>  
 ##7.1 AU Statement API Requirements
 
-<a name="placement"></a> 
-###7.1.1 Placement of session ID in Statements
-
-The AU MUST retrieve the value of session ID at launch time as specified in Section 10 State API.  The AU MUST place the value of the session ID in the context extensions for all xAPI statements it records.  
-
-Usage in an xAPI Statement:
-
-```javascript
-"extensions": {
-  "https://w3id.org/xapi/cmi5/context/extensions/sessionid": <The session ID value provided by the LMS>
-}
-```
-Example:
-```javascript
-"extensions": {
-  "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "xyz123"
-}
-```
-
 <a name="first_statement_au"></a> 
-###7.1.2 First Statement API Call
+###7.1.1 First Statement API Call
 The AU MUST issue a statement to the LRS after being launched, initialized, and ready for learner interaction using the Initialized verb as described in Section 9.3.2.
 
 <a name="last_statement_au"></a>  
-###7.1.3 Last Statement Call
+###7.1.2 Last Statement Call
 The AU MUST issue a statement to the LRS prior to termination using the Terminated verb as described in Section 9.3.8.
 
 <a name="type_statement_au"></a>  
-###7.1.4 Types of Statements
+###7.1.3 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
 * "cmi5 defined" - Statements using cmi5 defined verbs, category id as defined in section 9.6.2.1, and context template.
