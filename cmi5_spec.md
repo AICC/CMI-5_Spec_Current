@@ -388,7 +388,16 @@ The AU MUST issue a statement to the LRS after being launched, initialized, and 
 
 <a name="last_statement_au"></a>  
 ###7.1.2 Last Statement Call
-The AU MUST issue a statement to the LRS prior to termination using the Terminated verb as described in Section 9.3.8.
+The AU MUST issue a Terminated statement to the LRS as described in Section 9.3.8 as the last statement in a session.
+ 
+Once the AU has determined that the session will end (e.g. by user action or some other means) the AU SHOULD issue a Terminated statement.
+ 
+ Circumstances under which the AU may determine that the session is ending could include:
+ 
+* Monitoring for browser window or application close events
+* An AU defined user action for closing the AU session
+* Other AU defined events such as a timeout from user inactivity
+
 
 <a name="type_statement_au"></a>  
 ###7.1.3 Types of Statements
