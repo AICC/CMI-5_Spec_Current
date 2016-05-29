@@ -141,7 +141,7 @@ __Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 | Andrew Downes        | Rustici Software                       |
 | Brian J. Miller      | Rustici Software                       |
 | Jacques Talvard      | Airbus                                 |
-| William A. McDonald  | Boeing                                 |
+| Bill McDonald        | Boeing                                 |
 | Ray Lowery           | Pratt &amp; Whitney                    |
 | Dennis Hall          | Learning Templates                     |
 | John Kleeman         | Questionmark                           |
