@@ -114,6 +114,9 @@ PLEASE NOTE: This is a developer release and is subject to change.
 
 <a name="revhistory"></a>
 ## Revision History
+
+__Quartz - 1st Edition (June 1, 2016)__
+
 __Sandstone - 1st Edition (May 15, 2015):__
 
 * Developer release
