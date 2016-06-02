@@ -276,24 +276,14 @@ Uses of the xAPI specification outside of the scope of this specification do not
 <a name="au_conformance"></a> 
 ##4.1 Assignable Unit (AU)
 
-An Assignable Unit MUST conform to all requirements listed in Section 7 – AU Requirements.
-
-An Assignable Unit MUST conform to all requirements as specified in the xAPI specification (see References).
-
-An Assignable Unit MUST NOT implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.
+See Section 7 – AU Requirements. An Assignable Unit MUST conform to all requirements as specified in the xAPI specification (see References).
 
 <a name="lms_conformance"></a> 
 ##4.2 Learning Management Systems (LMS)
 
-The LMS MUST conform to all LRS requirements as specified in the xAPI specification (see References).
+See Section 6 – LMS Requirements. The LMS MUST conform to all LRS requirements as specified in the xAPI specification (see References).
 
-The LMS MUST include the ability to retrieve and show all statements (including attachments and extensions) to a user (with the understanding of scaling permissions/authorization).
-
-The LMS MUST decode the attachment and make it available as a file with the original MIME type.
-
-The LMS MUST conform to all requirements listed in Section 6 – LMS Requirements.
-
-The LMS MUST NOT implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.
+The LMS MUST have an account which is able to retrieve all Resource data (from the Statement API, etc, including attachments and extensions) about another distinct user across multiple sessions for that user.
 
 <a name="json_conformance"></a> 
 ##4.3 Optional JSON Values
