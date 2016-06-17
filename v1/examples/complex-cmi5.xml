@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<courseStructure xmlns="https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd">
+  <course id="http://courses.example.edu/identifiers/courses/d07e186b">
+    <title>
+      <langstring lang="en-US">Geology</langstring>
+      <langstring lang="de-DE">Geologie</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">
+        Geology is an earth science comprising the study of solid earth, rhe rocks of which it is
+        composed, and the proccesses by which they change. Geology gives insight into the history of
+        Earth by providing the primary evidence for plate tectonics, the evolutionary history of
+        live, and past climates. Geology is important for mineral and hydrocarbon exploration and
+        exploitation, evaluating water resources, understanding of natural hazards, the remediation
+        of environmental problems, and for providing insights into past climate change. Geology also
+        plays a role in geotechnical engineering and is a major academic discipline.
+      </langstring>
+      <langstring lang="de-DE">
+        Geologie ist eine Geowissenschaften, welche die Untersuchung der festen Erde, der Felsen,
+        aus denen sie zusammengesetzt ist, und die Prozesse
+        durch die sie sich ändert, umfasst. Geologie gibt Einblick in die Geschichte der Erde. Sie
+        bietet die primären Beweise für Plattentektonik,
+        die Evolutionsgeschichte des Lebens, und das Klima der Vergangenheit. Geologie ist wichtig
+        für Mineral- und Kohlenwasserstoffexploration
+        und -gewinnung, die Bewertung der Wasserressourcen, das Verständnis von Naturgefahren, die
+        Sanierung von Umweltproblemen,
+        und für Einblicke in Vergangenheit Klimawandel. Geologie spielt auch eine Rolle in der
+        Geotechnik und ist ein
+        akademische Hauptdisziplin.
+      </langstring>
+    </description>
+  </course>
+  <objectives>
+    <objective id="http://objectives.example.com/identifiers/geology/basics">
+      <title>
+        <langstring lang="en-US">Geology - Basic knowledge</langstring>
+        <langstring lang="de-DE">Geologie - Grundwissen</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          Knowledge about basic terms, theories and applications of geology.
+        </langstring>
+        <langstring lang="de-DE">
+          Wissen über grundlegende Begriffe, Theorien und Anwendungsbereiche der Geologie.
+        </langstring>
+      </description>
+    </objective>
+    <objective
+        id="http://objectives.example.com/identifiers/geology/material-identification">
+      <title>
+        <langstring lang="en-US">Identification of common Earth materials.</langstring>
+        <langstring lang="de-DE">Identifikation von üblichen Erdmaterialien.</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          Knowledge about properties of minerals and methods to gather data about rocks.
+        </langstring>
+        <langstring lang="de-DE">
+          Wissen über Eigenschaften von Mineralien und Methoden um Daten über Steine zu sammeln.
+        </langstring>
+      </description>
+    </objective>
+    <objective
+        id="http://courses.example.edu/objectives/scientific-thinking-and-acting">
+      <title>
+        <langstring lang="en-US">Scientific Thinking and Acting</langstring>
+        <langstring lang="de-DE">Wissenschaftliches Denken und Handeln</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          Application of scientific methods to collect, prove and validate knowledge.
+        </langstring>
+        <langstring lang="de-DE">
+          Anwendung wissenschaftlicher Methoden, um Wissen zu sammeln, zu beweisen und zu validieren
+        </langstring>
+      </description>
+    </objective>
+    <objective id="http://objectives.example.com/identifiers/history/history-of-science">
+      <title>
+        <langstring lang="en-US">History of Science</langstring>
+        <langstring lang="de-DE">History of Science</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">Knowledge about the origins and development of science</langstring>
+        <langstring lang="de-DE">
+          Wissen über die Entstehung und Entwicklung der Wissenschaften
+        </langstring>
+      </description>
+    </objective>
+  </objectives>
+
+  <block id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001">
+    <title>
+      <langstring lang="en-US">Geologic materials</langstring>
+      <langstring lang="de-DE">Geologische Materialien</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">
+        The majority of geological data comes from research on solid Earth materials. These
+        typically fall into one of two categories: rock and unconsolidated material.
+      </langstring>
+      <langstring lang="de-DE">
+        Der Großteil der geologischen Daten stammt aus der Forschung von festen Erdmaterialien.
+        Diese fallen in der Regel in eine von zwei Kategorien: Gestein und Lockergestein.
+      </langstring>
+    </description>
+    <objectives>
+      <objective
+          idref="http://objectives.example.com/identifiers/geology/basics"/>
+      <objective
+          idref="http://objectives.example.com/identifiers/geology/material-identification"/>
+    </objectives>
+    <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/64f6"
+        activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+        moveOn="CompletedOrPassed" masteryScore="1.0">
+      <title>
+        <langstring lang="en-US">Rock and rock cycle</langstring>
+        <langstring lang="de-DE">Gestein und Kreislauf der Gesteine</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          There are three major types of rock: igneous, sedimentary, and metamorphic. The rock cycle
+          is an important concept in geology which illustrates the relationships between these three
+          types of rock, and magma.
+        </langstring>
+        <langstring lang="de-DE">
+          Es gibt drei Hauptgesteinsarten: Magmatische, sedimentären und metamorphen. Der Kreislauf
+          der Gesteine ist ein wichtiges Konzept in der Geologie, die die Beziehungen zwischen
+          diesen drei Arten von Gestein und Magma darstellt.
+        </langstring>
+      </description>
+      <url>
+        http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/64f6/launch
+      </url>
+      <launchParameters>{'initialSpeed':3.0,'mode':1}</launchParameters>
+      <entitlementKey>833d0c7c-a3f8-4f9b-a51f-cbd8a9dac9fb</entitlementKey>
+    </au>
+    <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/3ee0"
+        activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+        moveOn="NotApplicable">
+      <title>
+        <langstring lang="en-US">Unconsolidated material</langstring>
+        <langstring lang="de-DE">Lockergestein</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          Geologists study unlithified material, which typically comes from more recent deposits.
+        </langstring>
+        <langstring lang="de-DE">
+          Geologen studieren unverfestigtes Material, das von jüngeren Ablagerungen herkommt.
+        </langstring>
+      </description>
+      <url>
+        http://courses.example.edu/identifiers/courses/d07e186b/blocks/001/aus/3ee0/launch
+      </url>
+      <entitlementKey>833d0c7c-a3f8-4f9b-a51f-cbd8a9dac9fb</entitlementKey>
+    </au>
+  </block>
+
+  <block id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/002">
+    <title>
+      <langstring lang="en-US">Whole-Earth structure</langstring>
+      <langstring lang="de-DE">Struktur der Erde</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">
+        In the 1960s, a series of discoveries showed that the Earth's lithosphere is separated into
+        a number of tectonic plates that move across the asthenosphere.
+      </langstring>
+      <langstring lang="de-DE">
+        In den 1960er Jahren zeigte eine Reihe von Entdeckungen, dass die Lithosphäre der Erde in
+        eine Reihe von tektonischen Platten geteilt ist, die sich über Asthenosphäre bewegen.
+      </langstring>
+    </description>
+    <objectives>
+      <objective
+          idref="http://objectives.example.com/identifiers/geology/basics"/>
+    </objectives>
+    <au id="http://example.com/courses/f59c9fc0/au/6f64"
+        activityType="http://adlnet.gov/expapi/activities/lesson"
+        launchMethod="OwnWindow" moveOn="Passed" masteryScore="0.1">
+      <title>
+        <langstring lang="en-US">Plate tectonics</langstring>
+        <langstring lang="de-DE">Plattentektonik</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          Plate tectonics is a scientific theory that describes the motion of Earth's lithosphere.
+        </langstring>
+        <langstring lang="de-DE">
+          Als Plattentektonik bezeichnet man die Gliederung der äußeren Erdhülle, der Lithosphäre,
+          in Lithosphärenplatten, die dem tieferen Erdmantel aufliegen und darauf umherwandern.
+        </langstring>
+      </description>
+      <objectives>
+        <objective
+            idref="http://objectives.example.com/identifiers/history/history-of-science"/>
+      </objectives>
+      <url>http://example.com/courses/f59c9fc0/au/6f64/start</url>
+    </au>
+    <au id="http://example.com/courses/f59c9fc0/au/6f65"
+        activityType="http://adlnet.gov/expapi/activities/lesson"
+        launchMethod="OwnWindow" moveOn="CompletedOrPassed" masteryScore="0.3">
+      <title>
+        <langstring lang="en-US">Structure of the earth</langstring>
+        <langstring lang="de-DE">Innerer Aufbau der Erde</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          The interior structure of the Earth is layered in spherical shells, like an onion. These
+          layers can be defined by either their chemical or their rheological properties.
+        </langstring>
+        <langstring lang="de-DE">
+          Der Erdkörper ist, idealisiert betrachtet, aus konzentrischen Kugelschalen aufgebaut, die
+          jeweils aus Materialien deutlich unterschiedlicher Dichte bestehen.
+        </langstring>
+      </description>
+      <url>http://example.com/courses/f59c9fc0/au/6f65/start</url>
+      <launchParameters>
+      </launchParameters>
+      <entitlementKey></entitlementKey>
+    </au>
+  </block>
+
+  <block id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003">
+    <title>
+      <langstring lang="en-US">Geologic time scale</langstring>
+      <langstring lang="de-DE">Geologische Zeitskala</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">
+        The geological time scale (GTS) is a system of chronological measurement that relates
+        stratigraphy to time, and is used by geologists, paleontologists, and other Earth scientists
+        to describe the timing and relationships between events that have occurred throughout
+        Earth's history.
+      </langstring>
+      <langstring lang="de-DE">
+        Die geologische Zeitskala ist eine hierarchische Unterteilung der Erdgeschichte. Sowohl die
+        Hierarchie-Ebenen als auch die Zeitabschnitte sind benannt. Die feiner unterteilenden Ebenen
+        reichen nicht bis zur Entstehung der Erde zurück.
+      </langstring>
+    </description>
+    <objectives>
+      <objective
+          idref="http://objectives.example.com/identifiers/geology/basics"/>
+      <objective
+          idref="http://courses.example.edu/objectives/scientific-thinking-and-acting"/>
+    </objectives>
+    <au id="http://example.com/courses/f59c9fc0/au/6f66"
+        activityType="http://adlnet.gov/expapi/activities/lesson"
+        launchMethod="OwnWindow" moveOn="CompletedAndPassed" masteryScore="0.5">
+      <title>
+        <langstring lang="en-US">History and nomenclature of the time scale</langstring>
+        <langstring lang="de-DE">Geschichte und Nomenklatur der Zeitskala</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          The first serious attempts to formulate a geological time scale that could be applied
+          anywhere on Earth were made in the late 18th century. In 1977, the Global Commission on
+          Stratigraphy (now the International Commission on Stratigraphy) started an effort to
+          define global references.
+        </langstring>
+        <langstring lang="de-DE">
+          Die ersten ernsthaften Versuche, eine geologische Zeitskala, die überall auf der Erde
+          angewandt konnten, wurden im späten 18. Jahrhundert formuliert. Im Jahr 1977 begann die
+          Weltkommission für Stratigraphie (jetzt die Internationale Kommission für Stratigraphie)
+          eine globale Referenzen zu definieren.
+        </langstring>
+      </description>
+      <url>http://example.com/courses/f59c9fc0/au/6f66/start</url>
+    </au>
+    <block id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001">
+      <title>
+        <langstring lang="en-US">Current official geologic time scale</langstring>
+        <langstring lang="de-DE">Die aktuelle offizielle geologische Zeitskala</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          The following summarizes the major events and characteristics of the periods of time
+          making up the geologic time scale. This scale is based on the International Commission on
+          Stratigraphy.
+        </langstring>
+        <langstring lang="de-DE">
+          Im Folgenden werden die wichtigsten Ereignisse und die Merkmale der Zeit zusammengefasst,
+          aus denen die geologische Zeitskala besteht. Diese Skala basiert auf der Internationalen
+          Kommission für Stratigraphie.
+        </langstring>
+      </description>
+      <block
+          id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001-001">
+        <title>
+          <langstring lang="en-US">Phanerozoic</langstring>
+          <langstring lang="de-DE">Phanerozoikum</langstring>
+        </title>
+        <description>
+          <langstring lang="en-US">
+            The Phanerozoic is the current geologic eon in the geologic timescale, and the one
+            during which abundant animal and plant life has existed.
+          </langstring>
+          <langstring lang="de-DE">
+            Das Phanerozoikum ist das jüngste Äon in der Erdgeschichte und dauert bis heute an.
+          </langstring>
+        </description>
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ec9"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+            moveOn="Completed">
+          <title>
+            <langstring lang="en-US">Cenozoic</langstring>
+            <langstring lang="de-DE">Känozoikum</langstring>
+          </title>
+          <description>
+            <langstring lang="en-US">
+              The Cenozoic Era is the current and most recent of the three Phanerozoic geological
+              eras.
+            </langstring>
+            <langstring lang="de-DE">
+              Das Känozoikum ist das Erdzeitalter, welches innerhalb des Äons Phanerozoikum auf das
+              Mesozoikum folgt und das bis heute andauert.
+            </langstring>
+          </description>
+          <url>
+            http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ec9/launch
+          </url>
+        </au>
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7eca/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+            moveOn="Completed">
+          <title>
+            <langstring lang="en-US">Mesozoic</langstring>
+            <langstring lang="de-DE">Mesozoikum</langstring>
+          </title>
+          <description>
+            <langstring lang="en-US">
+              The Mesozoic Era is an interval of geological time from about 252 to 66 million years
+              ago.
+            </langstring>
+            <langstring lang="de-DE">
+              Das Mesozoikum ist ein Erdzeitalter, das vor etwa 252,2 Millionen Jahren begann und
+              vor etwa 66 Millionen Jahren endete.
+            </langstring>
+          </description>
+          <url>
+            http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7eca/launch
+          </url>
+        </au>
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecb/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+            moveOn="Completed">
+          <title>
+            <langstring lang="en-US">Paleozoic</langstring>
+            <langstring lang="de-DE">Paläozoikum</langstring>
+          </title>
+          <description>
+            <langstring lang="en-US">The Paleozoic is the earliest of three geologic eras of the
+              Phanerozoic Eon, spanning from roughly 541 to 252.17 million years ago
+            </langstring>
+            <langstring lang="de-DE">Das Paläozoikum ist das älteste der drei Erdzeitalter (Ären),
+              in die das Äon Phanerozoikum innerhalb der geologischen Zeitskala geteilt wird. Es
+              umfasst den Zeitraum von ca. 541 Millionen Jahre bis ca. 252,2 Millionen Jahre vor
+              heute.
+            </langstring>
+          </description>
+          <url>
+            http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecb/launch
+          </url>
+        </au>
+      </block>
+      <block
+          id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001-002">
+        <title>
+          <langstring lang="en-US">Proterozoic</langstring>
+          <langstring lang="de-DE">Proterozoikum</langstring>
+        </title>
+        <description>
+          <langstring lang="en-US">The Proterozoic Eon extended from 2500 Ma to 542.0±1.0 Ma
+            (million years ago)
+          </langstring>
+          <langstring lang="de-DE">Das Proterozoikum reicht vom Ende des Archaikums von vor ca.
+            2.500 Millionen Jahren bis ca. vor 541 Millionen Jahren.
+          </langstring>
+        </description>
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecc/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+            moveOn="NotApplicable">
+          <title>
+            <langstring lang="en-US">Neoproterozoic</langstring>
+            <langstring lang="de-DE">Neoproterozoikum</langstring>
+          </title>
+          <description>
+            <langstring lang="en-US">Das Neoproterozoikum ist der jüngste Abschnitt des
+              Proterozoikums; mit dieser Ära endet zugleich das Präkambrium (Erdurzeit). Das
+              Neoproterozoikum beginnt etwa vor 1.000 Millionen Jahren und endet vor etwa 541
+              Millionen Jahren.
+            </langstring>
+            <langstring lang="de-DE">The Neoproterozoic Era is the unit of geologic time from 1,000
+              to 541 million years ago.
+            </langstring>
+          </description>
+          <url>
+            http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecc/launch
+          </url>
+        </au>
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecd/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow">
+          <title>
+            <langstring lang="en-US">Mesoproterozoic</langstring>
+            <langstring lang="de-DE">Mesoproterozoikum</langstring>
+          </title>
+          <description>
+            <langstring lang="en-US">The Mesoproterozoic Era is a geologic era that occurred from
+              1,600 to 1,000 million years ago.
+            </langstring>
+            <langstring lang="de-DE">Der Beginn des Mesoproterozoikums wird bei etwa 1.600 Millionen
+              Jahren, sein Ende bei etwa 1.000 Millionen Jahren angesetzt.
+            </langstring>
+          </description>
+          <url>
+            http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecd/launch
+          </url>
+        </au>
+        <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ece/"
+            activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow">
+          <title>
+            <langstring lang="en-US">Paleoproterozoic</langstring>
+            <langstring lang="de-DE">Paläoproterozoikum</langstring>
+          </title>
+          <description>
+            <langstring lang="en-US">The Paleoproterozoic occurred between 2,500 to 1,600 million
+              years ago.
+            </langstring>
+            <langstring lang="de-DE">Das Paläoproterozoikum beginnt vor etwa 2.500 und endet vor
+              1.600 Millionen Jahren.
+            </langstring>
+          </description>
+          <url>
+            http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ece/launch
+          </url>
+        </au>
+      </block>
+      <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecf/"
+          activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow">
+        <title>
+          <langstring lang="en-US">Archean</langstring>
+          <langstring lang="de-DE">Archaikum</langstring>
+        </title>
+        <description>
+          <langstring lang="en-US">The Archean Eon is a geologic eon before the Proterozoic Eon,
+            before 2.5 Ga (billion years), or 2,500 million years ago.
+          </langstring>
+          <langstring lang="de-DE">Das Archaikum Es erstreckt sich von ca. 4.000 bis ca. 2.500
+            Millionen Jahren vor heute.
+          </langstring>
+        </description>
+        <url>
+          http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecf/launch
+        </url>
+      </au>
+      <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ed0/"
+          activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+          moveOn="Passed"  masteryScore="0.5">
+        <title>
+          <langstring lang="en-US">Hadean</langstring>
+          <langstring lang="de-DE">Hadaikum</langstring>
+        </title>
+        <description>
+          <langstring lang="en-US">The Hadean began with the formation of the Earth about 4.6
+            billion years ago and ended, as defined by the ICS, 4 billion years ago.
+          </langstring>
+          <langstring lang="de-DE">Das Hadaikum oder Präarchaikum ist das erste Äon der
+            Erdgeschichte. Es beginnt mit der Entstehung der Protoerde vor etwa 4.600 Millionen
+            Jahren und endet geochronologisch definiert vor 4.000 Millionen Jahren.
+          </langstring>
+        </description>
+        <url>
+          http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ed0/launch
+        </url>
+      </au>
+    </block>
+  </block>
+  <au id="http://quiz-server.example.com/1Hu62hL" masteryScore="0.7"
+      launchMethod="OwnWindow" moveOn="Passed"
+      activityType="http://adlnet.gov/expapi/activities/assessment">
+    <title>
+      <langstring lang="en-US">Quiz</langstring>
+      <langstring lang="de-DE">Quiz</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">Check what you have learned about geology!</langstring>
+      <langstring lang="de-De">Überprüfe dein neues Wissen über Geologie!</langstring>
+    </description>
+    <url>http://quiz-server.example.com/1Hu62hL</url>
+    <launchParameters>
+      {'level':3,'count':25,'_callback':'http://courses.example.edu/quizes/'}
+    </launchParameters>
+    <entitlementKey>
+      w8GFdWktfOvzQUmFlI1YbUWB4yZX9jyEX3atFKmKW1eN6PTXJKh39wtUYBOvVx1eLt78b6joNZ1r0uj5x20zrSRUKu2
+    </entitlementKey>
+  </au>
+</courseStructure>

@@ -1,137 +1,155 @@
-cmi5 Current Working Draft
+
+----------
+
+<p>
+<p align=center><img src="https://cloud.githubusercontent.com/assets/1656316/9965238/bc9deb2c-5de9-11e5-9954-63aa03873f88.png" align=center></p>
+
+
+
+# The cmi5 Project #
+
 ---
 
-*If you have questions, suggestions, or concerns about this specification, please post an issue to [this GitHub repository](https://github.com/AICC/CMI-5_Spec_Current).*<br> or sign up for the weekly call here:  https://attendee.gotowebinar.com/register/9089690481445095682 (Updated May 30, 2015)
-*By using this repository, you are agreeing to the terms of the license agreement defined in license.txt.*<br>
-*Note that this is a working draft and is NOT intended for implementation.*<br>
+## What is cmi5 ? A set of "extra rules" for xAPI##
 
 
-# Workflow for Editing the cmi5 Specification
-----
+cmi5 is a "profile" for using the [xAPI specification](https://github.com/adlnet/xAPI-Spec) with traditional learning management (LMS) systems.  
 
-## Set Up
-If you are not currently working with GitHub and git, follow these set up steps
-first. GitHub provides excellent help at <https://help.github.com/articles/set-up-git>.
+Since the xAPI specification is highly generalized to support many different use cases, a set of "extra rules" (called a "profile") is needed to ensure interoperability for a given use case. The cmi5 profile ensures plug and play interoperability between learning content and LMS systems. 
 
-### Sign Up for a GitHub Account
-If you do not already have a GitHub account, [sign up](https://github.com/signup/free).
+The use case that the cmi5 profile is specifically designed for is one where the learner launches the learning content/activity from the LMS user interface.  
 
+cmi5 defines specific interoperability rules for the following areas:
 
-### Fork the cmi5 Repository
-Go to the cmi5 repository. Fork the repository to your own account using
-the "Fork" button on the top right of cmi5 repository page. This makes a
-copy of the cmi5 repository. This fork gives you the ability to edit your
-version of the document without impacting the master copy.
+- Content Launch Mechanism
+- Authentication
+- Session Management
+- Reporting
+- Course Structure
 
 
-### Install Git (use the cmd line) or Install Windows/Mac GitHub Client
-You need to install Git to work with a GitHub repository. If you are on a PC (Windows),
-you can download the GitHub client app. If you use a Mac, you can download the GitHub
-client app, but you will also have to download git to add a remote to the master repository.
-Otherwise, install git from the git site.
 
-__Git__
+## Goals
 
-This provides a command line client app for working with a git repository (like GitHub)
-Download and run [git install](http://git-scm.com/downloads).
+The mission of cmi5 is to provide a better alternative to current AICC/SCORM specifications with something considerably more flexible, robust, and adaptable to today's technologies. The specific goals of cmi5 are as follows:
 
-__GitHub Client__
+#### 1 - A simplified tracking data model
 
-GitHub Client provides a GUI interface to simplify working with a repository on GitHub.
-This does not currently support synchronizing with a master repository, so some commands
-will still need to be completed using the command line.
+SCORM and AICC data models were too complicated and had many optional data elements that were not used. The goal of simple data model is to only define the bare minimum data elements required that would work across most learning domains. (e.g. Score, status, and time).
 
-+ __Mac:__ <http://mac.github.com/>
-+ __Windows:__ <http://windows.github.com/>
+#### 2 - The ability to record and report/retrieve content-defined data
 
+Restricting data collection to a small set of required data elements was too limiting.  In most cases what was really needed was the just the ability to record the data from the content in the LMS and later retrieve it for analysis. The goal of allowing content defined data recording/retrieval allows content designers to add features and still be interoperable.
 
-### Clone Your GitHub Fork to Your Machine
-To make edits and work on the files in the repository, clone your repository to your local
-machine using Git. The url is provided on the home page of your repository
-(ex. ```https://github.com/<your username>/CMI-5_Spec_Current/```)
+Content defined data can either be text or digital data. 
 
-__Git__
-```git
-git clone https://github.com/<your username>/CMI-5_Spec_Current/
-```
+- Extensible Data Model (defined by the content text data)
+- Digital Data attachments 
 
-__GitHub Client__
+#### 3 - Support for content as a service (CaaS) model of delivery
+Allow content to be stored on other domains (independent of the LMS server domain)
 
-On the home screen of the client app, select your account under "GitHub" and choose the
-repository you want to clone. Selecting the repository from the list gives you an option
-to clone it.
+#### 4 - Device/OS/browser independence
 
-### Add cmi5 repository as upstream remote
-Add a remote repository to git to reference the master repository. This will make
-synchronizing with the master repository a bit easier.
+Allow for content to be independent of a browser in order to communicate or be launched.
 
-__Git__
+#### 5 - Share data between learning activities
 
-```git
-git remote add upstream https://github.com/AICC/CMI-5_Spec_Current
-```
-
-__GitHub Client__
-
-Currently, the GitHub clients don't have a way to synchronize with the master repository.
-In order to do this, open your repository on the GitHub client app home screen. On the
-repository screen, select <b>Tools > Open a Shell Here</b>. Alternatively, use the
-"Git Shell" shortcut if it was created during installation. **NOTE:** If you're using a
-Mac, there is no shell shortcut so navigate to:
-```shell
-/your/repo/path/CMI-5_Spec_Current
-```
-then follow the shell instructions.
-
-In the shell, enter:
-```git
-git remote add upstream https://github.com/AICC/CMI-5_Spec_Current
-```
+Allow data to be shared between learning activities for multiple learners enrolled in the same course.
 
 
-## Workflow
+## History
 
-### Sync Up with the Master cmi5 Repository
-Pull down changes from the master repository. This automatically does a fetch of the
-master repository and a merge into your local repository.
+The ***cmi5*** project was originally started in the AICC (Aviation Industry Computer-Based Training Committee) in 2010. ***cmi5*** was expected to replace both AICC and SCORM specifications with a more feature-rich and robust solution.  Both AICC and SCORM specifications had technical issues and constraints as well as significant overlap.
 
-__Git and GitHub Client__
-```git
-git pull upstream master
-```
+The AICC was nearing completion of SOAP-based communication mechanism for cmi5 in 2012 about the same time the Tin Can API research project (now called xAPI) was completed in the ADL. 
 
-### Make Changes Locally
-Edit the local copy of the file, save and commit. Rule of thumb: Use commits like save
-points. Commit to indicate logical groups of edits, and places where the edits could be
-safely rolled back.
+The AICC and ADL participants soon determined that there was significant overlap between the two specifications.  xAPI had broader application than ***cmi5***, so the ADL and AICC agreed to cooperate on an "xAPI profile" to meet the more specific use case needs of ***cmi5***. So the cmi5 project was "rebooted" in 2012 and the SOAP architecture was replaced with xAPI. The ***cmi5*** project is still guided by its original goals.
+  
+In 2014, the AICC  dissolved and formally transferred the ***cmi5*** project to the ADL.
 
-__Git__
-```git
-git commit -a -m '<commit message>'
-```
 
-__GitHub Client__
+## Versions
 
-The GitHub client will detect saved changes to the documents in your local repository and
-present a button to commit your edits at the top right of the repository screen.
+The versioning of cmi5 is as follows:
 
-### Push Changes to Your Repository (Origin)
-Pushing your changes to your remote GitHub repository stages the files so that you can
-then make requests to the master repository to merge in your changes.
+- Major versions change functionality or interoperability.
+- Major versions of cmi5 are named by "rocks" (granite, basalt, etc.). 
+- Minor versions correct errata (errors) only
+- Minor versions of cmi5 are serialized by "edition"  (1st, 2nd 3rd, etc)
 
-__Git__
-```git
-git push origin
-```
+For example "Sandstone, 1st edition".
 
-__GitHub Client__
+### Sandstone (released May 2015)
 
-The GitHub client has a "sync" button at the top of the repository screen. This will
-synchronize your local and remote (origin) repository.
+Sandstone is the first release of cmi5.  It is a "developer release" to collect feedback from learning technology developers.  It is not intended for actual implementation.  
 
-### Submit a Pull Request to the Master cmi5 Repository (Upstream)
-When you forked from the cmi5 repository, a link back to the master repository was
-created. To send your changes back to the the master repository, click the "Pull Request"
-button at the top of your repository page. This will direct you to a page that gives you
-the ability to submit a request to the master repository to merge in the changes you
-committed.
+- [Sandstone, 1st Edition](https://github.com/AICC/CMI-5_Spec_Current/tree/sandstone-release)
+
+### Quartz (currently in work)
+
+Quartz is currently in work and scheduled for release in June 2016.  The Quartz version will include developer feedback collected from Sandstone.  When completed, Quartz will be the first "production release" intended for implementation.
+
+- [Quartz, Current Draft](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md)
+
+
+## cmi5 Articles ##
+
+The following are articles that discuss cmi5 and explain its potential uses: 
+
+- [Experience API, cmi5, and Future SCORM](http://bit.ly/1Pjad2W)
+- [Time to Plugin to cmi5?](https://www.linkedin.com/pulse/time-plugin-cmi5-bill-mcdonald)
+- [cmi5: The next generation SCORM](http://risc-inc.com/next-generation-scorm-cmi5/)
+- [cmi5 Process Flow: An overview](http://risc-inc.com/blog/cmi5-overview-process-flow/)
+- [cmi5: xAPI for LMSs](http://www.slideshare.net/BillMcDonald3/cmi5xapicamp-50890282)
+
+(More will be added as they become available)
+
+## Connect with the cmi5 community!
+
+Please note that the cmi5 working group is a volunteer community effort and is open to all.  
+
+We very much want to encourage people to share their thoughts about cmi5 and participate.  Please consider connecting with us in one or more of the following ways:
+
+### cmi5 GitHub
+
+All are welcome to raise issues/comments on this GitHub repository.
+
+Also, [please see our wiki](https://github.com/AICC/CMI-5_Spec_Current/wiki) for a comprehensive set of meeting minutes.
+
+### cmi5 Email Address
+Please send questions for the working group to: [cmi5wg@adlnet.gov](mailto://cmi5wg@adlnet.gov)
+
+### Weekly GotoMeeting Conferences
+
+The cmi5 working group holds weekly Web Conferences that are open to all. The meeting are held every Friday at 10:30 am US Eastern Time. See link below to register:
+
+- [Register For cmi5 Working Group Conferences](https://attendee.gotowebinar.com/register/834085493171125249)
+
+### xAPI Spec Development Calls
+
+The xAPI group meets the first 3 Wednesdays of each month from 2:30 - 3:30 EST. All are welcome.
+
+- [Register For xAPI Working Group Meetings](https://attendee.gotowebinar.com/register/279276321478091778)
+
+### Subscribe to cmi5 Mailing list
+
+This list provides weekly meeting minutes and news about cmi5.
+
+- [Subscribe to cmi5 Mailing list ](http://eepurl.com/bjlA01) (Managed by Mail Chimp).  
+
+### The cmi5 LinkedIn Group
+
+The cmi5 LinkedIn group was established to encourage discussion about cmi5 and answer your questions.  Please join at link below:
+
+- [cmi5 LinkedIn Group](http://www.linkedin.com/grp/home?gid=3943740)
+
+### Follow cmi5 on Twitter
+
+Follow cmi5 on Twitter: [#cmi5](https://twitter.com/hashtag/cmi5), [@cmi5spec](https://twitter.com/cmi5spec)
+
+### Join the cmi5 Slack Team
+
+The cmi5 working group is currently testing Slack team communication. To join the slack group, please use the following link: [Add me to the cmi5 Slack Team](mailto:cmi5wg@adlnet.gov?subject=%5Bcmi5%20Slack%20Registration%5D&body=Please%20add%20me%20to%20the%20cmi5%20slack%20working%20group.)
+
+----------
