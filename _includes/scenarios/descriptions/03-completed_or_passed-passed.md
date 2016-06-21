@@ -1,0 +1,1 @@
+Session from an AU that has its Move On criteria set to `CompletedOrPassed` that has a Passed Statement recorded. LMS.LaunchData content shows `CompletedOrPassed` Move On criteria as does the Launched Statement context extensions. Note that the Satisfied Statement is issued immediately following the Passed Statement.

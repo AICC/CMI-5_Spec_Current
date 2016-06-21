@@ -1,0 +1,1 @@
+Session that includes the minimum data, and is associated with a `NotApplicable` Move On criteria which results in immediate satisfaction of the course upon registration creation. Includes Satisfied Statement, Launched Statement, Fetch URL response, LMS.LaunchData State content, Initialized Statement, and Terminated Statement.

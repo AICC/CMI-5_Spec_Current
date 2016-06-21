@@ -1,0 +1,66 @@
+{
+  "id": "8a2917c4-d61b-4203-b058-27e99a065845",
+  "actor": {
+    "objectType": "Agent",
+    "name": "Learner's Name",
+    "account": {
+      "homePage": "http://example.org/",
+      "name": "Learner"
+    }
+  },
+  "verb": {
+    "id": "http://adlnet.gov/expapi/verbs/passed",
+    "display": {
+      "und": "passed"
+    }
+  },
+  "object": {
+    "objectType": "Activity",
+    "id": "http://example.org/cmi5/au-lms-id/4756b42214cb0cb4825b3c9b5c15053d6a6cf7f5",
+    "definition": {
+      "name": {
+        "en-US": "Introduction to Geology"
+      },
+      "description": {
+        "en-US": "This course will introduce you into the basics of geology. This includes subjects such as\n        plate tectonics, geological materials and the history of the Earth."
+      }
+    }
+  },
+  "result": {
+    "success": true,
+    "duration": "PT5.97S"
+  },
+  "context": {
+    "registration": "f2a043b3-a19c-429d-b94a-98f60d3c9d46",
+    "contextActivities": {
+      "grouping": [
+        {
+          "objectType": "Activity",
+          "id": "http://course-repository.example.edu/identifiers/courses/02baafcf/aus/4c07",
+          "definition": {
+            "name": {
+              "en-US": "Introduction to Geology"
+            },
+            "description": {
+              "en-US": "This course will introduce you into the basics of geology. This includes subjects such as\n        plate tectonics, geological materials and the history of the Earth."
+            }
+          }
+        }
+      ],
+      "category": [
+        {
+          "objectType": "Activity",
+          "id": "https://w3id.org/xapi/cmi5/context/categories/cmi5"
+        },
+        {
+          "objectType": "Activity",
+          "id": "https://w3id.org/xapi/cmi5/context/categories/moveon"
+        }
+      ]
+    },
+    "extensions": {
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "2f7d9370-58d9-486c-9205-0b1196b35aa8"
+    }
+  },
+  "timestamp": "2016-06-09T19:55:24.731Z"
+}

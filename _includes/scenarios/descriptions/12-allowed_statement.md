@@ -1,0 +1,1 @@
+Session showing the use of "cmi5 allowed" Statements. Includes a single "cmi5 allowed" Statement using the "experienced" verb. Note the statement must happen between the Initialized and Terminated statements and uses the context template from the LMS.LaunchData.
