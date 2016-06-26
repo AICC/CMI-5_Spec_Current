@@ -108,10 +108,6 @@
 
 ------
 
-<a name="disclaimer"/>  
-## Disclaimer
-PLEASE NOTE: This is a developer release and is subject to change.
-
 <a name="revhistory"></a>
 ## Revision History
 
