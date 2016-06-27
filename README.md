@@ -86,11 +86,11 @@ Sandstone is the first release of cmi5.  It is a "developer release" to collect 
 
 - [Sandstone, 1st Edition](https://github.com/AICC/CMI-5_Spec_Current/tree/sandstone-release)
 
-### Quartz (currently in work)
+### Quartz (released June 2016)
 
-Quartz is currently in work and scheduled for release in June 2016.  The Quartz version will include developer feedback collected from Sandstone.  When completed, Quartz will be the first "production release" intended for implementation.
+The Quartz version includes developer feedback collected from Sandstone. Quartz is the first "production release" intended for implementation.
 
-- [Quartz, Current Draft](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md)
+- [Quartz, 1st Edition](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md)
 
 
 ## cmi5 Articles ##
