@@ -9,8 +9,6 @@
 
 ## Table of Contents
 
-[__Disclaimer__](#disclaimer)
-
 [__Revision History__](#revhistory)
 
 [__Contributors__](#contributors)
