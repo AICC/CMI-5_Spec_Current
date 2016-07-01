@@ -1,0 +1,1 @@
+Session from an AU that has its Move On criteria set to `CompletedOrPassed` that has a Failed Statement recorded followed by a Completed Statement. Note that the Satisfied Statement is issued immediately after the Completed Statement, regardless of the Failed Statement's existence.

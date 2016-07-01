@@ -1,0 +1,1 @@
+Session from an AU that has its Move On criteria set to `Passed` and includes a Mastery Score that has a Passed Statement with score recorded. LMS.LaunchData content shows `Passed` Move On criteria and `0.9` Mastery Score as does the Launched Statement context extensions.

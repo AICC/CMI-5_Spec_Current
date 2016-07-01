@@ -1,0 +1,8 @@
+kramdown:
+  input: GFM
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "index"

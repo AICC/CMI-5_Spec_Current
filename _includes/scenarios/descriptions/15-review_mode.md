@@ -1,0 +1,1 @@
+Session with a Launch Mode of `Review`. Likely a previous session has recorded completion and pass or waived. Note the Launch Mode value in the Launched Statement context extensions and the LMS.LaunchData.

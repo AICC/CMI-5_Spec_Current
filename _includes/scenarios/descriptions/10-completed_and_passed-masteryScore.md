@@ -1,0 +1,1 @@
+Same as the Completed and Passed Move On scenario but with a passing score recorded. Note Passed statement includes `result.score.scaled` of `0.88` which is greater than the Mastery Score of `0.86` as defined in the LMS.LaunchData, Launched Statement, and Passed Statement.
