@@ -1,128 +1,146 @@
 ---
 ---
 
-# JSON Samples
+# The cmi5 Project
 
 ------
 
-## Scenarios
+## What is cmi5?##
 
-These samples represent various scenarios possible when running content using the cmi5 runtime definitions. Most of these scenarios are based on the "Simple" Course Structure Example from Section 15.1 of the specification.
+### A set of "extra rules" for xAPI###
 
-Some common attributes about all samples:
+cmi5 is a "profile" for using the [xAPI specification](https://github.com/adlnet/xAPI-Spec) with traditional learning management (LMS) systems.
 
-* They use the same "actor" in all statements, normally the `account.name` property would be unique to the learner and the `account.homePage` unique to the LMS
-* They represent the statement as constructed before sending to the LRS, therefore they do not include properties set by the LRS such as "stored", "authority" and "version"
-* A single registration is used in each separate scenario and files are numbered in request order
-* LMS Launch Data for a session is included in the samples, and for scenarios with multiple sessions is included for each session
-* Launch Mode is `Normal` unless specified
-* Fetch URL request response is only shown in the simple session, but is necessary for every session
-* Duration property values are included where required but are all very short in nature because of how the sessions were generated, in practice durations are likely to be substantially longer
-* Statements represent the minimum requirements per the cmi5 specification, in practice additional properties will be common, particularly in the context
+Since the xAPI specification is highly generalized to support many different use cases, a set of "extra rules" (called a "profile") is needed to ensure interoperability for a given use case. The cmi5 profile ensures plug and play interoperability between learning content and LMS systems.
 
-Discrepancies with the above are pointed out where necessary.
+The use case that the cmi5 profile is specifically designed for is one where the learner launches the learning content/activity from the LMS user interface.
 
-### Simple Session
+cmi5 defines specific interoperability rules for the following areas:
 
-[View](scenarios/01-simple_session)
+- Content Launch Mechanism
+- Authentication
+- Session Management
+- Reporting
+- Course Structure
 
-{% include scenarios/descriptions/01-simple_session.md %}
+## Goals
 
-### Abandoned Session
+The mission of cmi5 is to provide a better alternative to current AICC/SCORM specifications with something considerably more flexible, robust, and adaptable to today's technologies. The specific goals of cmi5 are as follows:
 
-[View](scenarios/02-simple_abandoned_session)
+#### 1 - A simplified tracking data model
 
-{% include scenarios/descriptions/02-simple_abandoned_session.md %}
+SCORM and AICC data models were too complicated and had many optional data elements that were not used. The goal of simple data model is to only define the bare minimum data elements required that would work across most learning domains. (e.g. Score, status, and time).
 
-### Completed or Passed Move On - Passed
+#### 2 - The ability to record and report/retrieve content-defined data
 
-[View](scenarios/03-completed_or_passed-passed)
+Restricting data collection to a small set of required data elements was too limiting.  In most cases what was really needed was the just the ability to record the data from the content in the LMS and later retrieve it for analysis. The goal of allowing content defined data recording/retrieval allows content designers to add features and still be interoperable.
 
-{% include scenarios/descriptions/03-completed_or_passed-passed.md %}
+Content defined data can either be text or digital data.
 
-### Completed or Passed Move On - Completed
+- Extensible Data Model (defined by the content text data)
+- Digital Data attachments
 
-[View](scenarios/04-completed_or_passed-completed)
+#### 3 - Support for content as a service (CaaS) model of delivery
+Allow content to be stored on other domains (independent of the LMS server domain)
 
-{% include scenarios/descriptions/04-completed_or_passed-completed.md %}
+#### 4 - Device/OS/browser independence
 
-### Completed or Passed Move On - Failed But Completed
+Allow for content to be independent of a browser in order to communicate or be launched.
 
-[View](scenarios/05-completed_or_passed-failed_completed)
+#### 5 - Share data between learning activities
 
-{% include scenarios/descriptions/05-completed_or_passed-failed_completed.md %}
+Allow data to be shared between learning activities for multiple learners enrolled in the same course.
 
-### Completed Move On - Completed
+## History
 
-[View](scenarios/06-completed-completed)
+The ***cmi5*** project was originally started in the AICC (Aviation Industry Computer-Based Training Committee) in 2010. ***cmi5*** was expected to replace both AICC and SCORM specifications with a more feature-rich and robust solution.  Both AICC and SCORM specifications had technical issues and constraints as well as significant overlap.
 
-{% include scenarios/descriptions/06-completed-completed.md %}
+The AICC was nearing completion of SOAP-based communication mechanism for cmi5 in 2012 about the same time the Tin Can API research project (now called xAPI) was completed in the ADL.
 
-### Passed Move On - Passed
+The AICC and ADL participants soon determined that there was significant overlap between the two specifications.  xAPI had broader application than ***cmi5***, so the ADL and AICC agreed to cooperate on an "xAPI profile" to meet the more specific use case needs of ***cmi5***. So the cmi5 project was "rebooted" in 2012 and the SOAP architecture was replaced with xAPI. The ***cmi5*** project is still guided by its original goals.
 
-[View](scenarios/07-passed-passed)
+In 2014, the AICC  dissolved and formally transferred the ***cmi5*** project to the ADL.
 
-{% include scenarios/descriptions/07-passed-passed.md %}
+## Versions
 
-### Passed Move On with Mastery Score - Passed
+The versioning of cmi5 is as follows:
 
-[View](scenarios/08-passed-masteryScore-passed)
+- Major versions change functionality or interoperability.
+- Major versions of cmi5 are named by "rocks" (granite, basalt, etc.).
+- Minor versions correct errata (errors) only
+- Minor versions of cmi5 are serialized by "edition"  (1st, 2nd 3rd, etc)
 
-{% include scenarios/descriptions/08-passed-masteryScore-passed.md %}
+For example "Sandstone, 1st edition".
 
-### Completed and Passed Move On
+### Sandstone (released May 2015)
 
-[View](scenarios/09-completed_and_passed)
+Sandstone is the first release of cmi5.  It is a "developer release" to collect feedback from learning technology developers.  It is not intended for actual implementation.
 
-{% include scenarios/descriptions/09-completed_and_passed.md %}
+- [Sandstone, 1st Edition](https://github.com/AICC/CMI-5_Spec_Current/tree/sandstone-release)
 
-### Completed and Passed Move On with Mastery Score
+### Quartz (released June 2016)
 
-[View](scenarios/10-completed_and_passed-masteryScore)
+The Quartz version includes developer feedback collected from Sandstone. Quartz is the first "production release" intended for implementation.
 
-{% include scenarios/descriptions/10-completed_and_passed-masteryScore.md %}
+- [Quartz, 1st Edition](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md)
 
-### Completed and Passed Move On with Mastery Score - Initial Failure
+## cmi5 Articles ##
 
-[View](scenarios/11-completed_and_passed-masteryScore-failed_first)
+The following are articles that discuss cmi5 and explain its potential uses:
 
-{% include scenarios/descriptions/11-completed_and_passed-masteryScore-failed_first.md %}
+- [Experience API, cmi5, and Future SCORM](http://bit.ly/1Pjad2W)
+- [Time to Plugin to cmi5?](https://www.linkedin.com/pulse/time-plugin-cmi5-bill-mcdonald)
+- [cmi5: The next generation SCORM](http://risc-inc.com/next-generation-scorm-cmi5/)
+- [cmi5 Process Flow: An overview](http://risc-inc.com/blog/cmi5-overview-process-flow/)
+- [cmi5: xAPI for LMSs](http://www.slideshare.net/BillMcDonald3/cmi5xapicamp-50890282)
 
-### "cmi5 allowed" Statements
+(More will be added as they become available)
 
-[View](scenarios/12-allowed_statement)
+## Connect with the cmi5 community!
 
-{% include scenarios/descriptions/12-allowed_statement.md %}
+Please note that the cmi5 working group is a volunteer community effort and is open to all.
 
-### Usage of Progress Extension
+We very much want to encourage people to share their thoughts about cmi5 and participate.  Please consider connecting with us in one or more of the following ways:
 
-[View](scenarios/13-progress_usage)
+### cmi5 GitHub
 
-{% include scenarios/descriptions/13-progress_usage.md %}
+All are welcome to raise issues/comments on this GitHub repository.
 
-### Completed and Passed - Multiple Session to Satisfy
+Also, [please see our wiki](https://github.com/AICC/CMI-5_Spec_Current/wiki) for a comprehensive set of meeting minutes.
 
-[View](scenarios/14-completed_and_passed-multiple_sessions)
+### cmi5 Email Address
+Please send questions for the working group to: [cmi5wg@adlnet.gov](mailto://cmi5wg@adlnet.gov)
 
-{% include scenarios/descriptions/14-completed_and_passed-multiple_sessions.md %}
+### Weekly GotoMeeting Conferences
 
-### Review Launch Mode
+The cmi5 working group holds weekly Web Conferences that are open to all. The meeting are held every Friday at 10:30 am US Eastern Time. See link below to register:
 
-[View](scenarios/15-review_mode)
+- [Register For cmi5 Working Group Conferences](https://attendee.gotowebinar.com/register/834085493171125249)
 
-{% include scenarios/descriptions/15-review_mode.md %}
+### xAPI Spec Development Calls
 
--------
+The xAPI group meets the first 3 Wednesdays of each month from 2:30 - 3:30 EST. All are welcome.
 
-## License Agreement
+- [Register For xAPI Working Group Meetings](https://attendee.gotowebinar.com/register/279276321478091778)
 
-Copyright 2012-2016 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense
+### Subscribe to cmi5 Mailing list
 
-Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License.
-You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+This list provides weekly meeting minutes and news about cmi5.
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
-on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
-the specific language governing permissions and limitations under the License.
+- [Subscribe to cmi5 Mailing list ](http://eepurl.com/bjlA01) (Managed by Mail Chimp).
 
--------
+### The cmi5 LinkedIn Group
+
+The cmi5 LinkedIn group was established to encourage discussion about cmi5 and answer your questions.  Please join at link below:
+
+- [cmi5 LinkedIn Group](http://www.linkedin.com/grp/home?gid=3943740)
+
+### Follow cmi5 on Twitter
+
+Follow cmi5 on Twitter: [#cmi5](https://twitter.com/hashtag/cmi5), [@cmi5spec](https://twitter.com/cmi5spec)
+
+### Join the cmi5 Slack Team
+
+The cmi5 working group is currently testing Slack team communication. To join the slack group, please use the following link: [Add me to the cmi5 Slack Team](mailto:cmi5wg@adlnet.gov?subject=%5Bcmi5%20Slack%20Registration%5D&body=Please%20add%20me%20to%20the%20cmi5%20slack%20working%20group.)
+
+----------
