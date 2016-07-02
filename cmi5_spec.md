@@ -690,9 +690,13 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 <tr><th align="left">Description</th><td>The verb "Satisfied" indicates that the LMS has determined that the Learner has met the moveOn criteria of all AU's in a block or has met the moveOn criteria for all AU's in the course.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
 <th align="left" nowrap>LMS Obligations</th><td>
-The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block id (Section 13.1.2) as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.<br>
+The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the LMS generated block id as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.<br>
 <br>
-The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the course id (Section 13.1.1) as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.<br>
+The LMS MUST generate a unique block id for the Satisfied Statement. The generated Block id MUST NOT match the publisher’s ID from the course structure.<br>
+<br>
+The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the LMS generated course id as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.<br>
+<br>
+The LMS MUST generate a unique course id for the Satisfied Statement. The generated course id MUST NOT match the publisher’s ID from the course structure.<br>
 <br>
 For all "Satisfied" statements triggered as a result of an AU launch session, the LMS MUST use the session id from the AU launch in the statements.<br>
 <br>
@@ -846,7 +850,7 @@ cmi5 defined statements with a Result object (Section 9.5) that include either "
 
 <a name="context_activities_grouping_publisherid"></a>
 ####9.6.2.3 Publisher ID Grouping Activity
-Used to identify statements from the AU using the publisher's id from the course structure.
+Used to identify statements about the AU using the publisher's id from the course structure.
 
 The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's id attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. The LMS MUST also include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
 
@@ -919,7 +923,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/publisherid</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>Used to identify the AU using the publisher's id from the course structure. (See Section 13.1.4 AU Metadata – id).</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>Used to identify the AU, Block or Course using the publisher's id from the course structure. (See Section 13.1 Course Structure Data Model ).</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST record the publisher ID in the State API (See Section 10) prior to launching an AU. The LMS MUST also provide the publisher ID in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the publisher ID provided by the LMS in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>Required</td></tr>
