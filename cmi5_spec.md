@@ -778,7 +778,7 @@ The AU MUST include the "duration" property in "Failed" statements. The AU SHOUL
 <a name="lms_statements_that_include_duration"></a>
 ####9.5.4.2 LMS statements that include duration
 ##### Abandoned Statement
-The duration property MUST be included in "Abandoned" statements. The &duration property MUST, at a minimum, be set as the total session time, calculated as the time between the "Launched" statement and the last statement (of any kind) issued by the AU. The LMS SHOULD also use other (LMS specific) methods (if available) to determine if the total session time was longer.
+The duration property MUST be included in "Abandoned" statements. The duration property MUST, at a minimum, be set as the total session time, calculated as the time between the "Launched" statement and the last statement (of any kind) issued by the AU. The LMS SHOULD also use other (LMS specific) methods (if available) to determine if the total session time was longer.
 
 <a name="result_extensions"></a>
 ###9.5.5 Extensions
