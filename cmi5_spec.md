@@ -231,8 +231,6 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Learner__: The end user viewing/using the learning content (AUs).
 
-* __Learning Activity Provider (AP)__:  Learning Activity Provider (AP) as defined in the xAPI specification.
-
 * __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners' progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS MUST have an LRS as part of its implementation.
 
 * __Learning Records Store (LRS)__: Defined in the xAPI specification. In this specification, the LMS MUST implement an LRS with the additional requirements specified in this document.
