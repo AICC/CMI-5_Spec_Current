@@ -109,6 +109,13 @@
 <a name="revhistory"></a>
 ## Revision History
 
+Versioning in the cmi5 specification in managed in the following manner:
+ * _Major Version_ – Stones (Sandstone, Quartz, etc.) – Major changes in functionality
+ * _Minor Version_ – Editions (1st edition, 2nd edition, etc.) – Minor changes in functionality.
+ * _Errata_ – Minor corrections that do not affect functionality are not versioned.  (See GitHub repository for specific revision history)
+
+The versions of this specifcation are as follows:
+
 __Quartz - 1st Edition (June 1, 2016)__
 
 __Sandstone - 1st Edition (May 15, 2015):__
