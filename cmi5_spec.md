@@ -228,7 +228,7 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Internationalized Resource Identifier (IRI)__: A unique identifier according to RFC 3987. The IRI may be an IRL. IRLs SHOULD be defined within a domain controlled by the person creating the IRL.
 
-* __Internationalized Resource Locator (IRL)__: According to the xAPI specification, an IRL is an IRI that, when translated into a URI (according to the IRI to URI rules), is a URL. Some communities of practice simply use "URL" even if they use IRIs, which is not as technically correct within the xAPI.
+* __Internationalized Resource Locator (IRL)__: According to the xAPI specification, an IRL is an IRI that, when translated into a URI (according to the IRI to URI rules), is a URL.
 
 * __Learner__: The end user viewing/using the learning content (AUs).
 
