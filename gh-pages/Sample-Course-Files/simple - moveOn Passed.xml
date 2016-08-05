@@ -11,7 +11,7 @@
       </langstring>
     </description>
   </course>
-  <au id="http://course-repository.example.edu/identifiers/courses/02baafcf/aus/4c07" masteryScore="0.8" moveOn="Passed" >
+  <au id="http://course-repository.example.edu/identifiers/courses/02baafcf/aus/4c07" masteryScore="0.8" moveOn="CompletedOrPassed" >
     <title>
       <langstring lang="en-US">Introduction to Geology</langstring>
     </title>
