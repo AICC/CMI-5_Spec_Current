@@ -16,7 +16,7 @@
   },
   "object": {
     "objectType": "Activity",
-    "id": "http://course-repository.example.edu/identifiers/courses/02baafcf",
+    "id": "https://examplelms.com/courses/2909s3",
     "definition": {
       "name": {
         "en-US": "Introduction to Geology"
@@ -30,6 +30,12 @@
   "context": {
     "registration": "839b7078-b3f2-499f-8628-d1a83039a375",
     "contextActivities": {
+      "grouping": [
+        {
+          "objectType": "Activity",
+          "id": "http://course-repository.example.edu/identifiers/courses/02baafcf"
+        }
+      ],
       "category": [
         {
           "objectType": "Activity",
