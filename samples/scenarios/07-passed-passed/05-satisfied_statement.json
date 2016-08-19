@@ -16,7 +16,7 @@
   },
   "object": {
     "objectType": "Activity",
-    "id": "http://course-repository.example.edu/identifiers/courses/02baafcf",
+    "id": "http://example.org/cmi5/lms-id/57c4917cbe43d6c230b85640e8abacdcb90e3db2/5d1be4c3-f2e6-4dbf-ad61-0c9774ffec2b",
     "definition": {
       "name": {
         "en-US": "Introduction to Geology"
@@ -30,6 +30,21 @@
   "context": {
     "registration": "71a448b1-a27c-41e6-aee2-4de9e0a6d0d6",
     "contextActivities": {
+      "grouping": [
+        {
+          "objectType": "Activity",
+          "id": "http://course-repository.example.edu/identifiers/courses/02baafcf",
+          "definition": {
+            "name": {
+              "en-US": "Introduction to Geology"
+            },
+            "description": {
+              "en-US": "This course will introduce you into the basics of geology. This includes subjects such as\n        plate tectonics, geological materials and the history of the Earth."
+            },
+            "type": "https://w3id.org/xapi/cmi5/activitytype/course"
+          }
+        }
+      ],
       "category": [
         {
           "objectType": "Activity",
