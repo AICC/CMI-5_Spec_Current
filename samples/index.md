@@ -22,17 +22,11 @@ Some common attributes about all samples:
 
 Discrepancies with the above are pointed out where necessary.
 
-### Simple Session
+### Typical No Credit Session
 
-[View](scenarios/01-simple_session)
+[View](scenarios/01-typical-non_credit_session)
 
-{% include scenarios/descriptions/01-simple_session.md %}
-
-### Abandoned Session
-
-[View](scenarios/02-simple_abandoned_session)
-
-{% include scenarios/descriptions/02-simple_abandoned_session.md %}
+{% include scenarios/descriptions/01-typical-non_credit_session.md %}
 
 ### Completed or Passed Move On - Passed
 
@@ -111,6 +105,18 @@ Discrepancies with the above are pointed out where necessary.
 [View](scenarios/15-review_mode)
 
 {% include scenarios/descriptions/15-review_mode.md %}
+
+### Non-Applicable Move On - No Launch Session
+
+[View](scenarios/16-not_applicable-no_launch)
+
+{% include scenarios/descriptions/16-not_applicable-no_launch.md %}
+
+### Abandoned Session
+
+[View](scenarios/17-abandoned_session)
+
+{% include scenarios/descriptions/17-abandoned_session.md %}
 
 -------
 

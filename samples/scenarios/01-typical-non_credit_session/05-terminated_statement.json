@@ -1,5 +1,5 @@
 {
-  "id": "a6a9f4a4-6a36-466c-91a0-6daea4e0a5a4",
+  "id": "8d006b3f-ae37-437c-af44-3963359e244f",
   "actor": {
     "objectType": "Agent",
     "name": "Learner's Name",
@@ -9,39 +9,40 @@
     }
   },
   "verb": {
-    "id": "https://w3id.org/xapi/adl/verbs/satisfied",
+    "id": "http://adlnet.gov/expapi/verbs/terminated",
     "display": {
-      "en-US": "satisfied"
+      "en": "terminated"
     }
   },
   "object": {
     "objectType": "Activity",
-    "id": "http://example.org/cmi5/lms-id/57c4917cbe43d6c230b85640e8abacdcb90e3db2/5d1be4c3-f2e6-4dbf-ad61-0c9774ffec2b",
+    "id": "http://example.org/cmi5/lms-id/4756b42214cb0cb4825b3c9b5c15053d6a6cf7f5/81d641b3-a558-4498-b98a-d33e817179ae",
     "definition": {
       "name": {
         "en-US": "Introduction to Geology"
       },
       "description": {
         "en-US": "This course will introduce you into the basics of geology. This includes subjects such as\n        plate tectonics, geological materials and the history of the Earth."
-      },
-      "type": "https://w3id.org/xapi/cmi5/activitytype/course"
+      }
     }
   },
+  "result": {
+    "duration": "PT14.93S"
+  },
   "context": {
-    "registration": "4eb0e063-669b-479a-86b3-f9be9ac88a1d",
+    "registration": "8c59cfbb-223b-4c60-b27c-6b04540d9740",
     "contextActivities": {
       "grouping": [
         {
           "objectType": "Activity",
-          "id": "http://course-repository.example.edu/identifiers/courses/02baafcf",
+          "id": "http://course-repository.example.edu/identifiers/courses/02baafcf/aus/4c07",
           "definition": {
             "name": {
               "en-US": "Introduction to Geology"
             },
             "description": {
               "en-US": "This course will introduce you into the basics of geology. This includes subjects such as\n        plate tectonics, geological materials and the history of the Earth."
-            },
-            "type": "https://w3id.org/xapi/cmi5/activitytype/course"
+            }
           }
         }
       ],
@@ -53,8 +54,8 @@
       ]
     },
     "extensions": {
-      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "c7b6f0a9-482c-4c03-acc1-548289126963"
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "32e96d95-8e9c-4162-b3ac-66df22d171c5"
     }
   },
-  "timestamp": "2016-06-09T15:34:37.559Z"
+  "timestamp": "2016-08-19T12:22:02.071Z"
 }
