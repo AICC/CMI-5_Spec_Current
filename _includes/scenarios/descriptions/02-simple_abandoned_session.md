@@ -1,1 +1,0 @@
-Session that is abandoned, essentially a session without a Terminated Statement. Includes Satisfied Statement (from `NotApplicable` Move On), Launched Statement, LMS.LaunchData State content, Initialized Statement, and Abandoned Statement.

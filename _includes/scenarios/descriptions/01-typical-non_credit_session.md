@@ -1,0 +1,1 @@
+Typical session that does not result in the awarding of credit based on the MoveOn criteria because requisite statements are not sent. Shows the minimum, common session which includes Launched Statement, Fetch URL Response, LMS.LaunchData State content, Initialized Statement, and Terminated Statement.

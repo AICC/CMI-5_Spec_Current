@@ -17,11 +17,11 @@
       ]
     },
     "extensions": {
-      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "3798c990-c602-4334-9c04-7f6196e5f869"
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "32e96d95-8e9c-4162-b3ac-66df22d171c5"
     }
   },
   "launchMode": "Normal",
-  "returnUrl": "http://10.211.55.3/ScormEngineInterface/defaultui/cmi5-deliver.aspx?configuration=&registration=ApiRegistrationId%7css1-2!InstanceId%7c0",
+  "returnUrl": "http://10.211.55.3/ScormEngineInterface/defaultui/cmi5-deliver.aspx?configuration=&registration=ApiRegistrationId%7css1!InstanceId%7c0&lh=13",
   "launchMethod": "AnyWindow",
-  "moveOn": "NotApplicable"
+  "moveOn": "Completed"
 }

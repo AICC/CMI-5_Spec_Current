@@ -1,0 +1,1 @@
+Session that includes the absolute minimum data, and is associated with a `NotApplicable` Move On criteria which results in immediate satisfaction of the course upon registration creation. Includes Satisfied Statement.
