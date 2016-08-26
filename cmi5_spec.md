@@ -927,17 +927,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 <a name="context_extensions_publisherid"></a>
 ####9.6.3.5 publisherId
 
-<table>
-  <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/publisherid</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>Used to identify the AU, Block or Course using the publisher's id from the course structure. (See Section 13.1 Course Structure Data Model ).</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST record the publisher ID in the State API (See Section 10) prior to launching an AU. The LMS MUST also provide the publisher ID in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the publisher ID provided by the LMS in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.</td></tr>
-  <tr><th align="right" nowrap>AU Obligation:</th><td>Required</td></tr>
-  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
-  <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
-  <tr><th align="right" nowrap>Value space:</th><td>IRI</td></tr>
-  <tr><th align="right" nowrap>Sample value:</th><td>http://example.com/content/presentation/xyz123/index.html</td></tr>
-</table>
+This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping Activity.
 
 <a name="context_extensions_moveOn"></a>
 ####9.6.3.6 moveOn
