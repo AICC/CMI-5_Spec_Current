@@ -115,13 +115,13 @@ Please send questions for the working group to: [cmi5wg@adlnet.gov](mailto://cmi
 
 The cmi5 working group holds weekly Web Conferences that are open to all. The meeting are held every Friday at 10:30 am US Eastern Time. See link below to register:
 
-- [Register For cmi5 Working Group Conferences](https://attendee.gotowebinar.com/register/834085493171125249)
+- [Register For cmi5 Working Group Conferences](https://attendee.gotowebinar.com/register/9046440103353328899)
 
 ### xAPI Spec Development Calls
 
 The xAPI group meets the first 3 Wednesdays of each month from 2:30 - 3:30 EST. All are welcome.
 
-- [Register For xAPI Working Group Meetings](https://attendee.gotowebinar.com/register/9046440103353328899)
+- [Register For xAPI Working Group Meetings](https://attendee.gotowebinar.com/register/279276321478091778)
 
 ### Subscribe to cmi5 Mailing list
 
