@@ -18,4 +18,11 @@ The same Objective can be referenced by multiple AU or Blocks. There are 2 ways 
 
 It is recommended that LMS developers document how they do this and allow for an extension (in the course structure) to indicate what method should be used.
 
+### Best Practice #2 – LMS should always implement the "returnURL"
+LMS should always implement the "returnURL"
+
+LMS should not spawn a new window to launch AU (i.e. “popup”). Depending on the settings it could take the following actions to launch an AU:
+* **OwnWindow** – Redirect same window to AU location if Own Window)
+* **AnyWindow** – Either Redirect or use iFrame, or “LightBox”, or etc.
+
 ------
