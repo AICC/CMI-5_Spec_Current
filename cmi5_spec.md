@@ -848,7 +848,7 @@ The purpose of this property is to facilitate searches of the LRS by the LMS or 
 
 <a name="context_activities_category_cmi5"></a>
 ####9.6.2.1 cmi5 Category Activity
-An Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/cmi5" in the "category" context activities list to be used in cmi5 defined statements as described in section 7.1.4.
+An Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/cmi5" in the "category" context activities list to be used in cmi5 defined statements as described in section 7.1.3.
 
 <a name="context_activities_category_moveon"></a>
 ####9.6.2.2 moveOn Category Activity
