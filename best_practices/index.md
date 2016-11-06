@@ -28,4 +28,9 @@ LMS should not spawn a new window to launch AU (i.e. “popup”). Depending on 
 * **OwnWindow** – Redirect same window to AU location
 * **AnyWindow** – Either redirect same window or use iFrame, “LightBox”, etc.
 
+### Best Practice #{% increment bpCount %} – Fetch URLs
+
+* The Fetch URL should be unique for each session.
+* Do not reuse auth tokens.
+
 ------
