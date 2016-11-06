@@ -41,4 +41,8 @@ If the LMS issues a Mastery Score, the AU should respond in the following ways:
 * If the AU does not have scoring or the learner does not meet the Mastery Score then the AU must not issue a Passed Statement (per the specification).
 * The AU can also refuse to execute because the Mastery Score issued is inconsistent with the learning design of the AU. In this situation, the AU should inform the learner why it cannot execute.
 
+### Best Practice #{% increment bpCount %} – LMS Mastery Score
+
+LMS should use caution when adding Mastery Scores to AU course structure entries if they are not present in the original course structure. (As the AU may not be designed to handle scores). It is recommended that such changes be tested prior to enrolling learners.
+
 ------
