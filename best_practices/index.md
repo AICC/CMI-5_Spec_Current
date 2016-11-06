@@ -25,7 +25,7 @@ LMS should always implement the "returnURL"
 
 LMS should not spawn a new window to launch AU (i.e. “popup”). Depending on the settings it could take the following actions to launch an AU:
 
-* **OwnWindow** – Redirect same window to AU location if Own Window)
-* **AnyWindow** – Either Redirect or use iFrame, or “LightBox”, or etc.
+* **OwnWindow** – Redirect same window to AU location
+* **AnyWindow** – Either redirect same window or use iFrame, “LightBox”, etc.
 
 ------
