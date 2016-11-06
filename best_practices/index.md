@@ -53,4 +53,16 @@ When creating a course structure, always specify a moveOn criteria for each AU. 
 * If at least one AU has a moveOn criteria specified (other than “NotApplicable”) then the course would be satisfied upon satisfaction of those AU’s.
 * It is considered to be a better practice to explicitly specify the moveOn for each AU in a course structure to ensure there is no confusion over the satisfaction requirements of a course.
 
+### Best Practice #{% increment bpCount %} – Launching apps on mobile devices
+
+One of the following options should be used to launch AU's that are apps on mobile devices:
+
+_Option 1_: Use an app protocol in the launch URL.
+
+* AU is an app.
+* AU has url with a protocol LMS launches App using URL with app protocol.
+* An app redirecting to browser is not useful. If using app protocol to launch, don’t use "returnURL".
+
+_Option 2_: Use and HTML wrapper to launch the app AU is an HTML page (wrapper) that directs from the mobile browser to the app.
+
 ------
