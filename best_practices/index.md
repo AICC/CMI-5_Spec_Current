@@ -45,4 +45,12 @@ If the LMS issues a Mastery Score, the AU should respond in the following ways:
 
 LMS should use caution when adding Mastery Scores to AU course structure entries if they are not present in the original course structure. (As the AU may not be designed to handle scores). It is recommended that such changes be tested prior to enrolling learners.
 
+### Best Practice #{% increment bpCount %} – Always specify a moveOn criterion in the course structure for each AU
+
+When creating a course structure, always specify a moveOn criteria for each AU. Failing to do so will result in a default of “Not Applicable”. This can have the following unintended consequences:
+
+* When failing to specify moveOn criteria or specifying “NotApplicable” as the moveOn criteria for all AU’s in a course, the course will automatically being marked satisfied immediately upon registration of the learner (before the learner launches a single AU).
+* If at least one AU has a moveOn criteria specified (other than “NotApplicable”) then the course would be satisfied upon satisfaction of those AU’s.
+* It is considered to be a better practice to explicitly specify the moveOn for each AU in a course structure to ensure there is no confusion over the satisfaction requirements of a course.
+
 ------
