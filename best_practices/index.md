@@ -33,4 +33,12 @@ LMS should not spawn a new window to launch AU (i.e. “popup”). Depending on 
 * The Fetch URL should be unique for each session.
 * Do not reuse auth tokens.
 
+### Best Practice #{% increment bpCount %} – AU Mastery Score
+
+If the LMS issues a Mastery Score, the AU should respond in the following ways:
+
+* If the AU has no notion of scoring, it should not issue Passed or Failed statements.
+* If the AU does not have scoring or the learner does not meet the Mastery Score then the AU must not issue a Passed Statement (per the specification).
+* The AU can also refuse to execute because the Mastery Score issued is inconsistent with the learning design of the AU. In this situation, the AU should inform the learner why it cannot execute.
+
 ------
