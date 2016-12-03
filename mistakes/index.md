@@ -2,7 +2,7 @@
 ---
 
 # Common cmi5 Mistakes
-{% capture tmp %}{% increment bpCount %}{% endcapture %}
+{% capture tmp %}{% increment MistakeCount %}{% endcapture %}
 
 ------
 
