@@ -65,4 +65,8 @@ _Option 1_: Use an app protocol in the launch URL.
 
 _Option 2_: Use and HTML wrapper to launch the app AU is an HTML page (wrapper) that directs from the mobile browser to the app.
 
+### Best Practice #{% increment bpCount %} – In the absence of returnURL, the AU should close browser window to exit.
+
+If the AU is not a mobile app and the LMS does not provide a “returnURL”, the best practice to exit the AU is to close the Window (window.close()) or direct the learner to manually close the browser window.
+
 ------
