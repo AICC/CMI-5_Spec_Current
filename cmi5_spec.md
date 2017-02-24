@@ -2,7 +2,7 @@
 <p>
 <p align=center><img src="https://cloud.githubusercontent.com/assets/1656316/9965238/bc9deb2c-5de9-11e5-9954-63aa03873f88.png" align=center></p>
 
-#cmi5 Specification Profile for xAPI
+# cmi5 Specification Profile for xAPI
 
 
 ---
@@ -128,7 +128,7 @@ __Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 
 
 <a name="contributors"></a> 
-##Contributors
+# Contributors
 
 | Name:                | Organization:                          |
 |----------------------|----------------------------------------|
@@ -166,14 +166,14 @@ __Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 | Pankaj Agrawal       | Next Software Solutions                |
 
 <a name="overview"></a>  
-#1.0 Overview
+# 1.0 Overview
 
 
 This specification describes interoperable runtime communication between Learning Management Systems
 (LMS) and Assignable Units (AU).
 
 <a name="scope"></a>  
-##1.1 Scope
+## 1.1 Scope
 
 The scope of this specification is limited to the following:
 
@@ -192,7 +192,7 @@ Uses of activities not explicitly defined above are outside of the scope of this
 
 
 <a name="references"></a> 
-#2.0  References
+# 2.0  References
 
 The following referenced documents are indispensable for the application of this specification. 
 
@@ -211,7 +211,7 @@ http://json.org/
 * ISO/IEC 21320-1:2015(en) Information technology — Document Container File — Part 1: Core (Commonly called ZIP file format):<br>https://www.iso.org/obp/ui/#iso:std:iso-iec:21320:-1:ed-1:v1:en
 
 <a name="definitions"></a>   
-#3.0 Definitions  
+# 3.0 Definitions  
 
 
 For purposes of this specification, the following terms and definitions apply: 
@@ -237,7 +237,7 @@ For purposes of this specification, the following terms and definitions apply:
 * __Learning Records Store (LRS)__: As defined in the xAPI specification.
 
 <a name="acronyms"></a> 
-##3.1 Abbreviations and Acronyms
+## 3.1 Abbreviations and Acronyms
 <br>
 __ADL__: Advanced Distributed Learning<br>
 __AICC__: Aviation Industry Computer-Based Training Committee<br>
@@ -259,7 +259,7 @@ __XSD__: XML Schema Definition<br>
 
 
 <a name="conformance"></a>  
-#4.0  Conformance
+# 4.0  Conformance
 
 Conformance to this specification is defined in this section. 
 
@@ -274,19 +274,19 @@ In this specification:
 Uses of the xAPI specification outside of the scope of this specification do not affect conformance with this specification.
 
 <a name="au_conformance"></a> 
-##4.1 Assignable Unit (AU)
+## 4.1 Assignable Unit (AU)
 
 See Section 7 – AU Requirements. An Assignable Unit MUST conform to all requirements as specified in the xAPI specification (see References).
 
 <a name="lms_conformance"></a> 
-##4.2 Learning Management Systems (LMS)
+## 4.2 Learning Management Systems (LMS)
 
 See Section 6 – LMS Requirements. The LMS MUST conform to all LRS requirements as specified in the xAPI specification (see References).
 
 The LMS MUST have an account which is able to retrieve all Resource data (from the Statement API, etc, including attachments and extensions) about another distinct user across multiple sessions for that user.
 
 <a name="json_conformance"></a> 
-##4.3 Optional JSON Values
+## 4.3 Optional JSON Values
 
 If JSON properties are indicated as "optional", you MAY leave such properties out of the JSON structure being described. All JSON properties included with non-null values MUST be recorded in the LRS.
 
@@ -299,7 +299,7 @@ Course structure data MUST NOT implement any features or functionality (optional
 
 
 <a name="concept"></a> 
-#5.0 Conceptual Model: Informative  
+# 5.0 Conceptual Model: Informative  
 
 Synopsis of the cmi5 model:
 * An LMS imports a course structure, which may contain one or more AUs.
@@ -326,7 +326,7 @@ Responsibilities of the LMS:
 * Launch the specified AU contained in the courses within the defined environment(s).
 
 <a name="lms_requirements"></a>  
-#6.0 LMS Requirements
+# 6.0 LMS Requirements
 
 LMS requirements to conform to this specification are as follows:
 
@@ -338,7 +338,7 @@ LMS requirements to conform to this specification are as follows:
 * Implement course structures as defined in Section 6.1.
 
 <a name="course_structures"></a>  
-##6.1 Course Structures
+## 6.1 Course Structures
 
 * The LMS SHOULD implement a means to create, edit, and maintain course structures.<br>
 * The LMS MUST implement the import of the Course Structure defined in Section 13 and Section 14. <br>
@@ -349,11 +349,11 @@ LMS requirements to conform to this specification are as follows:
 
 
 <a name="lms_state_api_requirements"></a>  
-##6.2 LMS State API Requirements
+## 6.2 LMS State API Requirements
 The LMS MUST implement the State API Requirements as defined in Section 10.
 
 <a name="lms_statement_api_requirements"></a>  
-##6.3 LMS Statement API Requirements
+## 6.3 LMS Statement API Requirements
 
 The LMS MUST NOT provide permissions/credentials which allow the AU to issue voiding Statements.
 
@@ -362,7 +362,7 @@ The LMS SHOULD reject statements that conflict with the "Statement API" requirem
 The LMS MUST Void statements that are NOT rejected AND conflict with the "Statement API" requirements as defined in Section 9.
 
 <a name="au_requirements"></a>  
-#7.0 AU Requirements
+# 7.0 AU Requirements
 
 AU's requirements to conform to this specification are as follows:
 
@@ -373,14 +373,14 @@ AU's requirements to conform to this specification are as follows:
 * Implement Statement API requirements as defined in the following sub section.
 
 <a name="au_statement_api_requirements"></a>  
-##7.1 AU Statement API Requirements
+## 7.1 AU Statement API Requirements
 
 <a name="first_statement_au"></a> 
-###7.1.1 First Statement API Call
+### 7.1.1 First Statement API Call
 The AU MUST issue a statement to the LRS after being launched, initialized, and ready for learner interaction using the Initialized verb as described in Section 9.3.2.
 
 <a name="last_statement_au"></a>  
-###7.1.2 Last Statement Call
+### 7.1.2 Last Statement Call
 The AU MUST issue a Terminated statement to the LRS as described in Section 9.3.8 as the last statement in a session.
  
 Once the AU has determined that the session will end (e.g. by user action or some other means) the AU SHOULD issue a Terminated statement.
@@ -393,7 +393,7 @@ Once the AU has determined that the session will end (e.g. by user action or som
 
 
 <a name="type_statement_au"></a>  
-###7.1.3 Types of Statements
+### 7.1.3 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
 * "cmi5 defined" - Statements using cmi5 defined verbs, category id as defined in section 9.6.2.1, and context template.
@@ -403,10 +403,10 @@ The statements issued within an AU session could fall within the following categ
 If "cmi5 allowed" statements are posted by the AU, they MUST occur between cmi5 statements using the "Initialized" verb and the "Terminated" verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and completion rules.
 
 <a name="content_launch"></a>  
-#8.0 Content Launch Mechanisms
+# 8.0 Content Launch Mechanisms
 
 <a name="launch_method"></a>  
-##8.1 Launch Method
+## 8.1 Launch Method
 
 The AU MUST be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 13.1.4 AU Meta Data, URL):
 
@@ -504,9 +504,9 @@ The values for the URL launch parameters are described below:
 
 <br>
 <a name="fetch_url"></a>  
-##8.2 Authorization Token Fetch URL
+## 8.2 Authorization Token Fetch URL
 <a name="fetch_url_overview"></a>  
-###8.2.1 Overview
+### 8.2.1 Overview
 The LMS MUST include the <strong><em>fetch</em></strong> name/value pair in the launch URL.  The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve an authorization token.  Note than an HTTP GET is not allowed in order to prevent caching of the request.
 
 The <strong><em>fetch</em></strong> URL MUST return a JSON structure using a Content-Type of "application/json". An example JSON structure is shown below:
@@ -520,7 +520,7 @@ The AU MUST place the <strong><em>auth-token</em></strong> in the HTTP header, a
 The AU SHOULD NOT attempt to retrieve the authorization token more than once.  The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error (see Section 8.2.3). 
 
 <a name="definition_auth_token"></a>  
-###8.2.2 Definition: auth-token
+### 8.2.2 Definition: auth-token
 <table>
   <tr><th colspan=2 align="left">auth-token</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>An authorization token used in all xAPI communications with the LMS.</td></tr>
@@ -532,10 +532,10 @@ The AU SHOULD NOT attempt to retrieve the authorization token more than once.  T
 </table>
 
 <a name="fetch_url_errors"></a>  
-###8.2.3 Errors
+### 8.2.3 Errors
 
 <a name="duplicate_call_to_fetch_url"></a>  
-####8.2.3.1 Duplicate call to fetch URL
+#### 8.2.3.1 Duplicate call to fetch URL
 The <strong><em>fetch</em></strong> URL is a "one-time use" URL and only the first request SHOULD return the <strong><em>auth-token</em></strong>. Subsequent requests made to the <strong><em>fetch</em></strong> URL during the session SHOULD generate an error.  The error SHOULD be returned in the form of a JSON structure using Content-Type "application/json".  An example of JSON structure is shown below:
 ```javascript
 {
@@ -544,7 +544,7 @@ The <strong><em>fetch</em></strong> URL is a "one-time use" URL and only the fir
 }
 ```
 <a name="fetch_url_error_values"></a>
-####8.2.3.2 Error Values
+#### 8.2.3.2 Error Values
 The following <strong><em>error-code</em></strong> values are allowed.
 <table>
 <tr><td><strong>Code</strong></td><td><strong>Meaning</strong></td></tr>
@@ -558,23 +558,23 @@ The values for <strong><em>error-text</em></strong> are defined by the LMS.
 <br>
 
 <a name="other_environment"></a>  
-##8.3 Other Launch Environments
+## 8.3 Other Launch Environments
 
 Other launch environments are not currently implemented in this specification. cmi5 implementations for LMS's and AU's in these other environments will use the same REST communication interface as specified in xAPI specification.  The xAPI specification does not specify launch mechanisms.
 
 <a name="xapi_data_model"/>  
-#9.0 xAPI Statement Data Model  
+# 9.0 xAPI Statement Data Model  
 
 <a name="statement_id" ></a>
-##9.1 Statement ID
+## 9.1 Statement ID
 The AU MUST assign a statement id property in UUID format (as defined in the xAPI specification) for all statements it issues.
   
 <a name="actor" ></a>
-##9.2 Actor
+## 9.2 Actor
 The Actor property will be defined by the LMS. The Actor property for all "cmi5 defined" statements MUST be of objectType "Agent" and MUST contain an "account" as defined in the xAPI specification.
 
 <a name="verbs" ></a> 
-##9.3 Verbs  
+## 9.3 Verbs  
 
 The following xAPI verbs are defined in this specification.
 
@@ -599,7 +599,7 @@ AUs may use additional verbs not listed in this specification.
 Regardless of the verbs the AUs use in statements, the LMS MUST record and provide reporting for all statements. 
 
 <a name="verbs_launched"></a>
-###9.3.1 Launched
+### 9.3.1 Launched
 <table>
 <tr><th align="left">Verb</th><td>Launched</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/launched</td></tr>
@@ -610,7 +610,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </table>
 
 <a name="verbs_initialized"></a>
-###9.3.2 Initialized
+### 9.3.2 Initialized
 <table>
 <tr><th align="left">Verb</th><td>Initialized</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/initialized</td></tr>
@@ -621,7 +621,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </table>
 
 <a name="verbs_completed"></a>
-###9.3.3 Completed
+### 9.3.3 Completed
 <table>
 <tr><th align="left">Verb</th><td>Completed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/completed</td></tr>
@@ -632,7 +632,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </table>
 
 <a name="verbs_passed"></a>
-###9.3.4 Passed
+### 9.3.4 Passed
 <table>
 <tr><th align="left">Verb</th><td>Passed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
@@ -643,7 +643,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </table>
 
 <a name="verbs_failed"></a>
-###9.3.5 Failed
+### 9.3.5 Failed
 <table>
 <tr><th align="left">Verb</th><td>Failed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
@@ -654,7 +654,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </table>
 
 <a name="verbs_abandoned"></a>
-###9.3.6 Abandoned
+### 9.3.6 Abandoned
 <table>
 <tr><th align="left">Verb</th><td>Abandoned</td></tr>
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/abandoned</td></tr>
@@ -665,7 +665,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </table>
 
 <a name="verbs_waived"></a>
-###9.3.7 Waived
+### 9.3.7 Waived
 <table>
 <tr><th align="left">Verb</th><td>Waived</td></tr>
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/waived</td></tr>
@@ -676,7 +676,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </table>
 
 <a name="verbs_terminated"></a>
-###9.3.8 Terminated
+### 9.3.8 Terminated
 
 <table>
 <tr><th align="left">Verb</th><td>Terminated</td></tr>
@@ -689,7 +689,7 @@ Regardless of the verbs the AUs use in statements, the LMS MUST record and provi
 </table>
 
 <a name="verbs_satisfied"></a>
-###9.3.9 Satisfied
+### 9.3.9 Satisfied
 <table>
 <tr><th align="left">Verb</th><td>Satisfied</td></tr>
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/satisfied</td></tr>
@@ -715,7 +715,7 @@ The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block
 <br>
 
 <a name="object"></a> 
-##9.4 Object 
+## 9.4 Object 
 An Object MUST be present, as specified in this section, in all "cmi5 defined" statements.
 
 Except for Statements with the Satisfied verb, the Object in a cmi5 defined statement represents the AU.  When the Object is the AU, the value of the Object's "id" property for a given AU MUST match the activityId defined in the launch URL.
@@ -723,11 +723,11 @@ Except for Statements with the Satisfied verb, the Object in a cmi5 defined stat
 In Satisfied statements, the Object represents a Block or Course.  (see 9.3.9 - Satisfied)  
 
 <a name="result"></a> 
-##9.5 Result
+## 9.5 Result
 Result may be present in a statement depending on the cmi5 verb used. 
 
 <a name="score"></a> 
-###9.5.1 Score
+### 9.5.1 Score
 
 A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
 
@@ -745,7 +745,7 @@ Other cmi5 defined statements MUST NOT include the "score" property.
 </ul>
 
 <a name="success"></a>
-###9.5.2 Success 
+### 9.5.2 Success 
 
 The "success" property of the result MUST be set to true for the following cmi5 defined statements:
 
@@ -759,7 +759,7 @@ The "success" property of the result MUST be set to false for the following cmi5
 Other cmi5 defined statements MUST NOT include the "success" property.
 
 <a name="completion"></a>
-###9.5.3 Completion
+### 9.5.3 Completion
 The "completion" property of the result MUST be set to true for the following cmi5 defined statements:
 
 - Completed
@@ -768,10 +768,10 @@ The "completion" property of the result MUST be set to true for the following cm
 Other cmi5 defined statements MUST NOT include the "completion" property.
 
 <a name="duration"></a>
-###9.5.4 Duration
+### 9.5.4 Duration
 The "duration" property is an ISO 8601 formatted time value required in certain statements as defined in this section. Other cmi defined statements MAY include the duration property.
 <a name="au_statements_that_include_duration"></a>
-####9.5.4.1 AU statements that include duration
+#### 9.5.4.1 AU statements that include duration
 ##### Terminated Statement
 The AU MUST include the "duration" property in "Terminated" statements.  The AU SHOULD calculate duration for Terminated statements as the time difference between the "Initialized" statement and the "Terminated" statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
 ##### Completed Statement
@@ -782,14 +782,14 @@ The AU MUST include the "duration" property in "Passed" statements.  The AU SHOU
 The AU MUST include the "duration" property in "Failed" statements. The AU SHOULD calculate duration as the time spent by the learner to attempt and fail in a judged activity of the AU.
 
 <a name="lms_statements_that_include_duration"></a>
-####9.5.4.2 LMS statements that include duration
+#### 9.5.4.2 LMS statements that include duration
 ##### Abandoned Statement
 The duration property MUST be included in "Abandoned" statements. The duration property MUST, at a minimum, be set as the total session time, calculated as the time between the "Launched" statement and the last statement (of any kind) issued by the AU. The LMS SHOULD also use other (LMS specific) methods (if available) to determine if the total session time was longer.
 
 <a name="result_extensions"></a>
-###9.5.5 Extensions
+### 9.5.5 Extensions
 <a name="result_extensions_progress"></a>
-####9.5.5.1 progress
+#### 9.5.5.1 progress
 
 <table>
     <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/progress</td></tr>
@@ -803,7 +803,7 @@ The duration property MUST be included in "Abandoned" statements. The duration p
 </table>
 
 <a name="result_extensions_reason"></a>
-####9.5.5.2 reason
+#### 9.5.5.2 reason
 
 <table>
     <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/reason</td></tr>
@@ -832,40 +832,40 @@ The duration property MUST be included in "Abandoned" statements. The duration p
 </table>
 
 <a name="context"></a> 
-##9.6 Context
+## 9.6 Context
 
 All cmi5 defined statements MUST contain a context that includes all objects/values as defined in this section. Either the LMS or the AU MAY provide additional objects.
 
 <a name="registration"></a> 
-###9.6.1 registration
+### 9.6.1 registration
 The value for the registration property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  At the time of registration, the LMS MUST evaluate MoveOn criteria in the course structure.  For example, Blocks with MoveOn criteria of "Not Applicable" in the course structure would be evaluated and could generate Satisfied statements at this time.<br>
 <br>
 For all Satisfied statements triggered outside of an AU launch session, the LMS MUST generate a unique session id and use it for those statements.
 
 <a name="context_activities"></a>
-###9.6.2 contextActivities
+### 9.6.2 contextActivities
 The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The "contextActivities" property contains list(s) of Activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements must include all properties and values defined in the the contextActivites of the context template (see section 10 - xAPI State Data Model).
 
 <a name="context_activities_category_cmi5"></a>
-####9.6.2.1 cmi5 Category Activity
+#### 9.6.2.1 cmi5 Category Activity
 An Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/cmi5" in the "category" context activities list to be used in cmi5 defined statements as described in section 7.1.3.
 
 <a name="context_activities_category_moveon"></a>
-####9.6.2.2 moveOn Category Activity
+#### 9.6.2.2 moveOn Category Activity
 cmi5 defined statements with a Result object (Section 9.5) that include either "success" or "completion" properties MUST have an Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/moveon" in the "category" context activities list. Other statements MUST NOT include this Activity.
 
 <a name="context_activities_grouping_publisherid"></a>
-####9.6.2.3 Publisher ID Grouping Activity
+#### 9.6.2.3 Publisher ID Grouping Activity
 Used to identify statements about the AU using the publisher's id from the course structure.
 
 The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's id attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. The LMS MUST also include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
 
 <a name="extensions"></a>
-###9.6.3 extensions
+### 9.6.3 extensions
 The following are extensions specified for cmi5.  Other extensions are permitted provided they do not conflict or duplicate the ones specified here.
 
 <a name="context_extensions_session_id"></a>
-####9.6.3.1 session ID
+#### 9.6.3.1 session ID
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/sessionid</td></tr>
@@ -880,7 +880,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 </table>
 
 <a name="context_extensions_masteryScore"></a>
-####9.6.3.2 masteryScore
+#### 9.6.3.2 masteryScore
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/masteryscore</td></tr>
@@ -895,7 +895,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 </table>
 
 <a name="context_extensions_launchMode"></a>
-####9.6.3.3 launchMode
+#### 9.6.3.3 launchMode
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchmode</td></tr>
@@ -910,7 +910,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 </table>
 
 <a name="context_extensions_launchURL"></a>
-####9.6.3.4 launchURL
+#### 9.6.3.4 launchURL
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchurl</td></tr>
@@ -925,12 +925,12 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 </table>
 
 <a name="context_extensions_publisherid"></a>
-####9.6.3.5 publisherId
+#### 9.6.3.5 publisherId
 
 This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping Activity.
 
 <a name="context_extensions_moveOn"></a>
-####9.6.3.6 moveOn
+#### 9.6.3.6 moveOn
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/moveon</td></tr>
@@ -945,7 +945,7 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 </table>
 
 <a name="context_extensions_launchParameters"></a>
-####9.6.3.7 launchParameters
+#### 9.6.3.7 launchParameters
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchparameters</td></tr>
@@ -959,13 +959,13 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 </table>
 
 <a name="timestamp"></a> 
-##9.7 Timestamp
+## 9.7 Timestamp
 
 To ensure statement ordering requirements are met, all statements MUST include a timestamp property per the xAPI specification. All timestamps MUST be recorded in UTC time. Timestamps are not required to be unique in statements within a session. The time recorded SHOULD indicate when the condition actually occurred.
 
 
 <a name="xapi_state"></a>  
-#10.0 xAPI State Data Model
+# 10.0 xAPI State Data Model
 
 Prior to launching an AU, the LMS MUST create or update a document in the State API record in the LRS.  This MUST be a JSON document, as defined in this section.
 
@@ -1083,7 +1083,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
 </table>
 
 <a name="xapi_agent_profile"></a>   
-#11.0 xAPI Agent Profile Data Model  
+# 11.0 xAPI Agent Profile Data Model  
 
 In cmi5, Learner Preferences are scoped to the learner.  Both the LMS and the AU may write changes to Learner Preferences in the xAPI Agent Profile.  The LMS/LRS may choose to ignore or override Learner Preference changes requested by the AU by returning a "403 Forbidden" response as defined in the xAPI specification (Section 7.6).  The AU MUST NOT treat the 403 response as an error condition.  
 
@@ -1098,7 +1098,7 @@ When reading or writing to the Agent Profile, the document name MUST be "cmi5Lea
 }
 ```
 <a name="language_preference"></a>
-##11.1  languagePreference
+## 11.1  languagePreference
 The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags as indicated in the xAPI specification (Section 5.2).  In the list, languages MUST be specified in order of user preference.  In the example below, the user's first preference for language is en-US.  The user's second preference for language is fr-FR and the third preference is fr-BE.
 
 ```javascript
@@ -1111,7 +1111,7 @@ The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags 
 If the AU supports multiple languages, the AU SHOULD display in the language preference order of the user as in the example above. If the AU supported "zh-CN", "fr-BE" and "fr-FR", it SHOULD display in "fr-FR".  If the AU does not support multiple languages, or if no languagePreference is specified in the Agent Profile, it may display in its default language.
 
 <a name="audio_preference"></a>
-##11.2 audioPreference
+## 11.2 audioPreference
 The audioPrefence value indicates whether the audio SHOULD be "on" or "off".  The AU MUST turn the audio on or off at startup based on this value.  If no value is provided in the Agent Profile for audioPreference the AU MAY use its own default value.
 
 Example:
@@ -1124,20 +1124,20 @@ Example:
 
 
 <a name="xapi_activity_profile"></a>  
-#12.0 xAPI Activity Profile Data Model
+# 12.0 xAPI Activity Profile Data Model
 
 The AU may use the Activity Profile API according to the xAPI specification (Section 7.5 - Activity Profile API).
 
 
 <a name="course_requirements"/>
-#13.0 Course Structure Data Requirements  
+# 13.0 Course Structure Data Requirements  
 
 <a name="course_structure_data_model"/>
-##13.1 Course Structure Data Model
+## 13.1 Course Structure Data Model
 All leading/trailing whitespace MUST be removed by the LMS on import of the course structure for all of the data elements defined in this section.
 
 <a name="course_level_meta_data"/>
-###13.1.1 Course Level Metadata  
+### 13.1.1 Course Level Metadata  
  
 The following metadata attributes and elements are at the course level and  describe the course instance as a whole.
 
@@ -1154,7 +1154,7 @@ The following metadata attributes and elements are at the course level and  desc
       <p><strong>Value space: </strong><br>
         Values are defined by the course designer.<br>
         <strong>Sample value: </strong><br>
-         &lt;course id="http&#58;//www.example.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br></p>
+         &lt;course id="http&# 58;//www.example.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br></p>
     </td>
   </tr>
   <tr>
@@ -1206,7 +1206,7 @@ The following metadata attributes and elements are at the course level and  desc
 
 </table>
 
-
+ 
 
 <a name="block_meta_data"/>
 ### 13.1.2 Block Metadata
@@ -1223,7 +1223,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
     <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block in xAPI requests made by the LMS.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br>
-      &lt;block id="http&#58;//www.example.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
+      &lt;block id="http&# 58;//www.example.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
       </p>
     </td>
   </tr>
@@ -1278,7 +1278,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
       Values are defined by the course designer.<br>
       <strong>Sample value: </strong><br>
     &lt;objectives&gt;<br>
-    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
+    &nbsp;&nbsp; &lt;objective idref="http&# 58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
     &lt;/objectives&gt;<br>
     </td>  
   </tr>
@@ -1286,7 +1286,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
 
 
 <a name="objective_meta_data"/>
-###13.1.3 Objective Metadata
+### 13.1.3 Objective Metadata
 
 The data in this section are used by the Objectives. Objectives can be associated with a Block or with individual AUs. 
 
@@ -1303,7 +1303,7 @@ The data in this section are used by the Objectives. Objectives can be associate
       </p>
       <p><strong>Value space:</strong><br>Values are defined by the course designer.</p>
     <p><strong>Sample value:</strong><br>
-    &lt;objective id="http&#58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/objective&gt;</p>
+    &lt;objective id="http&# 58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/objective&gt;</p>
     </td>
   </tr>
   <tr>
@@ -1351,7 +1351,7 @@ The data in this section are used by the Objectives. Objectives can be associate
 
 
 <a name="au_meta_data"/>  
-###13.1.4 AU Metadata  
+### 13.1.4 AU Metadata  
 
 The data in this section are used by the LMS to locate the AU and provide launch data. AUs may also contain objectives.
 
@@ -1367,7 +1367,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI defined by content creator/publisher that the AU uses to identify itself in xAPI statement contexts. This id MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values are defined by the course designer.</p>
       <p><strong>Sample value:</strong><br>
-      &lt;au id="http&#58;//www.example.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
+      &lt;au id="http&# 58;//www.example.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -1516,7 +1516,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       <p>
       <strong>Sample value: </strong><br>
     &lt;objectives&gt;<br>
-    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
+    &nbsp;&nbsp; &lt;objective idref="http&# 58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
     &lt;/objectives&gt;<br>
         </p>
     </td>  
@@ -1598,14 +1598,14 @@ Available locally in [v1/CourseStructure.xsd](v1/CourseStructure.xsd) or remotel
 All course structures created for LMS import functionality and created by the LMS for export MUST conform to this XSD and be named "cmi5.xml".
 
 <a name="course_package"/>
-#14.0 Course Package
+# 14.0 Course Package
 For the course import and export defined in Section 6.1, the LMS MUST support all of the following formats:
 <ul><li>Zip32</li>
 <li>Zip64</li>
 <li>A course structure XML file</li>
 </ul>
 <a name="course_packages_in_zip_format"></a>
-##14.1 Course Packages in ZIP Format
+## 14.1 Course Packages in ZIP Format
 The two ZIP file formats MUST follow the specification defined at https://www.pkware.com/support/zip-app-note.  When the ZIP file is used to package a course, it MUST contain the course structure XML file at its root directory and it MAY contain media associated with the course AUs.
 
 <ul><li>Any media included in a ZIP course package MUST use relative URL references in the Course Structure XML.</li>
@@ -1614,33 +1614,33 @@ The two ZIP file formats MUST follow the specification defined at https://www.pk
 </ul>
 
 <a name="course_structure_xml_without_a_zip_file_package"></a>
-##14.2 Course Structure XML Without a ZIP File Package
+## 14.2 Course Structure XML Without a ZIP File Package
 When a course structure XML file is provided without a ZIP file package, all URL references MUST be fully qualified.
 
 <a name="course_structure_examples"/> 
-#15.0 Course Structure Examples
+# 15.0 Course Structure Examples
 
 Using the domain of geology the following two examples demonstrate how simple and complex a course designer can structure a course. The titles and descriptions are fetched or translated from the Earth Sciences Portal at Wikipedia (https://en.wikipedia.org/wiki/Portal:Earth_sciences).
 
 <a name="course_structure_examples_simple"/> 
-##15.1 Simple
+## 15.1 Simple
 
 Simple single AU course structure is available in [v1/examples/simple-cmi5.xml](v1/examples/simple-cmi5.xml).
 
 <a name="course_structure_examples_complex"/> 
-##15.2 Complex
+## 15.2 Complex
 
 Complex course structure with multiple objectives, multiple blocks with nesting, multiple AU blocks, etc. is available in  [v1/examples/complex-cmi5.xml](v1/examples/complex-cmi5.xml).
 
 <a name="course_structure_examples_extension"/> 
-#15.3 Extension
+# 15.3 Extension
 
 An extended simple course structure example is available in [v1/examples/extended-cmi5.xml](v1/examples/extended-cmi5.xml) which uses vendor specific metadata following the XML Schema Definition defined in [v1/examples/extended-cmi5.xsd](v1/examples/extended-cmi5.xsd).
 
 -------
 
 <a id="license_agreement"></a> 
-#License Agreement
+# License Agreement
 
 Copyright &copy; 2012-2016 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense, All rights reserved
 
