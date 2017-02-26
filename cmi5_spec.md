@@ -128,7 +128,7 @@ __Convert Working Draft to Markdown in GitHub (Feb 20, 2013):__
 
 
 <a name="contributors"></a> 
-# Contributors
+## Contributors
 
 | Name:                | Organization:                          |
 |----------------------|----------------------------------------|
@@ -1154,7 +1154,7 @@ The following metadata attributes and elements are at the course level and  desc
       <p><strong>Value space: </strong><br>
         Values are defined by the course designer.<br>
         <strong>Sample value: </strong><br>
-         &lt;course id="http&# 58;//www.example.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br></p>
+         &lt;course id="http&#58;//www.example.com/identifiers/course/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/course&gt;<br></p>
     </td>
   </tr>
   <tr>
@@ -1223,7 +1223,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
     <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block in xAPI requests made by the LMS.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br>
-      &lt;block id="http&# 58;//www.example.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
+      &lt;block id="http&#58;//www.example.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
       </p>
     </td>
   </tr>
@@ -1278,7 +1278,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
       Values are defined by the course designer.<br>
       <strong>Sample value: </strong><br>
     &lt;objectives&gt;<br>
-    &nbsp;&nbsp; &lt;objective idref="http&# 58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
+    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
     &lt;/objectives&gt;<br>
     </td>  
   </tr>
@@ -1303,7 +1303,7 @@ The data in this section are used by the Objectives. Objectives can be associate
       </p>
       <p><strong>Value space:</strong><br>Values are defined by the course designer.</p>
     <p><strong>Sample value:</strong><br>
-    &lt;objective id="http&# 58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/objective&gt;</p>
+    &lt;objective id="http&#58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt;&hellip;&lt;/objective&gt;</p>
     </td>
   </tr>
   <tr>
@@ -1367,7 +1367,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI defined by content creator/publisher that the AU uses to identify itself in xAPI statement contexts. This id MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values are defined by the course designer.</p>
       <p><strong>Sample value:</strong><br>
-      &lt;au id="http&# 58;//www.example.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
+      &lt;au id="http&#58;//www.example.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
       </p>
     </td>
   </tr>
@@ -1516,7 +1516,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       <p>
       <strong>Sample value: </strong><br>
     &lt;objectives&gt;<br>
-    &nbsp;&nbsp; &lt;objective idref="http&# 58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
+    &nbsp;&nbsp; &lt;objective idref="http&#58;//www.example.com/identifiers/objective/005430bf-b3ba-45e6-b47b-d629603d83d2" /&gt;<br>
     &lt;/objectives&gt;<br>
         </p>
     </td>  
