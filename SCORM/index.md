@@ -11,7 +11,7 @@ cmi5 provides the following functionality that SCORM does not:
 - **Richer Data Collection.** Record any data you want (and get it back!)- SCORM is limited to a &quot;list&quot; of data collected.  cmi5 is open-ended on the data you can collect.
 - **Share Data more easily –** cmi5 uses a web service and data structure that allows easy integration with other systems/applications.
 - **Distributed Content –** cmi5 content can reside anywhere, it allows for content as a service.
-- **Elimination of &quot;Pop-up&quot; Windows -** eliminate pop-up blocker headaches)
+- **Elimination of &quot;Pop-up&quot; Windows -** eliminate pop-up blocker headaches
 - **Mobile app launch support –** cmi5 content does not require a browser.  Content could be a mobile app.
 
 
