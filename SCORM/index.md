@@ -37,8 +37,7 @@ The following is a side-by-side comparison of SCORM to cmi5 at a detailed featur
 
 |       **Feature**     |     **SCORM**      |      **cmi5**      |       **Description**            |
 | ------ | ------ | ------ | ------ |
-| Content Package | YES | YES | SCORM has a package containing local content with an XML manifest that details course structure and all resources. cmi5 has an XML course structure that can reference remote or local content. Both have a ZIP file for transferring content (locally).
- |
+| Content Package | YES | YES | SCORM has a package containing local content with an XML manifest that details course structure and all resources. cmi5 has an XML course structure that can reference remote or local content. Both have a ZIP file for transferring content (locally).|
 | Objectives | YES | YES | SCORM has Objectives Metadata that can be used for sequencing logic (called &quot;simple sequencing&quot;).cmi5 has objective metadata that does not affect course behavior.   |
 | Remediation | YES | NO | With SCORM remediation can be implemented by &quot;simple sequencing&quot; logic rules.cmi5 has no remediation rules.  Remediation is content and LMS vendor specific. |
 | Prerequisites | Yes | No | With SCORM, prerequisites can be implemented by &quot;simple sequencing&quot; logic rules.cmi5 has the notion of &quot;MoveOn&quot; criteria for completion of individual AU or groups of AU. |
