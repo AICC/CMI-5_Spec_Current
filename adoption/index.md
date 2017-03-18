@@ -1,4 +1,4 @@
-#
+
 # cmi5 Adoption
 
 The following products that have currently implemented cmi5:
