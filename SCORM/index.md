@@ -21,7 +21,7 @@ cmi5 provides the following functionality that SCORM does not:
 The following table provides a high level comparison of SCORM to cmi5 for learning &amp; development professionals who develop/deliver SCORM content.
 
 |&nbsp;&nbsp; **Feature** &nbsp;&nbsp;|&nbsp;&nbsp; **SCORM** &nbsp;&nbsp;|&nbsp;&nbsp; **cmi5** &nbsp;&nbsp;|&nbsp;&nbsp; **Description** &nbsp;&nbsp;|
-| --- | --- | --- | --- |
+| ------ | ------ | ------ | ------ |
 | Track &quot;anything&quot; | No | Yes | SCORM is constrained to a defined set of data elements.cmi5 allows you to define your own data elements in addition to predefined elements |
 | Mobile Friendly | No | Yes | A mobile app cannot be tracked with SCORM, but can with cmi5. |
 | Host content anywhere | No | Yes | All SCORM content must reside in the LMS, cmi5 has no such restrictions (content can be located anywhere). |
@@ -36,7 +36,7 @@ The following table provides a high level comparison of SCORM to cmi5 for learni
 The following is a side-by-side comparison of SCORM to cmi5 at a detailed feature level.
 
 |&nbsp;&nbsp; **Feature** &nbsp;&nbsp;|&nbsp;&nbsp; **SCORM** &nbsp;&nbsp;|&nbsp;&nbsp; **cmi5** &nbsp;&nbsp;|&nbsp;&nbsp; **Comments** &nbsp;&nbsp;|
-| --- | --- | --- | --- |
+| ------ | ------ | ------ | ------ |
 | Content Package | YES | YES | SCORM has a package containing local content with an XML manifest that details course structure and all resources. cmi5 has an XML course structure that can reference remote or local content. Both have a ZIP file for transferring content (locally).
  |
 | Objectives | YES | YES | SCORM has Objectives Metadata that can be used for sequencing logic (called &quot;simple sequencing&quot;).cmi5 has objective metadata that does not affect course behavior.   |
