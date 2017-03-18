@@ -21,6 +21,9 @@ The following companies have announced plans to support cmi5:
 - Obsidian Learning
 - Zavango Corp.
 
-If you have a cmi5 enabled product and would like it to be added to this list, please notify us on our GitHub issues list. (use &quot;cmi5 Adoption List&quot; Label). (link to issues list)
+If you have a cmi5 enabled product and would like it to be added to this list, please notify us on our GitHub issues list as follows:
 
-The cmi5 working group has not tested or certified these products for cmi5 compliance.  (Nor does it endorse or certify product quality.)
+1. [Create A New Issue](https://github.com/AICC/CMI-5_Spec_Current/issues/new?title=cmi5%20Adopter) with a description of your product
+2. Label Your Issue "cmi5 Adopter"
+
+_**DISCLAIMER** - The cmi5 working group has not tested or certified these products for cmi5 compliance.  (Nor does it endorse or certify product quality.)_
