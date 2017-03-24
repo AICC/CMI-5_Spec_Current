@@ -1,4 +1,4 @@
-# cmi5 vs SCORM Comparison
+# SCORM vs cmi5 Comparison
 
 ### Executive Summary
 
