@@ -53,3 +53,7 @@ The following is a side-by-side comparison of SCORM to cmi5 at a detailed featur
 | Distributed Content | No | Yes | Native SCORM content effectively does not support distributed content delivery.cmi5 natively enables distribute content delivery. |
 | Flexible Content Types | No | Yes | In SCORM, content types are limited to &quot;SCO&quot; and &quot;asset&quot;cmi5 uses xAPI which allows for many activity types. |
 | Support for Non-traditional Learning Types | No | Yes | SCORM is constrained to single-user, self-paced, browser-based learning.Since cmi5, is xAPI based it does not have these constraints. |
+
+&nbsp;
+&nbsp;
+
