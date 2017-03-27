@@ -290,7 +290,7 @@ The LMS MUST have an account which is able to retrieve all Resource data (from t
 
 If JSON properties are indicated as "optional", you MAY leave such properties out of the JSON structure being described. All JSON properties included with non-null values MUST be recorded in the LRS.
 
-<a name="course_conformance"/>
+<a name="course_conformance"></a>
 ## 4.4 Courses
 
 A course MUST be bundled with course structure data that conform to all requirements listed in Section 13 and Section 14.
@@ -562,7 +562,7 @@ The values for <strong><em>error-text</em></strong> are defined by the LMS.
 
 Other launch environments are not currently implemented in this specification. cmi5 implementations for LMS's and AU's in these other environments will use the same REST communication interface as specified in xAPI specification.  The xAPI specification does not specify launch mechanisms.
 
-<a name="xapi_data_model"/>  
+<a name="xapi_data_model"></a>  
 # 9.0 xAPI Statement Data Model  
 
 <a name="statement_id" ></a>
@@ -1111,6 +1111,7 @@ The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags 
 If the AU supports multiple languages, the AU SHOULD display in the language preference order of the user as in the example above. If the AU supported "zh-CN", "fr-BE" and "fr-FR", it SHOULD display in "fr-FR".  If the AU does not support multiple languages, or if no languagePreference is specified in the Agent Profile, it may display in its default language.
 
 <a name="audio_preference"></a>
+
 ## 11.2 audioPreference
 The audioPrefence value indicates whether the audio SHOULD be "on" or "off".  The AU MUST turn the audio on or off at startup based on this value.  If no value is provided in the Agent Profile for audioPreference the AU MAY use its own default value.
 
@@ -1129,14 +1130,15 @@ Example:
 The AU may use the Activity Profile API according to the xAPI specification (Section 7.5 - Activity Profile API).
 
 
-<a name="course_requirements"/>
+<a name="course_requirements"></a>
+
 # 13.0 Course Structure Data Requirements  
 
-<a name="course_structure_data_model"/>
+<a name="course_structure_data_model"></a>
 ## 13.1 Course Structure Data Model
 All leading/trailing whitespace MUST be removed by the LMS on import of the course structure for all of the data elements defined in this section.
 
-<a name="course_level_meta_data"/>
+<a name="course_level_meta_data"></a>
 ### 13.1.1 Course Level Metadata  
  
 The following metadata attributes and elements are at the course level and  describe the course instance as a whole.
@@ -1208,7 +1210,7 @@ The following metadata attributes and elements are at the course level and  desc
 
  
 
-<a name="block_meta_data"/>
+<a name="block_meta_data"></a>
 ### 13.1.2 Block Metadata
 
 The data in this section are used for the block structures with group AUs.  A Block consists of one or more AUs. Blocks can also contain references to objectives and other Blocks.
@@ -1285,7 +1287,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
 </table>
 
 
-<a name="objective_meta_data"/>
+<a name="objective_meta_data"></a>
 ### 13.1.3 Objective Metadata
 
 The data in this section are used by the Objectives. Objectives can be associated with a Block or with individual AUs. 
@@ -1350,7 +1352,7 @@ The data in this section are used by the Objectives. Objectives can be associate
 </table>
 
 
-<a name="au_meta_data"/>  
+<a name="au_meta_data"></a>  
 ### 13.1.4 AU Metadata  
 
 The data in this section are used by the LMS to locate the AU and provide launch data. AUs may also contain objectives.
@@ -1584,20 +1586,20 @@ The data in this section are used by the LMS to locate the AU and provide launch
   </tr>
 </table>
 
-<a name="vendor_meta_data"/>
+<a name="vendor_meta_data"></a>
 ### 13.1.5 Vendor Specific Metadata (Extensions)
 
 Course Designers MAY place their own namespaced elements into the course structure and thus define an extension for the source structure specification. For that they MUST provide a XML Schema Definition and SHOULD provide a human readable specification describing these vendor specific extensions. These extensions MUST keep the course structure XML valid. An importing LMS MAY ignore these elements. Therefore the extension SHOULD be created in such a manner that a course is still useable if the LMS does not support the additional elements.
 
 To achieve a larger distribution of their extension course designers SHOULD choose a free or open source license for their specification and make it publicly available.
 
-<a name="course_structure_xsd"/>  
+<a name="course_structure_xsd"></a>  
 ## 13.2 Course Structure XSD 
 
 Available locally in [v1/CourseStructure.xsd](v1/CourseStructure.xsd) or remotely at https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd.
 All course structures created for LMS import functionality and created by the LMS for export MUST conform to this XSD and be named "cmi5.xml".
 
-<a name="course_package"/>
+<a name="course_package"></a>
 # 14.0 Course Package
 For the course import and export defined in Section 6.1, the LMS MUST support all of the following formats:
 <ul><li>Zip32</li>
@@ -1617,22 +1619,22 @@ The two ZIP file formats MUST follow the specification defined at https://www.pk
 ## 14.2 Course Structure XML Without a ZIP File Package
 When a course structure XML file is provided without a ZIP file package, all URL references MUST be fully qualified.
 
-<a name="course_structure_examples"/> 
+<a name="course_structure_examples"></a> 
 # 15.0 Course Structure Examples
 
 Using the domain of geology the following two examples demonstrate how simple and complex a course designer can structure a course. The titles and descriptions are fetched or translated from the Earth Sciences Portal at Wikipedia (https://en.wikipedia.org/wiki/Portal:Earth_sciences).
 
-<a name="course_structure_examples_simple"/> 
+<a name="course_structure_examples_simple"></a> 
 ## 15.1 Simple
 
 Simple single AU course structure is available in [v1/examples/simple-cmi5.xml](v1/examples/simple-cmi5.xml).
 
-<a name="course_structure_examples_complex"/> 
+<a name="course_structure_examples_complex"></a> 
 ## 15.2 Complex
 
 Complex course structure with multiple objectives, multiple blocks with nesting, multiple AU blocks, etc. is available in  [v1/examples/complex-cmi5.xml](v1/examples/complex-cmi5.xml).
 
-<a name="course_structure_examples_extension"/> 
+<a name="course_structure_examples_extension"></a> 
 # 15.3 Extension
 
 An extended simple course structure example is available in [v1/examples/extended-cmi5.xml](v1/examples/extended-cmi5.xml) which uses vendor specific metadata following the XML Schema Definition defined in [v1/examples/extended-cmi5.xsd](v1/examples/extended-cmi5.xsd).
