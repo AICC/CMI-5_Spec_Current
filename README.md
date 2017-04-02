@@ -1,6 +1,6 @@
 
 <p>
-<p align=center><img src="https://cloud.githubusercontent.com/assets/1656316/9965238/bc9deb2c-5de9-11e5-9954-63aa03873f88.png" align=center></p>
+<p align=center><a href="http://aicc.github.io/CMI-5_Spec_Current/"><img src="https://cloud.githubusercontent.com/assets/1656316/9965238/bc9deb2c-5de9-11e5-9954-63aa03873f88.png" align=center></a></p>
 
 # The cmi5 Project #
 
