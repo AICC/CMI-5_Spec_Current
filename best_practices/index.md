@@ -69,4 +69,11 @@ _Option 2_: Use and HTML wrapper to launch the app AU is an HTML page (wrapper) 
 
 If the AU is not a mobile app and the LMS does not provide a “returnURL”, the best practice to exit the AU is to close the Window (window.close()) or direct the learner to manually close the browser window.
 
+### Best Practice #{% increment bpCount %}  - LMS should reject non-conforming cmi5 statments.
+If an AU sends a statement that doesn’t conform to cmi5, the LMS should reject it (see section 6.3 of cmi5 specification) and return an HTTP error 403.
+
+### Best Practice #{% increment bpCount %}  - LMS Administrators should use caution when changing the moveOn property.
+The AU may not have the capability of sending statements required by any moveOn value that was not in the original course structure. It is recommended that all changes to course structures after import be tested prior to learner assignment.
+
+
 ------
