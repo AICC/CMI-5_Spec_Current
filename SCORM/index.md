@@ -11,7 +11,7 @@ cmi5 provides the following functionality that SCORM does not:
 - **Richer Data Collection.** Record any data you want (and get it back!)- SCORM is limited to a &quot;list&quot; of data collected.  cmi5 is open-ended on the data you can collect.
 - **Share Data more easily –** cmi5 uses a web service and data structure that allows easy integration with other systems/applications.
 - **Distributed Content –** cmi5 content can reside anywhere, it allows for content as a service.
-- **Elimination of &quot;Pop-up&quot; Windows -** eliminate pop-up blocker headaches
+- **Elimination of &quot;Pop-up&quot; Windows -** Eliminates pop-up blocker headaches.
 - **Mobile app launch support –** cmi5 content does not require a browser.  Content could be a mobile app.
 
 
@@ -41,7 +41,7 @@ The following is a side-by-side comparison of SCORM to cmi5 at a detailed featur
 | Objectives | Yes | Yes | SCORM has Objectives Metadata that can be used for sequencing logic (called &quot;simple sequencing&quot;).cmi5 has objective metadata that does not affect course behavior.   |
 | Remediation | Yes | No | With SCORM remediation can be implemented by &quot;simple sequencing&quot; logic rules.  cmi5 has no remediation rules.  Remediation is content and LMS vendor specific. |
 | Prerequisites | Yes | No | With SCORM, prerequisites can be implemented by &quot;simple sequencing&quot; logic rules.  cmi5 has the notion of &quot;MoveOn&quot; criteria for the completion of individual AU's. |
-| Content Launch | Yes | Yes | SCORM uses as JavaScript parent/opener with JavaScript communication object/API provided by the LMS. The LMS determines how the content is redirected/launched to (pop up window, iframe, re-direct). The Content must discover the object/API.cmi5 uses a launch URL with parameters for Web services communication. The course structure settings determine windowing (&quot;own window&quot; or &quot;any window&quot;) used by the LMS to launch the content. The content uses query string parameters to discover the xAPI endpoint for recording data. |
+| Content Launch | Yes | Yes | SCORM uses a JavaScript parent/opener with JavaScript communication object/API provided by the LMS.  cmi5 uses a launch URL with parameters for Web services communication.  This launch mechanism does not necessarily require a browser and content can reside on different domains/platforms.  Content can be launched in a mobile app with cmi5. |
 | Communication Interface | Yes | Yes | SCORM uses a LMS-provided JavaScript runtime communication object/API that the content discovers and makes calls and receives responses.cmi5 uses a RESTful web service (xAPI) that the content uses to send requests/receive responses with JSON data structures. |
 | Course Metadata | Yes | Yes | SCORM has IMS manifest that uses the LOM metadata specification to describe content (SCO&#39;s). cmi5 has a course structure file with defined content (AU) metadata and is extensible for content vendor-specific metadata. |
 | Content Defined Data | No | Yes | SCORM data collection is restricted to data elements defined in the SCORM Data Model. With cmi5, there is a smaller set of defined data elements than SCORM and is highly extensible through the use of xAPI.   |
