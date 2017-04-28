@@ -50,7 +50,6 @@ The following is a side-by-side comparison of SCORM to cmi5 at a detailed featur
 | Data Access | No | Yes | In SCORM, the only specification protocol for returning data was available at Run-Time for the current user within current SCO only.  Access to data requires access to the Database (which is outside the scope of SCORM).cmi5 uses xAPI which has querying (GET Requests) built-in to allow return of data.  LRSs cannot be write-only. All requests for data subject to security policies. |
 | Data Readability | No | Yes | With SCORM, the structure of data is not defined so the data format varies from system to system.cmi5 is xAPI based with a standardized JSON / document structure. |
 | Data Portability | No | Yes | SCORM runtime data does not allow for easy import/export. The cmi5 JSON structure allows for easy portability across systems. |
-| Distributed Content | No | Yes | Native SCORM content effectively does not support distributed content delivery.cmi5 natively enables distribute content delivery. |
 | Flexible Content Types | No | Yes | In SCORM, content types are limited to &quot;SCO&quot; and &quot;asset&quot;cmi5 uses xAPI which allows for many activity types. |
 | Support for Non-traditional Learning Types | No | Yes | SCORM is constrained to single-user, self-paced, browser-based learning.Since cmi5, is xAPI based it does not have these constraints. |
 
