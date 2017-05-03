@@ -1,0 +1,45 @@
+{
+  "id": "23f8131d-f66b-4cb5-bb32-f9eb31501b98",
+  "actor": {
+    "objectType": "Agent",
+    "name": "Learner's Name",
+    "account": {
+      "homePage": "http://example.org/",
+      "name": "Learner"
+    }
+  },
+  "verb": {
+    "id": "https://w3id.org/xapi/adl/verbs/satisfied",
+    "display": {
+      "en-US": "satisfied"
+    }
+  },
+  "object": {
+    "objectType": "Activity",
+    "id": "http://course-repository.example.edu/identifiers/courses/02baafcf",
+    "definition": {
+      "name": {
+        "en-US": "Introduction to Geology"
+      },
+      "description": {
+        "en-US": "This course will introduce you into the basics of geology. This includes subjects such as\n        plate tectonics, geological materials and the history of the Earth."
+      },
+      "type": "https://w3id.org/xapi/cmi5/activitytype/course"
+    }
+  },
+  "context": {
+    "registration": "b22893ae-a13e-406f-abb6-fd463ed7c645",
+    "contextActivities": {
+      "category": [
+        {
+          "objectType": "Activity",
+          "id": "https://w3id.org/xapi/cmi5/context/categories/cmi5"
+        }
+      ]
+    },
+    "extensions": {
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "086bc201-7cc4-4d37-822c-0dd6362f8f78"
+    }
+  },
+  "timestamp": "2016-06-09T17:38:27.051Z"
+}
