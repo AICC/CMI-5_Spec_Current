@@ -46,9 +46,8 @@ The following is a side-by-side comparison of SCORM to cmi5 at a detailed featur
 | Content Defined Data | No | Yes | SCORM data collection is restricted to data elements defined in the SCORM Data Model. cmi5 contains a smaller set of defined data elements than SCORM and is highly extensible through the use of xAPI. |
 | Client Agnostic | No | Yes | For all practical purposes, SCORM is dependent on browser delivery due to the use of JavaScript API/object for communication.  cmi5 uses a RESTful web service (xAPI) and a JSON data format, neither of which rely on a browser. |
 | Distributed Content | No | Yes | With SCORM all content is required to be located in the package and typically stored on the same domain as the LMS.With cmi5, content does not have to be in the package and can be located on any domain/local device. |
-| Data Access | No | Yes | In SCORM, the only specification protocol for returning data was available at Run-Time for the current user within current SCO only.  Access to data requires access to the Database (which is outside the scope of SCORM).cmi5 uses xAPI which has querying (GET Requests) built-in to allow return of data.  LRSs cannot be write-only. All requests for data subject to security policies. |
-| Data Readability | No | Yes | With SCORM, the structure of data is not defined so the data format varies from system to system.cmi5 is xAPI based with a standardized JSON / document structure. |
-| Data Portability | No | Yes | SCORM runtime data does not allow for easy import/export. The cmi5 JSON structure allows for easy portability across systems. |
+| Data Access | No | Yes | In SCORM, there is no standard bulk data access exposed.  cmi5 uses xAPI which is designed to provide bulk access to learner data with simple filtering. |
+| Data Portability | No | Yes | SCORM does not allow for standardized system integration.  cmi5 uses xAPI which provides a standard journaling-based data format well suited for transport. |
 
 
 &nbsp;
