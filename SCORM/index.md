@@ -121,7 +121,7 @@ The cmi5 course structure also provides for an “entitlementKey” which allows
 
 ### Data Access
 
-In SCORM, the only specification protocol for returning data was available at Run-Time for the current user within current SCO only. Access to data requires access to the Database (which is outside the scope of SCORM).  cmi5 uses xAPI which has bulk data retrieval capabilities (using GET Requests) built-in to allow return of data. LRSs cannot be write-only. All requests for data subject to security policies.
+In SCORM, the only specification protocol for returning data was available at Run-Time for the current user within current SCO only. Access to data requires access to the Database (which is outside the scope of SCORM).  cmi5 uses xAPI which has bulk data retrieval capabilities (using GET Requests) built-in to allow return of data. LRSs cannot be write-only. All requests for data are subject to security policies.
 
 ### Data Portability
 
