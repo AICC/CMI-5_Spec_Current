@@ -9,9 +9,9 @@
     }
   },
   "verb": {
-    "id": "http://adlnet.gov/expapi/verbs/experienced",
+    "id": "http://adlnet.gov/expapi/verbs/progressed",
     "display": {
-      "und": "experienced"
+      "und": "progressed"
     }
   },
   "object": {
