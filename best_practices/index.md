@@ -75,5 +75,7 @@ If an AU sends a statement that doesn’t conform to cmi5, the LMS should reject
 ### Best Practice #{% increment bpCount %}  - LMS Administrators should use caution when changing the moveOn property.
 The AU may not have the capability of sending statements required by any moveOn value that was not in the original course structure. It is recommended that all changes to course structures after import be tested prior to learner assignment.
 
+###  Best Practice #{% increment bpCount % – Use “progressed” verb for indicating progress during a session.
+For recording progress during a session, it is recommend to use a cmi5 allowed statement with the progressed verb (http://adlnet.gov/expapi/verbs/progressed) and a progress extension in the result (see section 9.5.5.1 of specification).  Progress statements should not be sent for progress value of 100% as that indicates completion.  Once the learner reaches 100% it is recommended that a cmi5 defined “completed” statement be issued instead.
 
 ------
