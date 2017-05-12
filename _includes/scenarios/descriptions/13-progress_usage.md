@@ -1,1 +1,1 @@
-Session showing the use of the "progress" extension. Includes 4 "cmi5 allowed" Statements that have an increasing progress of 25% (`25`), 50% (`50`), 75% (`75`) and 100% (`100`) followed by a Completed Statement. Note the "progress" extension is not included in the Completed Statement.
+Session showing the use of the "progress" extension. Includes 3 "cmi5 allowed" Statements that have an increasing progress of 25% (`25`), 50% (`50`), and 75% (`75`) followed by a Completed Statement. Note the "progress" extension is not included in the Completed Statement.
