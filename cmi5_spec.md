@@ -503,9 +503,11 @@ The values for the URL launch parameters are described below:
 </table>
 
 <br>
-<a name="fetch_url"></a>  
+
+<a name="fetch_url"></a>
 ## 8.2 Authorization Token Fetch URL
-<a name="fetch_url_overview"></a>  
+
+<a name="fetch_url_overview"></a>
 ### 8.2.1 Overview
 The LMS MUST include the <strong><em>fetch</em></strong> name/value pair in the launch URL.  The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve an authorization token.  Note than an HTTP GET is not allowed in order to prevent caching of the request.
 
