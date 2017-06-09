@@ -76,7 +76,7 @@
           * [9.6.3.1 session ID](#context_extensions_session_id)
           * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
           * [9.6.3.3 launchMode](#context_extensions_launchMode)
-          * [9.6.3.4 launchURL] (#context_extensions_launchURL)
+          * [9.6.3.4 launchURL](#context_extensions_launchURL)
           * [9.6.3.5 publisherId](#context_extensions_publisherid)
           * [9.6.3.6 moveOn](#context_extensions_moveOn)
           * [9.6.3.7 launchParameters](#context_extensions_launchParameters)
@@ -503,9 +503,11 @@ The values for the URL launch parameters are described below:
 </table>
 
 <br>
-<a name="fetch_url"></a>  
+
+<a name="fetch_url"></a>
 ## 8.2 Authorization Token Fetch URL
-<a name="fetch_url_overview"></a>  
+
+<a name="fetch_url_overview"></a>
 ### 8.2.1 Overview
 The LMS MUST include the <strong><em>fetch</em></strong> name/value pair in the launch URL.  The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve an authorization token.  Note than an HTTP GET is not allowed in order to prevent caching of the request.
 
@@ -1606,6 +1608,7 @@ For the course import and export defined in Section 6.1, the LMS MUST support al
 <li>Zip64</li>
 <li>A course structure XML file</li>
 </ul>
+
 <a name="course_packages_in_zip_format"></a>
 ## 14.1 Course Packages in ZIP Format
 The two ZIP file formats MUST follow the specification defined at https://www.pkware.com/support/zip-app-note.  When the ZIP file is used to package a course, it MUST contain the course structure XML file at its root directory and it MAY contain media associated with the course AUs.
