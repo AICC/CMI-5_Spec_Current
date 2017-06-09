@@ -76,7 +76,7 @@
           * [9.6.3.1 session ID](#context_extensions_session_id)
           * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
           * [9.6.3.3 launchMode](#context_extensions_launchMode)
-          * [9.6.3.4 launchURL] (#context_extensions_launchURL)
+          * [9.6.3.4 launchURL](#context_extensions_launchURL)
           * [9.6.3.5 publisherId](#context_extensions_publisherid)
           * [9.6.3.6 moveOn](#context_extensions_moveOn)
           * [9.6.3.7 launchParameters](#context_extensions_launchParameters)
