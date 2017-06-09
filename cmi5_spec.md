@@ -1608,6 +1608,7 @@ For the course import and export defined in Section 6.1, the LMS MUST support al
 <li>Zip64</li>
 <li>A course structure XML file</li>
 </ul>
+
 <a name="course_packages_in_zip_format"></a>
 ## 14.1 Course Packages in ZIP Format
 The two ZIP file formats MUST follow the specification defined at https://www.pkware.com/support/zip-app-note.  When the ZIP file is used to package a course, it MUST contain the course structure XML file at its root directory and it MAY contain media associated with the course AUs.
