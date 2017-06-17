@@ -586,15 +586,18 @@ All statements in this section refer to "cmi5 defined" statements unless otherwi
 
 AUs MUST use the below verbs that are indicated as mandatory in other sections of this specification.
 
-AU Verb Ordering Rules within an AU session are as follows:
+For all requirements listed below including language involving order, the order is determined by the value of the timestamp property.
 
+AU Verb Ordering Rules within an AU session are as follows:
 * Verbs MUST NOT be duplicated (in cmi5 defined statements).
 * More than one of the set of {"Passed","Failed"} verbs MUST NOT be used (in cmi5 defined statements).
-* Only one "Completed" cmi5 defined statement is allowed per registration.
-* Only one "Passed" cmi5 defined statement is allowed per registration.
-* A "Failed" statement must not follow a "Passed" statement (in cmi5 defined statements).
 * The "Initialized" verb MUST be the first statement (cmi5 allowed or defined).
 * The "Terminated" verb MUST be the last statement (cmi5 allowed or defined).
+
+AU Verb Ordering Rules within a Registration (per AU) are as follows:
+* Only one "Completed" cmi5 defined statement is allowed per registration.
+* Only one "Passed" cmi5 defined statement is allowed per registration.
+* A "Failed" statement must not follow a "Passed" statement (in cmi5 defined statements) per registration.
 
 AUs may use additional verbs not listed in this specification.
 
