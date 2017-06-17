@@ -21,7 +21,7 @@
     }
   },
   "launchMode": "Review",
-  "returnUrl": "http://10.211.55.3/ScormEngineInterface/defaultui/cmi5-deliver.aspx?configuration=&registration=ApiRegistrationId%7css1!InstanceId%7c0",
+  "returnURL": "http://10.211.55.3/ScormEngineInterface/defaultui/cmi5-deliver.aspx?configuration=&registration=ApiRegistrationId%7css1!InstanceId%7c0",
   "launchMethod": "AnyWindow",
   "moveOn": "Completed"
 }
