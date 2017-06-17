@@ -218,6 +218,8 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Administrator__: The administrative user who manages the LMS and related systems. This user performs tasks such as learner enrollment, course structure definition, and report management.
 
+* __Activity__: In this specification it is representative of an AU or the Object of a statement with objectType of “Activity”. Thus the granularity can be anything from a single AU course down to a specific interaction.
+
 * __Assignable Unit (AU)__:  A learning content presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS.
 
 * __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically an internal data structure. Courses are often assigned to learners and tracked by the LMS.
@@ -235,6 +237,10 @@ For purposes of this specification, the following terms and definitions apply:
 * __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners' progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS MUST have an LRS as part of its implementation. The LMS MUST be integrated with an LRS. In the remainder of this document the term “LMS” shall refer to an integrated entity of LMS and LRS.
 
 * __Learning Records Store (LRS)__: As defined in the xAPI specification.
+
+* __Registration__: An enrollment instance of a learner in a course. (Registration ID uniquely identifies this)
+
+* __Session__: A period of time marked by the launch of an AU until its termination (or abandonment).
 
 <a name="acronyms"></a> 
 ## 3.1 Abbreviations and Acronyms
