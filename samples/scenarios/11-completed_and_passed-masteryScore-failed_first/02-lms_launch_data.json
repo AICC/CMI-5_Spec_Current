@@ -21,7 +21,7 @@
     }
   },
   "launchMode": "Normal",
-  "returnUrl": "http://10.211.55.3/ScormEngineInterface/defaultui/cmi5-deliver.aspx?configuration=&registration=ApiRegistrationId%7css2!InstanceId%7c0",
+  "returnURL": "http://10.211.55.3/ScormEngineInterface/defaultui/cmi5-deliver.aspx?configuration=&registration=ApiRegistrationId%7css2!InstanceId%7c0",
   "launchMethod": "AnyWindow",
   "masteryScore": 0.86,
   "moveOn": "CompletedAndPassed"
