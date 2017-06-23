@@ -609,6 +609,13 @@ AUs may use additional verbs not listed in this specification.
 
 Regardless of the verbs the AUs use in statements, the LMS MUST record and provide reporting for all statements. 
 
+LMS verb ordering rules are as follows:
+* LMS may issue multiple satisfied statements (in a session).
+* LMS SHOULD NOT issue multiple satisfied statements (in a registration).
+* LMS MUST NOT issue more than one abandoned statement in a session.
+* LMS MUST NOT issue more than one waived statement per session and MUST not issue more than one waived statement per registration per AU.
+
+
 <a name="verbs_launched"></a>
 ### 9.3.1 Launched
 <table>
