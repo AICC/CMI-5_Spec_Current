@@ -624,7 +624,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Description</th><td>The verb "Launched" indicates that the AU was launched by the LMS.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API, Section 10) The LMS MUST NOT issue multiple statements with "Launched" for the same AU within a given AU session.</td></tr>
-<tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate that the LMS has launched the AU. It SHOULD be used in combination with the "Initialized" statement sent by the AU in a reasonable period of time to determine whether the AU was successfully launched. </td></tr>
+<tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate that the LMS has launched the AU. </td></tr>
 </table>
 
 <a name="verbs_initialized"></a>
@@ -635,7 +635,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Description</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and MUST follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST use "Initialized" in the first statement (of any kind) in the AU session.  The AU MUST NOT issue multiple statements with "Initialized" for the same AU within a given AU session.</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None</td></tr>
-<tr><th align="left">Usage</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized and SHOULD follow the "Launched" statement created by the LMS within a reasonable period of time.</td></tr>
+<tr><th align="left">Usage</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized.</td></tr>
 </table>
 
 <a name="verbs_completed"></a>
