@@ -200,8 +200,7 @@ The following referenced documents are indispensable for the application of this
 https://www.ietf.org/rfc/rfc3987.txt
 * "Experience API", version 1.0.x (subject to change just prior to release), ADL<br>
 https://github.com/adlnet/xAPI-Spec/blob/xAPI-1.0.2/xAPI.md
-* cmi5 Course Structure, Sandstone 1st Edition<br>
-https://github.com/AICC/CMI-5_Spec_Current/blob/master/cmi5_coursestructure.md
+* cmi5 Course Structure, Sandstone 1st Edition (merged into this document)<br>
 * MIME Types<br>
 http://www.iana.org/assignments/media-types/index.html
 * Extensible Markup Language (XML)<br>
