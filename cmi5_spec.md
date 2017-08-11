@@ -1192,15 +1192,12 @@ The following metadata attributes and elements are at the course level and  desc
         Values are defined by the course designer.<br>
       </p>
       <p><strong>Sample value</strong>: <br>
-      
-
     &lt;title&gt;<br>
     &nbsp;&nbsp;&lt;langstring lang="en-US"&gt;This is a course title&lt;/langstring&gt;<br>
     &nbsp;&nbsp;&lt;langstring lang="es-MX"&gt;Se trata de un título del curso&lt;/langstring&gt;<br>
     &lt;/title&gt;<br>
-      
-    </p>
-    </td>
+  </p>
+  </td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h3>description</h3></td>
