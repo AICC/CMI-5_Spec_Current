@@ -80,4 +80,8 @@ The AU may not have the capability of sending statements required by any moveOn 
 ###  Best Practice #{% increment bpCount %} – Use “progressed” verb for indicating progress during a session.
 For recording progress during a session, it is recommend to use a cmi5 allowed statement with the progressed verb (http://adlnet.gov/expapi/verbs/progressed) and a progress extension in the result (see section 9.5.5.1 of specification).  Progress statements should not be sent for progress value of 100% as that indicates completion.  Once the learner reaches 100% it is recommended that a cmi5 defined “completed” statement be issued instead.
 
+###  Best Practice #{% increment bpCount %} – Provide registration id in all statements.
+It is strongly recommend to include the registration id provided by the LMS at launch time in the context of all statements issued by the LMS and AU.
+
+
 ------
