@@ -111,7 +111,7 @@ Also, [please see our wiki](https://github.com/AICC/CMI-5_Spec_Current/wiki) for
 ### cmi5 Email Address
 Please send questions for the working group to: [cmi5wg@adlnet.gov](mailto://cmi5wg@adlnet.gov)
 
-### Weekly GotoMeeting Conferences
+### Weekly cmi5 Web Conferences
 
 The cmi5 working group holds weekly Web Conferences that are open to all. The meeting are held every Friday at 10:30 am US Eastern Time. See link below :
 
