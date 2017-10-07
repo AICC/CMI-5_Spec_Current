@@ -83,5 +83,8 @@ For recording progress during a session, it is recommend to use a cmi5 allowed s
 ###  Best Practice #{% increment bpCount %} – Provide registration id in all statements.
 It is strongly recommend to include the registration id provided by the LMS at launch time in the context of all statements issued by the LMS and AU.
 
+###  Best Practice #{% increment bpCount %} – LMS create "satisfied" statements for AU's.
+
+It is recommended that the LMS create a cmi5 “allowed” statement (with a satisfied verb) when an AU has met its moveOn criteria.  The statement should also include the same AU activityId used in cmi5 defined statements.
 
 ------
