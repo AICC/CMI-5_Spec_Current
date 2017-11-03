@@ -1076,8 +1076,21 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
 </table>
 
 <table>
+  <tr><th colspan=2 align="left">entitlementKey</th></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <strong>entitlementKey</strong> object is used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
+  <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>If an entitlementKey is present in the Course Structure for the AU, the LMS MUST add and an entitlementKey object to the LMS.launchdata state document. The entitlementKey consists of 2 properties, “courseStructure” and “alternate”. See items below for LMS usage requirements.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.</td></tr>
+  <tr><th align="right" nowrap>Data Type:</th><td>JSON Object</td></tr>
+  <tr><th align="right" nowrap>Value Space:</th><td>The value for entitlementKey properties are defined by the AU provider.</td></tr>
+  <tr><th align="right" nowrap>Sample Value:</th><td>{courseStructure: "xyz-123-9999"", alternate: "abc-456-1111""}</td></tr>
+</table>
+
+
+<table>
   <tr><th colspan=2 align="left">entitlementKey: courseStructure</th></tr>
-  <tr><th align="right" nowrap>Description:</th><td>Entitlement data or key from the Course Structure. The       <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <strong>courseStructure</strong> property contains the value for entitlementKey from the Course Structure . The courseStructure values may be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain this from the Course Structure.</td></tr>
@@ -1089,10 +1102,10 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
 
 <table>
   <tr><th colspan=2 align="left">entitlementKey: alternate</th></tr>
-  <tr><th align="right" nowrap>Description:</th><td>Entitlement data or key from some other source as agreed upon between the LMS and the AU. The <strong>entitlementKey</strong> values may be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <strong>alternate</strong> property is data from some other source as agreed upon between the LMS and the AU. The alternate property values may be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>No</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain the alternate entitlement key from a source as agreed upon with the AU.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain the value for the alternate property from a source as agreed upon with the AU.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>The value is defined by the AU provider.</td></tr>
