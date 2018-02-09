@@ -1220,7 +1220,7 @@ The following metadata attributes and elements are at the course level and  desc
         <strong>Data type</strong>: langstring</p>
     </td>
     <td width="811" valign="top"><p><strong>Description:</strong><br>
-      A detailed  description of the course.</p>
+      A detailed description of the course.</p>
       <p><strong>Value space:</strong><br>
         Values are defined by the course designer.</p>
       <p><strong>Sample value: </strong><br>
@@ -1228,7 +1228,6 @@ The following metadata attributes and elements are at the course level and  desc
     &nbsp;&nbsp;&lt;langstring lang="en-US"&gt;This is a course description&lt;/langstring&gt;<br>
     &nbsp;&nbsp;&lt;langstring lang="es-MX"&gt;Esta es una descripción del curso&lt;/langstring&gt;<br>
     &lt;/description&gt;<br>  
-    
         </p>
     </td>
   </tr>
@@ -1497,12 +1496,10 @@ The data in this section are used by the LMS to locate the AU and provide launch
       <p><strong>Value space: </strong> Values are defined by the course designer.<br>
       </p>
       <p><strong>Sample value: </strong><br>
-
     &lt;title&gt;<br>
     &nbsp;&nbsp;&lt;langstring lang="en-US"&gt;This is an activity title.&lt;/langstring&gt;<br>
     &nbsp;&nbsp;&lt;langstring lang="es-MX"&gt;Este es un título de la actividad.&lt;/langstring&gt;<br>
     &lt;/title&gt;<br>
-
       </p>
     </td>
   </tr>
