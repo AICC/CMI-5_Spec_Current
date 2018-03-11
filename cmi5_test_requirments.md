@@ -366,7 +366,7 @@ NA
 
 9.6.3.6 moveOn
 
-* **cmi5\_9.6.3.6\_1** Learning Management System (LMS):  LMS MUST add moveOn as an extension of context in a Launched statement when moveOn is provided in LMS.launchdata.
+* **cmi5\_9.6.3.6\_1** Learning Management System (LMS):  LMS MUST add moveOn as an extension of context in a Launched statement provided in LMS.launchdata.
 
 9.6.3.7 launchParameters
 
