@@ -80,7 +80,7 @@ _**Disclaimer: This is a working draft, do NOT implement systems based on this i
 
 * **cmi5\_8.1\_1**  Learning Management System (LMS): The AU MUST be launched by the LMS using either a new browser window or redirecting the existing browser window to a new location.
 
-* **cmi5\_8.1\_2**  Learning Management System (LMS): The AU MUST be launched by the LMS using the method specified in the course structure metadata.  (new window, redirect existing window, or any window)
+* **cmi5\_8.1\_2**  Learning Management System (LMS): The AU MUST be launched by the LMS using the method specified in the course structure metadata.  ("OwnWindow" or "AnyWindow")
 
 * **cmi5\_8.1\_3**  Learning Management System (LMS): The AU MUST be launched by the LMS with a launch URL containing query string parameters (endpoint, fetch, actor, registration, and activityId).
 
