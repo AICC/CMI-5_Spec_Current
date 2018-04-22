@@ -440,6 +440,7 @@ document if a value for masteryScore is defined in the course structure.
 * **cmi5_13_1_2_3**  Course Structure (cmi5.xml):  Each block element must have an description element with at least one langstring element containing a verbal description of the block.
 * **cmi5_13_1_2_4**  Course Structure (cmi5.xml):  If objectives element is present in a block, each of its member objective elements must contain a idref attribute value referencing an objective id.
 
+
 13.1.3 Objective Metadata
 
 * **cmi5_13_1_3_1**  Course Structure (cmi5.xml):  The objectives element of the course (if present) must have at least one member “objective” element.
@@ -475,6 +476,7 @@ document if a value for masteryScore is defined in the course structure.
 * **cmi5_14_1_1** Course Package: The course package (ZIP file) MUST contain the course structure XML file (cmi5.xml) at its root directory
 * **cmi5_14_1_2** Course Package:  Any media not included in a ZIP course package MUST use fully qualified URL references in the Course Structure XML (cmi5.xml)
 * **cmi5_14_1_3** Course Package:  The course package ZIP file format MUST follow the specification defined at https://www.pkware.com/support/zip-app-note (for either Zip 64 or Zip 32).
+* **cmi5_14_1_4** Course Package: Any media included in a ZIP course package MUST use relative URL references in the Course Structure XML (cmi5.xml)
 
 14.2 Course Structure XML Without a ZIP File Package
 
