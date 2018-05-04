@@ -405,6 +405,12 @@ document if a value for masteryScore is defined in the course structure.
 
 * **cmi5_10_10**  Learning Management System (LMS):  LMS MUST set the entitlementKey object property “courseStructure” to the value of entitlementKey.courseStructure present for the AU in the course structure.
 
+* **cmi5_10_11** Assignable Unit (AU): The AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document.
+
+* **cmi5_10_12** Assignable Unit (AU): The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it records to the LMS.
+
+* **cmi5_10_13** Assignable Unit (AU): The AU MUST NOT overwrite any values provided in the contextTemplate.
+
 11.0 xAPI Agent Profile Data Model
 
 * **cmi5_11_1**  Assignable Unit (AU):  The AU MUST call the agent profile API to retrieve the “cmi5LearnerPreferences” document.
