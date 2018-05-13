@@ -591,6 +591,8 @@ All statements in this section refer to "cmi5 defined" statements unless otherwi
 
 AUs MUST use the below verbs that are indicated as mandatory in other sections of this specification.
 
+AUs MUST NOT issue cmi5 defined statements using LMS specific verbs (Launched, Waived, Abandoned, Satisfied) defined in this section. 
+
 For all requirements listed below including language involving order, the order is determined by the value of the timestamp property.
 
 AU Verb Ordering Rules within an AU session are as follows:
@@ -613,7 +615,6 @@ LMS verb ordering rules are as follows:
 * LMS SHOULD NOT issue multiple satisfied statements (in a registration).
 * LMS MUST NOT issue more than one abandoned statement for a session.
 * LMS MUST NOT issue more than one waived statement per session and MUST not issue more than one waived statement per registration per AU.
-
 
 <a name="verbs_launched"></a>
 ### 9.3.1 Launched
