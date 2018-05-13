@@ -284,6 +284,8 @@ _**Disclaimer: This is a working draft, do NOT implement systems based on this i
 
 * **cmi5\_9.5.3\_4** Learning Management System (LMS):  The LMS must not include the &quot; completion&quot; property for  (cmi5 defined) statements other waived.
 
+* **cmi5_9.5.3_5** Assignable Unit (AU): The AU must set the "completion" property of the result to true for completed (cmi5 defined) statements.
+
 9.5.4 Duration
 
 9.5.4.1 AU statements that include duration
