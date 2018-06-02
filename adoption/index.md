@@ -5,6 +5,8 @@ The following products that have currently implemented cmi5:
 
 - [RISC Inc. Virtual Training Assistant™ (LMS)](http://risc-inc.com/)
 - [iSpring Solutions iSpring Suite (Content Authoring Tool)](http://www.ispringsolutions.com/)
+- [Trivantis Lectora Publisher (eLearning Content Authoring Tool)](https://www.trivantis.com/products/publisher-training-software)
+- [Trivantis CenarioVR (VR Content Authoring Tool)](https://www.cenariovr.com/)
 - [Rustici Software SCORM Engine (LMS Middleware)](http://scorm.com/scorm-solved/scorm-engine/)
 - [Rustici Software SCORM Driver (Content Middleware)](http://scorm.com/scorm-solved/scorm-driver/driver-cmi5/)
 - [Rustici Software SCORM Cloud (LMS/LRS)](http://scorm.com/scorm-solved/scorm-cloud-features/)
