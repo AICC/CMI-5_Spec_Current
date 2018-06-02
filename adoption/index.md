@@ -19,7 +19,6 @@ The following companies have announced plans to support cmi5:
 - Exputo
 - Thrivist
 - Learning Templates
-- Trivantis
 - Obsidian Learning
 - Zavango Corp.
 
