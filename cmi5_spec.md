@@ -1585,7 +1585,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       <p>
         <strong>Sample value:</strong><br>
         &lt;launchParameters&gt;<br>
-        {"param1": "Lorem ipsum dolor sit amet", "param2": [1,2,3,4,5],"param3": {"a": 1,"b": 2}}<br>
+        Parameter1,Parameter2,Parameter3<br>
          &lt;/launchParameters&gt;<br>
         </p>
     </td>
