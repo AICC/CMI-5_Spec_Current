@@ -20,7 +20,7 @@
 {% include_relative 01-launched_statement.json %}
 </pre>
 
-## LMS Launch Data
+## LMS.LaunchData
 
 [View Raw](02-lms_launch_data.json)
 
