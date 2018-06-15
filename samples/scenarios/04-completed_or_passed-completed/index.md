@@ -28,6 +28,14 @@
 {% include_relative 02-lms_launch_data.json %}
 </pre>
 
+## cmi5LearnerPreferences
+
+[View Raw](07-cmi5LearnerPreferences_data.json)
+
+<pre>
+{% include_relative 07-cmi5LearnerPreferences_data.json %}
+</pre>
+
 ## Initialized Statement
 
 [View Raw](03-initialized_statement.json)
