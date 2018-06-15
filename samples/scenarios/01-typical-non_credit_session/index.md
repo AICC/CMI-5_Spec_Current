@@ -5,7 +5,7 @@
 
 1. [Launched Statement](#launched-statement)
 1. [Fetch URL Response](#fetch-url-response)
-1. [LMS.LaunchData](#lms.launchdata)
+1. [LMS.LaunchData](#lms-launch-data)
 1. [cmi5LearnerPreferences](#cmi5LearnerPreferences)
 1. [Initialized Statement](#initialized-statement)
 1. [Terminated Statement](#terminated-statement)
