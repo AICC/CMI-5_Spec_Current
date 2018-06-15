@@ -27,12 +27,20 @@
 {% include_relative 02-fetch_url_response.json %}
 </pre>
 
-## LMS Launch Data
+## LMS.LaunchData
 
 [View Raw](03-lms_launch_data.json)
 
 <pre>
 {% include_relative 03-lms_launch_data.json %}
+</pre>
+
+## cmi5LearnerPreferences
+
+[View Raw](06-cmi5LearnerPreferences_data.json)
+
+<pre>
+{% include_relative 06-cmi5LearnerPreferences_data.json %}
 </pre>
 
 ## Initialized Statement
