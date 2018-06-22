@@ -4,7 +4,7 @@
 # Completed or Passed Move On - Completed
 
 1. [Launched Statement](#launched-statement)
-1. [LMS Launch Data](#lms-launch-data)
+1. [LMS.LaunchData](#lmslaunchdata)
 1. [Initialized Statement](#initialized-statement)
 1. [Completed Statement](#completed-statement)
 1. [Satisfied Statement](#satisfied-statement)
