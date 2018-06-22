@@ -10,7 +10,7 @@
               "en-US": "Introduction to Geology"
             },
             "description": {
-              "en-US": "This course will introduce you into the basics of geology. This includes subjects such as\n        plate tectonics, geological materials and the history of the Earth."
+              "en-US": "This course will introduce you into the basics of geology. This includes subjects such as plate tectonics, geological materials and the history of the Earth."
             }
           }
         }
@@ -23,5 +23,7 @@
   "launchMode": "Normal",
   "returnURL": "http://10.211.55.3/ScormEngineInterface/defaultui/cmi5-deliver.aspx?configuration=&registration=ApiRegistrationId%7css1!InstanceId%7c0",
   "launchMethod": "AnyWindow",
+  "launchParameters": "Start=1&QuizMode=1&FastForward=On",
+  "entitlementKey": {"courseStructure": "xyz-123-9999", "alternate": "abc-456-1111"},
   "moveOn": "CompletedOrPassed"
 }
