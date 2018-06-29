@@ -5,6 +5,7 @@
 
 1. [Launched Statement](#launched-statement)
 1. [LMS.LaunchData](#lmslaunchdata)
+1. [cmi5LearnerPreferences](#cmi5learnerpreferences)
 1. [Initialized Statement](#initialized-statement)
 1. [Completed Statement](#completed-statement)
 1. [Satisfied Statement](#satisfied-statement)
