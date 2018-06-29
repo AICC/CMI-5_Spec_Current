@@ -4,7 +4,7 @@
 # Completed and Passed - Multiple Session to Satisfy
 
 1. [Session 1 - Launched Statement](#session-1---launched-statement)
-1. [Session 1 - LMS Launch Data](#session-1---lms-launch-data)
+1. [Session 1 - LMS.LaunchData](#session-1---lmslaunchdata)
 1. [Session 1 - Initialized Statement](#session-1---initialized-statement)
 1. [Session 1 - Passed Statement](#session-1---passed-statement)
 1. [Session 1 - Terminated Statement](#session-1---terminated-statement)
@@ -25,7 +25,7 @@
 {% include_relative 01-session_1-launched_statement.json %}
 </pre>
 
-## Session 1 - LMS Launch Data
+## Session 1 - LMS.LaunchData
 
 [View Raw](02-session_1-lms_launch_data.json)
 
