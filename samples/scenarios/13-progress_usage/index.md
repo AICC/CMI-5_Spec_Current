@@ -4,7 +4,8 @@
 # Usage of Progress Extension
 
 1. [Launched Statement](#launched-statement)
-1. [LMS Launch Data](#lms-launch-data)
+1. [LMS.Launch Data](#lmslaunchdata)
+1. [cmi5LearnerPreferences](#cmi5learnerpreferences)
 1. [Initialized Statement](#initialized-statement)
 1. [Allowed 25% Statement](#allowed-25-progress-statement)
 1. [Allowed 50% Statement](#allowed-50-progress-statement)
@@ -23,12 +24,20 @@
 {% include_relative 01-launched_statement.json %}
 </pre>
 
-## LMS Launch Data
+## LMS.LaunchData
 
 [View Raw](02-lms_launch_data.json)
 
 <pre>
 {% include_relative 02-lms_launch_data.json %}
+</pre>
+
+## cmi5LearnerPreferences
+
+[View Raw](11-cmi5LearnerPreferences_data.json)
+
+<pre>
+{% include_relative 11-cmi5LearnerPreferences_data.json %}
 </pre>
 
 ## Initialized Statement
