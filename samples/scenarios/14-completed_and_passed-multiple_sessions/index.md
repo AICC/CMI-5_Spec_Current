@@ -5,11 +5,13 @@
 
 1. [Session 1 - Launched Statement](#session-1---launched-statement)
 1. [Session 1 - LMS.LaunchData](#session-1---lmslaunchdata)
+1. [Session 1 - cmi5LearnerPreferences](#session-1---cmi5learnerpreferences)
 1. [Session 1 - Initialized Statement](#session-1---initialized-statement)
 1. [Session 1 - Passed Statement](#session-1---passed-statement)
 1. [Session 1 - Terminated Statement](#session-1---terminated-statement)
 1. [Session 2 - Launched Statement](#session-2---launched-statement)
-1. [Session 2 - LMS Launch Data](#session-2---lms-launch-data)
+1. [Session 2 - LMS.LaunchData](#session-2---lmslaunchdata)
+1. [Session 2 - cmi5LearnerPreferences](#session-2---cmi5learnerpreferences)
 1. [Session 2 - Initialized Statement](#session-2---initialized-statement)
 1. [Session 2 - Completed Statement](#session-2---completed-statement)
 1. [Session 2 - Satisfied Statement](#session-2---satisfied-statement)
@@ -31,6 +33,14 @@
 
 <pre>
 {% include_relative 02-session_1-lms_launch_data.json %}
+</pre>
+
+## Session 1 - cmi5LearnerPreferences
+
+[View Raw](12-cmi5LearnerPreferences_data.json)
+
+<pre>
+{% include_relative 12-cmi5LearnerPreferences_data.json %}
 </pre>
 
 ## Session 1 - Initialized Statement
@@ -65,13 +75,22 @@
 {% include_relative 06-session_2-launched_statement.json %}
 </pre>
 
-## Session 2 - LMS Launch Data
+## Session 2 - LMS.LaunchData
 
 [View Raw](07-session_1-lms_launch_data.json)
 
 <pre>
 {% include_relative 07-session_2-lms_launch_data.json %}
 </pre>
+
+## Session 2 - cmi5LearnerPreferences
+
+[View Raw](12-cmi5LearnerPreferences_data.json)
+
+<pre>
+{% include_relative 12-cmi5LearnerPreferences_data.json %}
+</pre>
+
 
 ## Session 2 - Initialized Statement
 
