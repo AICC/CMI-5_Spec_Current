@@ -4,7 +4,8 @@
 # Completed and Passed Move On
 
 1. [Launched Statement](#launched-statement)
-1. [LMS Launch Data](#lms-launch-data)
+1. [LMS.LaunchData](#lmslaunchdata)
+1. [cmi5LearnerPreferences](#cmi5learnerpreferences)
 1. [Initialized Statement](#initialized-statement)
 1. [Passed Statement](#passed-statement)
 1. [Completed Statement](#completed-statement)
@@ -21,12 +22,20 @@
 {% include_relative 01-launched_statement.json %}
 </pre>
 
-## LMS Launch Data
+## LMS.LaunchData
 
 [View Raw](02-lms_launch_data.json)
 
 <pre>
 {% include_relative 02-lms_launch_data.json %}
+</pre>
+
+## cmi5LearnerPreferences
+
+[View Raw](07-cmi5LearnerPreferences_data.json)
+
+<pre>
+{% include_relative 07-cmi5LearnerPreferences_data.json %}
 </pre>
 
 ## Initialized Statement
