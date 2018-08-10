@@ -95,7 +95,7 @@ SCORM uses a JavaScript parent/opener with a JavaScript communication object/API
 
 ### Course Metadata
 
-SCORM has an IMS manifest that uses the LOM metadata specification to describe content (SCO&#39;s). cmi5 has a course structure file with defined content (AU) metadata and is extensible for content vendor-specific metadata. With cmi5, the course structure file can reference content from anywhere, it does not have be hosted on the same system as the LMS.  The cmi5 course structure only references the URL for the content, it does not necessarily contain all assets as SCORM does.  Like SCORM, cmi5 is also extensible.
+SCORM has an IMS manifest that uses the LOM metadata specification to describe content (SCO&#39;s). cmi5 has a course structure file with defined content (AU) metadata and is extensible for content vendor-specific metadata. With cmi5, the course structure file can reference content from anywhere, it does not have be hosted on the same system as the LMS.  The cmi5 course structure only references the URL for the content, it does not necessarily contain all assets as SCORM does.
 
 ### Content Defined Data
 
