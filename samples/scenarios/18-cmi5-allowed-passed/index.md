@@ -7,7 +7,7 @@
 1. [LMS.LaunchData](#lmslaunchdata)
 1. [cmi5LearnerPreferences](#cmi5learnerpreferences)
 1. [Initialized Statement](#initialized-statement)
-1. [exited-before-completing (cmi5 allowed) Statement](#exit-before-completing)
+1. [exited before completing (cmi5 allowed) Statement](#exit-before-completing)
 1. [completed (cmi5 allowed) Statement](#completed-statement)
 1. [failed (cmi5 allowed) Statement](#failed-statement)
 1. [Passed Statement](#passed-statement)
@@ -48,7 +48,7 @@
 {% include_relative 04-initialized_statement.json %}
 </pre>
 
-## exited-before-completing (cmi5 allowed) Statement
+## exited before completing (cmi5 allowed) Statement
 
 [View Raw](05-exited-before-completing.json)
 
