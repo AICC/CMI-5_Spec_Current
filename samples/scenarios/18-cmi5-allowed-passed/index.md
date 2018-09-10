@@ -48,10 +48,6 @@
 {% include_relative 04-initialized_statement.json %}
 </pre>
 
-1. [exit-before-completing (cmi5 allowed) Statement](#exit-before-completing)
-1. [completed (cmi5 allowed) Statement](#completed-statement)
-1. [failed (cmi5 allowed) Statement](#failed-statement)
-
 ## exited-before-completing (cmi5 allowed) Statement
 
 [View Raw](05-exited-before-completing.json)
