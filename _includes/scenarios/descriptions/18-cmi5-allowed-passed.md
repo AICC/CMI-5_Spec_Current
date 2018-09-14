@@ -5,5 +5,5 @@ In this scenario the learner :
 4. completes the instruction portion (cmi5 allowed statement)
 5. passes the test portion (cmi5 defined statement)
 
-__Note that standard cmi5 verbs are used in cmi5 allowed statements as well as non-standard verbs (exit-before-completing).__
+_Note that standard cmi5 verbs are used in cmi5 allowed statements as well as non-standard verbs (exit-before-completing)._
 
