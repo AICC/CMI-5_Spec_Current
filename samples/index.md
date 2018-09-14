@@ -118,6 +118,13 @@ Discrepancies with the above are pointed out where necessary.
 
 {% include scenarios/descriptions/17-abandoned_session.md %}
 
+### "cmi5 allowed" Passed Session
+
+[View](scenarios/18-cmi5-allowed-passed)
+
+{% include scenarios/descriptions/18-cmi5-allowed-passed.md %}
+
+
 -------
 
 ## License Agreement
