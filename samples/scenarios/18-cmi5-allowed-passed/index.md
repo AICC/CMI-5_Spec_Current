@@ -14,7 +14,7 @@
 1. [Satisfied Statement](#satisfied-statement)
 1. [Terminated Statement](#terminated-statement)
 
-{% include scenarios/descriptions/07-passed-passed.md %}
+{% include scenarios/descriptions/18-cmi5-allowed-passed.md %}
 
 ## Launched Statement
 
