@@ -61,7 +61,7 @@
 [View Raw](07-failed-statement.json)
 
 <pre>
-{% include_relative 07-failed-statement %}
+{% include_relative 07-failed-statement.json %}
 </pre>
 
 ## completed statement
