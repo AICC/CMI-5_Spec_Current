@@ -34,7 +34,7 @@
 
 ## cmi5LearnerPreferences
 
-[View Raw](03-cmi5LearnerPreferences_data.jsonn)
+[View Raw](03-cmi5LearnerPreferences_data.json)
 
 <pre>
 {% include_relative 03-cmi5LearnerPreferences_data.json %}
