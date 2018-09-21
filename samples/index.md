@@ -118,7 +118,7 @@ Discrepancies with the above are pointed out where necessary.
 
 {% include scenarios/descriptions/17-abandoned_session.md %}
 
-### Session with "cmi5 allowed" Statements prior to "cmi5 defined" Passed
+### Passed with multiple attempts within a single Session using "cmi5 allowed" Statements
 
 [View](scenarios/18-cmi5-allowed-passed)
 
