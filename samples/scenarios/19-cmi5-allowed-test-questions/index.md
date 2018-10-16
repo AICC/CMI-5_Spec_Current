@@ -54,7 +54,7 @@
 
 
 
-## answered allowed statement 1 of 4)
+## answered allowed statement  1 of 4)
 
 [View Raw](06-answered-01.json)
 
@@ -62,7 +62,7 @@
 {% include_relative 06-answered-01.json %}
 </pre>
 
-## answered allowed statement 2 of 4)
+## answered allowed statement  2 of 4)
 
 [View Raw](06-answered-02.json)
 
@@ -70,7 +70,7 @@
 {% include_relative 06-answered-02.json %}
 </pre>
 
-## answered allowed statement 3 of 4)
+## answered allowed statement  3 of 4)
 
 [View Raw](06-answered-03.json)
 
@@ -78,7 +78,7 @@
 {% include_relative 06-answered-03.json %}
 </pre>
 
-## answered allowed statement 4 of 4)
+## answered allowed statement  4 of 4)
 
 [View Raw](06-answered-04.json)
 
