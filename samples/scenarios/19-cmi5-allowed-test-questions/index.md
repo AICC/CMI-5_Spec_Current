@@ -7,10 +7,10 @@
 1. [LMS.LaunchData](#lmslaunchdata)
 1. [cmi5LearnerPreferences](#cmi5learnerpreferences)
 1. [initialized](#initialized-statement)
-1. [answered Statement 1 of 4 (cmi5 allowed) Statement](#answered1)
-1. [answered Statement 2 of 4 (cmi5 allowed) Statement](#answered2)
-1. [answered Statement 3 of 4 (cmi5 allowed) Statement](#answered3)
-1. [answered Statement 4 of 4 (cmi5 allowed) Statement](#answered4)
+1. [answered Statement 1 of 4 (cmi5 allowed) Statement](#answered-statement--1-of-4)
+1. [answered Statement 2 of 4 (cmi5 allowed) Statement](#answered-statement--2-of-4)
+1. [answered Statement 3 of 4 (cmi5 allowed) Statement](#answered-statement--3-of-4)
+1. [answered Statement 4 of 4 (cmi5 allowed) Statement](#answered-statement--4-of-4)
 1. [passed (cmi5 allowed) Statement](#passed-allowed-statement)
 1. [completed Statement](#completed-statement)
 1. [passed Statement](#passed-statement)
@@ -54,7 +54,7 @@
 
 
 
-## answered1
+## answered statement  1 of 4
 
 [View Raw](06-answered-01.json)
 
@@ -62,7 +62,7 @@
 {% include_relative 06-answered-01.json %}
 </pre>
 
-## answered2
+## answered statement  2 of 4
 
 [View Raw](06-answered-02.json)
 
@@ -70,7 +70,7 @@
 {% include_relative 06-answered-02.json %}
 </pre>
 
-## answered3
+## answered statement  3 of 4
 
 [View Raw](06-answered-03.json)
 
@@ -78,7 +78,7 @@
 {% include_relative 06-answered-03.json %}
 </pre>
 
-## answered4
+## answered statement  4 of 4
 
 [View Raw](06-answered-04.json)
 
