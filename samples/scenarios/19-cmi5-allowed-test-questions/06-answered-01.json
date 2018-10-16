@@ -1,0 +1,84 @@
+{
+  "version": "1.0.0",
+  "id": "6d51d767-c13a-4df3-bc44-8daafba28917",
+  "actor": {
+    "objectType": "Agent",
+    "name": "Boss, Lisa J.",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
+      "name": "277013-1"
+    }
+  },
+  "verb": {
+    "id": "http://adlnet.gov/expapi/verbs/answered",
+    "display": {
+      "en-US": "answered"
+    }
+  },
+  "object": {
+    "objectType": "Activity",
+    "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E/questions/_694AA88A-F256-4AAE-A989-28C8031B3F00_",
+    "definition": {
+      "correctResponsesPattern": [
+        "0_Freeform_1"
+      ],
+      "choices": [
+        {
+          "id": "0_Freeform_1",
+          "description": {
+            "en-US": "Freeform 1"
+          }
+        }
+      ],
+      "name": {
+        "en-US": "Which of these parts of the shuttle is the expendable external tank? \r \rPlace a hotspot marker on the appropriate part.\r"
+      },
+      "description": {
+        "en-US": "Which of these parts of the shuttle is the expendable external tank? \r \rPlace a hotspot marker on the appropriate part.\r"
+      },
+      "type": "http://adlnet.gov/expapi/activities/cmi.interaction",
+      "interactionType": "choice"
+    }
+  },
+  "result": {
+    "score": {
+      "scaled": 1,
+      "raw": 10,
+      "min": 0,
+      "max": 10
+    },
+    "success": true,
+    "response": "0_Freeform 1",
+    "duration": "PT0H0M4S"
+  },
+  "context": {
+    "registration": "676437af-c6b2-4619-9043-096de04ad996",
+    "contextActivities": {
+      "parent": [
+        {
+          "objectType": "Activity",
+          "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E"
+        }
+      ],
+      "grouping": [
+        {
+          "objectType": "Activity",
+          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+        }
+      ]
+    },
+    "extensions": {
+      "ispring://view_id": "x6ryj7m2e6mj",
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "1519"
+    }
+  },
+  "timestamp": "2018-09-05T13:44:02.000Z",
+  "stored": "2018-09-05T13:44:36.403Z",
+  "authority": {
+    "objectType": "Agent",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/",
+      "name": "6606cdd6-6095-4c22-8496-9ed8112aa67f"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "id": "fd85910e-b4d7-4b33-9859-de1a8104293a",
+  "actor": {
+    "objectType": "Agent",
+    "name": "Boss, Lisa J.",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
+      "name": "277013-1"
+    }
+  },
+  "verb": {
+    "id": "http://adlnet.gov/expapi/verbs/passed",
+    "display": {
+      "en-US": "Passed"
+    }
+  },
+  "object": {
+    "objectType": "Activity",
+    "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724",
+    "definition": {
+      "name": {
+        "en-US": "Space_Shuttle_cmi5_ptr_h_finish_btn"
+      }
+    }
+  },
+  "result": {
+    "score": {
+      "scaled": 1,
+      "raw": 100,
+      "min": 0,
+      "max": 100
+    },
+    "success": true,
+    "duration": "PT0H1M31S"
+  },
+  "context": {
+    "registration": "676437af-c6b2-4619-9043-096de04ad996",
+    "contextActivities": {
+      "parent": [
+        {
+          "objectType": "Activity",
+          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+        }
+      ],
+      "grouping": [
+        {
+          "objectType": "Activity",
+          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+        }
+      ],
+      "category": [
+        {
+          "objectType": "Activity",
+          "id": "https://w3id.org/xapi/cmi5/context/categories/cmi5"
+        },
+        {
+          "objectType": "Activity",
+          "id": "https://w3id.org/xapi/cmi5/context/categories/moveon"
+        }
+      ]
+    },
+    "extensions": {
+      "ispring://view_id": "x6ryj7m2e6mj",
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "1519",
+      "https://w3id.org/xapi/cmi5/context/extensions/masteryscore": 0.8
+    }
+  },
+  "timestamp": "2018-09-05T13:44:39.000Z",
+  "stored": "2018-09-05T13:44:39.864Z",
+  "authority": {
+    "objectType": "Agent",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/",
+      "name": "6606cdd6-6095-4c22-8496-9ed8112aa67f"
+    }
+  }
+}

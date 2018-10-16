@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "id": "3da39660-a00d-454e-8714-7f941a274515",
+  "actor": {
+    "objectType": "Agent",
+    "name": "Boss, Lisa J.",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
+      "name": "277013-1"
+    }
+  },
+  "verb": {
+    "id": "http://adlnet.gov/expapi/verbs/passed",
+    "display": {
+      "en-US": "passed"
+    }
+  },
+  "object": {
+    "objectType": "Activity",
+    "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E",
+    "definition": {
+      "name": {
+        "en-US": "space shuttle quiz"
+      },
+      "type": "http://adlnet.gov/expapi/activities/module"
+    }
+  },
+  "result": {
+    "score": {
+      "scaled": 1,
+      "raw": 40,
+      "min": 0,
+      "max": 40
+    },
+    "success": true,
+    "completion": true,
+    "duration": "PT0H0M32S"
+  },
+  "context": {
+    "registration": "676437af-c6b2-4619-9043-096de04ad996",
+    "contextActivities": {
+      "parent": [
+        {
+          "objectType": "Activity",
+          "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E"
+        }
+      ],
+      "grouping": [
+        {
+          "objectType": "Activity",
+          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+        }
+      ]
+    },
+    "extensions": {
+      "ispring://view_id": "x6ryj7m2e6mj",
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "1519"
+    }
+  },
+  "timestamp": "2018-09-05T13:44:35.000Z",
+  "stored": "2018-09-05T13:44:36.411Z",
+  "authority": {
+    "objectType": "Agent",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/",
+      "name": "6606cdd6-6095-4c22-8496-9ed8112aa67f"
+    }
+  }
+}

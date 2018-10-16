@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "id": "7c2ccd19-5485-4f03-9870-54bd40a14735",
+  "actor": {
+    "objectType": "Agent",
+    "name": "Boss, Lisa J.",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
+      "name": "277013-1"
+    }
+  },
+  "verb": {
+    "id": "http://adlnet.gov/expapi/verbs/answered",
+    "display": {
+      "en-US": "answered"
+    }
+  },
+  "object": {
+    "objectType": "Activity",
+    "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E/questions/_3D8149A5-A48E-4F1E-B174-A3738A3D220C_",
+    "definition": {
+      "correctResponsesPattern": [
+        "0_Enterprise_s_approach_and_landing_tests[,]1_Columbia_s_longest_space_flight[,]2_Atlantis_s_servicing_mission_of_the_Hubble_telescope"
+      ],
+      "choices": [
+        {
+          "id": "0_Enterprise_s_approach_and_landing_tests",
+          "description": {
+            "en-US": "Enterprise's approach and landing tests\r"
+          }
+        },
+        {
+          "id": "1_Columbia_s_longest_space_flight",
+          "description": {
+            "en-US": "Columbia's longest space flight \r"
+          }
+        },
+        {
+          "id": "2_Atlantis_s_servicing_mission_of_the_Hubble_telescope",
+          "description": {
+            "en-US": "Atlantis's servicing mission of the Hubble telescope\r"
+          }
+        }
+      ],
+      "name": {
+        "en-US": "Arrange the following shuttle flights chronologically:\r"
+      },
+      "description": {
+        "en-US": "Arrange the following shuttle flights chronologically:\r"
+      },
+      "type": "http://adlnet.gov/expapi/activities/cmi.interaction",
+      "interactionType": "sequencing"
+    }
+  },
+  "result": {
+    "score": {
+      "scaled": 1,
+      "raw": 10,
+      "min": 0,
+      "max": 10
+    },
+    "success": true,
+    "response": "0_Enterprise_s_approach_and_landing_tests[,]1_Columbia_s_longest_space_flight[,]2_Atlantis_s_servicing_mission_of_the_Hubble_telescope",
+    "duration": "PT0H0M17S"
+  },
+  "context": {
+    "registration": "676437af-c6b2-4619-9043-096de04ad996",
+    "contextActivities": {
+      "parent": [
+        {
+          "objectType": "Activity",
+          "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E"
+        }
+      ],
+      "grouping": [
+        {
+          "objectType": "Activity",
+          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+        }
+      ]
+    },
+    "extensions": {
+      "ispring://view_id": "x6ryj7m2e6mj",
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "1519"
+    }
+  },
+  "timestamp": "2018-09-05T13:44:18.000Z",
+  "stored": "2018-09-05T13:44:36.409Z",
+  "authority": {
+    "objectType": "Agent",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/",
+      "name": "6606cdd6-6095-4c22-8496-9ed8112aa67f"
+    }
+  }
+}
