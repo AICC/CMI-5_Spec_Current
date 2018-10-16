@@ -44,7 +44,7 @@
 {% include_relative 03-cmi5LearnerPreferences_data.json %}
 </pre>
 
-## Initialized Statement
+## initialized Statement
 
 [View Raw](04-initialized_statement.json)
 
@@ -113,7 +113,7 @@
 </pre>
 
 
-## Terminated Statement
+## terminated Statement
 
 [View Raw](13-terminated_statement.json)
 
@@ -130,7 +130,7 @@
 {% include_relative 14-satisfied_statement_allowed.json %}
 </pre>
 
-## Satisfied Statement
+## satisfied Statement
 
 [View Raw](15-satisfied_statement.json)
 
