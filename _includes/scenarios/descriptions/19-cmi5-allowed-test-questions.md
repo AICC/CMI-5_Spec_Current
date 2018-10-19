@@ -10,4 +10,4 @@ In this scenario The learner:
 10. satisfies the course (cmi5 defined statement)
 
 
-_Note that standard cmi5 verbs are used in cmi5 allowed statements and cmi5 defined statements.  Also note that satifised verb is issued is a cmi5 defined statement per the best practice._
+_Note that standard cmi5 verbs are used in cmi5 allowed statements and cmi5 defined statements.  Also note that the satisfied verb issued is a cmi5 defined statement per the best practice._
