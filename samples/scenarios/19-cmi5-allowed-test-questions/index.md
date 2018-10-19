@@ -1,7 +1,7 @@
 ---
 ---
 
-# cmi5 allowed statements before Passed
+# cmi5 allowed test question statements 
 
 1. [launched Statement](#launched-statement)
 1. [LMS.LaunchData](#lmslaunchdata)
