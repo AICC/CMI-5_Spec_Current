@@ -10,4 +10,4 @@ In this scenario The learner:
 10. satisfies the course (cmi5 defined statement)
 
 
-_Note the standard cmi5 verbs, allowed statements, and cmi5 defined statements. Also note that the satisfied verb issued is a cmi5 defined statement per the best practice._
+_Note the standard cmi5 verbs, allowed statements, and cmi5 defined statements. Also note that the satisfied verb issued for the activity is a "cmi5 allowed" statement per the best practice  (**Best Practice #13 – LMS create “satisfied” statements for AU’s.**)_
