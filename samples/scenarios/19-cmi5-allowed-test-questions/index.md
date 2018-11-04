@@ -18,7 +18,7 @@
 1. [satisfied (cmi5 allowed) Statement](#satisfied-allowed-statement)
 1. [satisfied Statement](#satisfied-statement)
 
-{% include scenarios/descriptions/18-cmi5-allowed-passed.md %}
+{% include scenarios/descriptions/19-cmi5-allowed-test-questions.md %}
 
 ## Launched Statement
 
