@@ -124,7 +124,11 @@ Discrepancies with the above are pointed out where necessary.
 
 {% include scenarios/descriptions/18-cmi5-allowed-passed.md %}
 
+### cmi5 allowed test question statements
 
+[View](scenarios/19-cmi5-allowed-test-questions)
+
+{% include scenarios/descriptions/19-cmi5-allowed-test-questions.md %}
 -------
 
 ## License Agreement
