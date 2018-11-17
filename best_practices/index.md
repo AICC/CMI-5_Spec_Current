@@ -80,4 +80,10 @@ It is strongly recommend to include the registration id provided by the LMS at l
 
 It is recommended that the LMS create a cmi5 “allowed” statement (with a satisfied verb) when an AU has met its moveOn criteria.  The statement should also include the same AU activityId used in cmi5 defined statements.
 
+###  Best Practice #{% increment bpCount %} – Use of Objectives (in LMS/Course Structure)
+
+Objectives are defined for the course structure so that the LMS can associate learning objectives to AU and Blocks in the course structure.  If an LMS has features for managing or reporting on objectives it should use the objectives defined in the course structure (to make the association of objectives to the AUs & Blocks).
+
+
+
 ------
