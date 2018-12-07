@@ -31,7 +31,7 @@
         }
       ],
       "name": {
-        "en-US": "Which of these parts of the shuttle is the expendable external tank? \r \rPlace a hotspot marker on the appropriate part.\r"
+        "en-US": "Identify External Tank"
       },
       "description": {
         "en-US": "Which of these parts of the shuttle is the expendable external tank? \r \rPlace a hotspot marker on the appropriate part.\r"
@@ -58,6 +58,16 @@
         {
           "objectType": "Activity",
           "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E"
+        },
+        {
+          "objectType": "Activity",
+          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation/objectives/OBJ-1",
+          "definition": {
+            "type": "http://adlnet.gov/expapi/activities/objective",
+            "name": {
+              "en-US": "External Fuel Tank"
+            }
+          }
         }
       ],
       "grouping": [
