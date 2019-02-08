@@ -221,6 +221,8 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Assignable Unit (AU)__:  A learning content presentation launched from an LMS. The AU is the unit of tracking and management. The AU collects data on the learner and sends it to the LMS.
 
+* __Block__: A grouping of AU's and other Blocks (nesting).
+
 * __Course__: A collection of assignable units, in a logical grouping, of learning content. A course is typically an internal data structure. Courses are often assigned to learners and tracked by the LMS.
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a course.  
@@ -307,7 +309,7 @@ Course structure data MUST NOT implement any features or functionality (optional
 # 5.0 Conceptual Model: Informative  
 
 Synopsis of the cmi5 model:
-* An LMS imports a course structure, which may contain one or more AUs.
+* An LMS imports a course structure, which may contain one or more AUs.  Optionally, the course structure may include one or more blocks, which consist of 1 or more AUs or nested blocks.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or a related system.
 * A learner launches an AU from the LMS or an associated launching system, using an interface.
