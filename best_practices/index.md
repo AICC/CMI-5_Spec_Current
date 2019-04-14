@@ -88,9 +88,9 @@ Objectives are defined for the course structure so that the LMS can associate le
 
 When the LMS receives a Statement, it should verify that the Actor in the statement matches the actor provided on the launch URL and that the authentication token provided was the same one issued for that specific launch session.  If the Session ID, authentication token, actor in statement, and actor do not match, then the LMS/LRS should reject the Statement with a HTTP 403 (Forbidden) Error.
 
-###  Best Practice #{% increment bpCount %} – AU should use a derived activity ID for “cmi.interaction” statements**
+###  Best Practice #{% increment bpCount %} – AU should use a derived activity ID for "cmi.interaction" statements
 
-When the AU issues statements with an activity type of “cmi.interaction” it should use an activity ID derived from the AU’s activity ID by appending the following convention:
+When the AU issues statements with an activity type of "cmi.interaction" it should use an activity ID derived from the AU’s activity ID by appending the following convention:
 
 /test/**_{TestID}_**/question/**_{QuestionID}_**
 
