@@ -239,7 +239,7 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Learning Records Store (LRS)__: As defined in the xAPI specification.
 
-* __Registration__: An enrollment instance of a learner in a course. (Registration ID uniquely identifies this)
+* __Registration__: An enrollment instance of a learner in a course. (a registration ID uniquely identifies this). The registration ID persists throughout the course progress to completion and during review of a completed course. A new registration is created for new enrollment instances (such as recurrent courses or re-taking courses).
 
 * __Session__: A period of time marked by the launch of an AU until its termination (or abandonment).
 
