@@ -129,7 +129,7 @@ Description</strong></th>
 </tbody>
 </table>
 
-**Content Package**
+### Content Package
 
 TinCan has a package containing remote (or local) content and a manifest that specifies content entry point, activity definitions, and interactions. cmi5 has an XML course structure that can reference remote (or local) content entry point. Both have a ZIP file for transferring content (locally)
 
@@ -137,70 +137,70 @@ TinCan has a package containing remote (or local) content and a manifest that sp
 
   - **TinCan does not have**: objectives, completion criteria, block hierarchy, and a Zip 64 option.
 
-**Mastery Score**
+### Mastery Score
 
 The cmi5 course structure can include a mastery score for each AU. Depending on the LMS feature set, the mastery score can be overridden/modified by the LMS administrator after the course structure is imported. The TinCan package does not have definition for mastery score. The ability to set Mastery Score allows the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).
 
-**Completion** **Criteria**
+### Completion Criteria
 
 cmi5 includes a “move on” criteria that defines specific verb patterns that must be received in order to receive credit for a lesson. For example, the course structure could define that a given AU requirement is satisfied if a Completed or Passed verb is sent by the AU. It is also possible to define an AU as being “optional” to the completion of a course. The TinCan package has no defined completion criteria.
 
-**Is an ADL Initiative or standards organization specification.**
+### Is an ADL Initiative or standards organization specification.
 
 The cmi5 specification was jointly developed by the ADL Initiative, the AICC, and other industry experts. The spec was developed through a series of open meetings and reviews over a period of several years. The cmi5 specification is a xAPI profile that is fully integrated with launch and packaging rules for LMS delivery of content.
 
 The TinCan package is an informal proposal document that was created at the initial release of the xAPI specification. It has not had formal reviews and extensive community/industry input.
 
-**Defined use of the xAPI “Result.Score” property.**
+### Defined use of the xAPI “Result.Score” property.
 
 The cmi5 specification is a xAPI profile that defines usage of Result.Score for specific verbs including scaled, raw, min, and max values. Result.Score important for judging mastery or comprehension.
 
 The TinCan package has no rules defined for Result.Score usage.
 
-**Defined use of the xAPI “Result.Success” property.**
+### Defined use of the xAPI “Result.Success” property.
 
 The cmi5 specification is a xAPI profile that defines usage of Result.Success for specific verbs. Result.Success important for judging mastery or comprehension.
 
 The TinCan package has no rules defined for Result.Success usage.
 
-**Defined use of xAPI “Result.Duration” property.**
+### Defined use of xAPI “Result.Duration” property.
 
 The cmi5 specification is a xAPI profile that defines usage of Result.Duration property for specific verbs and guidance for time calculation. Result.Duration is important for calculating time spent in learning activities.
 
 The TinCan package has no rules defined for Result.Duration usage.
 
-**Defined use of the xAPI “Result.Completion” property.**
+### Defined use of the xAPI “Result.Completion” property.
 
 The cmi5 specification is a xAPI profile that defines usage of Result.Completion for specific verbs. Result.Completion is important for determining if the learner has viewed all relevant materials in an AU.
 
 The TinCan package has no rules defined for Result.Completion usage.
 
-**Ability to “waive” lessons.**
+### Ability to "waive" lessons.
 
 The cmi5 specification defines a standard verb that indicates that an AU has been satisfied by alternative means such as manual override (e.g. instructor discretion). This is very a useful feature for defining “testing out” scenarios in the LMS to skip AU’s in a course. It can also be used if the instructor has other reasons to believe (such as documentation) that the learner has already mastered the content.
 
 The TinCan package has definition of “waive” features.
 
-**Requires use of the xAPI “Context.registration” property**
+### Requires use of the xAPI “Context.registration” property
 
 Although the TinCan package passes a registration in the launch command, it does not require Context.registration to be set in xAPI statements. With cmi5 the LMS defines the Context.registration property value and provides it to the AU for it to include in its statements. This ensures that Context.registration is included in statements providing better normalization of data for reporting and managing enrollment records.
 
-**Sequencing of statements**
+### Sequencing of statements
 
 The TinCan package specification has activity definitions but no defined sequence of verb statements. The cmi5 specification defines rules for a predicable sequence of verb statements in an AU session. All AU’s must have defined statements for the start and end of a session. Statements for completion or mastery must be provided before session ending statements.
 
-**Session management**
+### Session management
 
 TinCan has no features for managing sessions and identifying statements from a given session. The cmi5 specification defines rules for managing session state data and identifying statement association with a given session. This enables reporting based on each individual launch of an AU.
 
-**Authentication management**
+### Authentication management
 
 The cmi5 specification provides for a “fetch URL” service that supplies an authentication token to the AU. The fetch URL is “one time” use URL that the AU uses to retrieve the authentication token. Additional calls to the fetch URL are rejected. This method reduces the risk of token reuse by unauthorized actors.
 
-**Allows launching and tracking of multiple AUs in a course**
+### Allows launching and tracking of multiple AUs in a course
 
 The cmi5 specification requires the LMS to support courses with 1 to (at least) 1000 AU’s. This allows for a large, hierarchical structure of course elements (AUs) that can be reused and recombined in other structures in an interoperable manner. The TinCan package only allows for one launchable activity.
 
-**Is conformant to the xAPI Specification**
+### Is conformant to the xAPI Specification
 
 The TinCan package, by adding additional parameters in calls to the xAPI Statement API, will fail LRS Conformance unless a specific “allow list” exception is made. In addition, the LRS action expected based on these parameters is not thoroughly defined. This creates many interoperability issues. cmi5 has no features (or requirements) that conflict with the xAPI specification. LRS’s that support cmi5 can pass the xAPI conformance test without such conflicts.
