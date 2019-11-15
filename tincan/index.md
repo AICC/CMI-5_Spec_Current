@@ -18,7 +18,7 @@ To address this, the ADL Initiative and the Aviation Industry Computer-Based Tra
 
 Note: There has been some confusion on the use of the terms “xAPI” vs. “TinCan” with relation to the packaging of xAPI content for an LMS. This “TinCan package” is not defined in the xAPI Specification and the only known documentation is in the document discussed above. Therefore, for the remainder of this document we will refer to that package as “TinCan”.
 
-## xAPI/TinCan "Package" vs. cmi5 Comparison for L\&D Professionals
+## xAPI/TinCan "Package" vs. cmi5 Comparison for L&D Professionals
 
 The following table provides a high level comparison of TinCan to cmi5 for learning & development professionals who develop/deliver TinCan content.
 
