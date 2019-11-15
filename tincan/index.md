@@ -1,4 +1,4 @@
-# xAPI/TinCan “Package” vs. cmi5 Comparison
+# xAPI/TinCan Package vs. cmi5 Comparison
 
 ## Executive Summary
 
