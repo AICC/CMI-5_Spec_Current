@@ -18,6 +18,46 @@ To address this, the ADL Initiative and the Aviation Industry Computer-Based Tra
 
 Note: There has been some confusion on the use of the terms “xAPI” vs. “TinCan” with relation to the packaging of xAPI content for an LMS. This “TinCan package” is not defined in the xAPI Specification and the only known documentation is in the document discussed above. Therefore, for the remainder of this document we will refer to that package as “TinCan”.
 
+## xAPI/TinCan "Package" vs. cmi5 Comparison for L\&D Professionals
+
+The following table provides a high level comparison of TinCan to cmi5 for learning & development professionals who develop/deliver TinCan content.
+
+<table>
+<thead>
+<tr class="header">
+<th><strong><br />
+Feature</strong></th>
+<th><strong>xAPI/TinCan<br />
+Package</strong></th>
+<th><strong><br />
+cmi5</strong></th>
+<th><strong><br />
+Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Normalized Criteria For Completion</td>
+<td>No</td>
+<td>Yes</td>
+<td><p>cmi5 establishes interoperable rules for determining completion/mastery of learning activities. TinCan has no completion criteria defined.</p>
+<p>Establishing completion/mastery consistency between systems implementing TinCan requires custom effort and does not provide interoperability.</p></td>
+</tr>
+<tr class="even">
+<td>Normalized Reporting</td>
+<td>No</td>
+<td>Yes</td>
+<td>cmi5 establishes rules for records (statements) to include identifiers for learner session so that records can be more easily grouped for normalized reports. TinCan has no features to provide this functionality.</td>
+</tr>
+<tr class="odd">
+<td>Multiple Lesson Support</td>
+<td>No</td>
+<td>Yes</td>
+<td>cmi5 packages allow for multiple launchable presentations in a defined hierarchy with criteria for progression. TinCan allows for only one launchable presentation.</td>
+</tr>
+</tbody>
+</table>
+
 ## xAPI/TinCan Package vs. cmi5 Detailed Comparison
 
 The TinCan package specification does not have any normalizing rules for xAPI usage. The TinCan package only normalizes the launch, LRS connect information, and XML metadata describing statements that the learning activity makes.
