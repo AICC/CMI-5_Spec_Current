@@ -10,7 +10,6 @@ To address this, the ADL Initiative and the Aviation Industry Computer-Based Tra
 
   - ***<span class="underline">Consistent</span>* rules that define completion criteria, such as a mastery score.**
   - **Defined tracking of results.**
-  - **Defined method to launch content without a pop-up window.**
   - **Multi-lesson packages.**
   - **Nested blocks of lessons.**
   - **Complete course definition, including title and objectives.**
