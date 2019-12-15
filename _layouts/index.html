@@ -7,6 +7,10 @@
 
     <title>The cmi5 Project</title>
 
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -20,7 +24,6 @@
         body { 
             padding-top: 50px;
         }
-
     </style>
   </head>
 
@@ -30,16 +33,25 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/CMI-5_Spec_Current/">Home</a>
         </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-                  <li><a href="/CMI-5_Spec_Current/SCORM">SCORM vs cmi5</a></li>
-                  <li><a href="/CMI-5_Spec_Current/tincan">xAPI/TinCan "Package" vs cmi5</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Why cmi5?<span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				  <li><a href="/CMI-5_Spec_Current/SCORM">SCORM vs cmi5</a></li>
+				  <li><a href="/CMI-5_Spec_Current/tincan">xAPI/TinCan "Package" vs cmi5</a></li>
+			  </ul>
           </li>
-          <li><a href="/CMI-5_Spec_Current/best_practices">Best Practices</a></li>
-          <li><a href="/CMI-5_Spec_Current/mistakes">Common Mistakes</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">For Developers<span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				  <li><a href="/CMI-5_Spec_Current/best_practices">Best Practices</a></li>
+				  <li><a href="/CMI-5_Spec_Current/samples">JSON Samples</a></li>
+				  <li><a href="/CMI-5_Spec_Current/mistakes">Common Mistakes</a></li>
+			  </ul>
+          </li>
           <li><a href="/CMI-5_Spec_Current/adoption">cmi5 Adoption</a></li>
-          <li><a href="/CMI-5_Spec_Current/samples">JSON Samples</a></li>
           <li><a href="https://github.com/AICC/CMI-5_Spec_Current">GitHub Repository</a></li>
         </ul>
+	   </div>
       </div>
     </nav>
     <div class="jumbotron">
