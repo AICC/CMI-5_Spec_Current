@@ -5,9 +5,9 @@ A cmi5 client library is available for enabling cmi5 support in content to work 
 * https://github.com/adlnet/cmi5-Client-Library
 
 Here are 3 common examples for using the cmi5 client library.
--   [Hello World](#Example-1-Hello-world)
--   [Simple Completed](#Example-2-Simple-Completed)
--   [Passed/Failed](#Example-3-PassFailed)
+-   Hello World
+-   Simple Completed
+-   Passed/Failed
 
 ### **Example #1 Hello world**
 
@@ -76,7 +76,7 @@ In this scenario, the learner views or does all of the relevant activities in an
 
 9. Add reference to FinishAU() in your UI for learner exit event.
 
-### **Example #3 Pass/Failed**
+### **Example #3 Passed/Failed**
 
 In this scenario, the learner will be assessed in a scored activity. The
 activity has a MasteryScore associated with it from the course
