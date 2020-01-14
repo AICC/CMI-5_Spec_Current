@@ -2,7 +2,7 @@
 
 A cmi5 client library is available for enabling cmi5 support in content to work with a cmi5 conformant LMS (Learning Management System).  The library is available at the following gitHub site:
 
-* https://github.com/adlnet/cmi5-Client-Library
+* <https://github.com/adlnet/cmi5-Client-Library>
 
 Here are 3 common examples for using the cmi5 client library.
 -   Hello World
