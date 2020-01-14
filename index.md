@@ -133,8 +133,5 @@ The cmi5 LinkedIn group was established to encourage discussion about cmi5 and a
 
 Follow cmi5 on Twitter: [#cmi5](https://twitter.com/hashtag/cmi5), [@cmi5spec](https://twitter.com/cmi5spec)
 
-### Join the cmi5 Slack Team
-
-The cmi5 working group is currently testing Slack team communication. To join the slack group, please use the following link: [Add me to the cmi5 Slack Team](mailto:cmi5wg@adlnet.gov?subject=%5Bcmi5%20Slack%20Registration%5D&body=Please%20add%20me%20to%20the%20cmi5%20slack%20working%20group.)
 
 ----------
