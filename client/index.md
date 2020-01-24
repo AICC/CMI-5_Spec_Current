@@ -70,11 +70,11 @@ In this scenario, the learner views or does all of the relevant activities in an
  
 ***Steps 1 thru  7 (Same as Example #1)***
 
-    8. When learner finishes all activities - Send Completed Statement --
+8. **When learner finishes all activities - Send Completed Statement**
 
            SendStatement("Completed");
 
-    9. Add reference to FinishAU() in your UI for learner exit event.
+9. **Add reference to FinishAU() in your UI for learner exit event.**
 
 ### **Example #3 Passed/Failed**
 
