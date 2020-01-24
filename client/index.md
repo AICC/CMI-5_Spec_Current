@@ -70,11 +70,11 @@ In this scenario, the learner views or does all of the relevant activities in an
  
 ***Steps 1 thru  7 (Same as Example #1)***
 
-8. When learner finishes all activities - Send Completed Statement --
+    8. When learner finishes all activities - Send Completed Statement --
 
            SendStatement("Completed");
 
-9. Add reference to FinishAU() in your UI for learner exit event.
+    9. Add reference to FinishAU() in your UI for learner exit event.
 
 ### **Example #3 Passed/Failed**
 
@@ -84,13 +84,13 @@ structure.
 
 ***Steps 1 thru 7 (Same as Example #1)***
 
-8.  Get the MasteryScore
+    8.  Get the MasteryScore
 
            var score = cmi5Controller.getMasteryScore();
 
-9.  Assess Learner (Learner performs assessment activity)
+    9.  Assess Learner (Learner performs assessment activity)
 
-10. Judge Score -- Based on Score , Send Statement:
+    10. Judge Score -- Based on Score , Send Statement:
 
            if (score >= cmi5Controller.getMasteryScore()) {
                SendStatement("Passed", score);
@@ -98,4 +98,4 @@ structure.
                SendStatement("Failed", score);
            }
 
-11. Add reference to FinishAU() in your UI for learner exit event.
+    11. Add reference to FinishAU() in your UI for learner exit event.
