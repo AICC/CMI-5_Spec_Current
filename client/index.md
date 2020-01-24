@@ -64,9 +64,8 @@ In this scenario, we will implement the bare minimum for a cmi5 enabled AU (cont
 
 7.  **Create the "startUpError" function**.
 
-    1. Set your error handling according to your preferences (console, alert, etc)
-
-
+     * Set your error handling according to your preferences (console, alert, etc)       
+          
 8.  **Add reference to FinishAU() in your UI for learner exit event.**
 
 ### **Example #2 Simple Completed**
