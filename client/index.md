@@ -33,18 +33,22 @@ In this scenario, we will implement the bare minimum for a cmi5 enabled AU (cont
 4.  **Parse launch parameters passed on the URL Launch line and set
     properties of the cmi5 controller**.
 
-           cmi5Controller.setEndPoint(parse("endpoint"));<BR> 
-           cmi5Controller.setFetchUrl(parse("fetch"));<BR> 
-           cmi5Controller.setRegistration(parse("registration"));<BR> 
-           cmi5Controller.setActivityId(parse("activityid"));<BR> 
-           cmi5Controller.setActor(parse("actor"));<BR> 
+           cmi5Controller.setEndPoint(parse("endpoint")); 
+           cmi5Controller.setFetchUrl(parse("fetch")); 
+           cmi5Controller.setRegistration(parse("registration")); 
+           cmi5Controller.setActivityId(parse("activityid")); 
+           cmi5Controller.setActor(parse("actor"));
 
 
 5.  **Call the *cmi5Controller.startUp()* method.** Two call back functions are passed:
 
-    1. **cmi5Ready**... This function is called once the controller has fetched the authorization token, read the State document, and the agent Profile.
-
-    2. **startUpError**...This function is called if the *startUp()* method detects an error.
+    1. **cmi5Ready**... This function performs the following:
+          - AU initialization functions
+          - Issues an Initialized statement (after all initialization functions are completed)
+                    
+          It is called once the controller has fetched the authorization token, read the State document and the agent Profile.
+          
+    2. **startUpError**...This function handles errors thrown by cmi5Controller.startUp(). This function is called if the startUp() method detects an error.
 
 6.  **Create the "cmi5Ready" function.**
 
@@ -52,7 +56,7 @@ In this scenario, we will implement the bare minimum for a cmi5 enabled AU (cont
           - The langstring used by the AU ( Example: "en-US" )
           - The actitityType (Example: "http://adlnet.gov/expapi/activities/assessment")
           - The name of the AU (Example: "ADL AU Example 1")
-          - The description of the AU (Example : "This is a simple of an AU.")
+          - The description of the AU (Example : "This is a sample of an AU.")
 
     1. Issue the initialized Statement
 
@@ -61,6 +65,7 @@ In this scenario, we will implement the bare minimum for a cmi5 enabled AU (cont
 7.  **Create the "startUpError" function**.
 
     1. Set your error handling according to your preferences (console, alert, etc)
+
 
 8.  **Add reference to FinishAU() in your UI for learner exit event.**
 
@@ -84,13 +89,13 @@ structure.
 
 ***Steps 1 thru 7 (Same as Example #1)***
 
-    8.  Get the MasteryScore
+8. **Get the MasteryScore**
 
            var score = cmi5Controller.getMasteryScore();
 
-    9.  Assess Learner (Learner performs assessment activity)
+9. **Assess Learner (Learner performs assessment activity)**
 
-    10. Judge Score -- Based on Score , Send Statement:
+10. **Judge Score -- Based on Score , Send Statement:**
 
            if (score >= cmi5Controller.getMasteryScore()) {
                SendStatement("Passed", score);
@@ -98,4 +103,4 @@ structure.
                SendStatement("Failed", score);
            }
 
-    11. Add reference to FinishAU() in your UI for learner exit event.
+11. **Add reference to FinishAU() in your UI for learner exit event.**
