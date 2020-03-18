@@ -4,6 +4,7 @@
 The following products that have currently implemented cmi5:
 
 - [RISC Inc. Virtual Training Assistant™ (LMS)](http://risc-inc.com/)
+- [Epignosis, LLC - Talent LMS](https://www.talentlms.com/)
 - [iSpring Solutions iSpring Suite (Content Authoring Tool)](http://www.ispringsolutions.com/)
 - [Trivantis Lectora Publisher (eLearning Content Authoring Tool)](https://www.trivantis.com/products/publisher-training-software)
 - [Trivantis CenarioVR (VR Content Authoring Tool)](https://www.cenariovr.com/)
