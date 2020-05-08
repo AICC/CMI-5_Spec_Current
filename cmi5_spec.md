@@ -645,7 +645,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Verb</th><td>Completed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/completed</td></tr>
 <tr><th align="left">Description</th><td>The verb "Completed" indicates the learner viewed or did all of the relevant activities in an AU presentation.  The use of the Completed verb indicates progress of 100%.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Completed" verb when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Completed" verb when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple statements with "Completed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the course designer.</td></tr>
 </table>
@@ -656,9 +656,9 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Verb</th><td>Passed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeeded in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and passed the AU. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Passed" verb when the learner has attempted and passed the AU. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore). The AU MUST NOT issue multiple statements with "Passed" for the same AU within a given AU session or course registration for a given learner.</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use either "Passed" or "Completed" statements (or both) based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
-<tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
+<tr><th align="left">Usage</th><td>The AU MUST send a statement containing the "Passed" verb when the learner has attempted and successfully passed the judged activity.</td></tr>
 </table>
 
 <a name="verbs_failed"></a>
@@ -667,9 +667,9 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Verb</th><td>Failed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None.</td></tr>
-<tr><th align="left">Usage</th><td>The AU MUST record a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
+<tr><th align="left">Usage</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
 </table>
 
 <a name="verbs_abandoned"></a>
@@ -700,8 +700,8 @@ LMS verb ordering rules are as follows:
 <table>
 <tr><th align="left">Verb</th><td>Terminated</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/terminated</td></tr>
-<tr><th align="left">Description</th><td>The verb "Terminated" indicates that the AU was terminated by the Learner and that the AU will not be recording any more statements for the launch session.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST record a statement containing the "Terminated" verb. This statement MUST be the last statement (of any kind) recorded by the AU in a session.</td></tr>
+<tr><th align="left">Description</th><td>The verb "Terminated" indicates that the AU was terminated by the Learner and that the AU will not be sending any more statements for the launch session.</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Terminated" verb. This statement MUST be the last statement (of any kind) sent by the AU in a session.</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use the "Terminated" statement to determine that the AU session has ended. Upon receiving a "Terminated" statement, the LMS MUST wait a specified period of time (defined by the LMS implementation) after which it MUST reject statements (of any kind) for the AU session.
 </td></tr>
 <tr><th align="left">Usage</th><td>See obligations.</td></tr>
@@ -1007,7 +1007,7 @@ The properties for the "LMS.LaunchData" document are described below.
 <ul><li>The value for session id placed in an "extensions" property with the id as defined in Section 9.6.3.1.</li>
 <li>The publisher id Activity as defined in Section 9.6.2.3 in the "contextActivities.grouping" list</li></ul>
 The LMS MAY place additional values in the "contextTemplate".</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document. The AU MUST NOT modify or delete the "LMS.LaunchData" State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it records to the LMS. While the AU may include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document. The AU MUST NOT modify or delete the "LMS.LaunchData" State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it sends to the LMS. While the AU may include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON Context object as defined in xAPI specification.</td></tr>
 </table>
 
@@ -1022,9 +1022,9 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a value for <strong><em>launchMode</em></strong>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST conform to the following based on the value of <strong><em>launchMode</em></strong><br>
-      <ul><li>Normal<br>The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST record other cmi5 defined statements per the requirements defined in section 9.3 – Verbs.</li>
-      <li>Browse<br>The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other cmi5 defined statements.</li>
-      <li>Review<br>The AU MUST record "Initialized" and "Terminated" verb statements.  The AU MUST NOT record other cmi5 defined statements.</li></ul></td></tr>
+      <ul><li>Normal<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST send other cmi5 defined statements per the requirements defined in section 9.3 – Verbs.</li>
+      <li>Browse<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST NOT send other cmi5 defined statements.</li>
+      <li>Review<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST NOT send other cmi5 defined statements.</li></ul></td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>"Normal", "Browse", or "Review"</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>"Normal"</td></tr>
