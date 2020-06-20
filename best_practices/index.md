@@ -103,9 +103,7 @@ Example:
 
    * https://example.com/au/xyz123/test/997980ef-2089-4685-97ee-6949541a27e5/question/3f45e67c-f070-4ded-8fd8-82c4069e8526
 
-###  Best Practice #{% increment bpCount %} – The AU should always issue statements based on moveOn provided by the LMS
 
-The LMS administrator may change the value of moveOn after course structure import. This is the moveOn value that the LMS passes to the AU in the state document. The AU should always respect this value and send appropriate statements (e.g. AU must send a completed statement and a passed statement if moveOn is set to “CompletedAndPassed”) If the AU is unable to act on the moveOn value provided, it should gracefully exit and notify the learner that it cannot proceed.
 
 
 ------
