@@ -19,21 +19,6 @@ The following products that have currently implemented cmi5:
 - [Rustici Software SCORM Cloud (LMS/LRS)](http://scorm.com/scorm-solved/scorm-cloud-features/)
 
 
-
-### cmi5 Planned Adoption
-
-The following companies have announced plans to support cmi5:
-
-- eXact Learning Solutions
-- Riptide Software
-- E-CO e-learning studio S.r.l.
-- Exputo
-- Thrivist
-- Learning Templates
-- Obsidian Learning
-- Zavango Corp.
-
-
 ### Get Your cmi5 Product Listed
 
 If you have a cmi5 enabled product and would like it to be added to this list, please notify us on our GitHub issues list as follows:
