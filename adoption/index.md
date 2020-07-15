@@ -14,7 +14,7 @@ The following products that have currently implemented cmi5:
 
 **LMS Products**
 - [Epignosis, LLC - Talent LMS](https://www.talentlms.com/)
-- [RISC Inc. Virtual Training Assistant™ (LMS)](http://risc-inc.com/)
+- [RISC Inc. Virtual Training Assistant™ (LMS/LRS)](http://risc-inc.com/)
 - [Rustici Software SCORM Engine (LMS Middleware)](http://scorm.com/scorm-solved/scorm-engine/)
 - [Rustici Software SCORM Cloud (LMS/LRS)](http://scorm.com/scorm-solved/scorm-cloud-features/)
 
