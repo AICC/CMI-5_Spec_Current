@@ -108,20 +108,11 @@ All are welcome to raise issues/comments on this GitHub repository.
 
 Also, [please see our wiki](https://github.com/AICC/CMI-5_Spec_Current/wiki) for a comprehensive set of meeting minutes.
 
-### cmi5 Email Address
-Please send questions for the working group to: [cmi5wg@adlnet.gov](mailto://cmi5wg@adlnet.gov)
-
 ### Weekly cmi5 Web Conferences
 
 The cmi5 working group holds weekly Web Conferences that are open to all. The meeting are held every Friday at 10:30 am US Eastern Time. See link below :
 
 - [Weekly cmi5 Working Group Conferences](https://github.com/AICC/CMI-5_Spec_Current/wiki/Weekly-cmi5-Working-Group-Meeting---Conferencing-Instructions)
-
-### Subscribe to cmi5 Mailing list
-
-This list provides weekly meeting minutes and news about cmi5.
-
-- [Subscribe to cmi5 Mailing list ](http://eepurl.com/bjlA01) (Managed by Mail Chimp).
 
 ### The cmi5 LinkedIn Group
 
