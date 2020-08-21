@@ -118,7 +118,7 @@ The cmi5 working group holds weekly Web Conferences that are open to all. The me
 
 The cmi5 LinkedIn group was established to encourage discussion about cmi5 and answer your questions.  Please join at link below:
 
-- [cmi5 LinkedIn Group](http://www.linkedin.com/grp/home?gid=3943740)
+- [cmi5 LinkedIn Group](https://www.linkedin.com/groups/3943740/)
 
 ### Follow cmi5 on Twitter
 
