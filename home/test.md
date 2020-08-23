@@ -1,13 +1,7 @@
----
----
-
-# The cmi5 Project
-
+## The cmi5 Project
 ------
 
-## What is cmi5?
-
-### A set of "extra rules" for xAPI
+### What is cmi5? A set of "extra rules" for xAPI
 
 cmi5 is a "profile" for using the [xAPI specification](https://github.com/adlnet/xAPI-Spec) with traditional learning management (LMS) systems.
 
