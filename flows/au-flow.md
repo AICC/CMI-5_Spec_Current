@@ -3,11 +3,8 @@
 AU parses Launch URL for connect information:
 
   - Fetch URL
-
   - Actor
-
   - Registration
-
   - Activity ID
 
 *See Sections:*
@@ -29,18 +26,12 @@ The AU retrieves the state document *LMS.LaunchData* using the current registrat
 The AU retrieves the following data from *LMS.LaunchData:*
 
   - **contextTemplate** – the AU must use this template all xAPI statement it makes (cmi5 allowed statements must omit the cmi5 category id)
-
   - **launchMode** – AU must provide behavior as described for Normal, Browse, or Review modes.
-
   - **launchParameters** -
-
-  - MasteryScore
-
-  - moveOn
-
-  - returnURL
-
-  - entitlementKey
+      - MasteryScore
+      - moveOn
+      - returnURL
+     - entitlementKey
 
 *See Sections:*
 
