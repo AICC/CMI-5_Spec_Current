@@ -4,6 +4,7 @@ The chart below provide a high-level description of the execution flow for an im
 
 ![](./au-flow-chart.png?raw=true)
 
+
 **LMS Launches AU**
 
 AU parses Launch URL for connect information:
