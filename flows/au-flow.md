@@ -1,3 +1,5 @@
+![](./au-flow-chart.png?raw=true)
+
 **<span class="underline">LMS Launches AU</span>**
 
 AU parses Launch URL for connect information:
