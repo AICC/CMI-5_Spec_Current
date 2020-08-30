@@ -166,7 +166,6 @@ When the AU was terminated by the Learner and that the AU will not be sending an
 
 After the AU has finished all processing, it will one of the following things:
   - Nothing (no redirection)
-  - Close the Browser Window
   - Redirect to another URL
 
 *See Sections:*
