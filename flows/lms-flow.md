@@ -1,3 +1,10 @@
+## cmi5 Implementation Flow for an LMS
+
+The chart below provide a high-level description of the execution flow for an implementing cmi5 in an LMS. Each of the shapes in the chart are further explained (below the chart).
+
+![](./lms-flow-chart.png?raw=true)
+
+
 **Import Course Structure**
 
   - There are 3 import scenarios:
@@ -75,6 +82,8 @@ The LMS launches the content using one of the following methods:
 *See Section 13.1.4 AU Metadata - launchMethod*
 
 **Evaluate AU Output**
+
+
 
 LMS Evaluates Statements from the AU session for conformance to the rules (as they are sent to the LRS)
 
