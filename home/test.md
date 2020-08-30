@@ -4,7 +4,7 @@
 ### What is cmi5? A set of "extra rules" for xAPI
 
 <table style="border: 0px;">
-<tr>
+<tr width="50%">
   <td>
 cmi5 is a "profile" for using the [xAPI specification](https://github.com/adlnet/xAPI-Spec) with traditional learning management (LMS) systems.
 <br><br>
@@ -19,8 +19,12 @@ cmi5 defines specific interoperability rules for the following areas:
 - Session Management
 - Reporting
 - Course Structure</td>
-<td>
- 
+<td  width="30%">
+  
+
+Learn More about cmi5
+
+  
   * [Goals]()
   * [History]()
   * [Versions]()
