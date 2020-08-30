@@ -14,11 +14,18 @@ The use case that the cmi5 profile is specifically designed for is one where the
 <br><br>
 cmi5 defines specific interoperability rules for the following areas:
 <br><br>
-- Content Launch Mechanism
-- Authentication
-- Session Management
-- Reporting
-- Course Structure</td>
+    
+    
+<ul>
+<li>Content Launch Mechanism</li>
+<li>Authentication</li>
+<li>Session Management</li>
+<li>Reporting</li>
+<li>Course Structure</li>  
+</ul>
+
+</td>
+
 <td  width="30%">
   
 
