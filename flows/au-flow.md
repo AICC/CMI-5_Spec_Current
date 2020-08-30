@@ -43,7 +43,7 @@ The AU retrieves the following data from *LMS.LaunchData:*
 *See Sections:*
 
   - [13.1.4 AU Metadata - moveOn](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#au_meta_data)
-  - 9.3.9 Satisfied
+  - [9.3.9 Satisfied](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs_satisfied)
 
 **<span class="underline">Get Agent Profile</span>**
 
@@ -54,7 +54,7 @@ The AU checks for “languagePreference" and "audioPreference" values.
   - If the AU has audio, it should set whether the audio is on or off based on the value indicated in “audioPreference"
 
 *See Sections:*
-  - 11.0 xAPI Agent Profile Data Model
+  - [11.0 xAPI Agent Profile Data Model](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#xapi_agent_profile)
 
 **<span class="underline">Perform AU Setup</span>**
 
@@ -72,14 +72,14 @@ To indicate that the AU is ready for learner interaction, the AU sends a Stateme
 
 *See Sections:*
 
-  - 9.1 Statement ID
-  - 9.2 Actor
-  - 9.3 Verbs
-  - 9.3.2 Initialized
-  - 9.4 Object
-  - 9.6.2.1 cmi5 Category Activity
-  - 9.6.3.1 session ID
-  - 10.0 xAPI State Data Model (Context Template)
+  - [9.1 Statement ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#statement_id)
+  - [9.2 Actor](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#actor)
+  - [9.3 Verbs](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs)
+  - [9.3.2 Initialized](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs_initialized)
+  - [9.4 Object](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#object)
+  - [9.6.2.1 cmi5 Category Activity](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_activities_category_cmi5)
+  - [9.6.3.1 session ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_extensions_session_id)
+  - [10.0 xAPI State Data Model (Context Template)](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#xapi_state)
 
 **<span class="underline">Deliver Learning Experience</span>**
 
@@ -93,53 +93,55 @@ The AU delivers the learning experience to the learner. As the AU processes its 
   - Send custom xAPI statements provided they follow cmi5 “allowed rules” (i.e. object requirements, context template, extensions, etc.). The AU can send as many of these as desired during a session.
 
 *See Sections:*
-  - 7.1.3 Types of Statements
-  - 9.3 Verbs
-  - 9.4 Object
-  - 9.6.3.1 session ID
-  - 10.0 xAPI State Data Model (Context Template)
+  - [7.1.3 Types of Statements](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#type_statement_au)
+  - [9.3 Verbs](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs)
+  - [9.4 Object](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#object)
+  - [9.6.3.1 session ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_extensions_session_id)
+  - [10.0 xAPI State Data Model (Context Template)](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#xapi_state)
 
 **<span class="underline">Write Completed Statement</span>**
 
 When the learner views or performs all of the relevant activities, the AU sends a Statement to the LRS using the “completed” verb and the other “cmi5 defined” statement required data elements (i.e. object requirements, context template, extensions, etc.).
 
 *See Sections:*
-  - 9.1 Statement ID
-  - 9.2 Actor
-  - 9.3 Verbs
-  - 9.3.3 Completed
-  - 9.4 Object
-  - 9.6.2.1 cmi5 Category Activity
-  - 9.6.3.1 session ID
-  - 10.0 xAPI State Data Model (Context Template)
+  - [9.1 Statement ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#statement_id)
+  - [9.2 Actor](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#actor)
+  - [9.3 Verbs](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs)
+  - [9.3.3 Completed](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs_completed)
+  - [9.4 Object](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#object)
+  - [9.6.2.1 cmi5 Category Activity](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_activities_category_cmi5)
+  - [9.6.3.1 session ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_extensions_session_id)
+  - [10.0 xAPI State Data Model (Context Template)](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#xapi_state)
+
 
 **<span class="underline">Write Failed Statement</span>**
 
 If the AU is designed to have a judged activity and the learner fails to meet the minimum criteria (e.g. passing a quiz), the AU sends a Statement to the LRS using the “failed” verb and the other “cmi5 defined” statement required data elements (i.e. object requirements, context template, extensions, etc.).
 
 *See Sections:*
-  - 9.1 Statement ID
-  - 9.2 Actor
-  - 9.3 Verbs
-  - 9.3.5 Failed
-  - 9.4 Object
-  - 9.6.2.1 cmi5 Category Activity
-  - 9.6.3.1 session ID
-  - 10.0 xAPI State Data Model (Context Template)
+  - [9.1 Statement ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#statement_id)
+  - [9.2 Actor](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#actor)
+  - [9.3 Verbs](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs)
+  - [9.3.5 Failed](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs_failed)
+  - [9.4 Object](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#object)
+  - [9.6.2.1 cmi5 Category Activity](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_activities_category_cmi5)
+  - [9.6.3.1 session ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_extensions_session_id)
+  - [10.0 xAPI State Data Model (Context Template)]()
 
 **<span class="underline">Write Passed Statement</span>**
 
 If the AU is designed to have a judged activity and the learner successfully to meets or exceeds the minimum criteria (e.g. passing a quiz), the AU sends a Statement to the LRS using the “passed” verb and the other “cmi5 defined” statement required data elements (i.e. object requirements, context template, extensions, etc.).
 
 *See Sections:*
-  - 9.1 Statement ID
-  - 9.2 Actor
-  - 9.3 Verbs
-  - 9.3.4 Passed
-  - 9.4 Object
-  - 9.6.2.1 cmi5 Category Activity
-  - 9.6.3.1 session ID
-  - 10.0 xAPI State Data Model (Context Template)
+  - [9.1 Statement ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#statement_id)
+  - [9.2 Actor](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#actor)
+  - [9.3 Verbs](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs)
+  - [9.3.4 Passed](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs_passed)
+  - [9.4 Object](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#object)
+  - [9.6.2.1 cmi5 Category Activity](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_activities_category_cmi5)
+  - [9.6.3.1 session ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_extensions_session_id)
+  - [10.0 xAPI State Data Model (Context Template)](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#xapi_state)
+
 
 **<span class="underline">Exit AU</span>**
 
@@ -150,14 +152,15 @@ Depending on the AU design, the learner may take an action to exit from the pres
 When the AU was terminated by the Learner and that the AU will not be sending any more statements for the session, it sends a Statement to the LRS using the “terminated” verb and the other “cmi5 defined” statement required data elements (i.e. object requirements, context template, extensions, etc.).
 
 *See Sections:*
-  - 9.1 Statement ID
-  - 9.2 Actor
-  - 9.3 Verbs
-  - 9.3.8 Terminated
-  - 9.4 Object
-  - 9.6.2.1 cmi5 Category Activity
-  - 9.6.3.1 session ID
-  - 10.0 xAPI State Data Model (Context Template)
+  - [9.1 Statement ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#statement_id)
+  - [9.2 Actor](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#actor)
+  - [9.3 Verbs](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs)
+  - [9.3.8 Terminated](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#verbs_terminated)
+  - [9.4 Object](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#object)
+  - [9.6.2.1 cmi5 Category Activity](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_activities_category_cmi5)
+  - [9.6.3.1 session ID](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#context_extensions_session_id)
+  - [10.0 xAPI State Data Model (Context Template)](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#xapi_state)
+
 
 **<span class="underline">Redirect or Close Window</span>**
 
@@ -167,5 +170,5 @@ After the AU has finished all processing, it will one of the following things:
   - Redirect to another URL
 
 *See Sections:*
-  - 10.0 xAPI State Data Model – returnURL
-  - 13.1.4 AU Metadata - launchMethod
+  - [10.0 xAPI State Data Model – returnURL](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#xapi_state)
+  - [13.1.4 AU Metadata - launchMethod](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#au_meta_data)
