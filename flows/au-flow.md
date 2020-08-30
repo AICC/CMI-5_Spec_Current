@@ -1,6 +1,6 @@
 ## cmi5 Implementation Flow for an AU
 
-The chart below provide a high-level description of the execution flow for an implementing cmi5 in an AU (Assignable Unit) - i.e. learning content.  Each of the shapes in the chart are further explained (below the chart).
+The chart below provides a high-level description of the execution flow for an implementing cmi5 in an AU (Assignable Unit) - i.e. learning content.  Each of the shapes in the chart are further explained (below the chart).
 
 ![](./au-flow-chart.png?raw=true)
 
