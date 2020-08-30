@@ -1,7 +1,11 @@
 ## The cmi5 Project
 
+
 ### What is cmi5? A set of "extra rules" for xAPI
 
+<table style="border: 0px;">
+<tr>
+  <td>
 cmi5 is a "profile" for using the [xAPI specification](https://github.com/adlnet/xAPI-Spec) with traditional learning management (LMS) systems.
 
 Since the xAPI specification is highly generalized to support many different use cases, a set of "extra rules" (called a "profile") is needed to ensure interoperability for a given use case. The cmi5 profile ensures plug and play interoperability between learning content and LMS systems.
@@ -14,4 +18,15 @@ cmi5 defines specific interoperability rules for the following areas:
 - Authentication
 - Session Management
 - Reporting
-- Course Structure
+- Course Structure</td>
+<td>
+ 
+  * [Goals]()
+  * [History]()
+  * [Versions]()
+  * [Connect with Us!]()
+
+</td>
+</tr>
+</table>
+
