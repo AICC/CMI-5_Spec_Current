@@ -16,7 +16,7 @@ AU parses Launch URL for connect information:
 
 *See Sections:*
 
-  - 8.1 Launch Method
+  - [8.1 Launch Method](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#launch_method)
 
 **<span class="underline">Get Authorization Token</span>**
 
@@ -24,7 +24,7 @@ AU uses the fetch URL to get the LRS access authorization token. The fetch URL c
 
 *See Sections:*
 
-  - 8.2 Authorization Token Fetch URL
+  - [8.2 Authorization Token Fetch URL](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#fetch_url)
 
 **<span class="underline">Get State Document</span>**
 
