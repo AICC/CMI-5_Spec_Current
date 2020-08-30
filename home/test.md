@@ -13,8 +13,7 @@ Since the xAPI specification is highly generalized to support many different use
 The use case that the cmi5 profile is specifically designed for is one where the learner launches the learning content/activity from the LMS user interface.
 <br><br>
 cmi5 defines specific interoperability rules for the following areas:
-<br><br>
-    
+<br><br>  
     
 <ul>
 <li>Content Launch Mechanism</li>
@@ -24,6 +23,7 @@ cmi5 defines specific interoperability rules for the following areas:
 <li>Course Structure</li>  
 </ul>
 
+
 </td>
 
 <td  width="30%">
@@ -31,11 +31,12 @@ cmi5 defines specific interoperability rules for the following areas:
 
 Learn More about cmi5
 
-  
-  * [Goals]()
-  * [History]()
-  * [Versions]()
-  * [Connect with Us!]()
+<ul>
+<li>Goals</li>
+<li>History</li>
+<li>Versions</li>
+<li>Connect with Us !</li>
+</ul>
 
 </td>
 </tr>
