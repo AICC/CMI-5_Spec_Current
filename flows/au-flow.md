@@ -164,7 +164,7 @@ When the AU was terminated by the Learner and that the AU will not be sending an
 
 **<span class="underline">Redirect or Close Window</span>**
 
-After the AU has finished all processing, it will one of the following things:
+After the AU has finished all processing, it will do one of the following things:
   - Nothing (no redirection)
   - Redirect to another URL
 
