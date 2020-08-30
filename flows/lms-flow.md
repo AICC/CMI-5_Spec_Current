@@ -1,14 +1,14 @@
 **Import Course Structure**
 
-   - There are 3 import scenarios:
-         - ZIP file with media & manifest
-         - ZIP file with manifest only (referencing media)
-         - manifest only (referencing media)
+  - There are 3 import scenarios:
+      - ZIP file with media & manifest
+      - ZIP file with manifest only (referencing media)
+      - manifest only (referencing media)
 
-   - Copy media (if present in Zip file) and read manifest (cmi5.xml) file
-   - Get content metadata (URLs, Titles, launch parameters)
-   - Get content hierarchy (content grouped in blocks)
-   - Get course/block completion rules (called "**moveOn**" criteria)
+  - Copy media (if present in Zip file) and read manifest (cmi5.xml) file
+  - Get content metadata (URLs, Titles, launch parameters)
+  - Get content hierarchy (content grouped in blocks)
+  - Get course/block completion rules (called "**moveOn**" criteria)
 
 *See Sections:*
    - 6.1 Course Structures
