@@ -26,7 +26,7 @@ cmi5 defines specific interoperability rules for the following areas:
 
 </td>
 
-<td  width="40%">
+<td  width="40%" align="top">
   
 
 Learn More about cmi5
