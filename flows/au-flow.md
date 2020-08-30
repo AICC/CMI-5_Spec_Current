@@ -42,7 +42,7 @@ The AU retrieves the following data from *LMS.LaunchData:*
 
 *See Sections:*
 
-  - 13.1.4 AU Metadata - moveOn
+  - [13.1.4 AU Metadata - moveOn](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md#au_meta_data)
   - 9.3.9 Satisfied
 
 **<span class="underline">Get Agent Profile</span>**
