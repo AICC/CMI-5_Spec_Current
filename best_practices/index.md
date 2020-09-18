@@ -24,9 +24,10 @@ LMS should not spawn a new window to launch AU (i.e. “popup”). Depending on 
 ### Best Practice #{% increment bpCount %} – Fetch URLs
 
 * The Fetch URL should be unique for each session.
-* The Fetch URL should only return an auth token on the first call. (Subsequent calls should return an error – i.e. it should be a “one time use” URL)
+* The Fetch URL must only return an auth token on the first call. (Subsequent calls must return an error – i.e. it should be a “one time use” URL)
 * The Fetch URL should not reuse auth tokens.
 * The Fetch URL should return a 4xx HTTP error if an HTTP method other than POST is used.
+* Since the Fetch URL can only be called once, the auth token should be stored in non-volatile storage (see best practice "Persist AU Session State") 
 
 ### Best Practice #{% increment bpCount %} – AU Mastery Score
 
@@ -102,6 +103,13 @@ When the AU issues statements with an activity type of "cmi.interaction" it shou
 Example:
 
    * https://example.com/au/xyz123/test/997980ef-2089-4685-97ee-6949541a27e5/question/3f45e67c-f070-4ded-8fd8-82c4069e8526
+
+###  Best Practice #{% increment bpCount %} – Persist AU Session State 
+
+There are certain situations, such as browser window refresh, that may inadvertently cause cmi5 errors related to operations that must occur only once in a session.  To prevent such issues, AU’s should be designed to use non-volatile storage (local to AU) to preserve the state of following operations that have been performed during the session:
+
+* Fetch URL token retrieval (which can only be called once in session)
+* All cmi5 defined statements that can only be sent once in a session.
 
 
 
