@@ -3,11 +3,35 @@
 
 **<u>Introduction</u>**
 
+*The following document provides high-level description of cmi5. For specific details see the [cmi5 specification](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md).*
+
 cmi5 is a "profile" for using the xAPI specification with traditional learning management (LMS) systems.
 
 Since the xAPI specification is highly generalized to support many different use cases, a set of "extra rules" (called a "profile") is needed to ensure interoperability for a given use case. The cmi5 profile ensures plug and play interoperability between learning content and LMS systems.
 
 The use case that the cmi5 profile is specifically designed for is one where the learner launches the learning content/activity from the LMS user interface.
+
+**<u>Why cmi5 ?</u>**
+
+cmi5 provides rules for using xAPI with an LMS. It is a key component of an xAPI based learning ecosystem and an excellent starting point for organizations that wish to adopt xAPI.
+
+cmi5 provides the following functionality :
+
+-   **Richer Data Collection** - Record any data you want (and get it back!) - You are not limited to a \"list\" of data collected. cmi5 is open-ended on the data you can collect.
+
+-   **Share Data more easily** - cmi5 uses a web service (xAPI) and data structure that allows easy integration with other systems/applications.
+
+- **Distributed Content** - cmi5 content can reside anywhere, it allows for content as a service.
+
+- **Elimination of \"Pop-up\" Windows** - Eliminates pop-up blocker headaches.
+
+- **Mobile app launch support** - cmi5 content does not require a browser. Content could be a mobile app.
+
+- **Complete course definition:**
+    -   Clearly defined rules that define completion criteria, such as a mastery score.
+    -   Multi-lesson packages.
+    -   Title and objectives definition
+    -   Nested blocks of lessons.
 
 <p align="center"> <img width="720" src="https://raw.githubusercontent.com/AICC/CMI-5_Spec_Current/gh-pages/images/cmi5-concept-overview-11-20-2020.png"></p>
 
