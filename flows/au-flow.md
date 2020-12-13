@@ -28,6 +28,8 @@ AU parses Launch URL for connect information:
 
 **<span class="underline">Get Authorization Token</span>**
 
+It is important to note that the AU does NOT authenticate to the LRS.  Authentication is performed by the LMS and the LMS provides authorization to the AU with an LRS access authorization token.
+
 AU uses the fetch URL to get the LRS access authorization token. The fetch URL can only be used once. The retrieved token must be used for all subsequent xAPI calls in the AU launch session.
 
 *See Sections:*
