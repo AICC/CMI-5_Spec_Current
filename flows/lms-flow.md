@@ -1,5 +1,9 @@
 ## cmi5 Implementation Flow for an LMS
 
+The following document provides high-level description for implementing cmi5 in LMS systems. For specific details see the [cmi5 specification](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md).  
+
+The LRS described is a service that is either natively implemented in the LMS or an external service integrated with the LMS.  Integration between an LMS and a 3rd party LRS is outside the scope cmi5 (or xAPI) specifications.  The AU (learning activity) described is authorized to access the LRS through the LMS.  Note that the AU does not authenticate to the LRS.
+
 The chart below provides a high-level description of the execution flow for an implementing cmi5 in an LMS. Each of the shapes in the chart are further explained (below the chart).
 
 ![](./lms-flow-chart.png?raw=true)
