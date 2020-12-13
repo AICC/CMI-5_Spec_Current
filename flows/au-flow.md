@@ -1,6 +1,14 @@
 ## cmi5 Implementation Flow for an AU
 
-The chart below provides a high-level description of the execution flow for an implementing cmi5 in an AU (Assignable Unit) - i.e. learning content.  Each of the shapes in the chart are further explained (below the chart).
+The following document provides high-level description for implementing cmi5 in learning activities. For specific details see the [cmi5 specification](https://github.com/AICC/CMI-5_Spec_Current/blob/quartz/cmi5_spec.md).
+  
+The chart below provides a high-level description of the execution flow for an implementing cmi5 in an AU (Assignable Unit) - i.e. learning content. Each of the shapes in the chart are further explained (below the chart).
+
+It is assumed that prior to the learner starting a learning activity:
+
+  1. The learner has been authenticated by the LMS.  
+  2. The LMS has authorized permissions for the learner for system access.
+  3. The LMS has authorized access to the learner for the learning activity (called a “Registration”)
 
 ![](./au-flow-chart.png?raw=true)
 
