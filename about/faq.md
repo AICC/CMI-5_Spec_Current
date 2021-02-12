@@ -1,7 +1,10 @@
+---
+---
 
-Frequently Asked Questions about cmi5
+# cmi5 FAQ (Frequently Asked Questions)
 
------
+------
+
 
 1.  **Why was cmi5 created?** The cmi5 project was started as a result of efforts by the ADL and the AICC to harmonize the AICC and SCORM specifications which diverged and were no longer compatible. It soon became obvious that the effort would be better served by a complete replacement with more features and better technology (restful web services). The AICC started the effort in 2010 with SOAP and then redesigned the effort to leverage xAPI in 2012.
 
