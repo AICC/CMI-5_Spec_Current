@@ -25,7 +25,7 @@
 
 (additional) cmi5 XSD definition for AU Type:
 ```xml
-<xs:element name=" requires" type=" collateralCreditsReferenceType " minOccurs="0"/>
+<xs:element name=" requires" type="collateralCreditsReferenceType " minOccurs="0"/>
 ```
 
 (additional) cmi5 XSD definition for Block Type:
