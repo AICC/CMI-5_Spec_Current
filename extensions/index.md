@@ -17,7 +17,7 @@ cmi5 working group will monitor the usage/adoption of the features described her
  * **<a href="/CMI-5_Spec_Current/extensions/collateralcredit.html">collateralCredit</a>** – A  property that defines a List of Block and AUs that the LMS MUST issue Waived statements when a given AU is satisfied.
 
 
- 
+ https://aicc.github.io/CMI-5_Spec_Current/extensions/collateralcredit.html
 
 ### Runtime Extensions
 
