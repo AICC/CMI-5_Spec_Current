@@ -13,9 +13,11 @@ cmi5 working group will monitor the usage/adoption of the features described her
 
 ### Course Structure Extensions
 
- * requires (link) – A property that defines a specified list of AU’s must have met their moveOn criteria before a given AU is accessible by the learner 
- * collateralCredit (link) – A  property that defines a List of Block and AUs that the LMS MUST issue Waived statements when a given AU is satisfied.
+ * **<a href="/CMI-5_Spec_Current/extensions/requires.html">requires</a>** – A property that defines a specified list of AU’s must have met their moveOn criteria before a given AU is accessible by the learner 
+ * **<a href="/CMI-5_Spec_Current/extensions/collateralcredit.html">collateralCredit</a>** – A  property that defines a List of Block and AUs that the LMS MUST issue Waived statements when a given AU is satisfied.
 
+
+ 
 
 ### Runtime Extensions
 
