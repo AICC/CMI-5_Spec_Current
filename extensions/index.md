@@ -17,6 +17,6 @@ cmi5 working group will monitor the usage/adoption of the features described her
  * collateralCredit (link) – A  property that defines a List of Block and AUs that the LMS MUST issue Waived statements when a given AU is satisfied.
 
 
- ### Runtime Extensions
+### Runtime Extensions
 
 None at this time
