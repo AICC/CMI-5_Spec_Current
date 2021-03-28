@@ -34,13 +34,13 @@ XSD definition for requiresType:
 
 ```xml
 <xs:complexType name="requiresReferenceType"> <xs:sequence>
-<xs:element name=" require" maxOccurs="unbounded">
-<xs:complexType>
-<xs:attribute name="idref" type="xs:anyURI"></xs:attribute>
-</xs:complexType>
-</xs:element>
-<xs:group ref="anyElement"/>
-</xs:sequence>
-<xs:attributeGroup ref="anyAttribute"/>
+      <xs:element name=" require" maxOccurs="unbounded">
+            <xs:complexType>
+                  <xs:attribute name="idref" type="xs:anyURI"></xs:attribute>
+            </xs:complexType>
+      </xs:element>
+      <xs:group ref="anyElement"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="anyAttribute"/>
 </xs:complexType>
 ```
