@@ -10,8 +10,37 @@
 
 **Sample value:**
 
-> `<requires>
-> `      <require idref ="example.com/xyz123"></require>
-> `      <require idref ="example.com/xyz456"></require>
-> `      <require idref ="example.com/abc123"></require>
-> `</requires>
+```xml
+<requires>
+      <require idref ="example.com/xyz123"></require>
+      <require idref ="example.com/xyz456"></require>
+      <require idref ="example.com/abc123"></require>
+</requires>
+```
+
+**XSD – for requires**
+
+(additional) cmi5 XSD definition for AU Type:
+```xml
+<xs:element name=" requires" type=" requiresReferenceType " minOccurs="0"/>
+```
+
+(additional) cmi5 XSD definition for Block Type:
+```xml
+<xs:element name=" requires" type="requiresReferenceType " minOccurs="0"/>
+```
+
+XSD definition for requiresType:
+
+```xml
+<xs:complexType name="requiresReferenceType"> <xs:sequence>
+<xs:element name=" require" maxOccurs="unbounded">
+<xs:complexType>
+<xs:attribute name="idref" type="xs:anyURI"></xs:attribute>
+</xs:complexType>
+</xs:element>
+<xs:group ref="anyElement"/>
+</xs:sequence>
+<xs:attributeGroup ref="anyAttribute"/>
+</xs:complexType>
+```
