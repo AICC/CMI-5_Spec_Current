@@ -10,9 +10,8 @@
 
 **Sample value:**
 
-<requires>
-      <require idref ="example.com/xyz123"></require>
-      <require idref ="example.com/xyz456"></require>
-      <require idref ="example.com/abc123"></require>
-</requires>
-  
+> `<requires>
+> `      <require idref ="example.com/xyz123"></require>
+> `      <require idref ="example.com/xyz456"></require>
+> `      <require idref ="example.com/abc123"></require>
+> `</requires>
