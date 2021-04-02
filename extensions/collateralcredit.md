@@ -14,9 +14,9 @@
 
 ```xml
 <collateralCredits>
-  <collateralCredit idref ="example.com/xyz123"></collateralCredit>
-  <collateralCredit idref ="example.com/xyz456"></collateralCredit>
-  <collateralCredit idref ="example.com/abc123"></collateralCredit>
+  <collateralCredit idref="example.com/xyz123"></collateralCredit>
+  <collateralCredit idref="example.com/xyz456"></collateralCredit>
+  <collateralCredit idref="example.com/abc123"></collateralCredit>
 </collateralCredits>
 ```
 
@@ -25,12 +25,12 @@
 
 (additional) cmi5 XSD definition for AU Type:
 ```xml
-<xs:element name=" requires" type="collateralCreditReferenceType " minOccurs="0"/>
+<xs:element name="requires" type="collateralCreditReferenceType" minOccurs="0"/>
 ```
 
 (additional) cmi5 XSD definition for Block Type:
 ```xml
-<xs:element name=" requires" type="collateralCreditReferenceType " minOccurs="0"/>
+<xs:element name="requires" type="collateralCreditReferenceType" minOccurs="0"/>
 ```
 
 XSD definition for collateralCreditReferenceType:
