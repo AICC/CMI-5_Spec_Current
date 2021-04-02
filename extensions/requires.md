@@ -1,3 +1,5 @@
+**<a href="/CMI-5_Spec_Current/extensions/index.html">cmi5 Extensions</a>- Course Structure Data Model**
+
 ## requires
 
 **Required:** No
