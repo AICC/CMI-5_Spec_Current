@@ -1,4 +1,6 @@
 
+**[cmi5 Extensions](../) - Course Structure Data Model**
+
 ### collateralCredit
 
 **Required:** No
