@@ -12,9 +12,9 @@
 
 ```xml
 <requires>
-      <require idref ="example.com/xyz123"></require>
-      <require idref ="example.com/xyz456"></require>
-      <require idref ="example.com/abc123"></require>
+      <require idref="example.com/xyz123"></require>
+      <require idref="example.com/xyz456"></require>
+      <require idref="example.com/abc123"></require>
 </requires>
 ```
 
@@ -22,12 +22,12 @@
 
 (additional) cmi5 XSD definition for AU Type:
 ```xml
-<xs:element name=" requires" type=" requiresReferenceType " minOccurs="0"/>
+<xs:element name="requires" type="requiresReferenceType" minOccurs="0"/>
 ```
 
 (additional) cmi5 XSD definition for Block Type:
 ```xml
-<xs:element name=" requires" type="requiresReferenceType " minOccurs="0"/>
+<xs:element name="requires" type="requiresReferenceType" minOccurs="0"/>
 ```
 
 XSD definition for requiresType:
