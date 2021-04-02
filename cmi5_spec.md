@@ -450,7 +450,7 @@ http://www.example.com/LA1/Start.html
 ?endpoint=http://lrs.example.com/lrslistener/
 &fetch=http://lms.example.com/tokenGen.htm?k=2390289x0
 &actor={"objectType": "Agent","account": 
-{"homePage": "http://www.example.com","name": "1625378"}
+{"homePage": "http://www.example.com","name": "1625378"}}
 &registration=760e3480-ba55-4991-94b0-01820dbd23a2
 &activityId=http://www.example.com/LA1/001/intro
 ```
@@ -486,7 +486,7 @@ The values for the URL launch parameters are described below:
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>actor</em></strong> value from the query string. The AU MUST use the <strong><em>actor</em></strong> value in API calls that require an "actor" property when sending xAPI requests.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>A JSON object (as defined in Section 9.2)</td></tr>
-  <tr><th align="right" nowrap>Sample value:</th><td>{"objectType": "Agent","account": {"homePage": "http://www.example.com","name": "1625378"}</td></tr>
+  <tr><th align="right" nowrap>Sample value:</th><td>{"objectType": "Agent","account": {"homePage": "http://www.example.com","name": "1625378"}}</td></tr>
 </table>
 
 <table>
