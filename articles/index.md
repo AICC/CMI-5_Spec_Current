@@ -31,7 +31,7 @@ The following are articles and presentations about cmi5
 ### Social Media
 
 **Twitter**
-  * Follow @cmi5spec 
+  * Follow [@cmi5spec](https://twitter.com/cmi5spec)
   * (Search Hashtag) #cmi5
 
 **LinkedIn**
