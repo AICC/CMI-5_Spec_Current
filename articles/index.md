@@ -25,6 +25,7 @@ The following are articles and presentations about cmi5
 
 ### Videos
    * **[cmi5 Overview and Way Ahead](https://www.youtube.com/watch?v=JSIXnw3hoOg)** - March 19, 2021 - Presented by the ADL.   Decribes an overview of cmi5 and the status of Project Catapult (the cmi5 Test Suite and Player)
+   * **[cmi5 Learning Analytics | Learning Expert Talks #023](https://www.youtube.com/watch?v=k7QLqGGOHzI)** - April 14, 2021 - Presented by StyleLearn.   Alex Salas (StyleLearn) interviews Bill McDonald about what cmi5 is, why it is important, and the current status of cmi5. 
 
 ### Social Media
 * **Twitter**
