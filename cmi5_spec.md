@@ -295,7 +295,7 @@ The LMS MUST have an account which is able to retrieve all Resource data (from t
 <a name="json_conformance"></a> 
 ## 4.3 Optional JSON Values
 
-If JSON properties are indicated as "optional", you MAY leave such properties out of the JSON structure being described. All JSON properties included with non-null values MUST be recorded in the LRS.
+If JSON properties are indicated as "optional", you MAY leave such properties out of the JSON structure being described.
 
 <a name="course_conformance"></a>
 ## 4.4 Courses
