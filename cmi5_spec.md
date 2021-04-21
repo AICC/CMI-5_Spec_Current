@@ -25,7 +25,7 @@
   * [4.4 Courses](#course_conformance)
 * [__5.0 Conceptual Model: Informative__](#concept)
 * [__6.0 LMS Requirements__](#lms_requirements)
-  * [6.1 Course Structures](#course_structures)
+  * [6.1 Course Handling Requirements](#course_structures)
   * [6.2 LMS State API Requirements](#lms_state_api_requirements)
   * [6.3 LMS Statement API Requirements](#lms_statement_api_requirements)
 * [__7.0 AU Requirements__](#au_requirements)
@@ -335,22 +335,22 @@ Responsibilities of the LMS:
 <a name="lms_requirements"></a>  
 # 6.0 LMS Requirements
 
-LMS requirements to conform to this specification are as follows:
+The LMS MUST:
 
 * Implement an LRS as defined in the xAPI specification.
 * Implement additional "State API" requirements to initialize the AU state as defined in Section 10.
-* Implement the runtime launch interface as defined in Section 8.0 – Content Launch Mechanisms.
+* Implement the runtime launch interface as defined in Section 8.0.
 * Implement additional xAPI "Statement API" requirements as defined in Section 9.
 * Implement additional xAPI "Agent Profile API" requirements as defined in Section 11.
-* Implement course structures as defined in Section 6.1.
+* Implement course handling as defined in Section 6.1.
 
 <a name="course_structures"></a>  
-## 6.1 Course Structures
+## 6.1 Course Handling Requirements
 
-* The LMS SHOULD implement a means to create, edit, and maintain course structures.<br>
-* The LMS MUST implement the import of the Course Structure defined in Section 13 and Section 14. <br>
-* The LMS SHOULD implement the export of the course data structure defined in Section 13 and Section 14. <br>
-* The LMS SHOULD provide a user interface to the LMS administrative users to create and edit course structures internally.<br>
+* The LMS SHOULD implement a means to create, edit, and maintain course structures.
+* The LMS MUST implement the import of the Course Structure defined in Section 13 and the Course Package defined in Section 14.
+* The LMS SHOULD implement the export of the course data structure defined in Section 13 and the Course Package defined in Section 14.
+* The LMS SHOULD provide a user interface to the LMS administrative users to create and edit course structures internally.
 * The LMS MUST support course structures containing more than 1000 AUs.
 * The LMS MUST support course structures conforming to the XSD schema defined in Section 13.2.
 
@@ -371,13 +371,13 @@ The LMS MUST Void statements that are NOT rejected AND conflict with the "Statem
 <a name="au_requirements"></a>  
 # 7.0 AU Requirements
 
-AU's requirements to conform to this specification are as follows:
+An AU MUST:
 
-* Implement the runtime launch interface as defined in Section 8 - Content Launch Mechanisms.
+* Implement the runtime launch interface as defined in Section 8.
 * Implement runtime communication as defined in the xAPI Specification.
 * Implement State API requirements in this specification as defined in Section 10.
 * Implement Profile API requirements in this specification as defined in Section 11.
-* Implement Statement API requirements as defined in the following sub section.
+* Implement Statement API requirements as defined in Section 7.1.
 
 <a name="au_statement_api_requirements"></a>  
 ## 7.1 AU Statement API Requirements
