@@ -482,8 +482,8 @@ The values for the URL launch parameters are described below:
 <table>
   <tr><th colspan=2 align="left">actor</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>A JSON object of objectType "Agent" (as defined in the xAPI specification) that identifies the learner launching the AU so the AU will be able to include it in xAPI requests.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST populate the <strong><em>actor</em></strong>  parameter in the query string based on the authenticated learner's identity. The LMS SHOULD create this parameter with an object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>actor</em></strong> value from the query string. The AU MUST use the <strong><em>actor</em></strong> value in API calls that require an "actor" property when sending xAPI requests.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST populate the <strong><em>actor</em></strong>  parameter in the query string based on the authenticated learner's identity conforming to Section 9.2. The LMS SHOULD create this parameter with an object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>actor</em></strong> value from the query string. The AU MUST use the <strong><em>actor</em></strong> value in xAPI requests that require an "actor" property.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>A JSON object (as defined in Section 9.2)</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>{"objectType": "Agent","account": {"homePage": "http://www.example.com","name": "1625378"}}</td></tr>
