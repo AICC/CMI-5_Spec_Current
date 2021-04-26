@@ -300,7 +300,7 @@ If JSON properties are indicated as "optional", you MAY leave such properties ou
 <a name="course_conformance"></a>
 ## 4.4 Courses
 
-A course MUST be bundled with course structure data that conform to all requirements listed in Section 13 and Section 14.
+A course MUST be bundled with course structure data that conform to all requirements listed in Section 13.
   
 Course structure data MUST NOT implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
