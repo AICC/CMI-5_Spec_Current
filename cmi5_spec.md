@@ -423,7 +423,7 @@ When the launchMethod is "OwnWindow", the LMS MUST use one of the following:
 
 When the launchMethod is "AnyWindow", the LMS may choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
 
-In either case, the AU MUST be launched by the LMS with a URL having query string launch parameters as defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that launches the AU.
+Regardless of the launchMethod the AU MUST be launched by the LMS with a URL having query string launch parameters as defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that launches the AU.
 
 If the AU's URL requires a query string for other purposes, then the names MUST NOT collide with named parameters defined below.
 
