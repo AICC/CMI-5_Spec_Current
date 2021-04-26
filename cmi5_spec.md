@@ -427,8 +427,7 @@ In either case, the AU MUST be launched by the LMS with a URL having query strin
 
 If the AU's URL requires a query string for other purposes, then the names MUST NOT collide with named parameters defined below.
 
-The order of the name/value pairs is not significant. AU's MUST have the ability to
-process them in any order.
+The AU must have the ability to process the query string launch parameters in any order.
 
 Each value for the associated names MUST be URL-encoded. 
 
