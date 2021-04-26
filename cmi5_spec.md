@@ -309,7 +309,7 @@ Course structure data MUST NOT implement any features or functionality (optional
 # 5.0 Conceptual Model: Informative  
 
 Synopsis of the cmi5 model:
-* An LMS imports a course structure, which may contain one or more AUs.  Optionally, the course structure may include one or more blocks, which consist of 1 or more AUs or nested blocks.
+* An LMS imports a course structure which contains at least one AU.  Optionally, the course structure may include one or more blocks, which consist of 1 or more AUs or nested blocks.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or a related system.
 * A learner launches an AU from the LMS or an associated launching system, using an interface.
