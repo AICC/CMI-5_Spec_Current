@@ -109,7 +109,7 @@
 <a name="revhistory"></a>
 ## Revision History
 
-Versioning in the cmi5 specification in managed in the following manner:
+Versioning in the cmi5 specification is managed in the following manner:
  * _Major Version_ – Stones (Sandstone, Quartz, etc.) – Major changes in functionality
  * _Minor Version_ – Editions (1st edition, 2nd edition, etc.) – Minor changes in functionality.
  * _Errata_ – Minor corrections that do not affect functionality are not versioned.  (See GitHub repository for specific revision history)
@@ -181,7 +181,7 @@ The scope of this specification is limited to the following:
 * Launch and runtime environment used by LMS and AUs.
 * Runtime communication data and data transport between the LMS and AUs. 
 * LMS course definition as it pertains to runtime data used by AUs.
-* LMS Course Structure Import/Export  
+* LMS Course Structure Import/Export.
 * Reporting requirements for the LMS.
 
 This specification references how to use the xAPI specification within this scope.
@@ -545,7 +545,7 @@ The AU SHOULD NOT attempt to retrieve the authorization token more than once.  T
 
 <a name="duplicate_call_to_fetch_url"></a>  
 #### 8.2.3.1 Duplicate call to fetch URL
-The <strong><em>fetch</em></strong> URL is a "one-time use" URL and only the first request SHOULD return the <strong><em>auth-token</em></strong>. Subsequent requests made to the <strong><em>fetch</em></strong> URL during the session SHOULD generate an error.  The error SHOULD be returned in the form of a JSON structure using Content-Type "application/json".  An example of JSON structure is shown below:
+The <strong><em>fetch</em></strong> URL is a "one-time use" URL and only the first request SHOULD return the <strong><em>auth-token</em></strong>. Subsequent requests made to the <strong><em>fetch</em></strong> URL during the session SHOULD generate an error.  The error SHOULD be returned in the form of a JSON structure using Content-Type "application/json".  An example JSON structure is shown below:
 ```javascript
 {
   "error-code": "1",
@@ -788,7 +788,7 @@ Other cmi5 defined statements MUST NOT include the "completion" property.
 
 <a name="duration"></a>
 ### 9.5.4 Duration
-The "duration" property is an ISO 8601 formatted time value required in certain statements as defined in this section. Other cmi defined statements MAY include the duration property.
+The "duration" property is an ISO 8601 formatted time value required in certain statements as defined in this section. Other cmi5 defined statements MAY include the duration property.
 <a name="au_statements_that_include_duration"></a>
 #### 9.5.4.1 AU statements that include duration
 ##### Terminated Statement
@@ -863,7 +863,7 @@ For all Satisfied statements triggered outside of an AU launch session, the LMS 
 
 <a name="context_activities"></a>
 ### 9.6.2 contextActivities
-The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The "contextActivities" property contains list(s) of Activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements must include all properties and values defined in the the contextActivites of the context template (see section 10 - xAPI State Data Model).
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The "contextActivities" property contains list(s) of Activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the contextActivites of the context template (see section 10 - xAPI State Data Model).
 
 <a name="context_activities_category_cmi5"></a>
 #### 9.6.2.1 cmi5 Category Activity
@@ -877,7 +877,7 @@ cmi5 defined statements with a Result object (Section 9.5) that include either "
 #### 9.6.2.3 Publisher ID Grouping Activity
 Used to identify statements about the AU using the publisher's id from the course structure.
 
-The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's id attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. The LMS MUST also include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
+The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's "id" attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. The LMS MUST include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
 
 <a name="extensions"></a>
 ### 9.6.3 extensions
@@ -1046,7 +1046,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>masteryScore</em></strong> from the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>If the <strong><em>masteryScore</em></strong> was defined by the course designer in the Course Structure, the LMS MUST include a "masteryScore" in the State API document.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>If the <strong><em>masteryScore</em></strong> is provided.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>If a <strong><em>masteryScore</em></strong> is present in the course structure the LMS must provide a <strong><em>masteryScore</em></strong> in the State API document. The <strong><em>masteryScore</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>If a <strong><em>masteryScore</em></strong> is present in the course structure the LMS MUST provide a <strong><em>masteryScore</em></strong> in the State API document. The <strong><em>masteryScore</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>If the AU issues "Passed" or "Failed" statements they MUST be based on the <strong><em>masteryScore</em></strong> if provided. (See Sections 9.3.4 and 9.3.5)</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</td></tr>
@@ -1070,7 +1070,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>Used by the LMS when launching the AU if the LMS requires the AU (in a web-browser environment) to redirect the learner when he or she exits the AU.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>No</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>If the <strong><em>returnURL</em></strong> is provided.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS may include the <strong><em>returnURL</em></strong> when the learner SHOULD be redirected to the <strong><em>returnURL</em></strong> on exiting the AU.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MAY include the <strong><em>returnURL</em></strong> when the learner SHOULD be redirected to the <strong><em>returnURL</em></strong> on exiting the AU.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>returnURL</em></strong> value from the "LMS.LaunchData" state document. If the <strong><em>returnURL</em></strong> is provided, the AU MUST redirect the current browser window to the <strong><em>returnURL</em></strong> when the AU is terminated.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String (Not URL encoded)</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Any URL.</td></tr>
@@ -1092,7 +1092,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
 
 <table>
   <tr><th colspan=2 align="left">entitlementKey: courseStructure</th></tr>
-  <tr><th align="right" nowrap>Description:</th><td>The <strong>courseStructure</strong> property contains the value for entitlementKey from the Course Structure . The courseStructure values may be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <strong>courseStructure</strong> property contains the value for entitlementKey from the Course Structure. The courseStructure values may be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain this from the Course Structure.</td></tr>
@@ -1117,7 +1117,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
 <a name="xapi_agent_profile"></a>   
 # 11.0 xAPI Agent Profile Data Model  
 
-In cmi5, Learner Preferences are scoped to the learner.  Both the LMS and the AU may write changes to Learner Preferences in the xAPI Agent Profile.  The LMS/LRS may choose to ignore or override Learner Preference changes requested by the AU by returning a "403 Forbidden" response as defined in the xAPI specification (Section 7.6).  The AU MUST NOT treat the 403 response as an error condition.  
+In cmi5, Learner Preferences are scoped to the learner.  Both the LMS and the AU MAY write changes to Learner Preferences in the xAPI Agent Profile.  The LMS/LRS MAY choose to ignore or override Learner Preference changes requested by the AU by returning a "403 Forbidden" response as defined in the xAPI specification (Section 7.6).  The AU MUST NOT treat the 403 response as an error condition.
 
 On startup, the AU MUST retrieve the Learner Preferences document from the Agent Profile.
 
@@ -1159,7 +1159,7 @@ Example:
 <a name="xapi_activity_profile"></a>  
 # 12.0 xAPI Activity Profile Data Model
 
-The AU may use the Activity Profile API according to the xAPI specification (Section 7.5 - Activity Profile API).
+The AU MAY use the Activity Profile API according to the xAPI specification (Section 7.5 - Activity Profile API).
 
 
 <a name="course_requirements"></a>
