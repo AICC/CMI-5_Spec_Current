@@ -407,7 +407,7 @@ The statements issued within an AU session could fall within the following categ
 * "cmi5 allowed" - Statements using any verb and cmi5 context template (but NOT including cmi5 category id as defined in section 9.6.2.1).
 * "cmi5 not-allowed" - Any statements not conforming with the cmi5 specification.
 
-If "cmi5 allowed" statements are posted by the AU, they MUST occur between cmi5 statements using the "Initialized" verb and the "Terminated" verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and completion rules.
+"cmi5 allowed" statements posted by the AU MUST occur between cmi5 statements using the "Initialized" verb and the "Terminated" verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and completion rules.
 
 <a name="content_launch"></a>  
 # 8.0 Content Launch Mechanisms
