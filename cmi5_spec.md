@@ -853,7 +853,7 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
 <a name="context"></a> 
 ## 9.6 Context
 
-All cmi5 defined statements MUST contain a context that includes all objects/values as defined in this section. Either the LMS or the AU MAY provide additional objects.
+All cmi5 defined statements MUST contain a context that includes all objects/values as defined in this section. Either the LMS or the AU MAY provide additional properties.
 
 <a name="registration"></a> 
 ### 9.6.1 registration
