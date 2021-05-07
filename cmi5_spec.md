@@ -492,7 +492,7 @@ The values for the URL launch parameters are described below:
   <tr><th colspan=2 align="left">registration</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>A Registration ID corresponding to the learner's enrollment for the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>registration</em></strong> in the query string based on the authenticated learner's corresponding    enrollment for the Course that the AU being launched is a member of.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>registration</em></strong> value from the query string. The AU MUST use the <strong><em>registration</em></strong> value in API calls that require a "registration id" when sending xAPI requests.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>registration</em></strong> value from the query string. The AU MUST use the <strong><em>registration</em></strong> value in xAPI requests that require a "registration".</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>UUID (as defined in the xAPI specification)</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td></td></tr>
