@@ -668,7 +668,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None.</td></tr>
-<tr><th align="left">Usage</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the judged activity.</td></tr>
+<tr><th align="left">Usage</th><td>The criterion for "Failed" is determined by the course designer.</td></tr>
 </table>
 
 <a name="verbs_abandoned"></a>
