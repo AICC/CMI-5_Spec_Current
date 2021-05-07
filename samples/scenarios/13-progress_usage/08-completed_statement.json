@@ -28,10 +28,7 @@
   },
   "result": {
     "completion": true,
-    "duration": "PT54.88S",
-    "extensions": {
-      "https://w3id.org/xapi/cmi5/result/extensions/progress": 100
-    }
+    "duration": "PT54.88S"
   },
   "context": {
     "registration": "ff76a00e-5b3f-4bfc-ba3d-6f4365f96753",
