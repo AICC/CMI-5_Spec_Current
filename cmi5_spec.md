@@ -903,7 +903,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/masteryscore</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>"masteryScore" as provided in the LMS Launch Data for the AU plus registration used to determine the pass/fail result based on score</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add masteryScore to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add masteryScore to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the "masteryScore" value provided by the LMS in the context as an extension for "passed"/"failed" Statements it makes based on the "masteryScore".</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>Required, when present and evaluated</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when in launch data</td></tr>
@@ -918,7 +918,7 @@ The following are extensions specified for cmi5.  Other extensions are permitted
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchmode</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>Indicates what launch mode an AU was launched with by the LMS</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add launchMode to the context of a "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add launchMode to the context of a "Launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
@@ -953,7 +953,7 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/moveon</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>"moveOn" as provided in the LMS Launch Data for the AU plus registration</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add moveOn to the context of a "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>THe LMS MUST add moveOn to the context of a "Launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
@@ -968,7 +968,7 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchparameters</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>"launchParameters" as provided in the LMS Launch Data for the AU plus registration</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST add launchParameters to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add launchParameters to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when in launch data</td></tr>
