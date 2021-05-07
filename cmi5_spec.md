@@ -758,7 +758,7 @@ The "score" property of the result MAY be set in the following cmi5 defined stat
 Other cmi5 defined statements MUST NOT include the "score" property.
 
 <ul><li><strong>scaled</strong><br>A decimal value between 0 and 1 (inclusive).</li>
-<li><strong>raw</strong><br>An integer value between the "min" and "max" properties (inclusive) of the <em><strong>score</strong></em> object.  When the "raw" value is provided, the AU MUST also provide the "min" and "max" values for <em><strong>score</strong></em>.</li>
+<li><strong>raw</strong><br>An integer value between the "min" and "max" properties (inclusive) of the <em><strong>score</strong></em> object.  The AU MUST provide the "min" and "max" values for <em><strong>score</strong></em> when the "raw" value is provided.</li>
 <li><strong>min</strong><br>An integer value indicating the minimum value for the "raw" score property.</li>
 <li><strong>max</strong><br>An integer value indicating the maximum value for the "raw" score property.</li>
 </ul>
