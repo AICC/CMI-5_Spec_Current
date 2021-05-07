@@ -601,13 +601,13 @@ AU Verb Ordering Rules within an AU session are as follows:
 * The "Terminated" verb MUST be the last statement (cmi5 allowed or defined).
 
 AU Verb Ordering Rules within a Registration (per AU) are as follows:
-* Only one "Completed" cmi5 defined statement is allowed per registration.
-* Only one "Passed" cmi5 defined statement is allowed per registration.
-* A "Failed" statement must not follow a "Passed" statement (in cmi5 defined statements) per registration.
+* Exactly zero or one "Completed" cmi5 defined statement MUST be used per registration.
+* Exactly zero or one "Passed" cmi5 defined statement MUST be used per registration.
+* A "Failed" statement MUST NOT follow a "Passed" statement (in cmi5 defined statements) per registration.
 
 AUs may use additional verbs not listed in this specification.
 
-Regardless of the verbs the AUs use in statements, the LMS MUST record and provide reporting for all statements. 
+The LMS MUST record and provide reporting for all statements regardless of the verbs used in statements sent by AUs. 
 
 LMS verb ordering rules are as follows:
 * LMS may issue multiple satisfied statements (in a session).
