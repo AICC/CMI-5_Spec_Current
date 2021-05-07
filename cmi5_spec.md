@@ -603,7 +603,7 @@ AU Verb Ordering Rules within an AU session are as follows:
 
 AU Verb Ordering Rules within a Registration (per AU) are as follows:
 * More than one "Completed" cmi5 defined statement MUST NOT be used per registration.
-* More than one "Passed" cmi5 defined statement MUST NOT be used per registration.
+* Exactly zero or one "Passed" cmi5 defined statement MUST be used per registration.
 * A "Failed" statement MUST NOT follow a "Passed" statement (in cmi5 defined statements) per registration.
 
 AUs may use additional verbs not listed in this specification.
