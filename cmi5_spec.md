@@ -1247,7 +1247,7 @@ The following metadata attributes and elements are at the course level and  desc
 <a name="block_meta_data"></a>
 ### 13.1.2 Block Metadata
 
-The data in this section are used for the block structures with group AUs.  A Block consists of one or more AUs. Blocks can also contain references to objectives and other Blocks.
+The data in this section are used for the block structures which group AUs.  A Block consists of one or more AUs. Blocks can also contain references to objectives and other Blocks.
 
 <table border="1" cellspacing="0" cellpadding="0">
    <tr>
