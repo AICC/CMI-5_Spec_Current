@@ -856,8 +856,8 @@ All cmi5 defined statements MUST contain a context that includes all properties 
 
 <a name="registration"></a> 
 ### 9.6.1 registration
-The value for the registration property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  At the time of registration, the LMS MUST evaluate MoveOn criteria in the course structure.  For example, Blocks with MoveOn criteria of "Not Applicable" in the course structure would be evaluated and could generate Satisfied statements at this time.<br>
-<br>
+The value for the registration property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  The LMS MUST evaluate MoveOn criteria in the course structure at the time of registration.  For example, AUs with MoveOn criteria of "Not Applicable" in the course structure would be evaluated and could generate Satisfied statements at this time.
+
 For all Satisfied statements triggered outside of an AU launch session, the LMS MUST generate a unique session id and use it for those statements.
 
 <a name="context_activities"></a>
