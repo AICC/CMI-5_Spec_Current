@@ -633,7 +633,7 @@ LMS verb ordering rules are as follows:
 <table>
 <tr><th align="left">Verb</th><td>Initialized</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/initialized</td></tr>
-<tr><th align="left">Description</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized. The "Initialized" statement MUST follow within a reasonable period of time the "Launched" statement created by the LMS.</td></tr>
+<tr><th align="left">Description</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized. The "Initialized" statement MUST follow, within a reasonable period of time, the "Launched" statement created by the LMS.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST use "Initialized" in the first statement (of any kind) in the AU session.  The AU MUST NOT issue multiple statements with "Initialized" for the same AU within a given AU session.</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None</td></tr>
 <tr><th align="left">Usage</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized.</td></tr>
