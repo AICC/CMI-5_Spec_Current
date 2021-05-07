@@ -687,7 +687,7 @@ LMS verb ordering rules are as follows:
 <table>
 <tr><th align="left">Verb</th><td>Waived</td></tr>
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/waived</td></tr>
-<tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than completing the AU.</td></tr>
+<tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than satisfying the AU.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU may be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session id for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session id. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
 <tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU may be skipped by the learner.</td></tr>
