@@ -755,7 +755,7 @@ The "score" property of the result MAY be set in the following cmi5 defined stat
 - Passed
 - Failed
 
-cmi5 defined statements other than "Passed" or "Failed" MUST NOT include the "score" property.
+cmi5 defined statements, other than "Passed" or "Failed", MUST NOT include the "score" property.
 
 <ul><li><strong>scaled</strong><br>A decimal value between 0 and 1 (inclusive).</li>
 <li><strong>raw</strong><br>An integer value between the "min" and "max" properties (inclusive) of the <em><strong>score</strong></em> object.  When the "raw" value is provided, the AU MUST also provide the "min" and "max" values for <em><strong>score</strong></em>.</li>
