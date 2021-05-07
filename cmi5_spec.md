@@ -1118,7 +1118,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
 
 In cmi5, Learner Preferences are scoped to the learner.  Both the LMS and the AU MAY write changes to Learner Preferences in the xAPI Agent Profile.  The LMS/LRS MAY choose to ignore or override Learner Preference changes requested by the AU by returning a "403 Forbidden" response as defined in the xAPI specification (Section 7.6).  The AU MUST NOT treat the 403 response as an error condition.
 
-On startup, the AU MUST retrieve the Learner Preferences document from the Agent Profile.
+The AU MUST retrieve the Learner Preferences document from the Agent Profile on startup.
 
 When reading or writing to the Agent Profile, the document name MUST be "cmi5LearnerPreferences" and the format MUST be a JSON structure as shown below:
 
