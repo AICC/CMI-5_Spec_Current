@@ -1677,7 +1677,7 @@ An extended simple course structure example is available in [v1/examples/extende
 <a id="license_agreement"></a> 
 # License Agreement
 
-Copyright &copy; 2012-2016 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense, All rights reserved
+Copyright &copy; 2012-2021 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense, All rights reserved
 
 Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. 
 You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
