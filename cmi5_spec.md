@@ -517,7 +517,7 @@ The values for the URL launch parameters are described below:
 ### 8.2.1 Overview
 The LMS MUST include the <strong><em>fetch</em></strong> name/value pair in the launch URL.  The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve an authorization token.  Note than an HTTP GET is not allowed in order to prevent caching of the request.
 
-The <strong><em>fetch</em></strong> URL MUST return a JSON structure using a Content-Type of "application/json". An example JSON structure is shown below:
+The <strong><em>fetch</em></strong> URL MUST return a JSON structure using a Content-Type of "application/json". The structure MUST be an object with the property "auth-token" in the first successful response. An example JSON structure is shown below:
 ```javascript
 {
   "auth-token": "QWxhZGRpbjpvcGVuIHNlc2FtZQ=="
@@ -544,7 +544,7 @@ The AU SHOULD NOT attempt to retrieve the authorization token more than once.  T
 
 <a name="duplicate_call_to_fetch_url"></a>  
 #### 8.2.3.1 Duplicate call to fetch URL
-The <strong><em>fetch</em></strong> URL is a "one-time use" URL and only the first request SHOULD return the <strong><em>auth-token</em></strong>. Subsequent requests made to the <strong><em>fetch</em></strong> URL during the session SHOULD generate an error.  The error SHOULD be returned in the form of a JSON structure using Content-Type "application/json".  An example JSON structure is shown below:
+The <strong><em>fetch</em></strong> URL is a "one-time use" URL and MUST NOT return an <strong><em>auth-token</em></strong> more than once. Subsequent requests made to the <strong><em>fetch</em></strong> URL during the session SHOULD generate an error.  An example JSON structure is shown below:
 ```javascript
 {
   "error-code": "1",
