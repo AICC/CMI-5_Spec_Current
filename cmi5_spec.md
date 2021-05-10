@@ -1085,7 +1085,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON Object</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>The value for entitlementKey properties are defined by the AU provider.</td></tr>
-  <tr><th align="right" nowrap>Sample Value:</th><td>{courseStructure: "xyz-123-9999", alternate: "abc-456-1111"}</td></tr>
+  <tr><th align="right" nowrap>Sample Value:</th><td>{"courseStructure": "xyz-123-9999", "alternate": "abc-456-1111"}</td></tr>
 </table>
 
 
