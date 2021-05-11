@@ -774,7 +774,7 @@ The "success" property of the result MUST be set to false for the following cmi5
 
 - Failed
  
-Other cmi5 defined statements MUST NOT include the "success" property.
+cmi5 defined statements, other than "Passed", "Waived" or "Failed", MUST NOT include the "success" property.
 
 <a name="completion"></a>
 ### 9.5.3 Completion
@@ -783,7 +783,7 @@ The "completion" property of the result MUST be set to true for the following cm
 - Completed
 - Waived
 
-Other cmi5 defined statements MUST NOT include the "completion" property.
+cmi5 defined statements, other than "Completed" or "Waived", MUST NOT include the "completion" property.
 
 <a name="duration"></a>
 ### 9.5.4 Duration
