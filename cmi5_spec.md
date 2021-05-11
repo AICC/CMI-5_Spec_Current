@@ -953,7 +953,7 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/moveon</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>"moveOn" as provided in the LMS Launch Data for the AU plus registration</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>THe LMS MUST add moveOn to the context of a "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add moveOn to the context of a "Launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
