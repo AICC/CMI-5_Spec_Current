@@ -611,7 +611,7 @@ The LMS MUST record and provide reporting for all statements regardless of the v
 
 LMS verb ordering rules are as follows:
 * LMS may issue multiple satisfied statements (in a session).
-* LMS SHOULD NOT issue multiple satisfied statements (in a registration).
+* LMS SHOULD NOT issue multiple satisfied statements per object (Block or Course) (in a registration).
 * LMS MUST NOT issue more than one abandoned statement for a session.
 * LMS MUST NOT issue more than one waived statement per session and MUST not issue more than one waived statement per registration per AU.
 
