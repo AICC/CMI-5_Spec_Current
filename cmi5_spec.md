@@ -196,18 +196,18 @@ Uses of activities not explicitly defined above are outside of the scope of this
 
 The following referenced documents are indispensable for the application of this specification. 
 
-* Internationalized Resource Identifiers (IRIs): IRI Syntax January 2005<br>
+* Internationalized Resource Identifiers (IRIs): IRI Syntax January 2005  
 https://www.ietf.org/rfc/rfc3987.txt
-* "Experience API", version 1.0.x (subject to change just prior to release), ADL<br>
+* "Experience API", version 1.0.x (subject to change just prior to release), ADL  
 https://github.com/adlnet/xAPI-Spec/blob/xAPI-1.0.2/xAPI.md
-* cmi5 Course Structure, Sandstone 1st Edition (merged into this document)<br>
-* MIME Types<br>
+* cmi5 Course Structure, Sandstone 1st Edition (merged into this document)  
+* MIME Types  
 http://www.iana.org/assignments/media-types/index.html
-* Extensible Markup Language (XML)<br>
+* Extensible Markup Language (XML)  
 http://www.w3.org/XML
-* The JSON Data Interchange Format<br>
+* The JSON Data Interchange Format  
 http://json.org/
-* ISO/IEC 21320-1:2015(en) Information technology — Document Container File — Part 1: Core (Commonly called ZIP file format):<br>https://www.iso.org/obp/ui/#iso:std:iso-iec:21320:-1:ed-1:v1:en
+* ISO/IEC 21320-1:2015(en) Information technology — Document Container File — Part 1: Core (Commonly called ZIP file format)   [https://www.iso.org/obp/ui/#iso:std:iso-iec:21320:-1&#8203;:ed-1:v1:en](https://www.iso.org/obp/ui/#iso:std:iso-iec:21320:-1:ed-1:v1:en)
 
 <a name="definitions"></a>   
 # 3.0 Definitions  
