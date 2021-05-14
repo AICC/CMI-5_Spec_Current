@@ -1019,7 +1019,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include a value for <strong><em>launchMode</em></strong>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST conform to the following based on the value of <strong><em>launchMode</em></strong><br>
-      <ul><li>Normal<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST send other cmi5 defined statements per the requirements defined in Section 9.3.</li>
+      <ul><li>Normal<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MAY send other cmi5 defined statements per the requirements defined in Section 9.3.</li>
       <li>Browse<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST NOT send other cmi5 defined statements.</li>
       <li>Review<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST NOT send other cmi5 defined statements.</li></ul></td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
