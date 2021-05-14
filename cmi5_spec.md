@@ -245,25 +245,23 @@ For purposes of this specification, the following terms and definitions apply:
 
 <a name="acronyms"></a> 
 ## 3.1 Abbreviations and Acronyms
-<br>
-__ADL__: Advanced Distributed Learning<br>
-__AICC__: Aviation Industry Computer-Based Training Committee<br>
-__API__: Application Programming Interface<br>
-__CMI__: Computer Managed Instruction<br>
-__JSON__: JavaScript Object Notation<br>
-__IRI__: Internationalized Resource Identifier<br>
-__IRL__: Internationalized Resource Locator<br>
-__LMS__: Learning Management System<br>
-__LRS__: Learning Record Store<br>
-__PII__: Personally Identifiable Information<br>
-__URI__: Uniform Resource Identifier<br>
-__URL__: Uniform Resource Locator<br>
-__URN__: Uniform Resource Name<br>
-__xAPI__: Experience API<br>
-__XML__: Extensible Markup Language<br>
-__XSD__: XML Schema Definition<br>
-<br>
 
+__ADL__: Advanced Distributed Learning  
+__AICC__: Aviation Industry Computer-Based Training Committee  
+__API__: Application Programming Interface  
+__CMI__: Computer Managed Instruction  
+__JSON__: JavaScript Object Notation  
+__IRI__: Internationalized Resource Identifier  
+__IRL__: Internationalized Resource Locator  
+__LMS__: Learning Management System  
+__LRS__: Learning Record Store  
+__PII__: Personally Identifiable Information  
+__URI__: Uniform Resource Identifier  
+__URL__: Uniform Resource Locator  
+__URN__: Uniform Resource Name  
+__xAPI__: Experience API  
+__XML__: Extensible Markup Language  
+__XSD__: XML Schema Definition  
 
 <a name="conformance"></a>  
 # 4.0  Conformance
