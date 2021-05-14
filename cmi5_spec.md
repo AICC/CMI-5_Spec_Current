@@ -1043,7 +1043,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
 <table>
   <tr><th colspan="2" align="left">masteryScore</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>masteryScore</em></strong> from the cmi5 Course Structure.</td></tr>
-  <tr><th align="right" nowrap>LMS Required:</th><td>If the <strong><em>masteryScore</em></strong> was defined by the course designer in the Course Structure, the LMS MUST include a "masteryScore" in the State API document.</td></tr>
+  <tr><th align="right" nowrap>LMS Required:</th><td>The LMS MUST include a "masteryScore" in the State API document if the <strong><em>masteryScore</em></strong> was defined by the course designer in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>If the <strong><em>masteryScore</em></strong> is provided.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>If a <strong><em>masteryScore</em></strong> is present in the course structure the LMS MUST provide a <strong><em>masteryScore</em></strong> in the State API document. The <strong><em>masteryScore</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>If the AU issues "Passed" or "Failed" statements they MUST be based on the <strong><em>masteryScore</em></strong> if provided. (See Sections 9.3.4 and 9.3.5)</td></tr>
