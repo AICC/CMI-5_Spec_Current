@@ -427,7 +427,7 @@ Regardless of the launchMethod the AU MUST be launched by the LMS with a URL hav
 
 If the AU's URL requires a query string for other purposes, then the names MUST NOT collide with named parameters defined below.
 
-The AU must have the ability to process the query string launch parameters in any order.
+The AU MUST have the ability to process the query string launch parameters in any order.
 
 Each value for the associated names MUST be URL-encoded. 
 
@@ -1057,7 +1057,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>moveOn</em></strong> value from the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS must provide a <strong><em>moveOn</em></strong> value in the state API document. The <strong><em>moveOn</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <strong><em>moveOn</em></strong> value in the state API document. The <strong><em>moveOn</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the <strong><em>moveOn</em></strong> value from the "LMS.LaunchData" state document and MAY use the value to modify its behavior.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td><strong><em>moveOn</em></strong> values as defined in the Course Structure (Section 13.1.4 – AU Metadata)</td></tr>
