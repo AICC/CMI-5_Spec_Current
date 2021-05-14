@@ -1256,7 +1256,7 @@ The data in this section are used for the block structures with group AUs.  A Bl
   <tr>
     <td width="164" valign="top"><p><strong>Required: </strong> Yes<br>
         <strong>Data type: </strong> IRI</p></td>
-    <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block in xAPI requests made by the LMS.</p>
+    <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block in xAPI requests made by the LMS. This id MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br>
       &lt;block id="http&#58;//www.example.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
@@ -1335,7 +1335,7 @@ The data in this section are used by the Objectives. Objectives can be associate
         <strong>Data type:</strong> IRI</p>
     </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br>
-      A unique IRI for the learning objective.<br>
+      A unique IRI for the learning objective. This id MUST be unique within the course structure.<br>
       </p>
       <p><strong>Value space:</strong><br>Values are defined by the course designer.</p>
     <p><strong>Sample value:</strong><br>
