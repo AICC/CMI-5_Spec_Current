@@ -1002,11 +1002,11 @@ The properties for the "LMS.LaunchData" document are described below.
   <tr><th align="right" nowrap>Description:</th><td>Context template for the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a "contextTemplate" object and MUST include the following values:
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include a "contextTemplate" object and MUST include the following values:
 <ul><li>The value for session id placed in an "extensions" property with the id as defined in Section 9.6.3.1.</li>
 <li>The publisher id Activity as defined in Section 9.6.2.3 in the "contextActivities.grouping" list</li></ul>
 The LMS MAY place additional values in the "contextTemplate".</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document. The AU MUST NOT modify or delete the "LMS.LaunchData" State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it sends to the LMS. While the AU may include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document. The AU MUST NOT modify or delete the "LMS.LaunchData" State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it sends to the LMS. While the AU may include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON Context object as defined in xAPI specification.</td></tr>
 </table>
 
@@ -1019,9 +1019,9 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
       </ul></td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>LMS MUST include a value for <strong><em>launchMode</em></strong>.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include a value for <strong><em>launchMode</em></strong>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST conform to the following based on the value of <strong><em>launchMode</em></strong><br>
-      <ul><li>Normal<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST send other cmi5 defined statements per the requirements defined in section 9.3 – Verbs.</li>
+      <ul><li>Normal<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST send other cmi5 defined statements per the requirements defined in Section 9.3.</li>
       <li>Browse<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST NOT send other cmi5 defined statements.</li>
       <li>Review<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST NOT send other cmi5 defined statements.</li></ul></td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
