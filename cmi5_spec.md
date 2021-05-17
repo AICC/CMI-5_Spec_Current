@@ -35,6 +35,11 @@
       * [7.1.3 Types of Statements](#type_statement_au)
 * [__8.0 Content Launch Mechanisms__](#content_launch)
   * [8.1 Launch Method](#launch_method)
+      * [8.1.1 endpoint](#launch_method_endpoint)
+      * [8.1.2 fetch](#launch_method_fetch)
+      * [8.1.3 actor](#launch_method_actor)
+      * [8.1.4 registration](#launch_method_registration)
+      * [8.1.5 activityId](#launch_method_activityId)
   * [8.2 Authorization Token Fetch URL](#fetch_url)
       * [8.2.1 Overview](#fetch_url_overview)
       * [8.2.2 Definition: auth-token](#definition_auth_token)
@@ -456,8 +461,9 @@ http://www.example.com/LA1/Start.html
 
 The values for the URL launch parameters are described below: 
 
+<a name="launch_method_endpoint"></a>
+### 8.1.1 endpoint
 <table>
-  <tr><th colspan=2 align="left">endpoint</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>A URL to the LMS listener location for xAPI requests to be sent to.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>endpoint</em></strong> in the query string.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>endpoint</em></strong> value from the query string. The AU MUST use the <strong><em>endpoint </em></strong>value as the Base Endpoint for xAPI requests.</td></tr>
@@ -466,8 +472,9 @@ The values for the URL launch parameters are described below:
   <tr><th align="right" nowrap>Sample value:</th><td>https://example.com/my-cmi5-listener/</td></tr>
 </table>
 
+<a name="launch_method_fetch"></a>
+### 8.1.2 fetch
 <table>
-  <tr><th colspan=2 align="left">fetch</th></tr>
   <tr><th align="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL.<br>The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU MUST place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using the xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
@@ -476,8 +483,9 @@ The values for the URL launch parameters are described below:
   <tr><th align="right" nowrap>Sample value:</th><td>http://lms.example.com/tokenGen.htm?k=2390289x0</td></tr>
 </table>
 
+<a name="launch_method_actor"></a>
+### 8.1.3 actor
 <table>
-  <tr><th colspan=2 align="left">actor</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>A JSON object of objectType "Agent" (as defined in the xAPI specification) that identifies the learner launching the AU so the AU will be able to include it in xAPI requests.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST populate the <strong><em>actor</em></strong>  parameter in the query string based on the authenticated learner's identity conforming to Section 9.2. The LMS SHOULD create this parameter with an object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>actor</em></strong> value from the query string. The AU MUST use the <strong><em>actor</em></strong> value in xAPI requests that require an "actor" property.</td></tr>
@@ -486,8 +494,9 @@ The values for the URL launch parameters are described below:
   <tr><th align="right" nowrap>Sample value:</th><td>{"objectType": "Agent","account": {"homePage": "http://www.example.com","name": "1625378"}}</td></tr>
 </table>
 
+<a name="launch_method_registration"></a>
+### 8.1.4 registration
 <table>
-  <tr><th colspan=2 align="left">registration</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>A Registration ID corresponding to the learner's enrollment for the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>registration</em></strong> in the query string based on the authenticated learner's corresponding    enrollment for the Course that the AU being launched is a member of.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>registration</em></strong> value from the query string. The AU MUST use the <strong><em>registration</em></strong> value in xAPI requests that require a "registration".</td></tr>
@@ -496,8 +505,9 @@ The values for the URL launch parameters are described below:
   <tr><th align="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
+<a name="launch_method_activityId"></a>
+### 8.1.5 activityId
 <table>
-  <tr><th colspan=2 align="left">activityId</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>The Activity ID of the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST generate a unique activityId for the AU. The LMS MUST place its value in the query string. The activityId generated MUST NOT match the AU's id (publisher id) from the course structure (See Section 13.1.4 - AU Metadata). The LMS MUST use the same generated activityId on all subsequent launches (for the same AU) within the same registration. The LMS SHOULD use the same generated activityId (for the same AU) for all registrations.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>activityId</em></strong> value from the query string. The AU MUST use the <strong><em>activityId</em></strong> value as the id property of the Object in all "cmi5 defined" statements.</td></tr>
