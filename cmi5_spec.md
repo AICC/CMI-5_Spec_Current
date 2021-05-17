@@ -1566,7 +1566,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
           <li>To accommodate "non-browser" applications, an application specific protocol may be used in the url:<br>
               &lt;application&gt;://&lt;URL to content&gt;</li>
           <li>Regardless of the value of &lt;scheme&gt;, the remaining portion of the URL MUST conform to RFC1738 - Uniform Resource Locators (URL).</li>
-          <li>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1.1 of the cmi5 Runtime Environment).</li>
+          <li>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1 Launch Method).</li>
      </ul>
       <p><strong>Value space:</strong> Values are determined by the course designer.</p>
       <p><strong>Sample value:</strong><br>
