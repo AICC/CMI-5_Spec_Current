@@ -63,7 +63,7 @@
       * [9.5.4 Duration](#duration)
           * [9.5.4.1 AU statements that include duration](#au_statements_that_include_duration)
           * [9.5.4.2 LMS statements that include duration](#lms_statements_that_include_duration)
-      * [9.5.5 Extensions](#result_extensions)
+      * [9.5.5 extensions](#result_extensions)
           * [9.5.5.1 progress](#result_extensions_progress)
           * [9.5.5.2 reason](#result_extensions_reason)
   * [9.6 Context](#context)
@@ -72,7 +72,7 @@
           * [9.6.2.1 cmi5 Category Activity](#context_activities_category_cmi5)
           * [9.6.2.2 moveOn Category Activity](#context_activities_category_moveon)
           * [9.6.2.3 Publisher ID Grouping Activity](#context_activities_grouping_publisherid)
-      * [9.6.3 Extensions](#extensions)
+      * [9.6.3 extensions](#extensions)
           * [9.6.3.1 session ID](#context_extensions_session_id)
           * [9.6.3.2 masteryScore](#context_extensions_masteryScore)
           * [9.6.3.3 launchMode](#context_extensions_launchMode)
@@ -803,7 +803,7 @@ The AU MUST include the "duration" property in "Failed" statements. The AU SHOUL
 The duration property MUST be included in "Abandoned" statements. The LMS SHOULD use LMS specific methods (if available) to determine the duration if it has more accurate means of session time calculation than time stamp differences between statements. In the absence of such methods, the duration property MUST be set as the total session time, calculated as the time between the "Launched" statement and the last statement (of any kind) issued by the AU. 
 
 <a name="result_extensions"></a>
-### 9.5.5 Extensions
+### 9.5.5 extensions
 <a name="result_extensions_progress"></a>
 #### 9.5.5.1 progress
 
