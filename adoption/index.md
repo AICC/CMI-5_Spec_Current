@@ -10,7 +10,7 @@ The following products that have currently implemented cmi5:
 - [Rustici Software SCORM Driver (Content Authoring Middleware)](http://scorm.com/scorm-solved/scorm-driver/driver-cmi5/)
 - [Trivantis Lectora Publisher (eLearning Content Authoring Tool)](https://www.trivantis.com/products/publisher-training-software)
 - [Trivantis CenarioVR (VR Content Authoring Tool)](https://www.cenariovr.com/)
-- [xAPI.js - cmi5 Profile Library (JavaScript Library)](https://www.xapijs.dev/cmi5-profile-library/introduction)
+- [xAPI.js - cmi5 Profile Library (JavaScript Library)](https://www.xapijs.dev/cmi5-profile-library)
 
 
 **LMS Products**
