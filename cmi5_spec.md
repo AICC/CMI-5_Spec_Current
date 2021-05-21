@@ -421,7 +421,7 @@ The statements issued within an AU session could fall within the following categ
 * "cmi5 allowed" - Statements using any verb and cmi5 context template (but NOT including cmi5 category id as defined in section 9.6.2.1).
 * "cmi5 not-allowed" - Any statements not conforming with the cmi5 specification.
 
-"cmi5 allowed" statements posted by the AU MUST occur between cmi5 statements using the "Initialized" verb and the "Terminated" verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and completion rules.
+"cmi5 allowed" statements posted by the AU MUST occur between cmi5 statements using the "Initialized" verb and the "Terminated" verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and satisfaction rules.
 
 <a name="content_launch"></a>  
 # 8.0 Content Launch Mechanisms
@@ -1040,9 +1040,9 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
 ### 10.2.2 launchMode
 <table>
   <tr><th align="right" nowrap>Description:</th><td>The launch mode determined by the LMS. There are three possible values:<br>
-      <ul><li>Normal<br>Indicates to the AU that completion-related data MUST be recorded in the LMS using xAPI statements.</li>
-          <li>Browse<br>Indicates to the AU that completion-related data MUST NOT be recorded in the LMS using xAPI statements. When Browse mode is used, the AU SHOULD provide a user experience that allows the user to "look around" without judgement.</li>
-          <li>Review<br>Indicates to the AU that completion-related data MUST NOT be recorded in the LMS using xAPI statements. When Review mode is used, the AU SHOULD provide a user experience that allows the user to "revisit/review" already completed material.</li>
+      <ul><li>Normal<br>Indicates to the AU that satisfaction-related data MUST be recorded in the LMS using xAPI statements.</li>
+          <li>Browse<br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Browse mode is used, the AU SHOULD provide a user experience that allows the user to "look around" without judgement.</li>
+          <li>Review<br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Review mode is used, the AU SHOULD provide a user experience that allows the user to "revisit/review" already completed material.</li>
       </ul></td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
@@ -1488,7 +1488,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Required:</strong> No<br>
         <strong>Data type:</strong> string <br>
         <strong>Default Value:</strong> "NotApplicable" </p></td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if an AU has been sufficiently completed for the purposes of determining overall course completion or determining if prerequisites were met for other activities.</p>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if an AU has been sufficiently satisfied for the purposes of determining overall course satisfaction or determining if prerequisites were met for other activities.</p>
       <p><strong>moveOn Values are as follows:</strong></p>
       <ul>
         <li>moveOn Value = "Passed" : If the LMS receives a statement with the verb "Passed", then the LMS will consider the AU satisfied.</li>
