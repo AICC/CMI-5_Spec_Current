@@ -898,7 +898,7 @@ Used to identify statements about the AU using the publisher's id from the cours
 The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's "id" attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. The LMS MUST include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
 
 <a name="extensions"></a>
-### 9.6.3 extensions
+### 9.6.3 Extensions
 The following are extensions specified for cmi5. Statements MUST NOT include extensions that conflict with or duplicate the ones specified here. Statements MAY include extensions not specified here.
 
 <a name="context_extensions_session_id"></a>
