@@ -881,7 +881,7 @@ For all Satisfied statements triggered outside of an AU launch session, the LMS 
 
 <a name="context_activities"></a>
 ### 9.6.2 contextActivities
-The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The "contextActivities" property contains list(s) of Activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the contextActivites of the context template (see section 10 - xAPI State Data Model).
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The "contextActivities" property contains list(s) of Activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the contextActivities of the context template (see section 10 - xAPI State Data Model).
 
 <a name="context_activities_category_cmi5"></a>
 #### 9.6.2.1 cmi5 Category Activity
