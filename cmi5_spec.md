@@ -1166,7 +1166,7 @@ The AU MAY use the Activity Profile API according to the xAPI specification (Sec
 ## 13.1 Course Structure Data Model
 All leading/trailing whitespace MUST be removed by the LMS on import of the course structure for all of the data elements defined in this section.
 
-The following Data Types are used in the cmi5 course structure data model, see the cmi5.xsd (Section 14.0) for specific format:
+The following Data Types are used in the cmi5 course structure data model, see the CourseStructure.xsd (Section 14.0) for specific format:
    * **decimal** – XSD definition:  "xs:decimal"
    * **IRI** – XSD definition:  "xs:anyURI"
    * **string** –  XSD definition: "xs:string"
