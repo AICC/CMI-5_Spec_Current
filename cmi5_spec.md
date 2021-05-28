@@ -626,7 +626,7 @@ AU Verb Ordering Rules within a Registration (per AU) are as follows:
 
 AUs may use additional verbs not listed in this specification.
 
-The LMS MUST record and provide reporting for all "cmi5 defined" and "cmi5 allowed" statements that have not been rejected regardless of the verbs used in statements sent by AUs.
+The LMS MUST record and provide reporting for all "cmi5 defined" and "cmi5 allowed" statements that are not being rejected regardless of the verbs used in statements sent by AUs.
 
 LMS verb ordering rules are as follows:
 * LMS may issue multiple satisfied statements (in a session).
