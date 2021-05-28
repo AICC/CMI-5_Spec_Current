@@ -93,7 +93,6 @@
     * [13.1.3 Objective Metadata](#objective_meta_data)
     * [13.1.4 AU Metadata](#au_meta_data)
     * [13.1.5 Vendor Specific Metadata (Extensions)](#vendor_meta_data)
-  * [13.2 Course Structure XSD](#course_structure_xsd)
 * [__14.0 Course Package__](#course_package)
   * [14.1 Course Packages in ZIP Format](#course_packages_in_zip_format)
   * [14.2 Course Structure XML Without a ZIP File Package](#course_structure_xml_without_a_zip_file_package)
@@ -350,7 +349,7 @@ The LMS MUST:
 * The LMS SHOULD implement the export of the course data structure defined in Section 13 and the Course Package defined in Section 14.
 * The LMS SHOULD provide a user interface to the LMS administrative users to create and edit course structures internally.
 * The LMS MUST support course structures containing more than 1000 AUs.
-* The LMS MUST support course structures conforming to the XSD schema defined in Section 13.2.
+* The LMS MUST support course structures conforming to the XSD schema defined in Section 14.0.
 
 
 <a name="lms_state_api_requirements"></a>  
@@ -1167,7 +1166,7 @@ The AU MAY use the Activity Profile API according to the xAPI specification (Sec
 ## 13.1 Course Structure Data Model
 All leading/trailing whitespace MUST be removed by the LMS on import of the course structure for all of the data elements defined in this section.
 
-The following Data Types are used in the cmi5 course structure data model, see the cmi5.xsd (section 13.2) for specific format:
+The following Data Types are used in the cmi5 course structure data model, see the cmi5.xsd (Section 14.0) for specific format:
    * **decimal** – XSD definition:  "xs:decimal"
    * **IRI** – XSD definition:  "xs:anyURI"
    * **string** –  XSD definition: "xs:string"
@@ -1623,19 +1622,20 @@ Course Designers MAY place their own namespaced elements into the course structu
 
 To achieve a larger distribution of their extension course designers SHOULD choose a free or open source license for their specification and make it publicly available.
 
-<a name="course_structure_xsd"></a>  
-## 13.2 Course Structure XSD 
-
-Available locally in [v1/CourseStructure.xsd](v1/CourseStructure.xsd) or remotely at https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd.
-All course structures created for LMS import functionality and created by the LMS for export MUST conform to this XSD and be named "cmi5.xml".
-
 <a name="course_package"></a>
 # 14.0 Course Package
-For the course import and export defined in Section 6.1, the LMS MUST support all of the following formats:
-<ul><li>Zip32</li>
-<li>Zip64</li>
-<li>A course structure XML file</li>
-</ul>
+
+Conceptually, a course package is a collection of all of the components (AUs) of the course. While previous standards often equated this with the gathering of all resources into a single archive (often a .ZIP file), cmi5 does not have this restriction; all files can be “packaged”, even by reference.
+
+Technically, a course package is an XML file format with a course structure. It can be standalone or contained in a ZIP file. A course package, when located in a ZIP file, MUST be named “cmi5.xml”. The course package MUST conform to https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd. Available locally in v1/CourseStructure.xsd.
+
+An LMS MUST provide functionality such that a targeted course package is processed, resulting in a Course Structure import (See Section 13). An LMS MUST support Course Packages in at least these three file formats:
+
+* Standalone XML file
+* 32-bit Zip Format
+* 64-bit Zip Format
+ 
+An LMS MAY support alternate course package formats.
 
 <a name="course_packages_in_zip_format"></a>
 ## 14.1 Course Packages in ZIP Format
