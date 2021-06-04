@@ -734,13 +734,15 @@ LMS verb ordering rules are as follows:
 <th align="left" nowrap>LMS Obligations</th><td>
 The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the LMS generated block id as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.<br>
 <br>
-The LMS MUST generate a unique block id for the Satisfied Statement. The generated Block id MUST NOT match the publisher’s ID from the course structure.<br>
+The LMS MUST generate a unique block id for the "Satisfied" Statement. The generated Block id MUST NOT match the publisher’s ID from the course structure.<br>
 <br>
 The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the LMS generated course id as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.<br>
 <br>
-The LMS MUST generate a unique course id for the Satisfied Statement. The generated course id MUST NOT match the publisher’s ID from the course structure.<br>
+The LMS MUST generate a unique course id for the "Satisfied" Statement. The generated course id MUST NOT match the publisher’s ID from the course structure.<br>
 <br>
-For all "Satisfied" statements triggered as a result of an AU launch session, the LMS MUST use the session id from the AU launch in the statements.<br>
+The LMS MUST use the session id from the AU launch for all "Satisfied" statements triggered as a result of an AU launch session.<br>
+<br>
+The LMS MUST generate a unique session id for all "Satisfied" statements triggered outside of an AU launch session.<br>
 <br>
 The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block or Course within a course registration for a given learner.
 </td></tr>
@@ -875,8 +877,6 @@ All cmi5 defined statements MUST contain a context that includes all properties 
 <a name="registration"></a> 
 ### 9.6.1 registration
 The value for the registration property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  The LMS MUST evaluate MoveOn criteria in the course structure at the time of registration.  For example, AUs with MoveOn criteria of "Not Applicable" in the course structure would be evaluated and could generate Satisfied statements at this time.
-
-For all Satisfied statements triggered outside of an AU launch session, the LMS MUST generate a unique session id and use it for those statements.
 
 <a name="context_activities"></a>
 ### 9.6.2 contextActivities
