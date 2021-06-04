@@ -1625,7 +1625,7 @@ To achieve a larger distribution of their extension course designers SHOULD choo
 <a name="course_package"></a>
 # 14.0 Course Package
 
-Conceptually, a course package is a collection of all of the components (AUs) of the course. While previous standards often equated this with the gathering of all resources into a single archive (often a .ZIP file), cmi5 does not have this restriction; all files can be “packaged”, even by reference.
+Conceptually, a course package is a collection of all of the components (AUs) of the course. While previous standards often equated this with the gathering of all resources into a single archive (often a .ZIP file), cmi5 does not have this restriction; all files can be "packaged", even by reference.
 
 Technically, a course package is an XML file format with a course structure. It can be standalone or contained in a ZIP file. A course package, when located in a ZIP file, MUST be named "cmi5.xml". The course package MUST conform to https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd. Available locally in v1/CourseStructure.xsd.
 
