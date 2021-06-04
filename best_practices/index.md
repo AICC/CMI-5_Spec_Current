@@ -23,9 +23,9 @@ LMS should not spawn a new window to launch AU (i.e. “popup”). Depending on 
 
 ### Best Practice #{% increment bpCount %} – Fetch URLs
 
-* The Fetch URL should be unique for each session.
-* The Fetch URL must only return an auth token on the first call. (Subsequent calls must return an error – i.e. it should be a “one time use” URL)
-* The Fetch URL should not reuse auth tokens.
+* The Fetch URL must be unique for each session.
+* The Fetch URL must only return an auth token on the first call. (Subsequent calls must return an error – i.e. it must be a “one time use” URL)
+* The Fetch URL must not reuse auth tokens.
 * The Fetch URL should return a 4xx HTTP error if an HTTP method other than POST is used.
 * Since the Fetch URL can only be called once, the auth token should be stored in non-volatile storage (see best practice "Persist AU Session State") 
 
