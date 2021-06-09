@@ -22,7 +22,6 @@
   },
   "launchMode": "Normal",
   "returnURL": "http://10.211.55.3/ScormEngineInterface/defaultui/cmi5-deliver.aspx?configuration=&registration=ApiRegistrationId%7css2!InstanceId%7c0",
-  "launchMethod": "AnyWindow",
   "launchParameters": "Start=1,QuizMode=1,FastForward=On",
   "moveOn": "CompletedOrPassed"
 }
