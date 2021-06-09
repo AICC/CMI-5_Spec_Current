@@ -38,7 +38,6 @@
 {% include_relative 02-lms_launch_data.json %}
 </pre>
 
-
 ## Initialized Statement
 
 [View Raw](03-initialized_statement.json)
@@ -78,4 +77,3 @@
 <pre>
 {% include_relative 07-terminated_statement.json %}
 </pre>
-

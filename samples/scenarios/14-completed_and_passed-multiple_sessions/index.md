@@ -91,7 +91,6 @@
 {% include_relative 12-cmi5LearnerPreferences_data.json %}
 </pre>
 
-
 ## Session 2 - Initialized Statement
 
 [View Raw](08-session_2-initialized_statement.json)
@@ -123,4 +122,3 @@
 <pre>
 {% include_relative 11-session_2-terminated_statement.json %}
 </pre>
-

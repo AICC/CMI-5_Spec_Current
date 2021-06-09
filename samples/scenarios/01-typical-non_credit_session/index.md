@@ -59,4 +59,3 @@
 <pre>
 {% include_relative 05-terminated_statement.json %}
 </pre>
-

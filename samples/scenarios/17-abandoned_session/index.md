@@ -35,7 +35,6 @@
 {% include_relative 05-cmi5LearnerPreferences_data.json %}
 </pre>
 
-
 ## Initialized Statement
 
 [View Raw](03-initialized_statement.json)
@@ -51,4 +50,3 @@
 <pre>
 {% include_relative 04-abandoned_statement.json %}
 </pre>
-

@@ -28,7 +28,6 @@
 {% include_relative 02-lms_launch_data.json %}
 </pre>
 
-
 ## cmi5LearnerPreferences
 
 [View Raw](06-cmi5LearnerPreferences_data.json)
@@ -36,8 +35,6 @@
 <pre>
 {% include_relative 06-cmi5LearnerPreferences_data.json %}
 </pre>
-
-
 
 ## Initialized Statement
 
@@ -62,4 +59,3 @@
 <pre>
 {% include_relative 05-terminated_statement.json %}
 </pre>
-
