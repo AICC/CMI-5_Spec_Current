@@ -1,57 +1,63 @@
 {
-	"version": "1.0.0",
-	"id": "3e2e2ba6-46e2-4342-9d06-ff63a9653342",
-	"actor": {
-	"objectType": "Agent",
-	"name": "Boss, Lisa J.",
-	"account": {
-		"homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
-		"name": "277013-1"
-		}
-	},
-	"verb": {
-		"id": "http://adlnet.gov/expapi/verbs/initialized",
-		"display": {
-			"en-US": "Initialized"
-		}
-	},
-	"object": {
-		"objectType": "Activity",
-		"id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724",
-		"definition": {
-			"name": {
-				"en-US": ""
-				}
-		}
-	},
-	"context": {
-		"registration": "676437af-c6b2-4619-9043-096de04ad996",
-		"contextActivities": {
-			"parent": [{
-			"objectType": "Activity",
-			"id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
-			}],
-			"grouping": [{
-			"objectType": "Activity",
-			"id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
-			}],
-			"category": [{
-			"objectType": "Activity",
-			"id": "https://w3id.org/xapi/cmi5/context/categories/cmi5"
-			}]
-		},
-		"extensions": {
-			"ispring://view_id": "x6ryj7m2e6mj",
-			"https://w3id.org/xapi/cmi5/context/extensions/sessionid": "1519"
-			}
-	},
-	"timestamp": "2018-09-05T13:43:07.000Z",
-	"stored": "2018-09-05T13:43:08.394Z",
-	"authority": {
-		"objectType": "Agent",
-		"account": {
-			"homePage": "https://www2.virtualtrainingassistant.com/demo/",
-			"name": "6606cdd6-6095-4c22-8496-9ed8112aa67f"
-		}
-	}
+  "version": "1.0.0",
+  "id": "3e2e2ba6-46e2-4342-9d06-ff63a9653342",
+  "actor": {
+    "objectType": "Agent",
+    "name": "Boss, Lisa J.",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
+      "name": "277013-1"
+    }
+  },
+  "verb": {
+    "id": "http://adlnet.gov/expapi/verbs/initialized",
+    "display": {
+      "en-US": "Initialized"
+    }
+  },
+  "object": {
+    "objectType": "Activity",
+    "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724",
+    "definition": {
+      "name": {
+        "en-US": ""
+      }
+    }
+  },
+  "context": {
+    "registration": "676437af-c6b2-4619-9043-096de04ad996",
+    "contextActivities": {
+      "parent": [
+        {
+          "objectType": "Activity",
+          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+        }
+      ],
+      "grouping": [
+        {
+          "objectType": "Activity",
+          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+        }
+      ],
+      "category": [
+        {
+          "objectType": "Activity",
+          "id": "https://w3id.org/xapi/cmi5/context/categories/cmi5"
+        }
+      ]
+    },
+    "extensions": {
+      "ispring://view_id": "x6ryj7m2e6mj",
+      "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "1519"
+    }
+  },
+  "timestamp": "2018-09-05T13:43:07.000Z",
+  "stored": "2018-09-05T13:43:08.394Z",
+  "authority": {
+    "objectType": "Agent",
+    "account": {
+      "homePage": "https://www2.virtualtrainingassistant.com/demo/",
+      "name": "6606cdd6-6095-4c22-8496-9ed8112aa67f"
+    }
+  }
 }

@@ -27,7 +27,7 @@
     }
   },
   "result": {
-	  "completion": false
+    "completion": false
   },
   "context": {
     "registration": "71a448b1-a27c-41e6-aee2-4de9e0a6d0d6",
@@ -45,13 +45,13 @@
             }
           }
         }
-      ], 
-	  "parent": [
-                {
-                    "id": "http://course-repository.example.edu/identifiers/courses/02baafcf/aus/4c07",
-                    "objectType": "Activity"
-                }
-            ]
+      ],
+      "parent": [
+        {
+          "id": "http://course-repository.example.edu/identifiers/courses/02baafcf/aus/4c07",
+          "objectType": "Activity"
+        }
+      ]
     },
     "extensions": {
       "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "4e26c576-b3ae-461c-bd7b-d9ef44fb5298"

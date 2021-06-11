@@ -3,7 +3,7 @@
 
 # JSON Samples
 
-------
+---
 
 ## Scenarios
 
@@ -11,14 +11,14 @@ These samples represent various scenarios possible when running content using th
 
 Some common attributes about all samples:
 
-* They use the same "actor" in all statements, normally the `account.name` property would be unique to the learner and the `account.homePage` unique to the LMS
-* They represent the statement as constructed before sending to the LRS, therefore they do not include properties set by the LRS such as "stored", "authority" and "version"
-* A single registration is used in each separate scenario and files are numbered in request order
-* LMS Launch Data for a session is included in the samples, and for scenarios with multiple sessions is included for each session
-* Launch Mode is `Normal` unless specified
-* Fetch URL request response is only shown in the simple session, but is necessary for every session
-* Duration property values are included where required but are all very short in nature because of how the sessions were generated, in practice durations are likely to be substantially longer
-* Statements represent the minimum requirements per the cmi5 specification, in practice additional properties will be common, particularly in the context
+- They use the same "actor" in all statements, normally the `account.name` property would be unique to the learner and the `account.homePage` unique to the LMS
+- They represent the statement as constructed before sending to the LRS, therefore they do not include properties set by the LRS such as "stored", "authority" and "version"
+- A single registration is used in each separate scenario and files are numbered in request order
+- LMS Launch Data for a session is included in the samples, and for scenarios with multiple sessions is included for each session
+- Launch Mode is `Normal` unless specified
+- Fetch URL request response is only shown in the simple session, but is necessary for every session
+- Duration property values are included where required but are all very short in nature because of how the sessions were generated, in practice durations are likely to be substantially longer
+- Statements represent the minimum requirements per the cmi5 specification, in practice additional properties will be common, particularly in the context
 
 Discrepancies with the above are pointed out where necessary.
 
@@ -128,8 +128,7 @@ Discrepancies with the above are pointed out where necessary.
 
 [View](scenarios/19-cmi5-allowed-test-questions)
 
-{% include scenarios/descriptions/19-cmi5-allowed-test-questions.md %}
--------
+## {% include scenarios/descriptions/19-cmi5-allowed-test-questions.md %}
 
 ## License Agreement
 
@@ -142,4 +141,4 @@ Unless required by applicable law or agreed to in writing, software distributed 
 on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the License.
 
--------
+---
