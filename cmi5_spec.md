@@ -858,14 +858,7 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
     <tr><th align="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
     <tr><th align="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the Waived verb.</td></tr>
     <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
-    <tr><th align="right" nowrap>Value space:</th><td>
-        <ul>
-            <li>"Tested Out"</li>
-            <li>"Equivalent AU"</li>
-            <li>"Equivalent Outside Activity"</li>
-            <li>"Administrative"</li>
-        </ul>
-    </td></tr>
+    <tr><th align="right" nowrap>Value space:</th><td>Any string value</td></tr>
     <tr><th align="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
 </table>
 
