@@ -732,14 +732,10 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Description</th><td>The verb "Satisfied" indicates that the LMS has determined that the Learner has met the moveOn criteria of all AU's in a block or has met the moveOn criteria for all AU's in the course.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
 <th align="left" nowrap>LMS Obligations</th><td>
-The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the LMS generated block id as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.<br>
-<br>
-The LMS MUST generate a unique block id for the "Satisfied" Statement. The generated Block id MUST NOT match the publisher’s ID from the course structure.<br>
-<br>
-The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course.  In this statement the LMS MUST use the LMS generated course id as the Object id (Section 9.4 - Object) and use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.<br>
-<br>
-The LMS MUST generate a unique course id for the "Satisfied" Statement. The generated course id MUST NOT match the publisher’s ID from the course structure.<br>
-<br>
+The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block object per Section 9.4. The LMS MUST use the same block object for all Satisfied statements that refer to that block.  
+<br><br>
+The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course. In this statement the LMS MUST use the course object per Section 9.4.  The LMS MUST use the same course object for all Satisfied statements that refer to that course.   
+<br><br>
 The LMS MUST use the session id from the AU launch for all "Satisfied" statements triggered as a result of an AU launch session.<br>
 <br>
 The LMS MUST generate a unique session id for all "Satisfied" statements triggered outside of an AU launch session.<br>
@@ -759,6 +755,10 @@ An Object MUST be present, as specified in this section, in all "cmi5 defined" s
 Except for Statements with the Satisfied verb, the Object in a cmi5 defined statement represents the AU.  When the Object is the AU, the value of the Object's "id" property for a given AU MUST match the activityId defined in the launch URL.
 
 In Satisfied statements, the Object represents a Block or Course.  (see 9.3.9 - Satisfied)  
+
+The LMS MUST generated a unique ID for each block object.  The generated Block id MUST NOT match the publisher’s ID from the course structure. The LMS block object MUST use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.
+
+The LMS MUST generated a unique ID for each course object.  The generated course id MUST NOT match the publisher’s ID from the course structure. The LMS course object MUST use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.
 
 <a name="result"></a> 
 ## 9.5 Result
