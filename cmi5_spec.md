@@ -756,7 +756,7 @@ Except for Statements with the Satisfied verb, the Object in a cmi5 defined stat
 
 In Satisfied statements, the Object represents a Block or Course.  (see 9.3.9 - Satisfied)  
 
-The LMS MUST generated a unique ID for each block object.  The generated Block id MUST NOT match the publisher’s ID from the course structure. The LMS block object MUST use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.
+The LMS MUST generate a unique ID for each block object.  The generated block id MUST NOT match the publisher’s ID from the course structure. The LMS block object MUST use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.
 
 The LMS MUST generated a unique ID for each course object.  The generated course id MUST NOT match the publisher’s ID from the course structure. The LMS course object MUST use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.
 
