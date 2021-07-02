@@ -884,7 +884,7 @@ The LMS MUST include an Activity object with an "id" property whose value is the
 
 <a name="extensions"></a>
 ### 9.6.3 Extensions
-The following are extensions specified for cmi5. Statements MUST NOT include extensions that conflict with or duplicate the ones specified here. Statements MAY include extensions not specified here.
+The following are extensions specified for cmi5. Statements MAY include extensions not specified here.
 
 <a name="context_extensions_session_id"></a>
 #### 9.6.3.1 session ID
