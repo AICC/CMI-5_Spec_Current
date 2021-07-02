@@ -8,4 +8,4 @@ cmi5 is a "profile" for using the [xAPI specification](https://github.com/adlnet
 
 Current Release: Quartz, 1st Edition (June 2016)
 
-For more information, history, version list, JSON samples and best practices visit [the website](http://aicc.github.io/CMI-5_Spec_Current/).
+For more information, history, version list, JSON samples and best practices visit [the website](https://aicc.github.io/CMI-5_Spec_Current/).
