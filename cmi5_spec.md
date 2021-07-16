@@ -1148,7 +1148,7 @@ When reading or writing to the Agent Profile, the document name MUST be "cmi5Lea
 ```
 <a name="language_preference"></a>
 ## 11.1  languagePreference
-The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags as indicated in the xAPI specification (Section 5.2).  In the list, languages MUST be specified in order of user preference.  In the example below, the user's first preference for language is en-US.  The user's second preference for language is fr-FR and the third preference is fr-BE.
+The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags.  In the list, languages MUST be specified in order of user preference.  In the example below, the user's first preference for language is en-US.  The user's second preference for language is fr-FR and the third preference is fr-BE.
 
 ```javascript
 {
