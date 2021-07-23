@@ -1660,12 +1660,11 @@ An LMS MAY support alternate course package formats.
 
 <a name="course_packages_in_zip_format"></a>
 ## 14.1 Course Packages in ZIP Format
-The two ZIP file formats MUST follow the specification defined at https://www.pkware.com/support/zip-app-note.  When the ZIP file is used to package a course, it MUST contain the course structure XML file at its root directory and it MAY contain media associated with the course AUs.
+The two ZIP file formats MUST follow the specification defined at https://www.pkware.com/support/zip-app-note. When the ZIP file is used to package a course, it MUST contain the course structure XML file at its root directory and it MAY contain media associated with the course AUs.
 
-<ul><li>Any media included in a ZIP course package MUST use relative URL references in the Course Structure XML.</li>
-<li>Any media not included in a ZIP course package MUST use fully qualified URL references in the Course Structure XML.</li>
-<li>A ZIP course package MAY contain a mix of fully qualified and relative URLs, provided the rules above are followed.</li>
-</ul>
+* Any entry point for an AU included in a ZIP course package SHOULD be referenced by a relative URL in the Course Structure XML.
+* Any entry point for an AU not included in a ZIP course package MUST be referenced by a fully qualified URL in the Course Structure XML.
+* A ZIP course package MAY contain a mix of fully qualified and relative URLs, provided the rules above are followed.
 
 <a name="course_structure_xml_without_a_zip_file_package"></a>
 ## 14.2 Course Structure XML Without a ZIP File Package
