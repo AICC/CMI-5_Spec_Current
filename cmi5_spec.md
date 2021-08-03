@@ -1176,7 +1176,7 @@ Example:
 <a name="xapi_activity_profile"></a>  
 # 12.0 xAPI Activity Profile Data Model
 
-The AU MAY use the Activity Profile API according to the xAPI specification (Section 7.5 - Activity Profile API).
+The AU MAY use the Activity Profile API according to the xAPI specification.
 
 
 <a name="course_requirements"></a>
