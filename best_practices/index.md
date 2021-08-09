@@ -85,9 +85,9 @@ It is recommended that the LMS create a cmi5 “allowed” statement (with a sat
 
 Objectives are defined for the course structure so that the LMS can associate learning objectives to AU and Blocks in the course structure.  If an LMS has features for managing or reporting on objectives it should use the objectives defined in the course structure (to make the association of objectives to the AUs & Blocks).
 
-###  Best Practice #{% increment bpCount %} – LMS should use the Session ID and authentication token to validate actor
+###  Best Practice #{% increment bpCount %} – LMS should use the Session ID and authorization token to validate actor
 
-When the LMS receives a Statement, it should verify that the Actor in the statement matches the actor provided on the launch URL and that the authentication token provided was the same one issued for that specific launch session.  If the Session ID, authentication token, actor in statement, and actor do not match, then the LMS/LRS should reject the Statement with a HTTP 403 (Forbidden) Error.
+When the LMS receives a Statement, it should verify that the Actor in the statement matches the actor provided on the launch URL and that the authorization token provided was the same one issued for that specific launch session.  If the Session ID, authorization token, actor in statement, and actor do not match, then the LMS/LRS should reject the Statement with a HTTP 403 (Forbidden) Error.
 
 ###  Best Practice #{% increment bpCount %} – AU should use a derived activity ID for "cmi.interaction" statements
 
