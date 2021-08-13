@@ -861,7 +861,7 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
     <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS may retrieve this value and the reason value from the LRS and use it to notify someone that the AU encounter an error state.</td></tr>
     <tr><th align="right" nowrap>AU Usage:</th><td>The AU may set this value in statements to indicate an that non-recoverable error was encountered.</td></tr>
     <tr><th align="right" nowrap>LMS Obligation:</th><td>none</td></tr>
-    <tr><th align="right" nowrap>AU Obligation:</th><td>The AU may set this value in statement that include the Terminated verb<td><tr>
+    <tr><th align="right" nowrap>AU Obligation:</th><td>The AU may set this value in statements that include the Terminated verb<td><tr>
     <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
     <tr><th align="right" nowrap>Value space:</th><td>"Temporary" or "Permanent"</td></tr>
     <tr><th align="right" nowrap>Sample value:</th><td>"Permanent"</td></tr>
