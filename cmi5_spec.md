@@ -328,18 +328,18 @@ Synopsis of the cmi5 model:
 * A learner launches an AU from the LMS or an associated launching system, using an interface.
 * The LMS writes launch data to the integrated LRS.
 * The AU sends a message to the LMS requesting launch parameters and previous state information.
-* Once the AU is fully initialized for learner viewing, it issues an "initialize" statement.
+* Once the AU is fully initialized for learner viewing, it issues an "initialized" statement.
 * The learner views the AU content and performs the learning. During this time, the AU MAY request data from, and store data to, the LMS.
 * The learner exits the AU.
-* The AU reports the final tracking data to the LMS and issues a "terminate" statement.
+* The AU reports the final tracking data to the LMS and issues a "terminated" statement.
 * Administrative users create and view reports of the tracking data recorded by the AUs for individual learners.
 
 Responsibilities of the Assignable Unit:
 * Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
-* Send an "initialize" statement indicating the AU is ready for learner viewing.
+* Send an "initialized" statement indicating the AU is ready for learner viewing.
 * Acting as a "client", send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data according to the defined data types and vocabularies that are defined in this specification.
-* Send a "terminate" statement prior to terminating the AU's execution.
+* Send a "terminated" statement prior to terminating the AU's execution.
 
 Responsibilities of the LMS:
 * Create and maintain course structures.
