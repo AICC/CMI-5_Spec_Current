@@ -10,7 +10,7 @@
 
 (Since Objectives usage outside of course structure is not defined.)
 
-Objectives are defined for the course structure, but there is no language in the specification concerning their usage in statements. If an AU is using Objectives in statements, the best practice is to add the objective (with the same objective id provided in the course structure) to the context activities “grouping” property as an activity type of `http://adlnet.gov/expapi/activities/objective` from the ADL vocabulary.
+Objectives are defined for the course structure, but there is no language in the specification concerning their usage in statements. If an AU is using Objectives in statements, the best practice is to add the objective (with the same objective id provided in the course structure) to the context activities “parent” property as an activity type of `http://adlnet.gov/expapi/activities/objective` from the ADL vocabulary.
 
 ### Best Practice #{% increment bpCount %} – LMS should always implement the "returnURL"
 
