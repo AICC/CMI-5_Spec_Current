@@ -875,7 +875,7 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
 
 A terminatedReason is a code and a reason.
 
-The code is an integer with a value between 0 and 300. A terminatedReason MUST contain a code. There are three ranges of codes.
+The code is an integer with a value between 0 and 299. A terminatedReason MUST contain a code. There are three ranges of codes.
 * Any value between 0-99 indicates a normal termination. 
 * Values between 100 and 199 indicate that intervention by an administrative user *might* be required to allow the user to meet the moveOn criteria.
 * Values between 200 and 299 indicate that intervention by an administrative user *is* required to allow the user to meet the moveOn criteria.
