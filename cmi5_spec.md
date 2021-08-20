@@ -1,7 +1,7 @@
   
 <p>
 <p align=center><img src="https://cloud.githubusercontent.com/assets/1656316/9965238/bc9deb2c-5de9-11e5-9954-63aa03873f88.png" align=center></p>
- 
+
 # cmi5 Specification Profile for xAPI
 
 
@@ -849,18 +849,11 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
     </td></tr>
     <tr><th align="right" nowrap>AU Usage:</th><td>The AU may retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
     <tr><th align="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
-    <tr><th align="right" nowrap>LMS Obligation:</th><td>Optional</td></tr>
-    <tr><th align="right" nowrap>Data type:</th><td>JSON Object</td></tr>
-    <tr><th align="right" nowrap>Value space:</th><td>A code with a value between 0 and 300. Any value between 0-99 indicates a normal termination, values between 100 and 199 indicate that intervention by an administrative user *might* be required to allow the user to meet the moveOn criteria., values between 200 and 299 indicate that intervention by an administrative user *is* required to allow the user to meet the moveOn criteria.</td></tr>
-    <tr><th align="right" nowrap>Sample value:</th><td>{ "code":200, "text":{ "en":"Maximum number of attempts exceeded.", "fr":"Nombre maximum de tentatives dépassé" } }
-</td></tr>
+    <tr><th align="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the Waived verb.</td></tr>
+    <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
+    <tr><th align="right" nowrap>Value space:</th><td>Any string value</td></tr>
+    <tr><th align="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
 </table>
-
-
-
-
-
-
 
 <a name="result_extensions_terminated_reason"></a>
 #### 9.5.5.3 terminated reason
@@ -896,11 +889,6 @@ Example:
 ```JSON
 { "code":100, "reason":{ "en":"Normal termination", "es":"Terminación normal" } }
 ```
-
-
-
-
-
 
 <a name="context"></a> 
 ## 9.6 Context
