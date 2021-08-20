@@ -838,22 +838,37 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
 
 <table>
     <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/reason</td></tr>
-    <tr><th align="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means)</td></tr>
-    <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST set this value in statements it makes with the verb "Waived". The value SHOULD be one of the following -
-        <ul>
-            <li><b>Tested Out</b> – An Assessment was completed by the student to waive the AU.</li>
-            <li><b>Equivalent AU</b> - The student successfully completed an equivalent AU (in the same course) to waive the AU. </li>
-            <li><b>Equivalent Outside Activity</b> – The student successfully completed an equivalent activity outside of the course to waive the AU. </li>
-            <li><b>Administrative</b> – The LMS administrative user marked the AU complete.</li>
-        </ul>
+    <tr><th align="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means) or "terminated".</td></tr>
+    <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST set this value in statements it makes with the verb "Waived". The LMS may retrieve this value from the LRS and use it indicate to a user why the last AU session terminated.
     </td></tr>
-    <tr><th align="right" nowrap>AU Usage:</th><td>The AU may retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
-    <tr><th align="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
+    <tr><th align="right" nowrap>AU Usage:</th><td>The AU may retrieve this value from the LRS and use it to change presentation behavior based on the "reason".  The AU MUST set this value in statements it makes with the verb "Terminated".</td></tr>
     <tr><th align="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the Waived verb.</td></tr>
-    <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
-    <tr><th align="right" nowrap>Value space:</th><td>Any string value</td></tr>
-    <tr><th align="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
+    <tr><th align="right" nowrap>Data type:</th><td>Object</td></tr>
+    <tr><th align="right" nowrap>Value space:</th><td>A Reason Code from section and any language map</td></tr>
+    <tr><th align="right" nowrap>Sample value:</th>
+    <td>
+      {
+        "code":100,
+        "text":{
+            "en":"Maximum number of attempts exceeded.",
+            "fr":"Nombre maximum de tentatives dépassé"
+        }
+      }
+    </td>
+    </tr>
+
 </table>
+
+Reason codes:
+* 1 Tested Out
+* 2 Equivalent AU
+* 3 Equivalent Outside Activity
+* 4 Administrative
+* 5 Too many attempts
+* 6 Too fast
+* 7 Too slow
+* 8 Out of hours
+* 9 User request
 
 <a name="context"></a> 
 ## 9.6 Context
