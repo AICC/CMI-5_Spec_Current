@@ -887,7 +887,7 @@ The reason is a languageMap. A terminatedReason SHOULD contain a reason.
 Example:
 
 ```JSON
-{ "code":100, "reason":{ "en":"Normal termination", "es":"Terminación normal" } }
+{ "code":0, "reason":{ "en":"Normal termination", "es":"Terminación normal" } }
 ```
 
 <a name="context"></a> 
