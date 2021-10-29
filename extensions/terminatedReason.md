@@ -1,3 +1,7 @@
+
+terminatedReason Extension
+
+
 #### 1.0 terminatedReason
 
 <table>
@@ -19,26 +23,34 @@
     <tr><th align="right" nowrap>Description:</th><td>Specifies a code for a condition why an AU was "terminated" </td></tr>
     <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS SHOULD use this value to determine why the session was terminated. </td></tr>
     <tr><th align="right" nowrap>AU Usage:</th><td>The AU should set this value based one of the following conditions:
-* 0 – Normal Termination
-* These codes indicate that LMS admin intervention is not required 
-* 101 - Prerequisites not met (another course)
-* 102 - Time Bounds – Operating Hours of Business
-* 103 - Location Restriction
-* 104 - Payment Required
-* 105 - User not Qualified (Regulatory and/or user profile related)
-* 106 - Dependencies not Available (Browser, OS, hardware, Systems etc.)
-* 107 - Assets not Available (Can’t reach a Video, etc.) 
-* For all other conditions: 100 – LMS admin intervention is not required 
-* These codes indicate that LMS admin intervention is required 
-* 201 - MoveOn Incorrectly (Incompatible with AU) – Passed, Completed, etc. 
-* 202 - MasteryScore – Can’t be obtainable value or lower than 
-* 204 – LaunchParameters (Missing or Incorrect)
-* 205 – EntitlementKey (Missing or Invalid)
-* 206 - Too Many Attempts
-* 207 - Max Duration Exceeded
-* 208 - Cheating Suspected (Invalid User Behavior)
-* 209 - Assets not Available (e.g. Can’t reach a Video, etc.)
-* For all other conditions: 200 - Does Requires LMS admin intervention</td></tr>
+<ul>
+<li>0 – Normal Termination</li>
+<li>These codes indicate that LMS admin intervention is not required</li>
+<ul>    
+<li> 101 - Prerequisites not met (another course)</li>
+<li> 102 - Time Bounds – Operating Hours of Business</li>
+<li> 103 - Location Restriction</li>
+<li> 104 - Payment Required</li>
+<li> 105 - User not Qualified (Regulatory and/or user profile related)</li>
+<li> 106 - Dependencies not Available (Browser, OS, hardware, Systems etc.)</li>
+<li> 107 - Assets not Available (Can’t reach a Video, etc.) </li>
+<li> For all other conditions: 100 – LMS admin intervention is not required </li>
+</ul>
+<li>These codes indicate that LMS admin intervention is required</li> 
+<ul>
+<li> 201 - MoveOn Incorrectly (Incompatible with AU) – Passed, Completed, etc.</li> 
+<li> 202 - MasteryScore – Can’t be obtainable value or lower than </li>
+<li> 204 – LaunchParameters (Missing or Incorrect)</li>
+<li> 205 – EntitlementKey (Missing or Invalid)</li>
+<li> 206 - Too Many Attempts</li>
+<li> 207 - Max Duration Exceeded</li>
+<li> 208 - Cheating Suspected (Invalid User Behavior)</li>
+<li> 209 - Assets not Available (e.g. Can’t reach a Video, etc.)</li>
+<li> For all other conditions: 200 - Does Requires LMS admin intervention</li>
+</ul>
+</ul>   
+    
+    </td></tr>
     <tr><th align="right" nowrap>AU Obligation:</th><td>Required (if terminatedReason extension is used)</td></tr>
     <tr><th align="right" nowrap>LMS Obligation:</th><td>None</td></tr>
     <tr><th align="right" nowrap>Data type:</th><td>Integer</td></tr>
@@ -57,9 +69,9 @@
     <tr><th align="right" nowrap>LMS Obligation:</th><td>None</td></tr>
     <tr><th align="right" nowrap>Data type:</th><td>JSON Object</td></tr>
     <tr><th align="right" nowrap>Value space:</th><td>JSON Object in the following object structure:
-* Key: "reason"
-* Value: Object with the following at least one of the following name/value pairs:
-    * Key: RFC 5646 Language Tags
-    * Value: String</td></tr>
+<li> Key: "reason"
+<li> Value: Object with the following at least one of the following name/value pairs:
+    <li> Key: RFC 5646 Language Tags
+    <li> Value: String</td></tr>
     <tr><th align="right" nowrap>Sample value:</th><td>{"reason":  { "en":"Maximum number of attempts exceeded.", "fr":"Nombre maximum de tentatives dépassé" } }</td></tr>
 </table>
