@@ -1,5 +1,8 @@
+**<a href="/CMI-5_Spec_Current/extensions/index.html">cmi5 Extensions</a>- xAPI Statement Data Model**
 
-terminatedReason Extension
+### terminatedReason
+
+terminatedReason extension
 
 
 #### 1.0 terminatedReason
