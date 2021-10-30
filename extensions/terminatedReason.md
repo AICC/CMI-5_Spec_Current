@@ -48,9 +48,7 @@ terminatedReason Extension
 <li> 209 - Assets not Available (e.g. Can’t reach a Video, etc.)</li>
 <li> For all other conditions: 200 - Does Requires LMS admin intervention</li>
 </ul>
-</ul>   
-    
-    </td></tr>
+</ul></td></tr>
     <tr><th align="right" nowrap>AU Obligation:</th><td>Required (if terminatedReason extension is used)</td></tr>
     <tr><th align="right" nowrap>LMS Obligation:</th><td>None</td></tr>
     <tr><th align="right" nowrap>Data type:</th><td>Integer</td></tr>
@@ -64,14 +62,19 @@ terminatedReason Extension
     <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/terminatedReason</td></tr>
     <tr><th align="right" nowrap>Description:</th><td>A human readable message explaining why an AU was "terminated" </td></tr>
     <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MAY use this value to report why the AU session was terminated. </td></tr>
-    <tr><th align="right" nowrap>AU Usage:</th><td>If the terminatedReason extension is provided by the AU in a Terminated Statement, the AU MUST provide a human readable message describing the reason why the AU terminated.  The description SHOULD provide additional information about the cause and possible resolutions (e.g. LMS administrator intervention required). </td></tr>
+    <tr><th align="right" nowrap>AU Usage:</th><td>If the terminatedReason extension is provided by the AU in a Terminated Statement, the AU MUST provide a human readable message describing the reason why the AU terminated.  The description SHOULD provide additional information about the cause and possible resolutions (e.g. LMS administrator intervention required). 
+    </td></tr>
     <tr><th align="right" nowrap>AU Obligation:</th><td>Required (if terminatedReason extension is used)</td></tr>
     <tr><th align="right" nowrap>LMS Obligation:</th><td>None</td></tr>
     <tr><th align="right" nowrap>Data type:</th><td>JSON Object</td></tr>
     <tr><th align="right" nowrap>Value space:</th><td>JSON Object in the following object structure:
+        <ul>
 <li> Key: "reason"
 <li> Value: Object with the following at least one of the following name/value pairs:
+    <ul>
     <li> Key: RFC 5646 Language Tags
-    <li> Value: String</td></tr>
+    <li> Value: String
+    </ul></ul>
+    </td></tr>
     <tr><th align="right" nowrap>Sample value:</th><td>{"reason":  { "en":"Maximum number of attempts exceeded.", "fr":"Nombre maximum de tentatives dépassé" } }</td></tr>
 </table>
