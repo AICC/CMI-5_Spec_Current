@@ -11,6 +11,7 @@ The following products that have currently implemented cmi5:
 - [Trivantis Lectora Publisher (eLearning Content Authoring Tool)](https://www.trivantis.com/products/publisher-training-software)
 - [Trivantis CenarioVR (VR Content Authoring Tool)](https://www.cenariovr.com/)
 - [xAPI.js - cmi5 Profile Library (JavaScript Library)](https://www.xapijs.dev/cmi5-profile-library)
+- [dominKnow ONE](https://www.dominknow.com/blog/our-seven-favorite-new-features-in-the-dominknow-one-summer-2021-feature-release)
 
 
 **LMS Products**
