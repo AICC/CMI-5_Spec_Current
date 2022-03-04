@@ -727,7 +727,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Description</th><td>The verb "Satisfied" indicates that the LMS has determined that the Learner has met the moveOn criteria of all AU's in a block or has met the moveOn criteria for all AU's in the course.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
 <th align="left" nowrap>LMS Obligations</th><td>
-The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block object per Section 9.4. The LMS MUST use the same block object for all Satisfied statements that refer to that block.  
+The LMS MUST consider that an AU that was previously issued a “Waived” statement by the LMS to have met the moveOn criteria for that AU.  The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block object per Section 9.4. The LMS MUST use the same block object for all Satisfied statements that refer to that block.  
 <br><br>
 The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course. In this statement the LMS MUST use the course object per Section 9.4.  The LMS MUST use the same course object for all Satisfied statements that refer to that course.   
 <br><br>
