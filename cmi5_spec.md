@@ -256,6 +256,8 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Registration__: An enrollment instance of a learner in a course. (a registration ID uniquely identifies this). The registration ID persists throughout the course progress to completion and during review of a completed course. A new registration is created for new enrollment instances (such as recurrent courses or re-taking courses).
 
+* __Publisher ID__: A unique identifier for each AU and Block, and for the course instance in the Course Structure that is the identifier provided by the publisher to identify the course elements.  The purpose of this ID is to identify the course elements not the publisher itself.
+
 * __Session__: A period of time marked by the launch of an AU until its termination (or abandonment).
 
 <a name="acronyms"></a> 
@@ -880,9 +882,11 @@ cmi5 defined statements with a Result object (Section 9.5) that include either "
 
 <a name="context_activities_grouping_publisherid"></a>
 #### 9.6.2.3 Publisher ID Grouping Activity
-Used to identify statements about the AU using the publisher's id from the course structure.
+Used to identify statements about the course, block, or AU using the publisher id from the course structure.
 
-The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's "id" attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. The LMS MUST include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
+The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's "id" attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. 
+
+The LMS MUST include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
 
 <a name="extensions"></a>
 ### 9.6.3 Extensions
@@ -1210,7 +1214,7 @@ The following metadata attributes and elements are at the course level and  desc
         <strong>Data type</strong>: IRI</p>
     </td>
     <td width="811" valign="top"><p><strong>Description</strong>:<br>
-      A globally unique IRI for the course.  Used to explicitly identify the course instance.</p>
+      A globally unique IRI to identify the course.</p>
       <p><strong>Value space: </strong><br>
         Values are defined by the course designer.<br>
         <strong>Sample value: </strong><br>
@@ -1276,7 +1280,7 @@ The data in this section are used for the block structures which group AUs.  A B
   <tr>
     <td width="164" valign="top"><p><strong>Required: </strong> Yes<br>
         <strong>Data type: </strong> IRI</p></td>
-    <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block in xAPI requests made by the LMS. This id MUST be unique within the course structure.</p>
+    <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block. This id MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br>
       &lt;block id="http&#58;//www.example.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
@@ -1355,7 +1359,7 @@ The data in this section are used by the Objectives. Objectives can be associate
         <strong>Data type:</strong> IRI</p>
     </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br>
-      A unique IRI for the learning objective. This id MUST be unique within the course structure.<br>
+      A globally unique IRI to identify the learning objective. This id MUST be unique within the course structure.<br>
       </p>
       <p><strong>Value space:</strong><br>Values are defined by the course designer.</p>
     <p><strong>Sample value:</strong><br>
@@ -1420,7 +1424,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td width="160" valign="top"><p><strong>Required: </strong> Yes<br>
         <strong>Data type: </strong> IRI</p>
     </td>
-    <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI defined by AU publisher that the AU uses to identify itself in xAPI statement contexts. This id MUST be unique within the course structure.</p>
+    <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the AU. This id MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values are defined by the AU publisher.</p>
       <p><strong>Sample value:</strong><br>
       &lt;au id="http&#58;//www.example.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
