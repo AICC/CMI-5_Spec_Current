@@ -256,7 +256,7 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Registration__: An enrollment instance of a learner in a course. (a registration ID uniquely identifies this). The registration ID persists throughout the course progress to completion and during review of a completed course. A new registration is created for new enrollment instances (such as recurrent courses or re-taking courses).
 
-* __Publisher ID__: A unique identifier for each AU and Block, and the course instance in the Course Structure that is the identifier provided by the publisher to identify the course elements.  The purpose of this ID is to identify the course elements not the publisher itself.
+* __Publisher ID__: A unique identifier for each AU and Block, and for the course instance in the Course Structure that is the identifier provided by the publisher to identify the course elements.  The purpose of this ID is to identify the course elements not the publisher itself.
 
 * __Session__: A period of time marked by the launch of an AU until its termination (or abandonment).
 
