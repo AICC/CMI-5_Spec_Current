@@ -15,6 +15,7 @@ The following products that have currently implemented cmi5:
 
 
 **LMS Products**
+- [Bright Platform for WordPress (LMS/LMS Middleware)](https://bright.aura-software.com)
 - [elli LMS powered by Learning Evolution](https://www.learningevolution.com/hosted-learning-solutions?hsLang=en)
 - [Epignosis, LLC - Talent LMS](https://www.talentlms.com/)
 - [GrassBlade xAPI Companion (Addon for WordPress)](https://www.nextsoftwaresolutions.com/grassblade-xapi-companion/)
