@@ -764,7 +764,7 @@ A Result MAY be present in a statement depending on the cmi5 verb used.
 <a name="score"></a> 
 ### 9.5.1 Score
 
-A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
+A score NEED NOT be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
 
 The "score" property of the result MAY be set in the following cmi5 defined statements:
 
