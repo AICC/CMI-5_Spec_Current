@@ -625,7 +625,7 @@ AUs are allowed to use additional verbs not listed in this specification.
 The LMS MUST record and provide reporting for all "cmi5 defined" and "cmi5 allowed" statements that are not being rejected regardless of the verbs used in statements sent by AUs.
 
 LMS verb ordering rules are as follows:
-* LMS may issue multiple satisfied statements (in a session).
+* LMS MAY issue multiple satisfied statements (in a session).
 * LMS SHOULD NOT issue multiple satisfied statements per object (Block or Course) (in a registration).
 * LMS MUST NOT issue more than one abandoned statement for a session.
 * LMS MUST NOT issue more than one waived statement per session and MUST not issue more than one waived statement per registration per AU.
@@ -759,7 +759,7 @@ The LMS MUST generate a unique ID for each course object.  The generated course 
 
 <a name="result"></a> 
 ## 9.5 Result
-Result may be present in a statement depending on the cmi5 verb used. 
+A Result MAY be present in a statement depending on the cmi5 verb used. 
 
 <a name="score"></a> 
 ### 9.5.1 Score
@@ -808,7 +808,7 @@ The "duration" property is an ISO 8601 formatted time value required in certain 
 <a name="au_statements_that_include_duration"></a>
 #### 9.5.4.1 AU statements that include duration
 ##### Terminated Statement
-The AU MUST include the "duration" property in "Terminated" statements.  The AU SHOULD calculate duration for Terminated statements as the time difference between the "Initialized" statement and the "Terminated" statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
+The AU MUST include the "duration" property in "Terminated" statements.  The AU SHOULD calculate duration for Terminated statements as the time difference between the "Initialized" statement and the "Terminated" statement.  The AU MAY use other methods to calculate the duration based on criteria determined by the AU.
 ##### Completed Statement
 The AU MUST include the "duration" property in "Completed" statements.  The AU SHOULD calculate duration as the time spent by the learner to achieve completion status.
 ##### Passed Statement
@@ -830,7 +830,7 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
     <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/progress</td></tr>
     <tr><th align ="right" nowrap>Description:</th><td>An integer value between 0 and 100 (inclusive) indicating the completion of the AU as a percentage.</td></tr>
     <tr><th align ="right" nowrap>LMS Usage:</th><td>None</td></tr>
-    <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may set this value in statements to indicate level of completion. The AU SHOULD NOT set a progress value in a Completed statement or if it has previously issued a Completed statement for the AU in the current registration.</td></tr>
+    <tr><th align ="right" nowrap>AU Usage:</th><td>The AU MAY set this value in statements to indicate level of completion. The AU SHOULD NOT set a progress value in a Completed statement or if it has previously issued a Completed statement for the AU in the current registration.</td></tr>
     <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
     <tr><th align ="right" nowrap>LMS Obligation:</th><td>None</td></tr>
     <tr><th align ="right" nowrap>Data type:</th><td>Integer</td></tr>
@@ -851,7 +851,7 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
             <li><b>Administrative</b> – The LMS administrative user marked the AU complete.</li>
         </ul>
     </td></tr>
-    <tr><th align="right" nowrap>AU Usage:</th><td>The AU may retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
+    <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
     <tr><th align="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
     <tr><th align="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the Waived verb.</td></tr>
     <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
@@ -1023,7 +1023,7 @@ The properties for the "LMS.LaunchData" document are described below.
 <ul><li>The value for session id placed in an "extensions" property with the id as defined in Section 9.6.3.1.</li>
 <li>The publisher id Activity as defined in Section 9.6.2.3 in the "contextActivities.grouping" list</li></ul>
 The LMS MAY place additional values in the "contextTemplate".</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document. The AU MUST NOT modify or delete the "LMS.LaunchData" State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it sends to the LMS. While the AU may include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document. The AU MUST NOT modify or delete the "LMS.LaunchData" State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it sends to the LMS. While the AU MAY include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON Context object as defined in xAPI specification.</td></tr>
 </table>
 
@@ -1163,7 +1163,7 @@ The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags.
 }
 ```
 
-If the AU supports multiple languages, the AU SHOULD display in the language preference order of the user as in the example above. If the AU supported "zh-CN", "fr-BE" and "fr-FR", it SHOULD display in "fr-FR".  If the AU does not support multiple languages, or if no languagePreference is specified in the Agent Profile, it may display in its default language.
+If the AU supports multiple languages, the AU SHOULD display in the language preference order of the user as in the example above. If the AU supported "zh-CN", "fr-BE" and "fr-FR", it SHOULD display in "fr-FR".  If the AU does not support multiple languages, or if no languagePreference is specified in the Agent Profile, it MAY display in its default language.
 
 <a name="audio_preference"></a>
 
@@ -1589,7 +1589,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td width="815" valign="top"><p><strong>Description:</strong><br>
     <ul>
           <li>A relative or fully qualified URL that references the launch point of the AU.</li>
-          <li>To accommodate "non-browser" applications, an application specific protocol may be used in the url:<br>
+          <li>To accommodate "non-browser" applications, an application specific protocol MAY be used in the url:<br>
               &lt;application&gt;://&lt;URL to content&gt;</li>
           <li>Regardless of the value of &lt;scheme&gt;, the remaining portion of the URL MUST conform to RFC1738 - Uniform Resource Locators (URL).</li>
           <li>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1 Launch Method).</li>
