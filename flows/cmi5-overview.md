@@ -84,7 +84,7 @@ Example:
 > ?endpoint=http://lrs.example.com/lrslistener/   
 > &fetch=http://lms.example.com/tokenGen.htm?k=2390289x0   
 > &actor={\"objectType\": \"Agent\",\"account\":   
-> {\"homePage\": \"http://www.example.com\",\"name\": \"1625378\"}    
+> {\"homePage\": \"http://www.example.com\",\"name\": \"1625378\"}}   
 > &registration=760e3480-ba55-4991-94b0-01820dbd23a2   
 > &activityId=http://www.example.com/LA1/001/intro
 
