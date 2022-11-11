@@ -244,13 +244,13 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Experience API (xAPI)__: A runtime data communication specification for learning content (AU) to send and receive data to a Learning Record Store (LRS).  The xAPI specification referenced by this document is used to define the data transport and the data model.
 
-* __Internationalized Resource Identifier (IRI)__: A unique identifier according to RFC 3987. The IRI may be an IRL. IRLs SHOULD be defined within a domain controlled by the person creating the IRL. Note that IRI’s in this spec MUST be fully qualified and not IRI References.
+* __Internationalized Resource Identifier (IRI)__: A unique identifier according to RFC 3987. The IRI might be an IRL. IRLs SHOULD be defined within a domain controlled by the person creating the IRL. Note that IRI’s in this spec MUST be fully qualified and not IRI References.
 
 * __Internationalized Resource Locator (IRL)__: According to the xAPI specification, an IRL is an IRI that, when translated into a URI (according to the IRI to URI rules), is a URL.
 
 * __Learner__: The end user viewing/using the learning content (AUs).
 
-* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners' progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS is integrated with an LRS. In the remainder of this document the term “LMS” refers to an integrated entity of LMS and LRS.
+* __Learning Management System (LMS)__: A computer system that could include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners' progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS is integrated with an LRS. In the remainder of this document the term “LMS” refers to an integrated entity of LMS and LRS.
 
 * __Learning Records Store (LRS)__: As defined in the xAPI specification.
 
@@ -324,7 +324,7 @@ Course structure data MUST NOT implement any features or functionality (optional
 # 5.0 Conceptual Model: Informative  
 
 Synopsis of the cmi5 model:
-* An LMS imports a course structure which contains at least one AU.  Optionally, the course structure may include one or more blocks, which consist of 1 or more AUs or nested blocks.
+* An LMS imports a course structure which contains at least one AU.  Optionally, the course structure can include one or more blocks, which consist of 1 or more AUs or nested blocks.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or a related system.
 * A learner launches an AU from the LMS or an associated launching system, using an interface.
@@ -620,7 +620,7 @@ AU Verb Ordering Rules within a Registration (per AU) are as follows:
 * Exactly zero or one "Passed" cmi5 defined statement MUST be used per registration.
 * A "Failed" statement MUST NOT follow a "Passed" statement (in cmi5 defined statements) per registration.
 
-AUs may use additional verbs not listed in this specification.
+AUs are allowed to use additional verbs not listed in this specification.
 
 The LMS MUST record and provide reporting for all "cmi5 defined" and "cmi5 allowed" statements that are not being rejected regardless of the verbs used in statements sent by AUs.
 
@@ -704,8 +704,8 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/waived</td></tr>
 <tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than the moveOn criteria being met.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU may be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session id for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session id. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
-<tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU may be skipped by the learner.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU can be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session id for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session id. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
+<tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU can be skipped by the learner.</td></tr>
 </table>
 
 <a name="verbs_terminated"></a>
@@ -1053,7 +1053,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>launchParameters</em></strong> defined in the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>The LMS MUST include the  <strong><em>launchParameters</em></strong> in the State API document if the <strong><em>launchParameters</em></strong> were defined by the course designer in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The <em>launchParameters</em> value written in the State API Document MAY be different than the one in the course structure (e.g. based on content vendor options that may be used by the LMS admin users).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The <em>launchParameters</em> value written in the State API Document MAY be different than the one in the course structure (e.g. based on content vendor options that might be used by the LMS admin users).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD get the <strong><em>launchParameters</em></strong> value from the State API document if the launch parameters were defined in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Any string value</td></tr>
@@ -1413,7 +1413,7 @@ The data in this section are used by the Objectives. Objectives can be associate
 <a name="au_meta_data"></a>  
 ### 13.1.4 AU Metadata  
 
-The data in this section are used by the LMS to locate the AU and provide launch data. AUs may also contain objectives.
+The data in this section are used by the LMS to locate the AU and provide launch data. AUs might also contain objectives.
 
 
 <table border="1" cellspacing="0" cellpadding="0">
@@ -1440,7 +1440,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
         <strong>Default Value:</strong> "AnyWindow"
         </p>
     </td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS when launching the AU (in a web-browser environment) to determine whether the AU requires its own window, or whether the LMS may choose the window context for the AU.</p>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS when launching the AU (in a web-browser environment) to determine whether the AU requires its own window, or whether the LMS can choose the window context for the AU.</p>
       <p><strong>Usage: </strong></p>
       <ul>
         <li>A value of "OwnWindow" will require the LMS to launch the AU either in a new browser window, or the LMS may redirect the current window to the AU.</li>
