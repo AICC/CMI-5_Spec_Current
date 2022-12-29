@@ -324,7 +324,7 @@ Course structure data MUST NOT implement any features or functionality (optional
 # 5.0 Conceptual Model: Informative  
 
 Synopsis of the cmi5 model:
-* An LMS imports a course structure which contains at least one AU.  Optionally, the course structure can include one or more blocks, which consist of 1 or more AUs or nested blocks.
+* An LMS imports a course structure which contains at least one AU. Optionally, the course structure can include one or more blocks, which consist of 1 or more AUs or nested blocks.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or a related system.
 * A learner launches an AU from the LMS or an associated launching system, using an interface.
@@ -620,7 +620,7 @@ AU Verb Ordering Rules within a Registration (per AU) are as follows:
 * Exactly zero or one "Passed" cmi5 defined statement MUST be used per registration.
 * A "Failed" statement MUST NOT follow a "Passed" statement (in cmi5 defined statements) per registration.
 
-AUs are allowed to use additional verbs not listed in this specification.
+AUs MAY use additional verbs not listed in this specification.
 
 The LMS MUST record and provide reporting for all "cmi5 defined" and "cmi5 allowed" statements that are not being rejected regardless of the verbs used in statements sent by AUs.
 
@@ -764,7 +764,7 @@ A Result MAY be present in a statement depending on the cmi5 verb used.
 <a name="score"></a> 
 ### 9.5.1 Score
 
-A score NEED NOT be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
+A score MAY be reported. If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
 
 The "score" property of the result MAY be set in the following cmi5 defined statements:
 
