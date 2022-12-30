@@ -244,13 +244,13 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Experience API (xAPI)__: A runtime data communication specification for learning content (AU) to send and receive data to a Learning Record Store (LRS).  The xAPI specification referenced by this document is used to define the data transport and the data model.
 
-* __Internationalized Resource Identifier (IRI)__: A unique identifier according to RFC 3987. The IRI may be an IRL. IRLs SHOULD be defined within a domain controlled by the person creating the IRL. Note that IRI’s in this spec MUST be fully qualified and not IRI References.
+* __Internationalized Resource Identifier (IRI)__: A unique identifier according to RFC 3987. The IRI might be an IRL. IRLs SHOULD be defined within a domain controlled by the person creating the IRL. Note that IRI’s in this spec MUST be fully qualified and not IRI References.
 
 * __Internationalized Resource Locator (IRL)__: According to the xAPI specification, an IRL is an IRI that, when translated into a URI (according to the IRI to URI rules), is a URL.
 
 * __Learner__: The end user viewing/using the learning content (AUs).
 
-* __Learning Management System (LMS)__: A computer system that may include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners' progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS is integrated with an LRS. In the remainder of this document the term “LMS” refers to an integrated entity of LMS and LRS.
+* __Learning Management System (LMS)__: A computer system that could include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners' progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS is integrated with an LRS. In the remainder of this document the term “LMS” refers to an integrated entity of LMS and LRS.
 
 * __Learning Records Store (LRS)__: As defined in the xAPI specification.
 
@@ -324,7 +324,7 @@ Course structure data MUST NOT implement any features or functionality (optional
 # 5.0 Conceptual Model: Informative  
 
 Synopsis of the cmi5 model:
-* An LMS imports a course structure which contains at least one AU.  Optionally, the course structure may include one or more blocks, which consist of 1 or more AUs or nested blocks.
+* An LMS imports a course structure which contains at least one AU. Optionally, the course structure can include one or more blocks, which consist of 1 or more AUs or nested blocks.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or a related system.
 * A learner launches an AU from the LMS or an associated launching system, using an interface.
@@ -620,12 +620,12 @@ AU Verb Ordering Rules within a Registration (per AU) are as follows:
 * Exactly zero or one "Passed" cmi5 defined statement MUST be used per registration.
 * A "Failed" statement MUST NOT follow a "Passed" statement (in cmi5 defined statements) per registration.
 
-AUs may use additional verbs not listed in this specification.
+AUs MAY use additional verbs not listed in this specification.
 
 The LMS MUST record and provide reporting for all "cmi5 defined" and "cmi5 allowed" statements that are not being rejected regardless of the verbs used in statements sent by AUs.
 
 LMS verb ordering rules are as follows:
-* LMS may issue multiple satisfied statements (in a session).
+* LMS MAY issue multiple satisfied statements (in a session).
 * LMS SHOULD NOT issue multiple satisfied statements per object (Block or Course) (in a registration).
 * LMS MUST NOT issue more than one abandoned statement for a session.
 * LMS MUST NOT issue more than one waived statement per session and MUST not issue more than one waived statement per registration per AU.
@@ -704,8 +704,8 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/waived</td></tr>
 <tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than the moveOn criteria being met.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU may be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session id for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session id. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
-<tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU may be skipped by the learner.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU MAY be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session id for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session id. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
+<tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU can be skipped by the learner.</td></tr>
 </table>
 
 <a name="verbs_terminated"></a>
@@ -759,12 +759,12 @@ The LMS MUST generate a unique ID for each course object.  The generated course 
 
 <a name="result"></a> 
 ## 9.5 Result
-Result may be present in a statement depending on the cmi5 verb used. 
+A Result MAY be present in a statement depending on the cmi5 verb used. 
 
 <a name="score"></a> 
 ### 9.5.1 Score
 
-A score is not required to be reported.  If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
+A score MAY be reported. If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
 
 The "score" property of the result MAY be set in the following cmi5 defined statements:
 
@@ -808,7 +808,7 @@ The "duration" property is an ISO 8601 formatted time value required in certain 
 <a name="au_statements_that_include_duration"></a>
 #### 9.5.4.1 AU statements that include duration
 ##### Terminated Statement
-The AU MUST include the "duration" property in "Terminated" statements.  The AU SHOULD calculate duration for Terminated statements as the time difference between the "Initialized" statement and the "Terminated" statement.  The AU may use other methods to calculate the duration based on criteria determined by the AU.
+The AU MUST include the "duration" property in "Terminated" statements.  The AU SHOULD calculate duration for Terminated statements as the time difference between the "Initialized" statement and the "Terminated" statement.  The AU MAY use other methods to calculate the duration based on criteria determined by the AU.
 ##### Completed Statement
 The AU MUST include the "duration" property in "Completed" statements.  The AU SHOULD calculate duration as the time spent by the learner to achieve completion status.
 ##### Passed Statement
@@ -830,7 +830,7 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
     <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/progress</td></tr>
     <tr><th align ="right" nowrap>Description:</th><td>An integer value between 0 and 100 (inclusive) indicating the completion of the AU as a percentage.</td></tr>
     <tr><th align ="right" nowrap>LMS Usage:</th><td>None</td></tr>
-    <tr><th align ="right" nowrap>AU Usage:</th><td>The AU may set this value in statements to indicate level of completion. The AU SHOULD NOT set a progress value in a Completed statement or if it has previously issued a Completed statement for the AU in the current registration.</td></tr>
+    <tr><th align ="right" nowrap>AU Usage:</th><td>The AU MAY set this value in statements to indicate level of completion. The AU SHOULD NOT set a progress value in a Completed statement or if it has previously issued a Completed statement for the AU in the current registration.</td></tr>
     <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
     <tr><th align ="right" nowrap>LMS Obligation:</th><td>None</td></tr>
     <tr><th align ="right" nowrap>Data type:</th><td>Integer</td></tr>
@@ -851,7 +851,7 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
             <li><b>Administrative</b> – The LMS administrative user marked the AU complete.</li>
         </ul>
     </td></tr>
-    <tr><th align="right" nowrap>AU Usage:</th><td>The AU may retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
+    <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
     <tr><th align="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
     <tr><th align="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the Waived verb.</td></tr>
     <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
@@ -1023,7 +1023,7 @@ The properties for the "LMS.LaunchData" document are described below.
 <ul><li>The value for session id placed in an "extensions" property with the id as defined in Section 9.6.3.1.</li>
 <li>The publisher id Activity as defined in Section 9.6.2.3 in the "contextActivities.grouping" list</li></ul>
 The LMS MAY place additional values in the "contextTemplate".</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document. The AU MUST NOT modify or delete the "LMS.LaunchData" State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it sends to the LMS. While the AU may include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document. The AU MUST NOT modify or delete the "LMS.LaunchData" State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it sends to the LMS. While the AU MAY include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON Context object as defined in xAPI specification.</td></tr>
 </table>
 
@@ -1053,7 +1053,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong><em>launchParameters</em></strong> defined in the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>The LMS MUST include the  <strong><em>launchParameters</em></strong> in the State API document if the <strong><em>launchParameters</em></strong> were defined by the course designer in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The <em>launchParameters</em> value written in the State API Document MAY be different than the one in the course structure (e.g. based on content vendor options that may be used by the LMS admin users).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The <em>launchParameters</em> value written in the State API Document MAY be different than the one in the course structure (e.g. based on content vendor options that might be used by the LMS admin users).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD get the <strong><em>launchParameters</em></strong> value from the State API document if the launch parameters were defined in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Any string value</td></tr>
@@ -1163,7 +1163,7 @@ The languagePreference MUST be a comma-separated list of RFC 5646 Language Tags.
 }
 ```
 
-If the AU supports multiple languages, the AU SHOULD display in the language preference order of the user as in the example above. If the AU supported "zh-CN", "fr-BE" and "fr-FR", it SHOULD display in "fr-FR".  If the AU does not support multiple languages, or if no languagePreference is specified in the Agent Profile, it may display in its default language.
+If the AU supports multiple languages, the AU SHOULD display in the language preference order of the user as in the example above. If the AU supported "zh-CN", "fr-BE" and "fr-FR", it SHOULD display in "fr-FR".  If the AU does not support multiple languages, or if no languagePreference is specified in the Agent Profile, it MAY display in its default language.
 
 <a name="audio_preference"></a>
 
@@ -1413,7 +1413,7 @@ The data in this section are used by the Objectives. Objectives can be associate
 <a name="au_meta_data"></a>  
 ### 13.1.4 AU Metadata  
 
-The data in this section are used by the LMS to locate the AU and provide launch data. AUs may also contain objectives.
+The data in this section are used by the LMS to locate the AU and provide launch data. AUs might also contain objectives.
 
 
 <table border="1" cellspacing="0" cellpadding="0">
@@ -1440,10 +1440,10 @@ The data in this section are used by the LMS to locate the AU and provide launch
         <strong>Default Value:</strong> "AnyWindow"
         </p>
     </td>
-    <td valign="top"><p><strong>Description:</strong> Used by the LMS when launching the AU (in a web-browser environment) to determine whether the AU requires its own window, or whether the LMS may choose the window context for the AU.</p>
+    <td valign="top"><p><strong>Description:</strong> Used by the LMS when launching the AU (in a web-browser environment) to determine whether the AU requires its own window, or whether the LMS can choose the window context for the AU.</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>A value of "OwnWindow" will require the LMS to launch the AU either in a new browser window, or the LMS may redirect the current window to the AU.</li>
+        <li>A value of "OwnWindow" will require the LMS to launch the AU either in a new browser window, or the LMS MAY redirect the current window to the AU.</li>
         <li>A value of "AnyWindow" indicates that the AU does not care about the window context.  All browser window options are acceptable, such as in a Frameset, in a New Window, a browser redirect, etc.</li>
       </ul>
       <p><strong>Value space: </strong>"OwnWindow", "AnyWindow"<br>
@@ -1589,7 +1589,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td width="815" valign="top"><p><strong>Description:</strong><br>
     <ul>
           <li>A relative or fully qualified URL that references the launch point of the AU.</li>
-          <li>To accommodate "non-browser" applications, an application specific protocol may be used in the url:<br>
+          <li>To accommodate "non-browser" applications, an application specific protocol MAY be used in the url:<br>
               &lt;application&gt;://&lt;URL to content&gt;</li>
           <li>Regardless of the value of &lt;scheme&gt;, the remaining portion of the URL MUST conform to RFC1738 - Uniform Resource Locators (URL).</li>
           <li>If the url includes a query string, the values from that query string MUST be merged with the cmi5 parameters at launch time (see Section 8.1 Launch Method).</li>
