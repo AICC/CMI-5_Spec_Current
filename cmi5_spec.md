@@ -15,6 +15,7 @@
 
 * [__1.0 Overview__](#overview)
   * [1.1 Scope](#scope)
+  * [1.2 Document Style Conventions](#Document_Style_Conventions)
 * [__2.0 References__](#references)
 * [__3.0 Definitions__](#definitions)
   * [3.1 Abbreviations and Acronyms](#acronyms)
@@ -205,14 +206,14 @@ Other uses of the xAPI specification are outside of this scope.
 
 Uses of activities not explicitly defined above are outside of the scope of this specification.
 
-<a name="Document Style Conventions"></a>  
+<a name="Document_Style_Conventions"></a>  
 ## 1.2 Document Style Conventions
 
 The following is proposed language to express the document style conventions.  (e.g. a "how to read this document")
 
  **References to Statements**
 
-This document uses, as shorthand, specific vocabulary such as verbs in conjunction with the word "statement" (e.g., a "completed" statement). This shorthand refers to that statement meeting all requirements that would accompany the correct use of that concept. When using this shorthand with the word “the”, this means the cmi5 defined version of that statement with the verb’s display property. (see Section 7.1.3 Types of Statements for the definition of cmi5 defined)
+This document uses, as shorthand, specific vocabulary such as verbs in conjunction with the word "statement" (e.g., a "completed" statement). This shorthand refers to that statement meeting all requirements that would accompany the correct use of that concept. When using this shorthand with the word “the”, this means the cmi5 defined version of that statement with the verb’s display property. (see Section 7.1.3 Types of Statements (#type_statement_au) for the definition of cmi5 defined)
 
 For example:
 
