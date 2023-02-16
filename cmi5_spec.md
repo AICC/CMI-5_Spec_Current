@@ -205,6 +205,39 @@ Other uses of the xAPI specification are outside of this scope.
 
 Uses of activities not explicitly defined above are outside of the scope of this specification.
 
+<a name="Document Style Conventions"></a>  
+## 1.2 Document Style Conventions
+
+The following is proposed language to express the document style conventions.  (e.g. a "how to read this document")
+
+ **References to Statements**
+
+This document uses, as shorthand, specific vocabulary such as verbs in conjunction with the word "statement" (e.g., a "completed" statement). This shorthand refers to that statement meeting all requirements that would accompany the correct use of that concept. When using this shorthand with the word “the”, this means the cmi5 defined version of that statement with the verb’s display property. (see Section 7.1.3 Types of Statements for the definition of cmi5 defined)
+
+For example:
+
+> `the “completed” statement`
+
+Would be a cmi5 defined xAPI statement with a verb display name of ‘completed’ and a verb IRI of ‘http://adlnet.gov/expapi/verbs/completed’.  Similar conventions might be used for other xAPI properties.
+
+**References to Properties**
+
+This document refers to properites in text descriptions  (ADD TO THIS)
+
+This document uses the following style conventions:
+
+* **Back Ticks ( ` )** – (possibly rendered as “inline code”) for all literal names of verbs and properties – ‘completed’ verb
+ - do not use bold/italic styling on verb & properties in text descriptions (use back ticks instead)
+* **Double Quotes for shorthand** – the “completed” statement (as described in above)
+* **Literal syntax case** – When referring to verbs and properties the case will show as they appear in xAPI statements
+* **Section Titles with verbs/properties** – may use either Capitalized or Literal
+
+**Style Usage examples**
+* the ‘score’ property
+* for ‘score’ when….
+* The ‘fetch’ parameter contains a URL value that is used to….
+* The “fetch” URL = The shorthand Concept of 
+* The ‘fetch’ query parameter contains a URL value (the “fetch” URL) that is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.
 
 <a name="references"></a> 
 # 2.0  References
