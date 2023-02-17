@@ -227,18 +227,32 @@ This document refers to properites in text descriptions  (ADD TO THIS)
 
 This document uses the following style conventions:
 
-* **Back Ticks ( ` )** – (possibly rendered as “inline code”) for all literal names of verbs and properties – ‘completed’ verb
- - do not use bold/italic styling on verb & properties in text descriptions (use back ticks instead)
-* **Double Quotes for shorthand** – the “completed” statement (as described in above)
+* **Back Ticks ( `` )** (rendered as “inline code”) for all literal names of verbs and properties 
+ * *do not use bold/italic styling on verb & properties in text descriptions (use back ticks instead)*
+* **Double Quotes ( " ) for shorthand** – the “completed” statement (as described in above)
 * **Literal syntax case** – When referring to verbs and properties the case will show as they appear in xAPI statements
-* **Section Titles with verbs/properties** – may use either Capitalized or Literal
+* **Section Titles with verbs/properties** – may use either Capitalized or Literal syntax.
 
 **Style Usage examples**
-* the ‘score’ property
-* for ‘score’ when….
-* The ‘fetch’ parameter contains a URL value that is used to….
-* The “fetch” URL = The shorthand Concept of 
-* The ‘fetch’ query parameter contains a URL value (the “fetch” URL) that is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.
+* **Back Ticks ( `` )**
+ * the ‘score’ property
+    for `score` when….  
+
+* **Double Quotes ( " )**
+ * the 'completed' statement
+     the "completed" statement must
+
+* **Literal syntax case**
+ *
+
+* **Section Titles with verbs/properties**	
+ * 
+
+* **All styles together**
+* The ‘fetch’ parameter contains a URL value that is used to….  
+> The `fetch` query parameter contains a URL value (the “fetch” URL) that is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.
+
+
 
 <a name="references"></a> 
 # 2.0  References
