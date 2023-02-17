@@ -227,7 +227,7 @@ This document refers to properites in text descriptions  (ADD TO THIS)
 
 This document uses the following style conventions:
 
-* **Back Ticks ( `` )** (rendered as “inline code”) for all literal names of verbs and properties 
+* **Back Ticks ( ` )** (rendered as “inline code”) for all literal names of verbs and properties 
  * *do not use bold/italic styling on verb & properties in text descriptions (use back ticks instead)*
 * **Double Quotes ( " ) for shorthand** – the “completed” statement (as described in above)
 * **Literal syntax case** – When referring to verbs and properties the case will show as they appear in xAPI statements
@@ -235,12 +235,13 @@ This document uses the following style conventions:
 
 **Style Usage examples**
 * **Back Ticks ( `` )**
- * the ‘score’ property
+ * the ‘score’ property  
     for `score` when….  
 
 * **Double Quotes ( " )**
- * the 'completed' statement
-     the "completed" statement must
+ * the 'completed' statement  
+
+    the "completed" statement must
 
 * **Literal syntax case**
  *
