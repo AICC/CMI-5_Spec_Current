@@ -225,6 +225,7 @@ Would be a cmi5 defined xAPI statement with a verb display name of ‘completed�
 
 This document refers to properites in text descriptions  (ADD TO THIS)
 
+**Style Conventions**  
 This document uses the following style conventions:
 
 * **Back Ticks ( ` )** (rendered as “inline code”) for all literal names of verbs and properties 
@@ -235,13 +236,13 @@ This document uses the following style conventions:
 
 **Style Usage examples**
 * **Back Ticks ( ` )**
- * the ‘score’ property  
-    for `score` when….  
+	* the ‘score’ property  
+	for `score` when….  
 
 * **Double Quotes ( " )**
 	* the 'completed' statement  
 
-    the "completed" statement must
+	the "completed" statement must
 
 * **Literal syntax case**
  *
@@ -250,9 +251,9 @@ This document uses the following style conventions:
  * 
 
 * **All styles together**
-* The ‘fetch’ parameter contains a URL value that is used to….  
+	* The ‘fetch’ parameter contains a URL value that is used to….  
 
-> The `fetch` query parameter contains a URL value (the “fetch” URL) that is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.
+	> The `fetch` query parameter contains a URL value (the “fetch” URL) that is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.
 
 
 
