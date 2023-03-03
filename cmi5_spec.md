@@ -221,41 +221,30 @@ For example:
 
 Would be a cmi5 defined xAPI statement with a verb display name of ‘completed’ and a verb IRI of ‘http://adlnet.gov/expapi/verbs/completed’.  Similar conventions might be used for other xAPI properties.
 
-**References to Properties**
-
-This document refers to properites in text descriptions  (ADD TO THIS)
-
 **Style Conventions**  
 This document uses the following style conventions:
 
-* **Back Ticks ( ` )** (rendered as “inline code”) for all literal names of verbs and properties 
-	* *do not use bold/italic styling on verb & properties in text descriptions (use back ticks instead)*
-* **Double Quotes ( " ) for shorthand** – the “completed” statement (as described in above)
-* **Literal syntax case** – When referring to verbs and properties the case will show as they appear in xAPI statements
-* **Section Titles with verbs/properties** – may use either Capitalized or Literal syntax.
+* **Back Ticks ( \` )** – (rendered as "inline code depending on document rendering”) for all literal names of verbs and properties.  
+* **Double Quotes ( " ) for shorthand** – the “completed” statement (as described in above).  
+* **Literal syntax case**  – for referring to verbs and properties the case will show as they appear in xAPI statements. 
+* **Section Titles with verbs/properties** – may use either Capitalized or Literal syntax.  
 
-**Style Usage examples**
-* **Back Ticks ( ` )**
-	* the ‘score’ property  
+**Style Usage examples**  
+
+* **Back Ticks ( \` ) example. The ‘score’ property:**
 	for `score` when….  
+	
+* **Double Quotes ( " ) example. The ‘completed‘ statement:**  
+	the "completed" statement  MUST  
 
-* **Double Quotes ( " )**
-	* the 'completed' statement  
+* **Literal syntax case example. The actor object with an object type of agent:**  
+	The actor object with an objectType of Agent
 
-	the "completed" statement must
+* **Section Titles with verb example. 	See Section 9.3.1 launched:**	
+	9.3.1 Launched
 
-* **Literal syntax case**
- *
-
-* **Section Titles with verbs/properties**	
- * 
-
-* **All styles together**
-	* The ‘fetch’ parameter contains a URL value that is used to….  
-
-	> The `fetch` query parameter contains a URL value (the “fetch” URL) that is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.
-
-
+* **Section Titles with properties example. 	See Section 9.5.4 duration:**	
+	9.5.4 Duration
 
 <a name="references"></a> 
 # 2.0  References
