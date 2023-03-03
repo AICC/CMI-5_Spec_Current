@@ -207,13 +207,11 @@ Other uses of the xAPI specification are outside of this scope.
 Uses of activities not explicitly defined above are outside of the scope of this specification.
 
 <a name="Document_Style_Conventions"></a>  
-## 1.2 Document Style Conventions
-
-The following is proposed language to express the document style conventions.  (e.g. a "how to read this document")
+## 1.2 Document Style Conventions  
 
  **References to Statements**
 
-This document uses, as shorthand, specific vocabulary such as verbs in conjunction with the word "statement" (e.g., a "completed" statement). This shorthand refers to that statement meeting all requirements that would accompany the correct use of that concept. When using this shorthand with the word “the”, this means the cmi5 defined version of that statement with the verb’s display property. (see Section 7.1.3 Types of Statements (#type_statement_au) for the definition of cmi5 defined)
+This document uses, as shorthand, specific vocabulary such as verbs in conjunction with the word "statement" (e.g., a "completed" statement). This shorthand refers to that statement meeting all requirements that would accompany the correct use of that concept. When using this shorthand with the word “the”, this means the cmi5 defined version of that statement with the verb’s display property. (see [Section 7.1.3 Types of Statements](#type_statement_au) for the definition of cmi5 defined)
 
 For example:
 
@@ -240,10 +238,10 @@ This document uses the following style conventions:
 * **Literal syntax case example. The actor object with an object type of agent:**  
 	The actor object with an objectType of Agent
 
-* **Section Titles with verb example. 	See Section 9.3.1 launched:**	
+* **Section Titles with verb example. 	See Section 9.3.1 launched:** 	
 	9.3.1 Launched
 
-* **Section Titles with properties example. 	See Section 9.5.4 duration:**	
+* **Section Titles with properties example. 	See Section 9.5.4 duration:**	 
 	9.5.4 Duration
 
 <a name="references"></a> 
