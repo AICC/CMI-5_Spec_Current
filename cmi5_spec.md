@@ -285,15 +285,16 @@ __XSD__: XML Schema Definition
 
 Conformance to this specification is defined in this section. 
 
-In this specification:
-* "MUST" is to be interpreted as a requirement on an implementation.
-* "MUST NOT" is to be interpreted as a prohibition.
-* "SHOULD" is to be interpreted as a recommendation for implementation.
-* "SHOULD NOT" is to be interpreted as the converse of "SHOULD".
-* "MAY" is to be interpreted as a course of action that is permissible within the limits of the specification.
-* "NEED NOT" is to be interpreted as a course of action that is not required.
+In this specification: 
 
-Uses of the xAPI specification outside of the scope of this specification do not affect conformance with this specification.
+* "MUST" is to be interpreted as a requirement on an implementation.  
+* "MUST NOT" is to be interpreted as a prohibition.  
+* "SHOULD" is to be interpreted as a recommendation for implementation.  
+* "SHOULD NOT" is to be interpreted as the converse of "SHOULD".  
+* "MAY" is to be interpreted as a course of action that is permissible within the limits of the specification.  
+* "NEED NOT" is to be interpreted as a course of action that is not required.  
+
+Uses of the xAPI specification outside of the scope of this specification do not affect conformance with this specification.  
 
 <a name="au_conformance"></a> 
 ## 4.1 Assignable Unit (AU)
@@ -310,7 +311,7 @@ The LMS MUST have an account which is able to retrieve all Resource data (from t
 <a name="json_conformance"></a> 
 ## 4.3 Optional JSON Values
 
-If JSON properties are indicated as "optional", you MAY leave such properties out of the JSON structure being described.
+If JSON properties are indicated as optional, you MAY leave such properties out of the JSON structure being described.
 
 <a name="course_conformance"></a>
 ## 4.4 Courses
@@ -324,6 +325,7 @@ Course structure data MUST NOT implement any features or functionality (optional
 # 5.0 Conceptual Model: Informative  
 
 Synopsis of the cmi5 model:
+
 * An LMS imports a course structure which contains at least one AU. Optionally, the course structure can include one or more blocks, which consist of 1 or more AUs or nested blocks.
 * An LMS administrative user assigns a course to a learner.
 * A learner authenticates with an LMS or a related system.
@@ -337,15 +339,17 @@ Synopsis of the cmi5 model:
 * Administrative users create and view reports of the tracking data recorded by the AUs for individual learners.
 
 Responsibilities of the Assignable Unit:
+
 * Parse the parameters from the launching environment to determine where the LMS location is and initiate communication with the LMS.
 * Send an "initialized" statement indicating the AU is ready for learner viewing.
-* Acting as a "client", send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
+* Acting as a client, send and receive messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data according to the defined data types and vocabularies that are defined in this specification.
 * Send a "terminated" statement prior to terminating the AU's execution.
 
 Responsibilities of the LMS:
+
 * Create and maintain course structures.
-* Acting as a "server", receive and reply to messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
+* Acting as a server, receive and reply to messages using the defined transport mechanism(s) and associated commands as prescribed in this specification.
 * Format all data according to the defined data types and vocabularies that are defined in this specification.
 * Launch the specified AU contained in the courses within the defined environment(s).
 
@@ -355,10 +359,10 @@ Responsibilities of the LMS:
 The LMS MUST:
 
 * Implement an LRS as defined in the xAPI specification.
-* Implement additional "State API" requirements to initialize the AU state as defined in Section 10.
+* Implement additional State API requirements to initialize the AU state as defined in Section 10.
 * Implement the runtime launch interface as defined in Section 8.0.
-* Implement additional xAPI "Statement API" requirements as defined in Section 9.
-* Implement additional xAPI "Agent Profile API" requirements as defined in Section 11.
+* Implement additional xAPI Statement API requirements as defined in Section 9.
+* Implement additional xAPI Agent Profile API requirements as defined in Section 11.
 * Implement course handling as defined in Section 6.1.
 
 <a name="course_structures"></a>  
@@ -381,9 +385,9 @@ The LMS MUST implement the State API Requirements as defined in Section 10.
 
 The LMS MUST NOT provide permissions/credentials which allow the AU to issue voiding Statements.
 
-The LMS SHOULD reject statements that conflict with the "Statement API" requirements as defined in Section 9.
+The LMS SHOULD reject statements that conflict with the Statement API requirements as defined in Section 9.
 
-The LMS MUST Void statements that are NOT rejected AND conflict with the "Statement API" requirements as defined in Section 9.
+The LMS MUST Void statements that are NOT rejected AND conflict with the Statement API requirements as defined in Section 9.
 
 <a name="au_requirements"></a>  
 # 7.0 AU Requirements
@@ -401,23 +405,23 @@ An AU MUST:
 
 <a name="first_statement_au"></a> 
 ### 7.1.1 First Statement API Call
-The AU MUST issue a statement to the LRS after being launched, initialized, and ready for learner interaction using the Initialized verb as described in Section 9.3.2.
+The AU MUST issue a statement to the LRS after being launched, initialized, and ready for learner interaction using the "initialized" verb as described in Section 9.3.2.
 
 <a name="last_statement_au"></a>  
 ### 7.1.2 Last Statement Call
-The AU MUST issue a Terminated statement to the LRS as described in Section 9.3.8 as the last statement in a session.
+The AU MUST issue a "terminated" statement to the LRS as described in Section 9.3.8 as the last statement in a session.
  
-Once the AU has determined that the session will end (e.g. by user action, timeout or some other means) the AU SHOULD issue a Terminated statement.
+Once the AU has determined that the session will end (e.g. by user action, timeout or some other means) the AU SHOULD issue a "terminated" statement.
 
 <a name="type_statement_au"></a>  
 ### 7.1.3 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
-* "cmi5 defined" - Statements using cmi5 defined verbs, category id as defined in section 9.6.2.1, and context template.
-* "cmi5 allowed" - Statements using any verb and cmi5 context template (but NOT including cmi5 category id as defined in section 9.6.2.1).
-* "cmi5 not-allowed" - Any statements not conforming with the cmi5 specification.
+* **cmi5 defined** - Statements using cmi5 defined verbs, category id as defined in section 9.6.2.1, and context template.
+* **cmi5 allowed** - Statements using any verb and cmi5 context template (but NOT including cmi5 category id as defined in section 9.6.2.1).
+* **cmi5 not-allowed** - Any statements not conforming with the cmi5 specification.
 
-"cmi5 allowed" statements posted by the AU MUST occur between cmi5 statements using the "Initialized" verb and the "Terminated" verb. "cmi5 allowed" statements are not considered in cmi5 defined session management and satisfaction rules.
+"cmi5 allowed" statements posted by the AU MUST occur between cmi5 statements using the "initialized" verb and the "terminated" verb. "cmi5 allowed" statements are not considered in "cmi5 defined" session management and satisfaction rules.
 
 <a name="content_launch"></a>  
 # 8.0 Content Launch Mechanisms
