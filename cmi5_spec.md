@@ -238,10 +238,10 @@ This document uses the following style conventions:
 * **Literal syntax case example. The actor object with an object type of agent:**  
 	The actor object with an objectType of Agent
 
-* **Section Titles with verb example. 	See Section 9.3.1 launched:** 	
+* **Section Titles with verb example. 	See [Section 9.3.1 Launched](#verbs_launched):** 	
 	9.3.1 Launched
 
-* **Section Titles with properties example. 	See Section 9.5.4 duration:**	 
+* **Section Titles with properties example. 	See [Section 9.5.4 Duration](#duration):**	 
 	9.5.4 Duration
 
 <a name="references"></a> 
