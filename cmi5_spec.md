@@ -229,7 +229,7 @@ This document uses the following style conventions:
 
 **Style Usage examples**  
 
-* **Back Ticks ( \` ) example. The ‘score’ property:**
+* **Back Ticks ( \` ) example. The ‘score’ property:**  
 	for `score` when….  
 	
 * **Double Quotes ( " ) example. The ‘completed‘ statement:**  
