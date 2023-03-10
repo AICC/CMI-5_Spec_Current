@@ -15,6 +15,7 @@
 
 * [__1.0 Overview__](#overview)
   * [1.1 Scope](#scope)
+  * [1.2 Document Style Conventions](#Document_Style_Conventions)
 * [__2.0 References__](#references)
 * [__3.0 Definitions__](#definitions)
   * [3.1 Abbreviations and Acronyms](#acronyms)
@@ -205,6 +206,43 @@ Other uses of the xAPI specification are outside of this scope.
 
 Uses of activities not explicitly defined above are outside of the scope of this specification.
 
+<a name="Document_Style_Conventions"></a>  
+## 1.2 Document Style Conventions  
+
+ **References to Statements**
+
+This document uses, as shorthand, specific vocabulary such as verbs in conjunction with the word "statement" (e.g., a "completed" statement). This shorthand refers to that statement meeting all requirements that would accompany the correct use of that concept. When using this shorthand with the word “the”, this means the cmi5 defined version of that statement with the verb’s display property. (see [Section 7.1.3 Types of Statements](#type_statement_au) for the definition of cmi5 defined)
+
+For example:
+
+> `the “completed” statement`
+
+Would be a cmi5 defined xAPI statement with a verb display name of ‘completed’ and a verb IRI of ‘http://adlnet.gov/expapi/verbs/completed’.  Similar conventions might be used for other xAPI properties.
+
+**Style Conventions**  
+This document uses the following style conventions:
+
+* **Back Ticks ( \` )** – (rendered as "inline code depending on document rendering”) for all literal names of verbs and properties.  
+* **Double Quotes ( " ) for shorthand** – the “completed” statement (as described in above).  
+* **Literal syntax case**  – for referring to verbs and properties the case will show as they appear in xAPI statements. 
+* **Section Titles with verbs/properties** – may use either Capitalized or Literal syntax.  
+
+**Style Usage examples**  
+
+* **Back Ticks ( \` ) example. The ‘score’ property:**  
+	for `score` when….  
+	
+* **Double Quotes ( " ) example. The ‘completed‘ statement:**  
+	the "completed" statement  MUST  
+
+* **Literal syntax case example. The actor object with an object type of agent:**  
+	The actor object with an objectType of Agent
+
+* **Section Titles with verb example. 	See Section 9.3.1 Launched:**  
+	9.3.1 Launched
+
+* **Section Titles with properties example. 	See Section 9.5.4 Duration:**  
+	9.5.4 Duration
 
 <a name="references"></a> 
 # 2.0  References
