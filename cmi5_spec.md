@@ -469,11 +469,11 @@ The statements issued within an AU session could fall within the following categ
 
 The AU MUST be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 13.1.4 AU Meta Data, URL):
 
-When the launchMethod is `OwnWindow, the LMS MUST use one of the following:
+When the launchMethod is <code>OwnWindow</code>, the LMS MUST use one of the following:
 * Spawning a new browser window for the AU.
 * Re-directing the existing browser window to the AU.
 
-When the launchMethod is `AnyWindow` , the LMS MUST choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
+When the launchMethod is <code>AnyWindow</code>, the LMS MUST choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
 
 Regardless of the launchMethod the AU MUST be launched by the LMS with a URL having query string launch parameters as defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that launches the AU.
 
