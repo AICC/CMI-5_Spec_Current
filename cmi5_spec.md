@@ -715,7 +715,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Verb</th><td>passed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeeded in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "passed" verb when the learner has attempted and passed the AU. If the "passed" statement contains a "scaled" score, the <code>scaled</code>value MUST be equal to or greater than the <code>masteryScore</code> indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore). The AU MUST NOT issue multiple statements with <code>passed</code> for the same AU within a given course registration for a given learner.</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "passed" verb when the learner has attempted and passed the AU. If the "passed" statement contains a "scaled" score, the <code>scaled</code> value MUST be equal to or greater than the <code>masteryScore</code> indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore). The AU MUST NOT issue multiple "passed" statements for the same AU within a given course registration for a given learner.</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "passed" statements based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for <code>passed</code> is determined by the course designer.</td></tr>
 </table>
