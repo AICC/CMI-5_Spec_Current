@@ -651,13 +651,15 @@ AUs MUST use the below verbs that are indicated as mandatory in other sections o
 
 For all requirements listed below including language involving order, the order is determined by the value of the `timestamp` property.
 
-AU Verb Ordering Rules within an AU session are as follows:  
+AU Verb Ordering Rules within an AU session are as follows: 
+ 
 * Verbs MUST NOT be duplicated (in cmi5 defined statements).  
 * More than one of the set of {`passed`,`failed`} verbs MUST NOT be used (in cmi5 defined statements).  
 * The `initialized` verb MUST be the first statement (cmi5 allowed or defined).  
 * The `terminated` verb MUST be the last statement (cmi5 allowed or defined).  
 
 AU Verb Ordering Rules within a registration (per AU) are as follows:  
+
 * Exactly zero or one "completed" cmi5 defined statement MUST be used per registration.  
 * Exactly zero or one "passed" cmi5 defined statement MUST be used per registration.  
 * A "failed" statement MUST NOT follow a "passed" statement (in cmi5 defined statements) per registration.  
@@ -667,6 +669,7 @@ AUs MAY use additional verbs not listed in this specification.
 The LMS MUST record and provide reporting for all "cmi5 defined" and "cmi5 allowed" statements that are not being rejected regardless of the verbs used in statements sent by AUs.
 
 LMS verb ordering rules are as follows:  
+
 * LMS MAY issue multiple "satisfied" statements (in a session).  
 * LMS SHOULD NOT issue multiple "satisfied" statements per object (Block or Course) (in a registration).  
 * LMS MUST NOT issue more than one "abandoned" statement for a session.  
@@ -701,7 +704,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Verb</th><td>completed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/completed</td></tr>
 <tr><th align="left">Description</th><td>The verb indicates the learner viewed or did all of the relevant activities in an AU presentation.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the <code>completed</code> verb when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple statements with <code>completed</code> for the same AU within a given course registration for a given learner.</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a "completed" statement when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple "completed" statements for the same AU within a given course registration for a given learner.</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "completed" statements based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for progress towards completion is determined by the course designer. The use of the <code>completed</code> verb indicates progress of 100%.</td></tr>
 </table>
