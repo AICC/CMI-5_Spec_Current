@@ -636,7 +636,7 @@ The AU MUST assign a statement id property in UUID format (as defined in the xAP
   
 <a name="actor" ></a>
 ## 9.2 Actor
-The Actor property MUST be defined by the LMS. The Actor property for all "cmi5 defined" statements MUST be of objectType "Agent". The Actor property MUST contain an "account" IFI as defined in the xAPI specification.
+The `actor` property MUST be defined by the LMS. The`actor` property for all cmi5 defined statements MUST be of objectType `agent`. The Actor property MUST contain an `account` property (IFI) as defined in the xAPI specification.
 
 <a name="verbs" ></a> 
 ## 9.3 Verbs  
@@ -791,13 +791,13 @@ The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block
 ## 9.4 Object 
 An Object MUST be present, as specified in this section, in all "cmi5 defined" statements.
 
-Except for Statements with the Satisfied verb, the Object in a cmi5 defined statement represents the AU.  When the Object is the AU, the value of the Object's "id" property for a given AU MUST match the activityId defined in the launch URL.
+Except for statements with the `satisfied` verb, the Object in a cmi5 defined statement represents the AU.  When the Object is the AU, the value of the Object's `id` property for a given AU MUST match the `activityId` defined in the launch URL.
 
-In Satisfied statements, the Object represents a Block or Course.  (see 9.3.9 - Satisfied)  
+In "satisfied" statements, the Object represents a Block or Course.  (see 9.3.9 - Satisfied)  
 
-The LMS MUST generate a unique ID for each block object.  The generated block id MUST NOT match the publisher’s ID from the course structure. The LMS block object MUST use "https://w3id.org/xapi/cmi5/activitytype/block" as the value of the "type" property in the Object's Definition.
+The LMS MUST generate a unique ID for each block object.  The generated block ID MUST NOT match the publisher’s ID from the course structure. The LMS block object MUST use `https://w3id.org/xapi/cmi5/activitytype/block` as the value of the `objectType` property in the Object's Definition.
 
-The LMS MUST generate a unique ID for each course object.  The generated course id MUST NOT match the publisher’s ID from the course structure. The LMS course object MUST use "https://w3id.org/xapi/cmi5/activitytype/course" as the value of the "type" property in the Object's Definition.
+The LMS MUST generate a unique ID for each course object.  The generated course ID MUST NOT match the publisher’s ID from the course structure. The LMS course object MUST use `https://w3id.org/xapi/cmi5/activitytype/course` as the value of the `objectType` property in the Object's Definition.
 
 <a name="result"></a> 
 ## 9.5 Result
@@ -806,62 +806,62 @@ A Result MAY be present in a statement depending on the cmi5 verb used.
 <a name="score"></a> 
 ### 9.5.1 Score
 
-A score MAY be reported. If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
+A score MAY be reported. If a score is reported by an AU, the verb MUST be consistent with `masteryScore` (if defined for the AU in the LMS Launch Data).
 
-The "score" property of the result MAY be set in the following cmi5 defined statements:
+The `score` property of the `result` object MAY be set in the following cmi5 defined statements:
 
-- Passed
-- Failed
+- passed
+- failed
 
-cmi5 defined statements, other than "Passed" or "Failed", MUST NOT include the "score" property.
+cmi5 defined statements, other than passed or failed, MUST NOT include the `score` property.
 
-<ul><li><strong>scaled</strong><br>A decimal value between 0 and 1 (inclusive).</li>
-<li><strong>raw</strong><br>An integer value between the "min" and "max" properties (inclusive) of the <em><strong>score</strong></em> object.  The AU MUST provide the "min" and "max" values for <em><strong>score</strong></em> when the "raw" value is provided.</li>
-<li><strong>min</strong><br>An integer value indicating the minimum value for the "raw" score property.</li>
-<li><strong>max</strong><br>An integer value indicating the maximum value for the "raw" score property.</li>
+<ul><li><code>scaled</code><br>A decimal value between 0 and 1 (inclusive).</li>
+<li><code>raw</code><br>An integer value between the <code>min</code> and <code>max</code> properties (inclusive) of the <code>score</code> object.  The AU MUST provide the <code>min</code> and <code>max</code>  values for <code>score</code> object when the <code>raw</code> value is provided.</li>
+<li><code>min</code><br>An integer value indicating the minimum value for the score in the <code>raw</code> property.</li>
+<li><code>max</code><br>An integer value indicating the maximum value for the score in the <code>raw</code> property.</li>
 </ul>
 
 <a name="success"></a>
 ### 9.5.2 Success 
 
-The "success" property of the result MUST be set to true for the following cmi5 defined statements:
+The `success` property of the result MUST be set to `true` for the following cmi5 defined statements:
 
-- Passed
-- Waived
+- passed
+- waived
 
-The "success" property of the result MUST be set to false for the following cmi5 defined statements:
+The `success` property of the result MUST be set to `false` for the following cmi5 defined statements:
 
-- Failed
+- failed
  
-cmi5 defined statements, other than "Passed", "Waived" or "Failed", MUST NOT include the "success" property.
+cmi5 defined statements, other than passed, waived or failed, MUST NOT include the `success` property.
 
 <a name="completion"></a>
 ### 9.5.3 Completion
-The "completion" property of the result MUST be set to true for the following cmi5 defined statements:
+The `completion` property of the result MUST be set to `true` for the following cmi5 defined statements:
 
-- Completed
-- Waived
+- completed
+- waived
 
-cmi5 defined statements, other than "Completed" or "Waived", MUST NOT include the "completion" property.
+cmi5 defined statements, other than completed or waived, MUST NOT include the `completion` property.
 
 <a name="duration"></a>
 ### 9.5.4 Duration
-The "duration" property is an ISO 8601 formatted time value required in certain statements as defined in this section. Other cmi5 defined statements MAY include the duration property.
+The `duration` property is an ISO 8601 formatted time value required in certain statements as defined in this section. Other cmi5 defined statements MAY include the `duration` property.
 <a name="au_statements_that_include_duration"></a>
 #### 9.5.4.1 AU statements that include duration
 ##### Terminated Statement
-The AU MUST include the "duration" property in "Terminated" statements.  The AU SHOULD calculate duration for Terminated statements as the time difference between the "Initialized" statement and the "Terminated" statement.  The AU MAY use other methods to calculate the duration based on criteria determined by the AU.
+The AU MUST include the `duration` property in "terminated" statements.  The AU SHOULD calculate the duration for "terminated" statements as the time difference between the "initialized" statement and the "terminated" statement.  The AU MAY use other methods to calculate the duration based on criteria determined by the AU.
 ##### Completed Statement
-The AU MUST include the "duration" property in "Completed" statements.  The AU SHOULD calculate duration as the time spent by the learner to achieve completion status.
+The AU MUST include the `duration` property in "completed" statements.  The AU SHOULD calculate the duration as the time spent by the learner to achieve completion status.
 ##### Passed Statement
-The AU MUST include the "duration" property in "Passed" statements.  The AU SHOULD calculate duration as the time spent by the learner to attempt and succeed in a judged activity of the AU. 
+The AU MUST include the `duration` property in "passed" statements.  The AU SHOULD calculate the duration as the time spent by the learner to attempt and succeed in a judged activity of the AU. 
 ##### Failed Statement
-The AU MUST include the "duration" property in "Failed" statements. The AU SHOULD calculate duration as the time spent by the learner to attempt and fail in a judged activity of the AU.
+The AU MUST include the `duration` property in "failed" statements. The AU SHOULD calculate the duration as the time spent by the learner to attempt and fail in a judged activity of the AU.
 
 <a name="lms_statements_that_include_duration"></a>
 #### 9.5.4.2 LMS statements that include duration
 ##### Abandoned Statement
-The duration property MUST be included in "Abandoned" statements. The LMS SHOULD use LMS specific methods (if available) to determine the duration if it has more accurate means of session time calculation than time stamp differences between statements. In the absence of such methods, the duration property MUST be set as the total session time, calculated as the time between the "Launched" statement and the last statement (of any kind) issued by the AU. 
+The `duration` property MUST be included in "abandoned" statements. The LMS SHOULD use LMS specific methods (if available) to determine the duration if it has more accurate means of session time calculation than time stamp differences between statements. In the absence of such methods, the `duration` property MUST be set as the total session time, calculated as the time between the "launched" statement and the last statement (of any kind) issued by the AU. 
 
 <a name="result_extensions"></a>
 ### 9.5.5 Extensions
@@ -872,7 +872,7 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
     <tr><th align ="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/progress</td></tr>
     <tr><th align ="right" nowrap>Description:</th><td>An integer value between 0 and 100 (inclusive) indicating the completion of the AU as a percentage.</td></tr>
     <tr><th align ="right" nowrap>LMS Usage:</th><td>None</td></tr>
-    <tr><th align ="right" nowrap>AU Usage:</th><td>The AU MAY set this value in statements to indicate level of completion. The AU SHOULD NOT set a progress value in a Completed statement or if it has previously issued a Completed statement for the AU in the current registration.</td></tr>
+    <tr><th align ="right" nowrap>AU Usage:</th><td>The AU MAY set this value in statements to indicate level of completion. The AU SHOULD NOT set a progress value in a "completed" statement or if it has previously issued a "completed" statement for the AU in the current registration.</td></tr>
     <tr><th align ="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
     <tr><th align ="right" nowrap>LMS Obligation:</th><td>None</td></tr>
     <tr><th align ="right" nowrap>Data type:</th><td>Integer</td></tr>
@@ -884,8 +884,8 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
 
 <table>
     <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/result/extensions/reason</td></tr>
-    <tr><th align="right" nowrap>Description:</th><td>Indicates the reason why an AU was "waived" (marked complete by an alternative means)</td></tr>
-    <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST set this value in statements it makes with the verb "Waived". The value SHOULD be one of the following -
+    <tr><th align="right" nowrap>Description:</th><td>Indicates the reason why an AU was waived (marked complete by an alternative means)</td></tr>
+    <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST set this value in statements it makes with the "waived" verb. The value SHOULD be one of the following:
         <ul>
             <li><b>Tested Out</b> – An Assessment was completed by the student to waive the AU.</li>
             <li><b>Equivalent AU</b> - The student successfully completed an equivalent AU (in the same course) to waive the AU. </li>
@@ -893,9 +893,9 @@ The duration property MUST be included in "Abandoned" statements. The LMS SHOULD
             <li><b>Administrative</b> – The LMS administrative user marked the AU complete.</li>
         </ul>
     </td></tr>
-    <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY retrieve this value from the LRS and use it to change presentation behavior based on the "reason".</td></tr>
+    <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY retrieve this value from the LRS and use it to change presentation behavior based on the reason.</td></tr>
     <tr><th align="right" nowrap>AU Obligation:</th><td>Optional</td></tr>
-    <tr><th align="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the Waived verb.</td></tr>
+    <tr><th align="right" nowrap>LMS Obligation:</th><td>This is a required extension for LMS statements that include the "waived" verb.</td></tr>
     <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
     <tr><th align="right" nowrap>Value space:</th><td>Any string value</td></tr>
     <tr><th align="right" nowrap>Sample value:</th><td>Tested Out</td></tr>
