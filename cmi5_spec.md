@@ -908,7 +908,7 @@ All cmi5 defined statements MUST contain a context that includes all properties 
 
 <a name="registration"></a> 
 ### 9.6.1 registration
-The value for the registration property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  The LMS MUST evaluate MoveOn criteria in the course structure at the time of registration.  For example, AUs with MoveOn criteria of "NotApplicable" in the course structure would be evaluated and could generate Satisfied statements at this time.
+The value for the `registration` property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  The LMS MUST evaluate `moveOn` criteria in the course structure at the time of registration.  For example, AUs with `moveOn` criteria of `NotApplicable` in the course structure would be evaluated and could generate "satisfied" statements at this time.
 
 <a name="context_activities"></a>
 ### 9.6.2 contextActivities
