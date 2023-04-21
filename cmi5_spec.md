@@ -985,7 +985,7 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchurl</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The URL used by the LMS to launch the AU</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in section 8.1 in the context extensions of the "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in section 8.1 in the context extensions of the "launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
