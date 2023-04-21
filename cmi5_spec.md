@@ -975,7 +975,7 @@ The following are extensions specified for cmi5. Statements MAY include extensio
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
-  <tr><th align="right" nowrap>Value space:</th><td>Per <code>launchMode</code> vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Per <code>launchMode</code> vocabulary defined in Section 10.0 xAPI State Data Model</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>"Normal"</td></tr>
 </table>
 
