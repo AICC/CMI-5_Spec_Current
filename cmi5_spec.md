@@ -1004,13 +1004,13 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/moveon</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>"moveOn" as provided in the LMS.LaunchData document for the AU plus registration</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add moveOn to the context of a "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <code>moveOn</code> value as provided in the <code>LMS.LaunchData</code> document for the AU</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add moveOn to the context of a "launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
-  <tr><th align="right" nowrap>Value space:</th><td>Per moveOn vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Per <code>moveOn</code> vocabulary defined in Section 10.0 xAPI State Data Model</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>"Passed"</td></tr>
 </table>
 
@@ -1019,11 +1019,11 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchparameters</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>"launchParameters" as provided in the LMS.LaunchData document for the AU plus registration</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add launchParameters to the context of a "Launched" statement when it is provided in the LMS.LaunchData document.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td><code>launchParameters</code> as provided in the <code>LMS.LaunchData</code> document for the AU</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add <code>launchParameters</code> to the context of a "launched" statement when it is provided in the <code>LMS.LaunchData</code> document</code>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
-  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when in launch data</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when present in the <code>LMS.LaunchData</code> document</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Any string value</td></tr>
 </table>
@@ -1031,7 +1031,7 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 <a name="timestamp"></a> 
 ## 9.7 Timestamp
 
-All statements MUST include a timestamp property per the xAPI specification to ensure statement ordering requirements are met. All timestamps MUST be recorded in UTC time. Timestamps are not required to be unique in statements within a session. The time recorded SHOULD indicate when the condition actually occurred.
+All statements MUST include a `timestamp` property per the xAPI specification to ensure statement ordering requirements are met. All timestamps MUST be recorded in UTC time. Timestamps are not required to be unique in statements within a session. The time recorded SHOULD indicate when the condition actually occurred.
 
 
 <a name="xapi_state"></a>  
