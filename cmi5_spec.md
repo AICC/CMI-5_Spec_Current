@@ -818,7 +818,9 @@ The `score` property of the `result` object MAY be set in the following cmi5 def
 
 cmi5 defined statements, other than passed or failed, MUST NOT include the `score` property.
 
-<ul><li><code>scaled</code><br>A decimal value between 0 and 1 (inclusive).</li>
+ The following are properties of the <code>score</code> object per the xAPI standard: 
+<ul>
+<li><code>scaled</code><br>A decimal value between 0 and 1 (inclusive).</li>
 <li><code>raw</code><br>An integer value between the <code>min</code> and <code>max</code> properties (inclusive) of the <code>score</code> object.  The AU MUST provide the <code>min</code> and <code>max</code>  values for <code>score</code> object when the <code>raw</code> value is provided.</li>
 <li><code>min</code><br>An integer value indicating the minimum value for the score in the <code>raw</code> property.</li>
 <li><code>max</code><br>An integer value indicating the maximum value for the score in the <code>raw</code> property.</li>
