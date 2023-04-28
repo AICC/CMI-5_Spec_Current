@@ -791,7 +791,7 @@ The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block
 ## 9.4 Object 
 An Object MUST be present, as specified in this section, in all "cmi5 defined" statements.
 
-Except for statements with the `satisfied` verb, the Object in a cmi5 defined statement represents the AU.  When the Object is the AU, the value of the Object's `id` property for a given AU MUST match the `activityId` defined in the launch URL.
+Except for statements with the satisfied verb, the Object in a cmi5 defined statement represents the AU.  When the Object is the AU, the value of the Object's `id` property for a given AU MUST match the `activityId` defined in the launch URL.
 
 In "satisfied" statements, the Object represents a Block or Course.  (see 9.3.9 - Satisfied)  
 
