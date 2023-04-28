@@ -726,7 +726,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Verb</th><td>Failed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the LMS.LaunchData document. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None.</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for "Failed" is determined by the course designer.</td></tr>
 </table>
@@ -809,7 +809,7 @@ A Result MAY be present in a statement depending on the cmi5 verb used.
 <a name="score"></a> 
 ### 9.5.1 Score
 
-A score MAY be reported. If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS Launch Data).
+A score MAY be reported. If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS.LaunchData document).
 
 The "score" property of the result MAY be set in the following cmi5 defined statements:
 
@@ -911,27 +911,27 @@ All cmi5 defined statements MUST contain a context that includes all properties 
 
 <a name="registration"></a> 
 ### 9.6.1 registration
-The value for the registration property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  The LMS MUST evaluate MoveOn criteria in the course structure at the time of registration.  For example, AUs with MoveOn criteria of "NotApplicable" in the course structure would be evaluated and could generate Satisfied statements at this time.
+The value for the `registration` property used in the context object MUST be the value provided by the LMS. The LMS MUST generate this value and pass it to the AU via the launch URL.  The LMS MUST evaluate `moveOn` criteria in the course structure at the time of registration.  For example, AUs with `moveOn` criteria of `NotApplicable` in the course structure would be evaluated and could generate "satisfied" statements at this time.
 
 <a name="context_activities"></a>
 ### 9.6.2 contextActivities
-The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The "contextActivities" property contains list(s) of Activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the contextActivities of the context template (see section 10 - xAPI State Data Model).
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The `contextActivities` property contains list(s) of activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the `contextActivities` of the `contextTemplate` (see section 10 - xAPI State Data Model).
 
 <a name="context_activities_category_cmi5"></a>
 #### 9.6.2.1 cmi5 Category Activity
-An Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/cmi5" in the "category" context activities list MUST be used in cmi5 defined statements as described in section 7.1.3.
+An activity object with an `id` of `https://w3id.org/xapi/cmi5/context/categories/cmi5` in the `category`  list of the `contextActivities` object MUST be used in cmi5 defined statements as described in section 7.1.3.
 
 <a name="context_activities_category_moveon"></a>
 #### 9.6.2.2 moveOn Category Activity
-cmi5 defined statements with a Result object (Section 9.5) that include either "success" or "completion" properties MUST have an Activity object with an "id" of "https://w3id.org/xapi/cmi5/context/categories/moveon" in the "category" context activities list. Other statements MUST NOT include this Activity.
+cmi5 defined statements with a `result` object (Section 9.5) that include either `success` or `completion` properties MUST have an activity object with an `id` of `https://w3id.org/xapi/cmi5/context/categories/moveon` in the `category`  list of the `contextActivities` object. Other statements MUST NOT include this activity.
 
 <a name="context_activities_grouping_publisherid"></a>
 #### 9.6.2.3 Publisher ID Grouping Activity
 Used to identify statements about the course, block, or AU using the publisher id from the course structure.
 
-The LMS MUST include an Activity object with an "id" property whose value is the unaltered value of the AU's "id" attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the "grouping" context activities list in the "contextTemplate" as described in the State API (See Section 10) prior to launching an AU. 
+The LMS MUST include an activity object with an id property whose value is the unaltered value of the AU's id attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10) prior to launching an AU. 
 
-The LMS MUST include the publisher id Activity in the "grouping" context activities list for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS.
+The LMS MUST include the publisher id activity in the `grouping` list of the `contextActivities` object for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS.
 
 <a name="extensions"></a>
 ### 9.6.3 Extensions
@@ -943,8 +943,8 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/sessionid</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>A unique identifier for a single AU launch session based on actor and course registration </td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The value for session ID MUST be generated by the LMS. The LMS MUST record the session ID in the State API (See Section 10) prior to launching an AU. The LMS MUST provide the session ID in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS. </td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the session ID provided by the LMS in the context as an extension for all "cmi5 defined" and "cmi5 allowed" statements it makes directly in the LRS. </td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The value for session ID MUST be generated by the LMS. The LMS MUST record the session ID in the State API (See Section 10) prior to launching an AU. The LMS MUST provide the session ID in the context as an extension for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS. </td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the session ID provided by the LMS in the context as an extension for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS. </td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>Required</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
@@ -957,9 +957,9 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/masteryscore</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>"masteryScore" as provided in the LMS Launch Data for the AU plus registration used to determine the pass/fail result based on score</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add masteryScore to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the "masteryScore" value provided by the LMS in the context as an extension for "passed"/"failed" Statements it makes based on the "masteryScore".</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td><code>masteryScore</code> as provided in the LMS.LaunchData document for the AU and is used to determine the pass/fail result based on score</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add <code>masteryScore</code> to the context of a "launched" statement when it is provided in the LMS.LaunchData document.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the <code>masteryScore</code> value provided by the LMS in the context as an extension for "passed" or "failed" statements it makes based on the <code>masteryScore</code>.</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>Required, when present and evaluated</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when in launch data</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>decimal</td></tr>
@@ -973,12 +973,12 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchmode</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>Indicates what launch mode an AU was launched with by the LMS</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add launchMode to the context of a "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add this extension to the context of a "launched" statement with the value from <code>launchMode</code> in the <code>LMS.LaunchData</code> document.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
-  <tr><th align="right" nowrap>Value space:</th><td>Per launchMode vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Per <code>launchMode</code> vocabulary defined in Section 10.0 xAPI State Data Model</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>"Normal"</td></tr>
 </table>
 
@@ -988,7 +988,7 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchurl</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The URL used by the LMS to launch the AU</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in section 8.1 in the context extensions of the "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in section 8.1 in the context extensions of the "launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
@@ -1007,13 +1007,13 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/moveon</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>"moveOn" as provided in the LMS Launch Data for the AU plus registration</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add moveOn to the context of a "Launched" statement.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <code>moveOn</code> value as provided in the <code>LMS.LaunchData</code> document for the AU</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add moveOn to the context of a "launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>string</td></tr>
-  <tr><th align="right" nowrap>Value space:</th><td>Per moveOn vocabulary defined in section 10.0 xAPI State Data Model</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>Per <code>moveOn</code> vocabulary defined in Section 10.0 xAPI State Data Model</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>"Passed"</td></tr>
 </table>
 
@@ -1022,11 +1022,11 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchparameters</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>"launchParameters" as provided in the LMS Launch Data for the AU plus registration</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add launchParameters to the context of a "Launched" statement when it is provided in the LMS launch data.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td><code>launchParameters</code> as provided in the <code>LMS.LaunchData</code> document for the AU</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add <code>launchParameters</code> to the context of a "launched" statement when it is provided in the <code>LMS.LaunchData</code> document</code>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
-  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when in launch data</td></tr>
+  <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when present in the <code>LMS.LaunchData</code> document</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Any string value</td></tr>
 </table>
@@ -1034,7 +1034,7 @@ This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping 
 <a name="timestamp"></a> 
 ## 9.7 Timestamp
 
-All statements MUST include a timestamp property per the xAPI specification to ensure statement ordering requirements are met. All timestamps MUST be recorded in UTC time. Timestamps are not required to be unique in statements within a session. The time recorded SHOULD indicate when the condition actually occurred.
+All statements MUST include a `timestamp` property per the xAPI specification to ensure statement ordering requirements are met. All timestamps MUST be recorded in UTC time. Timestamps are not required to be unique in statements within a session. The time recorded SHOULD indicate when the condition actually occurred.
 
 
 <a name="xapi_state"></a>  
