@@ -632,89 +632,92 @@ Other launch environments are not currently implemented in this specification. c
 
 <a name="statement_id" ></a>
 ## 9.1 Statement ID
-The AU MUST assign a statement id property in UUID format (as defined in the xAPI specification) for all statements it issues.
+The AU MUST assign a statement `id` property in UUID format (as defined in the xAPI specification) for all statements it issues.
   
 <a name="actor" ></a>
 ## 9.2 Actor
-The Actor property MUST be defined by the LMS. The Actor property for all "cmi5 defined" statements MUST be of objectType "Agent". The Actor property MUST contain an "account" IFI as defined in the xAPI specification.
+The `actor` property MUST be defined by the LMS. The `actor` property for all "cmi5 defined" statements MUST be of objectType `agent`. The `actor` property MUST contain an `account` (IFI) as defined in the xAPI specification.
 
 <a name="verbs" ></a> 
 ## 9.3 Verbs  
 
 The following xAPI verbs are defined in this specification.
 
-Note that "cmi5 allowed" statements are NOT subject to the usage rules in this section. 
+Note that cmi5 allowed statements are NOT subject to the usage rules in this section. 
 
-All statements in this section refer to "cmi5 defined" statements unless otherwise noted.
+All statements in this section refer to cmi5 defined statements unless otherwise noted.
 
 AUs MUST use the below verbs that are indicated as mandatory in other sections of this specification.
 
-For all requirements listed below including language involving order, the order is determined by the value of the timestamp property.
+For all requirements listed below including language involving order, the order is determined by the value of the `timestamp` property.
 
-AU Verb Ordering Rules within an AU session are as follows:
-* Verbs MUST NOT be duplicated (in cmi5 defined statements).
-* More than one of the set of {"Passed","Failed"} verbs MUST NOT be used (in cmi5 defined statements).
-* The "Initialized" verb MUST be the first statement (cmi5 allowed or defined).
-* The "Terminated" verb MUST be the last statement (cmi5 allowed or defined).
+AU Verb Ordering Rules within an AU session are as follows: 
+ 
+* Verbs MUST NOT be duplicated (in cmi5 defined statements).  
+* More than one of the set of {`passed`,`failed`} verbs MUST NOT be used (in cmi5 defined statements).  
+* The initialized verb MUST be the first statement (cmi5 allowed or defined).  
+* The terminated verb MUST be the last statement (cmi5 allowed or defined).  
 
-AU Verb Ordering Rules within a Registration (per AU) are as follows:
-* Exactly zero or one "Completed" cmi5 defined statement MUST be used per registration.
-* Exactly zero or one "Passed" cmi5 defined statement MUST be used per registration.
-* A "Failed" statement MUST NOT follow a "Passed" statement (in cmi5 defined statements) per registration.
+AU Verb Ordering Rules within a registration (per AU) are as follows:  
+
+* Exactly zero or one "completed" cmi5 defined statement MUST be used per registration.  
+* Exactly zero or one "passed" cmi5 defined statement MUST be used per registration.  
+* A "failed" statement MUST NOT follow a "passed" statement (in cmi5 defined statements) per registration.  
 
 AUs MAY use additional verbs not listed in this specification.
 
 The LMS MUST record and provide reporting for all "cmi5 defined" and "cmi5 allowed" statements that are not being rejected regardless of the verbs used in statements sent by AUs.
 
-LMS verb ordering rules are as follows:
-* LMS MAY issue multiple satisfied statements (in a session).
-* LMS SHOULD NOT issue multiple satisfied statements per object (Block or Course) (in a registration).
-* LMS MUST NOT issue more than one abandoned statement for a session.
-* LMS MUST NOT issue more than one waived statement per session and MUST not issue more than one waived statement per registration per AU.
+LMS verb ordering rules are as follows:  
+
+* LMS MAY issue multiple "satisfied" statements (in a session).  
+* LMS SHOULD NOT issue multiple "satisfied" statements per object (Block or Course) (in a registration).  
+* LMS MUST NOT issue more than one "abandoned" statement for a session.  
+* LMS MUST NOT issue more than one "waived" statement per session and MUST not issue more than one "waived" statement per registration per AU.  
 
 
 <a name="verbs_launched"></a>
 ### 9.3.1 Launched
 <table>
-<tr><th align="left">Verb</th><td>Launched</td></tr>
+<tr><th align="left">Verb</th><td>launched</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/launched</td></tr>
-<tr><th align="left">Description</th><td>The verb "Launched" indicates that the AU was launched by the LMS.</td></tr>
+<tr><th align="left">Description</th><td>This verb indicates that the AU was launched by the LMS.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API, Section 10) The LMS MUST NOT issue multiple statements with "Launched" for the same AU within a given AU session.</td></tr>
-<tr><th align="left">Usage</th><td>A "Launched" statement is used to indicate that the LMS has launched the AU. </td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API, Section 10) The LMS MUST NOT issue multiple "launched" statements for the same AU within a given AU session.</td></tr>
+<tr><th align="left">Usage</th><td>A "launched" statement is used to indicate that the LMS has launched the AU. </td></tr>
 </table>
 
 <a name="verbs_initialized"></a>
 ### 9.3.2 Initialized
 <table>
-<tr><th align="left">Verb</th><td>Initialized</td></tr>
+<tr><th align="left">Verb</th><td>initialized</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/initialized</td></tr>
-<tr><th align="left">Description</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized. The "Initialized" statement MUST follow, within a reasonable period of time, the "Launched" statement created by the LMS.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST use "Initialized" in the first statement (of any kind) in the AU session.  The AU MUST NOT issue multiple statements with "Initialized" for the same AU within a given AU session.</td></tr>
+<tr><th align="left">Description</th><td>An "initialized" statement is used by the AU to indicate that it has been fully initialized. The "initialized" statement MUST follow, within a reasonable period of time, the "launched" statement created by the LMS.</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST use initialized in the first statement (of any kind) in the AU session.  The AU MUST NOT issue multiple "initialized" statements with for the same AU within a given AU session.</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None</td></tr>
-<tr><th align="left">Usage</th><td>An "Initialized" statement is used by the AU to indicate that it has been fully initialized.</td></tr>
+<tr><th align="left">Usage</th><td>An "initialized" statement is used by the AU to indicate that it has been fully initialized.</td></tr>
 </table>
 
 <a name="verbs_completed"></a>
 ### 9.3.3 Completed
 <table>
-<tr><th align="left">Verb</th><td>Completed</td></tr>
+<tr><th align="left">Verb</th><td>completed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/completed</td></tr>
-<tr><th align="left">Description</th><td>The verb "Completed" indicates the learner viewed or did all of the relevant activities in an AU presentation.  The use of the Completed verb indicates progress of 100%.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Completed" verb when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple statements with "Completed" for the same AU within a given course registration for a given learner.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "Completed" statements based on the "moveOn" criteria for the AU as provided in the LMS.LaunchData document. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
-<tr><th align="left">Usage</th><td>The criterion for "Completed" is determined by the course designer.</td></tr>
+<tr><th align="left">Description</th><td>The verb indicates the learner viewed or did all of the relevant activities in an AU presentation.</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a "completed" statement when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple "completed" statements for the same AU within a given course registration for a given learner.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "completed" statements based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
+<tr><th align="left">Usage</th><td>The criterion for progress towards completion is determined by the course designer. The use of this verb indicates progress of 100%.</td></tr>
 </table>
 
 <a name="verbs_passed"></a>
 ### 9.3.4 Passed
 <table>
-<tr><th align="left">Verb</th><td>Passed</td></tr>
+<tr><th align="left">Verb</th><td>passed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeeded in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Passed" verb when the learner has attempted and passed the AU. If the "Passed" statement contains a (scaled) score, the (scaled) score MUST be equal to or greater than the "masteryScore" indicated in the LMS.LaunchData document. (See xAPI State Data Model, Section 10.0 - masteryScore). The AU MUST NOT issue multiple statements with "Passed" for the same AU within a given course registration for a given learner.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "Passed" statements based on the "moveOn" criteria for the AU as provided in the LMS.LaunchData document. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
-<tr><th align="left">Usage</th><td>The criterion for "Passed" is determined by the course designer.</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "passed" verb when the learner has attempted and passed the AU. If the "passed" statement contains a "scaled" score, the <code>scaled</code> value MUST be equal to or greater than the <code>masteryScore</code> indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore). The AU MUST NOT issue multiple "passed" statements for the same AU within a given course registration for a given learner.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "passed" statements based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
+<tr><th align="left">Usage</th><td>The criterion for passed is determined by the course designer.</td></tr>
 </table>
 
 <a name="verbs_failed"></a>
