@@ -726,7 +726,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Verb</th><td>Failed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the LMS.LaunchData document. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the <code>LMS.LaunchData</code> document. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None.</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for "Failed" is determined by the course designer.</td></tr>
 </table>
@@ -809,7 +809,7 @@ A Result MAY be present in a statement depending on the cmi5 verb used.
 <a name="score"></a> 
 ### 9.5.1 Score
 
-A score MAY be reported. If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the LMS.LaunchData document).
+A score MAY be reported. If a score is reported by an AU, the verb MUST be consistent with "masteryScore" (if defined for the AU in the `LMS.LaunchData` document).
 
 The `score` property of the `result` object MAY be set in the following cmi5 defined statements:
 
@@ -959,8 +959,8 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/masteryscore</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td><code>masteryScore</code> as provided in the LMS.LaunchData document for the AU and is used to determine the pass/fail result based on score</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add <code>masteryScore</code> to the context of a "launched" statement when it is provided in the LMS.LaunchData document.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td><code>masteryScore</code> as provided in the <code>LMS.LaunchData</code> document for the AU and is used to determine the pass/fail result based on score</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add <code>masteryScore</code> to the context of a "launched" statement when it is provided in the <code>LMS.LaunchData</code> document.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the <code>masteryScore</code> value provided by the LMS in the context as an extension for "passed" or "failed" statements it makes based on the <code>masteryScore</code>.</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>Required, when present and evaluated</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required, when in launch data</td></tr>
@@ -1052,10 +1052,10 @@ __State API PUT Properties__:
 * _activityId_: Activity id for the AU. This MUST match the activity id used by the LMS at AU launch time.
 * _agent_: Agent representing the LMS learner being enrolled.  This MUST match the actor property used by the LMS at AU launch time.
 * _registration_: Registration id representing the LMS learner enrollment in the course. This MUST match the registration used by the LMS at AU launch time.
-* _stateId_: LMS.LaunchData
+* _stateId_: `LMS.LaunchData`
 
 
-The properties for the "LMS.LaunchData" document are described below.
+The properties for the `LMS.LaunchData` document are described below.
 
 <a name="xapi_state_properties"></a>
 ## 10.2 Document Properties
@@ -1070,7 +1070,7 @@ The properties for the "LMS.LaunchData" document are described below.
 <ul><li>The value for session id placed in an "extensions" property with the id as defined in Section 9.6.3.1.</li>
 <li>The publisher id Activity as defined in Section 9.6.2.3 in the "contextActivities.grouping" list</li></ul>
 The LMS MAY place additional values in the "contextTemplate".</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the "contextTemplate" value from the "LMS.LaunchData" State document. The AU MUST NOT modify or delete the "LMS.LaunchData" State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it sends to the LMS. While the AU MAY include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the "contextTemplate" value from the  <code>LMS.LaunchData</code> State document. The AU MUST NOT modify or delete the  <code>LMS.LaunchData</code> State document. The AU MUST use the contextTemplate as a template for the "context" property in all xAPI statements it sends to the LMS. While the AU MAY include additional values in the Context object of such statements, it MUST NOT overwrite any values provided in the contextTemplate. NOTE: this will include the session id specified by the LMS.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON Context object as defined in xAPI specification.</td></tr>
 </table>
 
@@ -1126,7 +1126,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <strong><em>moveOn</em></strong> value in the state API document. The <strong><em>moveOn</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the <strong><em>moveOn</em></strong> value from the "LMS.LaunchData" state document and MAY use the value to modify its behavior.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the <strong><em>moveOn</em></strong> value from the  <code>LMS.LaunchData</code> state document and MAY use the value to modify its behavior.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td><strong><em>moveOn</em></strong> values as defined in the Course Structure (Section 13.1.4 – AU Metadata)</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>"Passed"</td></tr>
@@ -1139,7 +1139,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>No</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>If the <strong><em>returnURL</em></strong> is provided.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MAY include the <strong><em>returnURL</em></strong> when the learner SHOULD be redirected to the <strong><em>returnURL</em></strong> on exiting the AU.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST attempt to get the <strong><em>returnURL</em></strong> value from the "LMS.LaunchData" state document. The AU MUST redirect the current browser window or frame to the <strong><em>returnURL</em></strong> when the AU is terminated if the <strong><em>returnURL</em></strong> is provided.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST attempt to get the <strong><em>returnURL</em></strong> value from the  <code>LMS.LaunchData</code> state document. The AU MUST redirect the current browser window or frame to the <strong><em>returnURL</em></strong> when the AU is terminated if the <strong><em>returnURL</em></strong> is provided.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String (Not URL encoded)</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Any URL.</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>http://www.example.com/lms/mod/xapilaunch/view.php?id=12</td></tr>
@@ -1151,7 +1151,7 @@ The LMS MAY place additional values in the "contextTemplate".</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <strong>entitlementKey</strong> object is used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add an <strong><em>entitlementKey</em></strong> object to the "LMS.LaunchData" state document if an <strong><em>entitlementKey</em></strong> is present in the Course Structure for the AU. The entitlementKey consists of 2 properties, “courseStructure” and “alternate”. See items below for LMS usage requirements.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add an <strong><em>entitlementKey</em></strong> object to the  <code>LMS.LaunchData</code> state document if an <strong><em>entitlementKey</em></strong> is present in the Course Structure for the AU. The entitlementKey consists of 2 properties, “courseStructure” and “alternate”. See items below for LMS usage requirements.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON Object</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>The value for entitlementKey properties are defined by the AU provider.</td></tr>
