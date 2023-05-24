@@ -1078,9 +1078,9 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
 ### 10.2.2 launchMode
 <table>
   <tr><th align="right" nowrap>Description:</th><td>The launch mode determined by the LMS. There are three possible values:<br>
-      <ul><li>Normal<br>Indicates to the AU that satisfaction-related data MUST be recorded in the LMS using xAPI statements.</li>
-          <li>Browse<br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Browse mode is used, the AU SHOULD provide a user experience that allows the user to "look around" without judgement.</li>
-          <li>Review<br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Review mode is used, the AU SHOULD provide a user experience that allows the user to "revisit/review" already completed material.</li>
+      <ul><li><code>Normal</code><br>Indicates to the AU that satisfaction-related data MUST be recorded in the LMS using xAPI statements.</li>
+          <li><code>Browse</code><br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Browse mode is used, the AU SHOULD provide a user experience that allows the user to "look around" without judgement.</li>
+          <li><code>Review</code><br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Review mode is used, the AU SHOULD provide a user experience that allows the user to "revisit/review" already completed material.</li>
       </ul></td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
