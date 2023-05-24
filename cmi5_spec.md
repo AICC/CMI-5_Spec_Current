@@ -1110,11 +1110,11 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
 <a name="xapi_state_properties_masteryScore"></a>
 ### 10.2.4 masteryScore
 <table>
-  <tr><th align="right" nowrap>Description:</th><td>The <strong><em>masteryScore</em></strong> from the cmi5 Course Structure.</td></tr>
-  <tr><th align="right" nowrap>LMS Required:</th><td>The LMS MUST include a "masteryScore" in the State API document if the <strong><em>masteryScore</em></strong> was defined by the course designer in the Course Structure.</td></tr>
-  <tr><th align="right" nowrap>AU Required:</th><td>If the <strong><em>masteryScore</em></strong> is provided.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The <strong><em>masteryScore</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>If the AU issues "Passed" or "Failed" statements they MUST be based on the <strong><em>masteryScore</em></strong> if provided. (See Sections 9.3.4 and 9.3.5)</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <code>masteryScore</code> from the cmi5 Course Structure.</td></tr>
+  <tr><th align="right" nowrap>LMS Required:</th><td>The LMS MUST include a <code>masteryScore</code> in the <code>LMS.LaunchData</code> State document if the <code>masteryScore</code> was defined by the course designer in the Course Structure.</td></tr>
+  <tr><th align="right" nowrap>AU Required:</th><td>If the <code>masteryScore</code> is provided.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The <code>masteryScore</code> value written in the <code>LMS.LaunchData</code> State document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>If the AU issues "passed" or "failed" statements they MUST be based on the <code>masteryScore</code> if provided. (See Sections 9.3.4 and 9.3.5)</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>0.75</td></tr>
