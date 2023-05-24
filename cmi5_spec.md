@@ -1063,24 +1063,24 @@ The properties for the `LMS.LaunchData` document are described below.
 <a name=“xapi_state_properties_contextTemplate”></a>
 ### 10.2.1 contextTemplate
 <table>
-  <tr><th align=“right” nowrap>Description:</th><td>Context template for the AU being launched.</td></tr>
-  <tr><th align=“right” nowrap>LMS Required:</th><td>Yes</td></tr>
-  <tr><th align=“right” nowrap>AU Required:</th><td>Yes</td></tr>
-  <tr><th align=“right” nowrap>LMS Usage:</th><td>The LMS MUST include a <code>contextTemplate</code> object and MUST include the following values:
-<ul><li>The value for session ID placed in an <code>extensions</code> object with the ID as defined in Section 9.6.3.1.</li>
+  <tr><th align="right" nowrap>Description:</th><td>Context template for the AU being launched.</td></tr>
+  <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
+  <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include a <code>contextTemplate</code> object and MUST include the following values:
+<ul><li>The value for session id placed in an <code>extensions</code> object with the id as defined in Section 9.6.3.1.</li>
 <li>The publisher ID Activity as defined in Section 9.6.2.3 in the <code>contextActivities.grouping</code> list</li></ul>
 The LMS MAY place additional values in the <code>contextTemplate</code>.</td></tr>
-  <tr><th align=“right” nowrap>AU Usage:</th><td>The AU MUST get the <code>contextTemplate</code> value from the <code>LMS.LaunchData</code> State document. The AU MUST NOT modify or delete the <code>LMS.LaunchData</code> State document. The AU MUST use the <code>contextTemplate</code> as a template for the <code>context</code> object in all xAPI statements it sends to the LMS. While the AU MAY include additional values in the <code>context</code> object of such statements, it MUST NOT overwrite any values provided in the <code>contextTemplate</code>. NOTE: this will include the session ID specified by the LMS.</td></tr>
-  <tr><th align=“right” nowrap>Data Type:</th><td>JSON <code>context</code> object as defined in xAPI specification.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>contextTemplate</code> value from the  <code>LMS.LaunchData</code> State document. The AU MUST NOT modify or delete the  <code>LMS.LaunchData</code> State document. The AU MUST use the <code>contextTemplate</code> as a template for the <code>context</code> property in all xAPI statements it sends to the LMS. While the AU MAY include additional values in the <code>context</code> object of such statements, it MUST NOT overwrite any values provided in the <code>contextTemplate</code>. NOTE: this will include the session ID specified by the LMS.</td></tr>
+  <tr><th align="right" nowrap>Data Type:</th><td>JSON <code>context</code> object as defined in xAPI specification.</td></tr>
 </table>
 
 <a name=“xapi_state_properties_launchMode”></a>
 ### 10.2.2 launchMode
 <table>
-  <tr><th align=“right” nowrap>Description:</th><td>The launch mode determined by the LMS. There are three possible values:<br>
+  <tr><th align="right" nowrap>Description:</th><td>The launch mode determined by the LMS. There are three possible values:<br>
       <ul><li><code>Normal</code><br>Indicates to the AU that satisfaction-related data MUST be recorded in the LMS using xAPI statements.</li>
-          <li><code>Browse</code><br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Browse mode is used, the AU SHOULD provide a user experience that allows the user to “look around” without judgement.</li>
-          <li><code>Review</code><br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Review mode is used, the AU SHOULD provide a user experience that allows the user to “revisit/review” already completed material.</li>
+          <li><code>Browse</code><br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Browse mode is used, the AU SHOULD provide a user experience that allows the user to "look around" without judgement.</li>
+          <li><code>Review</code><br>Indicates to the AU that satisfaction-related data MUST NOT be recorded in the LMS using xAPI statements. When Review mode is used, the AU SHOULD provide a user experience that allows the user to "revisit/review" already completed material.</li>
       </ul></td></tr>
   <tr><th align=“right” nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align=“right” nowrap>AU Required:</th><td>Yes</td></tr>
