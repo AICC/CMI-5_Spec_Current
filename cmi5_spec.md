@@ -455,8 +455,8 @@ Once the AU has determined that the session will end (e.g. by user action, timeo
 ### 7.1.3 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
-* **cmi5 defined** - Statements using cmi5 defined verbs, category id as defined in section 9.6.2.1, and context template.
-* **cmi5 allowed** - Statements using any verb and cmi5 context template (but NOT including cmi5 category id as defined in section 9.6.2.1).
+* **cmi5 defined** - Statements using cmi5 defined verbs, category id as defined in Section 9.6.2.1, and context template.
+* **cmi5 allowed** - Statements using any verb and cmi5 context template (but NOT including cmi5 category id as defined in Section 9.6.2.1).
 * **cmi5 not-allowed** - Any statements not conforming with the cmi5 specification.
 
 "cmi5 allowed" statements posted by the AU MUST occur between cmi5 statements using the "initialized" verb and the "terminated" verb. "cmi5 allowed" statements are not considered in "cmi5 defined" session management and satisfaction rules.
@@ -525,8 +525,8 @@ The values for the URL launch parameters are described below:
 ### 8.1.2 fetch
 <table>
   <tr><th align="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL.<br>The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in section 8.2. The AU MUST place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using the xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL.<br>The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in Section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in Section 8.2. The AU MUST place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using the xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>A URL-encoded URL</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>http://lms.example.com/tokenGen.htm?k=2390289x0</td></tr>
@@ -589,7 +589,7 @@ The AU SHOULD NOT attempt to retrieve the authorization token more than once.  T
 <table>
   <tr><th colspan=2 align="left">auth-token</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>An authorization token used in all xAPI communications with the LMS.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <code>auth-token</code> in a JSON structure, as shown in Section 8.2.1, in its response to a <strong><em>fetch</em></strong> URL request. The response MUST have a Content-Type of "application/json". The HTTP status code MUST be "200" for a valid request (including one that generates error as described in section 8.2.3).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <code>auth-token</code> in a JSON structure, as shown in Section 8.2.1, in its response to a <strong><em>fetch</em></strong> URL request. The response MUST have a Content-Type of "application/json". The HTTP status code MUST be "200" for a valid request (including one that generates error as described in Section 8.2.3).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>auth-token</code> value using an HTTP POST to the <strong><em>fetch</em></strong> URL. The AU MUST then place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using the xAPI.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
@@ -917,11 +917,11 @@ The value for the `registration` property used in the context object MUST be the
 
 <a name="context_activities"></a>
 ### 9.6.2 contextActivities
-The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The `contextActivities` property contains list(s) of activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the `contextActivities` of the `contextTemplate` (see section 10 - xAPI State Data Model).
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The `contextActivities` property contains list(s) of activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the `contextActivities` of the `contextTemplate` (see Section 10 - xAPI State Data Model).
 
 <a name="context_activities_category_cmi5"></a>
 #### 9.6.2.1 cmi5 Category Activity
-An activity object with an `id` of `https://w3id.org/xapi/cmi5/context/categories/cmi5` in the `category`  list of the `contextActivities` object MUST be used in cmi5 defined statements as described in section 7.1.3.
+An activity object with an `id` of `https://w3id.org/xapi/cmi5/context/categories/cmi5` in the `category`  list of the `contextActivities` object MUST be used in cmi5 defined statements as described in Section 7.1.3.
 
 <a name="context_activities_category_moveon"></a>
 #### 9.6.2.2 moveOn Category Activity
@@ -990,7 +990,7 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchurl</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The URL used by the LMS to launch the AU</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in section 8.1 in the context extensions of the "launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in Section 8.1 in the context extensions of the "launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
@@ -1002,7 +1002,7 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 <a name="context_extensions_publisherid"></a>
 #### 9.6.3.5 publisherId
 
-This section is no longer applicable. See section 9.6.2.3 Publisher ID Grouping Activity.
+This section is no longer applicable. See Section 9.6.2.3 Publisher ID Grouping Activity.
 
 <a name="context_extensions_moveOn"></a>
 #### 9.6.3.6 moveOn
