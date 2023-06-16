@@ -1123,13 +1123,13 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
 <a name="xapi_state_properties_moveOn"></a>
 ### 10.2.5 moveOn
 <table>
-  <tr><th align="right" nowrap>Description:</th><td>The <strong><em>moveOn</em></strong> value from the cmi5 Course Structure.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <code>moveOn</code> value from the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <strong><em>moveOn</em></strong> value in the state API document. The <strong><em>moveOn</em></strong> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the <strong><em>moveOn</em></strong> value from the  <code>LMS.LaunchData</code> state document and MAY use the value to modify its behavior.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <code>moveOn</code> value in the state API document. The <code>moveOn</code> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the <code>moveOn</code> value from the  <code>LMS.LaunchData</code> state document and MAY use the value to modify its behavior.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
-  <tr><th align="right" nowrap>Value Space:</th><td><strong><em>moveOn</em></strong> values as defined in the Course Structure (Section 13.1.4 – AU Metadata)</td></tr>
+  <tr><th align="right" nowrap>Value Space:</th><td><code>moveOn</code> values as defined in the Course Structure (Section 13.1.4 – AU Metadata)</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>"Passed"</td></tr>
 </table>
 
@@ -1138,9 +1138,9 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
 <table>
   <tr><th align="right" nowrap>Description:</th><td>Used by the LMS when launching the AU if the LMS requires the AU (in a web-browser environment) to redirect the learner when he or she exits the AU.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>AU Required:</th><td>If the <strong><em>returnURL</em></strong> is provided.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MAY include the <strong><em>returnURL</em></strong> when the learner SHOULD be redirected to the <strong><em>returnURL</em></strong> on exiting the AU.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST attempt to get the <strong><em>returnURL</em></strong> value from the  <code>LMS.LaunchData</code> state document. The AU MUST redirect the current browser window or frame to the <strong><em>returnURL</em></strong> when the AU is terminated if the <strong><em>returnURL</em></strong> is provided.</td></tr>
+  <tr><th align="right" nowrap>AU Required:</th><td>If the <code>returnURL</code> is provided.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MAY include the <code>returnURL</code> when the learner SHOULD be redirected to the <code>returnURL</code> on exiting the AU.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST attempt to get the <code>returnURL</code> value from the  <code>LMS.LaunchData</code> state document. The AU MUST redirect the current browser window or frame to the <code>returnURL</code> when the AU is terminated if the <code>returnURL</code> is provided.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String (Not URL encoded)</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Any URL.</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>http://www.example.com/lms/mod/xapilaunch/view.php?id=12</td></tr>
@@ -1149,20 +1149,20 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
 <a name="xapi_state_properties_entitlementKey"></a>
 ### 10.2.7 entitlementKey
 <table>
-  <tr><th align="right" nowrap>Description:</th><td>The <strong>entitlementKey</strong> object is used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <code>entitlementKey</code> object is used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add an <strong><em>entitlementKey</em></strong> object to the  <code>LMS.LaunchData</code> state document if an <strong><em>entitlementKey</em></strong> is present in the Course Structure for the AU. The entitlementKey consists of 2 properties, “courseStructure” and “alternate”. See items below for LMS usage requirements.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add an <code>entitlementKey</code> object to the  <code>LMS.LaunchData</code> state document if an <code>entitlementKey</code> is present in the Course Structure for the AU. The <code>entitlementKey</code> consists of 2 properties, <code>courseStructure</code> and <code>alternate</code>. See items below for LMS usage requirements.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON Object</td></tr>
-  <tr><th align="right" nowrap>Value Space:</th><td>The value for entitlementKey properties are defined by the AU provider.</td></tr>
+  <tr><th align="right" nowrap>Value Space:</th><td>The value for <code>entitlementKey</code> properties are defined by the AU provider.</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>{"courseStructure": "xyz-123-9999", "alternate": "abc-456-1111"}</td></tr>
 </table>
 
 <a name="xapi_state_properties_entitlementKey_courseStructure"></a>
 #### 10.2.7.1 courseStructure
 <table>
-  <tr><th align="right" nowrap>Description:</th><td>The <strong>courseStructure</strong> property contains the value for entitlementKey from the Course Structure. The courseStructure values MAY be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <code>courseStructure</code> property contains the value for <code>entitlementKey</code> from the Course Structure. The <code>courseStructure</code> values MAY be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain this from the Course Structure.</td></tr>
@@ -1175,10 +1175,10 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
 <a name="xapi_state_properties_entitlementKey_alternate"></a>
 #### 10.2.7.2 alternate
 <table>
-  <tr><th align="right" nowrap>Description:</th><td>The <strong>alternate</strong> property is data from some other source as agreed upon between the LMS and the AU. The alternate property values MAY be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>The <code>alternate</code> property is data from some other source as agreed upon between the LMS and the AU. The <code>alternate</code> property values MAY be used by the AU to determine if the launching LMS is entitled to use the AU.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>No</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain the value for the alternate property from a source as agreed upon with the AU.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST obtain the value for the <code>alternate</code> property from a source as agreed upon with the AU.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU SHOULD use this data in combination with other data provided from the LMS to determine entitlement.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>The value is defined by the AU provider.</td></tr>
