@@ -467,15 +467,16 @@ The statements issued within an AU session could fall within the following categ
 <a name="launch_method"></a>  
 ## 8.1 Launch Method
 
-The AU MUST be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 13.1.4 AU Meta Data, URL):
+The AU MUST be launched by the LMS using one of the following methods, depending on the `launchMethod` in the Course Structure (Section 13.1.4 AU Meta Data, URL):
 
-When the launchMethod is <code>OwnWindow</code>, the LMS MUST use one of the following:
+When the value of `launchMethod` is `OwnWindow`, the LMS MUST use one of the following:
+
 * Spawning a new browser window for the AU.
 * Re-directing the existing browser window to the AU.
 
-When the launchMethod is <code>AnyWindow</code>, the LMS MUST choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
+When the value of `launchMethod` is `AnyWindow`, the LMS MUST choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
 
-Regardless of the launchMethod the AU MUST be launched by the LMS with a URL having query string launch parameters as defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that launches the AU.
+Regardless of the `launchMethod` the AU MUST be launched by the LMS with a URL having query string launch parameters as defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that launches the AU.
 
 If the AU's URL requires a query string for other purposes, then the names MUST NOT collide with named parameters defined below.
 
@@ -1216,7 +1217,7 @@ If the AU supports multiple languages, the AU SHOULD display in the language pre
 <a name="audio_preference"></a>
 
 ## 11.2 audioPreference
-The audioPreference value indicates whether the audio SHOULD be "on" or "off".  The AU MUST turn the audio on or off at startup based on this value.  If no value is provided in the Agent Profile for audioPreference the AU MAY use its own default value.
+The `audioPreference` value indicates whether the audio SHOULD be "on" or "off".  The AU MUST turn the audio on or off at startup based on this value.  If no value is provided in the Agent Profile for `audioPreference` the AU MAY use its own default value.
 
 Example:
 ```javascript
@@ -1242,11 +1243,12 @@ The AU MAY use the Activity Profile API according to the xAPI specification.
 All leading/trailing whitespace MUST be removed by the LMS on import of the course structure for all of the data elements defined in this section.
 
 The following Data Types are used in the cmi5 course structure data model, see the CourseStructure.xsd (Section 14.0) for specific format:
-   * **decimal** – XSD definition:  "xs:decimal"
-   * **IRI** – XSD definition:  "xs:anyURI"
-   * **string** –  XSD definition: "xs:string"
-   * **langstring** – XSD definition : <xs:element name="langstring" maxOccurs="unbounded" minOccurs="1"/>
-   * **objectiveReference** – XSD definition : <xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>
+
+   * **decimal** – XSD definition:  `xs:decimal`
+   * **IRI** – XSD definition:  `xs:anyURI`
+   * **string** –  XSD definition: `xs:string`
+   * **langstring** – XSD definition : `<xs:element name="langstring" maxOccurs="unbounded" minOccurs="1"/>`
+   * **objectiveReference** – XSD definition : `<xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>`
 
 <a name="course_level_meta_data"></a>
 ### 13.1.1 Course Level Metadata  
@@ -1510,9 +1512,9 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The "masteryScore" is passed to the AU at runtime by the LMS (See xAPI State Data Model, Section 10.0).</li>
-        <li>If the AU has scoring, it will use the "masteryScore" to determine pass/fail.</li>
-        <li>The "masteryScore" is a scaled, decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</li>
+        <li>The <code>masteryScore</code> is passed to the AU at runtime by the LMS (See xAPI State Data Model, Section 10.0).</li>
+        <li>If the AU has scoring, it will use the <code>masteryScore</code> to determine pass/fail.</li>
+        <li>The <code>masteryScore</code> is a scaled, decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</li>
       </ul>
       <p><strong>Value space: </strong>Decimal number.<br>
         <br>
@@ -1530,12 +1532,12 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if an AU has been sufficiently satisfied for the purposes of determining overall course satisfaction or determining if prerequisites were met for other activities.</p>
       <p><strong>moveOn Values are as follows:</strong></p>
       <ul>
-        <li>moveOn Value = "Passed" : If the LMS receives a statement with the verb "Passed", then the LMS will consider the AU satisfied.</li>
-        <li>moveOn Value = "Completed" : If the LMS receives a statement with the verb "Completed", then the LMS will consider the AU satisfied.<br>
+        <li><code>moveOn</code> Value = "Passed" : If the LMS receives a statement with the verb "Passed", then the LMS will consider the AU satisfied.</li>
+        <li><code>moveOn</code> Value = "Completed" : If the LMS receives a statement with the verb "Completed", then the LMS will consider the AU satisfied.<br>
           </li>
-        <li>moveOn Value = "CompletedAndPassed" : If the LMS receives statements with the verbs "Completed" and "Passed", then the LMS will consider the AU satisfied.</li>
-        <li>moveOn Value = "CompletedOrPassed" : If the LMS receives a statement with either of the verbs "Completed" or "Passed", then the LMS will consider the AU satisfied.</li>
-        <li>moveOn Value = "NotApplicable": The LMS will consider the AU satisfied.</li>
+        <li><code>moveOn</code> Value = "CompletedAndPassed" : If the LMS receives statements with the verbs "Completed" and "Passed", then the LMS will consider the AU satisfied.</li>
+        <li><code>moveOn</code> Value = "CompletedOrPassed" : If the LMS receives a statement with either of the verbs "Completed" or "Passed", then the LMS will consider the AU satisfied.</li>
+        <li><code>moveOn</code> Value = "NotApplicable": The LMS will consider the AU satisfied.</li>
       </ul>
       <p><strong>Usage:</strong></p>
       <p>If all member AUs in a block are satisfied, then the block is considered satisfied for prerequisites and sequencing.<br>If all member AUs and Blocks are satisfied, then the course is considered satisfied for prerequisites or credit in relation to other courses or curricula.</p>
