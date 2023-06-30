@@ -455,8 +455,8 @@ Once the AU has determined that the session will end (e.g. by user action, timeo
 ### 7.1.3 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
-* **cmi5 defined** - Statements using cmi5 defined verbs, category id as defined in Section 9.6.2.1, and context template.
-* **cmi5 allowed** - Statements using any verb and cmi5 context template (but NOT including cmi5 category id as defined in Section 9.6.2.1).
+* **cmi5 defined** - Statements using cmi5 defined verbs, category ID as defined in Section 9.6.2.1, and context template.
+* **cmi5 allowed** - Statements using any verb and cmi5 context template (but NOT including cmi5 category ID as defined in Section 9.6.2.1).
 * **cmi5 not-allowed** - Any statements not conforming with the cmi5 specification.
 
 "cmi5 allowed" statements posted by the AU MUST occur between cmi5 statements using the "initialized" verb and the "terminated" verb. "cmi5 allowed" statements are not considered in "cmi5 defined" session management and satisfaction rules.
@@ -559,8 +559,8 @@ The values for the URL launch parameters are described below:
 ### 8.1.5 activityId
 <table>
   <tr><th align="right" nowrap>Description:</th><td>The Activity ID of the AU being launched.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST generate a unique activityId for the AU. The LMS MUST place its value in the query string. The activityId generated MUST NOT match the AU's id (publisher id) from the course structure (See Section 13.1.4 - AU Metadata). The LMS MUST use the same generated activityId on all subsequent launches (for the same AU) within the same registration. The LMS SHOULD use the same generated activityId (for the same AU) for all registrations.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>activityId</em></strong> value from the query string. The AU MUST use the <strong><em>activityId</em></strong> value as the id property of the Object in all "cmi5 defined" statements.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST generate a unique activityId for the AU. The LMS MUST place its value in the query string. The activityId generated MUST NOT match the AU's ID (publisher id) from the course structure (See Section 13.1.4 - AU Metadata). The LMS MUST use the same generated activityId on all subsequent launches (for the same AU) within the same registration. The LMS SHOULD use the same generated activityId (for the same AU) for all registrations.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>activityId</em></strong> value from the query string. The AU MUST use the <strong><em>activityId</em></strong> value as the ID property of the Object in all "cmi5 defined" statements.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>IRI</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td></td></tr>
@@ -750,7 +750,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/waived</td></tr>
 <tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than the moveOn criteria being met.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU MAY be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session id for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session id. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU MAY be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session ID for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session id. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
 <tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU can be skipped by the learner.</td></tr>
 </table>
 
@@ -779,9 +779,9 @@ The LMS MUST consider that an AU that was previously issued a “Waived” state
 <br><br>
 The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course. In this statement the LMS MUST use the course object per Section 9.4.  The LMS MUST use the same course object for all Satisfied statements that refer to that course.   
 <br><br>
-The LMS MUST use the session id from the AU launch for all "Satisfied" statements triggered as a result of an AU launch session.<br>
+The LMS MUST use the session ID from the AU launch for all "Satisfied" statements triggered as a result of an AU launch session.<br>
 <br>
-The LMS MUST generate a unique session id for all "Satisfied" statements triggered outside of an AU launch session.<br>
+The LMS MUST generate a unique session ID for all "Satisfied" statements triggered outside of an AU launch session.<br>
 <br>
 The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block or Course within a course registration for a given learner.
 </td></tr>
@@ -932,7 +932,7 @@ cmi5 defined statements with a `result` object (Section 9.5) that include either
 #### 9.6.2.3 Publisher ID Grouping Activity
 Used to identify statements about the course, block, or AU using the publisher id from the course structure.
 
-The LMS MUST include an activity object with an id property whose value is the unaltered value of the AU's id attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10) prior to launching an AU. 
+The LMS MUST include an activity object with an ID property whose value is the unaltered value of the AU's ID attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10) prior to launching an AU. 
 
 The LMS MUST include the publisher id activity in the `grouping` list of the `contextActivities` object for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS.
 
@@ -1330,7 +1330,7 @@ The data in this section are used for the block structures which group AUs.  A B
   <tr>
     <td width="164" valign="top"><p><strong>Required: </strong> Yes<br>
         <strong>Data type: </strong> IRI</p></td>
-    <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block. This id MUST be unique within the course structure.</p>
+    <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block. This ID MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br>
       &lt;block id="http&#58;//www.example.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
@@ -1409,7 +1409,7 @@ The data in this section are used by the Objectives. Objectives can be associate
         <strong>Data type:</strong> IRI</p>
     </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br>
-      A globally unique IRI to identify the learning objective. This id MUST be unique within the course structure.<br>
+      A globally unique IRI to identify the learning objective. This ID MUST be unique within the course structure.<br>
       </p>
       <p><strong>Value space:</strong><br>Values are defined by the course designer.</p>
     <p><strong>Sample value:</strong><br>
@@ -1474,7 +1474,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td width="160" valign="top"><p><strong>Required: </strong> Yes<br>
         <strong>Data type: </strong> IRI</p>
     </td>
-    <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the AU. This id MUST be unique within the course structure.</p>
+    <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the AU. This ID MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values are defined by the AU publisher.</p>
       <p><strong>Sample value:</strong><br>
       &lt;au id="http&#58;//www.example.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
