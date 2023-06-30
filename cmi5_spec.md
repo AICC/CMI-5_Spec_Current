@@ -750,7 +750,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/waived</td></tr>
 <tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than the moveOn criteria being met.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU MAY be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session ID for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session id. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU MAY be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session ID for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session ID. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
 <tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU can be skipped by the learner.</td></tr>
 </table>
 
@@ -918,7 +918,7 @@ The value for the `registration` property used in the context object MUST be the
 
 <a name="context_activities"></a>
 ### 9.6.2 contextActivities
-The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The `contextActivities` property contains list(s) of activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the `contextActivities` of the `contextTemplate` (see Section 10 - xAPI State Data Model).
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The `contextActivities` property contains list(s) of activity objects whose IDs can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the `contextActivities` of the `contextTemplate` (see Section 10 - xAPI State Data Model).
 
 <a name="context_activities_category_cmi5"></a>
 #### 9.6.2.1 cmi5 Category Activity
@@ -932,7 +932,7 @@ cmi5 defined statements with a `result` object (Section 9.5) that include either
 #### 9.6.2.3 Publisher ID Grouping Activity
 Used to identify statements about the course, block, or AU using the publisher id from the course structure.
 
-The LMS MUST include an activity object with an ID property whose value is the unaltered value of the AU's ID attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10) prior to launching an AU. 
+The LMS MUST include an activity object with an ID property whose value is the unaltered value of the AU's ID attribute from the course structure (See Section 13.1.4 AU Metadata – ID) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10) prior to launching an AU. 
 
 The LMS MUST include the publisher id activity in the `grouping` list of the `contextActivities` object for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS.
 
