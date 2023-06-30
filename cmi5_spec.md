@@ -469,12 +469,12 @@ The statements issued within an AU session could fall within the following categ
 
 The AU MUST be launched by the LMS using one of the following methods, depending on the `launchMethod` in the Course Structure (Section 13.1.4 AU Meta Data, URL):
 
-When the value of `launchMethod` is `OwnWindow`, the LMS MUST use one of the following:
+When the value of `launchMethod` is "OwnWindow", the LMS MUST use one of the following:
 
 * Spawning a new browser window for the AU.
 * Re-directing the existing browser window to the AU.
 
-When the value of `launchMethod` is `AnyWindow`, the LMS MUST choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
+When the value of `launchMethod` is "AnyWindow", the LMS MUST choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
 
 Regardless of the `launchMethod` the AU MUST be launched by the LMS with a URL having query string launch parameters as defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that launches the AU.
 
@@ -559,7 +559,7 @@ The values for the URL launch parameters are described below:
 ### 8.1.5 activityId
 <table>
   <tr><th align="right" nowrap>Description:</th><td>The Activity ID of the AU being launched.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST generate a unique activityId for the AU. The LMS MUST place its value in the query string. The activityId generated MUST NOT match the AU's ID (publisher id) from the course structure (See Section 13.1.4 - AU Metadata). The LMS MUST use the same generated activityId on all subsequent launches (for the same AU) within the same registration. The LMS SHOULD use the same generated activityId (for the same AU) for all registrations.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST generate a unique activityId for the AU. The LMS MUST place its value in the query string. The activityId generated MUST NOT match the AU's ID (publisher ID) from the course structure (See Section 13.1.4 - AU Metadata). The LMS MUST use the same generated activityId on all subsequent launches (for the same AU) within the same registration. The LMS SHOULD use the same generated activityId (for the same AU) for all registrations.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>activityId</em></strong> value from the query string. The AU MUST use the <strong><em>activityId</em></strong> value as the ID property of the Object in all "cmi5 defined" statements.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>IRI</td></tr>
@@ -930,11 +930,11 @@ cmi5 defined statements with a `result` object (Section 9.5) that include either
 
 <a name="context_activities_grouping_publisherid"></a>
 #### 9.6.2.3 Publisher ID Grouping Activity
-Used to identify statements about the course, block, or AU using the publisher id from the course structure.
+Used to identify statements about the course, block, or AU using the publisher ID from the course structure.
 
 The LMS MUST include an activity object with an ID property whose value is the unaltered value of the AU's ID attribute from the course structure (See Section 13.1.4 AU Metadata – ID) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10) prior to launching an AU. 
 
-The LMS MUST include the publisher id activity in the `grouping` list of the `contextActivities` object for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS.
+The LMS MUST include the publisher ID activity in the `grouping` list of the `contextActivities` object for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS.
 
 <a name="extensions"></a>
 ### 9.6.3 Extensions
@@ -1052,7 +1052,7 @@ __State API PUT Properties__:
 
 * _activityId_: Activity id for the AU. This MUST match the activity id used by the LMS at AU launch time.
 * _agent_: Agent representing the LMS learner being enrolled.  This MUST match the actor property used by the LMS at AU launch time.
-* _registration_: Registration id representing the LMS learner enrollment in the course. This MUST match the registration used by the LMS at AU launch time.
+* _registration_: Registration ID representing the LMS learner enrollment in the course. This MUST match the registration used by the LMS at AU launch time.
 * _stateId_: `LMS.LaunchData`
 
 
