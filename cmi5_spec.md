@@ -1011,7 +1011,7 @@ This section is no longer applicable. See Section 9.6.2.3 Publisher ID Grouping 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/moveon</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <code>moveOn</code> value as provided in the <code>LMS.LaunchData</code> document for the AU</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add moveOn to the context of a "launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add <code>moveOn</code> to the context of a "launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
