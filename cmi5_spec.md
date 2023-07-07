@@ -455,8 +455,8 @@ Once the AU has determined that the session will end (e.g. by user action, timeo
 ### 7.1.3 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
-* **cmi5 defined** - Statements using cmi5 defined verbs, category id as defined in Section 9.6.2.1, and context template.
-* **cmi5 allowed** - Statements using any verb and cmi5 context template (but NOT including cmi5 category id as defined in Section 9.6.2.1).
+* **cmi5 defined** - Statements using cmi5 defined verbs, category ID as defined in Section 9.6.2.1, and context template.
+* **cmi5 allowed** - Statements using any verb and cmi5 context template (but NOT including cmi5 category ID as defined in Section 9.6.2.1).
 * **cmi5 not-allowed** - Any statements not conforming with the cmi5 specification.
 
 "cmi5 allowed" statements posted by the AU MUST occur between cmi5 statements using the "initialized" verb and the "terminated" verb. "cmi5 allowed" statements are not considered in "cmi5 defined" session management and satisfaction rules.
@@ -467,15 +467,16 @@ The statements issued within an AU session could fall within the following categ
 <a name="launch_method"></a>  
 ## 8.1 Launch Method
 
-The AU MUST be launched by the LMS using one of the following methods, depending on the launchMethod in the Course Structure (Section 13.1.4 AU Meta Data, URL):
+The AU MUST be launched by the LMS using one of the following methods, depending on the `launchMethod` in the Course Structure (Section 13.1.4 AU Meta Data, URL):
 
-When the launchMethod is <code>OwnWindow</code>, the LMS MUST use one of the following:
+When the value of `launchMethod` is "OwnWindow", the LMS MUST use one of the following:
+
 * Spawning a new browser window for the AU.
 * Re-directing the existing browser window to the AU.
 
-When the launchMethod is <code>AnyWindow</code>, the LMS MUST choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
+When the value of `launchMethod` is "AnyWindow", the LMS MUST choose the window context of the AU.  All browser window options are acceptable - Frameset, New window, browser redirect, etc.
 
-Regardless of the launchMethod the AU MUST be launched by the LMS with a URL having query string launch parameters as defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that launches the AU.
+Regardless of the `launchMethod` the AU MUST be launched by the LMS with a URL having query string launch parameters as defined in this section. The launch parameters MUST be name/value pairs in a query string appended to the URL that launches the AU.
 
 If the AU's URL requires a query string for other purposes, then the names MUST NOT collide with named parameters defined below.
 
@@ -558,8 +559,8 @@ The values for the URL launch parameters are described below:
 ### 8.1.5 activityId
 <table>
   <tr><th align="right" nowrap>Description:</th><td>The Activity ID of the AU being launched.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST generate a unique activityId for the AU. The LMS MUST place its value in the query string. The activityId generated MUST NOT match the AU's id (publisher id) from the course structure (See Section 13.1.4 - AU Metadata). The LMS MUST use the same generated activityId on all subsequent launches (for the same AU) within the same registration. The LMS SHOULD use the same generated activityId (for the same AU) for all registrations.</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>activityId</em></strong> value from the query string. The AU MUST use the <strong><em>activityId</em></strong> value as the id property of the Object in all "cmi5 defined" statements.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST generate a unique activityId for the AU. The LMS MUST place its value in the query string. The activityId generated MUST NOT match the AU's ID (publisher ID) from the course structure (See Section 13.1.4 - AU Metadata). The LMS MUST use the same generated activityId on all subsequent launches (for the same AU) within the same registration. The LMS SHOULD use the same generated activityId (for the same AU) for all registrations.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>activityId</em></strong> value from the query string. The AU MUST use the <strong><em>activityId</em></strong> value as the ID property of the Object in all "cmi5 defined" statements.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>IRI</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td></td></tr>
@@ -749,7 +750,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/waived</td></tr>
 <tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than the moveOn criteria being met.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU MAY be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session id for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session id. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU MAY be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session ID for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session ID. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
 <tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU can be skipped by the learner.</td></tr>
 </table>
 
@@ -778,9 +779,9 @@ The LMS MUST consider that an AU that was previously issued a “Waived” state
 <br><br>
 The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course. In this statement the LMS MUST use the course object per Section 9.4.  The LMS MUST use the same course object for all Satisfied statements that refer to that course.   
 <br><br>
-The LMS MUST use the session id from the AU launch for all "Satisfied" statements triggered as a result of an AU launch session.<br>
+The LMS MUST use the session ID from the AU launch for all "Satisfied" statements triggered as a result of an AU launch session.<br>
 <br>
-The LMS MUST generate a unique session id for all "Satisfied" statements triggered outside of an AU launch session.<br>
+The LMS MUST generate a unique session ID for all "Satisfied" statements triggered outside of an AU launch session.<br>
 <br>
 The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block or Course within a course registration for a given learner.
 </td></tr>
@@ -917,7 +918,7 @@ The value for the `registration` property used in the context object MUST be the
 
 <a name="context_activities"></a>
 ### 9.6.2 contextActivities
-The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The `contextActivities` property contains list(s) of activity objects whose ids can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the `contextActivities` of the `contextTemplate` (see Section 10 - xAPI State Data Model).
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The `contextActivities` property contains list(s) of activity objects whose IDs can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the `contextActivities` of the `contextTemplate` (see Section 10 - xAPI State Data Model).
 
 <a name="context_activities_category_cmi5"></a>
 #### 9.6.2.1 cmi5 Category Activity
@@ -929,11 +930,11 @@ cmi5 defined statements with a `result` object (Section 9.5) that include either
 
 <a name="context_activities_grouping_publisherid"></a>
 #### 9.6.2.3 Publisher ID Grouping Activity
-Used to identify statements about the course, block, or AU using the publisher id from the course structure.
+Used to identify statements about the course, block, or AU using the publisher ID from the course structure.
 
-The LMS MUST include an activity object with an id property whose value is the unaltered value of the AU's id attribute from the course structure (See Section 13.1.4 AU Metadata – id) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10) prior to launching an AU. 
+The LMS MUST include an activity object with an ID property whose value is the unaltered value of the AU's ID attribute from the course structure (See Section 13.1.4 AU Metadata – ID) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10) prior to launching an AU. 
 
-The LMS MUST include the publisher id activity in the `grouping` list of the `contextActivities` object for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS.
+The LMS MUST include the publisher ID activity in the `grouping` list of the `contextActivities` object for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS.
 
 <a name="extensions"></a>
 ### 9.6.3 Extensions
@@ -1010,7 +1011,7 @@ This section is no longer applicable. See Section 9.6.2.3 Publisher ID Grouping 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/moveon</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The <code>moveOn</code> value as provided in the <code>LMS.LaunchData</code> document for the AU</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add moveOn to the context of a "launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add <code>moveOn</code> to the context of a "launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
@@ -1051,7 +1052,7 @@ __State API PUT Properties__:
 
 * _activityId_: Activity id for the AU. This MUST match the activity id used by the LMS at AU launch time.
 * _agent_: Agent representing the LMS learner being enrolled.  This MUST match the actor property used by the LMS at AU launch time.
-* _registration_: Registration id representing the LMS learner enrollment in the course. This MUST match the registration used by the LMS at AU launch time.
+* _registration_: Registration ID representing the LMS learner enrollment in the course. This MUST match the registration used by the LMS at AU launch time.
 * _stateId_: `LMS.LaunchData`
 
 
@@ -1216,7 +1217,7 @@ The AU SHOULD display in the language preference order of the user as in the exa
 <a name="audio_preference"></a>
 
 ## 11.2 audioPreference
-The audioPreference value indicates whether the audio SHOULD be "on" or "off".  The AU MUST turn the audio on or off at startup based on this value.  If no value is provided in the Agent Profile for audioPreference the AU MAY use its own default value.
+The `audioPreference` value indicates whether the audio SHOULD be "on" or "off".  The AU MUST turn the audio on or off at startup based on this value.  If no value is provided in the Agent Profile for `audioPreference` the AU MAY use its own default value.
 
 Example:
 ```javascript
@@ -1242,11 +1243,12 @@ The AU MAY use the Activity Profile API according to the xAPI specification.
 All leading/trailing whitespace MUST be removed by the LMS on import of the course structure for all of the data elements defined in this section.
 
 The following Data Types are used in the cmi5 course structure data model, see the CourseStructure.xsd (Section 14.0) for specific format:
-   * **decimal** – XSD definition:  "xs:decimal"
-   * **IRI** – XSD definition:  "xs:anyURI"
-   * **string** –  XSD definition: "xs:string"
-   * **langstring** – XSD definition : <xs:element name="langstring" maxOccurs="unbounded" minOccurs="1"/>
-   * **objectiveReference** – XSD definition : <xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>
+
+   * **decimal** – XSD definition:  `xs:decimal`
+   * **IRI** – XSD definition:  `xs:anyURI`
+   * **string** –  XSD definition: `xs:string`
+   * **langstring** – XSD definition : `<xs:element name="langstring" maxOccurs="unbounded" minOccurs="1"/>`
+   * **objectiveReference** – XSD definition : `<xs:element name="objectives" type="referencesObjectivesType" minOccurs="0"/>`
 
 <a name="course_level_meta_data"></a>
 ### 13.1.1 Course Level Metadata  
@@ -1328,7 +1330,7 @@ The data in this section are used for the block structures which group AUs.  A B
   <tr>
     <td width="164" valign="top"><p><strong>Required: </strong> Yes<br>
         <strong>Data type: </strong> IRI</p></td>
-    <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block. This id MUST be unique within the course structure.</p>
+    <td width="811" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the Block. This ID MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values defined by course designer</p>
       <p><strong>Sample value:</strong><br>
       &lt;block id="http&#58;//www.example.com/identifiers/aublock/005430bf-b3ba-45e6-b47b-d629603d83d8" &gt; &hellip; &lt;/block&gt;
@@ -1407,7 +1409,7 @@ The data in this section are used by the Objectives. Objectives can be associate
         <strong>Data type:</strong> IRI</p>
     </td>
     <td width="792" valign="top"><p><strong>Description:</strong><br>
-      A globally unique IRI to identify the learning objective. This id MUST be unique within the course structure.<br>
+      A globally unique IRI to identify the learning objective. This ID MUST be unique within the course structure.<br>
       </p>
       <p><strong>Value space:</strong><br>Values are defined by the course designer.</p>
     <p><strong>Sample value:</strong><br>
@@ -1472,7 +1474,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td width="160" valign="top"><p><strong>Required: </strong> Yes<br>
         <strong>Data type: </strong> IRI</p>
     </td>
-    <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the AU. This id MUST be unique within the course structure.</p>
+    <td width="815" valign="top"><p><strong>Description: </strong>A globally unique IRI to identify the AU. This ID MUST be unique within the course structure.</p>
       <p><strong>Value space: </strong>Values are defined by the AU publisher.</p>
       <p><strong>Sample value:</strong><br>
       &lt;au id="http&#58;//www.example.com/identifiers/activity/005430bf-b3ba-45e6-b47b-d629603d83d2" &gt; &hellip; &lt;/au&gt;
@@ -1510,9 +1512,9 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The "masteryScore" is passed to the AU at runtime by the LMS (See xAPI State Data Model, Section 10.0).</li>
-        <li>If the AU has scoring, it will use the "masteryScore" to determine pass/fail.</li>
-        <li>The "masteryScore" is a scaled, decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</li>
+        <li>The <code>masteryScore</code> is passed to the AU at runtime by the LMS (See xAPI State Data Model, Section 10.0).</li>
+        <li>If the AU has scoring, it will use the <code>masteryScore</code> to determine pass/fail.</li>
+        <li>The <code>masteryScore</code> is a scaled, decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</li>
       </ul>
       <p><strong>Value space: </strong>Decimal number.<br>
         <br>
@@ -1530,12 +1532,12 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> Used by the LMS to determine if an AU has been sufficiently satisfied for the purposes of determining overall course satisfaction or determining if prerequisites were met for other activities.</p>
       <p><strong>moveOn Values are as follows:</strong></p>
       <ul>
-        <li>moveOn Value = "Passed" : If the LMS receives a statement with the verb "Passed", then the LMS will consider the AU satisfied.</li>
-        <li>moveOn Value = "Completed" : If the LMS receives a statement with the verb "Completed", then the LMS will consider the AU satisfied.<br>
+        <li><code>moveOn</code> Value = "Passed" : If the LMS receives a statement with the verb "Passed", then the LMS will consider the AU satisfied.</li>
+        <li><code>moveOn</code> Value = "Completed" : If the LMS receives a statement with the verb "Completed", then the LMS will consider the AU satisfied.<br>
           </li>
-        <li>moveOn Value = "CompletedAndPassed" : If the LMS receives statements with the verbs "Completed" and "Passed", then the LMS will consider the AU satisfied.</li>
-        <li>moveOn Value = "CompletedOrPassed" : If the LMS receives a statement with either of the verbs "Completed" or "Passed", then the LMS will consider the AU satisfied.</li>
-        <li>moveOn Value = "NotApplicable": The LMS will consider the AU satisfied.</li>
+        <li><code>moveOn</code> Value = "CompletedAndPassed" : If the LMS receives statements with the verbs "Completed" and "Passed", then the LMS will consider the AU satisfied.</li>
+        <li><code>moveOn</code> Value = "CompletedOrPassed" : If the LMS receives a statement with either of the verbs "Completed" or "Passed", then the LMS will consider the AU satisfied.</li>
+        <li><code>moveOn</code> Value = "NotApplicable": The LMS will consider the AU satisfied.</li>
       </ul>
       <p><strong>Usage:</strong></p>
       <p>If all member AUs in a block are satisfied, then the block is considered satisfied for prerequisites and sequencing.<br>If all member AUs and Blocks are satisfied, then the course is considered satisfied for prerequisites or credit in relation to other courses or curricula.</p>
