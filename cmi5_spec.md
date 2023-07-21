@@ -1541,14 +1541,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
       </ul>
       <p><strong>Usage:</strong></p>
       <p>If all member AUs in a block are satisfied, then the block is considered satisfied for prerequisites and sequencing.<br>If all member AUs and Blocks are satisfied, then the course is considered satisfied for prerequisites or credit in relation to other courses or curricula.</p>
-      <p><strong>Value space:</strong></p>
-      <blockquote>
-        <p>"Passed"<br>
-          "Completed"<br>
-          "CompletedAndPassed"<br>
-          "CompletedOrPassed"<br>
-          "NotApplicable"</p>
-      </blockquote>
+      <p><strong>Value space:</strong>"Passed", "Completed", "CompletedAndPassed", CompletedOrPassed, "NotApplicable"</p>
       <p><strong>Sample value: </strong><br>
       &lt;au id="&hellip;" moveOn="Passed"&gt; &hellip; &lt;/au&gt;
       </p>
