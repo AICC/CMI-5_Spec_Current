@@ -330,7 +330,6 @@ In this specification:
 * "SHOULD" is to be interpreted as a recommendation for implementation.  
 * "SHOULD NOT" is to be interpreted as the converse of "SHOULD".  
 * "MAY" is to be interpreted as a course of action that is permissible within the limits of the specification.  
-* "NEED NOT" is to be interpreted as a course of action that is not required.  
 
 Uses of the xAPI specification outside of the scope of this specification do not affect conformance with this specification.  
 
