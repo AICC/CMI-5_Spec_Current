@@ -636,7 +636,7 @@ The AU MUST assign a statement `id` property in UUID format (as defined in the x
   
 <a name="actor" ></a>
 ## 9.2 Actor
-The `actor` property MUST be defined by the LMS. The`actor` property for all cmi5 defined statements MUST be of objectType `agent`. The Actor property MUST contain an `account` property (IFI) as defined in the xAPI specification.
+The `actor` property MUST be defined by the LMS. The`actor` property for all cmi5 defined statements MUST be of objectType `agent`. The Actor property MUST contain an `account` property as defined in the xAPI specification.
 
 <a name="verbs" ></a> 
 ## 9.3 Verbs  
