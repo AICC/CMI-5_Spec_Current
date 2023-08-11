@@ -5,7 +5,7 @@
     "objectType": "Agent",
     "name": "Boss, Lisa J.",
     "account": {
-      "homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
+      "homePage": "https://www.example.com/demo/LearnerConnection/",
       "name": "277013-1"
     }
   },
@@ -17,7 +17,7 @@
   },
   "object": {
     "objectType": "Activity",
-    "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E/questions/_694AA88A-F256-4AAE-A989-28C8031B3F00_",
+    "id": "https://www.example.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E/questions/_694AA88A-F256-4AAE-A989-28C8031B3F00_",
     "definition": {
       "correctResponsesPattern": [
         "0_Freeform_1"
@@ -57,7 +57,7 @@
       "parent": [
         {
           "objectType": "Activity",
-          "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E"
+          "id": "https://www.example.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E"
         },
         {
           "objectType": "Activity",
@@ -87,7 +87,7 @@
   "authority": {
     "objectType": "Agent",
     "account": {
-      "homePage": "https://www2.virtualtrainingassistant.com/demo/",
+      "homePage": "https://www.example.com/demo/",
       "name": "6606cdd6-6095-4c22-8496-9ed8112aa67f"
     }
   }

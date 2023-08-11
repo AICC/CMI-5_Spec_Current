@@ -5,7 +5,7 @@
     "objectType": "Agent",
     "name": "Boss, Lisa J.",
     "account": {
-      "homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
+      "homePage": "https://www.example.com/demo/LearnerConnection/",
       "name": "277013-1"
     }
   },
@@ -19,7 +19,7 @@
   },
   "object": {
     "objectType": "Activity",
-    "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/Course/6397",
+    "id": "https://www.example.com/demo/LearnerConnection/Course/6397",
     "definition": {
       "name": {
         "en-US": "Space Shuttle"
@@ -52,7 +52,7 @@
   "authority": {
     "objectType": "Agent",
     "account": {
-      "homePage": "https://www2.virtualtrainingassistant.com/demo/",
+      "homePage": "https://www.example.com/demo/",
       "name": "XAPI_Demo"
     }
   }

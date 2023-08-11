@@ -5,7 +5,7 @@
     "objectType": "Agent",
     "name": "Boss, Lisa J.",
     "account": {
-      "homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
+      "homePage": "https://www.example.com/demo/LearnerConnection/",
       "name": "277013-1"
     }
   },
@@ -20,7 +20,7 @@
   },
   "object": {
     "objectType": "Activity",
-    "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724",
+    "id": "https://www.example.com/demo/LearnerConnection/AU/10724",
     "definition": {
       "name": {
         "en-US": "Space_Shuttle_cmi5"
@@ -47,7 +47,7 @@
     "extensions": {
       "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "1519",
       "https://w3id.org/xapi/cmi5/context/extensions/launchmode": "Normal",
-      "https://w3id.org/xapi/cmi5/context/extensions/launchurl": "https://www2.virtualtrainingassistant.com/cmi5Courses/demo/00/Space_Shuttle_cmi5_ptr_h_finish_btn_2017040690707/res/index.html",
+      "https://w3id.org/xapi/cmi5/context/extensions/launchurl": "https://www.example.com/cmi5Courses/demo/00/Space_Shuttle_cmi5_ptr_h_finish_btn_2017040690707/res/index.html",
       "https://w3id.org/xapi/cmi5/context/extensions/moveon": "CompletedAndPassed"
     }
   },
@@ -56,7 +56,7 @@
   "authority": {
     "objectType": "Agent",
     "account": {
-      "homePage": "https://www2.virtualtrainingassistant.com/demo/",
+      "homePage": "https://www.example.com/demo/",
       "name": "6606cdd6-6095-4c22-8496-9ed8112aa67f"
     }
   }

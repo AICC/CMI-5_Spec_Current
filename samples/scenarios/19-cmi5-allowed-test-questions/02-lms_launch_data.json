@@ -13,5 +13,5 @@
 	"launchMode": "Normal",
 	"masteryScore": 0.8,
 	"moveOn": "CompletedAndPassed",
-	"returnURL": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/Menu8.aspx?&StartPage=cmi5Return&k=QUtTYUdCcWtEUnc9"
+	"returnURL": "https://www.example.com/demo/LearnerConnection/Menu8.aspx?&StartPage=cmi5Return&k=QUtTYUdCcWtEUnc9"
 }
