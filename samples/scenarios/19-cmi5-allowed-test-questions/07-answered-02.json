@@ -79,7 +79,7 @@
         },
         {
           "objectType": "Activity",
-          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation/objectives/OBJ-2",
+          "id": "https://www.example.com/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation/objectives/OBJ-2",
           "definition": {
             "type": "http://adlnet.gov/expapi/activities/objective",
             "name": {
@@ -91,12 +91,12 @@
       "grouping": [
         {
           "objectType": "Activity",
-          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+          "id": "https://www.example.com/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
         }
       ]
     },
     "extensions": {
-      "ispring://view_id": "x6ryj7m2e6mj",
+      "https://www.example.com/extensions/view_id": "x6ryj7m2e6mj",
       "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "1519"
     }
   },
