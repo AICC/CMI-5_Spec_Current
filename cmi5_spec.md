@@ -200,11 +200,11 @@ The scope of this specification is limited to the following:
 * LMS Course Structure Import/Export.
 * Reporting requirements for the LMS.
 
-This specification references how to use the xAPI standard within this scope.
+This specification references how to use xAPI within this scope.
 
-Other uses of the xAPI standard are outside of this scope.
+Other uses of xAPI are outside of this scope.
 
-Uses of activities not explicitly defined above are outside of the scope of this standard.
+Uses of activities not explicitly defined above are outside of the scope of this specification.
 
 <a name="Document_Style_Conventions"></a>  
 ## 1.2 Document Style Conventions  
