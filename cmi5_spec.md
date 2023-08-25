@@ -251,10 +251,12 @@ The following referenced documents are indispensable for the application of this
 
 * Internationalized Resource Identifiers (IRIs): IRI Syntax January 2005  
 https://www.ietf.org/rfc/rfc3987.txt
-* "Experience API", version 1.0.x (subject to change just prior to release), ADL  
-https://github.com/adlnet/xAPI-Spec/blob/xAPI-1.0.2/xAPI.md
+* Experience API (xAPI), version 1.0.3  
+https://github.com/adlnet/xAPI-Spec
+* Experience API (xAPI) Standard (IEEE 9274.1.1 xAPI 2.0)  
+https://opensource.ieee.org/xapi
 * cmi5 Course Structure, Sandstone 1st Edition (merged into this document)  
-* MIME Types  
+MIME Types  
 http://www.iana.org/assignments/media-types/index.html
 * Extensible Markup Language (XML)  
 http://www.w3.org/XML
@@ -280,7 +282,7 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a course.  
 
-* __Experience API (xAPI)__: A runtime data communication specification for learning content (AU) to send and receive data to a Learning Record Store (LRS).  The xAPI specification referenced by this document is used to define the data transport and the data model.
+* __Experience API (xAPI)__: The IEEE 9274.1.1 xAPI 2.0 Standard. A runtime data communication specification for learning content (AU) to send and receive data to a Learning Record Store (LRS). xAPI is used to define the data transport and the data model. As far as requirements found in this document (other than the requirement of xAPI usage), the xAPI Specification 1.0.x is equivalent.
 
 * __Internationalized Resource Identifier (IRI)__: A unique identifier according to RFC 3987. The IRI might be an IRL. IRLs SHOULD be defined within a domain controlled by the person creating the IRL. Note that IRI’s in this spec MUST be fully qualified and not IRI References.
 
