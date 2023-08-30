@@ -683,7 +683,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/launched</td></tr>
 <tr><th align="left">Description</th><td>This verb indicates that the AU was launched by the LMS.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API, Section 10) The LMS MUST NOT issue multiple "launched" statements for the same AU within a given AU session.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API, Section 10.0 xAPI State Data Model) The LMS MUST NOT issue multiple "launched" statements for the same AU within a given AU session.</td></tr>
 <tr><th align="left">Usage</th><td>A "launched" statement is used to indicate that the LMS has launched the AU. </td></tr>
 </table>
 
