@@ -200,9 +200,9 @@ The scope of this specification is limited to the following:
 * LMS Course Structure Import/Export.
 * Reporting requirements for the LMS.
 
-This specification references how to use the xAPI specification within this scope.
+This specification references how to use xAPI within this scope.
 
-Other uses of the xAPI specification are outside of this scope.
+Other uses of xAPI are outside of this scope.
 
 Uses of activities not explicitly defined above are outside of the scope of this specification.
 
@@ -251,10 +251,10 @@ The following referenced documents are indispensable for the application of this
 
 * Internationalized Resource Identifiers (IRIs): IRI Syntax January 2005  
 https://www.ietf.org/rfc/rfc3987.txt
-* "Experience API", version 1.0.x (subject to change just prior to release), ADL  
-https://github.com/adlnet/xAPI-Spec/blob/xAPI-1.0.2/xAPI.md
+* Experience API (xAPI), version 1.0.3  
+https://github.com/adlnet/xAPI-Spec
 * cmi5 Course Structure, Sandstone 1st Edition (merged into this document)  
-* MIME Types  
+MIME Types  
 http://www.iana.org/assignments/media-types/index.html
 * Extensible Markup Language (XML)  
 http://www.w3.org/XML
@@ -280,17 +280,17 @@ For purposes of this specification, the following terms and definitions apply:
 
 * __Course Structure__: A list of assignable units and launch parameters, with an implied sequence, representing a course.  
 
-* __Experience API (xAPI)__: A runtime data communication specification for learning content (AU) to send and receive data to a Learning Record Store (LRS).  The xAPI specification referenced by this document is used to define the data transport and the data model.
+* __Experience API (xAPI)__:  A runtime data communication specification for learning content (AU) to send and receive data to a Learning Record Store (LRS). xAPI is used to define the data transport and the data model. 
 
 * __Internationalized Resource Identifier (IRI)__: A unique identifier according to RFC 3987. The IRI might be an IRL. IRLs SHOULD be defined within a domain controlled by the person creating the IRL. Note that IRI’s in this spec MUST be fully qualified and not IRI References.
 
-* __Internationalized Resource Locator (IRL)__: According to the xAPI specification, an IRL is an IRI that, when translated into a URI (according to the IRI to URI rules), is a URL.
+* __Internationalized Resource Locator (IRL)__: According to xAPI, an IRL is an IRI that, when translated into a URI (according to the IRI to URI rules), is a URL.
 
 * __Learner__: The end user viewing/using the learning content (AUs).
 
 * __Learning Management System (LMS)__: A computer system that could include the capabilities to register learners, launch learning presentations, analyze and report learner performance, and track learners' progress. LMS launching, reporting, and tracking roles are the focus of the cmi5 specification. The LMS is integrated with an LRS. In the remainder of this document the term “LMS” refers to an integrated entity of LMS and LRS.
 
-* __Learning Records Store (LRS)__: As defined in the xAPI specification.
+* __Learning Records Store (LRS)__: As defined in xAPI.
 
 * __Registration__: An enrollment instance of a learner in a course. (a registration ID uniquely identifies this). The registration ID persists throughout the course progress to completion and during review of a completed course. A new registration is created for new enrollment instances (such as recurrent courses or re-taking courses).
 
@@ -331,17 +331,18 @@ In this specification:
 * "SHOULD NOT" is to be interpreted as the converse of "SHOULD".  
 * "MAY" is to be interpreted as a course of action that is permissible within the limits of the specification.  
 
-Uses of the xAPI specification outside of the scope of this specification do not affect conformance with this specification.  
+Uses of xAPI outside of the scope of this specification do not affect conformance with this specification.  
 
 <a name="au_conformance"></a> 
 ## 4.1 Assignable Unit (AU)
 
-See Section 7.0 AU Requirements. An Assignable Unit MUST conform to all requirements as specified in the xAPI specification (see References).
+See Section 7.0 AU Requirements. An Assignable Unit MUST conform to all requirements as specified in xAPI (see References).
+
 
 <a name="lms_conformance"></a> 
 ## 4.2 Learning Management Systems (LMS)
 
-See Section 6.0 LMS Requirements. The LMS MUST conform to all LRS requirements as specified in the xAPI specification (see References).
+See Section 6.0 LMS Requirements. The LMS MUST conform to all LRS requirements as specified in xAPI (see References).
 
 The LMS MUST have an account which is able to retrieve all Resource data (from the Statement API, etc, including attachments and extensions) about another distinct user across multiple sessions for that user.
 
@@ -395,7 +396,7 @@ Responsibilities of the LMS:
 
 The LMS MUST:
 
-* Implement an LRS as defined in the xAPI specification.
+* Implement an LRS as defined in xAPI.
 * Implement additional State API requirements to initialize the AU state as defined in Section 10.0 xAPI State Data Model.
 * Implement the runtime launch interface as defined in Section 8.0 Content Launch Mechanisms.
 * Implement additional xAPI Statement API requirements as defined in Section 9.0 xAPI Statement Data Model .
@@ -432,10 +433,11 @@ The LMS MUST Void statements that are NOT rejected AND conflict with the Stateme
 An AU MUST:
 
 * Implement the runtime launch interface as defined in Section 8.0 Content Launch Mechanisms.
-* Implement runtime communication as defined in the xAPI Specification.
+* Implement runtime communication as defined in xAPI.
 * Implement State API requirements in this specification as defined in Section 10.0 xAPI State Data Model.
 * Implement Profile API requirements in this specification as defined in Section 11.0 xAPI Agent Profile Data Model .
 * Implement Statement API requirements as defined in Section 7.1 AU Statement API Requirements.
+
 
 <a name="au_statement_api_requirements"></a>  
 ## 7.1 AU Statement API Requirements
@@ -526,7 +528,7 @@ The values for the URL launch parameters are described below:
 <table>
   <tr><th align="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL.<br>The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in Section 8.2 Authorization Token Fetch URL. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in Section 8.2 Authorization Token Fetch URL. The AU MUST place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using the xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in Section 8.2 Authorization Token Fetch URL. The AU MUST place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>A URL-encoded URL</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>http://lms.example.com/tokenGen.htm?k=2390289x0</td></tr>
@@ -535,7 +537,7 @@ The values for the URL launch parameters are described below:
 <a name="launch_method_actor"></a>
 ### 8.1.3 actor
 <table>
-  <tr><th align="right" nowrap>Description:</th><td>A JSON object of <code>objectType</code> of <code>Agent</code> (as defined in the xAPI specification) that identifies the learner launching the AU so the AU will be able to include it in xAPI requests.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>A JSON object of <code>objectType</code> of <code>Agent</code> (as defined in xAPI) that identifies the learner launching the AU so the AU will be able to include it in xAPI requests.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST populate the <strong><em>actor</em></strong>  parameter in the query string based on the authenticated learner's identity conforming to Section 9.2 Actor. The LMS SHOULD create this parameter with an object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>actor</code> value from the query string. The AU MUST use the <code>actor</code> value in xAPI requests that require an <code>actor</code> property or that require an <code>agent</code> parameter.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
@@ -550,7 +552,7 @@ The values for the URL launch parameters are described below:
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <strong><em>registration</em></strong> in the query string based on the authenticated learner's corresponding    enrollment for the Course that the AU being launched is a member of.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>registration</em></strong> value from the query string. The AU MUST use this <strong><em>registration</em></strong> value in xAPI requests that require a<code>registration</code>.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
-  <tr><th align="right" nowrap>Value space:</th><td>UUID (as defined in the xAPI specification)</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>UUID (as defined in xAPI)</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td></td></tr>
 </table>
 
@@ -590,7 +592,7 @@ The AU SHOULD NOT attempt to retrieve the authorization token more than once.  T
   <tr><th colspan=2 align="left">auth-token</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>An authorization token used in all xAPI communications with the LMS.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <code>auth-token</code> in a JSON structure, as shown in Section 8.2.1 Overview, in its response to a <strong><em>fetch</em></strong> URL request. The response MUST have a Content-Type of "application/json". The HTTP status code MUST be "200" for a valid request (including one that generates error as described in Section 8.2.3 Errors).</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>auth-token</code> value using an HTTP POST to the <strong><em>fetch</em></strong> URL. The AU MUST then place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using the xAPI.</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>auth-token</code> value using an HTTP POST to the <strong><em>fetch</em></strong> URL. The AU MUST then place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using xAPI.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>QWxhZGRpbjpvcGVuIHNlc2FtZQ==</td></tr>
@@ -625,18 +627,18 @@ The values for `error-text` are defined by the LMS.
 <a name="other_environment"></a>  
 ## 8.3 Other Launch Environments
 
-Other launch environments are not currently implemented in this specification. cmi5 implementations for LMS's and AU's in these other environments will use the same REST communication interface as specified in xAPI specification.  The xAPI specification does not specify launch mechanisms.
+Other launch environments are not currently implemented in this specification. cmi5 implementations for LMS's and AU's in these other environments will use the same REST communication interface as specified in xAPI. xAPI does not specify launch mechanisms.
 
 <a name="xapi_data_model"></a>  
 # 9.0 xAPI Statement Data Model  
 
 <a name="statement_id" ></a>
 ## 9.1 Statement ID
-The AU MUST assign a statement `id` property in UUID format (as defined in the xAPI specification) for all statements it issues.
+The AU MUST assign a statement `id` property in UUID format (as defined in xAPI) for all statements it issues.
   
 <a name="actor" ></a>
 ## 9.2 Actor
-The `actor` property MUST be defined by the LMS. The`actor` property for all cmi5 defined statements MUST be of objectType `agent`. The Actor property MUST contain an `account` property as defined in the xAPI specification.
+The `actor` property MUST be defined by the LMS. The`actor` property for all cmi5 defined statements MUST be of objectType `agent`. The Actor property MUST contain an `account` property as defined in xAPI.
 
 <a name="verbs" ></a> 
 ## 9.3 Verbs  
@@ -818,7 +820,7 @@ The `score` property of the `result` object MAY be set in the following cmi5 def
 
 cmi5 defined statements, other than passed or failed, MUST NOT include the `score` property.
 
- The following are properties of the <code>score</code> object per the xAPI standard: 
+ The following are properties of the <code>score</code> object per xAPI: 
 <ul>
 <li><code>scaled</code><br>A decimal value between 0 and 1 (inclusive).</li>
 <li><code>raw</code><br>An integer value between the <code>min</code> and <code>max</code> properties (inclusive) of the <code>score</code> object.  The AU MUST provide the <code>min</code> and <code>max</code>  values for <code>score</code> object when the <code>raw</code> value is provided.</li>
@@ -974,7 +976,7 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchmode</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>Indicates what launch mode an AU was launched with by the LMS.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>Indicates the <code>launchMode</code> that was used by the LMS to launch an AU.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add this extension to the context of a "launched" statement with the value from <code>launchMode</code> in the <code>LMS.LaunchData</code> document.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
@@ -1071,7 +1073,7 @@ The properties for the `LMS.LaunchData` document are described below.
 <li>The publisher ID Activity as defined in Section 9.6.3.2 masteryScore in the <code>contextActivities.grouping</code> list.</li></ul>
 The LMS MAY place additional values in the <code>contextTemplate</code>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>contextTemplate</code> value from the  <code>LMS.LaunchData</code> State document. The AU MUST NOT modify or delete the  <code>LMS.LaunchData</code> State document. The AU MUST use the <code>contextTemplate</code> as a template for the <code>context</code> property in all xAPI statements it sends to the LMS. While the AU MAY include additional values in the <code>context</code> object of such statements, it MUST NOT overwrite any values provided in the <code>contextTemplate</code>. NOTE: this will include the session ID specified by the LMS.</td></tr>
-  <tr><th align="right" nowrap>Data Type:</th><td>JSON <code>context</code> object as defined in xAPI specification.</td></tr>
+  <tr><th align="right" nowrap>Data Type:</th><td>JSON <code>context</code> object as defined in xAPI.</td></tr>
 </table>
 
 <a name="xapi_state_properties_launchMode"></a>
@@ -1188,7 +1190,7 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
 <a name="xapi_agent_profile"></a>   
 # 11.0 xAPI Agent Profile Data Model  
 
-In cmi5, Learner Preferences are scoped to the Agent representing the enrolled LMS learner. The agent used in xAPI Agent Profile requests MUST match the actor property generated by the LMS at AU launch time.  Both the LMS and the AU MAY write changes to Learner Preferences in the xAPI Agent Profile.  The LMS/LRS MAY choose to ignore or override Learner Preference changes requested by the AU by returning a "403 Forbidden" response as defined in the xAPI specification.  The AU MUST NOT treat the 403 response as an error condition.
+In cmi5, Learner Preferences are scoped to the Agent representing the enrolled LMS learner. The agent used in xAPI Agent Profile requests MUST match the actor property generated by the LMS at AU launch time.  Both the LMS and the AU MAY write changes to Learner Preferences in the xAPI Agent Profile.  The LMS/LRS MAY choose to ignore or override Learner Preference changes requested by the AU by returning a "403 Forbidden" response as defined in xAPI.  The AU MUST NOT treat the 403 response as an error condition.
 
 The AU MUST retrieve the Learner Preferences document from the Agent Profile on startup.
 
@@ -1230,7 +1232,7 @@ Example:
 <a name="xapi_activity_profile"></a>  
 # 12.0 xAPI Activity Profile Data Model
 
-The AU MAY use the Activity Profile API according to the xAPI specification.
+The AU MAY use the Activity Profile API according to xAPI.
 
 
 <a name="course_requirements"></a>
