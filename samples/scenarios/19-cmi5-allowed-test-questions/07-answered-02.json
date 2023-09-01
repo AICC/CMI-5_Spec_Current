@@ -5,7 +5,7 @@
     "objectType": "Agent",
     "name": "Boss, Lisa J.",
     "account": {
-      "homePage": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/",
+      "homePage": "https://www.example.com/demo/LearnerConnection/",
       "name": "277013-1"
     }
   },
@@ -17,7 +17,7 @@
   },
   "object": {
     "objectType": "Activity",
-    "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E/questions/_9C3F1113-923F-44C2-A14E-4361594AFD31_",
+    "id": "https://www.example.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E/questions/_9C3F1113-923F-44C2-A14E-4361594AFD31_",
     "definition": {
       "correctResponsesPattern": [
         "2_Constitution"
@@ -75,11 +75,11 @@
       "parent": [
         {
           "objectType": "Activity",
-          "id": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E"
+          "id": "https://www.example.com/demo/LearnerConnection/AU/10724/quizzes/q_6A82C9DC-84B0-4617-9704-8E632B45580E"
         },
         {
           "objectType": "Activity",
-          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation/objectives/OBJ-2",
+          "id": "https://www.example.com/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation/objectives/OBJ-2",
           "definition": {
             "type": "http://adlnet.gov/expapi/activities/objective",
             "name": {
@@ -91,12 +91,12 @@
       "grouping": [
         {
           "objectType": "Activity",
-          "id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+          "id": "https://www.example.com/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
         }
       ]
     },
     "extensions": {
-      "ispring://view_id": "x6ryj7m2e6mj",
+      "https://www.example.com/extensions/view_id": "x6ryj7m2e6mj",
       "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "1519"
     }
   },
@@ -105,7 +105,7 @@
   "authority": {
     "objectType": "Agent",
     "account": {
-      "homePage": "https://www2.virtualtrainingassistant.com/demo/",
+      "homePage": "https://www.example.com/demo/",
       "name": "6606cdd6-6095-4c22-8496-9ed8112aa67f"
     }
   }

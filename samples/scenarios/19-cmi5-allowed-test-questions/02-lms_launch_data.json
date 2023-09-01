@@ -3,7 +3,7 @@
 		"contextActivities": {
 			"grouping": [{
 				"objectType": "Activity",
-				"id": "ispring://presentations/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
+				"id": "https://www.example.com/EFE02C21-56AC-41A2-AE5A-9600275A6A00/presentation"
 			}]
 		},
 		"extensions": {
@@ -13,5 +13,5 @@
 	"launchMode": "Normal",
 	"masteryScore": 0.8,
 	"moveOn": "CompletedAndPassed",
-	"returnURL": "https://www2.virtualtrainingassistant.com/demo/LearnerConnection/Menu8.aspx?&StartPage=cmi5Return&k=QUtTYUdCcWtEUnc9"
+	"returnURL": "https://www.example.com/demo/LearnerConnection/Menu8.aspx?&StartPage=cmi5Return&k=QUtTYUdCcWtEUnc9"
 }
