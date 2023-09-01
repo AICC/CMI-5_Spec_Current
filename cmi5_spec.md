@@ -974,7 +974,7 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchmode</td></tr>
-  <tr><th align="right" nowrap>Description:</th><td>Indicates what launch mode an AU was launched with by the LMS.</td></tr>
+  <tr><th align="right" nowrap>Description:</th><td>Indicates the <code>launchMode</code> that was used by the LMS to launch an AU.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST add this extension to the context of a "launched" statement with the value from <code>launchMode</code> in the <code>LMS.LaunchData</code> document.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
