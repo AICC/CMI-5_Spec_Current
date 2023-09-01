@@ -336,12 +336,13 @@ Uses of xAPI outside of the scope of this specification do not affect conformanc
 <a name="au_conformance"></a> 
 ## 4.1 Assignable Unit (AU)
 
-See Section 7 – AU Requirements. An Assignable Unit MUST conform to all requirements as specified in xAPI (see References).
+See Section 7.0 AU Requirements. An Assignable Unit MUST conform to all requirements as specified in xAPI (see References).
+
 
 <a name="lms_conformance"></a> 
 ## 4.2 Learning Management Systems (LMS)
 
-See Section 6 – LMS Requirements. The LMS MUST conform to all LRS requirements as specified in xAPI (see References).
+See Section 6.0 LMS Requirements. The LMS MUST conform to all LRS requirements as specified in xAPI (see References).
 
 The LMS MUST have an account which is able to retrieve all Resource data (from the Statement API, etc, including attachments and extensions) about another distinct user across multiple sessions for that user.
 
@@ -353,7 +354,7 @@ If JSON properties are indicated as optional, you MAY leave such properties out 
 <a name="course_conformance"></a>
 ## 4.4 Courses
 
-A course MUST be bundled with course structure data that conform to all requirements listed in Section 13 and Section 14.
+A course MUST be bundled with course structure data that conform to all requirements listed in Section 13.0 Course Structure Data Requirements and Section 14.0 Course Package.
   
 Course structure data MUST NOT implement any features or functionality (optional or mandatory) described in this specification in a non-conforming manner.  
 
@@ -396,57 +397,58 @@ Responsibilities of the LMS:
 The LMS MUST:
 
 * Implement an LRS as defined in xAPI.
-* Implement additional State API requirements to initialize the AU state as defined in Section 10.
-* Implement the runtime launch interface as defined in Section 8.0.
-* Implement additional xAPI Statement API requirements as defined in Section 9.
-* Implement additional xAPI Agent Profile API requirements as defined in Section 11.
-* Implement course handling as defined in Section 6.1.
+* Implement additional State API requirements to initialize the AU state as defined in Section 10.0 xAPI State Data Model.
+* Implement the runtime launch interface as defined in Section 8.0 Content Launch Mechanisms.
+* Implement additional xAPI Statement API requirements as defined in Section 9.0 xAPI Statement Data Model .
+* Implement additional xAPI Agent Profile API requirements as defined in Section 11.0 xAPI Agent Profile Data Model.
+* Implement course handling as defined in Section 6.1 Course Handling Requirements.
 
 <a name="course_structures"></a>  
 ## 6.1 Course Handling Requirements
 
 * The LMS SHOULD implement a means to create, edit, and maintain course structures.
-* The LMS MUST implement the import of the Course Structure defined in Section 13 and the Course Package defined in Section 14.
-* The LMS SHOULD implement the export of the course data structure defined in Section 13 and the Course Package defined in Section 14.
+* The LMS MUST implement the import of the Course Structure defined in Section 13.0 Course Structure Data Requirements and the Course Package defined in Section 14.0 Course Package.
+* The LMS SHOULD implement the export of the course data structure defined in Section 13.0 Course Structure Data Requirements and the Course Package defined in Section 14.0 Course Package.
 * The LMS SHOULD provide a user interface to the LMS administrative users to create and edit course structures internally.
 * The LMS MUST support course structures containing more than 1000 AUs.
-* The LMS MUST support course structures conforming to the XSD schema defined in Section 14.0.
+* The LMS MUST support course structures conforming to the XSD schema defined in Section 14.0 Course Package.
 
 
 <a name="lms_state_api_requirements"></a>  
 ## 6.2 LMS State API Requirements
-The LMS MUST implement the State API Requirements as defined in Section 10.
+The LMS MUST implement the State API Requirements as defined in Section 10.0 xAPI State Data Model.
 
 <a name="lms_statement_api_requirements"></a>  
 ## 6.3 LMS Statement API Requirements
 
 The LMS MUST NOT provide permissions/credentials which allow the AU to issue voiding Statements.
 
-The LMS SHOULD reject statements that conflict with the Statement API requirements as defined in Section 9.
+The LMS SHOULD reject statements that conflict with the Statement API requirements as defined in Section 9.0 xAPI Statement Data Model.
 
-The LMS MUST Void statements that are NOT rejected AND conflict with the Statement API requirements as defined in Section 9.
+The LMS MUST Void statements that are NOT rejected AND conflict with the Statement API requirements as defined in Section 9.0 xAPI Statement Data Model.
 
 <a name="au_requirements"></a>  
 # 7.0 AU Requirements
 
 An AU MUST:
 
-* Implement the runtime launch interface as defined in Section 8.
+* Implement the runtime launch interface as defined in Section 8.0 Content Launch Mechanisms.
 * Implement runtime communication as defined in xAPI.
-* Implement State API requirements in this specification as defined in Section 10.
-* Implement Profile API requirements in this specification as defined in Section 11.
-* Implement Statement API requirements as defined in Section 7.1.
+* Implement State API requirements in this specification as defined in Section 10.0 xAPI State Data Model.
+* Implement Profile API requirements in this specification as defined in Section 11.0 xAPI Agent Profile Data Model.
+* Implement Statement API requirements as defined in Section 7.1 AU Statement API Requirements.
+
 
 <a name="au_statement_api_requirements"></a>  
 ## 7.1 AU Statement API Requirements
 
 <a name="first_statement_au"></a> 
 ### 7.1.1 First Statement API Call
-The AU MUST issue a statement to the LRS after being launched, initialized, and ready for learner interaction using the "initialized" verb as described in Section 9.3.2.
+The AU MUST issue a statement to the LRS after being launched, initialized, and ready for learner interaction using the "initialized" verb as described in Section 9.3.2 Initialized.
 
 <a name="last_statement_au"></a>  
 ### 7.1.2 Last Statement Call
-The AU MUST issue a "terminated" statement to the LRS as described in Section 9.3.8 as the last statement in a session.
+The AU MUST issue a "terminated" statement to the LRS as described in Section 9.3.8 Terminated as the last statement in a session.
  
 Once the AU has determined that the session will end (e.g. by user action, timeout or some other means) the AU SHOULD issue a "terminated" statement.
 
@@ -454,8 +456,8 @@ Once the AU has determined that the session will end (e.g. by user action, timeo
 ### 7.1.3 Types of Statements
 The statements issued within an AU session could fall within the following categories:
 
-* **cmi5 defined** - Statements using cmi5 defined verbs, category ID as defined in Section 9.6.2.1, and context template.
-* **cmi5 allowed** - Statements using any verb and cmi5 context template (but NOT including cmi5 category ID as defined in Section 9.6.2.1).
+* **cmi5 defined** - Statements using cmi5 defined verbs, category ID as defined in Section 9.6.2.1 cmi5 Category Activity, and context template.
+* **cmi5 allowed** - Statements using any verb and cmi5 context template (but NOT including cmi5 category ID as defined in Section 9.6.2.1 cmi5 Category Activity).
 * **cmi5 not-allowed** - Any statements not conforming with the cmi5 specification.
 
 "cmi5 allowed" statements posted by the AU MUST occur between cmi5 statements using the "initialized" verb and the "terminated" verb. "cmi5 allowed" statements are not considered in "cmi5 defined" session management and satisfaction rules.
@@ -525,8 +527,8 @@ The values for the URL launch parameters are described below:
 ### 8.1.2 fetch
 <table>
   <tr><th align="right">Description:</th><td>The <strong><em>fetch</em></strong> URL is used by the AU to obtain an authorization token created and managed by the LMS. The authorization token is used by the AU being launched.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL.<br>The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in Section 8.2. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in Section 8.2. The AU MUST place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the <strong><em>fetch</em></strong> in the Launch URL.<br>The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error as defined in Section 8.2 Authorization Token Fetch URL. The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of a specific user session. </td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <strong><em>fetch</em></strong> value from the query string. The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve the authorization token as defined in Section 8.2 Authorization Token Fetch URL. The AU MUST place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using xAPI.  The AU SHOULD NOT make more than one post to the <strong><em>fetch</em></strong> URL.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>A URL-encoded URL</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>http://lms.example.com/tokenGen.htm?k=2390289x0</td></tr>
@@ -536,10 +538,10 @@ The values for the URL launch parameters are described below:
 ### 8.1.3 actor
 <table>
   <tr><th align="right" nowrap>Description:</th><td>A JSON object of <code>objectType</code> of <code>Agent</code> (as defined in xAPI) that identifies the learner launching the AU so the AU will be able to include it in xAPI requests.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST populate the <strong><em>actor</em></strong>  parameter in the query string based on the authenticated learner's identity conforming to Section 9.2. The LMS SHOULD create this parameter with an object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST populate the <strong><em>actor</em></strong>  parameter in the query string based on the authenticated learner's identity conforming to Section 9.2 Actor. The LMS SHOULD create this parameter with an object that is specific to the LMS instance that does NOT include sensitive PII of the learner.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>actor</code> value from the query string. The AU MUST use the <code>actor</code> value in xAPI requests that require an <code>actor</code> property or that require an <code>agent</code> parameter.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
-  <tr><th align="right" nowrap>Value space:</th><td>A JSON object (as defined in Section 9.2)</td></tr>
+  <tr><th align="right" nowrap>Value space:</th><td>A JSON object (as defined in Section 9.2 Actor)</td></tr>
   <tr><th align="right" nowrap>Sample value:</th><td>{"objectType": "Agent","account": {"homePage": "http://www.example.com","name": "1625378"}}</td></tr>
 </table>
 
@@ -582,14 +584,14 @@ The <strong><em>fetch</em></strong> URL MUST return a JSON structure using a Con
 ```
 The AU MUST place the <code>auth-token</code> in the HTTP header, as defined in <a href='http://tools.ietf.org/html/rfc1945#section-11'>RFC 1945 - 11.1 Basic Authentication Scheme</a>, in all subsequent xAPI communications with the LMS.  The authorization token returned by the <strong><em>fetch</em></strong> URL MUST be limited to the duration of the session.
 
-The AU SHOULD NOT attempt to retrieve the authorization token more than once.  The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error (see Section 8.2.3). 
+The AU SHOULD NOT attempt to retrieve the authorization token more than once.  The <strong><em>fetch</em></strong> URL is a "one-time use" URL and subsequent uses SHOULD generate an error (see Section 8.2.3 Errors). 
 
 <a name="definition_auth_token"></a>  
 ### 8.2.2 Definition: auth-token
 <table>
   <tr><th colspan=2 align="left">auth-token</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>An authorization token used in all xAPI communications with the LMS.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <code>auth-token</code> in a JSON structure, as shown in Section 8.2.1, in its response to a <strong><em>fetch</em></strong> URL request. The response MUST have a Content-Type of "application/json". The HTTP status code MUST be "200" for a valid request (including one that generates error as described in Section 8.2.3).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <code>auth-token</code> in a JSON structure, as shown in Section 8.2.1 Overview, in its response to a <strong><em>fetch</em></strong> URL request. The response MUST have a Content-Type of "application/json". The HTTP status code MUST be "200" for a valid request (including one that generates error as described in Section 8.2.3 Errors).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>auth-token</code> value using an HTTP POST to the <strong><em>fetch</em></strong> URL. The AU MUST then place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using xAPI.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
@@ -683,7 +685,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/launched</td></tr>
 <tr><th align="left">Description</th><td>This verb indicates that the AU was launched by the LMS.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API, Section 10) The LMS MUST NOT issue multiple "launched" statements for the same AU within a given AU session.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS before launching an AU.  (See Statement API, Section 10.0 xAPI State Data Model) The LMS MUST NOT issue multiple "launched" statements for the same AU within a given AU session.</td></tr>
 <tr><th align="left">Usage</th><td>A "launched" statement is used to indicate that the LMS has launched the AU. </td></tr>
 </table>
 
@@ -705,7 +707,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/completed</td></tr>
 <tr><th align="left">Description</th><td>The verb indicates the learner viewed or did all of the relevant activities in an AU presentation.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a "completed" statement when the learner has experienced all relevant material in an AU. The AU MUST NOT issue multiple "completed" statements for the same AU within a given course registration for a given learner.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "completed" statements based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "completed" statements based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See Section 10.0 xAPI State Data Model – moveOn).</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for progress towards completion is determined by the course designer. The use of this verb indicates progress of 100%.</td></tr>
 </table>
 
@@ -715,8 +717,8 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Verb</th><td>passed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/passed</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and succeeded in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "passed" verb when the learner has attempted and passed the AU. If the "passed" statement contains a "scaled" score, the <code>scaled</code> value MUST be equal to or greater than the <code>masteryScore</code> indicated in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - masteryScore). The AU MUST NOT issue multiple "passed" statements for the same AU within a given course registration for a given learner.</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "passed" statements based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See xAPI State Data Model, Section 10.0 - moveOn).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "passed" verb when the learner has attempted and passed the AU. If the "passed" statement contains a "scaled" score, the <code>scaled</code> value MUST be equal to or greater than the <code>masteryScore</code> indicated in the LMS Launch Data. (See Section 10.0 xAPI State Data Model – masteryScore). The AU MUST NOT issue multiple "passed" statements for the same AU within a given course registration for a given learner.</td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use "passed" statements based on the "moveOn" criteria for the AU as provided in the LMS Launch Data. (See Section 10.0 xAPI State Data Model – moveOn).</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for passed is determined by the course designer.</td></tr>
 </table>
 
@@ -726,7 +728,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Verb</th><td>Failed</td></tr>
 <tr><th align="left">ID</th><td>http://adlnet.gov/expapi/verbs/failed</td></tr>
 <tr><th align="left">Description</th><td>The learner attempted and failed in a judged activity in the AU.</td></tr>
-<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the <code>LMS.LaunchData</code> document. (See xAPI State Data Model, Section 10.0 - masteryScore).</td></tr>
+<tr><th align="left" nowrap>AU Obligations</th><td>The AU MUST send a statement containing the "Failed" verb when the learner has attempted and failed the AU.  If the "Failed" statement contains a (scaled) score, the (scaled) score MUST be less than the "masteryScore" indicated in the <code>LMS.LaunchData</code> document. (See Section 10.0 xAPI State Data Model – masteryScore).</td></tr>
 <tr><th align="left" nowrap>LMS Obligations</th><td>None.</td></tr>
 <tr><th align="left">Usage</th><td>The criterion for "Failed" is determined by the course designer.</td></tr>
 </table>
@@ -749,7 +751,7 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">ID</th><td>https://w3id.org/xapi/adl/verbs/waived</td></tr>
 <tr><th align="left">Description</th><td>The verb "Waived" indicates that the LMS has determined that the AU requirements were met by means other than the moveOn criteria being met.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
-<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU MAY be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2) The LMS MUST generate a unique session ID for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session ID. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
+<tr><th align="left" nowrap>LMS Obligations</th><td>The LMS MUST use this verb in a statement recorded in the LRS when it determines that the AU MAY be waived. A statement containing a "Waived" verb MUST include a "reason" in the extension property of the Statement Result. (See Section 9.5.5.2 reason) The LMS MUST generate a unique session ID for the statement containing a "Waived" verb and MUST NOT issue any other statements (except for statements with the "Satisfied" verb) using that session ID. The LMS MUST NOT issue multiple statements with "Waived" for the same AU within a course registration. </td></tr>
 <tr><th align="left">Usage</th><td>A "Waived" statement is used by the LMS to indicate that the AU can be skipped by the learner.</td></tr>
 </table>
 
@@ -774,9 +776,9 @@ LMS verb ordering rules are as follows:
 <tr><th align="left">Description</th><td>The verb "Satisfied" indicates that the LMS has determined that the Learner has met the moveOn criteria of all AU's in a block or has met the moveOn criteria for all AU's in the course.</td></tr>
 <tr><th align="left" nowrap>AU Obligations</th><td>None</td></tr>
 <th align="left" nowrap>LMS Obligations</th><td>
-The LMS MUST consider that an AU that was previously issued a “Waived” statement by the LMS to have met the moveOn criteria for that AU.  The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block object per Section 9.4. The LMS MUST use the same block object for all Satisfied statements that refer to that block.  
+The LMS MUST consider that an AU that was previously issued a “Waived” statement by the LMS to have met the moveOn criteria for that AU.  The LMS MUST use the "Satisfied" statement when the learner has met the moveOn criteria of all AU's in a block.  In this statement the LMS MUST use the block object per Section 9.4 Object . The LMS MUST use the same block object for all Satisfied statements that refer to that block.  
 <br><br>
-The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course. In this statement the LMS MUST use the course object per Section 9.4.  The LMS MUST use the same course object for all Satisfied statements that refer to that course.   
+The LMS MUST also use the "Satisfied" statement when the learner has met the moveOn criteria for all AU's in a course. In this statement the LMS MUST use the course object per Section 9.4 Object.  The LMS MUST use the same course object for all Satisfied statements that refer to that course.   
 <br><br>
 The LMS MUST use the session ID from the AU launch for all "Satisfied" statements triggered as a result of an AU launch session.<br>
 <br>
@@ -917,21 +919,21 @@ The value for the `registration` property used in the context object MUST be the
 
 <a name="context_activities"></a>
 ### 9.6.2 contextActivities
-The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The `contextActivities` property contains list(s) of activity objects whose IDs can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the `contextActivities` of the `contextTemplate` (see Section 10 - xAPI State Data Model).
+The purpose of this property is to facilitate searches of the LRS by the LMS or other reporting systems. The `contextActivities` property contains list(s) of activity objects whose IDs can be used as a statement list filter.  All cmi5 defined statements MUST include all properties and values defined in the `contextActivities` of the `contextTemplate` (see Section 10.0 xAPI State Data Model).
 
 <a name="context_activities_category_cmi5"></a>
 #### 9.6.2.1 cmi5 Category Activity
-An activity object with an `id` of `https://w3id.org/xapi/cmi5/context/categories/cmi5` in the `category`  list of the `contextActivities` object MUST be used in cmi5 defined statements as described in Section 7.1.3.
+An activity object with an `id` of `https://w3id.org/xapi/cmi5/context/categories/cmi5` in the `category`  list of the `contextActivities` object MUST be used in cmi5 defined statements as described in Section 7.1.3 Types of Statements.
 
 <a name="context_activities_category_moveon"></a>
 #### 9.6.2.2 moveOn Category Activity
-cmi5 defined statements with a `result` object (Section 9.5) that include either `success` or `completion` properties MUST have an activity object with an `id` of `https://w3id.org/xapi/cmi5/context/categories/moveon` in the `category`  list of the `contextActivities` object. Other statements MUST NOT include this activity.
+cmi5 defined statements with a `result` object (Section 9.5 Result) that include either `success` or `completion` properties MUST have an activity object with an `id` of `https://w3id.org/xapi/cmi5/context/categories/moveon` in the `category`  list of the `contextActivities` object. Other statements MUST NOT include this activity.
 
 <a name="context_activities_grouping_publisherid"></a>
 #### 9.6.2.3 Publisher ID Grouping Activity
 Used to identify statements about the course, block, or AU using the publisher ID from the course structure.
 
-The LMS MUST include an activity object with an ID property whose value is the unaltered value of the AU's ID attribute from the course structure (See Section 13.1.4 AU Metadata – ID) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10) prior to launching an AU. 
+The LMS MUST include an activity object with an ID property whose value is the unaltered value of the AU's ID attribute from the course structure (See Section 13.1.4 AU Metadata – ID) in the `grouping` list of `contextActivities` in the `contextTemplate` object as described in the State API (See Section 10.0 xAPI State Data Model) prior to launching an AU. 
 
 The LMS MUST include the publisher ID activity in the `grouping` list of the `contextActivities` object for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS.
 
@@ -945,7 +947,7 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/sessionid</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>A unique identifier for a single AU launch session based on actor and course registration. </td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The value for session ID MUST be generated by the LMS. The LMS MUST record the session ID in the State API (See Section 10) prior to launching an AU. The LMS MUST provide the session ID in the context as an extension for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS. </td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The value for session ID MUST be generated by the LMS. The LMS MUST record the session ID in the State API (See Section 10.0 xAPI State Data Model) prior to launching an AU. The LMS MUST provide the session ID in the context as an extension for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS. </td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>An AU MUST include the session ID provided by the LMS in the context as an extension for all cmi5 defined and cmi5 allowed statements it makes directly in the LRS. </td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>Required</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
@@ -990,7 +992,7 @@ The following are extensions specified for cmi5. Statements MAY include extensio
 <table>
   <tr><th align="right" nowrap>ID:</th><td>https://w3id.org/xapi/cmi5/context/extensions/launchurl</td></tr>
   <tr><th align="right" nowrap>Description:</th><td>The URL used by the LMS to launch the AU.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in Section 8.1 in the context extensions of the "launched" statement.</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST put a fully qualified URL equivalent to the one that the LMS used to launch the AU without the name/value pairs included as defined in Section 8.1 Launch Method in the context extensions of the "launched" statement.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>Not Applicable</td></tr>
   <tr><th align="right" nowrap>AU Obligation:</th><td>None</td></tr>
   <tr><th align="right" nowrap>LMS Obligation:</th><td>Required</td></tr>
@@ -1067,8 +1069,8 @@ The properties for the `LMS.LaunchData` document are described below.
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include a <code>contextTemplate</code> object and MUST include the following values:
-<ul><li>The value for session id placed in an <code>extensions</code> object with the ID as defined in Section 9.6.3.1.</li>
-<li>The publisher ID Activity as defined in Section 9.6.2.3 in the <code>contextActivities.grouping</code> list.</li></ul>
+<ul><li>The value for session id placed in an <code>extensions</code> object with the ID as defined in Section 9.6.3.1 session ID.</li>
+<li>The publisher ID Activity as defined in Section 9.6.3.2 masteryScore in the <code>contextActivities.grouping</code> list.</li></ul>
 The LMS MAY place additional values in the <code>contextTemplate</code>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>contextTemplate</code> value from the  <code>LMS.LaunchData</code> State document. The AU MUST NOT modify or delete the  <code>LMS.LaunchData</code> State document. The AU MUST use the <code>contextTemplate</code> as a template for the <code>context</code> property in all xAPI statements it sends to the LMS. While the AU MAY include additional values in the <code>context</code> object of such statements, it MUST NOT overwrite any values provided in the <code>contextTemplate</code>. NOTE: this will include the session ID specified by the LMS.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON <code>context</code> object as defined in xAPI.</td></tr>
@@ -1086,7 +1088,7 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include a value for <strong><em>launchMode</em></strong>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST conform to the following based on the value of <strong><em>launchMode</em></strong><br>
-      <ul><li>Normal<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MAY send other cmi5 defined statements per the requirements defined in Section 9.3.</li>
+      <ul><li>Normal<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MAY send other cmi5 defined statements per the requirements defined in Section 9.3 Verbs.</li>
       <li>Browse<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST NOT send other cmi5 defined statements.</li>
       <li>Review<br>The AU MUST send "Initialized" and "Terminated" verb statements.  The AU MUST NOT send other cmi5 defined statements.</li></ul></td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>String</td></tr>
@@ -1114,7 +1116,7 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
   <tr><th align="right" nowrap>LMS Required:</th><td>The LMS MUST include a <code>masteryScore</code> in the <code>LMS.LaunchData</code> State document if the <code>masteryScore</code> was defined by the course designer in the Course Structure.</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>If the <code>masteryScore</code> is provided.</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The <code>masteryScore</code> value written in the <code>LMS.LaunchData</code> State document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
-  <tr><th align="right" nowrap>AU Usage:</th><td>If the AU issues "passed" or "failed" statements they MUST be based on the <code>masteryScore</code> if provided. (See Sections 9.3.4 and 9.3.5)</td></tr>
+  <tr><th align="right" nowrap>AU Usage:</th><td>If the AU issues "passed" or "failed" statements they MUST be based on the <code>masteryScore</code> if provided. (See Sections 9.3.4 Passed and 9.3.5 Failed)</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>decimal</td></tr>
   <tr><th align="right" nowrap>Value Space:</th><td>Decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>0.75</td></tr>
@@ -1126,10 +1128,10 @@ The LMS MAY place additional values in the <code>contextTemplate</code>.</td></t
   <tr><th align="right" nowrap>Description:</th><td>The <code>moveOn</code> value from the cmi5 Course Structure.</td></tr>
   <tr><th align="right" nowrap>LMS Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>AU Required:</th><td>No</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <code>moveOn</code> value in the state API document. The <code>moveOn</code> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST provide a <code>moveOn</code> value in the State API document. The <code>moveOn</code> value written in the State API Document MAY be different than the one in the course structure (e.g. based on administrative rules defined by the LMS).</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MAY get the <code>moveOn</code> value from the  <code>LMS.LaunchData</code> state document and MAY use the value to modify its behavior.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>string</td></tr>
-  <tr><th align="right" nowrap>Value Space:</th><td><code>moveOn</code> values as defined in the Course Structure (Section 13.1.4 – AU Metadata)</td></tr>
+  <tr><th align="right" nowrap>Value Space:</th><td><code>moveOn</code> values as defined in the Course Structure (Section 13.1.4 AU Metadata)</td></tr>
   <tr><th align="right" nowrap>Sample Value:</th><td>"Passed"</td></tr>
 </table>
 
@@ -1192,7 +1194,7 @@ In cmi5, Learner Preferences are scoped to the Agent representing the enrolled L
 
 The AU MUST retrieve the Learner Preferences document from the Agent Profile on startup.
 
-When reading or writing to the Agent Profile, the document name MUST be "cmi5LearnerPreferences". The document content MUST be a JSON object with the <code>languagePreference</code> and <code>audioPreference</code> properties as described in Section 11.1 and 11.2. For example:
+When reading or writing to the Agent Profile, the document name MUST be "cmi5LearnerPreferences". The document content MUST be a JSON object with the <code>languagePreference</code> and <code>audioPreference</code> properties as described in Section 11.1  languagePreference and 11.2 audioPreference respectively. For example:
 
 ```javascript
 {
@@ -1241,7 +1243,7 @@ The AU MAY use the Activity Profile API according to xAPI.
 ## 13.1 Course Structure Data Model
 All leading/trailing whitespace MUST be removed by the LMS on import of the course structure for all of the data elements defined in this section.
 
-The following Data Types are used in the cmi5 course structure data model, see the CourseStructure.xsd (Section 14.0) for specific format:
+The following Data Types are used in the cmi5 course structure data model, see the CourseStructure.xsd (Section 14.0 Course Package) for specific format:
 
    * **decimal** – XSD definition:  `xs:decimal`
    * **IRI** – XSD definition:  `xs:anyURI`
@@ -1511,7 +1513,7 @@ The data in this section are used by the LMS to locate the AU and provide launch
     <td valign="top"><p><strong>Description:</strong> A score used by the LMS to determine passing or failure of judged activity in the AU (if the AU has scoring).</p>
       <p><strong>Usage: </strong></p>
       <ul>
-        <li>The <code>masteryScore</code> is passed to the AU at runtime by the LMS (See xAPI State Data Model, Section 10.0).</li>
+        <li>The <code>masteryScore</code> is passed to the AU at runtime by the LMS (See Section 10.0 xAPI State Data Model).</li>
         <li>If the AU has scoring, it will use the <code>masteryScore</code> to determine pass/fail.</li>
         <li>The <code>masteryScore</code> is a scaled, decimal value between 0 and 1 (inclusive) with up to 4 decimal places of precision.</li>
       </ul>
@@ -1698,7 +1700,7 @@ Conceptually, a course package is a collection of all of the components (AUs) of
 
 Technically, a course package is an XML file format with a course structure. It can be standalone or contained in a ZIP file. A course package, when located in a ZIP file, MUST be named "cmi5.xml". The course package MUST conform to https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd. Available locally in v1/CourseStructure.xsd.
 
-An LMS MUST provide functionality such that a targeted course package is processed, resulting in a Course Structure import (See Section 13). An LMS MUST support Course Packages in at least these three file formats:
+An LMS MUST provide functionality such that a targeted course package is processed, resulting in a Course Structure import (See Section 3.0 Course Structure Data Requirements ). An LMS MUST support Course Packages in at least these three file formats:
 
 * Standalone XML file
 * 32-bit Zip Format
