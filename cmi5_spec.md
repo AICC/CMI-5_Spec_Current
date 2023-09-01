@@ -435,7 +435,7 @@ An AU MUST:
 * Implement the runtime launch interface as defined in Section 8.0 Content Launch Mechanisms.
 * Implement runtime communication as defined in xAPI.
 * Implement State API requirements in this specification as defined in Section 10.0 xAPI State Data Model.
-* Implement Profile API requirements in this specification as defined in Section 11.0 xAPI Agent Profile Data Model .
+* Implement Profile API requirements in this specification as defined in Section 11.0 xAPI Agent Profile Data Model.
 * Implement Statement API requirements as defined in Section 7.1 AU Statement API Requirements.
 
 
