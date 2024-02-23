@@ -576,7 +576,7 @@ The values for the URL launch parameters are described below:
 ### 8.2.1 Overview
 The LMS MUST include the <strong><em>fetch</em></strong> name/value pair in the launch URL.  The AU MUST make an HTTP POST to the <strong><em>fetch</em></strong> URL to retrieve an authorization token.  Note than an HTTP GET is not allowed in order to prevent caching of the request.
 
-The <strong><em>fetch</em></strong> URL MUST return a JSON structure using a Content-Type of "application/json". The structure MUST be an object with the property <code>auth-token</code> in the first successful response. An example JSON structure is shown below:
+The <strong><em>fetch</em></strong> URL response MUST include an HTTP status code of "200" for a valid request (including one that generates error as described in Section 8.2.3 Errors). The response MUST have a Content-Type of "application/json". The response body MUST be a JSON structure. The structure MUST be an object with the property <code>auth-token</code> in the first successful response. An example JSON structure is shown below:
 ```javascript
 {
   "auth-token": "QWxhZGRpbjpvcGVuIHNlc2FtZQ=="
@@ -591,7 +591,7 @@ The AU SHOULD NOT attempt to retrieve the authorization token more than once.  T
 <table>
   <tr><th colspan=2 align="left">auth-token</th></tr>
   <tr><th align="right" nowrap>Description:</th><td>An authorization token used in all xAPI communications with the LMS.</td></tr>
-  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <code>auth-token</code> in a JSON structure, as shown in Section 8.2.1 Overview, in its response to a <strong><em>fetch</em></strong> URL request. The response MUST have a Content-Type of "application/json". The HTTP status code MUST be "200" for a valid request (including one that generates error as described in Section 8.2.3 Errors).</td></tr>
+  <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST place the value for <code>auth-token</code> in a JSON structure, as shown in Section 8.2.1 Overview, in its response to a <strong><em>fetch</em></strong> URL request.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>auth-token</code> value using an HTTP POST to the <strong><em>fetch</em></strong> URL. The AU MUST then place the authorization token in the Authorization headers of all HTTP requests made to the endpoint using xAPI.</td></tr>
   <tr><th align="right" nowrap>Data type:</th><td>String (URL-encoded)</td></tr>
   <tr><th align="right" nowrap>Value space:</th><td>Defined by the LMS</td></tr>
