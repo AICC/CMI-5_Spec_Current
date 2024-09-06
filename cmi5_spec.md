@@ -1070,7 +1070,7 @@ The properties for the `LMS.LaunchData` document are described below.
   <tr><th align="right" nowrap>AU Required:</th><td>Yes</td></tr>
   <tr><th align="right" nowrap>LMS Usage:</th><td>The LMS MUST include a <code>contextTemplate</code> object and MUST include the following values:
 <ul><li>The value for session id placed in an <code>extensions</code> object with the ID as defined in Section 9.6.3.1 session ID.</li>
-<li>The publisher ID Activity as defined in Section 9.6.3.2 masteryScore in the <code>contextActivities.grouping</code> list.</li></ul>
+<li>The publisher ID Activity as defined in Section 9.6.2.3 Publisher ID Grouping Activity in the <code>contextActivities.grouping</code> list.</li></ul>
 The LMS MAY place additional values in the <code>contextTemplate</code>.</td></tr>
   <tr><th align="right" nowrap>AU Usage:</th><td>The AU MUST get the <code>contextTemplate</code> value from the  <code>LMS.LaunchData</code> State document. The AU MUST NOT modify or delete the  <code>LMS.LaunchData</code> State document. The AU MUST use the <code>contextTemplate</code> as a template for the <code>context</code> property in all xAPI statements it sends to the LMS. While the AU MAY include additional values in the <code>context</code> object of such statements, it MUST NOT overwrite any values provided in the <code>contextTemplate</code>. NOTE: this will include the session ID specified by the LMS.</td></tr>
   <tr><th align="right" nowrap>Data Type:</th><td>JSON <code>context</code> object as defined in xAPI.</td></tr>
