@@ -784,7 +784,7 @@ The LMS MUST use the session ID from the AU launch for all "Satisfied" statement
 <br>
 The LMS MUST generate a unique session ID for all "Satisfied" statements triggered outside of an AU launch session.<br>
 <br>
-The LMS SHOULD NOT issue multiple statements with "Satisfied" for the same Block or Course within a course registration for a given learner.
+The LMS MUST NOT issue multiple statements with "Satisfied" for the same Block or Course within a course registration for a given learner.
 </td></tr>
 <tr><th align="left">Usage</th><td>See LMS obligations.</td></tr>
 </table>
